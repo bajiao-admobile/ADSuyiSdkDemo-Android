@@ -6,8 +6,8 @@ android {
         applicationId "cn.admobiletop.adsuyidemo"
         minSdkVersion 19
         targetSdkVersion 29
-        versionCode 20200423
-        versionName "1.8"
+        versionCode 20200427
+        versionName "1.9"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         ndk {
             // 设置支持的SO库架构
@@ -62,40 +62,26 @@ dependencies {
     implementation 'com.tencent.bugly:crashreport:3.1.0'
     implementation 'com.tencent.bugly:nativecrashreport:3.7.1'
 
-//    implementation 'cn.admobiletop.adsuyi.ad:core-alpha:1.0.0.03255'
-    implementation(name: 'ADSuyiCore-3.0.0.0.04231', ext: 'aar')
+    // ADSuyiSdk和OAID是必须导入了
+    implementation 'cn.admobiletop.adsuyi.ad:core-alpha:3.0.0.0.04271'
     implementation(name: 'msa_mdid_1.0.13', ext: 'aar')
 
-//    implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile-alpha:4.3.5.03263'
-    implementation(name: 'AdmobileAdapter-4.5.1.0.04261', ext: 'aar')
-    implementation 'cn.admobiletop.adsuyi.ad.third:admobile:4.5.1'
+    // 艾狄墨搏AdapterSdk，必须的
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile-alpha:4.5.2.0.04271'
 
-    implementation(name: 'GdtAdapter-4.191.1061.0.04231', ext: 'aar')
-    implementation 'cn.admobiletop.adsuyi.ad.third:gdt:4.191.1061'
+    // 广点通AdapterSdk，可选的
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt-alpha:4.191.1061.0.04271'
 
-    implementation(name: 'ToutiaoAdapter-2.8.0.3.04231', ext: 'aar')
-    implementation 'cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3'
+    // 头条AdapterSdk，可选的
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao-alpha:2.8.0.3.04271'
 
-    implementation(name: 'BaiduAdapter-5.85.0.0.04231', ext: 'aar')
-    implementation 'cn.admobiletop.adsuyi.ad.third:baidu:5.85'
+    // 百度AdapterSdk，可选的
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-alpha:5.85.0.0.04272'
 
-    implementation(name: 'MintegralAdapter-10.2.41.0.04231', ext: 'aar')
-    implementation 'com.mintegral.msdk:videojs:10.2.41'
-    implementation 'com.mintegral.msdk:mtgjscommon:10.2.41'
-    implementation 'com.mintegral.msdk:playercommon:10.2.41'
-    implementation 'com.mintegral.msdk:reward:10.2.41'
-    implementation 'com.mintegral.msdk:videocommon:10.2.41'
-    implementation 'com.mintegral.msdk:mtgdownloads:10.2.41'
-    implementation 'com.mintegral.msdk:optimizedata:10.2.41'
-    implementation 'com.mintegral.msdk:common:10.2.41'
-    implementation 'com.mintegral.msdk:alphab:10.2.41'
-    implementation 'com.mintegral.msdk:interstitialvideo:10.2.41'
-    implementation 'com.mintegral.msdk:mtgnative:10.2.41'
-    implementation 'com.mintegral.msdk:nativeex:10.2.41'
-    implementation 'com.mintegral.msdk:interstitial:10.2.41'
-    implementation 'com.mintegral.msdk:mtgbanner:10.2.41'
+    // 汇量AdapterSdk，可选的
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral-alpha:10.2.41.0.04271'
 
-    implementation(name: 'InmobiAdapter-7.4.3.0.04231', ext: 'aar')
-    implementation 'cn.admobiletop.adsuyi.ad.third:inmobi:7.4.3'
+    // InmobiAdapterSdk，可选的
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:inmobi-alpha:7.4.3.0.04271'
     implementation 'com.squareup.picasso:picasso:2.5.2'
 }

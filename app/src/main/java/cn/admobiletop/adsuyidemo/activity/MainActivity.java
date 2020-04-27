@@ -10,9 +10,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import cn.admobiletop.adsuyi.ADSuyiSdk;
 import cn.admobiletop.adsuyi.ad.data.ADSuyiAdType;
 import cn.admobiletop.adsuyidemo.R;
+import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -76,32 +80,43 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         String adType = null;
+                        ArrayList<String> posIdList = new ArrayList<>();
                         switch (which) {
                             case 0:
                                 adType = ADSuyiAdType.TYPE_SPLASH;
+                                posIdList.add(ADSuyiDemoConstant.SPLASH_AD_POS_ID1);
                                 break;
                             case 1:
                                 adType = ADSuyiAdType.TYPE_BANNER;
+                                posIdList.add(ADSuyiDemoConstant.BANNER_AD_POS_ID1);
+                                posIdList.add(ADSuyiDemoConstant.BANNER_AD_POS_ID2);
                                 break;
                             case 2:
                                 adType = ADSuyiAdType.TYPE_FLOW;
+                                posIdList.add(ADSuyiDemoConstant.NATIVE_AD_POS_ID1);
+                                posIdList.add(ADSuyiDemoConstant.NATIVE_AD_POS_ID2);
                                 break;
                             case 3:
                                 adType = ADSuyiAdType.TYPE_REWARD_VOD;
+                                posIdList.add(ADSuyiDemoConstant.REWARD_VOD_AD_POS_ID1);
+                                posIdList.add(ADSuyiDemoConstant.REWARD_VOD_AD_POS_ID2);
                                 break;
                             case 4:
                                 adType = ADSuyiAdType.TYPE_FULLSCREEN_VOD;
+                                posIdList.add(ADSuyiDemoConstant.FULL_SCREEN_VOD_AD_POS_ID1);
                                 break;
                             case 5:
                                 adType = ADSuyiAdType.TYPE_INTERSTITIAL;
+                                posIdList.add(ADSuyiDemoConstant.INTERSTITIAL_AD_POS_ID1);
                                 break;
                             case 6:
                                 adType = ADSuyiAdType.TYPE_DRAW_VOD;
+                                posIdList.add(ADSuyiDemoConstant.DRAW_VOD_AD_POS_ID1);
                                 break;
                             default:
                                 break;
                         }
-                        SettingActivity.start(MainActivity.this, adType);
+                        SettingActivity.start(MainActivity.this, adType, posIdList);
                         dialog.dismiss();
                     }
                 }).create().show();

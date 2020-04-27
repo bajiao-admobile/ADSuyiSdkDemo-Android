@@ -9,12 +9,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:text="请填写广告的PosId : "
+        android:text="请选择广告的PosId : "
         android:textColor="@color/colorPrimaryDark"
         android:textSize="16sp" />
 
     <EditText
         android:id="@+id/etPosId"
+        android:focusable="false"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"

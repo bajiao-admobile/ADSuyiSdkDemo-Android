@@ -12,6 +12,9 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import cn.admobiletop.adsuyi.ad.data.ADSuyiAdType;
 import cn.admobiletop.adsuyi.util.ADSuyiToastUtil;
 import cn.admobiletop.adsuyidemo.R;
@@ -24,6 +27,7 @@ import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
  */
 public class SettingActivity extends AppCompatActivity {
     private static final String AD_TYPE = "AD_TYPE";
+    private static final String POS_ID_LIST = "POS_ID_LIST";
     private EditText etPosId;
     private TextView tvCount;
     private EditText etCount;
@@ -31,10 +35,12 @@ public class SettingActivity extends AppCompatActivity {
     private EditText etAutoRefreshInterval;
     private String adType;
     private EditText etOnlySupportPlatform;
+    private List<String> posIdList;
 
-    public static void start(Context context, String adType) {
+    public static void start(Context context, String adType, ArrayList<String> posIdList) {
         Intent intent = new Intent(context, SettingActivity.class);
         intent.putExtra(AD_TYPE, adType);
+        intent.putStringArrayListExtra(POS_ID_LIST, posIdList);
         context.startActivity(intent);
     }
 
@@ -73,6 +79,27 @@ public class SettingActivity extends AppCompatActivity {
                 showPlatformSelectDialog();
             }
         });
+        etPosId.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showPosIdSelectDialog();
+            }
+        });
+    }
+
+    private void showPosIdSelectDialog() {
+        String[] posIds = new String[posIdList.size()];
+        posIdList.toArray(posIds);
+
+        new AlertDialog.Builder(this)
+                .setItems(posIds, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        etPosId.setText(posIdList.get(which));
+                    }
+                })
+                .create()
+                .show();
     }
 
     private void showPlatformSelectDialog() {
@@ -91,6 +118,9 @@ public class SettingActivity extends AppCompatActivity {
     private void initData() {
         adType = getIntent().getStringExtra(AD_TYPE);
         adType = adType == null ? "" : adType;
+        posIdList = getIntent().getStringArrayListExtra(POS_ID_LIST);
+        posIdList = posIdList == null ? new ArrayList<String>() : posIdList;
+
         switch (adType) {
             case ADSuyiAdType.TYPE_SPLASH:
                 etPosId.setText(ADSuyiDemoConstant.SPLASH_AD_POS_ID);
