@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">艾狄墨搏广告SdkDemo</string>
+    <string name="splash_ad">开屏广告</string>
+    <string name="banner_ad">Banner广告</string>
+    <string name="native_ad">信息流广告</string>
+    <string name="reward_vod_ad">激励视频广告</string>
+    <string name="full_screen_vod_ad">全屏视频广告</string>
+    <string name="interstitial_ad">插屏广告</string>
+    <string name="draw_vod_ad">Draw视频广告</string>
+    <string name="fragment_examples">Fragment示例</string>
+    <string name="define">确定</string>
+    <string name="setting">设置</string>
+
+    <string-array name="ad_type_items">
+        <item>开屏广告</item>
+        <item>Banner广告</item>
+        <item>信息流广告</item>
+        <item>激励视频广告</item>
+        <item>全屏视频广告</item>
+        <item>插屏广告</item>
+        <item>Draw视频广告</item>
+    </string-array>
+    <string-array name="platforms">
+        <item>admobile</item>
+        <item>gdt</item>
+        <item>toutiao</item>
+        <item>baidu</item>
+        <item>inmobi</item>
+        <item>mintegral</item>
+    </string-array>
+</resources>
