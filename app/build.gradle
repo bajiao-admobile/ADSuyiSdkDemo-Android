@@ -73,7 +73,7 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt-alpha:4.191.1061.0.04271'
 
     // 头条AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao-alpha:2.8.0.3.04271'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao-alpha:2.8.0.3.04272'
 
     // 百度AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-alpha:5.85.0.0.04272'
