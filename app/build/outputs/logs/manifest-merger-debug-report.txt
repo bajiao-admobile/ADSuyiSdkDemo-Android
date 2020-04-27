@@ -1,0 +1,917 @@
+-- Merging decision tree log ---
+provider#android.support.v4.content.FileProvider
+INJECTED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:37:9-45:20
+	android:grantUriPermissions
+		ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:41:13-47
+	android:authorities
+		INJECTED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:39:13-64
+	android:exported
+		ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:40:13-37
+	android:name
+		ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:38:13-67
+manifest
+ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:2:1-107:12
+INJECTED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:2:1-107:12
+INJECTED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:2:1-107:12
+INJECTED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:2:1-107:12
+MERGED from [com.android.support:design:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/0e85b90a6a39f6845966fbd2ea67d272/AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:appcompat-v7:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/6c2445e681c8493e4b48fd25c6c0ae6f/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-v4:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/support-v4-28.0.0.aar/83109278351cd5b5b903e29f6eeb7c51/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/38e39621cfb3607fc3583c2440b66ffd/AndroidManifest.xml:2:1-11:12
+MERGED from [com.scwang.smartrefresh:SmartRefreshLayout:1.1.2] /Users/xry/.gradle/caches/transforms-1/files-1.1/SmartRefreshLayout-1.1.2.aar/421bb36a9e1566c57ef06b48d3969cff/AndroidManifest.xml:2:1-17:12
+MERGED from [com.github.bumptech.glide:glide:4.5.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/glide-4.5.0.aar/d94c92e1f8073f801de35ba4ba5c481f/AndroidManifest.xml:2:1-13:12
+MERGED from [com.makeramen:roundedimageview:2.3.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/roundedimageview-2.3.0.aar/099bf888371802f5c05db4b3f2e3a457/AndroidManifest.xml:2:1-9:12
+MERGED from [com.tencent.bugly:crashreport:3.1.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/crashreport-3.1.0.aar/54b6eeba3d91a1a4dd9656c805e83512/AndroidManifest.xml:2:1-9:12
+MERGED from [com.tencent.bugly:nativecrashreport:3.7.1] /Users/xry/.gradle/caches/transforms-1/files-1.1/nativecrashreport-3.7.1.aar/4efa229727e009402aaa6bb312a69a5b/AndroidManifest.xml:2:1-9:12
+MERGED from [:ADSuyiCore-3.0.0.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/ADSuyiCore-3.0.0.0.04231.aar/8b49bbf6bc8cfb33b5095acf09801181/AndroidManifest.xml:2:1-17:12
+MERGED from [:msa_mdid_1.0.13:] /Users/xry/.gradle/caches/transforms-1/files-1.1/msa_mdid_1.0.13.aar/03a94cd1a264ecd95c1868e7ec5fdbf1/AndroidManifest.xml:1:1-10:12
+MERGED from [:AdmobileAdapter-4.5.1.0.04261:] /Users/xry/.gradle/caches/transforms-1/files-1.1/AdmobileAdapter-4.5.1.0.04261.aar/395bfe18d6fd356affd9566f467e7ae6/AndroidManifest.xml:2:1-11:12
+MERGED from [cn.admobiletop.adsuyi.ad.third:admobile:4.5.1] /Users/xry/.gradle/caches/transforms-1/files-1.1/admobile-4.5.1.aar/72eda18b0a5a12a6d8ec0ce6d669fbbd/AndroidManifest.xml:2:1-55:12
+MERGED from [:GdtAdapter-4.191.1061.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/GdtAdapter-4.191.1061.0.04231.aar/806dedbf0d9835692a8e64f4e988a262/AndroidManifest.xml:2:1-25:12
+MERGED from [cn.admobiletop.adsuyi.ad.third:gdt:4.191.1061] /Users/xry/.gradle/caches/transforms-1/files-1.1/gdt-4.191.1061.aar/559c3b3a888b6e20738f3f54d7e95056/AndroidManifest.xml:2:1-49:12
+MERGED from [:ToutiaoAdapter-2.8.0.3.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/ToutiaoAdapter-2.8.0.3.04231.aar/9e6d004cf1980afa010566302e3969e8/AndroidManifest.xml:2:1-27:12
+MERGED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:2:1-117:12
+MERGED from [:BaiduAdapter-5.85.0.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/BaiduAdapter-5.85.0.0.04231.aar/c41cca1da54e9de9b092737bfc7ded98/AndroidManifest.xml:2:1-29:12
+MERGED from [cn.admobiletop.adsuyi.ad.third:baidu:5.85] /Users/xry/.gradle/caches/transforms-1/files-1.1/baidu-5.85.aar/7fccb590c6a5273dbd0d81371e31154b/AndroidManifest.xml:2:1-20:12
+MERGED from [:MintegralAdapter-10.2.41.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/MintegralAdapter-10.2.41.0.04231.aar/59c6d979293b8d1dd4e3367546a8108e/AndroidManifest.xml:2:1-54:12
+MERGED from [com.mintegral.msdk:videojs:10.2.41] /Users/xry/.gradle/caches/transforms-1/files-1.1/videojs-10.2.41.aar/94eee95d48b0528ec76be83903b5961a/AndroidManifest.xml:2:1-11:12
+MERGED from [com.mintegral.msdk:mtgjscommon:10.2.41] /Users/xry/.gradle/caches/transforms-1/files-1.1/mtgjscommon-10.2.41.aar/1dd250d2a5094e81a680c3723e625954/AndroidManifest.xml:2:1-14:12
+MERGED from [com.mintegral.msdk:playercommon:10.2.41] /Users/xry/.gradle/caches/transforms-1/files-1.1/playercommon-10.2.41.aar/22dffaa26308c813e8ee7f237872a142/AndroidManifest.xml:2:1-15:12
+MERGED from [com.mintegral.msdk:reward:10.2.41] /Users/xry/.gradle/caches/transforms-1/files-1.1/reward-10.2.41.aar/390d3a4d3f4feab4e32ca4ebabfb0c77/AndroidManifest.xml:2:1-15:12
+MERGED from [com.mintegral.msdk:videocommon:10.2.41] /Users/xry/.gradle/caches/transforms-1/files-1.1/videocommon-10.2.41.aar/38da13274378d84079c32072d1ee8288/AndroidManifest.xml:2:1-15:12
+MERGED from [com.mintegral.msdk:mtgdownloads:10.2.41] /Users/xry/.gradle/caches/transforms-1/files-1.1/mtgdownloads-10.2.41.aar/25dfe3d1d8f8d80a6b224f7943c2036d/AndroidManifest.xml:2:1-14:12
+MERGED from [com.mintegral.msdk:optimizedata:10.2.41] /Users/xry/.gradle/caches/transforms-1/files-1.1/optimizedata-10.2.41.aar/382a7a0ec66f19be53ac36ad2afdc490/AndroidManifest.xml:2:1-11:12
+MERGED from [com.mintegral.msdk:common:10.2.41] /Users/xry/.gradle/caches/transforms-1/files-1.1/common-10.2.41.aar/a304240e134472cf49dbf20bab8ad1c4/AndroidManifest.xml:2:1-15:12
+MERGED from [com.mintegral.msdk:alphab:10.2.41] /Users/xry/.gradle/caches/transforms-1/files-1.1/alphab-10.2.41.aar/fe26d01cf02cb09b5c6112a9adfcbd99/AndroidManifest.xml:2:1-14:12
+MERGED from [com.mintegral.msdk:interstitialvideo:10.2.41] /Users/xry/.gradle/caches/transforms-1/files-1.1/interstitialvideo-10.2.41.aar/ac94a03aef1e34a87104fdaf008b672b/AndroidManifest.xml:2:1-11:12
+MERGED from [com.mintegral.msdk:mtgnative:10.2.41] /Users/xry/.gradle/caches/transforms-1/files-1.1/mtgnative-10.2.41.aar/5806f825d7579d91b3cf86bc4dc3f019/AndroidManifest.xml:2:1-15:12
+MERGED from [com.mintegral.msdk:nativeex:10.2.41] /Users/xry/.gradle/caches/transforms-1/files-1.1/nativeex-10.2.41.aar/792d6e0961ccdbc1f4a85b933cb06de5/AndroidManifest.xml:2:1-15:12
+MERGED from [com.mintegral.msdk:interstitial:10.2.41] /Users/xry/.gradle/caches/transforms-1/files-1.1/interstitial-10.2.41.aar/799ef1e057a0526916582f19dc6716b5/AndroidManifest.xml:2:1-15:12
+MERGED from [com.mintegral.msdk:mtgbanner:10.2.41] /Users/xry/.gradle/caches/transforms-1/files-1.1/mtgbanner-10.2.41.aar/ebbea3aed2f727374115255987b63260/AndroidManifest.xml:2:1-11:12
+MERGED from [:InmobiAdapter-7.4.3.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/InmobiAdapter-7.4.3.0.04231.aar/aa79c820f9898c1297af7e3190c4bb05/AndroidManifest.xml:2:1-36:12
+MERGED from [cn.admobiletop.adsuyi.ad.third:inmobi:7.4.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/inmobi-7.4.3.aar/f0cba13c80e34855bac92bcd217b7aad/AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-28.0.0.aar/71284d84b0290c61fdaaf7d90c21fc7a/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:recyclerview-v7:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-28.0.0.aar/e6156c7efacfecd3765ecc4b0efd72db/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0.aar/0288c0a141ae1ef4e3a490eae33edb77/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/support-core-ui-28.0.0.aar/ab724894c8b711f9bebc01948476abd5/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/support-core-utils-28.0.0.aar/398e17466c317332a26c627ed1e250d5/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-28.0.0.aar/4ffb8e6c7351d6be1e818c09ad076f60/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/support-media-compat-28.0.0.aar/bbde1e5e6bb208564ad618882a2efc35/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:transition:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/transition-28.0.0.aar/df7ac9172bf5743b650ea487c6971221/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:loader:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/loader-28.0.0.aar/a96c47bf61bfaca0f12e917056b47e1b/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:viewpager:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/viewpager-28.0.0.aar/56e5eb0ae430cc2d90bbd66006972d61/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:coordinatorlayout:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-28.0.0.aar/34d59c485ab199355935e0d4551f9f77/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:drawerlayout:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/drawerlayout-28.0.0.aar/7e8a7cbffdd1c058fb421b395540b348/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:slidingpanelayout:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-28.0.0.aar/c78fec7af89dca53dc780593136788b9/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:customview:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/customview-28.0.0.aar/58607d1d1fd36825fbd1b4c7c6b03458/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-28.0.0.aar/b0962740eb8b1faf4ee28e4b5d519b90/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-28.0.0.aar/877e92746fc15dcf3f72fedf66ff8e11/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/ca9759b853b7f5562b425cde1e55f67a/AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/80477a2d9edde74475953743774a97b9/AndroidManifest.xml:17:1-25:12
+MERGED from [com.android.support:cursoradapter:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/cursoradapter-28.0.0.aar/42cd75087d31d586b82aa23bf1b0fdc2/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:cardview-v7:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/cardview-v7-28.0.0.aar/374f7c1ebaf1035ce32b1138976f53a3/AndroidManifest.xml:17:1-22:12
+MERGED from [com.github.bumptech.glide:gifdecoder:4.5.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/gifdecoder-4.5.0.aar/c2df22b9009f12c1e2bcf6f16e1c977d/AndroidManifest.xml:2:1-11:12
+MERGED from [android.arch.lifecycle:runtime:1.1.1] /Users/xry/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/800a126164c1988a1c2d363b8f97e3cb/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:documentfile:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/documentfile-28.0.0.aar/90f8cd87dcbcb2a0055a1247e8b4080f/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-28.0.0.aar/24e308d451db4410642264afc3b10217/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:print:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/print-28.0.0.aar/778a3099c50af6a3d7ead6a8119cffd8/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:interpolator:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0.aar/edd5df0c177e5556bdccba8f9c46c96a/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata:1.1.1] /Users/xry/.gradle/caches/transforms-1/files-1.1/livedata-1.1.1.aar/f3ac9db5d944c987de0aacb65cffd7cf/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/xry/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.1.aar/0bf92a24f0aac8eebce96dad7b371ab6/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.1] /Users/xry/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/f95c5fdef4b4019c55d1e50102883299/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /Users/xry/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.1.aar/da5d9fb4dd4c54e37c50429b2afcc87a/AndroidManifest.xml:17:1-22:12
+INJECTED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:2:1-107:12
+INJECTED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:2:1-107:12
+INJECTED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:2:1-107:12
+	package
+		ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:3:5-40
+		INJECTED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:2:1-107:12
+		INJECTED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:2:1-107:12
+		INJECTED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:6:5-67
+MERGED from [:ADSuyiCore-3.0.0.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/ADSuyiCore-3.0.0.0.04231.aar/8b49bbf6bc8cfb33b5095acf09801181/AndroidManifest.xml:12:5-67
+MERGED from [:ADSuyiCore-3.0.0.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/ADSuyiCore-3.0.0.0.04231.aar/8b49bbf6bc8cfb33b5095acf09801181/AndroidManifest.xml:12:5-67
+MERGED from [:msa_mdid_1.0.13:] /Users/xry/.gradle/caches/transforms-1/files-1.1/msa_mdid_1.0.13.aar/03a94cd1a264ecd95c1868e7ec5fdbf1/AndroidManifest.xml:6:5-67
+MERGED from [:msa_mdid_1.0.13:] /Users/xry/.gradle/caches/transforms-1/files-1.1/msa_mdid_1.0.13.aar/03a94cd1a264ecd95c1868e7ec5fdbf1/AndroidManifest.xml:6:5-67
+MERGED from [cn.admobiletop.adsuyi.ad.third:admobile:4.5.1] /Users/xry/.gradle/caches/transforms-1/files-1.1/admobile-4.5.1.aar/72eda18b0a5a12a6d8ec0ce6d669fbbd/AndroidManifest.xml:12:5-67
+MERGED from [cn.admobiletop.adsuyi.ad.third:admobile:4.5.1] /Users/xry/.gradle/caches/transforms-1/files-1.1/admobile-4.5.1.aar/72eda18b0a5a12a6d8ec0ce6d669fbbd/AndroidManifest.xml:12:5-67
+MERGED from [cn.admobiletop.adsuyi.ad.third:gdt:4.191.1061] /Users/xry/.gradle/caches/transforms-1/files-1.1/gdt-4.191.1061.aar/559c3b3a888b6e20738f3f54d7e95056/AndroidManifest.xml:12:5-67
+MERGED from [cn.admobiletop.adsuyi.ad.third:gdt:4.191.1061] /Users/xry/.gradle/caches/transforms-1/files-1.1/gdt-4.191.1061.aar/559c3b3a888b6e20738f3f54d7e95056/AndroidManifest.xml:12:5-67
+MERGED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:20:5-67
+MERGED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:20:5-67
+	android:name
+		ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:6:22-64
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:7:5-81
+MERGED from [:ADSuyiCore-3.0.0.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/ADSuyiCore-3.0.0.0.04231.aar/8b49bbf6bc8cfb33b5095acf09801181/AndroidManifest.xml:13:5-81
+MERGED from [:ADSuyiCore-3.0.0.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/ADSuyiCore-3.0.0.0.04231.aar/8b49bbf6bc8cfb33b5095acf09801181/AndroidManifest.xml:13:5-81
+MERGED from [cn.admobiletop.adsuyi.ad.third:admobile:4.5.1] /Users/xry/.gradle/caches/transforms-1/files-1.1/admobile-4.5.1.aar/72eda18b0a5a12a6d8ec0ce6d669fbbd/AndroidManifest.xml:13:5-81
+MERGED from [cn.admobiletop.adsuyi.ad.third:admobile:4.5.1] /Users/xry/.gradle/caches/transforms-1/files-1.1/admobile-4.5.1.aar/72eda18b0a5a12a6d8ec0ce6d669fbbd/AndroidManifest.xml:13:5-81
+MERGED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:14:5-81
+MERGED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:14:5-81
+	android:name
+		ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:7:22-78
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:8:5-80
+MERGED from [:ADSuyiCore-3.0.0.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/ADSuyiCore-3.0.0.0.04231.aar/8b49bbf6bc8cfb33b5095acf09801181/AndroidManifest.xml:14:5-80
+MERGED from [:ADSuyiCore-3.0.0.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/ADSuyiCore-3.0.0.0.04231.aar/8b49bbf6bc8cfb33b5095acf09801181/AndroidManifest.xml:14:5-80
+MERGED from [cn.admobiletop.adsuyi.ad.third:admobile:4.5.1] /Users/xry/.gradle/caches/transforms-1/files-1.1/admobile-4.5.1.aar/72eda18b0a5a12a6d8ec0ce6d669fbbd/AndroidManifest.xml:14:5-80
+MERGED from [cn.admobiletop.adsuyi.ad.third:admobile:4.5.1] /Users/xry/.gradle/caches/transforms-1/files-1.1/admobile-4.5.1.aar/72eda18b0a5a12a6d8ec0ce6d669fbbd/AndroidManifest.xml:14:5-80
+MERGED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:16:5-88
+	android:name
+		ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:8:22-77
+uses-permission#android.permission.REQUEST_INSTALL_PACKAGES
+ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:9:5-83
+MERGED from [:ADSuyiCore-3.0.0.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/ADSuyiCore-3.0.0.0.04231.aar/8b49bbf6bc8cfb33b5095acf09801181/AndroidManifest.xml:15:5-83
+MERGED from [:ADSuyiCore-3.0.0.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/ADSuyiCore-3.0.0.0.04231.aar/8b49bbf6bc8cfb33b5095acf09801181/AndroidManifest.xml:15:5-83
+MERGED from [cn.admobiletop.adsuyi.ad.third:admobile:4.5.1] /Users/xry/.gradle/caches/transforms-1/files-1.1/admobile-4.5.1.aar/72eda18b0a5a12a6d8ec0ce6d669fbbd/AndroidManifest.xml:15:5-83
+MERGED from [cn.admobiletop.adsuyi.ad.third:admobile:4.5.1] /Users/xry/.gradle/caches/transforms-1/files-1.1/admobile-4.5.1.aar/72eda18b0a5a12a6d8ec0ce6d669fbbd/AndroidManifest.xml:15:5-83
+MERGED from [cn.admobiletop.adsuyi.ad.third:gdt:4.191.1061] /Users/xry/.gradle/caches/transforms-1/files-1.1/gdt-4.191.1061.aar/559c3b3a888b6e20738f3f54d7e95056/AndroidManifest.xml:11:5-83
+MERGED from [cn.admobiletop.adsuyi.ad.third:gdt:4.191.1061] /Users/xry/.gradle/caches/transforms-1/files-1.1/gdt-4.191.1061.aar/559c3b3a888b6e20738f3f54d7e95056/AndroidManifest.xml:11:5-83
+	android:name
+		ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:9:22-80
+uses-permission#android.permission.READ_PHONE_STATE
+ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:12:5-75
+MERGED from [:msa_mdid_1.0.13:] /Users/xry/.gradle/caches/transforms-1/files-1.1/msa_mdid_1.0.13.aar/03a94cd1a264ecd95c1868e7ec5fdbf1/AndroidManifest.xml:5:5-75
+MERGED from [:msa_mdid_1.0.13:] /Users/xry/.gradle/caches/transforms-1/files-1.1/msa_mdid_1.0.13.aar/03a94cd1a264ecd95c1868e7ec5fdbf1/AndroidManifest.xml:5:5-75
+MERGED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:18:5-75
+MERGED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:18:5-75
+	android:name
+		ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:12:22-72
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:13:5-76
+MERGED from [cn.admobiletop.adsuyi.ad.third:gdt:4.191.1061] /Users/xry/.gradle/caches/transforms-1/files-1.1/gdt-4.191.1061.aar/559c3b3a888b6e20738f3f54d7e95056/AndroidManifest.xml:14:5-76
+MERGED from [cn.admobiletop.adsuyi.ad.third:gdt:4.191.1061] /Users/xry/.gradle/caches/transforms-1/files-1.1/gdt-4.191.1061.aar/559c3b3a888b6e20738f3f54d7e95056/AndroidManifest.xml:14:5-76
+MERGED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:19:5-76
+MERGED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:19:5-76
+	android:name
+		ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:13:22-73
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:14:5-79
+MERGED from [:msa_mdid_1.0.13:] /Users/xry/.gradle/caches/transforms-1/files-1.1/msa_mdid_1.0.13.aar/03a94cd1a264ecd95c1868e7ec5fdbf1/AndroidManifest.xml:4:5-79
+MERGED from [:msa_mdid_1.0.13:] /Users/xry/.gradle/caches/transforms-1/files-1.1/msa_mdid_1.0.13.aar/03a94cd1a264ecd95c1868e7ec5fdbf1/AndroidManifest.xml:4:5-79
+MERGED from [:GdtAdapter-4.191.1061.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/GdtAdapter-4.191.1061.0.04231.aar/806dedbf0d9835692a8e64f4e988a262/AndroidManifest.xml:11:5-79
+MERGED from [:GdtAdapter-4.191.1061.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/GdtAdapter-4.191.1061.0.04231.aar/806dedbf0d9835692a8e64f4e988a262/AndroidManifest.xml:11:5-79
+MERGED from [cn.admobiletop.adsuyi.ad.third:gdt:4.191.1061] /Users/xry/.gradle/caches/transforms-1/files-1.1/gdt-4.191.1061.aar/559c3b3a888b6e20738f3f54d7e95056/AndroidManifest.xml:13:5-79
+MERGED from [cn.admobiletop.adsuyi.ad.third:gdt:4.191.1061] /Users/xry/.gradle/caches/transforms-1/files-1.1/gdt-4.191.1061.aar/559c3b3a888b6e20738f3f54d7e95056/AndroidManifest.xml:13:5-79
+MERGED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:13:5-79
+MERGED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:13:5-79
+	android:name
+		ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:14:22-76
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:17:5-79
+	android:name
+		ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:17:22-76
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:18:5-81
+	android:name
+		ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:18:22-78
+uses-permission#android.permission.WAKE_LOCK
+ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:21:5-68
+	android:name
+		ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:21:22-65
+application
+ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:23:5-105:19
+MERGED from [com.android.support:design:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/0e85b90a6a39f6845966fbd2ea67d272/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/0e85b90a6a39f6845966fbd2ea67d272/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/38e39621cfb3607fc3583c2440b66ffd/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/38e39621cfb3607fc3583c2440b66ffd/AndroidManifest.xml:9:5-20
+MERGED from [com.scwang.smartrefresh:SmartRefreshLayout:1.1.2] /Users/xry/.gradle/caches/transforms-1/files-1.1/SmartRefreshLayout-1.1.2.aar/421bb36a9e1566c57ef06b48d3969cff/AndroidManifest.xml:11:5-15:19
+MERGED from [com.scwang.smartrefresh:SmartRefreshLayout:1.1.2] /Users/xry/.gradle/caches/transforms-1/files-1.1/SmartRefreshLayout-1.1.2.aar/421bb36a9e1566c57ef06b48d3969cff/AndroidManifest.xml:11:5-15:19
+MERGED from [com.github.bumptech.glide:glide:4.5.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/glide-4.5.0.aar/d94c92e1f8073f801de35ba4ba5c481f/AndroidManifest.xml:11:5-20
+MERGED from [com.github.bumptech.glide:glide:4.5.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/glide-4.5.0.aar/d94c92e1f8073f801de35ba4ba5c481f/AndroidManifest.xml:11:5-20
+MERGED from [cn.admobiletop.adsuyi.ad.third:admobile:4.5.1] /Users/xry/.gradle/caches/transforms-1/files-1.1/admobile-4.5.1.aar/72eda18b0a5a12a6d8ec0ce6d669fbbd/AndroidManifest.xml:17:5-53:19
+MERGED from [cn.admobiletop.adsuyi.ad.third:admobile:4.5.1] /Users/xry/.gradle/caches/transforms-1/files-1.1/admobile-4.5.1.aar/72eda18b0a5a12a6d8ec0ce6d669fbbd/AndroidManifest.xml:17:5-53:19
+MERGED from [:GdtAdapter-4.191.1061.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/GdtAdapter-4.191.1061.0.04231.aar/806dedbf0d9835692a8e64f4e988a262/AndroidManifest.xml:13:5-23:19
+MERGED from [:GdtAdapter-4.191.1061.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/GdtAdapter-4.191.1061.0.04231.aar/806dedbf0d9835692a8e64f4e988a262/AndroidManifest.xml:13:5-23:19
+MERGED from [cn.admobiletop.adsuyi.ad.third:gdt:4.191.1061] /Users/xry/.gradle/caches/transforms-1/files-1.1/gdt-4.191.1061.aar/559c3b3a888b6e20738f3f54d7e95056/AndroidManifest.xml:16:5-47:19
+MERGED from [cn.admobiletop.adsuyi.ad.third:gdt:4.191.1061] /Users/xry/.gradle/caches/transforms-1/files-1.1/gdt-4.191.1061.aar/559c3b3a888b6e20738f3f54d7e95056/AndroidManifest.xml:16:5-47:19
+MERGED from [:ToutiaoAdapter-2.8.0.3.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/ToutiaoAdapter-2.8.0.3.04231.aar/9e6d004cf1980afa010566302e3969e8/AndroidManifest.xml:11:5-25:19
+MERGED from [:ToutiaoAdapter-2.8.0.3.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/ToutiaoAdapter-2.8.0.3.04231.aar/9e6d004cf1980afa010566302e3969e8/AndroidManifest.xml:11:5-25:19
+MERGED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:22:5-115:19
+MERGED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:22:5-115:19
+MERGED from [:BaiduAdapter-5.85.0.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/BaiduAdapter-5.85.0.0.04231.aar/c41cca1da54e9de9b092737bfc7ded98/AndroidManifest.xml:12:5-27:19
+MERGED from [:BaiduAdapter-5.85.0.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/BaiduAdapter-5.85.0.0.04231.aar/c41cca1da54e9de9b092737bfc7ded98/AndroidManifest.xml:12:5-27:19
+MERGED from [cn.admobiletop.adsuyi.ad.third:baidu:5.85] /Users/xry/.gradle/caches/transforms-1/files-1.1/baidu-5.85.aar/7fccb590c6a5273dbd0d81371e31154b/AndroidManifest.xml:11:5-18:19
+MERGED from [cn.admobiletop.adsuyi.ad.third:baidu:5.85] /Users/xry/.gradle/caches/transforms-1/files-1.1/baidu-5.85.aar/7fccb590c6a5273dbd0d81371e31154b/AndroidManifest.xml:11:5-18:19
+MERGED from [:MintegralAdapter-10.2.41.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/MintegralAdapter-10.2.41.0.04231.aar/59c6d979293b8d1dd4e3367546a8108e/AndroidManifest.xml:11:5-52:19
+MERGED from [:MintegralAdapter-10.2.41.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/MintegralAdapter-10.2.41.0.04231.aar/59c6d979293b8d1dd4e3367546a8108e/AndroidManifest.xml:11:5-52:19
+MERGED from [com.mintegral.msdk:mtgjscommon:10.2.41] /Users/xry/.gradle/caches/transforms-1/files-1.1/mtgjscommon-10.2.41.aar/1dd250d2a5094e81a680c3723e625954/AndroidManifest.xml:11:5-12:19
+MERGED from [com.mintegral.msdk:mtgjscommon:10.2.41] /Users/xry/.gradle/caches/transforms-1/files-1.1/mtgjscommon-10.2.41.aar/1dd250d2a5094e81a680c3723e625954/AndroidManifest.xml:11:5-12:19
+MERGED from [com.mintegral.msdk:playercommon:10.2.41] /Users/xry/.gradle/caches/transforms-1/files-1.1/playercommon-10.2.41.aar/22dffaa26308c813e8ee7f237872a142/AndroidManifest.xml:12:5-13:19
+MERGED from [com.mintegral.msdk:playercommon:10.2.41] /Users/xry/.gradle/caches/transforms-1/files-1.1/playercommon-10.2.41.aar/22dffaa26308c813e8ee7f237872a142/AndroidManifest.xml:12:5-13:19
+MERGED from [com.mintegral.msdk:reward:10.2.41] /Users/xry/.gradle/caches/transforms-1/files-1.1/reward-10.2.41.aar/390d3a4d3f4feab4e32ca4ebabfb0c77/AndroidManifest.xml:12:5-13:19
+MERGED from [com.mintegral.msdk:reward:10.2.41] /Users/xry/.gradle/caches/transforms-1/files-1.1/reward-10.2.41.aar/390d3a4d3f4feab4e32ca4ebabfb0c77/AndroidManifest.xml:12:5-13:19
+MERGED from [com.mintegral.msdk:videocommon:10.2.41] /Users/xry/.gradle/caches/transforms-1/files-1.1/videocommon-10.2.41.aar/38da13274378d84079c32072d1ee8288/AndroidManifest.xml:12:5-13:19
+MERGED from [com.mintegral.msdk:videocommon:10.2.41] /Users/xry/.gradle/caches/transforms-1/files-1.1/videocommon-10.2.41.aar/38da13274378d84079c32072d1ee8288/AndroidManifest.xml:12:5-13:19
+MERGED from [com.mintegral.msdk:mtgdownloads:10.2.41] /Users/xry/.gradle/caches/transforms-1/files-1.1/mtgdownloads-10.2.41.aar/25dfe3d1d8f8d80a6b224f7943c2036d/AndroidManifest.xml:11:5-12:19
+MERGED from [com.mintegral.msdk:mtgdownloads:10.2.41] /Users/xry/.gradle/caches/transforms-1/files-1.1/mtgdownloads-10.2.41.aar/25dfe3d1d8f8d80a6b224f7943c2036d/AndroidManifest.xml:11:5-12:19
+MERGED from [com.mintegral.msdk:common:10.2.41] /Users/xry/.gradle/caches/transforms-1/files-1.1/common-10.2.41.aar/a304240e134472cf49dbf20bab8ad1c4/AndroidManifest.xml:12:5-13:19
+MERGED from [com.mintegral.msdk:common:10.2.41] /Users/xry/.gradle/caches/transforms-1/files-1.1/common-10.2.41.aar/a304240e134472cf49dbf20bab8ad1c4/AndroidManifest.xml:12:5-13:19
+MERGED from [com.mintegral.msdk:alphab:10.2.41] /Users/xry/.gradle/caches/transforms-1/files-1.1/alphab-10.2.41.aar/fe26d01cf02cb09b5c6112a9adfcbd99/AndroidManifest.xml:11:5-12:19
+MERGED from [com.mintegral.msdk:alphab:10.2.41] /Users/xry/.gradle/caches/transforms-1/files-1.1/alphab-10.2.41.aar/fe26d01cf02cb09b5c6112a9adfcbd99/AndroidManifest.xml:11:5-12:19
+MERGED from [com.mintegral.msdk:mtgnative:10.2.41] /Users/xry/.gradle/caches/transforms-1/files-1.1/mtgnative-10.2.41.aar/5806f825d7579d91b3cf86bc4dc3f019/AndroidManifest.xml:12:5-13:19
+MERGED from [com.mintegral.msdk:mtgnative:10.2.41] /Users/xry/.gradle/caches/transforms-1/files-1.1/mtgnative-10.2.41.aar/5806f825d7579d91b3cf86bc4dc3f019/AndroidManifest.xml:12:5-13:19
+MERGED from [com.mintegral.msdk:nativeex:10.2.41] /Users/xry/.gradle/caches/transforms-1/files-1.1/nativeex-10.2.41.aar/792d6e0961ccdbc1f4a85b933cb06de5/AndroidManifest.xml:12:5-13:19
+MERGED from [com.mintegral.msdk:nativeex:10.2.41] /Users/xry/.gradle/caches/transforms-1/files-1.1/nativeex-10.2.41.aar/792d6e0961ccdbc1f4a85b933cb06de5/AndroidManifest.xml:12:5-13:19
+MERGED from [com.mintegral.msdk:interstitial:10.2.41] /Users/xry/.gradle/caches/transforms-1/files-1.1/interstitial-10.2.41.aar/799ef1e057a0526916582f19dc6716b5/AndroidManifest.xml:12:5-13:19
+MERGED from [com.mintegral.msdk:interstitial:10.2.41] /Users/xry/.gradle/caches/transforms-1/files-1.1/interstitial-10.2.41.aar/799ef1e057a0526916582f19dc6716b5/AndroidManifest.xml:12:5-13:19
+MERGED from [:InmobiAdapter-7.4.3.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/InmobiAdapter-7.4.3.0.04231.aar/aa79c820f9898c1297af7e3190c4bb05/AndroidManifest.xml:12:5-34:19
+MERGED from [:InmobiAdapter-7.4.3.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/InmobiAdapter-7.4.3.0.04231.aar/aa79c820f9898c1297af7e3190c4bb05/AndroidManifest.xml:12:5-34:19
+MERGED from [com.android.support:support-compat:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/ca9759b853b7f5562b425cde1e55f67a/AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:support-compat:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/ca9759b853b7f5562b425cde1e55f67a/AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/80477a2d9edde74475953743774a97b9/AndroidManifest.xml:22:5-23:19
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/80477a2d9edde74475953743774a97b9/AndroidManifest.xml:22:5-23:19
+MERGED from [com.github.bumptech.glide:gifdecoder:4.5.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/gifdecoder-4.5.0.aar/c2df22b9009f12c1e2bcf6f16e1c977d/AndroidManifest.xml:9:5-20
+MERGED from [com.github.bumptech.glide:gifdecoder:4.5.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/gifdecoder-4.5.0.aar/c2df22b9009f12c1e2bcf6f16e1c977d/AndroidManifest.xml:9:5-20
+	android:appComponentFactory
+		ADDED from [com.android.support:support-compat:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/ca9759b853b7f5562b425cde1e55f67a/AndroidManifest.xml:22:18-91
+	android:supportsRtl
+		ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:29:9-35
+	android:label
+		ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:27:9-41
+	android:roundIcon
+		ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:28:9-47
+	android:icon
+		ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:26:9-42
+	android:allowBackup
+		ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:25:9-35
+	android:theme
+		ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:30:9-40
+	android:usesCleartextTraffic
+		ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:31:9-44
+	android:name
+		ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:24:9-42
+uses-library#org.apache.http.legacy
+ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:33:9-35:40
+	android:required
+		ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:35:13-37
+	android:name
+		ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:34:13-50
+activity#cn.admobiletop.adsuyidemo.activity.SplashAdActivity
+ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:47:9-56:20
+	android:screenOrientation
+		ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:49:13-49
+	android:theme
+		ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:50:13-42
+	android:name
+		ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:48:13-54
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:51:13-55:29
+action#android.intent.action.MAIN
+ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:52:17-69
+	android:name
+		ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:52:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:54:17-77
+	android:name
+		ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:54:27-74
+activity#cn.admobiletop.adsuyidemo.activity.MainActivity
+ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:58:9-61:52
+	android:screenOrientation
+		ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:61:13-49
+	android:launchMode
+		ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:60:13-44
+	android:name
+		ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:59:13-50
+activity#cn.admobiletop.adsuyidemo.activity.BannerAdActivity
+ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:63:9-66:52
+	android:screenOrientation
+		ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:66:13-49
+	android:label
+		ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:65:13-46
+	android:name
+		ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:64:13-54
+activity#cn.admobiletop.adsuyidemo.activity.RewardVodAdActivity
+ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:68:9-71:52
+	android:screenOrientation
+		ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:71:13-49
+	android:label
+		ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:70:13-50
+	android:name
+		ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:69:13-57
+activity#cn.admobiletop.adsuyidemo.activity.FullScreenVodAdActivity
+ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:73:9-76:52
+	android:screenOrientation
+		ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:76:13-49
+	android:label
+		ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:75:13-55
+	android:name
+		ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:74:13-61
+activity#cn.admobiletop.adsuyidemo.activity.InterstitialAdActivity
+ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:78:9-81:52
+	android:screenOrientation
+		ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:81:13-49
+	android:label
+		ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:80:13-52
+	android:name
+		ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:79:13-60
+activity#cn.admobiletop.adsuyidemo.activity.NativeAdActivity
+ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:83:9-87:52
+	android:screenOrientation
+		ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:87:13-49
+	android:label
+		ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:86:13-46
+	android:configChanges
+		ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:85:13-83
+	android:name
+		ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:84:13-54
+activity#cn.admobiletop.adsuyidemo.activity.DrawVodActivity
+ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:89:9-93:52
+	android:screenOrientation
+		ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:93:13-49
+	android:label
+		ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:92:13-48
+	android:configChanges
+		ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:91:13-83
+	android:name
+		ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:90:13-53
+activity#cn.admobiletop.adsuyidemo.activity.FragmentActivity
+ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:95:9-99:52
+	android:screenOrientation
+		ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:99:13-49
+	android:label
+		ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:98:13-54
+	android:configChanges
+		ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:97:13-83
+	android:name
+		ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:96:13-54
+activity#cn.admobiletop.adsuyidemo.activity.SettingActivity
+ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:101:9-104:52
+	android:screenOrientation
+		ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:104:13-49
+	android:label
+		ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:103:13-44
+	android:name
+		ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:102:13-53
+uses-sdk
+INJECTED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml
+INJECTED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml
+MERGED from [com.android.support:design:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/0e85b90a6a39f6845966fbd2ea67d272/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/0e85b90a6a39f6845966fbd2ea67d272/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/6c2445e681c8493e4b48fd25c6c0ae6f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/6c2445e681c8493e4b48fd25c6c0ae6f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/support-v4-28.0.0.aar/83109278351cd5b5b903e29f6eeb7c51/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/support-v4-28.0.0.aar/83109278351cd5b5b903e29f6eeb7c51/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/38e39621cfb3607fc3583c2440b66ffd/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/38e39621cfb3607fc3583c2440b66ffd/AndroidManifest.xml:5:5-7:41
+MERGED from [com.scwang.smartrefresh:SmartRefreshLayout:1.1.2] /Users/xry/.gradle/caches/transforms-1/files-1.1/SmartRefreshLayout-1.1.2.aar/421bb36a9e1566c57ef06b48d3969cff/AndroidManifest.xml:7:5-9:41
+MERGED from [com.scwang.smartrefresh:SmartRefreshLayout:1.1.2] /Users/xry/.gradle/caches/transforms-1/files-1.1/SmartRefreshLayout-1.1.2.aar/421bb36a9e1566c57ef06b48d3969cff/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.bumptech.glide:glide:4.5.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/glide-4.5.0.aar/d94c92e1f8073f801de35ba4ba5c481f/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.bumptech.glide:glide:4.5.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/glide-4.5.0.aar/d94c92e1f8073f801de35ba4ba5c481f/AndroidManifest.xml:7:5-9:41
+MERGED from [com.makeramen:roundedimageview:2.3.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/roundedimageview-2.3.0.aar/099bf888371802f5c05db4b3f2e3a457/AndroidManifest.xml:7:5-43
+MERGED from [com.makeramen:roundedimageview:2.3.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/roundedimageview-2.3.0.aar/099bf888371802f5c05db4b3f2e3a457/AndroidManifest.xml:7:5-43
+MERGED from [com.tencent.bugly:crashreport:3.1.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/crashreport-3.1.0.aar/54b6eeba3d91a1a4dd9656c805e83512/AndroidManifest.xml:5:5-7:41
+MERGED from [com.tencent.bugly:crashreport:3.1.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/crashreport-3.1.0.aar/54b6eeba3d91a1a4dd9656c805e83512/AndroidManifest.xml:5:5-7:41
+MERGED from [com.tencent.bugly:nativecrashreport:3.7.1] /Users/xry/.gradle/caches/transforms-1/files-1.1/nativecrashreport-3.7.1.aar/4efa229727e009402aaa6bb312a69a5b/AndroidManifest.xml:5:5-7:41
+MERGED from [com.tencent.bugly:nativecrashreport:3.7.1] /Users/xry/.gradle/caches/transforms-1/files-1.1/nativecrashreport-3.7.1.aar/4efa229727e009402aaa6bb312a69a5b/AndroidManifest.xml:5:5-7:41
+MERGED from [:ADSuyiCore-3.0.0.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/ADSuyiCore-3.0.0.0.04231.aar/8b49bbf6bc8cfb33b5095acf09801181/AndroidManifest.xml:7:5-9:41
+MERGED from [:ADSuyiCore-3.0.0.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/ADSuyiCore-3.0.0.0.04231.aar/8b49bbf6bc8cfb33b5095acf09801181/AndroidManifest.xml:7:5-9:41
+MERGED from [:AdmobileAdapter-4.5.1.0.04261:] /Users/xry/.gradle/caches/transforms-1/files-1.1/AdmobileAdapter-4.5.1.0.04261.aar/395bfe18d6fd356affd9566f467e7ae6/AndroidManifest.xml:7:5-9:41
+MERGED from [:AdmobileAdapter-4.5.1.0.04261:] /Users/xry/.gradle/caches/transforms-1/files-1.1/AdmobileAdapter-4.5.1.0.04261.aar/395bfe18d6fd356affd9566f467e7ae6/AndroidManifest.xml:7:5-9:41
+MERGED from [cn.admobiletop.adsuyi.ad.third:admobile:4.5.1] /Users/xry/.gradle/caches/transforms-1/files-1.1/admobile-4.5.1.aar/72eda18b0a5a12a6d8ec0ce6d669fbbd/AndroidManifest.xml:7:5-9:41
+MERGED from [cn.admobiletop.adsuyi.ad.third:admobile:4.5.1] /Users/xry/.gradle/caches/transforms-1/files-1.1/admobile-4.5.1.aar/72eda18b0a5a12a6d8ec0ce6d669fbbd/AndroidManifest.xml:7:5-9:41
+MERGED from [:GdtAdapter-4.191.1061.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/GdtAdapter-4.191.1061.0.04231.aar/806dedbf0d9835692a8e64f4e988a262/AndroidManifest.xml:7:5-9:41
+MERGED from [:GdtAdapter-4.191.1061.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/GdtAdapter-4.191.1061.0.04231.aar/806dedbf0d9835692a8e64f4e988a262/AndroidManifest.xml:7:5-9:41
+MERGED from [cn.admobiletop.adsuyi.ad.third:gdt:4.191.1061] /Users/xry/.gradle/caches/transforms-1/files-1.1/gdt-4.191.1061.aar/559c3b3a888b6e20738f3f54d7e95056/AndroidManifest.xml:7:5-9:41
+MERGED from [cn.admobiletop.adsuyi.ad.third:gdt:4.191.1061] /Users/xry/.gradle/caches/transforms-1/files-1.1/gdt-4.191.1061.aar/559c3b3a888b6e20738f3f54d7e95056/AndroidManifest.xml:7:5-9:41
+MERGED from [:ToutiaoAdapter-2.8.0.3.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/ToutiaoAdapter-2.8.0.3.04231.aar/9e6d004cf1980afa010566302e3969e8/AndroidManifest.xml:7:5-9:41
+MERGED from [:ToutiaoAdapter-2.8.0.3.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/ToutiaoAdapter-2.8.0.3.04231.aar/9e6d004cf1980afa010566302e3969e8/AndroidManifest.xml:7:5-9:41
+MERGED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:8:5-11:591
+MERGED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:8:5-11:591
+MERGED from [:BaiduAdapter-5.85.0.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/BaiduAdapter-5.85.0.0.04231.aar/c41cca1da54e9de9b092737bfc7ded98/AndroidManifest.xml:8:5-10:41
+MERGED from [:BaiduAdapter-5.85.0.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/BaiduAdapter-5.85.0.0.04231.aar/c41cca1da54e9de9b092737bfc7ded98/AndroidManifest.xml:8:5-10:41
+MERGED from [cn.admobiletop.adsuyi.ad.third:baidu:5.85] /Users/xry/.gradle/caches/transforms-1/files-1.1/baidu-5.85.aar/7fccb590c6a5273dbd0d81371e31154b/AndroidManifest.xml:7:5-9:41
+MERGED from [cn.admobiletop.adsuyi.ad.third:baidu:5.85] /Users/xry/.gradle/caches/transforms-1/files-1.1/baidu-5.85.aar/7fccb590c6a5273dbd0d81371e31154b/AndroidManifest.xml:7:5-9:41
+MERGED from [:MintegralAdapter-10.2.41.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/MintegralAdapter-10.2.41.0.04231.aar/59c6d979293b8d1dd4e3367546a8108e/AndroidManifest.xml:7:5-9:41
+MERGED from [:MintegralAdapter-10.2.41.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/MintegralAdapter-10.2.41.0.04231.aar/59c6d979293b8d1dd4e3367546a8108e/AndroidManifest.xml:7:5-9:41
+MERGED from [com.mintegral.msdk:videojs:10.2.41] /Users/xry/.gradle/caches/transforms-1/files-1.1/videojs-10.2.41.aar/94eee95d48b0528ec76be83903b5961a/AndroidManifest.xml:7:5-9:41
+MERGED from [com.mintegral.msdk:videojs:10.2.41] /Users/xry/.gradle/caches/transforms-1/files-1.1/videojs-10.2.41.aar/94eee95d48b0528ec76be83903b5961a/AndroidManifest.xml:7:5-9:41
+MERGED from [com.mintegral.msdk:mtgjscommon:10.2.41] /Users/xry/.gradle/caches/transforms-1/files-1.1/mtgjscommon-10.2.41.aar/1dd250d2a5094e81a680c3723e625954/AndroidManifest.xml:7:5-9:41
+MERGED from [com.mintegral.msdk:mtgjscommon:10.2.41] /Users/xry/.gradle/caches/transforms-1/files-1.1/mtgjscommon-10.2.41.aar/1dd250d2a5094e81a680c3723e625954/AndroidManifest.xml:7:5-9:41
+MERGED from [com.mintegral.msdk:playercommon:10.2.41] /Users/xry/.gradle/caches/transforms-1/files-1.1/playercommon-10.2.41.aar/22dffaa26308c813e8ee7f237872a142/AndroidManifest.xml:8:5-10:41
+MERGED from [com.mintegral.msdk:playercommon:10.2.41] /Users/xry/.gradle/caches/transforms-1/files-1.1/playercommon-10.2.41.aar/22dffaa26308c813e8ee7f237872a142/AndroidManifest.xml:8:5-10:41
+MERGED from [com.mintegral.msdk:reward:10.2.41] /Users/xry/.gradle/caches/transforms-1/files-1.1/reward-10.2.41.aar/390d3a4d3f4feab4e32ca4ebabfb0c77/AndroidManifest.xml:8:5-10:41
+MERGED from [com.mintegral.msdk:reward:10.2.41] /Users/xry/.gradle/caches/transforms-1/files-1.1/reward-10.2.41.aar/390d3a4d3f4feab4e32ca4ebabfb0c77/AndroidManifest.xml:8:5-10:41
+MERGED from [com.mintegral.msdk:videocommon:10.2.41] /Users/xry/.gradle/caches/transforms-1/files-1.1/videocommon-10.2.41.aar/38da13274378d84079c32072d1ee8288/AndroidManifest.xml:8:5-10:41
+MERGED from [com.mintegral.msdk:videocommon:10.2.41] /Users/xry/.gradle/caches/transforms-1/files-1.1/videocommon-10.2.41.aar/38da13274378d84079c32072d1ee8288/AndroidManifest.xml:8:5-10:41
+MERGED from [com.mintegral.msdk:mtgdownloads:10.2.41] /Users/xry/.gradle/caches/transforms-1/files-1.1/mtgdownloads-10.2.41.aar/25dfe3d1d8f8d80a6b224f7943c2036d/AndroidManifest.xml:7:5-9:41
+MERGED from [com.mintegral.msdk:mtgdownloads:10.2.41] /Users/xry/.gradle/caches/transforms-1/files-1.1/mtgdownloads-10.2.41.aar/25dfe3d1d8f8d80a6b224f7943c2036d/AndroidManifest.xml:7:5-9:41
+MERGED from [com.mintegral.msdk:optimizedata:10.2.41] /Users/xry/.gradle/caches/transforms-1/files-1.1/optimizedata-10.2.41.aar/382a7a0ec66f19be53ac36ad2afdc490/AndroidManifest.xml:7:5-9:41
+MERGED from [com.mintegral.msdk:optimizedata:10.2.41] /Users/xry/.gradle/caches/transforms-1/files-1.1/optimizedata-10.2.41.aar/382a7a0ec66f19be53ac36ad2afdc490/AndroidManifest.xml:7:5-9:41
+MERGED from [com.mintegral.msdk:common:10.2.41] /Users/xry/.gradle/caches/transforms-1/files-1.1/common-10.2.41.aar/a304240e134472cf49dbf20bab8ad1c4/AndroidManifest.xml:8:5-10:41
+MERGED from [com.mintegral.msdk:common:10.2.41] /Users/xry/.gradle/caches/transforms-1/files-1.1/common-10.2.41.aar/a304240e134472cf49dbf20bab8ad1c4/AndroidManifest.xml:8:5-10:41
+MERGED from [com.mintegral.msdk:alphab:10.2.41] /Users/xry/.gradle/caches/transforms-1/files-1.1/alphab-10.2.41.aar/fe26d01cf02cb09b5c6112a9adfcbd99/AndroidManifest.xml:7:5-9:41
+MERGED from [com.mintegral.msdk:alphab:10.2.41] /Users/xry/.gradle/caches/transforms-1/files-1.1/alphab-10.2.41.aar/fe26d01cf02cb09b5c6112a9adfcbd99/AndroidManifest.xml:7:5-9:41
+MERGED from [com.mintegral.msdk:interstitialvideo:10.2.41] /Users/xry/.gradle/caches/transforms-1/files-1.1/interstitialvideo-10.2.41.aar/ac94a03aef1e34a87104fdaf008b672b/AndroidManifest.xml:7:5-9:41
+MERGED from [com.mintegral.msdk:interstitialvideo:10.2.41] /Users/xry/.gradle/caches/transforms-1/files-1.1/interstitialvideo-10.2.41.aar/ac94a03aef1e34a87104fdaf008b672b/AndroidManifest.xml:7:5-9:41
+MERGED from [com.mintegral.msdk:mtgnative:10.2.41] /Users/xry/.gradle/caches/transforms-1/files-1.1/mtgnative-10.2.41.aar/5806f825d7579d91b3cf86bc4dc3f019/AndroidManifest.xml:8:5-10:41
+MERGED from [com.mintegral.msdk:mtgnative:10.2.41] /Users/xry/.gradle/caches/transforms-1/files-1.1/mtgnative-10.2.41.aar/5806f825d7579d91b3cf86bc4dc3f019/AndroidManifest.xml:8:5-10:41
+MERGED from [com.mintegral.msdk:nativeex:10.2.41] /Users/xry/.gradle/caches/transforms-1/files-1.1/nativeex-10.2.41.aar/792d6e0961ccdbc1f4a85b933cb06de5/AndroidManifest.xml:8:5-10:41
+MERGED from [com.mintegral.msdk:nativeex:10.2.41] /Users/xry/.gradle/caches/transforms-1/files-1.1/nativeex-10.2.41.aar/792d6e0961ccdbc1f4a85b933cb06de5/AndroidManifest.xml:8:5-10:41
+MERGED from [com.mintegral.msdk:interstitial:10.2.41] /Users/xry/.gradle/caches/transforms-1/files-1.1/interstitial-10.2.41.aar/799ef1e057a0526916582f19dc6716b5/AndroidManifest.xml:8:5-10:41
+MERGED from [com.mintegral.msdk:interstitial:10.2.41] /Users/xry/.gradle/caches/transforms-1/files-1.1/interstitial-10.2.41.aar/799ef1e057a0526916582f19dc6716b5/AndroidManifest.xml:8:5-10:41
+MERGED from [com.mintegral.msdk:mtgbanner:10.2.41] /Users/xry/.gradle/caches/transforms-1/files-1.1/mtgbanner-10.2.41.aar/ebbea3aed2f727374115255987b63260/AndroidManifest.xml:7:5-9:41
+MERGED from [com.mintegral.msdk:mtgbanner:10.2.41] /Users/xry/.gradle/caches/transforms-1/files-1.1/mtgbanner-10.2.41.aar/ebbea3aed2f727374115255987b63260/AndroidManifest.xml:7:5-9:41
+MERGED from [:InmobiAdapter-7.4.3.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/InmobiAdapter-7.4.3.0.04231.aar/aa79c820f9898c1297af7e3190c4bb05/AndroidManifest.xml:8:5-10:41
+MERGED from [:InmobiAdapter-7.4.3.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/InmobiAdapter-7.4.3.0.04231.aar/aa79c820f9898c1297af7e3190c4bb05/AndroidManifest.xml:8:5-10:41
+MERGED from [cn.admobiletop.adsuyi.ad.third:inmobi:7.4.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/inmobi-7.4.3.aar/f0cba13c80e34855bac92bcd217b7aad/AndroidManifest.xml:7:5-9:41
+MERGED from [cn.admobiletop.adsuyi.ad.third:inmobi:7.4.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/inmobi-7.4.3.aar/f0cba13c80e34855bac92bcd217b7aad/AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-28.0.0.aar/71284d84b0290c61fdaaf7d90c21fc7a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-28.0.0.aar/71284d84b0290c61fdaaf7d90c21fc7a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-28.0.0.aar/e6156c7efacfecd3765ecc4b0efd72db/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-28.0.0.aar/e6156c7efacfecd3765ecc4b0efd72db/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0.aar/0288c0a141ae1ef4e3a490eae33edb77/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0.aar/0288c0a141ae1ef4e3a490eae33edb77/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/support-core-ui-28.0.0.aar/ab724894c8b711f9bebc01948476abd5/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/support-core-ui-28.0.0.aar/ab724894c8b711f9bebc01948476abd5/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/support-core-utils-28.0.0.aar/398e17466c317332a26c627ed1e250d5/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/support-core-utils-28.0.0.aar/398e17466c317332a26c627ed1e250d5/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-28.0.0.aar/4ffb8e6c7351d6be1e818c09ad076f60/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-28.0.0.aar/4ffb8e6c7351d6be1e818c09ad076f60/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/support-media-compat-28.0.0.aar/bbde1e5e6bb208564ad618882a2efc35/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/support-media-compat-28.0.0.aar/bbde1e5e6bb208564ad618882a2efc35/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/transition-28.0.0.aar/df7ac9172bf5743b650ea487c6971221/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/transition-28.0.0.aar/df7ac9172bf5743b650ea487c6971221/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/loader-28.0.0.aar/a96c47bf61bfaca0f12e917056b47e1b/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/loader-28.0.0.aar/a96c47bf61bfaca0f12e917056b47e1b/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/viewpager-28.0.0.aar/56e5eb0ae430cc2d90bbd66006972d61/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/viewpager-28.0.0.aar/56e5eb0ae430cc2d90bbd66006972d61/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-28.0.0.aar/34d59c485ab199355935e0d4551f9f77/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-28.0.0.aar/34d59c485ab199355935e0d4551f9f77/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/drawerlayout-28.0.0.aar/7e8a7cbffdd1c058fb421b395540b348/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/drawerlayout-28.0.0.aar/7e8a7cbffdd1c058fb421b395540b348/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-28.0.0.aar/c78fec7af89dca53dc780593136788b9/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-28.0.0.aar/c78fec7af89dca53dc780593136788b9/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/customview-28.0.0.aar/58607d1d1fd36825fbd1b4c7c6b03458/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/customview-28.0.0.aar/58607d1d1fd36825fbd1b4c7c6b03458/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-28.0.0.aar/b0962740eb8b1faf4ee28e4b5d519b90/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-28.0.0.aar/b0962740eb8b1faf4ee28e4b5d519b90/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-28.0.0.aar/877e92746fc15dcf3f72fedf66ff8e11/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-28.0.0.aar/877e92746fc15dcf3f72fedf66ff8e11/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/ca9759b853b7f5562b425cde1e55f67a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/ca9759b853b7f5562b425cde1e55f67a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/80477a2d9edde74475953743774a97b9/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/80477a2d9edde74475953743774a97b9/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/cursoradapter-28.0.0.aar/42cd75087d31d586b82aa23bf1b0fdc2/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/cursoradapter-28.0.0.aar/42cd75087d31d586b82aa23bf1b0fdc2/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/cardview-v7-28.0.0.aar/374f7c1ebaf1035ce32b1138976f53a3/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/cardview-v7-28.0.0.aar/374f7c1ebaf1035ce32b1138976f53a3/AndroidManifest.xml:20:5-44
+MERGED from [com.github.bumptech.glide:gifdecoder:4.5.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/gifdecoder-4.5.0.aar/c2df22b9009f12c1e2bcf6f16e1c977d/AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.bumptech.glide:gifdecoder:4.5.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/gifdecoder-4.5.0.aar/c2df22b9009f12c1e2bcf6f16e1c977d/AndroidManifest.xml:5:5-7:41
+MERGED from [android.arch.lifecycle:runtime:1.1.1] /Users/xry/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/800a126164c1988a1c2d363b8f97e3cb/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] /Users/xry/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/800a126164c1988a1c2d363b8f97e3cb/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/documentfile-28.0.0.aar/90f8cd87dcbcb2a0055a1247e8b4080f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/documentfile-28.0.0.aar/90f8cd87dcbcb2a0055a1247e8b4080f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-28.0.0.aar/24e308d451db4410642264afc3b10217/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-28.0.0.aar/24e308d451db4410642264afc3b10217/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/print-28.0.0.aar/778a3099c50af6a3d7ead6a8119cffd8/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/print-28.0.0.aar/778a3099c50af6a3d7ead6a8119cffd8/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0.aar/edd5df0c177e5556bdccba8f9c46c96a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] /Users/xry/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0.aar/edd5df0c177e5556bdccba8f9c46c96a/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] /Users/xry/.gradle/caches/transforms-1/files-1.1/livedata-1.1.1.aar/f3ac9db5d944c987de0aacb65cffd7cf/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] /Users/xry/.gradle/caches/transforms-1/files-1.1/livedata-1.1.1.aar/f3ac9db5d944c987de0aacb65cffd7cf/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/xry/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.1.aar/0bf92a24f0aac8eebce96dad7b371ab6/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/xry/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.1.aar/0bf92a24f0aac8eebce96dad7b371ab6/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] /Users/xry/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/f95c5fdef4b4019c55d1e50102883299/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] /Users/xry/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/f95c5fdef4b4019c55d1e50102883299/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /Users/xry/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.1.aar/da5d9fb4dd4c54e37c50429b2afcc87a/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /Users/xry/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.1.aar/da5d9fb4dd4c54e37c50429b2afcc87a/AndroidManifest.xml:20:5-44
+INJECTED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml
+INJECTED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml
+	tools:overrideLibrary
+		ADDED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:11:9-588
+	android:targetSdkVersion
+		INJECTED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:42:13-44:61
+	android:resource
+		ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:44:17-58
+	android:name
+		ADDED from /Users/xry/AndroidProjects/Admobile/ADSuyiSdkDemo-Android/app/src/main/AndroidManifest.xml:43:17-67
+uses-permission#com.asus.msa.SupplementaryDID.ACCESS
+ADDED from [:msa_mdid_1.0.13:] /Users/xry/.gradle/caches/transforms-1/files-1.1/msa_mdid_1.0.13.aar/03a94cd1a264ecd95c1868e7ec5fdbf1/AndroidManifest.xml:8:5-76
+	android:name
+		ADDED from [:msa_mdid_1.0.13:] /Users/xry/.gradle/caches/transforms-1/files-1.1/msa_mdid_1.0.13.aar/03a94cd1a264ecd95c1868e7ec5fdbf1/AndroidManifest.xml:8:22-73
+activity#admsdk.library.activity.AdDetailActivity
+ADDED from [cn.admobiletop.adsuyi.ad.third:admobile:4.5.1] /Users/xry/.gradle/caches/transforms-1/files-1.1/admobile-4.5.1.aar/72eda18b0a5a12a6d8ec0ce6d669fbbd/AndroidManifest.xml:18:9-20:86
+	android:configChanges
+		ADDED from [cn.admobiletop.adsuyi.ad.third:admobile:4.5.1] /Users/xry/.gradle/caches/transforms-1/files-1.1/admobile-4.5.1.aar/72eda18b0a5a12a6d8ec0ce6d669fbbd/AndroidManifest.xml:20:13-83
+	android:name
+		ADDED from [cn.admobiletop.adsuyi.ad.third:admobile:4.5.1] /Users/xry/.gradle/caches/transforms-1/files-1.1/admobile-4.5.1.aar/72eda18b0a5a12a6d8ec0ce6d669fbbd/AndroidManifest.xml:19:13-68
+activity#admsdk.library.activity.AdmobileRewardVodActivity
+ADDED from [cn.admobiletop.adsuyi.ad.third:admobile:4.5.1] /Users/xry/.gradle/caches/transforms-1/files-1.1/admobile-4.5.1.aar/72eda18b0a5a12a6d8ec0ce6d669fbbd/AndroidManifest.xml:21:9-25:69
+	android:screenOrientation
+		ADDED from [cn.admobiletop.adsuyi.ad.third:admobile:4.5.1] /Users/xry/.gradle/caches/transforms-1/files-1.1/admobile-4.5.1.aar/72eda18b0a5a12a6d8ec0ce6d669fbbd/AndroidManifest.xml:24:13-49
+	android:configChanges
+		ADDED from [cn.admobiletop.adsuyi.ad.third:admobile:4.5.1] /Users/xry/.gradle/caches/transforms-1/files-1.1/admobile-4.5.1.aar/72eda18b0a5a12a6d8ec0ce6d669fbbd/AndroidManifest.xml:23:13-83
+	android:theme
+		ADDED from [cn.admobiletop.adsuyi.ad.third:admobile:4.5.1] /Users/xry/.gradle/caches/transforms-1/files-1.1/admobile-4.5.1.aar/72eda18b0a5a12a6d8ec0ce6d669fbbd/AndroidManifest.xml:25:13-66
+	android:name
+		ADDED from [cn.admobiletop.adsuyi.ad.third:admobile:4.5.1] /Users/xry/.gradle/caches/transforms-1/files-1.1/admobile-4.5.1.aar/72eda18b0a5a12a6d8ec0ce6d669fbbd/AndroidManifest.xml:22:13-77
+activity#admsdk.library.activity.AdmobileLandscapeRewardVodActivity
+ADDED from [cn.admobiletop.adsuyi.ad.third:admobile:4.5.1] /Users/xry/.gradle/caches/transforms-1/files-1.1/admobile-4.5.1.aar/72eda18b0a5a12a6d8ec0ce6d669fbbd/AndroidManifest.xml:26:9-30:69
+	android:screenOrientation
+		ADDED from [cn.admobiletop.adsuyi.ad.third:admobile:4.5.1] /Users/xry/.gradle/caches/transforms-1/files-1.1/admobile-4.5.1.aar/72eda18b0a5a12a6d8ec0ce6d669fbbd/AndroidManifest.xml:29:13-50
+	android:configChanges
+		ADDED from [cn.admobiletop.adsuyi.ad.third:admobile:4.5.1] /Users/xry/.gradle/caches/transforms-1/files-1.1/admobile-4.5.1.aar/72eda18b0a5a12a6d8ec0ce6d669fbbd/AndroidManifest.xml:28:13-83
+	android:theme
+		ADDED from [cn.admobiletop.adsuyi.ad.third:admobile:4.5.1] /Users/xry/.gradle/caches/transforms-1/files-1.1/admobile-4.5.1.aar/72eda18b0a5a12a6d8ec0ce6d669fbbd/AndroidManifest.xml:30:13-66
+	android:name
+		ADDED from [cn.admobiletop.adsuyi.ad.third:admobile:4.5.1] /Users/xry/.gradle/caches/transforms-1/files-1.1/admobile-4.5.1.aar/72eda18b0a5a12a6d8ec0ce6d669fbbd/AndroidManifest.xml:27:13-86
+activity#admsdk.library.activity.AdmobileFullScreenVodActivity
+ADDED from [cn.admobiletop.adsuyi.ad.third:admobile:4.5.1] /Users/xry/.gradle/caches/transforms-1/files-1.1/admobile-4.5.1.aar/72eda18b0a5a12a6d8ec0ce6d669fbbd/AndroidManifest.xml:31:9-35:69
+	android:screenOrientation
+		ADDED from [cn.admobiletop.adsuyi.ad.third:admobile:4.5.1] /Users/xry/.gradle/caches/transforms-1/files-1.1/admobile-4.5.1.aar/72eda18b0a5a12a6d8ec0ce6d669fbbd/AndroidManifest.xml:34:13-49
+	android:configChanges
+		ADDED from [cn.admobiletop.adsuyi.ad.third:admobile:4.5.1] /Users/xry/.gradle/caches/transforms-1/files-1.1/admobile-4.5.1.aar/72eda18b0a5a12a6d8ec0ce6d669fbbd/AndroidManifest.xml:33:13-83
+	android:theme
+		ADDED from [cn.admobiletop.adsuyi.ad.third:admobile:4.5.1] /Users/xry/.gradle/caches/transforms-1/files-1.1/admobile-4.5.1.aar/72eda18b0a5a12a6d8ec0ce6d669fbbd/AndroidManifest.xml:35:13-66
+	android:name
+		ADDED from [cn.admobiletop.adsuyi.ad.third:admobile:4.5.1] /Users/xry/.gradle/caches/transforms-1/files-1.1/admobile-4.5.1.aar/72eda18b0a5a12a6d8ec0ce6d669fbbd/AndroidManifest.xml:32:13-81
+activity#admsdk.library.activity.AdmobileLandscapeFullScreenVodActivity
+ADDED from [cn.admobiletop.adsuyi.ad.third:admobile:4.5.1] /Users/xry/.gradle/caches/transforms-1/files-1.1/admobile-4.5.1.aar/72eda18b0a5a12a6d8ec0ce6d669fbbd/AndroidManifest.xml:36:9-40:69
+	android:screenOrientation
+		ADDED from [cn.admobiletop.adsuyi.ad.third:admobile:4.5.1] /Users/xry/.gradle/caches/transforms-1/files-1.1/admobile-4.5.1.aar/72eda18b0a5a12a6d8ec0ce6d669fbbd/AndroidManifest.xml:39:13-50
+	android:configChanges
+		ADDED from [cn.admobiletop.adsuyi.ad.third:admobile:4.5.1] /Users/xry/.gradle/caches/transforms-1/files-1.1/admobile-4.5.1.aar/72eda18b0a5a12a6d8ec0ce6d669fbbd/AndroidManifest.xml:38:13-83
+	android:theme
+		ADDED from [cn.admobiletop.adsuyi.ad.third:admobile:4.5.1] /Users/xry/.gradle/caches/transforms-1/files-1.1/admobile-4.5.1.aar/72eda18b0a5a12a6d8ec0ce6d669fbbd/AndroidManifest.xml:40:13-66
+	android:name
+		ADDED from [cn.admobiletop.adsuyi.ad.third:admobile:4.5.1] /Users/xry/.gradle/caches/transforms-1/files-1.1/admobile-4.5.1.aar/72eda18b0a5a12a6d8ec0ce6d669fbbd/AndroidManifest.xml:37:13-90
+provider#admsdk.library.provider.AdmAdFileProvider
+ADDED from [cn.admobiletop.adsuyi.ad.third:admobile:4.5.1] /Users/xry/.gradle/caches/transforms-1/files-1.1/admobile-4.5.1.aar/72eda18b0a5a12a6d8ec0ce6d669fbbd/AndroidManifest.xml:42:9-52:20
+	android:grantUriPermissions
+		ADDED from [cn.admobiletop.adsuyi.ad.third:admobile:4.5.1] /Users/xry/.gradle/caches/transforms-1/files-1.1/admobile-4.5.1.aar/72eda18b0a5a12a6d8ec0ce6d669fbbd/AndroidManifest.xml:46:13-47
+	android:authorities
+		ADDED from [cn.admobiletop.adsuyi.ad.third:admobile:4.5.1] /Users/xry/.gradle/caches/transforms-1/files-1.1/admobile-4.5.1.aar/72eda18b0a5a12a6d8ec0ce6d669fbbd/AndroidManifest.xml:44:13-70
+	android:exported
+		ADDED from [cn.admobiletop.adsuyi.ad.third:admobile:4.5.1] /Users/xry/.gradle/caches/transforms-1/files-1.1/admobile-4.5.1.aar/72eda18b0a5a12a6d8ec0ce6d669fbbd/AndroidManifest.xml:45:13-37
+	android:name
+		ADDED from [cn.admobiletop.adsuyi.ad.third:admobile:4.5.1] /Users/xry/.gradle/caches/transforms-1/files-1.1/admobile-4.5.1.aar/72eda18b0a5a12a6d8ec0ce6d669fbbd/AndroidManifest.xml:43:13-69
+provider#cn.admobiletop.adsuyi.adapter.gdt.provider.GdtFileProvider
+ADDED from [:GdtAdapter-4.191.1061.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/GdtAdapter-4.191.1061.0.04231.aar/806dedbf0d9835692a8e64f4e988a262/AndroidManifest.xml:14:9-22:20
+	android:grantUriPermissions
+		ADDED from [:GdtAdapter-4.191.1061.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/GdtAdapter-4.191.1061.0.04231.aar/806dedbf0d9835692a8e64f4e988a262/AndroidManifest.xml:18:13-47
+	android:authorities
+		ADDED from [:GdtAdapter-4.191.1061.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/GdtAdapter-4.191.1061.0.04231.aar/806dedbf0d9835692a8e64f4e988a262/AndroidManifest.xml:16:13-64
+	android:exported
+		ADDED from [:GdtAdapter-4.191.1061.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/GdtAdapter-4.191.1061.0.04231.aar/806dedbf0d9835692a8e64f4e988a262/AndroidManifest.xml:17:13-37
+	android:name
+		ADDED from [:GdtAdapter-4.191.1061.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/GdtAdapter-4.191.1061.0.04231.aar/806dedbf0d9835692a8e64f4e988a262/AndroidManifest.xml:15:13-86
+service#com.qq.e.comm.DownloadService
+ADDED from [cn.admobiletop.adsuyi.ad.third:gdt:4.191.1061] /Users/xry/.gradle/caches/transforms-1/files-1.1/gdt-4.191.1061.aar/559c3b3a888b6e20738f3f54d7e95056/AndroidManifest.xml:19:9-22:43
+	android:multiprocess
+		ADDED from [cn.admobiletop.adsuyi.ad.third:gdt:4.191.1061] /Users/xry/.gradle/caches/transforms-1/files-1.1/gdt-4.191.1061.aar/559c3b3a888b6e20738f3f54d7e95056/AndroidManifest.xml:22:13-40
+	android:exported
+		ADDED from [cn.admobiletop.adsuyi.ad.third:gdt:4.191.1061] /Users/xry/.gradle/caches/transforms-1/files-1.1/gdt-4.191.1061.aar/559c3b3a888b6e20738f3f54d7e95056/AndroidManifest.xml:21:13-37
+	android:name
+		ADDED from [cn.admobiletop.adsuyi.ad.third:gdt:4.191.1061] /Users/xry/.gradle/caches/transforms-1/files-1.1/gdt-4.191.1061.aar/559c3b3a888b6e20738f3f54d7e95056/AndroidManifest.xml:20:13-57
+activity#com.qq.e.ads.ADActivity
+ADDED from [cn.admobiletop.adsuyi.ad.third:gdt:4.191.1061] /Users/xry/.gradle/caches/transforms-1/files-1.1/gdt-4.191.1061.aar/559c3b3a888b6e20738f3f54d7e95056/AndroidManifest.xml:23:9-26:43
+	android:multiprocess
+		ADDED from [cn.admobiletop.adsuyi.ad.third:gdt:4.191.1061] /Users/xry/.gradle/caches/transforms-1/files-1.1/gdt-4.191.1061.aar/559c3b3a888b6e20738f3f54d7e95056/AndroidManifest.xml:26:13-40
+	android:configChanges
+		ADDED from [cn.admobiletop.adsuyi.ad.third:gdt:4.191.1061] /Users/xry/.gradle/caches/transforms-1/files-1.1/gdt-4.191.1061.aar/559c3b3a888b6e20738f3f54d7e95056/AndroidManifest.xml:25:13-83
+	android:name
+		ADDED from [cn.admobiletop.adsuyi.ad.third:gdt:4.191.1061] /Users/xry/.gradle/caches/transforms-1/files-1.1/gdt-4.191.1061.aar/559c3b3a888b6e20738f3f54d7e95056/AndroidManifest.xml:24:13-51
+activity#com.qq.e.ads.PortraitADActivity
+ADDED from [cn.admobiletop.adsuyi.ad.third:gdt:4.191.1061] /Users/xry/.gradle/caches/transforms-1/files-1.1/gdt-4.191.1061.aar/559c3b3a888b6e20738f3f54d7e95056/AndroidManifest.xml:27:9-31:52
+	android:screenOrientation
+		ADDED from [cn.admobiletop.adsuyi.ad.third:gdt:4.191.1061] /Users/xry/.gradle/caches/transforms-1/files-1.1/gdt-4.191.1061.aar/559c3b3a888b6e20738f3f54d7e95056/AndroidManifest.xml:31:13-49
+	android:multiprocess
+		ADDED from [cn.admobiletop.adsuyi.ad.third:gdt:4.191.1061] /Users/xry/.gradle/caches/transforms-1/files-1.1/gdt-4.191.1061.aar/559c3b3a888b6e20738f3f54d7e95056/AndroidManifest.xml:30:13-40
+	android:configChanges
+		ADDED from [cn.admobiletop.adsuyi.ad.third:gdt:4.191.1061] /Users/xry/.gradle/caches/transforms-1/files-1.1/gdt-4.191.1061.aar/559c3b3a888b6e20738f3f54d7e95056/AndroidManifest.xml:29:13-83
+	android:name
+		ADDED from [cn.admobiletop.adsuyi.ad.third:gdt:4.191.1061] /Users/xry/.gradle/caches/transforms-1/files-1.1/gdt-4.191.1061.aar/559c3b3a888b6e20738f3f54d7e95056/AndroidManifest.xml:28:13-59
+activity#com.qq.e.ads.LandscapeADActivity
+ADDED from [cn.admobiletop.adsuyi.ad.third:gdt:4.191.1061] /Users/xry/.gradle/caches/transforms-1/files-1.1/gdt-4.191.1061.aar/559c3b3a888b6e20738f3f54d7e95056/AndroidManifest.xml:32:9-36:53
+	android:screenOrientation
+		ADDED from [cn.admobiletop.adsuyi.ad.third:gdt:4.191.1061] /Users/xry/.gradle/caches/transforms-1/files-1.1/gdt-4.191.1061.aar/559c3b3a888b6e20738f3f54d7e95056/AndroidManifest.xml:36:13-50
+	android:multiprocess
+		ADDED from [cn.admobiletop.adsuyi.ad.third:gdt:4.191.1061] /Users/xry/.gradle/caches/transforms-1/files-1.1/gdt-4.191.1061.aar/559c3b3a888b6e20738f3f54d7e95056/AndroidManifest.xml:35:13-40
+	android:configChanges
+		ADDED from [cn.admobiletop.adsuyi.ad.third:gdt:4.191.1061] /Users/xry/.gradle/caches/transforms-1/files-1.1/gdt-4.191.1061.aar/559c3b3a888b6e20738f3f54d7e95056/AndroidManifest.xml:34:13-83
+	android:name
+		ADDED from [cn.admobiletop.adsuyi.ad.third:gdt:4.191.1061] /Users/xry/.gradle/caches/transforms-1/files-1.1/gdt-4.191.1061.aar/559c3b3a888b6e20738f3f54d7e95056/AndroidManifest.xml:33:13-60
+activity#com.qq.e.ads.RewardvideoPortraitADActivity
+ADDED from [cn.admobiletop.adsuyi.ad.third:gdt:4.191.1061] /Users/xry/.gradle/caches/transforms-1/files-1.1/gdt-4.191.1061.aar/559c3b3a888b6e20738f3f54d7e95056/AndroidManifest.xml:37:9-41:64
+	android:multiprocess
+		ADDED from [cn.admobiletop.adsuyi.ad.third:gdt:4.191.1061] /Users/xry/.gradle/caches/transforms-1/files-1.1/gdt-4.191.1061.aar/559c3b3a888b6e20738f3f54d7e95056/AndroidManifest.xml:40:13-40
+	android:configChanges
+		ADDED from [cn.admobiletop.adsuyi.ad.third:gdt:4.191.1061] /Users/xry/.gradle/caches/transforms-1/files-1.1/gdt-4.191.1061.aar/559c3b3a888b6e20738f3f54d7e95056/AndroidManifest.xml:39:13-83
+	android:theme
+		ADDED from [cn.admobiletop.adsuyi.ad.third:gdt:4.191.1061] /Users/xry/.gradle/caches/transforms-1/files-1.1/gdt-4.191.1061.aar/559c3b3a888b6e20738f3f54d7e95056/AndroidManifest.xml:41:13-61
+	android:name
+		ADDED from [cn.admobiletop.adsuyi.ad.third:gdt:4.191.1061] /Users/xry/.gradle/caches/transforms-1/files-1.1/gdt-4.191.1061.aar/559c3b3a888b6e20738f3f54d7e95056/AndroidManifest.xml:38:13-70
+activity#com.qq.e.ads.RewardvideoLandscapeADActivity
+ADDED from [cn.admobiletop.adsuyi.ad.third:gdt:4.191.1061] /Users/xry/.gradle/caches/transforms-1/files-1.1/gdt-4.191.1061.aar/559c3b3a888b6e20738f3f54d7e95056/AndroidManifest.xml:42:9-46:64
+	android:multiprocess
+		ADDED from [cn.admobiletop.adsuyi.ad.third:gdt:4.191.1061] /Users/xry/.gradle/caches/transforms-1/files-1.1/gdt-4.191.1061.aar/559c3b3a888b6e20738f3f54d7e95056/AndroidManifest.xml:45:13-40
+	android:configChanges
+		ADDED from [cn.admobiletop.adsuyi.ad.third:gdt:4.191.1061] /Users/xry/.gradle/caches/transforms-1/files-1.1/gdt-4.191.1061.aar/559c3b3a888b6e20738f3f54d7e95056/AndroidManifest.xml:44:13-83
+	android:theme
+		ADDED from [cn.admobiletop.adsuyi.ad.third:gdt:4.191.1061] /Users/xry/.gradle/caches/transforms-1/files-1.1/gdt-4.191.1061.aar/559c3b3a888b6e20738f3f54d7e95056/AndroidManifest.xml:46:13-61
+	android:name
+		ADDED from [cn.admobiletop.adsuyi.ad.third:gdt:4.191.1061] /Users/xry/.gradle/caches/transforms-1/files-1.1/gdt-4.191.1061.aar/559c3b3a888b6e20738f3f54d7e95056/AndroidManifest.xml:43:13-71
+provider#com.bytedance.sdk.openadsdk.TTFileProvider
+ADDED from [:ToutiaoAdapter-2.8.0.3.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/ToutiaoAdapter-2.8.0.3.04231.aar/9e6d004cf1980afa010566302e3969e8/AndroidManifest.xml:12:9-20:20
+	android:grantUriPermissions
+		ADDED from [:ToutiaoAdapter-2.8.0.3.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/ToutiaoAdapter-2.8.0.3.04231.aar/9e6d004cf1980afa010566302e3969e8/AndroidManifest.xml:16:13-47
+	android:authorities
+		ADDED from [:ToutiaoAdapter-2.8.0.3.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/ToutiaoAdapter-2.8.0.3.04231.aar/9e6d004cf1980afa010566302e3969e8/AndroidManifest.xml:14:13-66
+	android:exported
+		ADDED from [:ToutiaoAdapter-2.8.0.3.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/ToutiaoAdapter-2.8.0.3.04231.aar/9e6d004cf1980afa010566302e3969e8/AndroidManifest.xml:15:13-37
+	android:name
+		ADDED from [:ToutiaoAdapter-2.8.0.3.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/ToutiaoAdapter-2.8.0.3.04231.aar/9e6d004cf1980afa010566302e3969e8/AndroidManifest.xml:13:13-70
+provider#com.bytedance.sdk.openadsdk.multipro.TTMultiProvider
+ADDED from [:ToutiaoAdapter-2.8.0.3.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/ToutiaoAdapter-2.8.0.3.04231.aar/9e6d004cf1980afa010566302e3969e8/AndroidManifest.xml:21:9-24:40
+	android:authorities
+		ADDED from [:ToutiaoAdapter-2.8.0.3.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/ToutiaoAdapter-2.8.0.3.04231.aar/9e6d004cf1980afa010566302e3969e8/AndroidManifest.xml:23:13-67
+	android:exported
+		ADDED from [:ToutiaoAdapter-2.8.0.3.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/ToutiaoAdapter-2.8.0.3.04231.aar/9e6d004cf1980afa010566302e3969e8/AndroidManifest.xml:24:13-37
+	android:name
+		ADDED from [:ToutiaoAdapter-2.8.0.3.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/ToutiaoAdapter-2.8.0.3.04231.aar/9e6d004cf1980afa010566302e3969e8/AndroidManifest.xml:22:13-80
+android:uses-permission#android.permission.READ_EXTERNAL_STORAGE
+MERGED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:16:5-88
+service#com.ss.android.socialbase.downloader.notification.DownloadNotificationService
+ADDED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:25:9-113
+	android:name
+		ADDED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:25:18-110
+service#com.ss.android.socialbase.downloader.downloader.DownloadService
+ADDED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:26:9-99
+	android:name
+		ADDED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:26:18-96
+service#com.ss.android.socialbase.downloader.downloader.IndependentProcessDownloadService
+ADDED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:27:9-33:19
+	android:process
+		ADDED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:29:13-42
+	android:name
+		ADDED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:28:13-109
+intent-filter#action:name:com.ss.android.socialbase.downloader.remote
+ADDED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:30:13-32:29
+action#com.ss.android.socialbase.downloader.remote
+ADDED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:31:17-86
+	android:name
+		ADDED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:31:25-83
+service#com.ss.android.socialbase.downloader.impls.DownloadHandleService
+ADDED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:34:9-100
+	android:name
+		ADDED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:34:18-97
+service#com.ss.android.socialbase.appdownloader.DownloadHandlerService
+ADDED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:42:9-98
+	android:name
+		ADDED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:42:18-95
+activity#com.ss.android.socialbase.appdownloader.view.DownloadSizeLimitActivity
+ADDED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:58:9-61:59
+	android:launchMode
+		ADDED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:60:13-44
+	android:theme
+		ADDED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:61:13-56
+	android:name
+		ADDED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:59:13-98
+activity#com.ss.android.socialbase.appdownloader.view.DownloadTaskDeleteActivity
+ADDED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:62:9-65:59
+	android:launchMode
+		ADDED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:64:13-44
+	android:theme
+		ADDED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:65:13-56
+	android:name
+		ADDED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:63:13-99
+activity#com.ss.android.downloadlib.activity.TTDelegateActivity
+ADDED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:66:9-69:75
+	android:launchMode
+		ADDED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:68:13-44
+	android:theme
+		ADDED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:69:13-72
+	android:name
+		ADDED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:67:13-82
+receiver#com.ss.android.downloadlib.core.download.DownloadReceiver
+ADDED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:71:9-94
+	android:name
+		ADDED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:71:19-91
+activity#com.bytedance.sdk.openadsdk.activity.TTLandingPageActivity
+ADDED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:72:9-75:45
+	android:launchMode
+		ADDED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:75:13-42
+	android:configChanges
+		ADDED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:74:13-74
+	android:name
+		ADDED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:73:13-86
+activity#com.bytedance.sdk.openadsdk.activity.TTPlayableLandingPageActivity
+ADDED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:76:9-79:45
+	android:launchMode
+		ADDED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:79:13-42
+	android:configChanges
+		ADDED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:78:13-74
+	android:name
+		ADDED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:77:13-94
+activity#com.bytedance.sdk.openadsdk.activity.TTVideoLandingPageActivity
+ADDED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:80:9-83:45
+	android:launchMode
+		ADDED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:83:13-42
+	android:configChanges
+		ADDED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:82:13-74
+	android:name
+		ADDED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:81:13-91
+activity#com.bytedance.sdk.openadsdk.activity.TTRewardVideoActivity
+ADDED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:84:9-87:45
+	android:launchMode
+		ADDED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:87:13-42
+	android:configChanges
+		ADDED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:86:13-74
+	android:name
+		ADDED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:85:13-86
+activity#com.bytedance.sdk.openadsdk.activity.TTRewardExpressVideoActivity
+ADDED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:88:9-91:45
+	android:launchMode
+		ADDED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:91:13-42
+	android:configChanges
+		ADDED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:90:13-74
+	android:name
+		ADDED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:89:13-93
+activity#com.bytedance.sdk.openadsdk.activity.TTFullScreenVideoActivity
+ADDED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:92:9-95:45
+	android:launchMode
+		ADDED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:95:13-42
+	android:configChanges
+		ADDED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:94:13-74
+	android:name
+		ADDED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:93:13-90
+activity#com.bytedance.sdk.openadsdk.activity.TTFullScreenExpressVideoActivity
+ADDED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:96:9-99:45
+	android:launchMode
+		ADDED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:99:13-42
+	android:configChanges
+		ADDED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:98:13-74
+	android:name
+		ADDED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:97:13-97
+activity#com.bytedance.sdk.openadsdk.activity.TTDelegateActivity
+ADDED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:100:9-103:75
+	android:launchMode
+		ADDED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:102:13-44
+	android:theme
+		ADDED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:103:13-72
+	android:name
+		ADDED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:101:13-83
+service#com.bytedance.sdk.openadsdk.multipro.aidl.BinderPoolService
+ADDED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:105:9-95
+	android:name
+		ADDED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:105:18-92
+receiver#com.bytedance.embedapplog.collector.Collector
+ADDED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:107:9-110:39
+	android:enabled
+		ADDED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:109:13-35
+	android:exported
+		ADDED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:110:13-36
+	android:name
+		ADDED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:108:13-73
+service#com.bytedance.tea.crash.upload.CrashUploadService
+ADDED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:112:9-114:39
+	android:process
+		ADDED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:114:13-36
+	android:name
+		ADDED from [cn.admobiletop.adsuyi.ad.third:toutiao:2.8.0.3] /Users/xry/.gradle/caches/transforms-1/files-1.1/toutiao-2.8.0.3.aar/ba838e0c3b4a06a1b1576ce9350f6190/AndroidManifest.xml:113:13-77
+activity#com.baidu.mobads.AppActivity
+ADDED from [:BaiduAdapter-5.85.0.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/BaiduAdapter-5.85.0.0.04231.aar/c41cca1da54e9de9b092737bfc7ded98/AndroidManifest.xml:13:9-16:69
+	android:configChanges
+		ADDED from [:BaiduAdapter-5.85.0.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/BaiduAdapter-5.85.0.0.04231.aar/c41cca1da54e9de9b092737bfc7ded98/AndroidManifest.xml:15:13-83
+	android:theme
+		ADDED from [:BaiduAdapter-5.85.0.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/BaiduAdapter-5.85.0.0.04231.aar/c41cca1da54e9de9b092737bfc7ded98/AndroidManifest.xml:16:13-66
+	android:name
+		ADDED from [:BaiduAdapter-5.85.0.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/BaiduAdapter-5.85.0.0.04231.aar/c41cca1da54e9de9b092737bfc7ded98/AndroidManifest.xml:14:13-56
+provider#com.baidu.mobads.openad.BdFileProvider
+ADDED from [:BaiduAdapter-5.85.0.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/BaiduAdapter-5.85.0.0.04231.aar/c41cca1da54e9de9b092737bfc7ded98/AndroidManifest.xml:18:9-26:20
+	android:grantUriPermissions
+		ADDED from [:BaiduAdapter-5.85.0.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/BaiduAdapter-5.85.0.0.04231.aar/c41cca1da54e9de9b092737bfc7ded98/AndroidManifest.xml:22:13-47
+	android:authorities
+		ADDED from [:BaiduAdapter-5.85.0.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/BaiduAdapter-5.85.0.0.04231.aar/c41cca1da54e9de9b092737bfc7ded98/AndroidManifest.xml:20:13-64
+	android:exported
+		ADDED from [:BaiduAdapter-5.85.0.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/BaiduAdapter-5.85.0.0.04231.aar/c41cca1da54e9de9b092737bfc7ded98/AndroidManifest.xml:21:13-37
+	android:name
+		ADDED from [:BaiduAdapter-5.85.0.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/BaiduAdapter-5.85.0.0.04231.aar/c41cca1da54e9de9b092737bfc7ded98/AndroidManifest.xml:19:13-66
+activity#com.baidu.mobads.production.rewardvideo.MobRewardVideoActivity
+ADDED from [cn.admobiletop.adsuyi.ad.third:baidu:5.85] /Users/xry/.gradle/caches/transforms-1/files-1.1/baidu-5.85.aar/7fccb590c6a5273dbd0d81371e31154b/AndroidManifest.xml:12:9-17:20
+	android:launchMode
+		ADDED from [cn.admobiletop.adsuyi.ad.third:baidu:5.85] /Users/xry/.gradle/caches/transforms-1/files-1.1/baidu-5.85.aar/7fccb590c6a5273dbd0d81371e31154b/AndroidManifest.xml:15:13-44
+	android:configChanges
+		ADDED from [cn.admobiletop.adsuyi.ad.third:baidu:5.85] /Users/xry/.gradle/caches/transforms-1/files-1.1/baidu-5.85.aar/7fccb590c6a5273dbd0d81371e31154b/AndroidManifest.xml:14:13-74
+	android:theme
+		ADDED from [cn.admobiletop.adsuyi.ad.third:baidu:5.85] /Users/xry/.gradle/caches/transforms-1/files-1.1/baidu-5.85.aar/7fccb590c6a5273dbd0d81371e31154b/AndroidManifest.xml:16:13-72
+	android:name
+		ADDED from [cn.admobiletop.adsuyi.ad.third:baidu:5.85] /Users/xry/.gradle/caches/transforms-1/files-1.1/baidu-5.85.aar/7fccb590c6a5273dbd0d81371e31154b/AndroidManifest.xml:13:13-90
+activity#com.mintegral.msdk.activity.MTGCommonActivity
+ADDED from [:MintegralAdapter-10.2.41.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/MintegralAdapter-10.2.41.0.04231.aar/59c6d979293b8d1dd4e3367546a8108e/AndroidManifest.xml:12:9-17:75
+	android:screenOrientation
+		ADDED from [:MintegralAdapter-10.2.41.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/MintegralAdapter-10.2.41.0.04231.aar/59c6d979293b8d1dd4e3367546a8108e/AndroidManifest.xml:16:13-49
+	android:exported
+		ADDED from [:MintegralAdapter-10.2.41.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/MintegralAdapter-10.2.41.0.04231.aar/59c6d979293b8d1dd4e3367546a8108e/AndroidManifest.xml:15:13-37
+	android:configChanges
+		ADDED from [:MintegralAdapter-10.2.41.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/MintegralAdapter-10.2.41.0.04231.aar/59c6d979293b8d1dd4e3367546a8108e/AndroidManifest.xml:14:13-57
+	android:theme
+		ADDED from [:MintegralAdapter-10.2.41.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/MintegralAdapter-10.2.41.0.04231.aar/59c6d979293b8d1dd4e3367546a8108e/AndroidManifest.xml:17:13-72
+	android:name
+		ADDED from [:MintegralAdapter-10.2.41.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/MintegralAdapter-10.2.41.0.04231.aar/59c6d979293b8d1dd4e3367546a8108e/AndroidManifest.xml:13:13-73
+activity#com.mintegral.msdk.reward.player.MTGRewardVideoActivity
+ADDED from [:MintegralAdapter-10.2.41.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/MintegralAdapter-10.2.41.0.04231.aar/59c6d979293b8d1dd4e3367546a8108e/AndroidManifest.xml:18:9-22:74
+	android:hardwareAccelerated
+		ADDED from [:MintegralAdapter-10.2.41.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/MintegralAdapter-10.2.41.0.04231.aar/59c6d979293b8d1dd4e3367546a8108e/AndroidManifest.xml:21:13-47
+	android:configChanges
+		ADDED from [:MintegralAdapter-10.2.41.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/MintegralAdapter-10.2.41.0.04231.aar/59c6d979293b8d1dd4e3367546a8108e/AndroidManifest.xml:20:13-74
+	android:theme
+		ADDED from [:MintegralAdapter-10.2.41.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/MintegralAdapter-10.2.41.0.04231.aar/59c6d979293b8d1dd4e3367546a8108e/AndroidManifest.xml:22:13-71
+	android:name
+		ADDED from [:MintegralAdapter-10.2.41.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/MintegralAdapter-10.2.41.0.04231.aar/59c6d979293b8d1dd4e3367546a8108e/AndroidManifest.xml:19:13-83
+activity#com.mintegral.msdk.interstitial.view.MTGInterstitialActivity
+ADDED from [:MintegralAdapter-10.2.41.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/MintegralAdapter-10.2.41.0.04231.aar/59c6d979293b8d1dd4e3367546a8108e/AndroidManifest.xml:23:9-27:52
+	android:screenOrientation
+		ADDED from [:MintegralAdapter-10.2.41.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/MintegralAdapter-10.2.41.0.04231.aar/59c6d979293b8d1dd4e3367546a8108e/AndroidManifest.xml:27:13-49
+	android:exported
+		ADDED from [:MintegralAdapter-10.2.41.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/MintegralAdapter-10.2.41.0.04231.aar/59c6d979293b8d1dd4e3367546a8108e/AndroidManifest.xml:26:13-37
+	android:configChanges
+		ADDED from [:MintegralAdapter-10.2.41.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/MintegralAdapter-10.2.41.0.04231.aar/59c6d979293b8d1dd4e3367546a8108e/AndroidManifest.xml:25:13-59
+	android:name
+		ADDED from [:MintegralAdapter-10.2.41.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/MintegralAdapter-10.2.41.0.04231.aar/59c6d979293b8d1dd4e3367546a8108e/AndroidManifest.xml:24:13-88
+provider#com.mintegral.msdk.base.utils.MTGFileProvider
+ADDED from [:MintegralAdapter-10.2.41.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/MintegralAdapter-10.2.41.0.04231.aar/59c6d979293b8d1dd4e3367546a8108e/AndroidManifest.xml:29:9-37:20
+	android:grantUriPermissions
+		ADDED from [:MintegralAdapter-10.2.41.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/MintegralAdapter-10.2.41.0.04231.aar/59c6d979293b8d1dd4e3367546a8108e/AndroidManifest.xml:33:13-47
+	android:authorities
+		ADDED from [:MintegralAdapter-10.2.41.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/MintegralAdapter-10.2.41.0.04231.aar/59c6d979293b8d1dd4e3367546a8108e/AndroidManifest.xml:31:13-67
+	android:exported
+		ADDED from [:MintegralAdapter-10.2.41.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/MintegralAdapter-10.2.41.0.04231.aar/59c6d979293b8d1dd4e3367546a8108e/AndroidManifest.xml:32:13-37
+	android:name
+		ADDED from [:MintegralAdapter-10.2.41.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/MintegralAdapter-10.2.41.0.04231.aar/59c6d979293b8d1dd4e3367546a8108e/AndroidManifest.xml:30:13-73
+receiver#com.mintegral.msdk.click.AppReceiver
+ADDED from [:MintegralAdapter-10.2.41.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/MintegralAdapter-10.2.41.0.04231.aar/59c6d979293b8d1dd4e3367546a8108e/AndroidManifest.xml:39:9-45:20
+	android:name
+		ADDED from [:MintegralAdapter-10.2.41.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/MintegralAdapter-10.2.41.0.04231.aar/59c6d979293b8d1dd4e3367546a8108e/AndroidManifest.xml:39:19-70
+intent-filter#action:name:android.intent.action.PACKAGE_ADDED+data:scheme:package
+ADDED from [:MintegralAdapter-10.2.41.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/MintegralAdapter-10.2.41.0.04231.aar/59c6d979293b8d1dd4e3367546a8108e/AndroidManifest.xml:40:13-44:29
+action#android.intent.action.PACKAGE_ADDED
+ADDED from [:MintegralAdapter-10.2.41.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/MintegralAdapter-10.2.41.0.04231.aar/59c6d979293b8d1dd4e3367546a8108e/AndroidManifest.xml:41:17-78
+	android:name
+		ADDED from [:MintegralAdapter-10.2.41.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/MintegralAdapter-10.2.41.0.04231.aar/59c6d979293b8d1dd4e3367546a8108e/AndroidManifest.xml:41:25-75
+data
+ADDED from [:MintegralAdapter-10.2.41.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/MintegralAdapter-10.2.41.0.04231.aar/59c6d979293b8d1dd4e3367546a8108e/AndroidManifest.xml:43:17-50
+	android:scheme
+		ADDED from [:MintegralAdapter-10.2.41.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/MintegralAdapter-10.2.41.0.04231.aar/59c6d979293b8d1dd4e3367546a8108e/AndroidManifest.xml:43:23-47
+service#com.mintegral.msdk.shell.MTGService
+ADDED from [:MintegralAdapter-10.2.41.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/MintegralAdapter-10.2.41.0.04231.aar/59c6d979293b8d1dd4e3367546a8108e/AndroidManifest.xml:47:9-51:19
+	android:name
+		ADDED from [:MintegralAdapter-10.2.41.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/MintegralAdapter-10.2.41.0.04231.aar/59c6d979293b8d1dd4e3367546a8108e/AndroidManifest.xml:47:18-68
+intent-filter#action:name:com.mintegral.msdk.download.action
+ADDED from [:MintegralAdapter-10.2.41.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/MintegralAdapter-10.2.41.0.04231.aar/59c6d979293b8d1dd4e3367546a8108e/AndroidManifest.xml:48:13-50:29
+action#com.mintegral.msdk.download.action
+ADDED from [:MintegralAdapter-10.2.41.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/MintegralAdapter-10.2.41.0.04231.aar/59c6d979293b8d1dd4e3367546a8108e/AndroidManifest.xml:49:17-77
+	android:name
+		ADDED from [:MintegralAdapter-10.2.41.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/MintegralAdapter-10.2.41.0.04231.aar/59c6d979293b8d1dd4e3367546a8108e/AndroidManifest.xml:49:25-74
+activity#com.inmobi.rendering.InMobiAdActivity
+ADDED from [:InmobiAdapter-7.4.3.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/InmobiAdapter-7.4.3.0.04231.aar/aa79c820f9898c1297af7e3190c4bb05/AndroidManifest.xml:13:9-19:46
+	android:hardwareAccelerated
+		ADDED from [:InmobiAdapter-7.4.3.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/InmobiAdapter-7.4.3.0.04231.aar/aa79c820f9898c1297af7e3190c4bb05/AndroidManifest.xml:16:13-47
+	android:resizeableActivity
+		ADDED from [:InmobiAdapter-7.4.3.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/InmobiAdapter-7.4.3.0.04231.aar/aa79c820f9898c1297af7e3190c4bb05/AndroidManifest.xml:17:13-47
+	tools:ignore
+		ADDED from [:InmobiAdapter-7.4.3.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/InmobiAdapter-7.4.3.0.04231.aar/aa79c820f9898c1297af7e3190c4bb05/AndroidManifest.xml:19:13-43
+	android:configChanges
+		ADDED from [:InmobiAdapter-7.4.3.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/InmobiAdapter-7.4.3.0.04231.aar/aa79c820f9898c1297af7e3190c4bb05/AndroidManifest.xml:15:13-115
+	android:theme
+		ADDED from [:InmobiAdapter-7.4.3.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/InmobiAdapter-7.4.3.0.04231.aar/aa79c820f9898c1297af7e3190c4bb05/AndroidManifest.xml:18:13-60
+	android:name
+		ADDED from [:InmobiAdapter-7.4.3.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/InmobiAdapter-7.4.3.0.04231.aar/aa79c820f9898c1297af7e3190c4bb05/AndroidManifest.xml:14:13-65
+service#com.inmobi.ads.ApkDownloader$ApkDownloadService
+ADDED from [:InmobiAdapter-7.4.3.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/InmobiAdapter-7.4.3.0.04231.aar/aa79c820f9898c1297af7e3190c4bb05/AndroidManifest.xml:21:9-23:38
+	android:enabled
+		ADDED from [:InmobiAdapter-7.4.3.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/InmobiAdapter-7.4.3.0.04231.aar/aa79c820f9898c1297af7e3190c4bb05/AndroidManifest.xml:23:13-35
+	android:name
+		ADDED from [:InmobiAdapter-7.4.3.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/InmobiAdapter-7.4.3.0.04231.aar/aa79c820f9898c1297af7e3190c4bb05/AndroidManifest.xml:22:13-75
+provider#cn.admobiletop.adsuyi.adapter.inmobi.provider.InmobiFileProvider
+ADDED from [:InmobiAdapter-7.4.3.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/InmobiAdapter-7.4.3.0.04231.aar/aa79c820f9898c1297af7e3190c4bb05/AndroidManifest.xml:25:9-33:20
+	android:grantUriPermissions
+		ADDED from [:InmobiAdapter-7.4.3.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/InmobiAdapter-7.4.3.0.04231.aar/aa79c820f9898c1297af7e3190c4bb05/AndroidManifest.xml:29:13-47
+	android:authorities
+		ADDED from [:InmobiAdapter-7.4.3.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/InmobiAdapter-7.4.3.0.04231.aar/aa79c820f9898c1297af7e3190c4bb05/AndroidManifest.xml:27:13-64
+	android:exported
+		ADDED from [:InmobiAdapter-7.4.3.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/InmobiAdapter-7.4.3.0.04231.aar/aa79c820f9898c1297af7e3190c4bb05/AndroidManifest.xml:28:13-37
+	android:name
+		ADDED from [:InmobiAdapter-7.4.3.0.04231:] /Users/xry/.gradle/caches/transforms-1/files-1.1/InmobiAdapter-7.4.3.0.04231.aar/aa79c820f9898c1297af7e3190c4bb05/AndroidManifest.xml:26:13-92
