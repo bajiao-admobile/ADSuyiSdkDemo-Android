@@ -6,8 +6,8 @@ android {
         applicationId "cn.admobiletop.adsuyidemo"
         minSdkVersion 19
         targetSdkVersion 29
-        versionCode 20200427
-        versionName "1.9"
+        versionCode 202004281
+        versionName "1.10"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         ndk {
             // 设置支持的SO库架构
@@ -82,6 +82,6 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral-alpha:10.2.41.0.04271'
 
     // InmobiAdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:inmobi-alpha:7.4.3.0.04271'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:inmobi-alpha:7.4.3.0.04281'
     implementation 'com.squareup.picasso:picasso:2.5.2'
 }

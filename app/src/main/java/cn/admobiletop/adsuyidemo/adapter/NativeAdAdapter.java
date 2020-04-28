@@ -235,6 +235,9 @@ public class NativeAdAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         }
     }
 
+    /**
+     * 设置视频监听，无需求可不设置，视频监听回调因平台差异会有所不一，如：某些平台可能没有完成回调等
+     */
     private static void setVideoListener(ADSuyiNativeAdInfo nativeAdInfo) {
         if (nativeAdInfo.isVideo()) {
             // 设置视频监听，监听回调因三方平台SDK差异有所差异，无需要可不设置
