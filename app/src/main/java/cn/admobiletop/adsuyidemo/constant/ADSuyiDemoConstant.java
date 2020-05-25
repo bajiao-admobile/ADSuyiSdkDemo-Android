@@ -53,6 +53,7 @@ public class ADSuyiDemoConstant {
      * 信息流广告位仅支持的平台
      */
     public static String NATIVE_AD_ONLY_SUPPORT_PLATFORM = null;
+    public static boolean NATIVE_AD_PLAY_WITH_MUTE = true;
 
     /**
      * 激励视频广告位ID，竖版

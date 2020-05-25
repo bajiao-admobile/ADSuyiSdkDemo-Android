@@ -1,6 +1,7 @@
 package cn.admobiletop.adsuyidemo.adapter;
 
 import android.content.Context;
+import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -18,6 +19,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import cn.admobiletop.adsuyi.ad.data.ADSuyiNativeAdInfo;
+import cn.admobiletop.adsuyi.ad.data.ADSuyiNativeExpressAdInfo;
+import cn.admobiletop.adsuyi.ad.data.ADSuyiNativeFeedAdInfo;
 import cn.admobiletop.adsuyi.ad.error.ADSuyiError;
 import cn.admobiletop.adsuyi.ad.listener.ADSuyiNativeVideoListener;
 import cn.admobiletop.adsuyi.util.ADSuyiAdUtil;
@@ -37,13 +40,17 @@ public class NativeAdAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
      */
     private static final int ITEM_VIEW_TYPE_NORMAL_DATA = 0;
     /**
-     * 信息流原生广告类型
+     * 信息流原生广告类型（没有MediaView）
      */
     private static final int ITEM_VIEW_TYPE_NATIVE_AD = 1;
     /**
+     * 信息流原生广告类型（包含MediaView）
+     */
+    private static final int ITEM_VIEW_TYPE_NATIVE_AD_HAS_MEDIA_VIEW = 2;
+    /**
      * 信息流模板广告类型
      */
-    private static final int ITEM_VIEW_TYPE_EXPRESS_AD = 2;
+    private static final int ITEM_VIEW_TYPE_EXPRESS_AD = 3;
     private final Context context;
 
     private List<NativeAdSampleData> dataList = new ArrayList<>();
@@ -58,6 +65,8 @@ public class NativeAdAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         switch (itemViewType) {
             case ITEM_VIEW_TYPE_NATIVE_AD:
                 return new NativeAdViewHolder(viewGroup);
+            case ITEM_VIEW_TYPE_NATIVE_AD_HAS_MEDIA_VIEW:
+                return new NativeAdMediaViewHolder(viewGroup);
             case ITEM_VIEW_TYPE_EXPRESS_AD:
                 return new NativeExpressAdViewHolder(viewGroup);
             default:
@@ -70,10 +79,11 @@ public class NativeAdAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         NativeAdSampleData nativeAdSampleData = dataList.get(position);
         if (viewHolder instanceof NormalDataViewHolder) {
             ((NormalDataViewHolder) viewHolder).setData(nativeAdSampleData.getNormalData());
-        } else if (viewHolder instanceof NativeAdViewHolder) {
-            ((NativeAdViewHolder) viewHolder).setData(context, nativeAdSampleData.getNativeAdInfo());
+        } else if (viewHolder instanceof BaseNativeAdViewHolder) {
+            // NativeAdViewHolder or NativeAdMediaViewHolder
+            ((BaseNativeAdViewHolder) viewHolder).setData(context, (ADSuyiNativeFeedAdInfo) nativeAdSampleData.getNativeAdInfo());
         } else if (viewHolder instanceof NativeExpressAdViewHolder) {
-            ((NativeExpressAdViewHolder) viewHolder).setData(nativeAdSampleData.getNativeAdInfo());
+            ((NativeExpressAdViewHolder) viewHolder).setData((ADSuyiNativeExpressAdInfo) nativeAdSampleData.getNativeAdInfo());
         }
     }
 
@@ -84,13 +94,16 @@ public class NativeAdAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
     @Override
     public int getItemViewType(int position) {
-        NativeAdSampleData nativeAdSampleData = dataList.get(position);
-        if (nativeAdSampleData.getNativeAdInfo() == null) {
+        ADSuyiNativeAdInfo nativeAdInfo = dataList.get(position).getNativeAdInfo();
+        if (nativeAdInfo == null) {
             return ITEM_VIEW_TYPE_NORMAL_DATA;
-        } else if (nativeAdSampleData.getNativeAdInfo().isNativeExpress()) {
+        } else if (nativeAdInfo.isNativeExpress()) {
+            // nativeAdInfo instanceof ADSuyiNativeExpressAdInfo
             return ITEM_VIEW_TYPE_EXPRESS_AD;
         } else {
-            return ITEM_VIEW_TYPE_NATIVE_AD;
+            // nativeAdInfo instanceof ADSuyiNativeFeedAdInfo
+            ADSuyiNativeFeedAdInfo nativeFeedAdInfo = (ADSuyiNativeFeedAdInfo) nativeAdInfo;
+            return nativeFeedAdInfo.hasMediaView() ? ITEM_VIEW_TYPE_NATIVE_AD_HAS_MEDIA_VIEW : ITEM_VIEW_TYPE_NATIVE_AD;
         }
     }
 
@@ -140,7 +153,7 @@ public class NativeAdAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
         private final TextView tvNormalData;
 
-        public NormalDataViewHolder(@NonNull ViewGroup viewGroup) {
+        NormalDataViewHolder(@NonNull ViewGroup viewGroup) {
             super(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_native_ad_normal_data, viewGroup, false));
             tvNormalData = itemView.findViewById(R.id.tvNormalData);
         }
@@ -151,13 +164,48 @@ public class NativeAdAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     }
 
     /**
-     * 信息流原生广告ViewHolder
+     * 包含MediaView的ViewHolder
      */
-    private static class NativeAdViewHolder extends RecyclerView.ViewHolder {
-
-        private final ImageView ivImage;
-        private final ImageView ivIcon;
+    private static class NativeAdMediaViewHolder extends BaseNativeAdViewHolder {
         private final FrameLayout flMediaContainer;
+
+        NativeAdMediaViewHolder(@NonNull ViewGroup viewGroup) {
+            super(viewGroup, R.layout.item_native_ad_native_ad_media);
+            flMediaContainer = itemView.findViewById(R.id.flMediaContainer);
+        }
+
+        @Override
+        protected void setImageOrMediaData(Context context, ADSuyiNativeFeedAdInfo nativeFeedAdInfo) {
+            // 当前信息流原生广告，获取的是多媒体视图（可能是视频、或者图片之类的），mediaView不为空时强烈建议进行展示
+            View mediaView = nativeFeedAdInfo.getMediaView(flMediaContainer);
+            // 将广告视图添加到容器中的便捷方法，mediaView为空会移除flMediaContainer的所有子View
+            ADSuyiViewUtil.addAdViewToAdContainer(flMediaContainer, mediaView);
+        }
+    }
+
+    /**
+     * 没有MediaView的ViewHolder
+     */
+    private static class NativeAdViewHolder extends BaseNativeAdViewHolder {
+        private final ImageView ivImage;
+
+        NativeAdViewHolder(@NonNull ViewGroup viewGroup) {
+            super(viewGroup, R.layout.item_native_ad_native_ad);
+            ivImage = itemView.findViewById(R.id.ivImage);
+        }
+
+        @Override
+        protected void setImageOrMediaData(Context context, ADSuyiNativeFeedAdInfo nativeFeedAdInfo) {
+            Glide.with(context).load(nativeFeedAdInfo.getImageUrl()).into(ivImage);
+        }
+    }
+
+    /**
+     * 信息流原生广告BaseViewHolder
+     */
+    private static abstract class BaseNativeAdViewHolder extends RecyclerView.ViewHolder {
+
+        private final ImageView ivIcon;
         private final RelativeLayout rlAdContainer;
         private final ImageView ivAdTarget;
         private final TextView tvTitle;
@@ -165,12 +213,10 @@ public class NativeAdAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         private final TextView tvAdType;
         private final ImageView ivClose;
 
-        public NativeAdViewHolder(@NonNull ViewGroup viewGroup) {
-            super(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_native_ad_native_ad, viewGroup, false));
-            ivImage = itemView.findViewById(R.id.ivImage);
+        BaseNativeAdViewHolder(@NonNull ViewGroup viewGroup, @LayoutRes int layoutRes) {
+            super(LayoutInflater.from(viewGroup.getContext()).inflate(layoutRes, viewGroup, false));
             rlAdContainer = itemView.findViewById(R.id.rlAdContainer);
             ivIcon = itemView.findViewById(R.id.ivIcon);
-            flMediaContainer = itemView.findViewById(R.id.flMediaContainer);
             ivAdTarget = itemView.findViewById(R.id.ivAdTarget);
             tvTitle = itemView.findViewById(R.id.tvTitle);
             tvDesc = itemView.findViewById(R.id.tvDesc);
@@ -178,37 +224,36 @@ public class NativeAdAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             ivClose = itemView.findViewById(R.id.ivClose);
         }
 
-        public void setData(Context context, ADSuyiNativeAdInfo nativeAdInfo) {
+        void setData(Context context, ADSuyiNativeFeedAdInfo nativeFeedAdInfo) {
             // 判断广告Info对象是否被释放（调用过ADSuyiNativeAd的release()或ADSuyiNativeAdInfo的release()会释放广告Info对象）
             // 释放后的广告Info对象不能再次使用
-            if (!ADSuyiAdUtil.adInfoIsRelease(nativeAdInfo)) {
-                NativeAdAdapter.setVideoListener(nativeAdInfo);
+            if (!ADSuyiAdUtil.adInfoIsRelease(nativeFeedAdInfo)) {
+                NativeAdAdapter.setVideoListener(nativeFeedAdInfo);
 
-                // 当前信息流原生广告，获取的是多媒体视图（可能是视频、或者图片之类的）
-                View mediaView = nativeAdInfo.getMediaView(flMediaContainer);
-                // 将广告视图添加到容器中的便捷方法
-                ADSuyiViewUtil.addAdViewToAdContainer(flMediaContainer, mediaView);
+                // 交由子类实现加载图片还是MediaView
+                setImageOrMediaData(context, nativeFeedAdInfo);
 
-                Glide.with(context).load(nativeAdInfo.getIconUrl()).into(ivIcon);
-                Glide.with(context).load(nativeAdInfo.getImageUrl()).into(ivImage);
-                ivAdTarget.setImageResource(nativeAdInfo.getPlatformIcon(true));
-                tvTitle.setText(nativeAdInfo.getTitle());
-                tvDesc.setText(nativeAdInfo.getDesc());
-                tvAdType.setText(nativeAdInfo.getCtaText());
-
-                ivImage.setVisibility(mediaView == null ? View.VISIBLE : View.GONE);
+                Glide.with(context).load(nativeFeedAdInfo.getIconUrl()).into(ivIcon);
+                ivAdTarget.setImageResource(nativeFeedAdInfo.getPlatformIcon());
+                tvTitle.setText(nativeFeedAdInfo.getTitle());
+                tvDesc.setText(nativeFeedAdInfo.getDesc());
+                tvAdType.setText(nativeFeedAdInfo.getCtaText());
 
                 // 广点通的广告容器会自带角标，如果不希望出现两个角标，可以通过平台判断来隐藏自己设置的角标
-                boolean isGdtPlatform = cn.admobiletop.adsuyi.adapter.gdt.ADSuyiIniter.PLATFORM.equals(nativeAdInfo.getPlatform());
+                boolean isGdtPlatform = cn.admobiletop.adsuyi.adapter.gdt.ADSuyiIniter.PLATFORM.equals(nativeFeedAdInfo.getPlatform());
                 ivAdTarget.setVisibility(isGdtPlatform ? View.GONE : View.VISIBLE);
 
                 // 注册关闭按钮，将关闭按钮点击事件交于SDK托管，以便于回调onAdClose
-                nativeAdInfo.registerCloseView(ivClose);
+                nativeFeedAdInfo.registerCloseView(ivClose);
 
-                // 注册广告交互, 必须调用，注意：广点通只会响应View...actionViews的点击事件，且这些View都应该是com.qq.e.ads.nativ.widget.NativeAdContainer的子View
-                nativeAdInfo.registerViewForInteraction((ViewGroup) itemView, rlAdContainer, tvAdType);
+                // 注册广告交互, 必须调用
+                // 注意：广点通只会响应View...actionViews的点击事件，且这些View都应该是com.qq.e.ads.nativ.widget.NativeAdContainer的子View
+                // 务必最后调用
+                nativeFeedAdInfo.registerViewForInteraction((ViewGroup) itemView, rlAdContainer, tvAdType);
             }
         }
+
+        protected abstract void setImageOrMediaData(Context context, ADSuyiNativeFeedAdInfo nativeFeedAdInfo);
     }
 
     /**
@@ -216,21 +261,23 @@ public class NativeAdAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
      */
     private static class NativeExpressAdViewHolder extends RecyclerView.ViewHolder {
 
-        public NativeExpressAdViewHolder(@NonNull ViewGroup viewGroup) {
+        NativeExpressAdViewHolder(@NonNull ViewGroup viewGroup) {
             super(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_native_ad_express_ad, viewGroup, false));
         }
 
-        public void setData(ADSuyiNativeAdInfo nativeAdInfo) {
+        public void setData(ADSuyiNativeExpressAdInfo nativeExpressAdInfo) {
             // 判断广告Info对象是否被释放（调用过ADSuyiNativeAd的release()或ADSuyiNativeAdInfo的release()会释放广告Info对象）
             // 释放后的广告Info对象不能再次使用
-            if (!ADSuyiAdUtil.adInfoIsRelease(nativeAdInfo)) {
-                NativeAdAdapter.setVideoListener(nativeAdInfo);
-                // 当前是信息流模板广告，getMediaView获取的是模板广告视图
-                View mediaView = nativeAdInfo.getMediaView((ViewGroup) itemView);
+            if (!ADSuyiAdUtil.adInfoIsRelease(nativeExpressAdInfo)) {
+                NativeAdAdapter.setVideoListener(nativeExpressAdInfo);
+                // 当前是信息流模板广告，getNativeExpressAdView获取的是整个模板广告视图
+                View nativeExpressAdView = nativeExpressAdInfo.getNativeExpressAdView((ViewGroup) itemView);
                 // 将广告视图添加到容器中的便捷方法
-                ADSuyiViewUtil.addAdViewToAdContainer((ViewGroup) itemView, mediaView);
+                ADSuyiViewUtil.addAdViewToAdContainer((ViewGroup) itemView, nativeExpressAdView);
+
                 // 渲染广告视图, 必须调用, 因为是模板广告, 所以传入ViewGroup和响应点击的控件可能并没有用
-                nativeAdInfo.renderNativeExpress((ViewGroup) itemView);
+                // 务必在最后调用
+                nativeExpressAdInfo.render((ViewGroup) itemView);
             }
         }
     }

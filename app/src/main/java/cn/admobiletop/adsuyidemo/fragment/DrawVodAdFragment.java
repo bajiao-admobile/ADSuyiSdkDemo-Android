@@ -81,10 +81,11 @@ public class DrawVodAdFragment extends BaseFragment implements OnRefreshLoadMore
 
         int width = getResources().getDisplayMetrics().widthPixels;
         int height = width * 16 / 9;
-        ADSuyiExtraParams extraParams = new ADSuyiExtraParams();
-        extraParams.setAdSize(new ADSuyiAdSize(width, height));
+        ADSuyiExtraParams extraParams = new ADSuyiExtraParams.Builder()
+                .adSize(new ADSuyiAdSize(width, height))
+                .build();
         drawVodAd.setLocalExtraParams(extraParams);
-        // 设置仅支持的广告平台，设置了这个值，获取广告时只会去获取该平台的广告，null或空字符串为不限制，默认为null
+        // 设置仅支持的广告平台，设置了这个值，获取广告时只会去获取该平台的广告，null或空字符串为不限制，默认为null，方便调试使用，上线时建议不设置
         drawVodAd.setOnlySupportPlatform(ADSuyiDemoConstant.DRAW_VOD_AD_ONLY_SUPPORT_PLATFORM);
 
         drawVodAd.setListener(new ADSuyiDrawVodAdListener() {
@@ -92,11 +93,6 @@ public class DrawVodAdFragment extends BaseFragment implements OnRefreshLoadMore
             public void onRenderFailed(ADSuyiDrawVodAdInfo adSuyiDrawVodAdInfo, ADSuyiError adSuyiError) {
                 Log.d(ADSuyiDemoConstant.TAG, "onRenderFailed: " + adSuyiError.toString());
                 drawVodAdAdapter.removeData(adSuyiDrawVodAdInfo);
-            }
-
-            @Override
-            public void onRenderSuccess(ADSuyiDrawVodAdInfo adSuyiDrawVodAdInfo) {
-                Log.d(ADSuyiDemoConstant.TAG, "onRenderSuccess: " + adSuyiDrawVodAdInfo.hashCode());
             }
 
             @Override

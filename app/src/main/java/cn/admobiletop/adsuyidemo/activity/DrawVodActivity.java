@@ -71,12 +71,14 @@ public class DrawVodActivity extends AppCompatActivity implements OnRefreshLoadM
         int width = getResources().getDisplayMetrics().widthPixels;
         int height = width * 16 / 9;
         // 创建额外参数实例
-        ADSuyiExtraParams extraParams = new ADSuyiExtraParams();
-        // 设置额外参数中的广告预期宽高，单位为px，宽高均不能小于等于0
-        extraParams.setAdSize(new ADSuyiAdSize(width, height));
-        // 设置一些额外参数，有些平台的广告可能需要传入一些额外参数，如果有接入头条平台，该参数必须设置
+        ADSuyiExtraParams extraParams = new ADSuyiExtraParams.Builder()
+                // 设置广告预期宽高(目前仅头条平台需要，没有接入头条平台可不设置)，单位为px，宽高均不能小于等于0
+                .adSize(new ADSuyiAdSize(width, height))
+                .build();
+        // 设置一些额外参数，有些平台的广告可能需要传入一些额外参数，如果有接入头条、快手平台，该参数必须设置
         drawVodAd.setLocalExtraParams(extraParams);
-        // 设置仅支持的广告平台，设置了这个值，获取广告时只会去获取该平台的广告，null或空字符串为不限制，默认为null
+
+        // 设置仅支持的广告平台，设置了这个值，获取广告时只会去获取该平台的广告，null或空字符串为不限制，默认为null，方便调试使用，上线时建议不设置
         drawVodAd.setOnlySupportPlatform(ADSuyiDemoConstant.DRAW_VOD_AD_ONLY_SUPPORT_PLATFORM);
         // 设置DrawVod广告监听
         drawVodAd.setListener(new ADSuyiDrawVodAdListener() {
@@ -85,11 +87,6 @@ public class DrawVodActivity extends AppCompatActivity implements OnRefreshLoadM
                 Log.d(ADSuyiDemoConstant.TAG, "onRenderFailed: " + adSuyiError.toString());
                 // 广告渲染失败，释放并移除ADSuyiDrawVodAdInfo
                 drawVodAdAdapter.removeData(adSuyiDrawVodAdInfo);
-            }
-
-            @Override
-            public void onRenderSuccess(ADSuyiDrawVodAdInfo adSuyiDrawVodAdInfo) {
-                Log.d(ADSuyiDemoConstant.TAG, "onRenderSuccess: " + adSuyiDrawVodAdInfo.hashCode());
             }
 
             @Override

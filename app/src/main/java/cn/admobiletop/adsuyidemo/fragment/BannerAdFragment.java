@@ -9,8 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
-import java.util.List;
-
 import cn.admobiletop.adsuyi.ad.ADSuyiBannerAd;
 import cn.admobiletop.adsuyi.ad.data.ADSuyiAdInfo;
 import cn.admobiletop.adsuyi.ad.error.ADSuyiError;
@@ -41,35 +39,35 @@ public class BannerAdFragment extends BaseFragment {
         ADSuyiBannerAd suyiBannerAd = new ADSuyiBannerAd(this, flContainer);
         // 设置自刷新时间间隔，0为不自动刷新，其他取值范围为[30,120]，单位秒
         suyiBannerAd.setAutoRefreshInterval(ADSuyiDemoConstant.BANNER_AD_AUTO_REFRESH_INTERVAL);
-        // 设置仅支持的广告平台，设置了这个值，获取广告时只会去获取该平台的广告，null或空字符串为不限制，默认为null
+        // 设置仅支持的广告平台，设置了这个值，获取广告时只会去获取该平台的广告，null或空字符串为不限制，默认为null，方便调试使用，上线时建议不设置
         suyiBannerAd.setOnlySupportPlatform(ADSuyiDemoConstant.BANNER_AD_ONLY_SUPPORT_PLATFORM);
         // 设置Banner广告监听
         suyiBannerAd.setListener(new ADSuyiBannerAdListener() {
             @Override
-            public void onAdReceive(List<ADSuyiAdInfo> list) {
-                Log.d(ADSuyiDemoConstant.TAG, "onAdReceive size : " + list.size());
+            public void onAdReceive(ADSuyiAdInfo adSuyiAdInfo) {
+                Log.d(ADSuyiDemoConstant.TAG, "onAdReceive...");
             }
 
             @Override
             public void onAdExpose(ADSuyiAdInfo adSuyiAdInfo) {
-                Log.d(ADSuyiDemoConstant.TAG, "onAdExpose----->" + adSuyiAdInfo.hashCode());
+                Log.d(ADSuyiDemoConstant.TAG, "onAdExpose...");
             }
 
             @Override
             public void onAdClick(ADSuyiAdInfo adSuyiAdInfo) {
-                Log.d(ADSuyiDemoConstant.TAG, "onAdClick----->" + adSuyiAdInfo.hashCode());
+                Log.d(ADSuyiDemoConstant.TAG, "onAdClick...");
             }
 
             @Override
             public void onAdClose(ADSuyiAdInfo adSuyiAdInfo) {
-                Log.d(ADSuyiDemoConstant.TAG, "onAdClose----->" + adSuyiAdInfo.hashCode());
+                Log.d(ADSuyiDemoConstant.TAG, "onAdClose...");
             }
 
             @Override
             public void onAdFailed(ADSuyiError adSuyiError) {
                 if (adSuyiError != null) {
                     String failedJson = adSuyiError.toString();
-                    Log.d(ADSuyiDemoConstant.TAG, "onAdFailed----->" + failedJson);
+                    Log.d(ADSuyiDemoConstant.TAG, "onAdFailed..." + failedJson);
                 }
             }
         });

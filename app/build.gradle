@@ -6,8 +6,9 @@ android {
         applicationId "cn.admobiletop.adsuyidemo"
         minSdkVersion 19
         targetSdkVersion 29
-        versionCode 202004281
-        versionName "1.10"
+        versionCode 202005231
+        versionName "1.23"
+        multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         ndk {
             // 设置支持的SO库架构
@@ -52,36 +53,51 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.2'
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+    implementation 'com.tencent.bugly:crashreport:3.2.1'
+    implementation 'com.tencent.bugly:nativecrashreport:3.7.1'
+
+    // support支持库，如果是AndroidX请使用对应的支持库
     implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'com.android.support:support-v4:28.0.0'
     implementation 'com.android.support:design:28.0.0'
-    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
-    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.2'
-    implementation 'com.github.bumptech.glide:glide:4.5.0'
-    implementation 'com.makeramen:roundedimageview:2.3.0'
-    implementation 'com.tencent.bugly:crashreport:3.1.0'
-    implementation 'com.tencent.bugly:nativecrashreport:3.7.1'
 
     // ADSuyiSdk和OAID是必须导入了
-    implementation 'cn.admobiletop.adsuyi.ad:core-alpha:3.0.0.0.04271'
+    implementation 'cn.admobiletop.adsuyi.ad:core-alpha:3.0.1.05221'
     implementation(name: 'msa_mdid_1.0.13', ext: 'aar')
 
     // 艾狄墨搏AdapterSdk，必须的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile-alpha:4.5.2.0.04271'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile-alpha:4.5.9.05221'
 
     // 广点通AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt-alpha:4.191.1061.0.04271'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt-alpha:4.211.1081.05221'
 
     // 头条AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao-alpha:2.8.0.3.04273'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao-alpha:2.9.5.6.05221'
 
     // 百度AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-alpha:5.85.0.0.04272'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-alpha:5.85.05221'
 
     // 汇量AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral-alpha:10.2.41.0.04271'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral-alpha:10.2.41.05221'
 
     // InmobiAdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:inmobi-alpha:7.4.3.0.04281'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:inmobi-alpha:7.4.3.05221'
     implementation 'com.squareup.picasso:picasso:2.5.2'
+
+    // 快手AdapterSdk，可选的
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksad-alpha:2.3.0.05221'
+
+    // OneWayAdapterSdk，可选的
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:oneway-alpha:2.4.3.05221'
+
+    // AppicAdapterSdk(信息流无曝光回调，全屏视频无播放完成回调)，可选的
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:appic-alpha:4.2.0.4.05231'
+    // Appic还需要以下两个三方库支持
+    implementation 'com.android.volley:volley:1.1.0'
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.6'
 }

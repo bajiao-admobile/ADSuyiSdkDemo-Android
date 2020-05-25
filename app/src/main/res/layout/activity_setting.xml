@@ -32,6 +32,7 @@
     <EditText
         android:id="@+id/etOnlySupportPlatform"
         android:focusable="false"
+        android:hint="所有(null或空字符串)"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
@@ -72,6 +73,13 @@
         android:layout_margin="10dp"
         android:textColor="@color/colorPrimary"
         android:visibility="gone" />
+
+    <CheckBox
+        android:id="@+id/cbNativeMute"
+        android:text="是否静音播放视频"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
     <Button
         android:id="@+id/btnDefine"

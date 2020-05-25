@@ -7,8 +7,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-import java.util.List;
-
 import cn.admobiletop.adsuyi.ad.ADSuyiInterstitialAd;
 import cn.admobiletop.adsuyi.ad.data.ADSuyiInterstitialAdInfo;
 import cn.admobiletop.adsuyi.ad.error.ADSuyiError;
@@ -49,37 +47,43 @@ public class InterstitialAdActivity extends AppCompatActivity implements View.On
 
     private void initAd() {
         interstitialAd = new ADSuyiInterstitialAd(this);
-        // 设置仅支持的广告平台，设置了这个值，获取广告时只会去获取该平台的广告，null或空字符串为不限制，默认为null
+        // 设置仅支持的广告平台，设置了这个值，获取广告时只会去获取该平台的广告，null或空字符串为不限制，默认为null，方便调试使用，上线时建议不设置
         interstitialAd.setOnlySupportPlatform(ADSuyiDemoConstant.INTERSTITIAL_AD_ONLY_SUPPORT_PLATFORM);
         // 设置插屏广告监听
         interstitialAd.setListener(new ADSuyiInterstitialAdListener() {
             @Override
-            public void onAdReceive(List<ADSuyiInterstitialAdInfo> adList) {
-                interstitialAdInfo = adList.get(0);
+            public void onAdReady(ADSuyiInterstitialAdInfo interstitialAdInfo) {
+                // 建议在该回调之后展示广告
+                Log.d(ADSuyiDemoConstant.TAG, "onAdReady...");
+            }
+
+            @Override
+            public void onAdReceive(ADSuyiInterstitialAdInfo interstitialAdInfo) {
+                InterstitialAdActivity.this.interstitialAdInfo = interstitialAdInfo;
                 ADSuyiToastUtil.show(getApplicationContext(), "插屏广告获取成功");
-                Log.d(ADSuyiDemoConstant.TAG, "onAdReceive----->" + interstitialAdInfo.hashCode());
+                Log.d(ADSuyiDemoConstant.TAG, "onAdReceive...");
             }
 
             @Override
             public void onAdExpose(ADSuyiInterstitialAdInfo interstitialAdInfo) {
-                Log.d(ADSuyiDemoConstant.TAG, "onAdExpose----->" + interstitialAdInfo.hashCode());
+                Log.d(ADSuyiDemoConstant.TAG, "onAdExpose...");
             }
 
             @Override
             public void onAdClick(ADSuyiInterstitialAdInfo interstitialAdInfo) {
-                Log.d(ADSuyiDemoConstant.TAG, "onAdClick----->" + interstitialAdInfo.hashCode());
+                Log.d(ADSuyiDemoConstant.TAG, "onAdClick...");
             }
 
             @Override
             public void onAdClose(ADSuyiInterstitialAdInfo interstitialAdInfo) {
-                Log.d(ADSuyiDemoConstant.TAG, "onAdClose----->" + interstitialAdInfo.hashCode());
+                Log.d(ADSuyiDemoConstant.TAG, "onAdClose...");
             }
 
             @Override
             public void onAdFailed(ADSuyiError adSuyiError) {
                 if (adSuyiError != null) {
                     String failedJson = adSuyiError.toString();
-                    Log.d(ADSuyiDemoConstant.TAG, "onAdFailed----->" + failedJson);
+                    Log.d(ADSuyiDemoConstant.TAG, "onAdFailed..." + failedJson);
                     ADSuyiToastUtil.show(getApplicationContext(), "广告获取失败" + failedJson);
                 }
             }

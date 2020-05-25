@@ -1,7 +1,12 @@
 -ignorewarnings
-# v4、v7
+# v4、v7（如果是Support支持库需添加）
 -keep class android.support.v4.**{public *;}
 -keep class android.support.v7.**{public *;}
+
+# AndroidX (如果是AndroidX支持库需添加)
+-keep class com.google.android.material.** {*;}
+-keep class androidx.** {*;}
+-keep class * extends androidx.**
 
 # 资源文件混淆配置
 -keep class **.R$* { *; }
@@ -16,6 +21,7 @@
 -dontwarn cn.admobiletop.adsuyi.**
 -dontwarn org.apache.commons.**
 -keep class cn.admobiletop.adsuyi.**{public *;}
+-keep class com.android.**{*;}
 -keep class com.ciba.**{ *; }
 -keep class org.apache.**{*;}
 
@@ -69,3 +75,13 @@
 -keep class com.alphab.** {*; }
 -keep interface com.alphab.** {*; }
 -keep class **.R$* { public static final int mintegral*; }
+
+# 快手广告平台混淆
+-keep class com.kwad.sdk.** { *;}
+-keep class com.ksad.download.** { *;}
+-keep class com.kwai.filedownloader.** { *;}
+
+# AppicAd 所需要的混淆内容
+-keep class * extends com.ap.android.trunk.sdk.core.base.ad.Ad
+-keep class * extends com.ap.android.trunk.sdk.core.base.ad.AdSDK
+-keep class * implements com.ap.android.trunk.sdk.core.base.lifecycle.IApplicationLifecycle

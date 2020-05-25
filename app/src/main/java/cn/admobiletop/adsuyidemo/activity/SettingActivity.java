@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -33,6 +34,7 @@ public class SettingActivity extends AppCompatActivity {
     private EditText etCount;
     private TextView tvAutoRefreshInterval;
     private EditText etAutoRefreshInterval;
+    private CheckBox cbNativeMute;
     private String adType;
     private EditText etOnlySupportPlatform;
     private List<String> posIdList;
@@ -64,6 +66,8 @@ public class SettingActivity extends AppCompatActivity {
 
         tvAutoRefreshInterval = findViewById(R.id.tvAutoRefreshInterval);
         etAutoRefreshInterval = findViewById(R.id.etAutoRefreshInterval);
+
+        cbNativeMute = findViewById(R.id.cbNativeMute);
     }
 
     private void initListener() {
@@ -107,7 +111,7 @@ public class SettingActivity extends AppCompatActivity {
                 .setItems(R.array.platforms, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        etOnlySupportPlatform.setText(getResources().getStringArray(R.array.platforms)[which]);
+                        etOnlySupportPlatform.setText(0 == which ? null : getResources().getStringArray(R.array.platforms)[which]);
                     }
                 })
                 .create()
@@ -139,6 +143,8 @@ public class SettingActivity extends AppCompatActivity {
                 etCount.setText(String.valueOf(ADSuyiDemoConstant.NATIVE_AD_COUNT));
                 etCount.setVisibility(View.VISIBLE);
                 tvCount.setVisibility(View.VISIBLE);
+                cbNativeMute.setVisibility(View.VISIBLE);
+                cbNativeMute.setChecked(ADSuyiDemoConstant.NATIVE_AD_PLAY_WITH_MUTE);
                 break;
             case ADSuyiAdType.TYPE_REWARD_VOD:
                 etPosId.setText(ADSuyiDemoConstant.REWARD_VOD_AD_POS_ID);
@@ -184,6 +190,7 @@ public class SettingActivity extends AppCompatActivity {
                 ADSuyiDemoConstant.NATIVE_AD_POS_ID = posId;
                 ADSuyiDemoConstant.NATIVE_AD_COUNT = getAdCount();
                 ADSuyiDemoConstant.NATIVE_AD_ONLY_SUPPORT_PLATFORM = onlySupportPlatform;
+                ADSuyiDemoConstant.NATIVE_AD_PLAY_WITH_MUTE = cbNativeMute.isChecked();
                 break;
             case ADSuyiAdType.TYPE_REWARD_VOD:
                 ADSuyiDemoConstant.REWARD_VOD_AD_POS_ID = posId;

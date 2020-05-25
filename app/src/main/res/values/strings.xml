@@ -21,11 +21,33 @@
         <item>Draw视频广告</item>
     </string-array>
     <string-array name="platforms">
+        <item>所有(null或空字符串)</item>
+
+        <!--艾狄墨搏-->
         <item>admobile</item>
+
+        <!--广点通/优量汇-->
         <item>gdt</item>
+
+        <!--头条/穿山甲-->
         <item>toutiao</item>
+
+        <!--百度/百青藤-->
         <item>baidu</item>
+
+        <!--inmobi-->
         <item>inmobi</item>
+
+        <!--汇量/Mobvsita-->
         <item>mintegral</item>
+
+        <!--快手-->
+        <item>ksad</item>
+
+        <!--万维-->
+        <item>oneway</item>
+
+        <!--appic-->
+        <item>appic</item>
     </string-array>
 </resources>

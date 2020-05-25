@@ -67,14 +67,14 @@ public class SplashAdActivity extends Activity {
         adSuyiSplashAd = new ADSuyiSplashAd(this, flContainer);
         // 设置是否是沉浸式，如果为true，跳过按钮距离顶部的高度会加上状态栏高度
         adSuyiSplashAd.setImmersive(false);
-        // 设置仅支持的广告平台，设置了这个值，获取广告时只会去获取该平台的广告，null或空字符串为不限制，默认为null
+        // 设置仅支持的广告平台，设置了这个值，获取广告时只会去获取该平台的广告，null或空字符串为不限制，默认为null，方便调试使用，上线时建议不设置
         adSuyiSplashAd.setOnlySupportPlatform(ADSuyiDemoConstant.SPLASH_AD_ONLY_SUPPORT_PLATFORM);
         // 设置开屏广告监听
         adSuyiSplashAd.setListener(new ADSuyiSplashAdListener() {
 
             @Override
-            public void onAdReceive(List<ADSuyiAdInfo> adList) {
-                Log.d(ADSuyiDemoConstant.TAG, "广告获取成功回调，adList size : " + adList.size());
+            public void onAdReceive(ADSuyiAdInfo adSuyiAdInfo) {
+                Log.d(ADSuyiDemoConstant.TAG, "广告获取成功回调... ");
             }
 
             @Override
@@ -98,7 +98,7 @@ public class SplashAdActivity extends Activity {
                 if (adSuyiError != null) {
                     String failedJson = adSuyiError.toString();
                     Log.d(ADSuyiDemoConstant.TAG, "onAdFailed----->" + failedJson);
-                    ADSuyiToastUtil.show(getApplicationContext(), "广告获取失败" + failedJson);
+                    ADSuyiToastUtil.show(getApplicationContext(), "广告获取失败 : " + failedJson);
                 }
                 jumpMain();
             }

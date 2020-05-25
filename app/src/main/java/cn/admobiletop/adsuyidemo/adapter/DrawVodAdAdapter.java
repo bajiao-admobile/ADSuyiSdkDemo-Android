@@ -189,7 +189,7 @@ public class DrawVodAdAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
                 // 将广告视图添加到容器中的便捷方法
                 ADSuyiViewUtil.addAdViewToAdContainer(rlAdContainer, mediaView);
                 // 注册或者渲染广告视图, 必须调用
-                drawVodAdInfo.render();
+                drawVodAdInfo.render(rlAdContainer);
             }
         }
     }

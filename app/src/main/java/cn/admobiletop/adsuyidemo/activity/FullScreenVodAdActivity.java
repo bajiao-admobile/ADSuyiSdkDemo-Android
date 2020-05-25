@@ -7,8 +7,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-import java.util.List;
-
 import cn.admobiletop.adsuyi.ad.ADSuyiFullScreenVodAd;
 import cn.admobiletop.adsuyi.ad.data.ADSuyiFullScreenVodAdInfo;
 import cn.admobiletop.adsuyi.ad.error.ADSuyiError;
@@ -49,57 +47,53 @@ public class FullScreenVodAdActivity extends AppCompatActivity implements View.O
 
     private void initAd() {
         fullScreenVodAd = new ADSuyiFullScreenVodAd(this);
-        // 设置仅支持的广告平台，设置了这个值，获取广告时只会去获取该平台的广告，null或空字符串为不限制，默认为null
+        // 设置仅支持的广告平台，设置了这个值，获取广告时只会去获取该平台的广告，null或空字符串为不限制，默认为null，方便调试使用，上线时建议不设置
         fullScreenVodAd.setOnlySupportPlatform(ADSuyiDemoConstant.FULL_SCREEN_VOD_AD_ONLY_SUPPORT_PLATFORM);
         // 设置全屏视频监听
         fullScreenVodAd.setListener(new ADSuyiFullScreenVodAdListener() {
             @Override
             public void onVideoCache(ADSuyiFullScreenVodAdInfo adSuyiFullScreenVodAdInfo) {
-                Log.d(ADSuyiDemoConstant.TAG, "onVideoCache----->" + adSuyiFullScreenVodAdInfo.hashCode());
+                // 目前汇量和Inmobi走了该回调之后才准备好
+                Log.d(ADSuyiDemoConstant.TAG, "onVideoCache...");
             }
 
             @Override
             public void onVideoComplete(ADSuyiFullScreenVodAdInfo adSuyiFullScreenVodAdInfo) {
-                Log.d(ADSuyiDemoConstant.TAG, "onVideoComplete----->" + adSuyiFullScreenVodAdInfo.hashCode());
-            }
-
-            @Override
-            public void onSkipVideo(ADSuyiFullScreenVodAdInfo adSuyiFullScreenVodAdInfo) {
-                Log.d(ADSuyiDemoConstant.TAG, "onSkipVideo----->" + adSuyiFullScreenVodAdInfo.hashCode());
+                Log.d(ADSuyiDemoConstant.TAG, "onVideoComplete...");
             }
 
             @Override
             public void onVideoError(ADSuyiFullScreenVodAdInfo adSuyiFullScreenVodAdInfo, ADSuyiError adSuyiError) {
-                Log.d(ADSuyiDemoConstant.TAG, "onVideoError----->" + adSuyiError.toString());
+                Log.d(ADSuyiDemoConstant.TAG, "onVideoError..." + adSuyiError.toString());
             }
 
             @Override
-            public void onAdReceive(List<ADSuyiFullScreenVodAdInfo> adList) {
-                fullScreenVodAdInfo = adList.get(0);
+            public void onAdReceive(ADSuyiFullScreenVodAdInfo fullScreenVodAdInfo) {
+                FullScreenVodAdActivity.this.fullScreenVodAdInfo = fullScreenVodAdInfo;
                 ADSuyiToastUtil.show(getApplicationContext(), "全屏视频广告获取成功");
-                Log.d(ADSuyiDemoConstant.TAG, "onAdReceive----->" + fullScreenVodAdInfo.hashCode());
+                Log.d(ADSuyiDemoConstant.TAG, "onAdReceive...");
             }
 
             @Override
             public void onAdExpose(ADSuyiFullScreenVodAdInfo adSuyiFullScreenVodAdInfo) {
-                Log.d(ADSuyiDemoConstant.TAG, "onAdExpose----->" + adSuyiFullScreenVodAdInfo.hashCode());
+                Log.d(ADSuyiDemoConstant.TAG, "onAdExpose...");
             }
 
             @Override
             public void onAdClick(ADSuyiFullScreenVodAdInfo adSuyiFullScreenVodAdInfo) {
-                Log.d(ADSuyiDemoConstant.TAG, "onAdClick----->" + adSuyiFullScreenVodAdInfo.hashCode());
+                Log.d(ADSuyiDemoConstant.TAG, "onAdClick...");
             }
 
             @Override
             public void onAdClose(ADSuyiFullScreenVodAdInfo adSuyiFullScreenVodAdInfo) {
-                Log.d(ADSuyiDemoConstant.TAG, "onAdClose----->" + adSuyiFullScreenVodAdInfo.hashCode());
+                Log.d(ADSuyiDemoConstant.TAG, "onAdClose...");
             }
 
             @Override
             public void onAdFailed(ADSuyiError adSuyiError) {
                 if (adSuyiError != null) {
                     String failedJson = adSuyiError.toString();
-                    Log.d(ADSuyiDemoConstant.TAG, "onAdFailed----->" + failedJson);
+                    Log.d(ADSuyiDemoConstant.TAG, "onAdFailed..." + failedJson);
                     ADSuyiToastUtil.show(getApplicationContext(), "广告获取失败" + failedJson);
                 }
             }

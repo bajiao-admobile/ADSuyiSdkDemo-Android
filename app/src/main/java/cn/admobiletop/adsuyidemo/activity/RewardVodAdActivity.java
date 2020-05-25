@@ -6,8 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 
-import java.util.List;
-
 import cn.admobiletop.adsuyi.ad.ADSuyiRewardVodAd;
 import cn.admobiletop.adsuyi.ad.data.ADSuyiRewardVodAdInfo;
 import cn.admobiletop.adsuyi.ad.error.ADSuyiError;
@@ -44,57 +42,58 @@ public class RewardVodAdActivity extends AppCompatActivity implements View.OnCli
         // 创建激励视频广告实例
         rewardVodAd = new ADSuyiRewardVodAd(this);
 
-        // 设置仅支持的广告平台，设置了这个值，获取广告时只会去获取该平台的广告，null或空字符串为不限制，默认为null
+        // 设置仅支持的广告平台，设置了这个值，获取广告时只会去获取该平台的广告，null或空字符串为不限制，默认为null，方便调试使用，上线时建议不设置
         rewardVodAd.setOnlySupportPlatform(ADSuyiDemoConstant.REWARD_VOD_AD_ONLY_SUPPORT_PLATFORM);
         // 设置激励视频广告监听
         rewardVodAd.setListener(new ADSuyiRewardVodAdListener() {
             @Override
             public void onVideoCache(ADSuyiRewardVodAdInfo adSuyiRewardVodAdInfo) {
-                Log.d(ADSuyiDemoConstant.TAG, "onVideoCache----->" + adSuyiRewardVodAdInfo.hashCode());
+                // 目前汇量和Inmobi走了该回调之后才准备好
+                Log.d(ADSuyiDemoConstant.TAG, "onVideoCache...");
             }
 
             @Override
             public void onVideoComplete(ADSuyiRewardVodAdInfo adSuyiRewardVodAdInfo) {
-                Log.d(ADSuyiDemoConstant.TAG, "onVideoComplete----->" + adSuyiRewardVodAdInfo.hashCode());
+                Log.d(ADSuyiDemoConstant.TAG, "onVideoComplete...");
             }
 
             @Override
             public void onVideoError(ADSuyiRewardVodAdInfo adSuyiRewardVodAdInfo, ADSuyiError adSuyiError) {
-                Log.d(ADSuyiDemoConstant.TAG, "onVideoError----->" + adSuyiError.toString());
+                Log.d(ADSuyiDemoConstant.TAG, "onVideoError..." + adSuyiError.toString());
             }
 
             @Override
             public void onReward(ADSuyiRewardVodAdInfo adSuyiRewardVodAdInfo) {
-                Log.d(ADSuyiDemoConstant.TAG, "onReward----->" + adSuyiRewardVodAdInfo.hashCode());
+                Log.d(ADSuyiDemoConstant.TAG, "onReward...");
             }
 
             @Override
-            public void onAdReceive(List<ADSuyiRewardVodAdInfo> adList) {
-                rewardVodAdInfo = adList.get(0);
+            public void onAdReceive(ADSuyiRewardVodAdInfo rewardVodAdInfo) {
+                RewardVodAdActivity.this.rewardVodAdInfo = rewardVodAdInfo;
                 ADSuyiToastUtil.show(getApplicationContext(), "激励视频广告获取成功");
-                Log.d(ADSuyiDemoConstant.TAG, "onAdReceive----->" + rewardVodAdInfo.hashCode());
+                Log.d(ADSuyiDemoConstant.TAG, "onAdReceive...");
             }
 
             @Override
             public void onAdExpose(ADSuyiRewardVodAdInfo adSuyiRewardVodAdInfo) {
-                Log.d(ADSuyiDemoConstant.TAG, "onAdExpose----->" + adSuyiRewardVodAdInfo.hashCode());
+                Log.d(ADSuyiDemoConstant.TAG, "onAdExpose...");
             }
 
             @Override
             public void onAdClick(ADSuyiRewardVodAdInfo adSuyiRewardVodAdInfo) {
-                Log.d(ADSuyiDemoConstant.TAG, "onAdClick----->" + adSuyiRewardVodAdInfo.hashCode());
+                Log.d(ADSuyiDemoConstant.TAG, "onAdClick...");
             }
 
             @Override
             public void onAdClose(ADSuyiRewardVodAdInfo adSuyiRewardVodAdInfo) {
-                Log.d(ADSuyiDemoConstant.TAG, "onAdClose----->" + adSuyiRewardVodAdInfo.hashCode());
+                Log.d(ADSuyiDemoConstant.TAG, "onAdClose...");
             }
 
             @Override
             public void onAdFailed(ADSuyiError adSuyiError) {
                 if (adSuyiError != null) {
                     String failedJosn = adSuyiError.toString();
-                    Log.d(ADSuyiDemoConstant.TAG, "onAdFailed----->" + failedJosn);
+                    Log.d(ADSuyiDemoConstant.TAG, "onAdFailed..." + failedJosn);
                     ADSuyiToastUtil.show(getApplicationContext(), "广告获取失败" + failedJosn);
                 }
             }

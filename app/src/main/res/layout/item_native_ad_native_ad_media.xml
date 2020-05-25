@@ -1,10 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- 如果信息流广告中接入了广点通自渲染2.0，那么自渲染信息流广告registerOrRenderView传入的容器必须为com.qq.e.ads.nativ.widget.NativeAdContainer -->
-<!-- 否则广点通自渲染2.0广告将没有展示，不可点击，也没有收益 -->
+<?xml version="1.0" encoding="utf-8"?><!-- 如果信息流广告中接入了广点通自渲染2.0，那么自渲染信息流广告registerOrRenderView传入的容器必须为com.qq.e.ads.nativ.widget.NativeAdContainer --><!-- 否则广点通自渲染2.0广告将没有展示，不可点击，也没有收益 -->
 <com.qq.e.ads.nativ.widget.NativeAdContainer xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="wrap_content">
 
     <RelativeLayout
         android:id="@+id/rlAdContainer"
@@ -48,37 +45,28 @@
             android:textColor="#999999"
             android:textSize="12sp" />
 
-        <android.support.constraint.ConstraintLayout
-            android:id="@+id/flImageMediaContainer"
+
+        <FrameLayout
+            android:id="@+id/flMediaContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/ivIcon"
             android:layout_marginTop="8dp"
-            android:background="#eeeeee">
-
-            <ImageView
-                android:id="@+id/ivImage"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintDimensionRatio="16:9"
-                android:scaleType="centerCrop" />
-        </android.support.constraint.ConstraintLayout>
+            android:background="#eeeeee" />
 
         <ImageView
             android:id="@+id/ivAdTarget"
             android:layout_width="46dp"
             android:layout_height="18dp"
-            android:layout_alignRight="@id/flImageMediaContainer"
-            android:layout_alignBottom="@+id/flImageMediaContainer"
+            android:layout_alignRight="@id/flMediaContainer"
+            android:layout_alignBottom="@+id/flMediaContainer"
             android:scaleType="centerCrop" />
 
         <TextView
             android:id="@+id/tvAdType"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/flImageMediaContainer"
+            android:layout_below="@+id/flMediaContainer"
             android:layout_alignParentRight="true"
             android:layout_marginTop="4dp"
             android:background="@drawable/shape_color_primary_dark_stroke"
@@ -93,9 +81,9 @@
 
         <ImageView
             android:id="@+id/ivClose"
-            android:layout_alignParentRight="true"
-            android:src="@drawable/icon_close"
             android:layout_width="24dp"
-            android:layout_height="24dp" />
+            android:layout_height="24dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/icon_close" />
     </RelativeLayout>
 </com.qq.e.ads.nativ.widget.NativeAdContainer>
