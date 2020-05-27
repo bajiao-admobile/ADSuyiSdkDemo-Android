@@ -26,7 +26,12 @@ public class ADSuyiDemoConstant {
      * Banner广告位ID, 600*300
      */
     public final static String BANNER_AD_POS_ID2 = "6f4d49da0a0e55d648";
+    /**
+     * Banner广告位ID, 600*150
+     */
+    public final static String BANNER_AD_POS_ID3 = "45c212b62f82733444";
     public static String BANNER_AD_POS_ID = BANNER_AD_POS_ID1;
+
     /**
      * Banner广告自刷新间隔时长，单位秒
      */

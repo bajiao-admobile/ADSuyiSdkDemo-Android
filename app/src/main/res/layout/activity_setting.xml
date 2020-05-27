@@ -25,7 +25,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:text="请填写仅支持的广告平台 : "
+        android:text="请选择仅支持的广告平台 : "
         android:textColor="@color/colorPrimaryDark"
         android:textSize="16sp" />
 
@@ -53,6 +53,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
+        android:inputType="number"
         android:textColor="@color/colorPrimary"
         android:visibility="gone" />
 
@@ -71,12 +72,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
+        android:inputType="number"
         android:textColor="@color/colorPrimary"
         android:visibility="gone" />
 
     <CheckBox
         android:id="@+id/cbNativeMute"
-        android:text="是否静音播放视频"
+        android:text="是否静音播放视频(部分平台支持)"
         android:visibility="gone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />

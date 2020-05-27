@@ -1,4 +1,4 @@
-# ADSuyiSdk Android Sdk——接入文档 V3.0.1.05251
+# ADSuyiSdk Android Sdk——接入文档 V3.0.1.05261
 
  目录 
 
@@ -147,7 +147,7 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
   
     // ADSuyiSdk和OAID是必须导入的，OAID的aar在Demo的libs目录下
-    implementation 'cn.admobiletop.adsuyi.ad:core:3.0.1.05251'
+    implementation 'cn.admobiletop.adsuyi.ad:core:3.0.1.05261'
     implementation(name: 'msa_mdid_1.0.13', ext: 'aar')
 
     // 艾狄墨搏AdapterSdk，必须的

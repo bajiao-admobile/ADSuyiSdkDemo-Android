@@ -90,6 +90,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                 adType = ADSuyiAdType.TYPE_BANNER;
                                 posIdList.add(ADSuyiDemoConstant.BANNER_AD_POS_ID1);
                                 posIdList.add(ADSuyiDemoConstant.BANNER_AD_POS_ID2);
+                                posIdList.add(ADSuyiDemoConstant.BANNER_AD_POS_ID3);
                                 break;
                             case 2:
                                 adType = ADSuyiAdType.TYPE_FLOW;
