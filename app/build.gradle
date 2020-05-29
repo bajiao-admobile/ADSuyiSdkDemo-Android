@@ -6,8 +6,8 @@ android {
         applicationId "cn.admobiletop.adsuyidemo"
         minSdkVersion 19
         targetSdkVersion 29
-        versionCode 202005261
-        versionName "1.25"
+        versionCode 202005281
+        versionName "1.26"
         multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         ndk {
@@ -86,7 +86,7 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral-alpha:10.2.41.05221'
 
     // InmobiAdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:inmobi-alpha:7.4.3.05221'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:inmobi-alpha:7.4.4.05281'
     implementation 'com.squareup.picasso:picasso:2.5.2'
 
     // 快手AdapterSdk，可选的
