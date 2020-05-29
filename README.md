@@ -141,7 +141,7 @@ allprojects {
 
 ```java
 dependencies {
-		// support支持库，如果是AndroidX请使用对应的支持库
+    // support支持库，如果是AndroidX请使用对应的支持库
     implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'com.android.support:support-v4:28.0.0'
     implementation 'com.android.support:design:28.0.0'
@@ -166,7 +166,7 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:10.2.41.05221'
 
     // InmobiAdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:inmobi:7.4.3.05221'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:inmobi:7.4.4.05281'
     implementation 'com.squareup.picasso:picasso:2.5.2'
     
     // 快手AdapterSdk，可选的  
@@ -192,7 +192,7 @@ dependencies {
   ```java
   ndk {
       // 设置支持的SO库架构（x86架构部分平台暂不支持，例如广点通）
-  		abiFilters 'armeabi-v7a' // 'armeabi', 'arm64-v8a'
+  	  abiFilters 'armeabi-v7a' // 'armeabi', 'arm64-v8a'
   }
   ```
 
@@ -265,7 +265,7 @@ dependencies {
 
   ```java
   <provider
-  		android:name="android.support.v4.content.FileProvider"
+  	  android:name="android.support.v4.content.FileProvider"
       android:authorities="${applicationId}.fileprovider"
       android:exported="false"
       android:grantUriPermissions="true">
@@ -279,7 +279,7 @@ dependencies {
 
   ```java
   <provider
-  		android:name="androidx.core.content.FileProvider" 
+  	  android:name="androidx.core.content.FileProvider" 
       android:authorities="${applicationId}.fileprovider"
       android:exported="false"
       android:grantUriPermissions="true">
