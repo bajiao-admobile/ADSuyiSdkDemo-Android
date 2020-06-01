@@ -160,7 +160,7 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:2.9.5.6.05221'
 
     // 百度AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu:5.85.05221'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu:5.85.06011'
 
     // 汇量AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:10.2.41.05221'
