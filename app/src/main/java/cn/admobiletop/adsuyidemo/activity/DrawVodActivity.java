@@ -19,7 +19,6 @@ import cn.admobiletop.adsuyi.ad.entity.ADSuyiAdSize;
 import cn.admobiletop.adsuyi.ad.entity.ADSuyiExtraParams;
 import cn.admobiletop.adsuyi.ad.error.ADSuyiError;
 import cn.admobiletop.adsuyi.ad.listener.ADSuyiDrawVodAdListener;
-import cn.admobiletop.adsuyi.util.ADSuyiToastUtil;
 import cn.admobiletop.adsuyidemo.R;
 import cn.admobiletop.adsuyidemo.adapter.DrawVodAdAdapter;
 import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
@@ -122,7 +121,6 @@ public class DrawVodActivity extends AppCompatActivity implements OnRefreshLoadM
                 if (adSuyiError != null) {
                     String failedJson = adSuyiError.toString();
                     Log.d(ADSuyiDemoConstant.TAG, "onAdFailed : " + failedJson);
-                    ADSuyiToastUtil.show(getApplicationContext(), "onAdFailed : " + failedJson);
                 }
                 refreshLayout.finish(refreshType, false, false);
             }

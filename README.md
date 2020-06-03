@@ -489,7 +489,6 @@ adSuyiSplashAd.setListener(new ADSuyiSplashAdListener() {
     		if (adSuyiError != null) {
         		String failedJson = adSuyiError.toString();
             Log.d(ADSuyiDemoConstant.TAG, "onAdFailed----->" + failedJson);
-            ADSuyiToastUtil.show(getApplicationContext(), "广告获取失败" + failedJson);
         }
         jumpMain();
     }
@@ -541,7 +540,6 @@ suyiBannerAd.setListener(new ADSuyiBannerAdListener() {
     		if (adSuyiError != null) {
         		String failedJson = adSuyiError.toString();
             Log.d(ADSuyiDemoConstant.TAG, "onAdFailed----->" + failedJson);
-            ADSuyiToastUtil.show(getApplicationContext(), "广告获取失败" + failedJson);
         }
     }
 });
@@ -662,7 +660,6 @@ rewardVodAd.setListener(new ADSuyiRewardVodAdListener() {
     @Override
     public void onAdReceive(ADSuyiRewardVodAdInfo rewardVodAdInfo) {
     		RewardVodAdActivity.this.rewardVodAdInfo = rewardVodAdInfo;
-        ADSuyiToastUtil.show(getApplicationContext(), "激励视频广告获取成功");
         Log.d(ADSuyiDemoConstant.TAG, "onAdReceive----->");
     }
 
@@ -686,7 +683,6 @@ rewardVodAd.setListener(new ADSuyiRewardVodAdListener() {
     		if (adSuyiError != null) {
         		String failedJosn = adSuyiError.toString();
             Log.d(ADSuyiDemoConstant.TAG, "onAdFailed----->" + failedJosn);
-            ADSuyiToastUtil.show(getApplicationContext(), "广告获取失败" + failedJosn);
         }
     }
 });
@@ -726,7 +722,6 @@ fullScreenVodAd.setListener(new ADSuyiFullScreenVodAdListener() {
     @Override
     public void onAdReceive(ADSuyiFullScreenVodAdInfo fullScreenVodAdInfo) {
     		FullScreenVodAdActivity.this.fullScreenVodAdInfo = fullScreenVodAdInfo;
-        ADSuyiToastUtil.show(getApplicationContext(), "全屏视频广告获取成功");
         Log.d(ADSuyiDemoConstant.TAG, "onAdReceive----->");
     }
 
@@ -750,7 +745,6 @@ fullScreenVodAd.setListener(new ADSuyiFullScreenVodAdListener() {
     		if (adSuyiError != null) {
         		String failedJson = adSuyiError.toString();
             Log.d(ADSuyiDemoConstant.TAG, "onAdFailed----->" + failedJson);
-            ADSuyiToastUtil.show(getApplicationContext(), "广告获取失败" + failedJson);
         }
    	}
 });
@@ -781,7 +775,6 @@ interstitialAd.setListener(new ADSuyiInterstitialAdListener() {
     @Override
     public void onAdReceive(ADSuyiInterstitialAdInfo interstitialAdInfo) {
     		InterstitialAdActivity.this.interstitialAdInfo = interstitialAdInfo;
-        ADSuyiToastUtil.show(getApplicationContext(), "插屏广告获取成功");
         Log.d(ADSuyiDemoConstant.TAG, "onAdReceive----->");
     }
 
@@ -805,7 +798,6 @@ interstitialAd.setListener(new ADSuyiInterstitialAdListener() {
     		if (adSuyiError != null) {
         		String failedJson = adSuyiError.toString();
             Log.d(ADSuyiDemoConstant.TAG, "onAdFailed----->" + failedJson);
-            ADSuyiToastUtil.show(getApplicationContext(), "广告获取失败" + failedJson);
         }
     }
 });
@@ -877,7 +869,6 @@ drawVodAd.setListener(new ADSuyiDrawVodAdListener() {
     		if (adSuyiError != null) {
         		String failedJson = adSuyiError.toString();
             Log.d(ADSuyiDemoConstant.TAG, "onAdFailed : " + failedJson);
-            ADSuyiToastUtil.show(getApplicationContext(), "onAdFailed : " + failedJson);
        	}
         refreshLayout.finish(refreshType, false, false);
 		}

@@ -91,10 +91,10 @@ public class RewardVodAdActivity extends AppCompatActivity implements View.OnCli
 
             @Override
             public void onAdFailed(ADSuyiError adSuyiError) {
+                ADSuyiToastUtil.show(getApplicationContext(), "广告获取失败");
                 if (adSuyiError != null) {
                     String failedJosn = adSuyiError.toString();
                     Log.d(ADSuyiDemoConstant.TAG, "onAdFailed..." + failedJosn);
-                    ADSuyiToastUtil.show(getApplicationContext(), "广告获取失败" + failedJosn);
                 }
             }
         });
