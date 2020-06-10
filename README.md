@@ -32,7 +32,7 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | mintegral | 汇量     | Mobvsita |
 | ksad      | 快手     | 快手     |
 | oneway    | 万维     | 万维     |
-| appci     | appic    | AppicAd  |
+| appic     | appic    | AppicAd  |
 
 
 
