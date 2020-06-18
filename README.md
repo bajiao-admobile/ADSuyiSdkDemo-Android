@@ -1,4 +1,4 @@
-# ADSuyiSdk Android Sdk——接入文档 V3.0.1.05261
+# ADSuyiSdk Android Sdk——接入文档 V3.0.2.06171
 
  目录 
 
@@ -33,6 +33,7 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | ksad      | 快手     | 快手     |
 | oneway    | 万维     | 万维     |
 | appic     | appic    | AppicAd  |
+| Ifly      | 讯飞     | 讯飞     |
 
 
 
@@ -127,6 +128,9 @@ AdapterSdk会指定支持的ADSuyiSdk版本，**如果导入的AdapterSdk和ADSu
 allprojects {
     repositories {
         ...
+        google()
+        jcenter()
+        mavenCentral()
         // 添加以下仓库地址
         maven { url "http://101.37.191.20:9091/repository/maven-releases/" }
     }
@@ -146,40 +150,44 @@ dependencies {
     implementation 'com.android.support:support-v4:28.0.0'
     implementation 'com.android.support:design:28.0.0'
   
-    // ADSuyiSdk和OAID是必须导入的，OAID的aar在Demo的libs目录下
-    implementation 'cn.admobiletop.adsuyi.ad:core:3.0.1.05261'
+    // ADSuyiSdk、common和OAID库是必须导入的
+    implementation 'cn.admobiletop.adsuyi.ad:core-alpha:3.0.2.06171'
+    implementation 'com.admobile:common:1.1.1'
     implementation(name: 'msa_mdid_1.0.13', ext: 'aar')
 
     // 艾狄墨搏AdapterSdk，必须的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile:4.5.9.05221'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile-alpha:4.6.2.06121'
 
     // 广点通AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.211.1081.05221'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt-alpha:4.211.1081.06101'
 
     // 头条AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:2.9.5.6.05221'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao-alpha:3.0.0.4.06101'
 
     // 百度AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu:5.85.06011'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-alpha:5.86.06111'
 
     // 汇量AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:10.2.41.05221'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral-alpha:10.3.0.06151'
 
     // InmobiAdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:inmobi:7.4.4.05281'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:inmobi-alpha:7.4.4.06101'
     implementation 'com.squareup.picasso:picasso:2.5.2'
-    
-    // 快手AdapterSdk，可选的  
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksad:2.3.0.05221'
-    
-    // 万维AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:oneway:2.4.3.05221'
-      
+
+    // 快手AdapterSdk，可选的
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksad-alpha:2.3.0.06101'
+
+    // OneWayAdapterSdk，可选的
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:oneway-alpha:2.4.3.06121'
+
     // AppicAdapterSdk(信息流无曝光回调，全屏视频无播放完成回调)，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:appic:4.2.0.4.05231'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:appic-alpha:4.2.0.4.06101'
     // Appic还需要以下两个三方库支持
     implementation 'com.android.volley:volley:1.1.0'
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.6'
+
+    // 讯飞AdapterSdk，可选的
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:ifly-alpha:4.4.3.06161'
 }
 ```
 
@@ -291,7 +299,7 @@ dependencies {
 
   
 
-2. 在res/xml目录下(如果xml目录不存在需要手动创建)，新建XML文件adsuyi_file_paths，在该文件中加入如下配置：
+2. 在res/xml目录下(如果xml目录不存在需要手动创建)，新建XML文件adsuyi_file_paths，在该文件中加入如下配置，如果存在相同android:authorities的provider，请将paths标签中的路劲配置到自己的xml文件中：
 
   ```java
   <?xml version="1.0" encoding="utf-8"?>  
@@ -330,7 +338,6 @@ dependencies {
 
 ```java
 -ignorewarnings
-  
 # v4、v7（如果是Support支持库需添加）
 -keep class android.support.v4.**{public *;}
 -keep class android.support.v7.**{public *;}
@@ -413,10 +420,15 @@ dependencies {
 -keep class com.ksad.download.** { *;}
 -keep class com.kwai.filedownloader.** { *;}
 
-# AppicAd 所需要的混淆内容
+# AppicAd广告平台混淆
 -keep class * extends com.ap.android.trunk.sdk.core.base.ad.Ad
 -keep class * extends com.ap.android.trunk.sdk.core.base.ad.AdSDK
 -keep class * implements com.ap.android.trunk.sdk.core.base.lifecycle.IApplicationLifecycle
+
+# 讯飞广告平台混淆
+-dontwarn com.iflytek.**
+-keep class com.iflytek.** {* ;}
+-keep class android.support.v4.**{public * ;}
 ```
 
 

@@ -33,6 +33,8 @@ public class ADSuyiApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        // 添加bugly初始化（该初始化与广告SDK无关，广告SDK中不包含bugly相关内容，仅供Demo错误信息收集使用）
+        CrashReport.initCrashReport(getApplicationContext(), "6d9d9f24ee", true);
 
         // 初始化ADSuyi广告SDK
         ADSuyiSdk.getInstance().init(this, new ADSuyiInitConfig.Builder()
@@ -43,9 +45,6 @@ public class ADSuyiApplication extends Application {
                 // 是否过滤第三方平台的问题广告（例如: 已知某个广告平台在某些机型的Banner广告可能存在问题，如果开启过滤，则在该机型将不再去获取该平台的Banner广告）
                 .filterThirdQuestion(true)
                 .build());
-
-        // 添加bugly初始化（该初始化与广告SDK无关，广告SDK中不包含bugly相关内容，仅供Demo错误信息收集使用）
-        CrashReport.initCrashReport(getApplicationContext(), "6d9d9f24ee", true);
 
         // 如果有接开屏广告，可以设置应用进入后台一段时间后回到应用再次开启开屏界面，增加开屏广告收益（仅供参考，无需要可不设置）
         openSplashActivityAgain();

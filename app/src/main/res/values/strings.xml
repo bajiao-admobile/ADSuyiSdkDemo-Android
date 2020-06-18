@@ -49,5 +49,8 @@
 
         <!--appic-->
         <item>appic</item>
+
+        <!--讯飞-->
+        <item>ifly</item>
     </string-array>
 </resources>

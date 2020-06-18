@@ -15,10 +15,10 @@
 
     <EditText
         android:id="@+id/etPosId"
-        android:focusable="false"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
+        android:focusable="false"
         android:textColor="@color/colorPrimary" />
 
     <TextView
@@ -29,13 +29,21 @@
         android:textColor="@color/colorPrimaryDark"
         android:textSize="16sp" />
 
+    <CheckBox
+        android:id="@+id/cbOnlySupportPlatform"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="10dp"
+        android:text="是否所有广告类型一起生效" />
+
     <EditText
         android:id="@+id/etOnlySupportPlatform"
-        android:focusable="false"
-        android:hint="所有(null或空字符串)"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
+        android:focusable="false"
+        android:hint="所有(null或空字符串)"
         android:textColor="@color/colorPrimary" />
 
     <TextView
@@ -78,10 +86,10 @@
 
     <CheckBox
         android:id="@+id/cbNativeMute"
-        android:text="是否静音播放视频(部分平台支持)"
-        android:visibility="gone"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="是否静音播放视频(部分平台支持)"
+        android:visibility="gone" />
 
     <Button
         android:id="@+id/btnDefine"

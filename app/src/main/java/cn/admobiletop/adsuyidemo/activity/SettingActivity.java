@@ -38,6 +38,7 @@ public class SettingActivity extends AppCompatActivity {
     private String adType;
     private EditText etOnlySupportPlatform;
     private List<String> posIdList;
+    private CheckBox cbOnlySupportPlatform;
 
     public static void start(Context context, String adType, ArrayList<String> posIdList) {
         Intent intent = new Intent(context, SettingActivity.class);
@@ -63,6 +64,7 @@ public class SettingActivity extends AppCompatActivity {
         etCount = findViewById(R.id.etCount);
 
         etOnlySupportPlatform = findViewById(R.id.etOnlySupportPlatform);
+        cbOnlySupportPlatform = findViewById(R.id.cbOnlySupportPlatform);
 
         tvAutoRefreshInterval = findViewById(R.id.tvAutoRefreshInterval);
         etAutoRefreshInterval = findViewById(R.id.etAutoRefreshInterval);
@@ -211,6 +213,15 @@ public class SettingActivity extends AppCompatActivity {
                 break;
             default:
                 break;
+        }
+        if (cbOnlySupportPlatform.isChecked()) {
+            ADSuyiDemoConstant.SPLASH_AD_ONLY_SUPPORT_PLATFORM = onlySupportPlatform;
+            ADSuyiDemoConstant.BANNER_AD_ONLY_SUPPORT_PLATFORM = onlySupportPlatform;
+            ADSuyiDemoConstant.NATIVE_AD_ONLY_SUPPORT_PLATFORM = onlySupportPlatform;
+            ADSuyiDemoConstant.REWARD_VOD_AD_ONLY_SUPPORT_PLATFORM = onlySupportPlatform;
+            ADSuyiDemoConstant.FULL_SCREEN_VOD_AD_ONLY_SUPPORT_PLATFORM = onlySupportPlatform;
+            ADSuyiDemoConstant.INTERSTITIAL_AD_ONLY_SUPPORT_PLATFORM = onlySupportPlatform;
+            ADSuyiDemoConstant.DRAW_VOD_AD_ONLY_SUPPORT_PLATFORM = onlySupportPlatform;
         }
         ADSuyiToastUtil.show(this, "修改成功");
         finish();

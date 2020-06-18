@@ -81,7 +81,12 @@
 -keep class com.ksad.download.** { *;}
 -keep class com.kwai.filedownloader.** { *;}
 
-# AppicAd 所需要的混淆内容
+# AppicAd广告平台混淆
 -keep class * extends com.ap.android.trunk.sdk.core.base.ad.Ad
 -keep class * extends com.ap.android.trunk.sdk.core.base.ad.AdSDK
 -keep class * implements com.ap.android.trunk.sdk.core.base.lifecycle.IApplicationLifecycle
+
+# 讯飞广告平台混淆
+-dontwarn com.iflytek.**
+-keep class com.iflytek.** {* ;}
+-keep class android.support.v4.**{public * ;}
