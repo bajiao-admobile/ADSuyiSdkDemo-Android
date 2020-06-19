@@ -144,13 +144,6 @@ allprojects {
 将广告所需要的依赖集成进去，AdapterSdk可根据接入平台情况进行选择接入。
 
 ```java
-ndk {
-	// 设置支持的SO库架构，暂不支持x86
-	abiFilters 'armeabi-v7a' // 'armeabi', 'arm64-v8a'
-}
-```
-
-```java
 dependencies {
     // support支持库，如果是AndroidX请使用对应的支持库
     implementation 'com.android.support:appcompat-v7:28.0.0'
@@ -194,7 +187,7 @@ dependencies {
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.6'
 
     // 讯飞AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ifly-alpha:4.4.3.06161'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:ifly-alpha:4.4.3.06191'
 }
 ```
 
@@ -202,12 +195,12 @@ dependencies {
 
 #### 5.1.3 注意事项 
 
-* 支持主流架构，x86架构部分平台暂不支持，例如广点通
+* 支持主流架构，x86架构暂不支持
 
   ```java
   ndk {
-      // 设置支持的SO库架构（x86架构部分平台暂不支持，例如广点通）
-  	  abiFilters 'armeabi-v7a' // 'armeabi', 'arm64-v8a'
+  	// 设置支持的SO库架构，暂不支持x86
+  	abiFilters 'armeabi-v7a' // 'armeabi', 'arm64-v8a'
   }
   ```
 

@@ -103,5 +103,5 @@ dependencies {
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.6'
 
     // 讯飞AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ifly-alpha:4.4.3.06161'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:ifly-alpha:4.4.3.06191'
 }
