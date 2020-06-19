@@ -11,7 +11,7 @@ android {
         multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         ndk {
-            // 设置支持的SO库架构（x86架构部分平台暂不支持，例如广点通）
+            // 设置支持的SO库架构，暂不支持x86
             abiFilters 'armeabi-v7a' // 'armeabi', 'arm64-v8a'
         }
     }
@@ -78,7 +78,7 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt-alpha:4.211.1081.06101'
 
     // 头条AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao-alpha:3.0.0.4.06101'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao-alpha:3.0.0.4.06191'
 
     // 百度AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-alpha:5.86.06111'

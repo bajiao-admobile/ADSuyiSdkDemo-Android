@@ -144,6 +144,13 @@ allprojects {
 将广告所需要的依赖集成进去，AdapterSdk可根据接入平台情况进行选择接入。
 
 ```java
+ndk {
+	// 设置支持的SO库架构，暂不支持x86
+	abiFilters 'armeabi-v7a' // 'armeabi', 'arm64-v8a'
+}
+```
+
+```java
 dependencies {
     // support支持库，如果是AndroidX请使用对应的支持库
     implementation 'com.android.support:appcompat-v7:28.0.0'
@@ -162,7 +169,7 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt-alpha:4.211.1081.06101'
 
     // 头条AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao-alpha:3.0.0.4.06101'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao-alpha:3.0.0.4.06191'
 
     // 百度AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-alpha:5.86.06111'
