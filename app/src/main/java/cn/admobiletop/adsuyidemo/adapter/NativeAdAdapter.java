@@ -239,10 +239,6 @@ public class NativeAdAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                 tvDesc.setText(nativeFeedAdInfo.getDesc());
                 tvAdType.setText(nativeFeedAdInfo.getCtaText());
 
-                // 广点通的广告容器会自带角标，如果不希望出现两个角标，可以通过平台判断来隐藏自己设置的角标
-                boolean isGdtPlatform = cn.admobiletop.adsuyi.adapter.gdt.ADSuyiIniter.PLATFORM.equals(nativeFeedAdInfo.getPlatform());
-                ivAdTarget.setVisibility(isGdtPlatform ? View.GONE : View.VISIBLE);
-
                 // 注册关闭按钮，将关闭按钮点击事件交于SDK托管，以便于回调onAdClose
                 nativeFeedAdInfo.registerCloseView(ivClose);
 
