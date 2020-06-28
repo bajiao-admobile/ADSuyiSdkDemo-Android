@@ -6,8 +6,8 @@ android {
         applicationId "cn.admobiletop.adsuyidemo"
         minSdkVersion 19
         targetSdkVersion 29
-        versionCode 202006171
-        versionName "1.202006171"
+        versionCode 202006281
+        versionName "1.202006281"
         multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         ndk {
@@ -72,7 +72,7 @@ dependencies {
     implementation(name: 'msa_mdid_1.0.13', ext: 'aar')
 
     // 艾狄墨搏AdapterSdk，必须的`
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile-alpha:4.6.3.06221'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile-alpha:4.6.4.06281'
 
     // 广点通AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt-alpha:4.211.1081.06191'
