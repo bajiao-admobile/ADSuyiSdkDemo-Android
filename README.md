@@ -156,7 +156,7 @@ dependencies {
     implementation(name: 'msa_mdid_1.0.13', ext: 'aar')
 
     // 艾狄墨搏AdapterSdk，必须的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile-alpha:4.6.4.06281'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile-alpha:4.6.5.06291'
 
     // 广点通AdapterSdk，可选的
 		implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt-alpha:4.211.1081.06191'
