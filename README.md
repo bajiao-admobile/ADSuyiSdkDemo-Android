@@ -1,4 +1,4 @@
-# ADSuyiSdk Android Sdk——接入文档 V3.0.2.06173
+# ADSuyiSdk Android Sdk——接入文档 V3.0.2.06291
 
  目录 
 
@@ -151,12 +151,12 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
   
     // ADSuyiSdk、common和OAID库是必须导入的
-    implementation 'cn.admobiletop.adsuyi.ad:core-alpha:3.0.2.06173'
+    implementation 'cn.admobiletop.adsuyi.ad:core-alpha:3.0.2.06291'
     implementation 'com.admobile:common:1.1.1'
     implementation(name: 'msa_mdid_1.0.13', ext: 'aar')
 
     // 艾狄墨搏AdapterSdk，必须的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile-alpha:4.6.5.06291'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile-alpha:4.6.7.06291'
 
     // 广点通AdapterSdk，可选的
 		implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt-alpha:4.211.1081.06191'
