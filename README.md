@@ -87,14 +87,14 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 ## 3. Demo及SDK下载链接
 
 > [ADSuyiSdkDemo-Android](https://github.com/ADSuyi/ADSuyiSdkDemo-Android)
+>
+> [更新日志](http://doc.admobile.top/ssp/4-%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/1-androidchangelog.html)
 
 
 
 ## 4. SDK版本说明
 
 ### 4.1 ADSuyiSdk版本号说明
-
-版本号起始为3.0.0；
 
 版本号格式为3.0.0.xxxxn，其中xxxx代表日期，最后一位n为版本扩展号；
 
@@ -463,7 +463,7 @@ ADSuyiSdk.getInstance().init(this, new ADSuyiInitConfig.Builder()
 
 ### <a name="ad_splash">6.2 开屏广告示例</a>
 
-开屏广告建议在闪屏页进行展示，开屏广告的宽度和高度取决于容器的宽高，都是会撑满广告容器；**开屏广告的高度建议大于等于屏幕高度的75%**，否则可能会影响收益计费。
+开屏广告建议在闪屏页进行展示，开屏广告的宽度和高度取决于容器的宽高，都是会撑满广告容器；**开屏广告的高度必须大于等于屏幕高度的75%**，否则可能会影响收益计费。
 
 ```java
 // 创建开屏广告实例，第一个参数可以是Activity或Fragment，第二个参数是广告容器
