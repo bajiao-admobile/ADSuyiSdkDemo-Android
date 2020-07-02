@@ -151,43 +151,43 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
   
     // ADSuyiSdk、common和OAID库是必须导入的
-    implementation 'cn.admobiletop.adsuyi.ad:core-alpha:3.0.2.06291'
+    implementation 'cn.admobiletop.adsuyi.ad:core:3.0.2.06291'
     implementation 'com.admobile:common:1.1.1'
     implementation(name: 'msa_mdid_1.0.13', ext: 'aar')
 
     // 艾狄墨搏AdapterSdk，必须的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile-alpha:4.6.7.06291'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile:4.6.7.06291'
 
     // 广点通AdapterSdk，可选的
-		implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt-alpha:4.211.1081.06191'
+		implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.211.1081.06191'
       
     // 头条AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao-alpha:3.0.0.4.06191'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:3.0.0.4.06191'
 
     // 百度AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-alpha:5.86.06111'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu:5.86.06111'
 
     // 汇量AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral-alpha:10.3.0.06151'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:10.3.0.06151'
 
     // InmobiAdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:inmobi-alpha:7.4.4.06101'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:inmobi:7.4.4.06101'
     implementation 'com.squareup.picasso:picasso:2.5.2'
 
     // 快手AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksad-alpha:2.3.0.06101'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksad:2.3.0.06101'
 
     // OneWayAdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:oneway-alpha:2.4.3.06121'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:oneway:2.4.3.06121'
 
     // AppicAdapterSdk(信息流无曝光回调，全屏视频无播放完成回调)，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:appic-alpha:4.2.0.4.06101'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:appic:4.2.0.4.06101'
     // Appic还需要以下两个三方库支持
     implementation 'com.android.volley:volley:1.1.0'
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.6'
 
     // 讯飞AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ifly-alpha:4.4.3.06191'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:ifly:4.4.3.06191'
 }
 ```
 
