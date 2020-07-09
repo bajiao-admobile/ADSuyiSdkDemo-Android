@@ -33,11 +33,8 @@ public class SplashAdActivity extends Activity {
     /**
      * 根据实际情况申请
      */
-    private static final String[] PERMISSIONS = {
-            Manifest.permission.READ_PHONE_STATE
+    private static final String[] PERMISSIONS = {Manifest.permission.READ_PHONE_STATE
             , Manifest.permission.WRITE_EXTERNAL_STORAGE
-            , Manifest.permission.ACCESS_NETWORK_STATE
-            , Manifest.permission.ACCESS_WIFI_STATE
             , Manifest.permission.ACCESS_COARSE_LOCATION
     };
     private static final int REQUEST_CODE = 7722;

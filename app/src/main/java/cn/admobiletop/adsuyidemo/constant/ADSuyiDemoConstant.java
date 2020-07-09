@@ -6,12 +6,12 @@ package cn.admobiletop.adsuyidemo.constant;
  * @date 2020/4/7
  */
 public class ADSuyiDemoConstant {
-    public static final String APP_ID = "3845624";
+    public static final String APP_ID = "3801556";
     public static final String TAG = "ADSuyiDemoLog";
     /**
      * 开屏广告位ID
      */
-    public static final String SPLASH_AD_POS_ID1 = "aa1731a67177614154";
+    public static final String SPLASH_AD_POS_ID1 = "63a981ded04aa89442";
     public static String SPLASH_AD_POS_ID = SPLASH_AD_POS_ID1;
     /**
      * 开屏广告位仅支持的平台
@@ -21,15 +21,15 @@ public class ADSuyiDemoConstant {
     /**
      * Banner广告位ID, 640*100
      */
-    public final static String BANNER_AD_POS_ID1 = "db2e434348beeeabec";
+    public final static String BANNER_AD_POS_ID1 = "467b6588a2a28bff5b";
     /**
      * Banner广告位ID, 600*300
      */
-    public final static String BANNER_AD_POS_ID2 = "6f4d49da0a0e55d648";
+    public final static String BANNER_AD_POS_ID2 = "8ca4d2887cdc6c37de";
     /**
      * Banner广告位ID, 600*150
      */
-    public final static String BANNER_AD_POS_ID3 = "45c212b62f82733444";
+    public final static String BANNER_AD_POS_ID3 = "098c34f804fd2591e9";
     public static String BANNER_AD_POS_ID = BANNER_AD_POS_ID1;
 
     /**
@@ -44,11 +44,11 @@ public class ADSuyiDemoConstant {
     /**
      * 信息流广告位ID，自渲染
      */
-    public static final String NATIVE_AD_POS_ID1 = "f5a5f336d53e18ceb1";
+    public static final String NATIVE_AD_POS_ID1 = "c078638e143ac16f46";
     /**
      * 信息流广告位ID，模板自渲染混合
      */
-    public static final String NATIVE_AD_POS_ID2 = "616aa32dde431d52a0";
+    public static final String NATIVE_AD_POS_ID2 = "9f273c39a30ab43655";
     public static String NATIVE_AD_POS_ID = NATIVE_AD_POS_ID1;
     /**
      * 信息流广告一次拉取广告数量
@@ -63,11 +63,11 @@ public class ADSuyiDemoConstant {
     /**
      * 激励视频广告位ID，竖版
      */
-    public static final String REWARD_VOD_AD_POS_ID1 = "e639b37d6c178ff637";
+    public static final String REWARD_VOD_AD_POS_ID1 = "9ec7704ebcad7364ce";
     /**
      * 激励视频广告位ID，横版
      */
-    public static final String REWARD_VOD_AD_POS_ID2 = "6cce6498b1764d293b";
+    public static final String REWARD_VOD_AD_POS_ID2 = "31167c54f5edc926f4";
     public static String REWARD_VOD_AD_POS_ID = REWARD_VOD_AD_POS_ID1;
     /**
      * 激励视频广告位仅支持的平台
@@ -77,7 +77,7 @@ public class ADSuyiDemoConstant {
     /**
      * 全屏视频广告位ID
      */
-    public static final String FULL_SCREEN_VOD_AD_POS_ID1 = "80bced8840f5dbb30a";
+    public static final String FULL_SCREEN_VOD_AD_POS_ID1 = "6620c9299df9013cf5";
     public static String FULL_SCREEN_VOD_AD_POS_ID = FULL_SCREEN_VOD_AD_POS_ID1;
     /**
      * 全屏视频广告位仅支持的平台
@@ -87,7 +87,7 @@ public class ADSuyiDemoConstant {
     /**
      * 插屏广告位ID
      */
-    public static final String INTERSTITIAL_AD_POS_ID1 = "ce67a8a5105f5a9515";
+    public static final String INTERSTITIAL_AD_POS_ID1 = "7b4e3d4697e1c00908";
     public static String INTERSTITIAL_AD_POS_ID = INTERSTITIAL_AD_POS_ID1;
     /**
      * 插屏广告位仅支持的平台
@@ -97,7 +97,7 @@ public class ADSuyiDemoConstant {
     /**
      * Draw视频信息流广告位ID
      */
-    public static final String DRAW_VOD_AD_POS_ID1 = "989b4374dc769ca8f9";
+    public static final String DRAW_VOD_AD_POS_ID1 = "4d6bee2ec7217adf86";
     public static String DRAW_VOD_AD_POS_ID = DRAW_VOD_AD_POS_ID1;
     /**
      * Draw视频信息流广告一次拉取广告数量
