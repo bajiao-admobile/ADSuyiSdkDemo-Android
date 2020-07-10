@@ -112,6 +112,14 @@ AdapterSdk会指定支持的ADSuyiSdk版本，**如果导入的AdapterSdk和ADSu
 
 
 
+### 4.4 ADMobGenSdk升级ADSuyiSdk指引
+
+1. 升级ADSuyiSdk前请先移除ADMobGenSdk的SDK依赖和相关配置；
+2. ADMobGenSdk移除之后再根据ADSuyiSdk文档接入ADSuyiSdk；
+3. 无对接过ADMobGenSdk可忽略。
+
+
+
 ## 5. SDK接入流程
 
 ### 5.1 添加SDK到工程中
