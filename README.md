@@ -34,6 +34,7 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | oneway    | 万维     | 万维     |
 | appic     | appic    | AppicAd  |
 | Ifly      | 讯飞     | 讯飞     |
+| mgadsdk   | 芒果     | 芒果TV   |
 
 
 
@@ -256,15 +257,11 @@ dependencies {
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
      
-    <!-- 影响广告填充，强烈建议的权限 -->
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
-    <!-- 为了提高广告收益，建议设置的权限 -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-
     <!-- 如果有视频相关的广告播放请务必添加 -->
     <uses-permission android:name="android.permission.WAKE_LOCK" />
   ```
@@ -307,7 +304,7 @@ dependencies {
 
   
 
-2. 在res/xml目录下(如果xml目录不存在需要手动创建)，新建XML文件adsuyi_file_paths，在该文件中加入如下配置，如果存在相同android:authorities的provider，请将paths标签中的路劲配置到自己的xml文件中：
+2. 在res/xml目录下(如果xml目录不存在需要手动创建)，新建xml文件adsuyi_file_paths，在该文件中加入如下配置，如果存在相同android:authorities的provider，请将paths标签中的路劲配置到自己的xml文件中：
 
   ```java
   <?xml version="1.0" encoding="utf-8"?>  
@@ -437,6 +434,39 @@ dependencies {
 -dontwarn com.iflytek.**
 -keep class com.iflytek.** {* ;}
 -keep class android.support.v4.**{public * ;}
+
+# 芒果广告平台混淆
+-keep class * implements java.io.Serializable {*;}
+-keep class com.hunantv.media.** { *;}
+-keep class com.mgmi.** { *;}
+-keep class com.mgadplus.** { *;}
+-dontwarn com.hmt.analytics.**
+-dontwarn org.apaches.commons.codec.**
+-keep class com.hmt.analytics.**{*; }
+-keep class org.apaches.commons.codec.**{*; }
+-dontwarn com.facebook.**
+-keep enum com.facebook.**
+-keep public interface com.facebook.**
+-keep class com.facebook.**
+-keep class com.facebook.** { *; }
+-keep,allowobfuscation @interface com.facebook.common.internal.DoNotStrip -keep @com.facebook.common.internal.DoNotStrip class *
+-keepclassmembers class * {
+@com.facebook.common.internal.DoNotStrip *;
+}
+-keep public class com.mi.ad.sdk.**{*;}
+-keep public class com.doman.core.**{*;}
+-keep public class com.core.cell.** {*;}
+-keep class android.**{*;}
+-keep @interface system.** {*;}
+-keepclassmembers class system.**{ public *;}
+-dontwarn android.**
+-dontwarn com.android.**
+-dontwarn system.**
+-keep @interface com.core.cell.helper.Keep {*;}
+-keep @interface com.android.a.a.**{*;}
+-keep class io.reactivex.**{*;}
+-keep class com.github.megatronking.stringfog.**{*;}
+-keep @interface com.github.megatronking.stringfog.**{*;}
 ```
 
 
@@ -574,7 +604,7 @@ suyiBannerAd.loadAd(ADSuyiDemoConstant.BANNER_AD_POS_ID);
 
   ### <a name="ad_native">6.4 信息流广告示例</a>
 
-信息流广告，具备自渲染和模板两种广告样式：自渲染是SDK将返回广告标题、描述、Icon、图片、多媒体视图等信息，开发者可通过自行拼装渲染成喜欢的样式；模板样式则是返回拼装好的广告视图，开发者只需将视图添加到相应容器即可，模板样式的容器高度建议是自适应。
+信息流广告，具备自渲染和模板两种广告样式：自渲染是SDK将返回广告标题、描述、Icon、图片、多媒体视图等信息，开发者可通过自行拼装渲染成喜欢的样式；模板样式则是返回拼装好的广告视图，开发者只需将视图添加到相应容器即可，模板样式的容器高度建议是自适应。**由于信息流广告不同广告平台支持的样式不一致，有些平台不支持自渲染，有些平台不支持模板，所以下发的广告可能是模板和自渲染混合，强烈建议开发者参考Demo适配两种类型。**
 
 ```java
 // 创建信息流广告实例
