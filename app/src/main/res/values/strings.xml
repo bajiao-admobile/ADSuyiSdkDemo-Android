@@ -52,5 +52,8 @@
 
         <!--讯飞-->
         <item>ifly</item>
+
+        <!--芒果-->
+        <item>mgadsdk</item>
     </string-array>
 </resources>
