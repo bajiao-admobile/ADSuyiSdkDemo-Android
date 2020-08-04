@@ -49,6 +49,10 @@ public class ADSuyiDemoConstant {
      * 信息流广告位ID，模板自渲染混合
      */
     public static final String NATIVE_AD_POS_ID2 = "9f273c39a30ab43655";
+    /**
+     * 信息流广告位ID，只建了广点通模板2.0
+     */
+    public static final String NATIVE_AD_POS_ID3 = "6552acfed554d68c78";
     public static String NATIVE_AD_POS_ID = NATIVE_AD_POS_ID1;
     /**
      * 信息流广告一次拉取广告数量

@@ -96,6 +96,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                 adType = ADSuyiAdType.TYPE_FLOW;
                                 posIdList.add(ADSuyiDemoConstant.NATIVE_AD_POS_ID1);
                                 posIdList.add(ADSuyiDemoConstant.NATIVE_AD_POS_ID2);
+                                posIdList.add(ADSuyiDemoConstant.NATIVE_AD_POS_ID3);
                                 break;
                             case 3:
                                 adType = ADSuyiAdType.TYPE_REWARD_VOD;

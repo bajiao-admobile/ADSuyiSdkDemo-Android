@@ -35,6 +35,7 @@ public class NativeAdActivity extends AppCompatActivity implements OnRefreshLoad
     private MySmartRefreshLayout refreshLayout;
     private NativeAdAdapter nativeAdAdapter;
     private ADSuyiNativeAd adSuyiNativeAd;
+    private List<NativeAdSampleData> tempDataList = new ArrayList<>();
     private int refreshType;
 
     @Override
@@ -90,12 +91,16 @@ public class NativeAdActivity extends AppCompatActivity implements OnRefreshLoad
             @Override
             public void onAdReceive(List<ADSuyiNativeAdInfo> adInfoList) {
                 Log.d(ADSuyiDemoConstant.TAG, "onAdReceive: " + adInfoList.size());
-                List<NativeAdSampleData> nativeAdSampleDataList = new ArrayList<>();
                 for (int i = 0; i < adInfoList.size(); i++) {
+                    int index = i * 5;
                     ADSuyiNativeAdInfo nativeAdInfo = adInfoList.get(i);
-                    nativeAdSampleDataList.add(new NativeAdSampleData(nativeAdInfo));
+                    if (index >= tempDataList.size()) {
+                        tempDataList.add(new NativeAdSampleData(nativeAdInfo));
+                    } else {
+                        tempDataList.add(index, new NativeAdSampleData(nativeAdInfo));
+                    }
                 }
-                nativeAdAdapter.addData(nativeAdSampleDataList);
+                nativeAdAdapter.addData(tempDataList);
                 refreshLayout.finish(refreshType, true, false);
             }
 
@@ -121,6 +126,7 @@ public class NativeAdActivity extends AppCompatActivity implements OnRefreshLoad
                 if (adSuyiError != null) {
                     Log.d(ADSuyiDemoConstant.TAG, "onAdFailed: " + adSuyiError.toString());
                 }
+                nativeAdAdapter.addData(tempDataList);
                 refreshLayout.finish(refreshType, false, false);
             }
         });
@@ -146,8 +152,8 @@ public class NativeAdActivity extends AppCompatActivity implements OnRefreshLoad
      * 加载数据和广告
      */
     private void loadData() {
-        List<NativeAdSampleData> normalDataList = mockNormalDataRequest();
-        nativeAdAdapter.addData(normalDataList);
+        tempDataList.clear();
+        mockNormalDataRequest();
 
         // 请求广告数据，参数一广告位ID，参数二请求数量[1,3]
         adSuyiNativeAd.loadAd(ADSuyiDemoConstant.NATIVE_AD_POS_ID, ADSuyiDemoConstant.NATIVE_AD_COUNT);
@@ -155,14 +161,10 @@ public class NativeAdActivity extends AppCompatActivity implements OnRefreshLoad
 
     /**
      * 模拟普通数据请求
-     *
-     * @return 普通数据列表
      */
-    private List<NativeAdSampleData> mockNormalDataRequest() {
-        List<NativeAdSampleData> normalDataList = new ArrayList<>();
+    private void mockNormalDataRequest() {
         for (int i = 0; i < 20; i++) {
-            normalDataList.add(new NativeAdSampleData("模拟的普通数据 : " + (nativeAdAdapter.getItemCount() + i)));
+            tempDataList.add(new NativeAdSampleData("模拟的普通数据 : " + (nativeAdAdapter == null ? 0 : nativeAdAdapter.getItemCount() + i)));
         }
-        return normalDataList;
     }
 }
