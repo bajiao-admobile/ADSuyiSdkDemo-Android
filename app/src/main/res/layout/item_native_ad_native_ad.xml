@@ -95,7 +95,7 @@
             android:id="@+id/ivClose"
             android:layout_alignParentRight="true"
             android:src="@drawable/icon_close"
-            android:layout_width="20dp"
-            android:layout_height="20dp" />
+            android:layout_width="16dp"
+            android:layout_height="16dp" />
     </RelativeLayout>
 </com.qq.e.ads.nativ.widget.NativeAdContainer>

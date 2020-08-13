@@ -36,6 +36,7 @@ public class SplashAdActivity extends Activity {
     private static final String[] PERMISSIONS = {Manifest.permission.READ_PHONE_STATE
             , Manifest.permission.WRITE_EXTERNAL_STORAGE
             , Manifest.permission.ACCESS_COARSE_LOCATION
+            , Manifest.permission.ACCESS_FINE_LOCATION
     };
     private static final int REQUEST_CODE = 7722;
 
@@ -70,6 +71,11 @@ public class SplashAdActivity extends Activity {
         adSuyiSplashAd.setListener(new ADSuyiSplashAdListener() {
 
             @Override
+            public void onAdSkip(ADSuyiAdInfo adSuyiAdInfo) {
+                Log.d(ADSuyiDemoConstant.TAG, "广告跳过回调，不一定准确，埋点数据仅供参考... ");
+            }
+
+            @Override
             public void onAdReceive(ADSuyiAdInfo adSuyiAdInfo) {
                 Log.d(ADSuyiDemoConstant.TAG, "广告获取成功回调... ");
             }
@@ -92,10 +98,10 @@ public class SplashAdActivity extends Activity {
 
             @Override
             public void onAdFailed(ADSuyiError adSuyiError) {
-                ADSuyiToastUtil.show(getApplicationContext(), "广告获取失败");
                 if (adSuyiError != null) {
                     String failedJson = adSuyiError.toString();
                     Log.d(ADSuyiDemoConstant.TAG, "onAdFailed----->" + failedJson);
+                    ADSuyiToastUtil.show(getApplicationContext(), "广告获取失败 : " + failedJson);
                 }
                 jumpMain();
             }
