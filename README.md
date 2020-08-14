@@ -87,7 +87,7 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 <div STYLE="page-break-after:always;"></div>
 ## 3. Demo及SDK下载链接
 
-> [ADSuyiSdkDemo-Android](https://github.com/ADSuyi/ADSuyiSdkDemo-Android)
+> [ADSuyiSdkDemo-Android](https://codeload.github.com/ADSuyi/ADSuyiSdkDemo-Android/zip/master)
 >
 > [更新日志](http://doc.admobile.top/ssp/4-%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/1-androidchangelog.html)
 
