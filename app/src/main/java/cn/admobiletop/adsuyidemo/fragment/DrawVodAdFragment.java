@@ -60,7 +60,7 @@ public class DrawVodAdFragment extends BaseFragment implements OnRefreshLoadMore
 
     @Override
     public String getTitle() {
-        return "Draw视频信息流";
+        return "DrawVod";
     }
 
     private void initView(View inflate) {

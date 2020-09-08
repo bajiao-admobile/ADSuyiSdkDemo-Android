@@ -77,6 +77,6 @@ public class BannerAdFragment extends BaseFragment {
 
     @Override
     public String getTitle() {
-        return "Banner广告";
+        return "Banner";
     }
 }

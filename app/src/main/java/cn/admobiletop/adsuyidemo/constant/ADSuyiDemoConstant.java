@@ -111,4 +111,13 @@ public class ADSuyiDemoConstant {
      * Draw视频信息流广告位仅支持的平台
      */
     public static String DRAW_VOD_AD_ONLY_SUPPORT_PLATFORM = null;
+
+    /**
+     * 浮窗广告是否是暗黑模式
+     */
+    public static boolean FLOATING_AD_DARK_MODE = false;
+    /**
+     * 浮窗广告是否暂停展示
+     */
+    public static boolean FLOATING_AD_IS_PAUSED = false;
 }

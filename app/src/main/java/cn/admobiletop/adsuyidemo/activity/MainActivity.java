@@ -7,14 +7,15 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import cn.admobiletop.adsuyi.ADSuyiSdk;
 import cn.admobiletop.adsuyi.ad.data.ADSuyiAdType;
+import cn.admobiletop.adsuyi.util.ADSuyiToastUtil;
 import cn.admobiletop.adsuyidemo.R;
 import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
 
@@ -35,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.btnFullScreenAd).setOnClickListener(this);
         findViewById(R.id.btnInterstitialAd).setOnClickListener(this);
         findViewById(R.id.btnDrawVodAd).setOnClickListener(this);
+        findViewById(R.id.btnNovel).setOnClickListener(this);
         findViewById(R.id.btnFragmentExamples).setOnClickListener(this);
         findViewById(R.id.ivSetting).setOnClickListener(this);
     }
@@ -62,6 +64,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btnDrawVodAd:
                 startActivity(DrawVodActivity.class);
+                break;
+            case R.id.btnNovel:
+                boolean openSuccess = ADSuyiSdk.getInstance().openNovelActivity();
+                ADSuyiToastUtil.show(getApplicationContext(), openSuccess ? "打开成功" : "打开失败");
                 break;
             case R.id.btnFragmentExamples:
                 startActivity(FragmentActivity.class);
@@ -115,10 +121,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                 adType = ADSuyiAdType.TYPE_DRAW_VOD;
                                 posIdList.add(ADSuyiDemoConstant.DRAW_VOD_AD_POS_ID1);
                                 break;
+                            case 7:
+                                FloatingAdSettingActivity.start(MainActivity.this);
+                                break;
                             default:
                                 break;
                         }
-                        SettingActivity.start(MainActivity.this, adType, posIdList);
+                        if (!TextUtils.isEmpty(adType)) {
+                            SettingActivity.start(MainActivity.this, adType, posIdList);
+                        }
                         dialog.dismiss();
                     }
                 }).create().show();

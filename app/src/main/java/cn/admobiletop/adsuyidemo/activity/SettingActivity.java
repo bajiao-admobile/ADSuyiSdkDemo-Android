@@ -223,6 +223,7 @@ public class SettingActivity extends AppCompatActivity {
             ADSuyiDemoConstant.INTERSTITIAL_AD_ONLY_SUPPORT_PLATFORM = onlySupportPlatform;
             ADSuyiDemoConstant.DRAW_VOD_AD_ONLY_SUPPORT_PLATFORM = onlySupportPlatform;
         }
+
         ADSuyiToastUtil.show(this, "修改成功");
         finish();
     }

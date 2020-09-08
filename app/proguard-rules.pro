@@ -123,3 +123,9 @@
 -keep class io.reactivex.**{*;}
 -keep class com.github.megatronking.stringfog.**{*;}
 -keep @interface com.github.megatronking.stringfog.**{*;}
+
+# NovelAdapter混淆
+-keep class android.**{*;}
+-keep class com.ecook.** {* ;}
+-keep class com.parting_soul.http.** {* ;}
+-keep class com.ttx.reader.support.** {* ;}

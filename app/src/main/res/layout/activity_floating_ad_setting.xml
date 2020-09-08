@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <CheckBox
+        android:id="@+id/cbDarkMode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="10dp"
+        android:text="是否开启暗黑模式(目前仅适用于浮窗广告)" />
+
+    <RadioGroup
+        android:id="@+id/rgPauseStart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/rbRestart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="10dp"
+            android:text="重新开启浮窗广告" />
+
+        <RadioButton
+            android:id="@+id/rbPause"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="10dp"
+            android:text="暂停浮窗广告" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnDefine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="64dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginRight="64dp"
+        android:text="@string/define"
+        android:visibility="visible" />
+</LinearLayout>

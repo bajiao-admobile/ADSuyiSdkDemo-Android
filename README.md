@@ -82,14 +82,19 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
     <td>类似小视频一样的视频广告</td>
     <td>类似小视频列表的场景</td>
   </tr>
+<tr>
+    <td><a href="#inner_notice">浮窗广告</a></td>
+    <td>类似通知栏样式展示的广告，只在应用中弹出，几乎不影响用户操作，用户可以上滑左右滑动移除广告</td>
+    <td>任意场景</td>
+  </tr>
 </table>
 
 <div STYLE="page-break-after:always;"></div>
 ## 3. Demo及SDK下载链接
 
-> [ADSuyiSdkDemo-Android](https://codeload.github.com/ADSuyi/ADSuyiSdkDemo-Android/zip/master)
+> [ADSuyiSdkDemo-Android下载地址](https://codeload.github.com/ADSuyi/ADSuyiSdkDemo-Android/zip/master)
 >
-> [更新日志](http://doc.admobile.top/ssp/4-%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/1-androidchangelog.html)
+> [SDK版本更新日志](http://doc.admobile.top/ssp/4-%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/1-androidchangelog.html)
 
 
 
@@ -159,10 +164,11 @@ dependencies {
     implementation 'com.android.support:support-v4:28.0.0'
     implementation 'com.android.support:design:28.0.0'
   
-     // ADSuyiSdk、common和OAID库是必须导入的
+     // ADSuyiSdk核心库是必须导入的
     implementation 'cn.admobiletop.adsuyi.ad:core:3.0.5.07281'
-    // common库请保持和Demo中版本一致
+    // common库是必须导入的，请保持和Demo中版本一致
     implementation 'com.admobile:common:1.2.0'
+    // OAID库是必须导入的，请保持和Demo中版本一致
     implementation(name: 'msa_mdid_1.0.13', ext: 'aar')
 
     // 艾狄墨搏AdapterSdk，必须的`
@@ -263,7 +269,7 @@ dependencies {
   使用SDK时可能需要以下权限，为了保证使用广告的正确，请在6.0及以上的手机中使用SDK前及时申请。
 
   ```java
-    <!-- 广告必须的权限，AAR中已经内置 -->
+    <!-- 广告必须的权限 -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -944,7 +950,37 @@ drawVodAd.loadAd(ADSuyiDemoConstant.DRAW_VOD_AD_POS_ID, ADSuyiDemoConstant.DRAW_
 
 
 
-### 6.9 备注
+### <a name="inner_notice">6.9 浮窗广告</a>
+
+类似通知栏样式展示的广告，只在应用中弹出，几乎不影响用户操作，用户可以上滑左右滑动移除广告。**浮窗广告无需自行对接，只需要联系我们后台开通即可。同时我们提供一些接口方法，可以自行控制浮窗广告开启/关闭，暂停/恢复，界面过滤等。**
+
+```java
+ // 初始化ADSuyi广告SDK
+ADSuyiSdk.getInstance().init(this, new ADSuyiInitConfig.Builder()
+		// 设置APPID
+    .appId(ADSuyiDemoConstant.APP_ID)
+    // 可以通过设置该值手动关闭或开启浮窗广告，默认开启（服务端没有配置开启也不会有浮窗广告）                         
+    .openFloatingAd(false)                         
+    // 如果开了浮窗广告，可设置不展示浮窗广告的界面，第一个参数为是否开启默认不展示的页面（例如:激励视频播放页面），第二可变参数为自定义不展示的页面
+    .floatingAdBlockList(false, "cn.admobiletop.adsuyidemo.activity.SplashAdActivity")
+    .build());
+```
+
+
+
+**浮窗广告的暂停和恢复**
+
+```java
+// 可通过调用此方法暂停浮窗广告投放
+ADSuyiSdk.getInstance().pauseFloatingAd();
+
+// 可通过调用此方法恢复浮窗广告投放
+ADSuyiSdk.getInstance().restartFloatingAd();
+```
+
+
+
+### 6.10 备注
 
 具体的接入代码和流程，请参考Demo
 

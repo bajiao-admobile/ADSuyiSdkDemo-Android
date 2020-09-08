@@ -61,7 +61,7 @@ public class SplashAdActivity extends Activity {
             }
         }
 
-        // 创建开屏广告实例，第一个参数可以是Activity或Fragment，第二个参数是广告容器（请保证容器不会拦截点击、触摸等事件）
+        // 创建开屏广告实例，第一个参数可以是Activity或Fragment，第二个参数是广告容器（请保证容器不会拦截点击、触摸等事件，高度不小于真实屏幕高度的75%，并且处于可见状态）
         adSuyiSplashAd = new ADSuyiSplashAd(this, flContainer);
         // 设置是否是沉浸式，如果为true，跳过按钮距离顶部的高度会加上状态栏高度
         adSuyiSplashAd.setImmersive(false);

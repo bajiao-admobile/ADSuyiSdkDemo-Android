@@ -11,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import java.util.ArrayList;
 import java.util.List;
 
+import cn.admobiletop.adsuyi.ADSuyiSdk;
 import cn.admobiletop.adsuyidemo.R;
 import cn.admobiletop.adsuyidemo.fragment.BannerAdFragment;
 import cn.admobiletop.adsuyidemo.fragment.BaseFragment;
@@ -40,11 +41,17 @@ public class FragmentActivity extends AppCompatActivity {
     }
 
     private void initData() {
-        final List<BaseFragment> fragmentList = new ArrayList<>();
+        final List<Fragment> fragmentList = new ArrayList<>();
         fragmentList.add(new NativeAdFragment());
         fragmentList.add(new BannerAdFragment());
         fragmentList.add(new DrawVodAdFragment());
 
+        Fragment novelFragment = ADSuyiSdk.getInstance().getNovelFragment();
+        if (novelFragment != null) {
+            fragmentList.add(novelFragment);
+        }
+
+        viewPager.setOffscreenPageLimit(fragmentList.size() - 1);
         viewPager.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {
             @Override
             public Fragment getItem(int position) {
@@ -59,7 +66,11 @@ public class FragmentActivity extends AppCompatActivity {
             @Nullable
             @Override
             public CharSequence getPageTitle(int position) {
-                return fragmentList.get(position).getTitle();
+                Fragment fragment = fragmentList.get(position);
+                if (fragment instanceof BaseFragment) {
+                    return ((BaseFragment) fragment).getTitle();
+                }
+                return "小说内容";
             }
         });
         tabLayout.setupWithViewPager(viewPager);
