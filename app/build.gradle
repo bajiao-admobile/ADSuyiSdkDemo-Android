@@ -79,7 +79,7 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt-alpha:4.232.1102.08241'
 
     // 头条AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao-alpha:3.2.0.6.08311'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao-alpha:3.2.5.1.09081'
 
     // 百度AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-alpha:5.87.08241'
@@ -118,7 +118,7 @@ dependencies {
 //    implementation 'com.google.code.gson:gson:2.6.2'
 
     // 小说内容SDK（还需要gson和recyclerview支持）
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:novel-alpha:1.0.4.09041'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:novel-alpha:1.0.5.09091'
     implementation 'com.google.code.gson:gson:2.8.0'
     implementation 'com.android.support:recyclerview-v7:28.0.0'
 }
