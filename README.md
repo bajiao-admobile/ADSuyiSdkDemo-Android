@@ -165,48 +165,48 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
   
      // ADSuyiSdk核心库是必须导入的
-    implementation 'cn.admobiletop.adsuyi.ad:core:3.0.5.07281'
+    implementation 'cn.admobiletop.adsuyi.ad:core:3.0.7.09011'
     // common库是必须导入的，请保持和Demo中版本一致
     implementation 'com.admobile:common:1.2.0'
     // OAID库是必须导入的，请保持和Demo中版本一致
     implementation(name: 'msa_mdid_1.0.13', ext: 'aar')
 
     // 艾狄墨搏AdapterSdk，必须的`
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile:4.7.8.07311'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile:4.8.0.09011'
 
     // 广点通AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.232.1102.07271'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.232.1102.08241'
 
     // 头条AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:3.1.0.3.07271'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:3.2.5.1.09081'
 
     // 百度AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu:5.87.07271'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu:5.87.08241'
 
     // 汇量AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:10.3.0.07271'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:10.3.0.08241'
 
     // InmobiAdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:inmobi:7.4.4.07271'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:inmobi:7.4.4.08241'
     implementation 'com.squareup.picasso:picasso:2.5.2'
 
     // 快手AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksad:2.3.0.07271'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksad:2.3.0.08241'
 
     // OneWayAdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:oneway:2.4.3.07271'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:oneway:2.4.3.08241'
 
     // AppicAdapterSdk(信息流无曝光回调，全屏视频无播放完成回调)，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:appic:4.2.0.4.07271'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:appic:4.2.0.4.08241'
     // Appic还需要以下两个三方库支持
     implementation 'com.android.volley:volley:1.1.0'
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.6'
 
     // 讯飞AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ifly:4.4.3.07271'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:ifly:4.4.3.08241'
 
     // 芒果TV AdapterSdk，可选的(芒果SDK 当前与Inmobi 存在冲突，两者无法同时接入)
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:mgtv:3.1.6.08031'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:mgtv:3.1.6.08241'
     // 芒果TV还需要以下三方库支持
     implementation 'com.android.volley:volley:1.1.0'
     implementation 'com.facebook.fresco:fresco:1.5.0'
@@ -215,6 +215,11 @@ dependencies {
     implementation 'com.facebook.fresco:webpsupport:1.5.0'
     implementation 'com.facebook.fresco:imagepipeline-okhttp3:0.12.0'
     implementation 'com.google.code.gson:gson:2.6.2'
+      
+    // 小说内容SDK（还需要gson和recyclerview支持）
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:novel-alpha:1.0.5.09091'
+    implementation 'com.google.code.gson:gson:2.8.0'
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
 }
 ```
 
@@ -485,6 +490,12 @@ dependencies {
 -keep class io.reactivex.**{*;}
 -keep class com.github.megatronking.stringfog.**{*;}
 -keep @interface com.github.megatronking.stringfog.**{*;}
+
+# NovelAdapter混淆
+-keep class android.**{*;}
+-keep class com.ecook.** {* ;}
+-keep class com.parting_soul.http.** {* ;}
+-keep class com.ttx.reader.support.** {* ;}
 ```
 
 

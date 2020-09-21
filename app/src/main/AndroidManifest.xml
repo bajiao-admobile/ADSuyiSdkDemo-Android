@@ -107,6 +107,11 @@
             android:name=".activity.FloatingAdSettingActivity"
             android:label="@string/setting"
             android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.NormalWebActivity"
+            android:label="@string/web"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

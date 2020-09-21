@@ -11,6 +11,15 @@
     <string name="fragment_examples">Fragment示例</string>
     <string name="define">确定</string>
     <string name="setting">设置</string>
+    <string name="web">Web</string>
+
+    <string name="privacy_policy">亲爱的开发者，非常感谢您选择并选用ADmobile 广告聚合SaaS服务！\n\n
+为了保证您的App顺利通过合规检测，本提示将向你演示ADSuyiSdk初始化合规方案；\n
+\t1. APP首次运行时请通过弹窗等明显方式提示用户阅读《隐私政策》，用户确认同意《隐私政策》后，再启用SDK进行个人信息的收集与处理。\n
+\t2. 本提示的内容及《用户协议》、《隐私政策》需根据你的APP业务需求进行编写，可参考《网络安全标准实践指南—移动互联网应用程序（App）收集使用个人信息自评估指南》或咨询对接人员；\n\n
+你可以通过阅读完整版的ADmobile 《隐私政策》了解ADmobile详细隐私策略。
+</string>
+
 
     <string-array name="ad_type_items">
         <item>开屏广告</item>
