@@ -77,9 +77,15 @@
 -keep class **.R$* { public static final int mintegral*; }
 
 # 快手广告平台混淆
--keep class com.kwad.sdk.** { *;}
--keep class com.ksad.download.** { *;}
--keep class com.kwai.filedownloader.** { *;}
+-keep class org.chromium.** {*;}
+-keep class org.chromium.** { *; }
+-keep class aegon.chrome.** { *; }
+-keep class com.kwai.**{ *; }
+-keep class com.kwad.**{ *; }
+-dontwarn com.kwai.**
+-dontwarn com.kwad.**
+-dontwarn com.ksad.**
+-dontwarn aegon.chrome.**
 
 # AppicAd广告平台混淆
 -keep class * extends com.ap.android.trunk.sdk.core.base.ad.Ad
@@ -123,6 +129,22 @@
 -keep class io.reactivex.**{*;}
 -keep class com.github.megatronking.stringfog.**{*;}
 -keep @interface com.github.megatronking.stringfog.**{*;}
+
+# 米盟混淆
+-keep class com.miui.zeus.mimo.sdk.** { *; }
+-keep class com.miui.analytics.** { *; }
+-keep class com.xiaomi.analytics.* { public protected *; }
+-keep class * extends android.os.IInterface{*; }
+# gson
+-keep class com.google.gson.examples.android.model.** { <fields>; }
+-keep class * implements com.google.gson.TypeAdapterFactory
+-keep class * implements com.google.gson.JsonSerializer
+-keep class * implements com.google.gson.JsonDeserializer
+# glide
+-keep public class * implements com.bumptech.glide.module.GlideModule
+-keep class * extends com.bumptech.glide.module.AppGlideModule { <init>(...);}
+-keep public enum com.bumptech.glide.load.ImageHeaderParser$** {**[] $VALUES;public *;}
+-keep class com.bumptech.glide.load.data.ParcelFileDescriptorRewinder$InternalRewinder {*** rewind();}
 
 # NovelAdapter混淆
 -keep class android.**{*;}

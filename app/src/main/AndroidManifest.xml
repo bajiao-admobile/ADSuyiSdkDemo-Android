@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="cn.admobiletop.adsuyidemo">
 
     <!-- 广告必须的权限 -->
@@ -30,7 +31,9 @@
         android:roundIcon="@mipmap/admobile_icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:usesCleartextTraffic="true">
+        android:usesCleartextTraffic="true"
+        android:networkSecurityConfig="@xml/adsuyi_mimo_network_security_config"
+        tools:replace="android:networkSecurityConfig">
 
         <uses-library
             android:name="org.apache.http.legacy"

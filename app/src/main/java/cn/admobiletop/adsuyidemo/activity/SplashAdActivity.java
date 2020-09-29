@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -30,10 +31,10 @@ import cn.admobiletop.adsuyidemo.widget.PrivacyPolicyDialog;
 
 /**
  * @author ciba
- * @description 开屏广告示例，开屏广告容器请保证有屏幕高度的75%，建议开屏界面设置为全屏模式并禁止返回按钮
+ * @description 开屏广告示例，开屏广告容器请保证有屏幕高度的75%，建议开屏界面设置为全屏模式并禁止返回按钮，快手开屏广告需要继承FragmentActivity
  * @date 2020/3/25
  */
-public class SplashAdActivity extends AppCompatActivity {
+public class SplashAdActivity extends FragmentActivity {
     private static final String AGREE_PRIVACY_POLICY = "AGREE_PRIVACY_POLICY";
     /**
      * 根据实际情况申请
