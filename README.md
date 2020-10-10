@@ -185,14 +185,14 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-alpha:5.92.09181'
 
     // 汇量AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:10.3.0.08241'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral-alpha:10.7.11.10101'
 
     // InmobiAdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:inmobi:7.4.4.08241'
     implementation 'com.squareup.picasso:picasso:2.5.2'
 
     // 快手AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksad-alpha:3.3.3.09181'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksad-alpha:3.3.4.10091'
 
     // OneWayAdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:oneway:2.4.3.08241'
@@ -266,6 +266,8 @@ dependencies {
       tools:replace="android:networkSecurityConfig">
   ```
 * 如果接入快手开屏广告需要将开屏Activity继承自FragmentActivity
+
+* 如果接入汇量，需要加入第三方依赖库https://dl.bintray.com/mintegral-official/Mintegral_ad_SDK_Android
 
 ### 5.2 OAID支持
 
