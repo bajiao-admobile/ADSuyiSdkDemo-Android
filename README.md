@@ -313,7 +313,7 @@ dependencies {
       android:grantUriPermissions="true">
       <meta-data
       		android:name="android.support.FILE_PROVIDER_PATHS"
-          ndroid:resource="@xml/adsuyi_file_paths" />
+          android:resource="@xml/adsuyi_file_paths" />
   </provider>
   ```
 
@@ -327,7 +327,7 @@ dependencies {
       android:grantUriPermissions="true">
       <meta-data
       		android:name="android.support.FILE_PROVIDER_PATHS"
-          ndroid:resource="@xml/adsuyi_file_paths" />
+          android:resource="@xml/adsuyi_file_paths" />
   </provider>
   ```
 
