@@ -36,17 +36,19 @@ public class ADSuyiApplication extends Application {
         // 添加bugly初始化（该初始化与广告SDK无关，广告SDK中不包含bugly相关内容，仅供Demo错误信息收集使用）
         CrashReport.initCrashReport(getApplicationContext(), "6d9d9f24ee", true);
 
+        // 据悉，工信部将在2020年8月底前上线运行全国APP技术检测平台管理系统，2020年12月10日前完成覆盖40万款主流App的合规检测工作。
+        // 为了保证您的App顺利通过检测，结合当前监管关注重点，我们可以将ADSuyiSdk的初始化放在用户同意隐私政策之后。
         // 初始化ADSuyi广告SDK
-        ADSuyiSdk.getInstance().init(this, new ADSuyiInitConfig.Builder()
-                // 设置APPID
-                .appId(ADSuyiDemoConstant.APP_ID)
-                // 是否开启Debug，开启会有详细的日志信息打印
-                .debug(true)
-                // 是否过滤第三方平台的问题广告（例如: 已知某个广告平台在某些机型的Banner广告可能存在问题，如果开启过滤，则在该机型将不再去获取该平台的Banner广告）
-                .filterThirdQuestion(true)
-                // 如果开了浮窗广告，可设置不展示浮窗广告的界面，第一个参数为是否开启默认不展示的页面（例如:激励视频播放页面），第二可变参数为自定义不展示的页面
-                .floatingAdBlockList(false, "cn.admobiletop.adsuyidemo.activity.SplashAdActivity")
-                .build());
+//        ADSuyiSdk.getInstance().init(this, new ADSuyiInitConfig.Builder()
+//                // 设置APPID
+//                .appId(ADSuyiDemoConstant.APP_ID)
+//                // 是否开启Debug，开启会有详细的日志信息打印
+//                .debug(true)
+//                // 是否过滤第三方平台的问题广告（例如: 已知某个广告平台在某些机型的Banner广告可能存在问题，如果开启过滤，则在该机型将不再去获取该平台的Banner广告）
+//                .filterThirdQuestion(true)
+//                // 如果开了浮窗广告，可设置不展示浮窗广告的界面，第一个参数为是否开启默认不展示的页面（例如:激励视频播放页面），第二可变参数为自定义不展示的页面
+//                .floatingAdBlockList(false, "cn.admobiletop.adsuyidemo.activity.SplashAdActivity")
+//                .build());
 
         // 如果有接开屏广告，可以设置应用进入后台一段时间后回到应用再次开启开屏界面，增加开屏广告收益（仅供参考，无需要可不设置）
         openSplashActivityAgain();
