@@ -113,6 +113,11 @@ public class ADSuyiDemoConstant {
     public static String DRAW_VOD_AD_ONLY_SUPPORT_PLATFORM = null;
 
     /**
+     * Dl激励广告位ID
+     */
+    public static String ADMOBILE_DL_AD_POS_ID = "63e91628640e20b35d";
+
+    /**
      * 浮窗广告是否是暗黑模式
      */
     public static boolean FLOATING_AD_DARK_MODE = false;

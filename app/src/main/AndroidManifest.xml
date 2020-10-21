@@ -114,6 +114,11 @@
             android:name=".activity.NormalWebActivity"
             android:label="@string/web"
             android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.DlAdActivity"
+            android:label="@string/admobile_dl_ad"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

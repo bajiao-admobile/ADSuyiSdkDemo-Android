@@ -6,8 +6,8 @@ android {
         applicationId "cn.admobiletop.adsuyidemo"
         minSdkVersion 19
         targetSdkVersion 29
-        versionCode 202009011
-        versionName "1.202009011"
+        versionCode 202010211
+        versionName "1.202010211"
         multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         ndk {
@@ -84,8 +84,8 @@ dependencies {
     // 百度AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu:5.87.08241'
 
-    // 汇量AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:10.3.0.08241'
+//    // 汇量AdapterSdk，可选的；由于汇量10.3.0版本远程依赖有问题，需要导入汇量可以在对接群里联系
+//    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:10.3.0.08241'
 
     // InmobiAdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:inmobi:7.4.4.08241'
