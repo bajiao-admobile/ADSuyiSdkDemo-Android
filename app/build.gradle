@@ -6,8 +6,8 @@ android {
         applicationId "cn.admobiletop.adsuyidemo"
         minSdkVersion 19
         targetSdkVersion 29
-        versionCode 202009291
-        versionName "1.202009291"
+        versionCode 202010231
+        versionName "1.202010231"
         multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         ndk {
@@ -62,8 +62,8 @@ dependencies {
     implementation 'com.tencent.bugly:nativecrashreport:3.7.3'
 
     // support支持库，如果是AndroidX请使用对应的支持库
-    implementation 'com.android.support:appcompat-v7:25.0.0'
-    implementation 'com.android.support:support-v4:25.0.0'
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support:support-v4:28.0.0'
     implementation 'com.android.support:design:28.0.0'
 
     // ADSuyiSdk、common和OAID库是必须导入的
