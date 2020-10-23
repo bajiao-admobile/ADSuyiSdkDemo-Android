@@ -78,11 +78,13 @@ public class NativeAdAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int position) {
         NativeAdSampleData nativeAdSampleData = dataList.get(position);
         if (viewHolder instanceof NormalDataViewHolder) {
+            // 普通数据类型的
             ((NormalDataViewHolder) viewHolder).setData(nativeAdSampleData.getNormalData());
         } else if (viewHolder instanceof BaseNativeAdViewHolder) {
-            // NativeAdViewHolder or NativeAdMediaViewHolder
+            // 信息流原生广告类型 NativeAdViewHolder or NativeAdMediaViewHolder
             ((BaseNativeAdViewHolder) viewHolder).setData(context, (ADSuyiNativeFeedAdInfo) nativeAdSampleData.getNativeAdInfo());
         } else if (viewHolder instanceof NativeExpressAdViewHolder) {
+            // 信息流模板广告类型
             ((NativeExpressAdViewHolder) viewHolder).setData((ADSuyiNativeExpressAdInfo) nativeAdSampleData.getNativeAdInfo());
         }
     }
@@ -99,11 +101,19 @@ public class NativeAdAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             return ITEM_VIEW_TYPE_NORMAL_DATA;
         } else if (nativeAdInfo.isNativeExpress()) {
             // nativeAdInfo instanceof ADSuyiNativeExpressAdInfo
+            // isNativeExpress() true 信息流模板广告
             return ITEM_VIEW_TYPE_EXPRESS_AD;
         } else {
             // nativeAdInfo instanceof ADSuyiNativeFeedAdInfo
+            // isNativeExpress() false 信息流原生广告，原生信息流广告还分为包含MediaView和不包含MediaView两种情况
             ADSuyiNativeFeedAdInfo nativeFeedAdInfo = (ADSuyiNativeFeedAdInfo) nativeAdInfo;
-            return nativeFeedAdInfo.hasMediaView() ? ITEM_VIEW_TYPE_NATIVE_AD_HAS_MEDIA_VIEW : ITEM_VIEW_TYPE_NATIVE_AD;
+            if (nativeFeedAdInfo.hasMediaView()) {
+                // hasMediaView() true 包含MediaView的原生信息流广告
+                return ITEM_VIEW_TYPE_NATIVE_AD_HAS_MEDIA_VIEW;
+            }else {
+                // hasMediaView() false 没有MediaView的原生信息流广告
+                return ITEM_VIEW_TYPE_NATIVE_AD;
+            }
         }
     }
 
