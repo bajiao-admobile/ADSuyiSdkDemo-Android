@@ -213,7 +213,7 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.6.2'
       
     // 小说内容SDK（还需要gson和recyclerview支持）
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:novel-alpha:1.0.5.09091'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:novel-alpha:1.0.6.10261'
     implementation 'com.google.code.gson:gson:2.8.0'
     implementation 'com.android.support:recyclerview-v7:28.0.0'
 

@@ -67,6 +67,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(DrawVodActivity.class);
                 break;
             case R.id.btnNovel:
+                // 设置字体
+//                NovelSDKManger.setFontPath("字体路径");
                 boolean openSuccess = ADSuyiSdk.getInstance().openNovelActivity();
                 ADSuyiToastUtil.show(getApplicationContext(), openSuccess ? "打开成功" : "打开失败");
                 break;
