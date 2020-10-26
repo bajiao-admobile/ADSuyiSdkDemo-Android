@@ -244,19 +244,6 @@ dependencies {
    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt-without:x.x.x.x'
    ```
 
-* 小说内容sdk和MimoAdapterSdk同时导入导致networkSecurityConfig冲突
-
-  ```java
-  <manifest
-    	...
-      xmlns:tools="http://schemas.android.com/tools">
-  <application
-      ...
-      android:networkSecurityConfig="@xml/adsuyi_mimo_network_security_config"
-      tools:replace="android:networkSecurityConfig">
-  ```
-* 如果接入快手开屏广告需要将开屏Activity继承自FragmentActivity
-
 * 如果接入汇量，需要加入第三方依赖库https://dl.bintray.com/mintegral-official/Mintegral_ad_SDK_Android
 
 ### 5.2 OAID支持
@@ -587,6 +574,8 @@ ADSuyiSdk.getInstance().init(this, new ADSuyiInitConfig.Builder()
          .appId(ADSuyiDemoConstant.APP_ID)
          // 是否开启Debug，开启会有详细的日志打印
          .debug(BuildConfig.DEBUG)
+         // 是否同意隐私政策
+         .agreePrivacyStrategy(true)
          // 是否过滤第三方平台的问题广告（例如: 已知某个广告平台在某些机型的Banner广告可能存在问题，如果开启过滤，则在该机型将不再去获取该平台的Banner广告）
          .filterThirdQuestion(true)
          .build());
