@@ -21,6 +21,10 @@ import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
  * @date 2020/3/25
  */
 public class ADSuyiApplication extends Application {
+    /**
+     * 检查是否需要再次打开开屏界面的间隔时长。
+     * 180 * 1000 为 3分钟间隔时长，可自行修改时长
+     */
     private static final long OPEN_SPLASH_ACTIVITY_INTERVAL_TIME = 180 * 1000;
     private long preMillis;
 

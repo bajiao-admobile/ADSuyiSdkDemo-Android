@@ -6,8 +6,8 @@ android {
         applicationId "cn.admobiletop.adsuyidemo"
         minSdkVersion 19
         targetSdkVersion 29
-        versionCode 202010231
-        versionName "1.202010231"
+        versionCode 202010261
+        versionName "1.202010261"
         multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         ndk {
@@ -67,7 +67,7 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
 
     // ADSuyiSdk、common和OAID库是必须导入的
-    implementation 'cn.admobiletop.adsuyi.ad:core-alpha:3.0.8.09161'
+    implementation 'cn.admobiletop.adsuyi.ad:core:3.0.8.09161'
     // common库请保持和Demo中版本一致
     implementation 'com.admobile:common:1.2.0'
     implementation(name: 'msa_mdid_1.0.13', ext: 'aar')
@@ -76,23 +76,20 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile:4.8.0.09011'
 
     // 广点通AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt-alpha:4.270.1140.10151'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.270.1140.10151'
 
     // 头条AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:3.2.5.1.09081'
 
     // 百度AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-alpha:5.92.09181'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu:5.92.09181'
 
     // 汇量AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral-alpha:10.7.11.10101'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:10.7.11.10101'
 
     // InmobiAdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:inmobi:7.4.4.08241'
     implementation 'com.squareup.picasso:picasso:2.5.2'
-
-    // 快手AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksad-alpha:3.3.4.10091'
 
     // OneWayAdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:oneway:2.4.3.08241'
@@ -121,10 +118,4 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:novel-alpha:1.0.5.09091'
     implementation 'com.google.code.gson:gson:2.8.0'
     implementation 'com.android.support:recyclerview-v7:28.0.0'
-
-    // MimoAdapterSdk（还需要gson和glide支持）
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:mimo-alpha:5.0.4.09231'
-    implementation 'com.google.code.gson:gson:2.8.0'
-    implementation 'com.github.bumptech.glide:glide:4.9.0'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
 }

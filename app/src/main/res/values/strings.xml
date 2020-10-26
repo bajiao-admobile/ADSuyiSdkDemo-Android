@@ -53,9 +53,6 @@
         <!--汇量/Mobvsita-->
         <item>mintegral</item>
 
-        <!--快手-->
-        <item>ksad</item>
-
         <!--万维-->
         <item>oneway</item>
 
@@ -68,7 +65,5 @@
         <!--芒果-->
         <item>mgadsdk</item>
 
-        <!--芒果-->
-        <item>mimo</item>
     </string-array>
 </resources>

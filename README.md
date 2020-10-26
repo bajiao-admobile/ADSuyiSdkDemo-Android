@@ -30,12 +30,10 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | baidu     | 百度     | 百青藤   |
 | inmobi    | Inmobi   | Inmobi   |
 | mintegral | 汇量     | Mobvsita |
-| ksad      | 快手     | 快手     |
 | oneway    | 万维     | 万维     |
 | appic     | appic    | AppicAd  |
 | Ifly      | 讯飞     | 讯飞     |
 | mgadsdk   | 芒果     | 芒果TV   |
-| mimo   | 小米     | 米盟   |
 
 
 
@@ -166,7 +164,7 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
   
      // ADSuyiSdk核心库是必须导入的
-    implementation 'cn.admobiletop.adsuyi.ad:core-alpha:3.0.8.09161'
+    implementation 'cn.admobiletop.adsuyi.ad:core:3.0.8.09161'
     // common库是必须导入的，请保持和Demo中版本一致
     implementation 'com.admobile:common:1.2.0'
     // OAID库是必须导入的，请保持和Demo中版本一致
@@ -176,23 +174,20 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile:4.8.0.09011'
 
     // 广点通AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt-alpha:4.270.1140.10151'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.270.1140.10151'
 
     // 头条AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:3.2.5.1.09081'
 
     // 百度AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-alpha:5.92.09181'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu:5.92.09181'
 
     // 汇量AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral-alpha:10.7.11.10101'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:10.7.11.10101'
 
     // InmobiAdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:inmobi:7.4.4.08241'
     implementation 'com.squareup.picasso:picasso:2.5.2'
-
-    // 快手AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksad-alpha:3.3.4.10091'
 
     // OneWayAdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:oneway:2.4.3.08241'
@@ -221,12 +216,7 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:novel-alpha:1.0.5.09091'
     implementation 'com.google.code.gson:gson:2.8.0'
     implementation 'com.android.support:recyclerview-v7:28.0.0'
-      
-    // MimoAdapterSdk（还需要gson和glide支持）
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:mimo-alpha:5.0.4.09231'
-    implementation 'com.google.code.gson:gson:2.8.0'
-    implementation 'com.github.bumptech.glide:glide:4.9.0'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
+
 }
 ```
 
@@ -283,6 +273,21 @@ dependencies {
 
    ```java
    -keep class com.bun.miitmdid.core.** {*;}
+   -keep class com.bun.miitmdid.core.** {*;}
+   -keep class com.bun.** {*;}
+    -keep class com.asus.msa.** {*;}
+    -keep class com.heytap.openid.** {*;}
+    -keep class com.huawei.android.hms.pps.** {*;}
+    -keep class com.meizu.flyme.openidsdk.** {*;}
+    -keep class com.samsung.android.deviceidservice.** {*;}
+    -keep class com.zui.** {*;}
+    -keep class com.huawei.hms.ads.** {*; }
+    -keep interface com.huawei.hms.ads.** {*; }
+   -keepattributes *Annotation*
+   -keep @android.support.annotation.Keep class **{
+   @android.support.annotation.Keep <fields>;
+   @android.support.annotation.Keep <methods>;
+   }
    ```
 
 **PS：需要更多帮助可参考目录下《移动智能终端补充设备标识体系统一调用SDK开发者说明文档》；**
@@ -424,6 +429,21 @@ dependencies {
 
 # OAID混淆
 -keep class com.bun.miitmdid.core.** {*;}
+-keep class com.bun.miitmdid.core.** {*;}
+-keep class com.bun.** {*;}
+ -keep class com.asus.msa.** {*;}
+ -keep class com.heytap.openid.** {*;}
+ -keep class com.huawei.android.hms.pps.** {*;}
+ -keep class com.meizu.flyme.openidsdk.** {*;}
+ -keep class com.samsung.android.deviceidservice.** {*;}
+ -keep class com.zui.** {*;}
+ -keep class com.huawei.hms.ads.** {*; }
+ -keep interface com.huawei.hms.ads.** {*; }
+-keepattributes *Annotation*
+-keep @android.support.annotation.Keep class **{
+@android.support.annotation.Keep <fields>;
+@android.support.annotation.Keep <methods>;
+}
 
 # admobile广告平台混淆
 -keep class admsdk.library.**{*;}

@@ -31,6 +31,21 @@
 
 # OAID混淆
 -keep class com.bun.miitmdid.core.** {*;}
+-keep class com.bun.miitmdid.core.** {*;}
+-keep class com.bun.** {*;}
+ -keep class com.asus.msa.** {*;}
+ -keep class com.heytap.openid.** {*;}
+ -keep class com.huawei.android.hms.pps.** {*;}
+ -keep class com.meizu.flyme.openidsdk.** {*;}
+ -keep class com.samsung.android.deviceidservice.** {*;}
+ -keep class com.zui.** {*;}
+ -keep class com.huawei.hms.ads.** {*; }
+ -keep interface com.huawei.hms.ads.** {*; }
+-keepattributes *Annotation*
+-keep @android.support.annotation.Keep class **{
+@android.support.annotation.Keep <fields>;
+@android.support.annotation.Keep <methods>;
+}
 
 # admobile广告平台混淆
 -keep class admsdk.library.**{*;}
