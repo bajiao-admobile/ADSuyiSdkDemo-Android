@@ -260,7 +260,6 @@ dependencies {
 
    ```java
    -keep class com.bun.miitmdid.core.** {*;}
-   -keep class com.bun.miitmdid.core.** {*;}
    -keep class com.bun.** {*;}
     -keep class com.asus.msa.** {*;}
     -keep class com.heytap.openid.** {*;}
@@ -415,7 +414,6 @@ dependencies {
 -keep class okhttp3.**{*;}
 
 # OAID混淆
--keep class com.bun.miitmdid.core.** {*;}
 -keep class com.bun.miitmdid.core.** {*;}
 -keep class com.bun.** {*;}
  -keep class com.asus.msa.** {*;}
