@@ -186,7 +186,7 @@ public class NativeAdAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
              * R.layout.item_native_ad_native_ad_media2 上视频下文
              * R.layout.item_native_ad_native_ad_media3 单视频
              */
-            super(viewGroup, R.layout.item_native_ad_native_ad_media2);
+            super(viewGroup, R.layout.item_native_ad_native_ad_media3);
             flMediaContainer = itemView.findViewById(R.id.flMediaContainer);
         }
 

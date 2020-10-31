@@ -46,7 +46,18 @@
             android:id="@+id/tvAdType"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:visibility="gone"/>
+            android:layout_below="@+id/flMediaContainer"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/shape_color_primary_dark_stroke"
+            android:gravity="center"
+            android:paddingLeft="8dp"
+            android:paddingTop="2dp"
+            android:paddingRight="8dp"
+            android:paddingBottom="2dp"
+            android:text="查看详情"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="14sp" />
 
     </RelativeLayout>
 </com.qq.e.ads.nativ.widget.NativeAdContainer>
