@@ -9,7 +9,9 @@
     <string name="draw_vod_ad">Draw视频广告</string>
     <string name="novel_content">小说内容</string>
     <string name="fragment_examples">Fragment示例</string>
-    <string name="admobile_dl_ad">Dl激励广告</string>
+    <string name="admobile_dl_ad">组合广告</string>
+    <string name="reward_ad_switch">组合广告异常切换示例</string>
+    <string name="reward_ad_">Dl激励广告</string>
     <string name="define">确定</string>
     <string name="setting">设置</string>
     <string name="web">Web</string>
@@ -53,9 +55,6 @@
         <!--汇量/Mobvsita-->
         <item>mintegral</item>
 
-        <!--快手-->
-        <item>ksad</item>
-
         <!--万维-->
         <item>oneway</item>
 
@@ -68,7 +67,5 @@
         <!--芒果-->
         <item>mgadsdk</item>
 
-        <!--芒果-->
-        <item>mimo</item>
     </string-array>
 </resources>

@@ -30,12 +30,10 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | baidu     | 百度     | 百青藤   |
 | inmobi    | Inmobi   | Inmobi   |
 | mintegral | 汇量     | Mobvsita |
-| ksad      | 快手     | 快手     |
 | oneway    | 万维     | 万维     |
 | appic     | appic    | AppicAd  |
 | Ifly      | 讯飞     | 讯飞     |
 | mgadsdk   | 芒果     | 芒果TV   |
-| mimo   | 小米     | 米盟   |
 
 
 
@@ -166,7 +164,7 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
   
      // ADSuyiSdk核心库是必须导入的
-    implementation 'cn.admobiletop.adsuyi.ad:core-alpha:3.0.8.09161'
+    implementation 'cn.admobiletop.adsuyi.ad:core:3.0.8.09161'
     // common库是必须导入的，请保持和Demo中版本一致
     implementation 'com.admobile:common:1.2.0'
     // OAID库是必须导入的，请保持和Demo中版本一致
@@ -176,23 +174,20 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile:4.8.0.09011'
 
     // 广点通AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt-alpha:4.270.1140.10151'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.270.1140.10151'
 
     // 头条AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:3.2.5.1.09081'
 
     // 百度AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-alpha:5.92.09181'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu:5.92.09181'
 
     // 汇量AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral-alpha:10.7.11.10101'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:10.7.11.10101'
 
     // InmobiAdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:inmobi:7.4.4.08241'
     implementation 'com.squareup.picasso:picasso:2.5.2'
-
-    // 快手AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksad-alpha:3.3.4.10091'
 
     // OneWayAdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:oneway:2.4.3.08241'
@@ -218,15 +213,10 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.6.2'
       
     // 小说内容SDK（还需要gson和recyclerview支持）
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:novel-alpha:1.0.5.09091'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:novel-alpha:1.0.6.10261'
     implementation 'com.google.code.gson:gson:2.8.0'
     implementation 'com.android.support:recyclerview-v7:28.0.0'
-      
-    // MimoAdapterSdk（还需要gson和glide支持）
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:mimo-alpha:5.0.4.09231'
-    implementation 'com.google.code.gson:gson:2.8.0'
-    implementation 'com.github.bumptech.glide:glide:4.9.0'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
+
 }
 ```
 
@@ -254,19 +244,6 @@ dependencies {
    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt-without:x.x.x.x'
    ```
 
-* 小说内容sdk和MimoAdapterSdk同时导入导致networkSecurityConfig冲突
-
-  ```java
-  <manifest
-    	...
-      xmlns:tools="http://schemas.android.com/tools">
-  <application
-      ...
-      android:networkSecurityConfig="@xml/adsuyi_mimo_network_security_config"
-      tools:replace="android:networkSecurityConfig">
-  ```
-* 如果接入快手开屏广告需要将开屏Activity继承自FragmentActivity
-
 * 如果接入汇量，需要加入第三方依赖库https://dl.bintray.com/mintegral-official/Mintegral_ad_SDK_Android
 
 ### 5.2 OAID支持
@@ -283,6 +260,20 @@ dependencies {
 
    ```java
    -keep class com.bun.miitmdid.core.** {*;}
+   -keep class com.bun.** {*;}
+    -keep class com.asus.msa.** {*;}
+    -keep class com.heytap.openid.** {*;}
+    -keep class com.huawei.android.hms.pps.** {*;}
+    -keep class com.meizu.flyme.openidsdk.** {*;}
+    -keep class com.samsung.android.deviceidservice.** {*;}
+    -keep class com.zui.** {*;}
+    -keep class com.huawei.hms.ads.** {*; }
+    -keep interface com.huawei.hms.ads.** {*; }
+   -keepattributes *Annotation*
+   -keep @android.support.annotation.Keep class **{
+   @android.support.annotation.Keep <fields>;
+   @android.support.annotation.Keep <methods>;
+   }
    ```
 
 **PS：需要更多帮助可参考目录下《移动智能终端补充设备标识体系统一调用SDK开发者说明文档》；**
@@ -424,6 +415,20 @@ dependencies {
 
 # OAID混淆
 -keep class com.bun.miitmdid.core.** {*;}
+-keep class com.bun.** {*;}
+ -keep class com.asus.msa.** {*;}
+ -keep class com.heytap.openid.** {*;}
+ -keep class com.huawei.android.hms.pps.** {*;}
+ -keep class com.meizu.flyme.openidsdk.** {*;}
+ -keep class com.samsung.android.deviceidservice.** {*;}
+ -keep class com.zui.** {*;}
+ -keep class com.huawei.hms.ads.** {*; }
+ -keep interface com.huawei.hms.ads.** {*; }
+-keepattributes *Annotation*
+-keep @android.support.annotation.Keep class **{
+@android.support.annotation.Keep <fields>;
+@android.support.annotation.Keep <methods>;
+}
 
 # admobile广告平台混淆
 -keep class admsdk.library.**{*;}
@@ -567,6 +572,8 @@ ADSuyiSdk.getInstance().init(this, new ADSuyiInitConfig.Builder()
          .appId(ADSuyiDemoConstant.APP_ID)
          // 是否开启Debug，开启会有详细的日志打印
          .debug(BuildConfig.DEBUG)
+         // 是否同意隐私政策
+         .agreePrivacyStrategy(true)
          // 是否过滤第三方平台的问题广告（例如: 已知某个广告平台在某些机型的Banner广告可能存在问题，如果开启过滤，则在该机型将不再去获取该平台的Banner广告）
          .filterThirdQuestion(true)
          .build());
@@ -681,7 +688,7 @@ suyiBannerAd.loadAd(ADSuyiDemoConstant.BANNER_AD_POS_ID);
 
   ### <a name="ad_native">6.4 信息流广告示例</a>
 
-信息流广告，具备自渲染和模板两种广告样式：自渲染是SDK将返回广告标题、描述、Icon、图片、多媒体视图等信息，开发者可通过自行拼装渲染成喜欢的样式；模板样式则是返回拼装好的广告视图，开发者只需将视图添加到相应容器即可，模板样式的容器高度建议是自适应。**由于信息流广告不同广告平台支持的样式不一致，有些平台不支持自渲染，有些平台不支持模板，所以下发的广告可能是模板和自渲染混合，强烈建议开发者参考Demo适配两种类型。**
+信息流广告，具备自渲染和模板两种广告样式：自渲染是SDK将返回广告标题、描述、Icon、图片、多媒体视图等信息，开发者可通过自行拼装渲染成喜欢的样式；模板样式则是返回拼装好的广告视图，开发者只需将视图添加到相应容器即可，模板样式的容器高度建议是自适应。**由于信息流广告不同广告平台支持的样式不一致，有些平台不支持自渲染，有些平台不支持模板，所以下发的广告可能是模板和自渲染混合，必须开发者参考Demo适配两种类型。**
 
 ```java
 // 创建信息流广告实例

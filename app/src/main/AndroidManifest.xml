@@ -31,9 +31,7 @@
         android:roundIcon="@mipmap/admobile_icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:usesCleartextTraffic="true"
-        android:networkSecurityConfig="@xml/adsuyi_mimo_network_security_config"
-        tools:replace="android:networkSecurityConfig">
+        android:usesCleartextTraffic="true">
 
         <uses-library
             android:name="org.apache.http.legacy"
@@ -120,6 +118,11 @@
 
         <activity
             android:name=".activity.DlAdActivity"
+            android:label="@string/admobile_dl_ad"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.RewardAdSwitchActivity"
             android:label="@string/admobile_dl_ad"
             android:screenOrientation="portrait" />
     </application>

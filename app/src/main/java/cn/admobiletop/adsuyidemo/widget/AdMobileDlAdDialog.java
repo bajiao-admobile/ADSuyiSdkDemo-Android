@@ -48,6 +48,10 @@ public class AdMobileDlAdDialog extends Dialog {
     public void render(ADSuyiNativeAdInfo adSuyiNativeAdInfo) {
         if(adSuyiNativeAdInfo instanceof ADSuyiNativeFeedAdInfo) {
             ADSuyiNativeFeedAdInfo nativeFeedAdInfo = (ADSuyiNativeFeedAdInfo) adSuyiNativeAdInfo;
+            if (nativeFeedAdInfo == null) {
+                Log.d("AdMobileDlAdDialog", "ADSuyiNativeFeedAdInfo is null");
+                return;
+            }
             if (nativeFeedAdInfo.hasMediaView()) {
                 Log.d("AdMobileDlAdDialog", "dl广告没有MediaView");
                 return;

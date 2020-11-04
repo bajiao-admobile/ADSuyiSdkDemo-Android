@@ -180,7 +180,13 @@ public class NativeAdAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         private final FrameLayout flMediaContainer;
 
         NativeAdMediaViewHolder(@NonNull ViewGroup viewGroup) {
-            super(viewGroup, R.layout.item_native_ad_native_ad_media);
+            /**
+             * 已预设3种样式，开发者可自行修改，关闭按钮大小等可根据产品需求自行修改
+             * R.layout.item_native_ad_native_ad_media 单图单视频双文
+             * R.layout.item_native_ad_native_ad_media2 上视频下文
+             * R.layout.item_native_ad_native_ad_media3 单视频
+             */
+            super(viewGroup, R.layout.item_native_ad_native_ad_media3);
             flMediaContainer = itemView.findViewById(R.id.flMediaContainer);
         }
 
@@ -200,7 +206,13 @@ public class NativeAdAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         private final ImageView ivImage;
 
         NativeAdViewHolder(@NonNull ViewGroup viewGroup) {
-            super(viewGroup, R.layout.item_native_ad_native_ad);
+            /**
+             * 已预设3种样式，开发者可自行修改，关闭按钮大小等可根据产品需求自行修改
+             * R.layout.item_native_ad_native_ad 双图双文
+             * R.layout.item_native_ad_native_ad2 上图下文
+             * R.layout.item_native_ad_native_ad3 单图
+             */
+            super(viewGroup, R.layout.item_native_ad_native_ad3);
             ivImage = itemView.findViewById(R.id.ivImage);
         }
 
@@ -242,13 +254,18 @@ public class NativeAdAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
                 // 交由子类实现加载图片还是MediaView
                 setImageOrMediaData(context, nativeFeedAdInfo);
+                if (ivIcon != null) {
+                    Glide.with(context).load(nativeFeedAdInfo.getIconUrl()).into(ivIcon);
+                }
+                if (tvTitle != null) {
+                    tvTitle.setText(nativeFeedAdInfo.getTitle());
+                }
+                if (tvDesc != null) {
+                    tvDesc.setText(nativeFeedAdInfo.getDesc());
+                }
 
-                Glide.with(context).load(nativeFeedAdInfo.getIconUrl()).into(ivIcon);
-                ivAdTarget.setImageResource(nativeFeedAdInfo.getPlatformIcon());
-                tvTitle.setText(nativeFeedAdInfo.getTitle());
-                tvDesc.setText(nativeFeedAdInfo.getDesc());
                 tvAdType.setText(nativeFeedAdInfo.getCtaText());
-
+                ivAdTarget.setImageResource(nativeFeedAdInfo.getPlatformIcon());
                 // 注册关闭按钮，将关闭按钮点击事件交于SDK托管，以便于回调onAdClose
                 nativeFeedAdInfo.registerCloseView(ivClose);
 
