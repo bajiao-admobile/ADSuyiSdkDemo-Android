@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.btnNovel).setOnClickListener(this);
         findViewById(R.id.btnFragmentExamples).setOnClickListener(this);
         findViewById(R.id.btnAdmobileDlAd).setOnClickListener(this);
+        findViewById(R.id.btnRewardAdSwitch).setOnClickListener(this);
         findViewById(R.id.ivSetting).setOnClickListener(this);
     }
 
@@ -80,6 +81,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.ivSetting:
                 showAdTypeCheckDialog();
+                break;
+            case R.id.btnRewardAdSwitch:
+                startActivity(RewardAdSwitchActivity.class);
                 break;
             default:
                 break;

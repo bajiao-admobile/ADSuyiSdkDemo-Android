@@ -10,9 +10,13 @@ import android.widget.Button;
 import java.util.List;
 
 import cn.admobiletop.adsuyi.ad.ADSuyiNativeAd;
+import cn.admobiletop.adsuyi.ad.ADSuyiRewardVodAd;
 import cn.admobiletop.adsuyi.ad.data.ADSuyiNativeAdInfo;
+import cn.admobiletop.adsuyi.ad.data.ADSuyiRewardVodAdInfo;
 import cn.admobiletop.adsuyi.ad.error.ADSuyiError;
 import cn.admobiletop.adsuyi.ad.listener.ADSuyiNativeAdListener;
+import cn.admobiletop.adsuyi.ad.listener.ADSuyiRewardVodAdListener;
+import cn.admobiletop.adsuyi.util.ADSuyiAdUtil;
 import cn.admobiletop.adsuyi.util.ADSuyiToastUtil;
 import cn.admobiletop.adsuyidemo.R;
 import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
@@ -20,10 +24,10 @@ import cn.admobiletop.adsuyidemo.widget.AdMobileDlAdDialog;
 
 /**
  * @author maipian
- * @description Dl广告示例
+ * @description Dl广告加载失败后请求激励视频广告示例
  * @date 2020/10/21
  */
-public class DlAdActivity extends AppCompatActivity implements View.OnClickListener {
+public class RewardAdSwitchActivity extends AppCompatActivity implements View.OnClickListener {
 
     private ADSuyiNativeAd adSuyiNativeAd;
     AdMobileDlAdDialog adMobileDlAdDialog;
@@ -34,7 +38,7 @@ public class DlAdActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_reward_vod);
 
         initListener();
-        initAd();
+        initDlAd();
     }
 
     private void initListener() {
@@ -47,7 +51,7 @@ public class DlAdActivity extends AppCompatActivity implements View.OnClickListe
         btnLoadAd.setOnClickListener(this);
     }
 
-    private void initAd() {
+    private void initDlAd() {
         // 创建Dl广告实例 (注意dl广告用法与信息流广告相似，但是需要申请dl相应广告位，并非使用信息流的广告位)
         adSuyiNativeAd = new ADSuyiNativeAd(this);
         // 设置广告监听
@@ -62,7 +66,7 @@ public class DlAdActivity extends AppCompatActivity implements View.OnClickListe
                 Log.d(ADSuyiDemoConstant.TAG, "onAdReceive: " + adInfoList.size());
                 if (adInfoList != null && !adInfoList.isEmpty()) {
                     ADSuyiToastUtil.show(getApplicationContext(), "广告获取成功");
-                    adMobileDlAdDialog = new AdMobileDlAdDialog(DlAdActivity.this);
+                    adMobileDlAdDialog = new AdMobileDlAdDialog(RewardAdSwitchActivity.this);
                     adMobileDlAdDialog.render(adInfoList.get(0));
                 }
             }
@@ -96,8 +100,72 @@ public class DlAdActivity extends AppCompatActivity implements View.OnClickListe
                     Log.d(ADSuyiDemoConstant.TAG, "onAdFailed: " + adSuyiError.toString());
                 }
                 if (adMobileDlAdDialog != null) { adMobileDlAdDialog.dismiss(); }
+                initRewardAd();
             }
         });
+    }
+
+    private void initRewardAd() {
+        // 创建激励视频广告实例
+        ADSuyiRewardVodAd rewardVodAd = new ADSuyiRewardVodAd(this);
+
+        // 设置仅支持的广告平台，设置了这个值，获取广告时只会去获取该平台的广告，null或空字符串为不限制，默认为null，方便调试使用，上线时建议不设置
+        rewardVodAd.setOnlySupportPlatform(ADSuyiDemoConstant.REWARD_VOD_AD_ONLY_SUPPORT_PLATFORM);
+        // 设置激励视频广告监听
+        rewardVodAd.setListener(new ADSuyiRewardVodAdListener() {
+            @Override
+            public void onVideoCache(ADSuyiRewardVodAdInfo adSuyiRewardVodAdInfo) {
+                // 目前汇量和Inmobi走了该回调之后才准备好
+                Log.d(ADSuyiDemoConstant.TAG, "onVideoCache...");
+            }
+
+            @Override
+            public void onVideoComplete(ADSuyiRewardVodAdInfo adSuyiRewardVodAdInfo) {
+                Log.d(ADSuyiDemoConstant.TAG, "onVideoComplete...");
+            }
+
+            @Override
+            public void onVideoError(ADSuyiRewardVodAdInfo adSuyiRewardVodAdInfo, ADSuyiError adSuyiError) {
+                Log.d(ADSuyiDemoConstant.TAG, "onVideoError..." + adSuyiError.toString());
+            }
+
+            @Override
+            public void onReward(ADSuyiRewardVodAdInfo adSuyiRewardVodAdInfo) {
+                Log.d(ADSuyiDemoConstant.TAG, "onReward...");
+            }
+
+            @Override
+            public void onAdReceive(ADSuyiRewardVodAdInfo rewardVodAdInfo) {
+                ADSuyiToastUtil.show(getApplicationContext(), "激励视频广告获取成功");
+                Log.d(ADSuyiDemoConstant.TAG, "onAdReceive...");
+                ADSuyiAdUtil.showRewardVodAdConvenient(RewardAdSwitchActivity.this, rewardVodAdInfo);
+            }
+
+            @Override
+            public void onAdExpose(ADSuyiRewardVodAdInfo adSuyiRewardVodAdInfo) {
+                Log.d(ADSuyiDemoConstant.TAG, "onAdExpose...");
+            }
+
+            @Override
+            public void onAdClick(ADSuyiRewardVodAdInfo adSuyiRewardVodAdInfo) {
+                Log.d(ADSuyiDemoConstant.TAG, "onAdClick...");
+            }
+
+            @Override
+            public void onAdClose(ADSuyiRewardVodAdInfo adSuyiRewardVodAdInfo) {
+                Log.d(ADSuyiDemoConstant.TAG, "onAdClose...");
+            }
+
+            @Override
+            public void onAdFailed(ADSuyiError adSuyiError) {
+                if (adSuyiError != null) {
+                    String failedJosn = adSuyiError.toString();
+                    Log.d(ADSuyiDemoConstant.TAG, "onAdFailed..." + failedJosn);
+                }
+            }
+        });
+
+        rewardVodAd.loadAd(ADSuyiDemoConstant.REWARD_VOD_AD_POS_ID);
     }
 
     @Override
