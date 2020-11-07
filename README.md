@@ -164,33 +164,33 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
   
      // ADSuyiSdk核心库是必须导入的
-    implementation 'cn.admobiletop.adsuyi.ad:core:3.0.8.09161'
+    implementation 'cn.admobiletop.adsuyi.ad:core-alpha:3.0.9.10201'
     // common库是必须导入的，请保持和Demo中版本一致
-    implementation 'com.admobile:common:1.2.0'
+    implementation 'com.admobile:common:1.2.2-20201021.082946-3'
     // OAID库是必须导入的，请保持和Demo中版本一致
-    implementation(name: 'msa_mdid_1.0.13', ext: 'aar')
+    implementation(name: 'oaid_sdk_1.0.23', ext: 'aar')
 
     // 艾狄墨搏AdapterSdk，必须的`
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile:4.8.0.09011'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile-alpha:4.8.1.10271'
 
     // 广点通AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.270.1140.10151'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt-alpha:4.270.1140.10191'
 
     // 头条AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:3.2.5.1.09081'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao-alpha:3.3.0.1.10291'
 
     // 百度AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu:5.92.09181'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-alpha:5.94.10271'
 
     // 汇量AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:10.7.11.10101'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral-alpha:10.8.01.10271'
 
     // InmobiAdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:inmobi:7.4.4.08241'
     implementation 'com.squareup.picasso:picasso:2.5.2'
 
     // OneWayAdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:oneway:2.4.3.08241'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:oneway-alpha:2.4.5.10271'
 
     // AppicAdapterSdk(信息流无曝光回调，全屏视频无播放完成回调)，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:appic:4.2.0.4.08241'
@@ -199,10 +199,10 @@ dependencies {
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.6'
 
     // 讯飞AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ifly:4.4.3.08241'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:ifly-alpha:4.5.4.10271'
 
     // 芒果TV AdapterSdk，可选的(芒果SDK 当前与Inmobi 存在冲突，两者无法同时接入)
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:mgtv:3.1.6.08241'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:mgtv-alpha:3.2.0.10291'
     // 芒果TV还需要以下三方库支持
     implementation 'com.android.volley:volley:1.1.0'
     implementation 'com.facebook.fresco:fresco:1.5.0'
@@ -252,7 +252,7 @@ dependencies {
 
 <font color=#ff0000>OAID是必须集成项，没有集成将会抛出异常提醒开发者</font>，OAID集成并不繁琐，SDK中已经进行了OAID的封装，只需以下几步即可完成OAID的支持；
 
-1. 导入安全联盟的OAID支持库 **msa_mdid_1.0.13.aar**，可在Demo的libs目录下找到，**强烈建议使用和Demo中一样版本的OAID库**；
+1. 导入安全联盟的OAID支持库 **oaid_sdk_1.0.23.aar**，可在Demo的libs目录下找到，**强烈建议使用和Demo中一样版本的OAID库**；
 
 2. 将Demo中assets文件夹下的**supplierconfig.json**文件复制到自己的assets目录下并按照**supplierconfig.json**文件中的说明进行OAID的 **AppId** 配置，**supplierconfig.json**文件名不可修改；
 
@@ -260,20 +260,20 @@ dependencies {
 
    ```java
    -keep class com.bun.miitmdid.core.** {*;}
-   -keep class com.bun.** {*;}
-    -keep class com.asus.msa.** {*;}
-    -keep class com.heytap.openid.** {*;}
-    -keep class com.huawei.android.hms.pps.** {*;}
-    -keep class com.meizu.flyme.openidsdk.** {*;}
-    -keep class com.samsung.android.deviceidservice.** {*;}
-    -keep class com.zui.** {*;}
-    -keep class com.huawei.hms.ads.** {*; }
-    -keep interface com.huawei.hms.ads.** {*; }
-   -keepattributes *Annotation*
-   -keep @android.support.annotation.Keep class **{
-   @android.support.annotation.Keep <fields>;
-   @android.support.annotation.Keep <methods>;
-   }
+   -keep class XI.CA.XI.**{*;}
+   -keep class XI.K0.XI.**{*;}
+   -keep class XI.XI.K0.**{*;}
+   -keep class XI.vs.K0.**{*;}
+   -keep class XI.xo.XI.XI.**{*;}
+   -keep class com.asus.msa.SupplementaryDID.**{*;}
+   -keep class com.asus.msa.sdid.**{*;}
+   -keep class com.bun.lib.**{*;}
+   -keep class com.bun.miitmdid.**{*;}
+   -keep class com.huawei.hms.ads.identifier.**{*;}
+   -keep class com.samsung.android.deviceidservice.**{*;}
+   -keep class org.json.**{*;}
+   -keep public class com.netease.nis.sdkwrapper.Utils {public
+   <methods>;}
    ```
 
 **PS：需要更多帮助可参考目录下《移动智能终端补充设备标识体系统一调用SDK开发者说明文档》；**
@@ -415,20 +415,20 @@ dependencies {
 
 # OAID混淆
 -keep class com.bun.miitmdid.core.** {*;}
--keep class com.bun.** {*;}
- -keep class com.asus.msa.** {*;}
- -keep class com.heytap.openid.** {*;}
- -keep class com.huawei.android.hms.pps.** {*;}
- -keep class com.meizu.flyme.openidsdk.** {*;}
- -keep class com.samsung.android.deviceidservice.** {*;}
- -keep class com.zui.** {*;}
- -keep class com.huawei.hms.ads.** {*; }
- -keep interface com.huawei.hms.ads.** {*; }
--keepattributes *Annotation*
--keep @android.support.annotation.Keep class **{
-@android.support.annotation.Keep <fields>;
-@android.support.annotation.Keep <methods>;
-}
+-keep class XI.CA.XI.**{*;}
+-keep class XI.K0.XI.**{*;}
+-keep class XI.XI.K0.**{*;}
+-keep class XI.vs.K0.**{*;}
+-keep class XI.xo.XI.XI.**{*;}
+-keep class com.asus.msa.SupplementaryDID.**{*;}
+-keep class com.asus.msa.sdid.**{*;}
+-keep class com.bun.lib.**{*;}
+-keep class com.bun.miitmdid.**{*;}
+-keep class com.huawei.hms.ads.identifier.**{*;}
+-keep class com.samsung.android.deviceidservice.**{*;}
+-keep class org.json.**{*;}
+-keep public class com.netease.nis.sdkwrapper.Utils {public
+<methods>;}
 
 # admobile广告平台混淆
 -keep class admsdk.library.**{*;}
@@ -574,6 +574,8 @@ ADSuyiSdk.getInstance().init(this, new ADSuyiInitConfig.Builder()
          .debug(BuildConfig.DEBUG)
          // 是否同意隐私政策
          .agreePrivacyStrategy(true)
+         // 是否同意使用oaid
+         .isCanUseOaid(true)
          // 是否过滤第三方平台的问题广告（例如: 已知某个广告平台在某些机型的Banner广告可能存在问题，如果开启过滤，则在该机型将不再去获取该平台的Banner广告）
          .filterThirdQuestion(true)
          .build());

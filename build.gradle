@@ -21,6 +21,7 @@ allprojects {
         jcenter()
         maven { url "https://jitpack.io" }
         maven { url "http://101.37.191.20:9091/repository/maven-releases/" }
+        maven { url "http://101.37.191.20:9091/repository/maven-snapshots/" }
         // 如果添加了汇量广告，需要添加汇量的远程依赖
         maven { url "https://dl.bintray.com/mintegral-official/Mintegral_ad_SDK_Android" }
     }
