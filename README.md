@@ -166,7 +166,7 @@ dependencies {
      // ADSuyiSdk核心库是必须导入的
     implementation 'cn.admobiletop.adsuyi.ad:core:3.0.8.09161'
     // common库是必须导入的，请保持和Demo中版本一致
-    implementation 'com.admobile:common:1.2.0'
+    implementation 'com.admobile:common:1.2.0.1'
     // OAID库是必须导入的，请保持和Demo中版本一致
     implementation(name: 'msa_mdid_1.0.13', ext: 'aar')
 
