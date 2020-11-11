@@ -166,7 +166,7 @@ dependencies {
      // ADSuyiSdk核心库是必须导入的
     implementation 'cn.admobiletop.adsuyi.ad:core-alpha:3.0.9.10201'
     // common库是必须导入的，请保持和Demo中版本一致
-    implementation 'com.admobile:common:1.2.2-20201021.082946-3'
+    implementation 'com.admobile:common:1.2.2-20201110.021235-4'
     // OAID库是必须导入的，请保持和Demo中版本一致
     implementation(name: 'oaid_sdk_1.0.23', ext: 'aar')
 
