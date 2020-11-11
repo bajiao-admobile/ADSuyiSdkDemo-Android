@@ -67,7 +67,7 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
 
     // ADSuyiSdk、common和OAID库是必须导入的
-    implementation 'cn.admobiletop.adsuyi.ad:core:3.0.8.09161'
+    implementation 'cn.admobiletop.adsuyi.ad:core:3.0.8.09162'
     // common库请保持和Demo中版本一致
     implementation 'com.admobile:common:1.2.0.1'
     implementation(name: 'msa_mdid_1.0.13', ext: 'aar')
