@@ -275,6 +275,10 @@ dependencies {
    -keep public class com.netease.nis.sdkwrapper.Utils {public
    <methods>;}
    ```
+4. 修改AndroidManifest.xml，**OAID SDK minSdkVersion为21，如果应用的minSdkVersion小于21，则添加：**
+    ```java
+    <uses-sdk tools:overrideLibrary="com.bun.miitmdid"/>
+    ```
 
 **PS：需要更多帮助可参考目录下《移动智能终端补充设备标识体系统一调用SDK开发者说明文档》；**
 
