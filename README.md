@@ -164,33 +164,33 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
   
      // ADSuyiSdk核心库是必须导入的
-    implementation 'cn.admobiletop.adsuyi.ad:core-alpha:3.0.9.10201'
+    implementation 'cn.admobiletop.adsuyi.ad:core:3.0.9.10201'
     // common库是必须导入的，请保持和Demo中版本一致
-    implementation 'com.admobile:common:1.2.2-20201110.021235-4'
+    implementation 'com.admobile:common:1.2.2'
     // OAID库是必须导入的，请保持和Demo中版本一致
     implementation(name: 'oaid_sdk_1.0.23', ext: 'aar')
 
     // 艾狄墨搏AdapterSdk，必须的`
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile-alpha:4.8.1.10271'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile:4.8.1.10271'
 
     // 广点通AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt-alpha:4.270.1140.10191'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.270.1140.10191'
 
     // 头条AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao-alpha:3.3.0.1.10291'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:3.3.0.1.10291'
 
     // 百度AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-alpha:5.94.10271'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu:5.94.10271'
 
     // 汇量AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral-alpha:10.8.01.10271'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:10.8.01.10271'
 
     // InmobiAdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:inmobi:7.4.4.08241'
     implementation 'com.squareup.picasso:picasso:2.5.2'
 
     // OneWayAdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:oneway-alpha:2.4.5.10271'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:oneway:2.4.5.10271'
 
     // AppicAdapterSdk(信息流无曝光回调，全屏视频无播放完成回调)，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:appic:4.2.0.4.08241'
@@ -199,10 +199,10 @@ dependencies {
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.6'
 
     // 讯飞AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ifly-alpha:4.5.4.10271'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:ifly:4.5.4.10271'
 
     // 芒果TV AdapterSdk，可选的(芒果SDK 当前与Inmobi 存在冲突，两者无法同时接入)
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:mgtv-alpha:3.2.0.10291'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:mgtv:3.2.0.10291'
     // 芒果TV还需要以下三方库支持
     implementation 'com.android.volley:volley:1.1.0'
     implementation 'com.facebook.fresco:fresco:1.5.0'
@@ -272,8 +272,7 @@ dependencies {
    -keep class com.huawei.hms.ads.identifier.**{*;}
    -keep class com.samsung.android.deviceidservice.**{*;}
    -keep class org.json.**{*;}
-   -keep public class com.netease.nis.sdkwrapper.Utils {public
-   <methods>;}
+   -keep public class com.netease.nis.sdkwrapper.Utils {public <methods>;}
    ```
 4. 修改AndroidManifest.xml，**OAID SDK minSdkVersion为21，如果应用的minSdkVersion小于21，则添加：**
     ```java
@@ -431,8 +430,7 @@ dependencies {
 -keep class com.huawei.hms.ads.identifier.**{*;}
 -keep class com.samsung.android.deviceidservice.**{*;}
 -keep class org.json.**{*;}
--keep public class com.netease.nis.sdkwrapper.Utils {public
-<methods>;}
+-keep public class com.netease.nis.sdkwrapper.Utils {public <methods>;}
 
 # admobile广告平台混淆
 -keep class admsdk.library.**{*;}
@@ -602,7 +600,10 @@ adSuyiSplashAd.setImmersive(false);
 
 // 设置开屏广告监听
 adSuyiSplashAd.setListener(new ADSuyiSplashAdListener() {
-
+		@Override
+    public void onAdSkip(ADSuyiAdInfo adSuyiAdInfo) {
+      	Log.d(ADSuyiDemoConstant.TAG, "广告跳过回调，不一定准确，埋点数据仅供参考... ");
+    }
 		@Override
     public void onAdReceive(ADSuyiAdInfo adSuyiAdInfo) {
     		Log.d(ADSuyiDemoConstant.TAG, "广告获取成功回调... ");
