@@ -53,6 +53,11 @@
 -keep class MTT.ThirdAppInfoNew {*;}
 -keep class com.tencent.** {*;}
 
+# 如果使用了tbs版本的sdk需要进行以下配置
+-keep class com.tencent.smtt.** { *; }
+-dontwarn dalvik.**
+-dontwarn com.tencent.smtt.**
+
 # 百度广告SDK混淆
 -keepclassmembers class * extends android.app.Activity { public void *(android.view.View);}
 -keepclassmembers enum * {
@@ -164,3 +169,7 @@
 -keepattributes Signature
 -keep class android.**{*;}
 -keep class com.ecook.novel_sdk.bookstore.data.bean.* {*;}
+-keep class android.**{*;}
+-keep class com.ecook.** {* ;}
+-keep class com.parting_soul.http.** {* ;}
+-keep class com.ttx.reader.support.** {* ;}

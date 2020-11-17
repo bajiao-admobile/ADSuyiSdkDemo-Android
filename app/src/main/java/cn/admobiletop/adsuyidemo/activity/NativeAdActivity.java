@@ -155,6 +155,8 @@ public class NativeAdActivity extends AppCompatActivity implements OnRefreshLoad
         tempDataList.clear();
         mockNormalDataRequest();
 
+        // 信息流广告场景id（场景id非必选字段，如果需要可到开发者后台创建）
+        adSuyiNativeAd.setSceneId(ADSuyiDemoConstant.NATIVE_AD_SCENE_ID);
         // 请求广告数据，参数一广告位ID，参数二请求数量[1,3]
         adSuyiNativeAd.loadAd(ADSuyiDemoConstant.NATIVE_AD_POS_ID, ADSuyiDemoConstant.NATIVE_AD_COUNT);
     }

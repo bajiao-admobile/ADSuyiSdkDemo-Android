@@ -39,6 +39,9 @@ public class SettingActivity extends AppCompatActivity {
     private EditText etOnlySupportPlatform;
     private List<String> posIdList;
     private CheckBox cbOnlySupportPlatform;
+    private TextView tvScene;
+    private EditText etScene;
+    private CheckBox cbCustomSkipView;
 
     public static void start(Context context, String adType, ArrayList<String> posIdList) {
         Intent intent = new Intent(context, SettingActivity.class);
@@ -70,6 +73,11 @@ public class SettingActivity extends AppCompatActivity {
         etAutoRefreshInterval = findViewById(R.id.etAutoRefreshInterval);
 
         cbNativeMute = findViewById(R.id.cbNativeMute);
+
+        tvScene = findViewById(R.id.tvScene);
+        etScene = findViewById(R.id.etScene);
+
+        cbCustomSkipView = findViewById(R.id.cbCustomSkipView);
     }
 
     private void initListener() {
@@ -131,6 +139,8 @@ public class SettingActivity extends AppCompatActivity {
             case ADSuyiAdType.TYPE_SPLASH:
                 etPosId.setText(ADSuyiDemoConstant.SPLASH_AD_POS_ID);
                 etOnlySupportPlatform.setText(ADSuyiDemoConstant.SPLASH_AD_ONLY_SUPPORT_PLATFORM);
+                cbCustomSkipView.setVisibility(View.VISIBLE);
+                cbCustomSkipView.setChecked(ADSuyiDemoConstant.SPLASH_AD_CUSTOM_SKIP_VIEW);
                 break;
             case ADSuyiAdType.TYPE_BANNER:
                 etPosId.setText(ADSuyiDemoConstant.BANNER_AD_POS_ID);
@@ -138,6 +148,9 @@ public class SettingActivity extends AppCompatActivity {
                 etAutoRefreshInterval.setText(String.valueOf(ADSuyiDemoConstant.BANNER_AD_AUTO_REFRESH_INTERVAL));
                 tvAutoRefreshInterval.setVisibility(View.VISIBLE);
                 etAutoRefreshInterval.setVisibility(View.VISIBLE);
+                tvScene.setVisibility(View.VISIBLE);
+                etScene.setVisibility(View.VISIBLE);
+                etScene.setText(String.valueOf(ADSuyiDemoConstant.BANNER_AD_SCENE_ID));
                 break;
             case ADSuyiAdType.TYPE_FLOW:
                 etPosId.setText(ADSuyiDemoConstant.NATIVE_AD_POS_ID);
@@ -147,10 +160,16 @@ public class SettingActivity extends AppCompatActivity {
                 tvCount.setVisibility(View.VISIBLE);
                 cbNativeMute.setVisibility(View.VISIBLE);
                 cbNativeMute.setChecked(ADSuyiDemoConstant.NATIVE_AD_PLAY_WITH_MUTE);
+                tvScene.setVisibility(View.VISIBLE);
+                etScene.setVisibility(View.VISIBLE);
+                etScene.setText(String.valueOf(ADSuyiDemoConstant.NATIVE_AD_SCENE_ID));
                 break;
             case ADSuyiAdType.TYPE_REWARD_VOD:
                 etPosId.setText(ADSuyiDemoConstant.REWARD_VOD_AD_POS_ID);
                 etOnlySupportPlatform.setText(ADSuyiDemoConstant.REWARD_VOD_AD_ONLY_SUPPORT_PLATFORM);
+                tvScene.setVisibility(View.VISIBLE);
+                etScene.setVisibility(View.VISIBLE);
+                etScene.setText(String.valueOf(ADSuyiDemoConstant.REWARD_VOD_AD_SCENE_ID));
                 break;
             case ADSuyiAdType.TYPE_FULLSCREEN_VOD:
                 etPosId.setText(ADSuyiDemoConstant.FULL_SCREEN_VOD_AD_POS_ID);
@@ -159,6 +178,9 @@ public class SettingActivity extends AppCompatActivity {
             case ADSuyiAdType.TYPE_INTERSTITIAL:
                 etPosId.setText(ADSuyiDemoConstant.INTERSTITIAL_AD_POS_ID);
                 etOnlySupportPlatform.setText(ADSuyiDemoConstant.INTERSTITIAL_AD_ONLY_SUPPORT_PLATFORM);
+                tvScene.setVisibility(View.VISIBLE);
+                etScene.setVisibility(View.VISIBLE);
+                etScene.setText(String.valueOf(ADSuyiDemoConstant.INTERSTITIAL_AD_SCENE_ID));
                 break;
             case ADSuyiAdType.TYPE_DRAW_VOD:
                 etPosId.setText(ADSuyiDemoConstant.DRAW_VOD_AD_POS_ID);
@@ -182,21 +204,25 @@ public class SettingActivity extends AppCompatActivity {
             case ADSuyiAdType.TYPE_SPLASH:
                 ADSuyiDemoConstant.SPLASH_AD_POS_ID = posId;
                 ADSuyiDemoConstant.SPLASH_AD_ONLY_SUPPORT_PLATFORM = onlySupportPlatform;
+                ADSuyiDemoConstant.SPLASH_AD_CUSTOM_SKIP_VIEW = cbCustomSkipView.isChecked();
                 break;
             case ADSuyiAdType.TYPE_BANNER:
                 ADSuyiDemoConstant.BANNER_AD_POS_ID = posId;
                 ADSuyiDemoConstant.BANNER_AD_AUTO_REFRESH_INTERVAL = getAutoRefreshInterval();
                 ADSuyiDemoConstant.BANNER_AD_ONLY_SUPPORT_PLATFORM = onlySupportPlatform;
+                ADSuyiDemoConstant.BANNER_AD_SCENE_ID = getSceneId();
                 break;
             case ADSuyiAdType.TYPE_FLOW:
                 ADSuyiDemoConstant.NATIVE_AD_POS_ID = posId;
                 ADSuyiDemoConstant.NATIVE_AD_COUNT = getAdCount();
                 ADSuyiDemoConstant.NATIVE_AD_ONLY_SUPPORT_PLATFORM = onlySupportPlatform;
                 ADSuyiDemoConstant.NATIVE_AD_PLAY_WITH_MUTE = cbNativeMute.isChecked();
+                ADSuyiDemoConstant.NATIVE_AD_SCENE_ID = getSceneId();
                 break;
             case ADSuyiAdType.TYPE_REWARD_VOD:
                 ADSuyiDemoConstant.REWARD_VOD_AD_POS_ID = posId;
                 ADSuyiDemoConstant.REWARD_VOD_AD_ONLY_SUPPORT_PLATFORM = onlySupportPlatform;
+                ADSuyiDemoConstant.REWARD_VOD_AD_SCENE_ID = getSceneId();
                 break;
             case ADSuyiAdType.TYPE_FULLSCREEN_VOD:
                 ADSuyiDemoConstant.FULL_SCREEN_VOD_AD_POS_ID = posId;
@@ -205,6 +231,7 @@ public class SettingActivity extends AppCompatActivity {
             case ADSuyiAdType.TYPE_INTERSTITIAL:
                 ADSuyiDemoConstant.INTERSTITIAL_AD_POS_ID = posId;
                 ADSuyiDemoConstant.INTERSTITIAL_AD_ONLY_SUPPORT_PLATFORM = onlySupportPlatform;
+                ADSuyiDemoConstant.INTERSTITIAL_AD_SCENE_ID = getSceneId();
                 break;
             case ADSuyiAdType.TYPE_DRAW_VOD:
                 ADSuyiDemoConstant.DRAW_VOD_AD_POS_ID = posId;
@@ -248,5 +275,10 @@ public class SettingActivity extends AppCompatActivity {
             e.printStackTrace();
         }
         return 1;
+    }
+
+    private String getSceneId() {
+        String sceneStr = etScene.getText().toString().trim();
+        return sceneStr;
     }
 }

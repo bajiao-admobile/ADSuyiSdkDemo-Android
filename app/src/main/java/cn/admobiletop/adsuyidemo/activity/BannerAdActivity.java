@@ -63,6 +63,8 @@ public class BannerAdActivity extends AppCompatActivity {
                 }
             }
         });
+        // banner广告场景id（场景id非必选字段，如果需要可到开发者后台创建）
+        suyiBannerAd.setSceneId(ADSuyiDemoConstant.BANNER_AD_SCENE_ID);
         // 加载Banner广告，参数为广告位ID，同一个ADSuyiBannerAd只有一次loadAd有效
         suyiBannerAd.loadAd(ADSuyiDemoConstant.BANNER_AD_POS_ID);
     }

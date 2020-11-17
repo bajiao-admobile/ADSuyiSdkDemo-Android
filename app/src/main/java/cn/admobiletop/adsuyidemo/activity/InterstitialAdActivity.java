@@ -108,6 +108,9 @@ public class InterstitialAdActivity extends AppCompatActivity implements View.On
      * 加载广告
      */
     private void loadAd() {
+        // 插屏广告场景id（场景id非必选字段，如果需要可到开发者后台创建）
+        interstitialAd.setSceneId(ADSuyiDemoConstant.INTERSTITIAL_AD_SCENE_ID);
+        // 加载插屏广告，参数为广告位ID
         interstitialAd.loadAd(ADSuyiDemoConstant.INTERSTITIAL_AD_POS_ID);
     }
 

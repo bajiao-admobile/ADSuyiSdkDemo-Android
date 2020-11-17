@@ -23,5 +23,20 @@
             android:layout_centerInParent="true"
             android:scaleType="centerCrop"
             android:src="@mipmap/admobile_icon" />
+
+        <TextView
+            android:id="@+id/tvSkip"
+            android:layout_width="60dp"
+            android:visibility="gone"
+            android:layout_height="25dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/shape_background_circle"
+            android:gravity="center"
+            android:text="跳过"
+            android:textColor="#555555"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:textSize="12sp" />
+
     </RelativeLayout>
 </LinearLayout>

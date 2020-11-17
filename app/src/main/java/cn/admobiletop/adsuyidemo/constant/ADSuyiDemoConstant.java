@@ -17,6 +17,10 @@ public class ADSuyiDemoConstant {
      * 开屏广告位仅支持的平台
      */
     public static String SPLASH_AD_ONLY_SUPPORT_PLATFORM = null;
+    /**
+     * 开屏自定义跳过按钮
+     */
+    public static boolean SPLASH_AD_CUSTOM_SKIP_VIEW = false;
 
     /**
      * Banner广告位ID, 640*100
@@ -40,6 +44,10 @@ public class ADSuyiDemoConstant {
      * BANNER广告位仅支持的平台
      */
     public static String BANNER_AD_ONLY_SUPPORT_PLATFORM = null;
+    /**
+     * BANNER广告场景id
+     */
+    public static String BANNER_AD_SCENE_ID = "";
 
     /**
      * 信息流广告位ID，自渲染
@@ -63,6 +71,10 @@ public class ADSuyiDemoConstant {
      */
     public static String NATIVE_AD_ONLY_SUPPORT_PLATFORM = null;
     public static boolean NATIVE_AD_PLAY_WITH_MUTE = true;
+    /**
+     * 信息流广告位场景id
+     */
+    public static String NATIVE_AD_SCENE_ID = "";
 
     /**
      * 激励视频广告位ID，竖版
@@ -87,6 +99,10 @@ public class ADSuyiDemoConstant {
      * 全屏视频广告位仅支持的平台
      */
     public static String FULL_SCREEN_VOD_AD_ONLY_SUPPORT_PLATFORM = null;
+    /**
+     * 激励视频广告位场景id
+     */
+    public static String REWARD_VOD_AD_SCENE_ID = "";
 
     /**
      * 插屏广告位ID
@@ -97,6 +113,10 @@ public class ADSuyiDemoConstant {
      * 插屏广告位仅支持的平台
      */
     public static String INTERSTITIAL_AD_ONLY_SUPPORT_PLATFORM = null;
+    /**
+     * 插屏广告位场景id
+     */
+    public static String INTERSTITIAL_AD_SCENE_ID = "";
 
     /**
      * Draw视频信息流广告位ID

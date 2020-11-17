@@ -91,6 +91,32 @@
         android:text="是否静音播放视频(部分平台支持)"
         android:visibility="gone" />
 
+    <TextView
+        android:id="@+id/tvScene"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="场景id"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="16sp"
+        android:visibility="gone" />
+
+    <EditText
+        android:id="@+id/etScene"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="请输入场景id"
+        android:textColor="@color/colorPrimary"
+        android:visibility="gone" />
+
+    <CheckBox
+        android:id="@+id/cbCustomSkipView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="是否自定义跳过按钮"
+        android:visibility="gone" />
+
     <Button
         android:id="@+id/btnDefine"
         android:layout_width="match_parent"

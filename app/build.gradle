@@ -6,8 +6,8 @@ android {
         applicationId "cn.admobiletop.adsuyidemo"
         minSdkVersion 19
         targetSdkVersion 29
-        versionCode 202010261
-        versionName "1.202010261"
+        versionCode 202011171
+        versionName "1.202011171"
         multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         ndk {
@@ -67,7 +67,7 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
 
     // ADSuyiSdk、common和OAID库是必须导入的
-    implementation 'cn.admobiletop.adsuyi.ad:core:3.0.9.10201'
+    implementation 'cn.admobiletop.adsuyi.ad:core-alpha:3.1.0.11161'
     // common库请保持和Demo中版本一致
     implementation 'com.admobile:common:1.2.2'
     implementation(name: 'oaid_sdk_1.0.23', ext: 'aar')
@@ -76,7 +76,7 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile:4.8.1.10271'
 
     // 广点通AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.270.1140.10191'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt-alpha:4.294.1164.11161'
 
     // 头条AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:3.3.0.1.10291'
@@ -85,10 +85,10 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu:5.94.10271'
 
     // 汇量AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:10.8.01.10271'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral-alpha:10.9.02.11111'
 
     // InmobiAdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:inmobi:7.4.4.08241'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:inmobi-alpha:7.5.1.11111'
     implementation 'com.squareup.picasso:picasso:2.5.2'
 
     // OneWayAdapterSdk，可选的
@@ -104,7 +104,7 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:ifly:4.5.4.10271'
 
     // 芒果TV AdapterSdk，可选的(芒果SDK 当前与Inmobi 存在冲突，两者无法同时接入)
-//    implementation 'cn.admobiletop.adsuyi.ad.adapter:mgtv:3.2.0.10291'
+//    implementation 'cn.admobiletop.adsuyi.ad.adapter:mgtv-alpha:3.2.1.11111'
 //    // 芒果TV还需要以下三方库支持
 //    implementation 'com.android.volley:volley:1.1.0'
 //    implementation 'com.facebook.fresco:fresco:1.5.0'

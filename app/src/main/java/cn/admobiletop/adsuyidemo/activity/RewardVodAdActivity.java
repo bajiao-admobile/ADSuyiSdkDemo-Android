@@ -118,6 +118,8 @@ public class RewardVodAdActivity extends AppCompatActivity implements View.OnCli
      * 加载广告
      */
     private void loadAd() {
+        // 激励广告场景id（场景id非必选字段，如果需要可到开发者后台创建）
+        rewardVodAd.setSceneId(ADSuyiDemoConstant.REWARD_VOD_AD_SCENE_ID);
         // 加载激励视频广告，参数为广告位ID
         rewardVodAd.loadAd(ADSuyiDemoConstant.REWARD_VOD_AD_POS_ID);
     }

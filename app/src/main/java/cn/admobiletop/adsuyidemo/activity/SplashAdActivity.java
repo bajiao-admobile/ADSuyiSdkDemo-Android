@@ -12,7 +12,9 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,10 +33,10 @@ import cn.admobiletop.adsuyidemo.widget.PrivacyPolicyDialog;
 
 /**
  * @author ciba
- * @description 开屏广告示例，开屏广告容器请保证有屏幕高度的75%，建议开屏界面设置为全屏模式并禁止返回按钮，快手开屏广告需要继承FragmentActivity
+ * @description 开屏广告示例，开屏广告容器请保证有屏幕高度的75%，建议开屏界面设置为全屏模式并禁止返回按钮
  * @date 2020/3/25
  */
-public class SplashAdActivity extends FragmentActivity {
+public class SplashAdActivity extends AppCompatActivity {
     private static final String AGREE_PRIVACY_POLICY = "AGREE_PRIVACY_POLICY";
     /**
      * 根据实际情况申请
@@ -49,12 +51,14 @@ public class SplashAdActivity extends FragmentActivity {
     private List<String> permissionList = new ArrayList<>();
     private ADSuyiSplashAd adSuyiSplashAd;
     private FrameLayout flContainer;
+    private TextView skipView;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_ad);
         flContainer = findViewById(R.id.flContainer);
+        skipView = findViewById(R.id.tvSkip);
 
         // 据悉，工信部将在2020年8月底前上线运行全国APP技术检测平台管理系统，2020年12月10日前完成覆盖40万款主流App的合规检测工作。
         // 为了保证您的App顺利通过检测，结合当前监管关注重点，我们可以将ADSuyiSdk的初始化放在用户同意隐私政策之后。
@@ -142,8 +146,21 @@ public class SplashAdActivity extends FragmentActivity {
         adSuyiSplashAd.setImmersive(false);
         // 设置仅支持的广告平台，设置了这个值，获取广告时只会去获取该平台的广告，null或空字符串为不限制，默认为null，方便调试使用，上线时建议不设置
         adSuyiSplashAd.setOnlySupportPlatform(ADSuyiDemoConstant.SPLASH_AD_ONLY_SUPPORT_PLATFORM);
+        if (ADSuyiDemoConstant.SPLASH_AD_CUSTOM_SKIP_VIEW) {
+            // 设置自定义跳过按钮和倒计时时长（非必传，倒计时时长范围[3000,5000]建议不要传入倒计时时长） 目前不支持inmobi, ksad, oneway, ifly平台自定义跳过按钮
+            adSuyiSplashAd.setSkipView(skipView, 5000);
+        }
         // 设置开屏广告监听
         adSuyiSplashAd.setListener(new ADSuyiSplashAdListener() {
+
+            @Override
+            public void onADTick(long millisUntilFinished) {
+                // 如果没有设置自定义跳过按钮不会回调该方法
+                Log.d(ADSuyiDemoConstant.TAG, "倒计时剩余时长" + millisUntilFinished);
+                if (ADSuyiDemoConstant.SPLASH_AD_CUSTOM_SKIP_VIEW && skipView != null) {
+                    skipView.setText("跳过" + millisUntilFinished + "s");
+                }
+            }
 
             @Override
             public void onAdSkip(ADSuyiAdInfo adSuyiAdInfo) {
@@ -153,6 +170,9 @@ public class SplashAdActivity extends FragmentActivity {
             @Override
             public void onAdReceive(ADSuyiAdInfo adSuyiAdInfo) {
                 Log.d(ADSuyiDemoConstant.TAG, "广告获取成功回调... ");
+                if (ADSuyiDemoConstant.SPLASH_AD_CUSTOM_SKIP_VIEW && skipView != null) {
+                    skipView.setVisibility(View.VISIBLE);
+                }
             }
 
             @Override

@@ -1,4 +1,4 @@
-# ADSuyiSdk Android Sdk——接入文档 V3.0.9.10201
+# ADSuyiSdk Android Sdk——接入文档 V3.1.0.11161-alpha
 
  目录 
 
@@ -164,7 +164,7 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
   
      // ADSuyiSdk核心库是必须导入的
-    implementation 'cn.admobiletop.adsuyi.ad:core:3.0.9.10201'
+    implementation 'cn.admobiletop.adsuyi.ad:core-alpha:3.1.0.11161'
     // common库是必须导入的，请保持和Demo中版本一致
     implementation 'com.admobile:common:1.2.2'
     // OAID库是必须导入的，请保持和Demo中版本一致
@@ -174,7 +174,7 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile:4.8.1.10271'
 
     // 广点通AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.270.1140.10191'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt-alpha:4.294.1164.11161'
 
     // 头条AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:3.3.0.1.10291'
@@ -183,10 +183,10 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu:5.94.10271'
 
     // 汇量AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:10.8.01.10271'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral-alpha:10.9.02.11111'
 
     // InmobiAdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:inmobi:7.4.4.08241'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:inmobi-alpha:7.5.1.11111'
     implementation 'com.squareup.picasso:picasso:2.5.2'
 
     // OneWayAdapterSdk，可选的
@@ -202,7 +202,7 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:ifly:4.5.4.10271'
 
     // 芒果TV AdapterSdk，可选的(芒果SDK 当前与Inmobi 存在冲突，两者无法同时接入)
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:mgtv:3.2.0.10291'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:mgtv-alpha:3.2.1.11111'
     // 芒果TV还需要以下三方库支持
     implementation 'com.android.volley:volley:1.1.0'
     implementation 'com.facebook.fresco:fresco:1.5.0'
@@ -598,8 +598,16 @@ adSuyiSplashAd = new ADSuyiSplashAd(this, flContainer);
 // 设置是否是沉浸式，如果为true，跳过按钮距离顶部的高度会加上状态栏高度
 adSuyiSplashAd.setImmersive(false);
 
+// 设置自定义跳过按钮和倒计时时长（非必传，倒计时时长范围[3000,5000]建议不要传入倒计时时长） 目前不支持inmobi, ksad, oneway, ifly平台自定义跳过按钮
+adSuyiSplashAd.setSkipView(skipView, 5000);
+
 // 设置开屏广告监听
 adSuyiSplashAd.setListener(new ADSuyiSplashAdListener() {
+  	@Override
+    public void onADTick(long millisUntilFinished) {
+      // 如果没有设置自定义跳过按钮不会回调该方法
+      Log.d(ADSuyiDemoConstant.TAG, "倒计时剩余时长" + millisUntilFinished);
+    }
 		@Override
     public void onAdSkip(ADSuyiAdInfo adSuyiAdInfo) {
       	Log.d(ADSuyiDemoConstant.TAG, "广告跳过回调，不一定准确，埋点数据仅供参考... ");
@@ -685,6 +693,8 @@ suyiBannerAd.setListener(new ADSuyiBannerAdListener() {
     }
 });
 
+// banner广告场景id（场景id非必选字段，如果需要可到开发者后台创建）
+suyiBannerAd.setSceneId(ADSuyiDemoConstant.BANNER_AD_SCENE_ID);
 // 加载Banner广告，参数为广告位ID，同一个ADSuyiBannerAd只有一次loadAd有效
 suyiBannerAd.loadAd(ADSuyiDemoConstant.BANNER_AD_POS_ID);
 ```
@@ -760,6 +770,8 @@ adSuyiNativeAd.setListener(new ADSuyiNativeAdListener() {
     }
 });
 
+// 信息流广告场景id（场景id非必选字段，如果需要可到开发者后台创建）
+adSuyiNativeAd.setSceneId(ADSuyiDemoConstant.NATIVE_AD_SCENE_ID);
 // 请求广告数据，参数一广告位ID，参数二请求数量[1,3]
 adSuyiNativeAd.loadAd(ADSuyiDemoConstant.NATIVE_AD_POS_ID, ADSuyiDemoConstant.NATIVE_AD_COUNT);
 ```
@@ -828,6 +840,8 @@ rewardVodAd.setListener(new ADSuyiRewardVodAdListener() {
     }
 });
 
+// 激励广告场景id（场景id非必选字段，如果需要可到开发者后台创建）
+rewardVodAd.setSceneId(ADSuyiDemoConstant.REWARD_VOD_AD_SCENE_ID);
 // 加载激励视频广告，参数为广告位ID
 rewardVodAd.loadAd(ADSuyiDemoConstant.REWARD_VOD_AD_POS_ID);
 ```
@@ -943,6 +957,8 @@ interstitialAd.setListener(new ADSuyiInterstitialAdListener() {
     }
 });
 
+// 插屏广告场景id（场景id非必选字段，如果需要可到开发者后台创建）
+interstitialAd.setSceneId(ADSuyiDemoConstant.INTERSTITIAL_AD_SCENE_ID);
 // 加载插屏广告
 interstitialAd.loadAd(ADSuyiDemoConstant.INTERSTITIAL_AD_POS_ID);
 ```
