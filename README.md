@@ -643,7 +643,7 @@ adSuyiSplashAd.setListener(new ADSuyiSplashAdListener() {
 adSuyiSplashAd.loadAd(ADSuyiDemoConstant.SPLASH_AD_POS_ID);
 ```
 
-> [开屏广告示例详情](https://github.com/ADSuyi/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/SplashAdActivity.java)
+> [开屏广告示例详情](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/SplashAdActivity.java)
 
 
 
@@ -693,7 +693,7 @@ suyiBannerAd.setListener(new ADSuyiBannerAdListener() {
 suyiBannerAd.loadAd(ADSuyiDemoConstant.BANNER_AD_POS_ID);
 ```
 
->[Banner广告示例详情](https://github.com/ADSuyi/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/BannerAdActivity.java)
+>[Banner广告示例详情](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/BannerAdActivity.java)
 
 
 
@@ -768,7 +768,7 @@ adSuyiNativeAd.setListener(new ADSuyiNativeAdListener() {
 adSuyiNativeAd.loadAd(ADSuyiDemoConstant.NATIVE_AD_POS_ID, ADSuyiDemoConstant.NATIVE_AD_COUNT);
 ```
 
-> [信息流广告示例详情](https://github.com/ADSuyi/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/NativeAdActivity.java)
+> [信息流广告示例详情](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/NativeAdActivity.java)
 
 
 
@@ -836,7 +836,7 @@ rewardVodAd.setListener(new ADSuyiRewardVodAdListener() {
 rewardVodAd.loadAd(ADSuyiDemoConstant.REWARD_VOD_AD_POS_ID);
 ```
 
-> [激励视频广告示例详情](https://github.com/ADSuyi/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/RewardVodAdActivity.java)
+> [激励视频广告示例详情](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/RewardVodAdActivity.java)
 
 
 
@@ -898,7 +898,7 @@ fullScreenVodAd.setListener(new ADSuyiFullScreenVodAdListener() {
 fullScreenVodAd.loadAd(ADSuyiDemoConstant.FULL_SCREEN_VOD_AD_POS_ID);
 ```
 
-> [全屏视频广告示例详情](https://github.com/ADSuyi/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/FullScreenVodAdActivity.java)
+> [全屏视频广告示例详情](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/FullScreenVodAdActivity.java)
 
 
 
@@ -951,7 +951,7 @@ interstitialAd.setListener(new ADSuyiInterstitialAdListener() {
 interstitialAd.loadAd(ADSuyiDemoConstant.INTERSTITIAL_AD_POS_ID);
 ```
 
-> [插屏广告示例详情](https://github.com/ADSuyi/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/InterstitialAdActivity.java)
+> [插屏广告示例详情](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/InterstitialAdActivity.java)
 
 
 
@@ -1023,7 +1023,7 @@ drawVodAd.setListener(new ADSuyiDrawVodAdListener() {
 drawVodAd.loadAd(ADSuyiDemoConstant.DRAW_VOD_AD_POS_ID, ADSuyiDemoConstant.DRAW_VOD_AD_COUNT);
 ```
 
-> [DrawVod广告示例详情](https://github.com/ADSuyi/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/DrawVodActivity.java)
+> [DrawVod广告示例详情](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/DrawVodActivity.java)
 
 
 
