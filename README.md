@@ -547,6 +547,10 @@ dependencies {
 -keep class com.bumptech.glide.load.data.ParcelFileDescriptorRewinder$InternalRewinder {*** rewind();}
 
 # NovelAdapter混淆
+-ignorewarnings
+-keepattributes Signature
+-keep class android.**{*;}
+-keep class com.ecook.novel_sdk.bookstore.data.bean.* {*;}
 -keep class android.**{*;}
 -keep class com.ecook.** {* ;}
 -keep class com.parting_soul.http.** {* ;}
