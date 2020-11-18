@@ -1041,6 +1041,7 @@ ADSuyiSdk.getInstance().init(this, new ADSuyiInitConfig.Builder()
     // 如果开了浮窗广告，可设置不展示浮窗广告的界面，第一个参数为是否开启默认不展示的页面（例如:激励视频播放页面），第二可变参数为自定义不展示的页面
     .floatingAdBlockList(false, "cn.admobiletop.adsuyidemo.activity.SplashAdActivity")
     .build());
+
 ```
 
 
