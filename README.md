@@ -701,6 +701,16 @@ suyiBannerAd.loadAd(ADSuyiDemoConstant.BANNER_AD_POS_ID);
 
 信息流广告，具备自渲染和模板两种广告样式：自渲染是SDK将返回广告标题、描述、Icon、图片、多媒体视图等信息，开发者可通过自行拼装渲染成喜欢的样式；模板样式则是返回拼装好的广告视图，开发者只需将视图添加到相应容器即可，模板样式的容器高度建议是自适应。**由于信息流广告不同广告平台支持的样式不一致，有些平台不支持自渲染，有些平台不支持模板，所以下发的广告可能是模板和自渲染混合，必须开发者参考Demo适配两种类型。**
 
+``` lua
+ADSuyiNativeAdInfo -- 信息流对象 根据isNativeExpress()方法：true模板类型，false自渲染类型
+				|
+        ├── ADSuyiNativeExpressAdInfo -- 模板类型
+				|
+        └── ADSuyiNativeFeedAdInfo -- 自渲染类型 根据hasMediaView()方法：true包含视频，false不包含视频
+                      ├── ADSuyiNativeFeedAdInfo -- 包含视频
+                      └── ADSuyiNativeFeedAdInfo -- 不包含视频
+```
+
 ```java
 // 创建信息流广告实例
 adSuyiNativeAd = new ADSuyiNativeAd(this);
