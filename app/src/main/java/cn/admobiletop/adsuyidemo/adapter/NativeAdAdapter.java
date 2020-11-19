@@ -36,9 +36,12 @@ import cn.admobiletop.adsuyidemo.entity.NativeAdSampleData;
  */
 public class NativeAdAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     /**
-     * 普通数据类型
+     * 普通数据类型（模拟数据）
      */
     private static final int ITEM_VIEW_TYPE_NORMAL_DATA = 0;
+
+
+    // 以下为三种信息流广告适配类型，模板一种，自渲染两种（没有MediaView）和（包含MediaView）。
     /**
      * 信息流原生广告类型（没有MediaView）
      */
@@ -51,6 +54,8 @@ public class NativeAdAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
      * 信息流模板广告类型
      */
     private static final int ITEM_VIEW_TYPE_EXPRESS_AD = 3;
+
+
     private final Context context;
 
     private List<NativeAdSampleData> dataList = new ArrayList<>();
