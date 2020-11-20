@@ -576,7 +576,8 @@ dependencies {
 ADSuyiSdk.getInstance().init(this, new ADSuyiInitConfig.Builder()
          // 设置APPID，必须的
          .appId(ADSuyiDemoConstant.APP_ID)
-         // 是否开启Debug，开启会有详细的日志打印
+         // 是否开启Debug，开启会有详细的日志信息打印，如果用上ADSuyiToastUtil工具还会弹出toast提示。
+         // 注意上线后请置为false
          .debug(BuildConfig.DEBUG)
          // 是否同意隐私政策
          .agreePrivacyStrategy(true)

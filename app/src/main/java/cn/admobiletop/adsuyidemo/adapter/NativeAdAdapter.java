@@ -212,12 +212,13 @@ public class NativeAdAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
         NativeAdViewHolder(@NonNull ViewGroup viewGroup) {
             /**
-             * 已预设3种样式，开发者可自行修改，关闭按钮大小等可根据产品需求自行修改
+             * 已预设4种样式，开发者可自行修改，关闭按钮大小等可根据产品需求自行修改
              * R.layout.item_native_ad_native_ad 双图双文
              * R.layout.item_native_ad_native_ad2 上图下文
              * R.layout.item_native_ad_native_ad3 单图
+             * R.layout.item_native_ad_native_ad4 左图双文
              */
-            super(viewGroup, R.layout.item_native_ad_native_ad3);
+            super(viewGroup, R.layout.item_native_ad_native_ad2);
             ivImage = itemView.findViewById(R.id.ivImage);
         }
 
@@ -260,16 +261,22 @@ public class NativeAdAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                 // 交由子类实现加载图片还是MediaView
                 setImageOrMediaData(context, nativeFeedAdInfo);
                 if (ivIcon != null) {
+                    // 广告icon
                     Glide.with(context).load(nativeFeedAdInfo.getIconUrl()).into(ivIcon);
                 }
                 if (tvTitle != null) {
+                    // 广告标题
                     tvTitle.setText(nativeFeedAdInfo.getTitle());
                 }
                 if (tvDesc != null) {
+                    // 广告详情
                     tvDesc.setText(nativeFeedAdInfo.getDesc());
                 }
-
-                tvAdType.setText(nativeFeedAdInfo.getCtaText());
+                if (tvAdType != null) {
+                    // 广告按钮描述
+                    tvAdType.setText(nativeFeedAdInfo.getCtaText());
+                }
+                // 广告平台图标
                 ivAdTarget.setImageResource(nativeFeedAdInfo.getPlatformIcon());
                 // 注册关闭按钮，将关闭按钮点击事件交于SDK托管，以便于回调onAdClose
                 nativeFeedAdInfo.registerCloseView(ivClose);

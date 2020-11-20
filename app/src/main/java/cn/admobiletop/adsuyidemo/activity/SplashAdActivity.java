@@ -24,6 +24,7 @@ import cn.admobiletop.adsuyi.ad.error.ADSuyiError;
 import cn.admobiletop.adsuyi.ad.listener.ADSuyiSplashAdListener;
 import cn.admobiletop.adsuyi.config.ADSuyiInitConfig;
 import cn.admobiletop.adsuyi.util.ADSuyiToastUtil;
+import cn.admobiletop.adsuyidemo.BuildConfig;
 import cn.admobiletop.adsuyidemo.R;
 import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
 import cn.admobiletop.adsuyidemo.util.SPUtil;
@@ -109,8 +110,9 @@ public class SplashAdActivity extends FragmentActivity {
         ADSuyiSdk.getInstance().init(this, new ADSuyiInitConfig.Builder()
                 // 设置APPID
                 .appId(ADSuyiDemoConstant.APP_ID)
-                // 是否开启Debug，开启会有详细的日志信息打印
-                .debug(true)
+                // 是否开启Debug，开启会有详细的日志信息打印，如果用上ADSuyiToastUtil工具还会弹出toast提示。
+                // TODO 注意上线后请置为false
+                .debug(BuildConfig.DEBUG)
                 // 是否同意隐私政策
                 .agreePrivacyStrategy(true)
                 // 是否过滤第三方平台的问题广告（例如: 已知某个广告平台在某些机型的Banner广告可能存在问题，如果开启过滤，则在该机型将不再去获取该平台的Banner广告）
