@@ -281,10 +281,18 @@ public class NativeAdAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                 // 注册关闭按钮，将关闭按钮点击事件交于SDK托管，以便于回调onAdClose
                 nativeFeedAdInfo.registerCloseView(ivClose);
 
-                // 注册广告交互, 必须调用
-                // 注意：广点通只会响应View...actionViews的点击事件，且这些View都应该是com.qq.e.ads.nativ.widget.NativeAdContainer的子View
-                // 务必最后调用
-                nativeFeedAdInfo.registerViewForInteraction((ViewGroup) itemView, rlAdContainer, tvAdType);
+                // 如果布局中有使用tvAdType按钮，请按需求对需要点击的布局进行注册
+                if (tvAdType != null) {
+                    // 注册广告交互, 必须调用
+                    // 注意：广点通只会响应View...actionViews的点击事件，且这些View都应该是com.qq.e.ads.nativ.widget.NativeAdContainer的子View
+                    // 务必最后调用
+                    nativeFeedAdInfo.registerViewForInteraction((ViewGroup) itemView, rlAdContainer, tvAdType);
+                } else {
+                    // 注册广告交互, 必须调用
+                    // 注意：广点通只会响应View...actionViews的点击事件，且这些View都应该是com.qq.e.ads.nativ.widget.NativeAdContainer的子View
+                    // 务必最后调用
+                    nativeFeedAdInfo.registerViewForInteraction((ViewGroup) itemView, rlAdContainer);
+                }
             }
         }
 
