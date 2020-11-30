@@ -167,7 +167,9 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad:core-alpha:3.1.0.11161'
     // common库是必须导入的，请保持和Demo中版本一致
     implementation 'com.admobile:common:1.2.2'
-    // OAID库是必须导入的，请保持和Demo中版本一致
+
+    // OAID库是必须导入的，请保持和Demo中版本一致（如果当前Suyi是3.0.9及以上版本，
+    // 必须保证oaid版本为oaid_sdk_1.0.23，oaid_sdk_1.0.23为msa_mdid_1.0.13的升级版，请删除原有的msa_mdid）
     implementation(name: 'oaid_sdk_1.0.23', ext: 'aar')
 
     // 艾狄墨搏AdapterSdk，必须的`
@@ -245,6 +247,7 @@ dependencies {
    ```
 
 * 如果接入汇量，需要加入第三方依赖库https://dl.bintray.com/mintegral-official/Mintegral_ad_SDK_Android
+* **广点通适配器4.270.1140版本及以上已经导入了腾讯的tbs，请移除原有的tbs避免编译失败；**；
 
 ### 5.2 OAID支持
 
@@ -252,7 +255,7 @@ dependencies {
 
 <font color=#ff0000>OAID是必须集成项，没有集成将会抛出异常提醒开发者</font>，OAID集成并不繁琐，SDK中已经进行了OAID的封装，只需以下几步即可完成OAID的支持；
 
-1. 导入安全联盟的OAID支持库 **oaid_sdk_1.0.23.aar**，可在Demo的libs目录下找到，**强烈建议使用和Demo中一样版本的OAID库**；
+1. 导入安全联盟的OAID支持库 **oaid_sdk_1.0.23.aar**，可在Demo的libs目录下找到，**强烈建议使用和Demo中一样版本的OAID库（包括项目中已存在的依赖的oaid版本）；**
 
 2. 将Demo中assets文件夹下的**supplierconfig.json**文件复制到自己的assets目录下并按照**supplierconfig.json**文件中的说明进行OAID的 **AppId** 配置，**supplierconfig.json**文件名不可修改；
 
@@ -547,6 +550,10 @@ dependencies {
 -keep class com.bumptech.glide.load.data.ParcelFileDescriptorRewinder$InternalRewinder {*** rewind();}
 
 # NovelAdapter混淆
+-ignorewarnings
+-keepattributes Signature
+-keep class android.**{*;}
+-keep class com.ecook.novel_sdk.bookstore.data.bean.* {*;}
 -keep class android.**{*;}
 -keep class com.ecook.** {* ;}
 -keep class com.parting_soul.http.** {* ;}
@@ -572,7 +579,8 @@ dependencies {
 ADSuyiSdk.getInstance().init(this, new ADSuyiInitConfig.Builder()
          // 设置APPID，必须的
          .appId(ADSuyiDemoConstant.APP_ID)
-         // 是否开启Debug，开启会有详细的日志打印
+         // 是否开启Debug，开启会有详细的日志信息打印，如果用上ADSuyiToastUtil工具还会弹出toast提示。
+         // 注意上线后请置为false
          .debug(BuildConfig.DEBUG)
          // 是否同意隐私政策
          .agreePrivacyStrategy(true)
@@ -647,7 +655,7 @@ adSuyiSplashAd.setListener(new ADSuyiSplashAdListener() {
 adSuyiSplashAd.loadAd(ADSuyiDemoConstant.SPLASH_AD_POS_ID);
 ```
 
-> [开屏广告示例详情](https://github.com/ADSuyi/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/SplashAdActivity.java)
+> [开屏广告示例详情](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/SplashAdActivity.java)
 
 
 
@@ -699,13 +707,23 @@ suyiBannerAd.setSceneId(ADSuyiDemoConstant.BANNER_AD_SCENE_ID);
 suyiBannerAd.loadAd(ADSuyiDemoConstant.BANNER_AD_POS_ID);
 ```
 
->[Banner广告示例详情](https://github.com/ADSuyi/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/BannerAdActivity.java)
+>[Banner广告示例详情](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/BannerAdActivity.java)
 
 
 
   ### <a name="ad_native">6.4 信息流广告示例</a>
 
 信息流广告，具备自渲染和模板两种广告样式：自渲染是SDK将返回广告标题、描述、Icon、图片、多媒体视图等信息，开发者可通过自行拼装渲染成喜欢的样式；模板样式则是返回拼装好的广告视图，开发者只需将视图添加到相应容器即可，模板样式的容器高度建议是自适应。**由于信息流广告不同广告平台支持的样式不一致，有些平台不支持自渲染，有些平台不支持模板，所以下发的广告可能是模板和自渲染混合，必须开发者参考Demo适配两种类型。**
+
+``` lua
+ADSuyiNativeAdInfo -- 信息流对象 根据isNativeExpress()方法：true模板类型，false自渲染类型
+				|
+        ├── ADSuyiNativeExpressAdInfo -- 模板类型
+				|
+        └── ADSuyiNativeFeedAdInfo -- 自渲染类型 根据hasMediaView()方法：true包含视频，false不包含视频
+                      ├── ADSuyiNativeFeedAdInfo -- 包含视频
+                      └── ADSuyiNativeFeedAdInfo -- 不包含视频
+```
 
 ```java
 // 创建信息流广告实例
@@ -776,7 +794,7 @@ adSuyiNativeAd.setSceneId(ADSuyiDemoConstant.NATIVE_AD_SCENE_ID);
 adSuyiNativeAd.loadAd(ADSuyiDemoConstant.NATIVE_AD_POS_ID, ADSuyiDemoConstant.NATIVE_AD_COUNT);
 ```
 
-> [信息流广告示例详情](https://github.com/ADSuyi/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/NativeAdActivity.java)
+> [信息流广告示例详情](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/NativeAdActivity.java)
 
 
 
@@ -844,9 +862,11 @@ rewardVodAd.setListener(new ADSuyiRewardVodAdListener() {
 rewardVodAd.setSceneId(ADSuyiDemoConstant.REWARD_VOD_AD_SCENE_ID);
 // 加载激励视频广告，参数为广告位ID
 rewardVodAd.loadAd(ADSuyiDemoConstant.REWARD_VOD_AD_POS_ID);
+// 激励视频的展示，由于激励视频的获取是异步的，请在onAdReceive后调用该方法对激励视频进行展示（部分平台需要在onVideoCache回调后）
+ADSuyiAdUtil.showRewardVodAdConvenient(this, RewardVodAdActivity.this.rewardVodAdInfo);
 ```
 
-> [激励视频广告示例详情](https://github.com/ADSuyi/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/RewardVodAdActivity.java)
+> [激励视频广告示例详情](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/RewardVodAdActivity.java)
 
 
 
@@ -906,9 +926,11 @@ fullScreenVodAd.setListener(new ADSuyiFullScreenVodAdListener() {
 
 // 加载全屏视频广告
 fullScreenVodAd.loadAd(ADSuyiDemoConstant.FULL_SCREEN_VOD_AD_POS_ID);
+// 全屏视频的展示，由于全屏视频的获取是异步的，请在onAdReceive后调用该方法对全屏视频进行展示（部分平台需要在onVideoCache回调后）
+ADSuyiAdUtil.showFullScreenAdConvenient(this, FullScreenVodAdActivity.this.fullScreenVodAdInfo);
 ```
 
-> [全屏视频广告示例详情](https://github.com/ADSuyi/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/FullScreenVodAdActivity.java)
+> [全屏视频广告示例详情](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/FullScreenVodAdActivity.java)
 
 
 
@@ -961,9 +983,11 @@ interstitialAd.setListener(new ADSuyiInterstitialAdListener() {
 interstitialAd.setSceneId(ADSuyiDemoConstant.INTERSTITIAL_AD_SCENE_ID);
 // 加载插屏广告
 interstitialAd.loadAd(ADSuyiDemoConstant.INTERSTITIAL_AD_POS_ID);
+// 插屏的展示，由于插屏的获取是异步的，请在onAdReceive后调用该方法对插屏进行展示
+ADSuyiAdUtil.showInterstitialAdConvenient(this, InterstitialAdActivity.this.interstitialAdInfo);
 ```
 
-> [插屏广告示例详情](https://github.com/ADSuyi/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/InterstitialAdActivity.java)
+> [插屏广告示例详情](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/InterstitialAdActivity.java)
 
 
 
@@ -1035,7 +1059,7 @@ drawVodAd.setListener(new ADSuyiDrawVodAdListener() {
 drawVodAd.loadAd(ADSuyiDemoConstant.DRAW_VOD_AD_POS_ID, ADSuyiDemoConstant.DRAW_VOD_AD_COUNT);
 ```
 
-> [DrawVod广告示例详情](https://github.com/ADSuyi/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/DrawVodActivity.java)
+> [DrawVod广告示例详情](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/DrawVodActivity.java)
 
 
 

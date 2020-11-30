@@ -36,9 +36,12 @@ import cn.admobiletop.adsuyidemo.entity.NativeAdSampleData;
  */
 public class NativeAdAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     /**
-     * 普通数据类型
+     * 普通数据类型（模拟数据）
      */
     private static final int ITEM_VIEW_TYPE_NORMAL_DATA = 0;
+
+
+    // 以下为三种信息流广告适配类型，模板一种，自渲染两种（没有MediaView）和（包含MediaView）。
     /**
      * 信息流原生广告类型（没有MediaView）
      */
@@ -51,6 +54,8 @@ public class NativeAdAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
      * 信息流模板广告类型
      */
     private static final int ITEM_VIEW_TYPE_EXPRESS_AD = 3;
+
+
     private final Context context;
 
     private List<NativeAdSampleData> dataList = new ArrayList<>();
@@ -207,12 +212,13 @@ public class NativeAdAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
         NativeAdViewHolder(@NonNull ViewGroup viewGroup) {
             /**
-             * 已预设3种样式，开发者可自行修改，关闭按钮大小等可根据产品需求自行修改
+             * 已预设4种样式，开发者可自行修改，关闭按钮大小等可根据产品需求自行修改
              * R.layout.item_native_ad_native_ad 双图双文
              * R.layout.item_native_ad_native_ad2 上图下文
              * R.layout.item_native_ad_native_ad3 单图
+             * R.layout.item_native_ad_native_ad4 左图双文
              */
-            super(viewGroup, R.layout.item_native_ad_native_ad3);
+            super(viewGroup, R.layout.item_native_ad_native_ad2);
             ivImage = itemView.findViewById(R.id.ivImage);
         }
 
@@ -255,24 +261,38 @@ public class NativeAdAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                 // 交由子类实现加载图片还是MediaView
                 setImageOrMediaData(context, nativeFeedAdInfo);
                 if (ivIcon != null) {
+                    // 广告icon
                     Glide.with(context).load(nativeFeedAdInfo.getIconUrl()).into(ivIcon);
                 }
                 if (tvTitle != null) {
+                    // 广告标题
                     tvTitle.setText(nativeFeedAdInfo.getTitle());
                 }
                 if (tvDesc != null) {
+                    // 广告详情
                     tvDesc.setText(nativeFeedAdInfo.getDesc());
                 }
-
-                tvAdType.setText(nativeFeedAdInfo.getCtaText());
+                if (tvAdType != null) {
+                    // 广告按钮描述
+                    tvAdType.setText(nativeFeedAdInfo.getCtaText());
+                }
+                // 广告平台图标
                 ivAdTarget.setImageResource(nativeFeedAdInfo.getPlatformIcon());
                 // 注册关闭按钮，将关闭按钮点击事件交于SDK托管，以便于回调onAdClose
                 nativeFeedAdInfo.registerCloseView(ivClose);
 
-                // 注册广告交互, 必须调用
-                // 注意：广点通只会响应View...actionViews的点击事件，且这些View都应该是com.qq.e.ads.nativ.widget.NativeAdContainer的子View
-                // 务必最后调用
-                nativeFeedAdInfo.registerViewForInteraction((ViewGroup) itemView, rlAdContainer, tvAdType);
+                // 如果布局中有使用tvAdType按钮，请按需求对需要点击的布局进行注册
+                if (tvAdType != null) {
+                    // 注册广告交互, 必须调用
+                    // 注意：广点通只会响应View...actionViews的点击事件，且这些View都应该是com.qq.e.ads.nativ.widget.NativeAdContainer的子View
+                    // 务必最后调用
+                    nativeFeedAdInfo.registerViewForInteraction((ViewGroup) itemView, rlAdContainer, tvAdType);
+                } else {
+                    // 注册广告交互, 必须调用
+                    // 注意：广点通只会响应View...actionViews的点击事件，且这些View都应该是com.qq.e.ads.nativ.widget.NativeAdContainer的子View
+                    // 务必最后调用
+                    nativeFeedAdInfo.registerViewForInteraction((ViewGroup) itemView, rlAdContainer);
+                }
             }
         }
 
