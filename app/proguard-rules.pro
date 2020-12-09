@@ -58,6 +58,11 @@
 -dontwarn dalvik.**
 -dontwarn com.tencent.smtt.**
 
+# 如果使用了tbs版本的sdk需要进行以下配置
+-keep class com.tencent.smtt.** { *; }
+-dontwarn dalvik.**
+-dontwarn com.tencent.smtt.**
+
 # 百度广告SDK混淆
 -keepclassmembers class * extends android.app.Activity { public void *(android.view.View);}
 -keepclassmembers enum * {

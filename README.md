@@ -219,7 +219,7 @@ dependencies {
     implementation 'com.facebook.fresco:imagepipeline-okhttp3:0.12.0'
     implementation 'com.google.code.gson:gson:2.6.2'
 
-    // 米盟AdapterSdk，可选的
+    // 米盟AdapterSdk，可选的（还需要gson和glide支持）
     implementation 'cn.admobiletop.adsuyi.ad.adapter:mimo:5.0.6.11261'
     implementation 'com.google.code.gson:gson:2.8.5'
     implementation 'com.github.bumptech.glide:glide:4.9.0'
@@ -258,7 +258,7 @@ dependencies {
    ```
 
 * 如果接入汇量，需要加入第三方依赖库https://dl.bintray.com/mintegral-official/Andorid_ad_SDK_for_china_support
-* **广点通适配器4.270.1140版本及以上已经导入了腾讯的tbs，请移除原有的tbs避免编译失败；**；
+* **广点通适配器4.270.1140版本及以上已经导入了腾讯的tbs，请移除原有的tbs避免编译失败；**
 
 ### 5.2 OAID支持
 
@@ -453,6 +453,11 @@ dependencies {
 -keep class com.qq.e.** {public protected *;}
 -keep class MTT.ThirdAppInfoNew {*;}
 -keep class com.tencent.** {*;}
+
+# 如果使用了tbs版本的sdk需要进行以下配置
+-keep class com.tencent.smtt.** { *; }
+-dontwarn dalvik.**
+-dontwarn com.tencent.smtt.**
 
 # 百度广告SDK混淆
 -keepclassmembers class * extends android.app.Activity { public void *(android.view.View);}
