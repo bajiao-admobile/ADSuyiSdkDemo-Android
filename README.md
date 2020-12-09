@@ -1,4 +1,4 @@
-# ADSuyiSdk Android Sdk——接入文档 V3.1.1.11261-alpha
+# ADSuyiSdk Android Sdk——接入文档 V3.1.1.11261
 
  目录 
 
@@ -34,6 +34,8 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | appic     | appic    | AppicAd  |
 | Ifly      | 讯飞     | 讯飞     |
 | mgadsdk   | 芒果     | 芒果TV   |
+| ksad      | 快手     | 快手     |
+| mimo   | 米盟     | 米盟   |
 
 
 
@@ -164,7 +166,7 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
   
      // ADSuyiSdk核心库是必须导入的
-    implementation 'cn.admobiletop.adsuyi.ad:core-alpha:3.1.1.11261'
+    implementation 'cn.admobiletop.adsuyi.ad:core:3.1.1.11261'
     // common库是必须导入的，请保持和Demo中版本一致
     implementation 'com.admobile:common:1.2.2'
 
@@ -173,26 +175,26 @@ dependencies {
     implementation(name: 'oaid_sdk_1.0.23', ext: 'aar')
 
     // 艾狄墨搏AdapterSdk，必须的`
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile-alpha:4.8.2.11261'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile:4.8.2.11261'
 
     // 广点通AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt-alpha:4.294.1164.11161'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.294.1164.11161'
 
     // 头条AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao-alpha:3.3.0.3.11251'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:3.3.0.3.11251'
 
     // 百度AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-alpha:5.95.11251'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu:5.95.11251'
 
     // 汇量AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral-alpha:10.9.02.11111'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:10.9.02.11111'
 
     // InmobiAdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:inmobi-alpha:7.5.1.11111'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:inmobi:7.5.1.11111'
     implementation 'com.squareup.picasso:picasso:2.5.2'
 
     // OneWayAdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:oneway-alpha:2.4.6.11251'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:oneway:2.4.6.11251'
 
     // AppicAdapterSdk(信息流无曝光回调，全屏视频无播放完成回调)，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:appic:4.2.0.4.08241'
@@ -203,8 +205,11 @@ dependencies {
     // 讯飞AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:ifly:4.5.4.10271'
 
+    // 快手AdapterSdk，可选的
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksad:3.3.8.11261'
+
     // 芒果TV AdapterSdk，可选的(芒果SDK 当前与Inmobi 存在冲突，两者无法同时接入)
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:mgtv-alpha:3.2.1.11111'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:mgtv:3.2.1.11111'
     // 芒果TV还需要以下三方库支持
     implementation 'com.android.volley:volley:1.1.0'
     implementation 'com.facebook.fresco:fresco:1.5.0'
@@ -213,10 +218,16 @@ dependencies {
     implementation 'com.facebook.fresco:webpsupport:1.5.0'
     implementation 'com.facebook.fresco:imagepipeline-okhttp3:0.12.0'
     implementation 'com.google.code.gson:gson:2.6.2'
+
+    // 米盟AdapterSdk，可选的
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:mimo:5.0.6.11261'
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
       
     // 小说内容SDK（还需要gson和recyclerview支持）
     implementation 'cn.admobiletop.adsuyi.ad.adapter:novel-alpha:1.0.8.11231'
-    implementation 'com.google.code.gson:gson:2.8.0'
+    implementation 'com.google.code.gson:gson:2.8.5'
     implementation 'com.android.support:recyclerview-v7:28.0.0'
 
 }
@@ -246,7 +257,7 @@ dependencies {
    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt-without:x.x.x.x'
    ```
 
-* 如果接入汇量，需要加入第三方依赖库https://dl.bintray.com/mintegral-official/Mintegral_ad_SDK_Android
+* 如果接入汇量，需要加入第三方依赖库https://dl.bintray.com/mintegral-official/Andorid_ad_SDK_for_china_support
 * **广点通适配器4.270.1140版本及以上已经导入了腾讯的tbs，请移除原有的tbs避免编译失败；**；
 
 ### 5.2 OAID支持
@@ -533,16 +544,30 @@ dependencies {
 -keep class com.github.megatronking.stringfog.**{*;}
 -keep @interface com.github.megatronking.stringfog.**{*;}
 
+# 快手广告平台混淆
+-keep class org.chromium.** { *; }
+-keep class aegon.chrome.** { *; }
+-keep class com.kwai.**{ *; }
+-keep class com.kwad.**{ *; }
+-dontwarn com.kwai.**
+-dontwarn com.kwad.**
+-dontwarn com.ksad.**
+-dontwarn aegon.chrome.**
+
 # 米盟混淆
--keep class com.miui.zeus.mimo.sdk.** { *; }
+-keep class com.miui.zeus.mimo.sdk.* { *; }
 -keep class com.miui.analytics.** { *; }
 -keep class com.xiaomi.analytics.* { public protected *; }
 -keep class * extends android.os.IInterface{*; }
 # gson
+-keepattributes Signature
+-keepattributes *Annotation*
+-dontwarn sun.misc.**
 -keep class com.google.gson.examples.android.model.** { <fields>; }
 -keep class * implements com.google.gson.TypeAdapterFactory
 -keep class * implements com.google.gson.JsonSerializer
 -keep class * implements com.google.gson.JsonDeserializer
+-keepclassmembers,allowobfuscation class * { @com.google.gson.annotations.SerializedName <fields>; }
 # glide
 -keep public class * implements com.bumptech.glide.module.GlideModule
 -keep class * extends com.bumptech.glide.module.AppGlideModule { <init>(...);}
@@ -550,10 +575,6 @@ dependencies {
 -keep class com.bumptech.glide.load.data.ParcelFileDescriptorRewinder$InternalRewinder {*** rewind();}
 
 # NovelAdapter混淆
--ignorewarnings
--keepattributes Signature
--keep class android.**{*;}
--keep class com.ecook.novel_sdk.bookstore.data.bean.* {*;}
 -keep class android.**{*;}
 -keep class com.ecook.** {* ;}
 -keep class com.parting_soul.http.** {* ;}

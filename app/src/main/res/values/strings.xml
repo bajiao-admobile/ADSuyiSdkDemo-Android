@@ -67,5 +67,11 @@
         <!--芒果-->
         <item>mgadsdk</item>
 
+        <!--快手-->
+        <item>ksad</item>
+
+        <!--米盟-->
+        <item>mimo</item>
+
     </string-array>
 </resources>

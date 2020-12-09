@@ -148,16 +148,30 @@
 -keep class com.github.megatronking.stringfog.**{*;}
 -keep @interface com.github.megatronking.stringfog.**{*;}
 
+# 快手广告平台混淆
+-keep class org.chromium.** { *; }
+-keep class aegon.chrome.** { *; }
+-keep class com.kwai.**{ *; }
+-keep class com.kwad.**{ *; }
+-dontwarn com.kwai.**
+-dontwarn com.kwad.**
+-dontwarn com.ksad.**
+-dontwarn aegon.chrome.**
+
 # 米盟混淆
--keep class com.miui.zeus.mimo.sdk.** { *; }
+-keep class com.miui.zeus.mimo.sdk.* { *; }
 -keep class com.miui.analytics.** { *; }
 -keep class com.xiaomi.analytics.* { public protected *; }
 -keep class * extends android.os.IInterface{*; }
 # gson
+-keepattributes Signature
+-keepattributes *Annotation*
+-dontwarn sun.misc.**
 -keep class com.google.gson.examples.android.model.** { <fields>; }
 -keep class * implements com.google.gson.TypeAdapterFactory
 -keep class * implements com.google.gson.JsonSerializer
 -keep class * implements com.google.gson.JsonDeserializer
+-keepclassmembers,allowobfuscation class * { @com.google.gson.annotations.SerializedName <fields>; }
 # glide
 -keep public class * implements com.bumptech.glide.module.GlideModule
 -keep class * extends com.bumptech.glide.module.AppGlideModule { <init>(...);}
@@ -165,10 +179,6 @@
 -keep class com.bumptech.glide.load.data.ParcelFileDescriptorRewinder$InternalRewinder {*** rewind();}
 
 # NovelAdapter混淆
--ignorewarnings
--keepattributes Signature
--keep class android.**{*;}
--keep class com.ecook.novel_sdk.bookstore.data.bean.* {*;}
 -keep class android.**{*;}
 -keep class com.ecook.** {* ;}
 -keep class com.parting_soul.http.** {* ;}
