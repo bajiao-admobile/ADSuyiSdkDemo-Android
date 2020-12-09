@@ -1,4 +1,4 @@
-# ADSuyiSdk Android Sdk——接入文档 V3.1.0.11161-alpha
+# ADSuyiSdk Android Sdk——接入文档 V3.1.1.11261-alpha
 
  目录 
 
@@ -164,7 +164,7 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
   
      // ADSuyiSdk核心库是必须导入的
-    implementation 'cn.admobiletop.adsuyi.ad:core-alpha:3.1.0.11161'
+    implementation 'cn.admobiletop.adsuyi.ad:core-alpha:3.1.1.11261'
     // common库是必须导入的，请保持和Demo中版本一致
     implementation 'com.admobile:common:1.2.2'
 
@@ -173,16 +173,16 @@ dependencies {
     implementation(name: 'oaid_sdk_1.0.23', ext: 'aar')
 
     // 艾狄墨搏AdapterSdk，必须的`
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile:4.8.1.10271'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile-alpha:4.8.2.11261'
 
     // 广点通AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt-alpha:4.294.1164.11161'
 
     // 头条AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:3.3.0.1.10291'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao-alpha:3.3.0.3.11251'
 
     // 百度AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu:5.94.10271'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-alpha:5.95.11251'
 
     // 汇量AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral-alpha:10.9.02.11111'
@@ -192,7 +192,7 @@ dependencies {
     implementation 'com.squareup.picasso:picasso:2.5.2'
 
     // OneWayAdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:oneway:2.4.5.10271'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:oneway-alpha:2.4.6.11251'
 
     // AppicAdapterSdk(信息流无曝光回调，全屏视频无播放完成回调)，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:appic:4.2.0.4.08241'
@@ -215,7 +215,7 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.6.2'
       
     // 小说内容SDK（还需要gson和recyclerview支持）
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:novel-alpha:1.0.6.10261'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:novel-alpha:1.0.8.11231'
     implementation 'com.google.code.gson:gson:2.8.0'
     implementation 'com.android.support:recyclerview-v7:28.0.0'
 
