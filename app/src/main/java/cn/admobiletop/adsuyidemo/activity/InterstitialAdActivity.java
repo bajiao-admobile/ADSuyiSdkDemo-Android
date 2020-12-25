@@ -59,6 +59,7 @@ public class InterstitialAdActivity extends AppCompatActivity implements View.On
 
             @Override
             public void onAdReceive(ADSuyiInterstitialAdInfo interstitialAdInfo) {
+                // TODO 插屏广告对象一次成功拉取的广告数据只允许展示一次
                 InterstitialAdActivity.this.interstitialAdInfo = interstitialAdInfo;
                 ADSuyiToastUtil.show(getApplicationContext(), "插屏广告获取成功");
                 Log.d(ADSuyiDemoConstant.TAG, "onAdReceive...");

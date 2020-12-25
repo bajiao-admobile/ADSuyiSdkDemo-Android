@@ -69,6 +69,7 @@ public class FullScreenVodAdActivity extends AppCompatActivity implements View.O
 
             @Override
             public void onAdReceive(ADSuyiFullScreenVodAdInfo fullScreenVodAdInfo) {
+                // TODO 全屏视频广告对象一次成功拉取的广告数据只允许展示一次
                 FullScreenVodAdActivity.this.fullScreenVodAdInfo = fullScreenVodAdInfo;
                 ADSuyiToastUtil.show(getApplicationContext(), "全屏视频广告获取成功");
                 Log.d(ADSuyiDemoConstant.TAG, "onAdReceive...");

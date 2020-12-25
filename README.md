@@ -260,6 +260,7 @@ dependencies {
 * 如果接入汇量，需要加入第三方依赖库https://dl.bintray.com/mintegral-official/Andorid_ad_SDK_for_china_support
 * **广点通适配器4.270.1140版本及以上已经导入了腾讯的tbs，请移除原有的tbs避免编译失败；**
 
+3. 激励、全屏视频、插屏等广告对象一次成功拉取的广告数据只允许展示一次，还需展示请再次加载广告。
 ### 5.2 OAID支持
 
 **Android10之后IMEI等数据无法获取，这对广告投放将产生一定影响，所以移动安全联盟(MSA)提出OAID来代替IMEI参与广告投放决策，OAID的支持会在一定程度上影响广告收益；**
@@ -857,6 +858,7 @@ rewardVodAd.setListener(new ADSuyiRewardVodAdListener() {
 
     @Override
     public void onAdReceive(ADSuyiRewardVodAdInfo rewardVodAdInfo) {
+        // 激励视频广告对象一次成功拉取的广告数据只允许展示一次
     		RewardVodAdActivity.this.rewardVodAdInfo = rewardVodAdInfo;
         Log.d(ADSuyiDemoConstant.TAG, "onAdReceive----->");
     }
@@ -923,6 +925,7 @@ fullScreenVodAd.setListener(new ADSuyiFullScreenVodAdListener() {
 
     @Override
     public void onAdReceive(ADSuyiFullScreenVodAdInfo fullScreenVodAdInfo) {
+        // 全屏视频广告对象一次成功拉取的广告数据只允许展示一次
     		FullScreenVodAdActivity.this.fullScreenVodAdInfo = fullScreenVodAdInfo;
         Log.d(ADSuyiDemoConstant.TAG, "onAdReceive----->");
     }
@@ -978,6 +981,7 @@ interstitialAd.setListener(new ADSuyiInterstitialAdListener() {
 
     @Override
     public void onAdReceive(ADSuyiInterstitialAdInfo interstitialAdInfo) {
+        // 插屏广告对象一次成功拉取的广告数据只允许展示一次
     		InterstitialAdActivity.this.interstitialAdInfo = interstitialAdInfo;
         Log.d(ADSuyiDemoConstant.TAG, "onAdReceive----->");
     }

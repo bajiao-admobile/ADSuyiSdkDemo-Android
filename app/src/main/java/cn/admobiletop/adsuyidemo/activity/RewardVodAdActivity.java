@@ -69,6 +69,7 @@ public class RewardVodAdActivity extends AppCompatActivity implements View.OnCli
 
             @Override
             public void onAdReceive(ADSuyiRewardVodAdInfo rewardVodAdInfo) {
+                // TODO 激励视频广告对象一次成功拉取的广告数据只允许展示一次
                 RewardVodAdActivity.this.rewardVodAdInfo = rewardVodAdInfo;
                 ADSuyiToastUtil.show(getApplicationContext(), "激励视频广告获取成功");
                 Log.d(ADSuyiDemoConstant.TAG, "onAdReceive...");
