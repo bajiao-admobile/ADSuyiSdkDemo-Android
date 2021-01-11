@@ -138,6 +138,16 @@ public class ADSuyiDemoConstant {
     public static String ADMOBILE_DL_AD_POS_ID = "63e91628640e20b35d";
 
     /**
+     * 内容联盟广告位场景id
+     */
+    public static String CONTENT_ALLIANCE_AD_SCENE_ID = "";
+    /**
+     * 内容联盟广告位ID
+     */
+    public static final String CONTENT_ALLIANCE_AD_POS_ID1 = "724469db49ff19761e";
+    public static String CONTENT_ALLIANCE_AD_POS_ID = CONTENT_ALLIANCE_AD_POS_ID1;
+
+    /**
      * 浮窗广告是否是暗黑模式
      */
     public static boolean FLOATING_AD_DARK_MODE = false;

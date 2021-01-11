@@ -1,4 +1,4 @@
-# ADSuyiSdk Android Sdk——接入文档 V3.1.1.12151
+# ADSuyiSdk Android Sdk——接入文档 V3.1.2.01042
 
  目录 
 
@@ -88,6 +88,11 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
     <td>类似通知栏样式展示的广告，只在应用中弹出，几乎不影响用户操作，用户可以上滑左右滑动移除广告</td>
     <td>任意场景</td>
   </tr>
+  <tr>
+      <td><a href="#ad_content_alliance">内容联盟</a></td>
+      <td>增加App内容</td>
+      <td>根据需求添加</td>
+    </tr>
 </table>
 
 <div STYLE="page-break-after:always;"></div>
@@ -166,50 +171,52 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
   
      // ADSuyiSdk核心库是必须导入的
-    implementation 'cn.admobiletop.adsuyi.ad:core:3.1.1.12151'
+    implementation 'cn.admobiletop.adsuyi.ad:core:3.1.2.01042'
     // common库是必须导入的，请保持和Demo中版本一致
-    implementation 'com.admobile:common:1.2.2'
+    implementation 'com.admobile:common:1.2.3-SNAPSHOT'
+    // material库是必须导入的，请保持和Demo中版本一致
+    implementation 'cn.admobiletop.adsuyi.ad:material-alpha:1.0.0.01041'
 
     // OAID库是必须导入的，请保持和Demo中版本一致（如果当前Suyi是3.0.9及以上版本，
-    // 必须保证oaid版本为oaid_sdk_1.0.23，oaid_sdk_1.0.23为msa_mdid_1.0.13的升级版，请删除原有的msa_mdid）
-    implementation(name: 'oaid_sdk_1.0.23', ext: 'aar')
+    // 必须保证oaid版本为oaid_sdk_1.0.25，oaid_sdk_1.0.25为msa_mdid_1.0.13、oaid_sdk_1.0.23的升级版，请删除原有的msa_mdid）
+    implementation(name: 'oaid_sdk_1.0.25', ext: 'aar')
 
     // 艾狄墨搏AdapterSdk，必须的`
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile:4.8.3.12151'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile-alpha:4.8.4.01041'
 
     // 广点通AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.294.1164.12021'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt-alpha:4.310.1180.12281'
 
     // 头条AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:3.3.0.3.11251'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao-alpha:3.3.0.9.01071'
 
     // 百度AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu:5.95.11251'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-alpha:5.97.01071'
 
     // 汇量AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:10.9.02.11111'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral-alpha:10.9.02.11112'
 
     // InmobiAdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:inmobi:7.5.1.11111'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:inmobi-alpha:7.5.1.11112'
     implementation 'com.squareup.picasso:picasso:2.5.2'
 
     // OneWayAdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:oneway:2.4.6.11251'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:oneway-alpha:2.4.8.01071'
 
     // AppicAdapterSdk(信息流无曝光回调，全屏视频无播放完成回调)，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:appic:4.2.0.4.08241'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:appic-alpha:4.2.0.4.08242'
     // Appic还需要以下两个三方库支持
     implementation 'com.android.volley:volley:1.1.0'
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.6'
 
     // 讯飞AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ifly:4.5.4.10271'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:ifly-alpha:4.5.4.10272'
 
     // 快手AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksad:3.3.5.3.12151'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksad-alpha:3.3.9.01062'
 
     // 芒果TV AdapterSdk，可选的(芒果SDK 当前与Inmobi 存在冲突，两者无法同时接入)
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:mgtv:3.2.1.11111'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:mgtv-alpha:3.2.3.12281'
     // 芒果TV还需要以下三方库支持
     implementation 'com.android.volley:volley:1.1.0'
     implementation 'com.facebook.fresco:fresco:1.5.0'
@@ -220,7 +227,7 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.6.2'
 
     // 米盟AdapterSdk，可选的（还需要gson和glide支持）
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:mimo:5.0.6.11261'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:mimo-alpha:5.0.6.11262'
     implementation 'com.google.code.gson:gson:2.8.5'
     implementation 'com.github.bumptech.glide:glide:4.9.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
@@ -259,6 +266,7 @@ dependencies {
 
 * 如果接入汇量，需要加入第三方依赖库https://dl.bintray.com/mintegral-official/Andorid_ad_SDK_for_china_support
 * **广点通适配器4.270.1140版本及以上已经导入了腾讯的tbs，请移除原有的tbs避免编译失败；**
+* **广点通适配器4.310.1180版本及以上已经将腾讯tbs移除，媒体需要手动导入tbs，避免自身项目需要依赖tbs导致编译失败；**
 
 3. 激励、全屏视频、插屏等广告对象一次成功拉取的广告数据只允许展示一次，还需展示请再次加载广告。
 ### 5.2 OAID支持
@@ -1122,9 +1130,65 @@ ADSuyiSdk.getInstance().pauseFloatingAd();
 ADSuyiSdk.getInstance().restartFloatingAd();
 ```
 
+  ### <a name="ad_content_alliance">6.10 内容联盟示例</a>
+
+内容联盟，目前支持快手入口组件**
+
+```java
+// 创建内容联盟实例
+adSuyiContentAllianceAd = new ADSuyiContentAllianceAd(this);
+// 设置监听
+adSuyiContentAllianceAd.setListener(new ADSuyiContentAllianceAdListener() {
 
 
-### 6.10 备注
+    @Override
+    public void onAdReceive(ADSuyiContentAllianceAdInfo adSuyiContentAllianceAdInfo) {
+        Log.d(ADSuyiDemoConstant.TAG, "onAdReceive: " + adSuyiContentAllianceAdInfo);
+        if (adSuyiContentAllianceAdInfo != null) {
+            contentAllianceAdInfo = adSuyiContentAllianceAdInfo;
+            // 可以根据demo中将广告对象放入适配器中进行渲染或在必要的位置调用contentAllianceAdInfo.openKSContentPage(this)方法进行内容详情页的跳转
+            tempDataList.add(new ContentAllianceAdSampleData(adSuyiContentAllianceAdInfo));
+            contentAllianceAdAdapter.addData(tempDataList);
+        }
+        refreshLayout.finish(refreshType, true, false);
+    }
+
+    @Override
+    public void onAdExpose(ADSuyiContentAllianceAdInfo adSuyiContentAllianceAdInfo) {
+        Log.d(ADSuyiDemoConstant.TAG, "onAdExpose: " + adSuyiContentAllianceAdInfo);
+    }
+
+    @Override
+    public void onAdClick(ADSuyiContentAllianceAdInfo adSuyiContentAllianceAdInfo) {
+        Log.d(ADSuyiDemoConstant.TAG, "onAdClick: " + adSuyiContentAllianceAdInfo);
+    }
+
+    @Override
+    public void onAdClose(ADSuyiContentAllianceAdInfo adSuyiContentAllianceAdInfo) {
+        Log.d(ADSuyiDemoConstant.TAG, "onAdClose: " + adSuyiContentAllianceAdInfo);
+    }
+
+    @Override
+    public void onAdFailed(ADSuyiError adSuyiError) {
+        if (adSuyiError != null) {
+            Log.d(ADSuyiDemoConstant.TAG, "onAdFailed: " + adSuyiError.toString());
+        }
+        contentAllianceAdAdapter.addData(tempDataList);
+        refreshLayout.finish(refreshType, false, false);
+    }
+});
+
+// 内容联盟广告场景id（场景id非必选字段，如果需要可到开发者后台创建）
+adSuyiContentAllianceAd.setSceneId(ADSuyiDemoConstant.CONTENT_ALLIANCE_AD_SCENE_ID);
+// 请求广告数据，参数一广告位ID
+adSuyiContentAllianceAd.loadAd(ADSuyiDemoConstant.CONTENT_ALLIANCE_AD_POS_ID);
+// 不放入适配器中直接跳转展示内容，由于内容联盟的获取是异步的，请在onAdReceive后调用该方法进行跳转展示
+contentAllianceAdInfo.openKSContentPage(this)
+```
+
+> [内容联盟示例详情](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/ContentAllianceAdActivity.java)
+
+### 6.11 备注
 
 具体的接入代码和流程，请参考Demo
 

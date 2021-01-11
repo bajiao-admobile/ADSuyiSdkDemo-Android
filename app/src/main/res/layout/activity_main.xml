@@ -77,6 +77,13 @@
                     android:text="@string/novel_content" />
 
                 <Button
+                    android:id="@+id/btnContentAlliance"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/content_alliance" />
+
+                <Button
                     android:id="@+id/btnFragmentExamples"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

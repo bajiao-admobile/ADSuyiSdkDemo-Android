@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.btnInterstitialAd).setOnClickListener(this);
         findViewById(R.id.btnDrawVodAd).setOnClickListener(this);
         findViewById(R.id.btnNovel).setOnClickListener(this);
+        findViewById(R.id.btnContentAlliance).setOnClickListener(this);
         findViewById(R.id.btnFragmentExamples).setOnClickListener(this);
         findViewById(R.id.btnAdmobileDlAd).setOnClickListener(this);
         findViewById(R.id.btnRewardAdSwitch).setOnClickListener(this);
@@ -72,6 +73,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //                NovelSDKManger.setFontPath("字体路径");
                 boolean openSuccess = ADSuyiSdk.getInstance().openNovelActivity();
                 ADSuyiToastUtil.show(getApplicationContext(), openSuccess ? "打开成功" : "打开失败");
+                break;
+            case R.id.btnContentAlliance:
+                startActivity(ContentAllianceAdActivity.class);
                 break;
             case R.id.btnFragmentExamples:
                 startActivity(FragmentActivity.class);
