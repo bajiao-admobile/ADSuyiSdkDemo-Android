@@ -90,12 +90,11 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
   </tr>
   <tr>
       <td><a href="#ad_content_alliance">内容联盟</a></td>
-      <td>增加App内容</td>
+      <td>增加App内容。注意目前仅支持快手</td>
       <td>根据需求添加</td>
     </tr>
 </table>
 
-<div STYLE="page-break-after:always;"></div>
 ## 3. Demo及SDK下载链接
 
 > [ADSuyiSdkDemo-Android下载地址](https://codeload.github.com/ADSuyi/ADSuyiSdkDemo-Android/zip/master)
