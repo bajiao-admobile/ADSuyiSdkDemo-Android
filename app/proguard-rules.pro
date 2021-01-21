@@ -21,6 +21,7 @@
 -dontwarn cn.admobiletop.adsuyi.**
 -dontwarn org.apache.commons.**
 -keep class cn.admobiletop.adsuyi.**{public *;}
+-keep class cn.admobiletop.materialutil.**{public *;}
 -keep class com.android.**{*;}
 -keep class com.ciba.**{ *; }
 -keep class org.apache.**{*;}
