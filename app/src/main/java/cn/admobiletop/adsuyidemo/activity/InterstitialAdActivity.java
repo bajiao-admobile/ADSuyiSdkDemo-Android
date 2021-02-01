@@ -82,7 +82,7 @@ public class InterstitialAdActivity extends AppCompatActivity implements View.On
 
             @Override
             public void onAdFailed(ADSuyiError adSuyiError) {
-                ADSuyiToastUtil.show(getApplicationContext(), "广告获取失败");
+                // ADSuyiToastUtil.show(getApplicationContext(), "广告获取失败");
                 if (adSuyiError != null) {
                     String failedJson = adSuyiError.toString();
                     Log.d(ADSuyiDemoConstant.TAG, "onAdFailed..." + failedJson);

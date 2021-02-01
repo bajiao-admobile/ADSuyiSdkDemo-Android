@@ -91,7 +91,7 @@ public class DlAdActivity extends AppCompatActivity implements View.OnClickListe
 
             @Override
             public void onAdFailed(ADSuyiError adSuyiError) {
-                ADSuyiToastUtil.show(getApplicationContext(), "广告获取失败");
+                // ADSuyiToastUtil.show(getApplicationContext(), "广告获取失败");
                 if (adSuyiError != null) {
                     Log.d(ADSuyiDemoConstant.TAG, "onAdFailed: " + adSuyiError.toString());
                 }
