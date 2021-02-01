@@ -22,6 +22,8 @@ import java.util.List;
 import cn.admobiletop.adsuyi.ADSuyiSdk;
 import cn.admobiletop.adsuyi.ad.ADSuyiSplashAd;
 import cn.admobiletop.adsuyi.ad.data.ADSuyiAdInfo;
+import cn.admobiletop.adsuyi.ad.entity.ADSuyiAdSize;
+import cn.admobiletop.adsuyi.ad.entity.ADSuyiExtraParams;
 import cn.admobiletop.adsuyi.ad.error.ADSuyiError;
 import cn.admobiletop.adsuyi.ad.listener.ADSuyiSplashAdListener;
 import cn.admobiletop.adsuyi.config.ADSuyiInitConfig;
@@ -144,6 +146,19 @@ public class SplashAdActivity extends AppCompatActivity {
 
         // 创建开屏广告实例，第一个参数可以是Activity或Fragment，第二个参数是广告容器（请保证容器不会拦截点击、触摸等事件，高度不小于真实屏幕高度的75%，并且处于可见状态）
         adSuyiSplashAd = new ADSuyiSplashAd(this, flContainer);
+        // 底部logo容器高度，请根据实际情况进行计算，这里的值是随便写的
+        int logoHeight = 800;
+        // 屏幕宽度px
+        int widthPixels = getResources().getDisplayMetrics().widthPixels;
+        // 屏幕高度px
+        int heightPixels = getResources().getDisplayMetrics().heightPixels;
+        // 创建额外参数实例
+        ADSuyiExtraParams extraParams = new ADSuyiExtraParams.Builder()
+                // 设置整个广告视图预期宽高(目前仅头条平台需要，没有接入头条可不设置)，单位为px，如果不设置头条开屏广告视图将会以9 : 16的比例进行填充，小屏幕手机可能会出现素材被压缩的情况
+                .adSize(new ADSuyiAdSize(widthPixels, heightPixels - logoHeight))
+                .build();
+        // 如果开屏容器不是全屏可以设置额外参数
+        adSuyiSplashAd.setLocalExtraParams(extraParams);
         // 设置是否是沉浸式，如果为true，跳过按钮距离顶部的高度会加上状态栏高度
         adSuyiSplashAd.setImmersive(false);
         // 设置仅支持的广告平台，设置了这个值，获取广告时只会去获取该平台的广告，null或空字符串为不限制，默认为null，方便调试使用，上线时建议不设置

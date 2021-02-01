@@ -28,7 +28,7 @@ public class PrivacyPolicyDialog extends Dialog {
             @Override
             public void onClick(View v) {
                 // TODO: 2020/9/10 跳转隐私政策详情界面（仅为示例，请结合自己的业务需求）
-                NormalWebActivity.jump(getContext(), "http://admobile.top/pc/admobile_officialweb/privacyPolicy.html");
+                NormalWebActivity.jump(getContext(), "https://www.admobile.top/privacyPolicy.html");
             }
         });
         StringUtil.setCustomKeyWordClickSpan(tvContent, tvContent.getText().toString(), privacyPolicySpan);

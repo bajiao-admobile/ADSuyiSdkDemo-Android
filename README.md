@@ -172,50 +172,50 @@ dependencies {
      // ADSuyiSdk核心库是必须导入的
     implementation 'cn.admobiletop.adsuyi.ad:core:3.1.2.01042'
     // common库是必须导入的，请保持和Demo中版本一致
-    implementation 'com.admobile:common:1.2.3-SNAPSHOT'
+    implementation 'com.admobile:common:1.2.3'
     // material库是必须导入的，请保持和Demo中版本一致
-    implementation 'cn.admobiletop.adsuyi.ad:material-alpha:1.0.0.01041'
+    implementation 'cn.admobiletop.adsuyi.ad:material:1.0.0.01042'
 
     // OAID库是必须导入的，请保持和Demo中版本一致（如果当前Suyi是3.0.9及以上版本，
     // 必须保证oaid版本为oaid_sdk_1.0.25，oaid_sdk_1.0.25为msa_mdid_1.0.13、oaid_sdk_1.0.23的升级版，请删除原有的msa_mdid）
     implementation(name: 'oaid_sdk_1.0.25', ext: 'aar')
 
     // 艾狄墨搏AdapterSdk，必须的`
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile-alpha:4.8.4.01041'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile:4.8.5.02011'
 
     // 广点通AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt-alpha:4.310.1180.12281'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.310.1180.12281'
 
     // 头条AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao-alpha:3.3.0.9.01071'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:3.3.0.9.01071'
 
     // 百度AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-alpha:5.97.01071'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu:5.97.01071'
 
     // 汇量AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral-alpha:10.9.02.11112'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:10.9.02.11112'
 
     // InmobiAdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:inmobi-alpha:7.5.1.11112'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:inmobi:7.5.1.11112'
     implementation 'com.squareup.picasso:picasso:2.5.2'
 
     // OneWayAdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:oneway-alpha:2.4.8.01071'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:oneway:2.4.8.01071'
 
     // AppicAdapterSdk(信息流无曝光回调，全屏视频无播放完成回调)，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:appic-alpha:4.2.0.4.08242'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:appic:4.2.0.4.08242'
     // Appic还需要以下两个三方库支持
     implementation 'com.android.volley:volley:1.1.0'
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.6'
 
     // 讯飞AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ifly-alpha:4.5.4.10272'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:ifly:4.5.4.10272'
 
     // 快手AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksad-alpha:3.3.9.01062'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksad:3.3.9.01062'
 
     // 芒果TV AdapterSdk，可选的(芒果SDK 当前与Inmobi 存在冲突，两者无法同时接入)
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:mgtv-alpha:3.2.3.12281'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:mgtv:3.2.3.12281'
     // 芒果TV还需要以下三方库支持
     implementation 'com.android.volley:volley:1.1.0'
     implementation 'com.facebook.fresco:fresco:1.5.0'
@@ -226,7 +226,7 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.6.2'
 
     // 米盟AdapterSdk，可选的（还需要gson和glide支持）
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:mimo-alpha:5.0.6.11262'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:mimo:5.0.6.11262'
     implementation 'com.google.code.gson:gson:2.8.5'
     implementation 'com.github.bumptech.glide:glide:4.9.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
@@ -298,6 +298,7 @@ dependencies {
    ```
 4. 修改AndroidManifest.xml，**OAID SDK minSdkVersion为21，如果应用的minSdkVersion小于21，则添加：**
     ```java
+    // 如果导入后有冲突可以不添加，suyi中已经添加过了
     <uses-sdk tools:overrideLibrary="com.bun.miitmdid"/>
     ```
 
@@ -636,6 +637,20 @@ ADSuyiSdk.getInstance().init(this, new ADSuyiInitConfig.Builder()
 ```java
 // 创建开屏广告实例，第一个参数可以是Activity或Fragment，第二个参数是广告容器
 adSuyiSplashAd = new ADSuyiSplashAd(this, flContainer);
+
+// 底部logo容器高度，请根据实际情况进行计算
+int logoHeight = 底部logo布局高度;
+// 屏幕宽度px
+int widthPixels = getResources().getDisplayMetrics().widthPixels;
+// 屏幕高度px
+int heightPixels = getResources().getDisplayMetrics().heightPixels;
+// 创建额外参数实例
+ADSuyiExtraParams extraParams = new ADSuyiExtraParams.Builder()
+        // 设置整个广告视图预期宽高(目前仅头条平台需要，没有接入头条可不设置)，单位为px，如果不设置头条开屏广告视图将会以9 : 16的比例进行填充，小屏幕手机可能会出现素材被压缩的情况
+        .adSize(new ADSuyiAdSize(widthPixels, heightPixels - logoHeight))
+        .build();
+// 如果开屏容器不是全屏可以设置额外参数
+adSuyiSplashAd.setLocalExtraParams(extraParams);
 
 // 设置是否是沉浸式，如果为true，跳过按钮距离顶部的高度会加上状态栏高度
 adSuyiSplashAd.setImmersive(false);

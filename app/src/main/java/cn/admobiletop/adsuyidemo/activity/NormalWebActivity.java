@@ -2,11 +2,13 @@ package cn.admobiletop.adsuyidemo.activity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.http.SslError;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.webkit.SslErrorHandler;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -80,6 +82,11 @@ public class NormalWebActivity extends AppCompatActivity {
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
                 view.loadUrl(url);
                 return true;
+            }
+
+            @Override
+            public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError error) {
+                handler.proceed();
             }
         });
 
