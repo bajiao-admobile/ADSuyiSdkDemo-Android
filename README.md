@@ -212,7 +212,7 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:ifly:4.5.4.10272'
 
     // 快手AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksad:3.3.9.01062'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksad:3.3.9.01063'
 
     // 芒果TV AdapterSdk，可选的(芒果SDK 当前与Inmobi 存在冲突，两者无法同时接入)
     implementation 'cn.admobiletop.adsuyi.ad.adapter:mgtv:3.2.3.12281'
