@@ -110,18 +110,7 @@ dependencies {
 
     // 快手AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:ksad:3.3.9.01063'
-
-    // 芒果TV AdapterSdk，可选的(芒果SDK 当前与Inmobi 存在冲突，两者无法同时接入)
-//    implementation 'cn.admobiletop.adsuyi.ad.adapter:mgtv:3.2.3.12281'
-//    // 芒果TV还需要以下三方库支持
-//    implementation 'com.android.volley:volley:1.1.0'
-//    implementation 'com.facebook.fresco:fresco:1.5.0'
-//    implementation 'com.facebook.fresco:animated-gif:1.5.0'
-//    implementation 'com.facebook.fresco:animated-webp:1.5.0'
-//    implementation 'com.facebook.fresco:webpsupport:1.5.0'
-//    implementation 'com.facebook.fresco:imagepipeline-okhttp3:0.12.0'
-//    implementation 'com.google.code.gson:gson:2.6.2'
-
+    
     // 米盟AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:mimo:5.0.6.11262'
     implementation 'com.google.code.gson:gson:2.8.5'

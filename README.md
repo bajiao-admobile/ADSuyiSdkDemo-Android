@@ -33,7 +33,6 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | oneway    | 万维     | 万维     |
 | appic     | appic    | AppicAd  |
 | Ifly      | 讯飞     | 讯飞     |
-| mgadsdk   | 芒果     | 芒果TV   |
 | ksad      | 快手     | 快手     |
 | mimo   | 米盟     | 米盟   |
 
@@ -213,17 +212,6 @@ dependencies {
 
     // 快手AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:ksad:3.3.9.01063'
-
-    // 芒果TV AdapterSdk，可选的(芒果SDK 当前与Inmobi 存在冲突，两者无法同时接入)
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:mgtv:3.2.3.12281'
-    // 芒果TV还需要以下三方库支持
-    implementation 'com.android.volley:volley:1.1.0'
-    implementation 'com.facebook.fresco:fresco:1.5.0'
-    implementation 'com.facebook.fresco:animated-gif:1.5.0'
-    implementation 'com.facebook.fresco:animated-webp:1.5.0'
-    implementation 'com.facebook.fresco:webpsupport:1.5.0'
-    implementation 'com.facebook.fresco:imagepipeline-okhttp3:0.12.0'
-    implementation 'com.google.code.gson:gson:2.6.2'
 
     // 米盟AdapterSdk，可选的（还需要gson和glide支持）
     implementation 'cn.admobiletop.adsuyi.ad.adapter:mimo:5.0.6.11262'
@@ -524,39 +512,6 @@ dependencies {
 -dontwarn com.iflytek.**
 -keep class com.iflytek.** {* ;}
 -keep class android.support.v4.**{public * ;}
-
-# 芒果广告平台混淆
--keep class * implements java.io.Serializable {*;}
--keep class com.hunantv.media.** { *;}
--keep class com.mgmi.** { *;}
--keep class com.mgadplus.** { *;}
--dontwarn com.hmt.analytics.**
--dontwarn org.apaches.commons.codec.**
--keep class com.hmt.analytics.**{*; }
--keep class org.apaches.commons.codec.**{*; }
--dontwarn com.facebook.**
--keep enum com.facebook.**
--keep public interface com.facebook.**
--keep class com.facebook.**
--keep class com.facebook.** { *; }
--keep,allowobfuscation @interface com.facebook.common.internal.DoNotStrip -keep @com.facebook.common.internal.DoNotStrip class *
--keepclassmembers class * {
-@com.facebook.common.internal.DoNotStrip *;
-}
--keep public class com.mi.ad.sdk.**{*;}
--keep public class com.doman.core.**{*;}
--keep public class com.core.cell.** {*;}
--keep class android.**{*;}
--keep @interface system.** {*;}
--keepclassmembers class system.**{ public *;}
--dontwarn android.**
--dontwarn com.android.**
--dontwarn system.**
--keep @interface com.core.cell.helper.Keep {*;}
--keep @interface com.android.a.a.**{*;}
--keep class io.reactivex.**{*;}
--keep class com.github.megatronking.stringfog.**{*;}
--keep @interface com.github.megatronking.stringfog.**{*;}
 
 # 快手广告平台混淆
 -keep class org.chromium.** { *; }
