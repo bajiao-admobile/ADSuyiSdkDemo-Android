@@ -186,7 +186,7 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.310.1180.12281'
 
     // 头条AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:3.3.0.9.01071'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:3.3.0.9.01072'
 
     // 百度AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu:5.97.01071'
