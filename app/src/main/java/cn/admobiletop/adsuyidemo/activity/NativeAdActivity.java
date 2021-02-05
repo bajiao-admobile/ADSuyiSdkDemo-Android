@@ -118,6 +118,7 @@ public class NativeAdActivity extends AppCompatActivity implements OnRefreshLoad
             public void onAdClose(ADSuyiNativeAdInfo adSuyiNativeAdInfo) {
                 Log.d(ADSuyiDemoConstant.TAG, "onAdClose: " + adSuyiNativeAdInfo.hashCode());
                 // 广告被关闭，释放和移除ADSuyiNativeAdInfo
+                // 注意，信息流广告点击关闭时，开发者需要在onAdClose回调中将广告容器隐藏或移除，避免如头条渠道点击关闭后视图依旧存在
                 nativeAdAdapter.removeData(adSuyiNativeAdInfo);
             }
 

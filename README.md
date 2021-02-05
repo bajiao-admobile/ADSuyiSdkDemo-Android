@@ -720,6 +720,7 @@ suyiBannerAd.loadAd(ADSuyiDemoConstant.BANNER_AD_POS_ID);
 
 信息流广告，具备自渲染和模板两种广告样式：自渲染是SDK将返回广告标题、描述、Icon、图片、多媒体视图等信息，开发者可通过自行拼装渲染成喜欢的样式；模板样式则是返回拼装好的广告视图，开发者只需将视图添加到相应容器即可，模板样式的容器高度建议是自适应。**由于信息流广告不同广告平台支持的样式不一致，有些平台不支持自渲染，有些平台不支持模板，所以下发的广告可能是模板和自渲染混合，必须开发者参考Demo适配两种类型。**
 **请务必确保广告渲染时包含广告创意素材（至少包含一张图片）、平台logo、广告标识、关闭按钮； 模板广告不得被遮挡。**
+**注意，信息流广告点击关闭时，开发者需要在onAdClose回调中将广告容器隐藏或移除，避免如头条渠道点击关闭后视图依旧存在**
 
 ``` lua
 ADSuyiNativeAdInfo -- 信息流对象 根据isNativeExpress()方法：true模板类型，false自渲染类型
@@ -782,6 +783,7 @@ adSuyiNativeAd.setListener(new ADSuyiNativeAdListener() {
     public void onAdClose(ADSuyiNativeAdInfo adSuyiNativeAdInfo) {
     		Log.d(ADSuyiDemoConstant.TAG, "onAdClose: " + adSuyiNativeAdInfo.hashCode());
       	// 广告被关闭，释放和移除ADSuyiNativeAdInfo
+      	// 注意，信息流广告点击关闭时，开发者需要在onAdClose回调中将广告容器隐藏或移除，避免如头条渠道点击关闭后视图依旧存在
         nativeAdAdapter.removeData(adSuyiNativeAdInfo);
     }
 
