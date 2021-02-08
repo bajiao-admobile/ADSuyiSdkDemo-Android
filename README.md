@@ -183,10 +183,10 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile:4.8.6.02041'
 
     // 广点通AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.310.1180.12281'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt-alpha:4.332.1202.02031'
 
     // 头条AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:3.3.0.9.01072'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao-alpha:3.4.1.2.02031'
 
     // 百度AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu:5.97.01071'
@@ -211,7 +211,7 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:ifly:4.5.4.10272'
 
     // 快手AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksad:3.3.9.01063'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksad-alpha:3.3.10.2.02031'
 
     // 米盟AdapterSdk，可选的（还需要gson和glide支持）
     implementation 'cn.admobiletop.adsuyi.ad.adapter:mimo:5.0.6.11262'
@@ -219,9 +219,10 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.9.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
       
-    // 小说内容SDK（还需要gson和recyclerview支持）
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:novel-alpha:1.0.8.11231'
+    // 小说内容SDK（还需要gson、glide4.9.0和recyclerview支持）
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:novel-alpha:1.2.1.02051'
     implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
     implementation 'com.android.support:recyclerview-v7:28.0.0'
 
 }
@@ -254,6 +255,14 @@ dependencies {
 * 如果接入汇量，需要加入第三方依赖库https://dl.bintray.com/mintegral-official/Andorid_ad_SDK_for_china_support
 * **广点通适配器4.270.1140版本及以上已经导入了腾讯的tbs，请移除原有的tbs避免编译失败；**
 * **广点通适配器4.310.1180版本及以上已经将腾讯tbs移除，媒体需要手动导入tbs，避免自身项目需要依赖tbs导致编译失败；**
+* **由于头条渠道AndroidManifest.xml中使用了<queries>标签，故gradle版本需要使用3.4.3或以上版本**
+* **如果要对接小说sdk，需要导入java8配置**
+   ```java
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+   ```
 
 3. 激励、全屏视频、插屏等广告对象一次成功拉取的广告数据只允许展示一次，还需展示请再次加载广告。
 ### 5.2 OAID支持
@@ -494,7 +503,6 @@ dependencies {
 -keep class **.R$* { public static final int mintegral*; }
 
 # 快手广告平台混淆
--keep class org.chromium.** {*;}
 -keep class org.chromium.** { *; }
 -keep class aegon.chrome.** { *; }
 -keep class com.kwai.**{ *; }
@@ -503,6 +511,9 @@ dependencies {
 -dontwarn com.kwad.**
 -dontwarn com.ksad.**
 -dontwarn aegon.chrome.**
+-keep class com.kwad.sdk.** { *;}
+-keep class com.ksad.download.** { *;}
+-keep class com.kwai.filedownloader.** { *;}
 
 # AppicAd广告平台混淆
 -keep class * extends com.ap.android.trunk.sdk.core.base.ad.Ad

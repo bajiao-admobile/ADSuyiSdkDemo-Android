@@ -59,11 +59,6 @@
 -dontwarn dalvik.**
 -dontwarn com.tencent.smtt.**
 
-# 如果使用了tbs版本的sdk需要进行以下配置
--keep class com.tencent.smtt.** { *; }
--dontwarn dalvik.**
--dontwarn com.tencent.smtt.**
-
 # 百度广告SDK混淆
 -keepclassmembers class * extends android.app.Activity { public void *(android.view.View);}
 -keepclassmembers enum * {
@@ -101,7 +96,6 @@
 -keep class **.R$* { public static final int mintegral*; }
 
 # 快手广告平台混淆
--keep class org.chromium.** {*;}
 -keep class org.chromium.** { *; }
 -keep class aegon.chrome.** { *; }
 -keep class com.kwai.**{ *; }
@@ -110,6 +104,9 @@
 -dontwarn com.kwad.**
 -dontwarn com.ksad.**
 -dontwarn aegon.chrome.**
+-keep class com.kwad.sdk.** { *;}
+-keep class com.ksad.download.** { *;}
+-keep class com.kwai.filedownloader.** { *;}
 
 # AppicAd广告平台混淆
 -keep class * extends com.ap.android.trunk.sdk.core.base.ad.Ad

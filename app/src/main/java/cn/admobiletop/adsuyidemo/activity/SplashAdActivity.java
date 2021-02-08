@@ -147,7 +147,7 @@ public class SplashAdActivity extends AppCompatActivity {
         // 创建开屏广告实例，第一个参数可以是Activity或Fragment，第二个参数是广告容器（请保证容器不会拦截点击、触摸等事件，高度不小于真实屏幕高度的75%，并且处于可见状态）
         adSuyiSplashAd = new ADSuyiSplashAd(this, flContainer);
         // 底部logo容器高度，请根据实际情况进行计算，这里的值是随便写的
-        int logoHeight = 800;
+        int logoHeight = 136;
         // 屏幕宽度px
         int widthPixels = getResources().getDisplayMetrics().widthPixels;
         // 屏幕高度px
