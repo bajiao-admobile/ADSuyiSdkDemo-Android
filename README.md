@@ -183,10 +183,10 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile:4.8.6.02041'
 
     // 广点通AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt-alpha:4.332.1202.02031'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.332.1202.02031'
 
     // 头条AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao-alpha:3.4.1.2.02031'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:3.4.1.2.02031'
 
     // 百度AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu:5.97.01071'
@@ -211,7 +211,7 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:ifly:4.5.4.10272'
 
     // 快手AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksad-alpha:3.3.10.2.02031'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksad:3.3.10.2.02031'
 
     // 米盟AdapterSdk，可选的（还需要gson和glide支持）
     implementation 'cn.admobiletop.adsuyi.ad.adapter:mimo:5.0.6.11262'
@@ -220,8 +220,9 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
       
     // 小说内容SDK（还需要gson、glide4.9.0和recyclerview支持）
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:novel-alpha:1.2.1.02051'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:novel:1.2.1.02051'
     implementation 'com.google.code.gson:gson:2.8.5'
+    // 小说sdk必须依赖4.9.0版本glide
     implementation 'com.github.bumptech.glide:glide:4.9.0'
     implementation 'com.android.support:recyclerview-v7:28.0.0'
 
