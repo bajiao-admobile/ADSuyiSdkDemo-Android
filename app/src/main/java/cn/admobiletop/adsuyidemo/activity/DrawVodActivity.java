@@ -68,7 +68,7 @@ public class DrawVodActivity extends AppCompatActivity implements OnRefreshLoadM
         drawVodAd = new ADSuyiDrawVodAd(this);
 
         int width = getResources().getDisplayMetrics().widthPixels;
-        int height = width * 16 / 9;
+        int height = getResources().getDisplayMetrics().heightPixels;
         // 创建额外参数实例
         ADSuyiExtraParams extraParams = new ADSuyiExtraParams.Builder()
                 // 设置广告预期宽高(目前仅头条平台需要，没有接入头条平台可不设置)，单位为px，宽高均不能小于等于0
