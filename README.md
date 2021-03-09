@@ -30,8 +30,6 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | baidu     | 百度     | 百青藤   |
 | inmobi    | Inmobi   | Inmobi   |
 | mintegral | 汇量     | Mobvsita |
-| oneway    | 万维     | 万维     |
-| appic     | appic    | AppicAd  |
 | Ifly      | 讯飞     | 讯飞     |
 | ksad      | 快手     | 快手     |
 | mimo   | 米盟     | 米盟   |
@@ -217,15 +215,6 @@ dependencies {
     // InmobiAdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:inmobi:7.5.1.11112'
     implementation 'com.squareup.picasso:picasso:2.5.2'
-
-    // OneWayAdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:oneway:2.4.8.01071'
-
-    // AppicAdapterSdk(信息流无曝光回调，全屏视频无播放完成回调)，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:appic:4.2.0.4.08242'
-    // Appic还需要以下两个三方库支持
-    implementation 'com.android.volley:volley:1.1.0'
-    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.6'
 
     // 讯飞AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:ifly:4.5.4.10272'
