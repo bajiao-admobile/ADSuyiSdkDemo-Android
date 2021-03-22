@@ -1,4 +1,4 @@
-# ADSuyiSdk Android Sdk——接入文档 V3.1.2.01042
+# ADSuyiSdk Android Sdk——接入文档 V3.1.3.02191
 
  目录 
 
@@ -51,7 +51,6 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | inmobi    | 0.95M   |
 | mintegral | 2.80M     |
 | oneway    | 0.48M     |
-| appic     | 3.40M    |
 | Ifly      | 0.48M     |
 | ksad      | 5.20M     |
 | mimo   | 0.45M     |
@@ -189,30 +188,30 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
   
      // ADSuyiSdk核心库是必须导入的
-    implementation 'cn.admobiletop.adsuyi.ad:core:3.1.2.01042'
+    implementation 'cn.admobiletop.adsuyi.ad:core:3.1.3.02191'
     // common库是必须导入的，请保持和Demo中版本一致
     implementation 'com.admobile:common:1.2.3'
     // material库是必须导入的，请保持和Demo中版本一致
-    implementation 'cn.admobiletop.adsuyi.ad:material:1.0.0.01042'
+    implementation 'cn.admobiletop.adsuyi.ad:material:1.0.1.02223'
 
     // OAID库是必须导入的，请保持和Demo中版本一致（如果当前Suyi是3.0.9及以上版本，
     // 必须保证oaid版本为oaid_sdk_1.0.25，oaid_sdk_1.0.25为msa_mdid_1.0.13、oaid_sdk_1.0.23的升级版，请删除原有的msa_mdid）
     implementation(name: 'oaid_sdk_1.0.25', ext: 'aar')
 
     // 艾狄墨搏AdapterSdk，必须的`
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile:4.8.6.02041'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile:4.8.7.03031'
 
     // 广点通AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.332.1202.02031'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.332.1202.02221'
 
     // 头条AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:3.4.1.2.02032'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:3.4.1.2.02241'
 
     // 百度AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu:5.97.01071'
 
     // 汇量AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:10.9.02.11112'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:10.9.02.11113'
 
     // InmobiAdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:inmobi:7.5.1.11112'
@@ -222,7 +221,7 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:ifly:4.5.4.10272'
 
     // 快手AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksad:3.3.10.2.02031'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksad:3.3.11.02261'
 
     // 米盟AdapterSdk，可选的（还需要gson和glide支持）
     implementation 'cn.admobiletop.adsuyi.ad.adapter:mimo:5.0.6.11262'
@@ -231,7 +230,7 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
       
     // 小说内容SDK（还需要gson、glide4.9.0和recyclerview支持）
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:novel:1.2.1.02051'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:novel:1.2.4.03081'
     implementation 'com.google.code.gson:gson:2.8.5'
     // 小说sdk必须依赖4.9.0版本glide
     implementation 'com.github.bumptech.glide:glide:4.9.0'
@@ -1129,7 +1128,7 @@ ADSuyiSdk.getInstance().restartFloatingAd();
 
   ### <a name="ad_content_alliance">6.10 内容联盟示例</a>
 
-内容联盟，目前支持快手入口组件**
+**内容联盟，目前支持快手入口组件**
 
 ```java
 // 创建内容联盟实例
