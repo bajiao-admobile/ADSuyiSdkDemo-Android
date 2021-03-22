@@ -50,7 +50,6 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | baidu     | 1.00M     |
 | inmobi    | 0.95M   |
 | mintegral | 2.80M     |
-| oneway    | 0.48M     |
 | Ifly      | 0.48M     |
 | ksad      | 5.20M     |
 | mimo   | 0.45M     |
