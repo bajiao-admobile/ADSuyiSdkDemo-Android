@@ -171,11 +171,11 @@ public class SplashAdActivity extends AppCompatActivity {
         adSuyiSplashAd.setListener(new ADSuyiSplashAdListener() {
 
             @Override
-            public void onADTick(long millisUntilFinished) {
+            public void onADTick(long countdownSeconds) {
                 // 如果没有设置自定义跳过按钮不会回调该方法
-                Log.d(ADSuyiDemoConstant.TAG, "倒计时剩余时长" + millisUntilFinished);
+                Log.d(ADSuyiDemoConstant.TAG, "倒计时剩余时长（单位秒）" + countdownSeconds);
                 if (ADSuyiDemoConstant.SPLASH_AD_CUSTOM_SKIP_VIEW && skipView != null) {
-                    skipView.setText("跳过" + millisUntilFinished + "s");
+                    skipView.setText("跳过" + countdownSeconds + "s");
                 }
             }
 
