@@ -118,6 +118,9 @@
 -dontwarn com.iflytek.**
 -keep class com.iflytek.** {* ;}
 -keep class android.support.v4.**{public * ;}
+-dontwarn com.shu.priory.**
+-keep class com.shu.priory.**{*;}
+-keep class android.support.v4.**{public * ;}
 
 # 快手广告平台混淆
 -keep class org.chromium.** { *; }
@@ -148,6 +151,14 @@
 -keep class * extends com.bumptech.glide.module.AppGlideModule { <init>(...);}
 -keep public enum com.bumptech.glide.load.ImageHeaderParser$** {**[] $VALUES;public *;}
 -keep class com.bumptech.glide.load.data.ParcelFileDescriptorRewinder$InternalRewinder {*** rewind();}
+
+# 华为广告联盟混淆
+-keep class com.huawei.openalliance.ad.** { *; }
+-dontwarn com.huawei.openalliance.ad.activity.PPSActivity
+-keep public class * implements com.bumptech.glide.module.GlideModule
+-keep public class * extends com.bumptech.glide.module.AppGlideModule
+-keep public enum com.bumptech.glide.load.ImageHeaderParser$** { **[] $VALUES; public *; }
+-dontwarn com.bumptech.glide.load.resource.bitmap.VideoDecoder
 
 # NovelAdapter混淆
 -keep class android.**{*;}

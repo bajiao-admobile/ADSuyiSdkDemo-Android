@@ -6,8 +6,8 @@ android {
         applicationId "cn.admobiletop.adsuyidemo"
         minSdkVersion 19
         targetSdkVersion 29
-        versionCode 202103221
-        versionName "1.202103221"
+        versionCode 202104121
+        versionName "1.202104121"
         multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         ndk {
@@ -73,7 +73,7 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
 
     // ADSuyiSdk、common和OAID库是必须导入的
-    implementation 'cn.admobiletop.adsuyi.ad:core:3.1.3.02191'
+    implementation 'cn.admobiletop.adsuyi.ad:core:3.1.5.03022'
     // common库请保持和Demo中版本一致
     implementation 'com.admobile:common:1.2.3'
     // material库请保证和Demo中版本一致
@@ -87,26 +87,23 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile:4.8.7.03031'
 
     // 广点通AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.332.1202.02221'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.333.1203.03141'
 
     // 头条AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:3.4.1.2.02241'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:3.4.5.5.03102'
 
     // 百度AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu:5.97.01071'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu:5.97.04021'
 
     // 汇量AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:10.9.02.11113'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:10.9.02.11114'
 
     // InmobiAdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:inmobi:7.5.1.11112'
     implementation 'com.squareup.picasso:picasso:2.5.2'
 
-    // OneWayAdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:oneway:2.4.8.01071'
-
     // 讯飞AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ifly:4.5.4.10272'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:ifly:5.0.0.03051'
 
     // 快手AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:ksad:3.3.11.02261'
@@ -116,6 +113,9 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.5'
     implementation 'com.github.bumptech.glide:glide:4.9.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
+
+    // 华为广告联盟AdadapterSdk，可选的
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:hwpps:13.4.33.300.02261'
 
     // 小说内容SDK（还需要gson、glide4.9.0和recyclerview支持）
     implementation 'cn.admobiletop.adsuyi.ad.adapter:novel:1.2.4.03081'

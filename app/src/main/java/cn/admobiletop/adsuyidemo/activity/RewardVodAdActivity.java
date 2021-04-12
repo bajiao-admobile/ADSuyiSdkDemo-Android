@@ -8,6 +8,8 @@ import android.view.View;
 
 import cn.admobiletop.adsuyi.ad.ADSuyiRewardVodAd;
 import cn.admobiletop.adsuyi.ad.data.ADSuyiRewardVodAdInfo;
+import cn.admobiletop.adsuyi.ad.entity.ADSuyiExtraParams;
+import cn.admobiletop.adsuyi.ad.entity.ADSuyiRewardExtra;
 import cn.admobiletop.adsuyi.ad.error.ADSuyiError;
 import cn.admobiletop.adsuyi.ad.listener.ADSuyiRewardVodAdListener;
 import cn.admobiletop.adsuyi.util.ADSuyiAdUtil;
@@ -41,6 +43,15 @@ public class RewardVodAdActivity extends AppCompatActivity implements View.OnCli
     private void initAd() {
         // 创建激励视频广告实例
         rewardVodAd = new ADSuyiRewardVodAd(this);
+
+//        ADSuyiRewardExtra adSuyiRewardExtra = new ADSuyiRewardExtra("用户id");
+//        // 设置激励视频服务端验证的自定义信息
+//        adSuyiRewardExtra.setCustomData("设置激励视频服务端验证的自定义信息");
+//        // 设置激励视频服务端激励名称(mintegral渠道不支持)
+//        adSuyiRewardExtra.setRewardName("激励名称");
+//        // 设置激励视频服务端激励数量(mintegral渠道不支持)
+//        adSuyiRewardExtra.setRewardAmount(1);
+//        rewardVodAd.setLocalExtraParams(new ADSuyiExtraParams.Builder().rewardExtra(adSuyiRewardExtra).build());
 
         // 设置仅支持的广告平台，设置了这个值，获取广告时只会去获取该平台的广告，null或空字符串为不限制，默认为null，方便调试使用，上线时建议不设置
         rewardVodAd.setOnlySupportPlatform(ADSuyiDemoConstant.REWARD_VOD_AD_ONLY_SUPPORT_PLATFORM);

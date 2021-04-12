@@ -189,6 +189,7 @@ public class SplashAdActivity extends AppCompatActivity {
                 Log.d(ADSuyiDemoConstant.TAG, "广告获取成功回调... ");
                 if (ADSuyiDemoConstant.SPLASH_AD_CUSTOM_SKIP_VIEW && skipView != null) {
                     skipView.setVisibility(View.VISIBLE);
+                    skipView.setAlpha(1);
                 }
             }
 

@@ -1,4 +1,4 @@
-# ADSuyiSdk Android Sdk——接入文档 V3.1.3.02191
+# ADSuyiSdk Android Sdk——接入文档 V3.1.5.03022
 
  目录 
 
@@ -33,6 +33,7 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | Ifly      | 讯飞     | 讯飞     |
 | ksad      | 快手     | 快手     |
 | mimo   | 米盟     | 米盟   |
+| hwpps   | 华为广告联盟     | 华为广告联盟   |
 
 ### 1.4 ADSuyi必添包容量
 
@@ -53,6 +54,7 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | Ifly      | 0.48M     |
 | ksad      | 5.20M     |
 | mimo   | 0.45M     |
+| hwpps   | 1.01M     |
 
 
 
@@ -187,7 +189,7 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
   
      // ADSuyiSdk核心库是必须导入的
-    implementation 'cn.admobiletop.adsuyi.ad:core:3.1.3.02191'
+    implementation 'cn.admobiletop.adsuyi.ad:core:3.1.5.03022'
     // common库是必须导入的，请保持和Demo中版本一致
     implementation 'com.admobile:common:1.2.3'
     // material库是必须导入的，请保持和Demo中版本一致
@@ -201,23 +203,23 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile:4.8.7.03031'
 
     // 广点通AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.332.1202.02221'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.333.1203.03141'
 
     // 头条AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:3.4.1.2.02241'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:3.4.5.5.03102'
 
     // 百度AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu:5.97.01071'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu:5.97.04021'
 
     // 汇量AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:10.9.02.11113'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:10.9.02.11114'
 
     // InmobiAdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:inmobi:7.5.1.11112'
     implementation 'com.squareup.picasso:picasso:2.5.2'
 
     // 讯飞AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ifly:4.5.4.10272'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:ifly:5.0.0.03051'
 
     // 快手AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:ksad:3.3.11.02261'
@@ -227,6 +229,9 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.5'
     implementation 'com.github.bumptech.glide:glide:4.9.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
+
+    // 华为广告联盟AdadapterSdk，可选的
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:hwpps:13.4.33.300.02261'
       
     // 小说内容SDK（还需要gson、glide4.9.0和recyclerview支持）
     implementation 'cn.admobiletop.adsuyi.ad.adapter:novel:1.2.4.03081'
@@ -265,7 +270,7 @@ dependencies {
 * 如果接入汇量，需要加入第三方依赖库https://dl.bintray.com/mintegral-official/Andorid_ad_SDK_for_china_support
 * **广点通适配器4.270.1140版本及以上已经导入了腾讯的tbs，请移除原有的tbs避免编译失败；**
 * **广点通适配器4.310.1180版本及以上已经将腾讯tbs移除，媒体需要手动导入tbs，避免自身项目需要依赖tbs导致编译失败；**
-* **由于头条渠道AndroidManifest.xml中使用了<queries>标签，故gradle版本需要使用3.4.3或以上版本**
+* **由于头条(穿山甲)渠道支持了Android R，引入了Android R的 <queries> 标签,需要对gradle版本进行限制，限制范围为：3.3.3、 3.4.3、 3.5.4、3.6.4、4.0.1 ，开发者根据自身情况酌情升级**
 * **如果要对接小说sdk，需要导入java8配置**
    ```java
     compileOptions {
@@ -273,6 +278,7 @@ dependencies {
         targetCompatibility JavaVersion.VERSION_1_8
     }
    ```
+* **如对接华为广告联盟，激励视频要提前预加载，并且播放完成后需要预加载下一个激励视频；**
 
 3. 激励、全屏视频、插屏等广告对象一次成功拉取的广告数据只允许展示一次，还需展示请再次加载广告。
 ### 5.2 OAID支持
@@ -536,6 +542,9 @@ dependencies {
 -dontwarn com.iflytek.**
 -keep class com.iflytek.** {* ;}
 -keep class android.support.v4.**{public * ;}
+-dontwarn com.shu.priory.**
+-keep class com.shu.priory.**{*;}
+-keep class android.support.v4.**{public * ;}
 
 # 快手广告平台混淆
 -keep class org.chromium.** { *; }
@@ -566,6 +575,14 @@ dependencies {
 -keep class * extends com.bumptech.glide.module.AppGlideModule { <init>(...);}
 -keep public enum com.bumptech.glide.load.ImageHeaderParser$** {**[] $VALUES;public *;}
 -keep class com.bumptech.glide.load.data.ParcelFileDescriptorRewinder$InternalRewinder {*** rewind();}
+
+# 华为PPS混淆
+-keep class com.huawei.openalliance.ad.** { *; }
+-dontwarn com.huawei.openalliance.ad.activity.PPSActivity
+-keep public class * implements com.bumptech.glide.module.GlideModule
+-keep public class * extends com.bumptech.glide.module.AppGlideModule
+-keep public enum com.bumptech.glide.load.ImageHeaderParser$** { **[] $VALUES; public *; }
+-dontwarn com.bumptech.glide.load.resource.bitmap.VideoDecoder
 
 # NovelAdapter混淆
 -keep class android.**{*;}
@@ -635,6 +652,7 @@ adSuyiSplashAd.setLocalExtraParams(extraParams);
 adSuyiSplashAd.setImmersive(false);
 
 // 设置自定义跳过按钮和倒计时时长（非必传，倒计时时长范围[3000,5000]建议不要传入倒计时时长） 目前不支持inmobi, ksad, oneway, ifly平台自定义跳过按钮
+// 注意不要隐藏跳过按钮，可以在布局中将跳过按钮alpha设置为0，在onAdReceive回调中将alpha设置为1
 adSuyiSplashAd.setSkipView(skipView, 5000);
 
 // 设置开屏广告监听
@@ -836,6 +854,15 @@ adSuyiNativeAd.loadAd(ADSuyiDemoConstant.NATIVE_AD_POS_ID, ADSuyiDemoConstant.NA
 ```java
  // 创建激励视频广告实例
 rewardVodAd = new ADSuyiRewardVodAd(this);
+
+ADSuyiRewardExtra adSuyiRewardExtra = new ADSuyiRewardExtra("用户id");
+// 设置激励视频服务端验证的自定义信息
+adSuyiRewardExtra.setCustomData("设置激励视频服务端验证的自定义信息");
+// 设置激励视频服务端激励名称(mintegral渠道不支持)
+adSuyiRewardExtra.setRewardName("激励名称");
+// 设置激励视频服务端激励数量(mintegral渠道不支持)
+adSuyiRewardExtra.setRewardAmount(1);
+rewardVodAd.setLocalExtraParams(new ADSuyiExtraParams.Builder().rewardExtra(adSuyiRewardExtra).build());
 
 // 设置激励视频广告监听
 rewardVodAd.setListener(new ADSuyiRewardVodAdListener() {
@@ -1191,7 +1218,7 @@ contentAllianceAdInfo.openKSContentPage(this)
 
 ## 7. 常见问题和错误调试
 
-> [常见问题和错误调试及错误码](http://doc.admobile.top/ssp/3-常见问题/1-Android_QA.html)
+> [常见问题和错误调试及错误码](https://doc.admobile.top/ssp/2-%E6%8A%80%E6%9C%AF%E5%AF%B9%E6%8E%A5/6-Android_QA.html)
 
 如果以上地址无法跳转，请访问[备用地址](http://doc.admobile.top/ssp/)，下拉找到**Android集成常见问题**
 
