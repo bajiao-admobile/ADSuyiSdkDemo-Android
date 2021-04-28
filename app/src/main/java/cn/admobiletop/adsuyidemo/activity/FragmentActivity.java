@@ -13,17 +13,16 @@ import java.util.List;
 
 import cn.admobiletop.adsuyi.ADSuyiSdk;
 import cn.admobiletop.adsuyidemo.R;
-import cn.admobiletop.adsuyidemo.fragment.BannerAdFragment;
 import cn.admobiletop.adsuyidemo.fragment.BaseFragment;
-import cn.admobiletop.adsuyidemo.fragment.DrawVodAdFragment;
-import cn.admobiletop.adsuyidemo.fragment.NativeAdFragment;
+import cn.admobiletop.adsuyidemo.fragment.OtherFragment;
+import cn.admobiletop.adsuyidemo.fragment.TestFragment;
 
 /**
  * @author ciba
  * @description 描述
  * @date 2020/4/20
  */
-public class FragmentActivity extends AppCompatActivity {
+public class FragmentActivity extends BaseAdActivity {
     private ViewPager viewPager;
     private TabLayout tabLayout;
 
@@ -42,14 +41,13 @@ public class FragmentActivity extends AppCompatActivity {
 
     private void initData() {
         final List<Fragment> fragmentList = new ArrayList<>();
-        fragmentList.add(new NativeAdFragment());
-        fragmentList.add(new BannerAdFragment());
-        fragmentList.add(new DrawVodAdFragment());
-
+        fragmentList.add(new TestFragment());
         Fragment novelFragment = ADSuyiSdk.getInstance().getNovelFragment();
         if (novelFragment != null) {
             fragmentList.add(novelFragment);
         }
+        fragmentList.add(new OtherFragment());
+
 
         viewPager.setOffscreenPageLimit(fragmentList.size() - 1);
         viewPager.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {

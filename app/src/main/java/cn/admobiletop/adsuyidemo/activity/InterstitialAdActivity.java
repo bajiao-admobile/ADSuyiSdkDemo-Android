@@ -21,7 +21,7 @@ import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
  * @description 插屏广告示例
  * @date 2020/3/27
  */
-public class InterstitialAdActivity extends AppCompatActivity implements View.OnClickListener {
+public class InterstitialAdActivity extends BaseAdActivity implements View.OnClickListener {
     private ADSuyiInterstitialAd interstitialAd;
     private ADSuyiInterstitialAdInfo interstitialAdInfo;
 

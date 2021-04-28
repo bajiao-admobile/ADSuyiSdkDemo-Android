@@ -21,7 +21,7 @@ import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
  * @description 全屏视频广告示例
  * @date 2020/3/27
  */
-public class FullScreenVodAdActivity extends AppCompatActivity implements View.OnClickListener {
+public class FullScreenVodAdActivity extends BaseAdActivity implements View.OnClickListener {
     private ADSuyiFullScreenVodAd fullScreenVodAd;
     private ADSuyiFullScreenVodAdInfo fullScreenVodAdInfo;
 

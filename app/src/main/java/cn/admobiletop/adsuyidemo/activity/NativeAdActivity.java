@@ -1,12 +1,18 @@
 package cn.admobiletop.adsuyidemo.activity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnRefreshLoadMoreListener;
@@ -15,11 +21,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import cn.admobiletop.adsuyi.ad.ADSuyiNativeAd;
+import cn.admobiletop.adsuyi.ad.data.ADSuyiAdType;
 import cn.admobiletop.adsuyi.ad.data.ADSuyiNativeAdInfo;
 import cn.admobiletop.adsuyi.ad.entity.ADSuyiAdSize;
 import cn.admobiletop.adsuyi.ad.entity.ADSuyiExtraParams;
 import cn.admobiletop.adsuyi.ad.error.ADSuyiError;
 import cn.admobiletop.adsuyi.ad.listener.ADSuyiNativeAdListener;
+import cn.admobiletop.adsuyi.util.ADSuyiToastUtil;
 import cn.admobiletop.adsuyidemo.R;
 import cn.admobiletop.adsuyidemo.adapter.NativeAdAdapter;
 import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
@@ -42,6 +50,8 @@ public class NativeAdActivity extends AppCompatActivity implements OnRefreshLoad
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_native_ad);
+        Toolbar toolbar = findViewById(R.id.toolBar);
+        setSupportActionBar(toolbar);
 
         initView();
         initListener();
@@ -169,5 +179,48 @@ public class NativeAdActivity extends AppCompatActivity implements OnRefreshLoad
         for (int i = 0; i < 20; i++) {
             tempDataList.add(new NativeAdSampleData("模拟的普通数据 : " + (nativeAdAdapter == null ? 0 : nativeAdAdapter.getItemCount() + i)));
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_toolbar, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.toolbar_setting:
+                showAdTypeCheckDialog();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+
+        }
+    }
+
+    private void showAdTypeCheckDialog() {
+        new AlertDialog.Builder(this)
+                .setItems(R.array.native_ad_list, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        String toastContent = "设置完成，下次加载生效";
+                        switch (which) {
+                            case 0:
+                                ADSuyiDemoConstant.NATIVE_AD_POS_ID = ADSuyiDemoConstant.NATIVE_AD_POS_ID1;
+                                break;
+                            case 1:
+                                ADSuyiDemoConstant.NATIVE_AD_POS_ID = ADSuyiDemoConstant.NATIVE_AD_POS_ID2;;
+                                break;
+                            case 2:
+                                ADSuyiDemoConstant.NATIVE_AD_POS_ID = ADSuyiDemoConstant.NATIVE_AD_POS_ID3;
+                                break;
+                            default:
+                                break;
+                        }
+                        ADSuyiToastUtil.show(NativeAdActivity.this, toastContent);
+                        dialog.dismiss();
+                    }
+                }).create().show();
     }
 }

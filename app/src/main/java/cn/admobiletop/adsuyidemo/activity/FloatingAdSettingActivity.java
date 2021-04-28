@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.SwitchCompat;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.RadioButton;
@@ -20,7 +21,7 @@ import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
  * @date 2020/4/7
  */
 public class FloatingAdSettingActivity extends AppCompatActivity {
-    private CheckBox cbDarkMode;
+    private SwitchCompat cbDarkMode;
     private RadioButton rbPause;
     private RadioButton rbRestart;
 
@@ -76,5 +77,6 @@ public class FloatingAdSettingActivity extends AppCompatActivity {
         }
 
         ADSuyiToastUtil.show(this, "修改成功");
+        finish();
     }
 }

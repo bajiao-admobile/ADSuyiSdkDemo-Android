@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.MenuItem;
 import android.widget.FrameLayout;
 
 import cn.admobiletop.adsuyi.ad.ADSuyiBannerAd;
@@ -19,7 +20,7 @@ import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
  * @description Banner广告示例
  * @date 2020/3/26
  */
-public class BannerAdActivity extends AppCompatActivity {
+public class BannerAdActivity extends BaseAdActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

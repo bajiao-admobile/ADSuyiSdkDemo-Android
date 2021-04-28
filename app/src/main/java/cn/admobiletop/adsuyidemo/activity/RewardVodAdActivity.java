@@ -22,7 +22,7 @@ import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
  * @description 激励视频广告示例
  * @date 2020/3/27
  */
-public class RewardVodAdActivity extends AppCompatActivity implements View.OnClickListener {
+public class RewardVodAdActivity extends BaseAdActivity implements View.OnClickListener {
     private ADSuyiRewardVodAdInfo rewardVodAdInfo;
     private ADSuyiRewardVodAd rewardVodAd;
 

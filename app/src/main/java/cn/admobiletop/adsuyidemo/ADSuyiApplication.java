@@ -45,6 +45,7 @@ public class ADSuyiApplication extends Application {
         // 初始化ADSuyi广告SDK
 //        ADSuyiSdk.getInstance().init(this, new ADSuyiInitConfig.Builder()
 //                // 设置APPID
+
 //                .appId(ADSuyiDemoConstant.APP_ID)
 //                // 是否开启Debug，开启会有详细的日志信息打印
 //                .debug(true)

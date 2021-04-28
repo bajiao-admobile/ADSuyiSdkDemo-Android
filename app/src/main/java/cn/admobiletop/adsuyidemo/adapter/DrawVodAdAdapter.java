@@ -127,18 +127,18 @@ public class DrawVodAdAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
      */
     private static class NormalDataViewHolder extends RecyclerView.ViewHolder {
 
-        private final ImageView ivImage;
+        private final TextView tvPage;
         private final TextView tvTitle;
 
         public NormalDataViewHolder(@NonNull ViewGroup viewGroup) {
             super(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_draw_vod_ad_normal_data, viewGroup, false));
             tvTitle = itemView.findViewById(R.id.tvTitle);
-            ivImage = itemView.findViewById(R.id.ivImage);
+            tvPage = itemView.findViewById(R.id.tvPage);
         }
 
         public void setData(Context context, String normalData, int position) {
-            tvTitle.setText("Normal Data : " + position);
-            Glide.with(context).load(normalData).into(ivImage);
+            tvTitle.setText("Normal Data position : " + position);
+            tvPage.setText(normalData);
         }
     }
 

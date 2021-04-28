@@ -5,9 +5,12 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
@@ -15,7 +18,6 @@ import java.util.ArrayList;
 
 import cn.admobiletop.adsuyi.ADSuyiSdk;
 import cn.admobiletop.adsuyi.ad.data.ADSuyiAdType;
-import cn.admobiletop.adsuyi.util.ADSuyiToastUtil;
 import cn.admobiletop.adsuyidemo.R;
 import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
 
@@ -26,7 +28,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        Toolbar toolbar = findViewById(R.id.toolBar);
+        setSupportActionBar(toolbar);
         ((TextView) findViewById(R.id.tvVersion)).setText("V" + ADSuyiSdk.getInstance().getSdkVersion());
 
         findViewById(R.id.btnSplashAd).setOnClickListener(this);
@@ -36,12 +39,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.btnFullScreenAd).setOnClickListener(this);
         findViewById(R.id.btnInterstitialAd).setOnClickListener(this);
         findViewById(R.id.btnDrawVodAd).setOnClickListener(this);
-        findViewById(R.id.btnNovel).setOnClickListener(this);
-        findViewById(R.id.btnContentAlliance).setOnClickListener(this);
-        findViewById(R.id.btnFragmentExamples).setOnClickListener(this);
-        findViewById(R.id.btnAdmobileDlAd).setOnClickListener(this);
-        findViewById(R.id.btnRewardAdSwitch).setOnClickListener(this);
-        findViewById(R.id.ivSetting).setOnClickListener(this);
+        findViewById(R.id.btnContentMoudle).setOnClickListener(this);
+        findViewById(R.id.btnAdmobileDlAdModule).setOnClickListener(this);
     }
 
     @Override
@@ -68,29 +67,32 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btnDrawVodAd:
                 startActivity(DrawVodActivity.class);
                 break;
-            case R.id.btnNovel:
-                // 设置字体
-//                NovelSDKManger.setFontPath("字体路径");
-                boolean openSuccess = ADSuyiSdk.getInstance().openNovelActivity();
-                ADSuyiToastUtil.show(getApplicationContext(), openSuccess ? "打开成功" : "打开失败");
+            case R.id.btnContentMoudle:
+                startActivity(ContentModuleActivity.class);
                 break;
-            case R.id.btnContentAlliance:
-                startActivity(ContentAllianceAdActivity.class);
-                break;
-            case R.id.btnFragmentExamples:
-                startActivity(FragmentActivity.class);
-                break;
-            case R.id.btnAdmobileDlAd:
-                startActivity(DlAdActivity.class);
-                break;
-            case R.id.ivSetting:
-                showAdTypeCheckDialog();
-                break;
-            case R.id.btnRewardAdSwitch:
-                startActivity(RewardAdSwitchActivity.class);
+            case R.id.btnAdmobileDlAdModule:
+                startActivity(DlModuleActivity.class);
                 break;
             default:
                 break;
+        }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_toolbar, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.toolbar_setting:
+                showAdTypeCheckDialog();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+
         }
     }
 

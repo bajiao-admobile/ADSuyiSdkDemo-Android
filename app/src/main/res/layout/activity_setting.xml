@@ -29,11 +29,11 @@
         android:textColor="@color/colorPrimaryDark"
         android:textSize="16sp" />
 
-    <CheckBox
+    <android.support.v7.widget.SwitchCompat
         android:id="@+id/cbOnlySupportPlatform"
-        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:text="是否所有广告类型一起生效" />
 
@@ -60,6 +60,7 @@
         android:id="@+id/etCount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:focusable="false"
         android:layout_margin="10dp"
         android:inputType="number"
         android:textColor="@color/colorPrimary"
@@ -84,10 +85,12 @@
         android:textColor="@color/colorPrimary"
         android:visibility="gone" />
 
-    <CheckBox
+    <android.support.v7.widget.SwitchCompat
         android:id="@+id/cbNativeMute"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:text="是否静音播放视频(部分平台支持)"
         android:visibility="gone" />
 
@@ -110,10 +113,12 @@
         android:textColor="@color/colorPrimary"
         android:visibility="gone" />
 
-    <CheckBox
+    <android.support.v7.widget.SwitchCompat
         android:id="@+id/cbCustomSkipView"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:text="是否自定义跳过按钮"
         android:visibility="gone" />
 

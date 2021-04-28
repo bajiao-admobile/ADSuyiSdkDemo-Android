@@ -12,7 +12,7 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         ndk {
             // 设置支持的SO库架构，暂不支持x86
-            abiFilters 'armeabi-v7a' // 'armeabi', 'arm64-v8a'
+            abiFilters 'armeabi-v7a' ,'arm64-v8a'// 'armeabi'
         }
     }
     buildTypes {
@@ -107,7 +107,7 @@ dependencies {
 
     // 快手AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:ksad:3.3.11.02261'
-    
+
     // 米盟AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:mimo:5.0.6.11262'
     implementation 'com.google.code.gson:gson:2.8.5'
