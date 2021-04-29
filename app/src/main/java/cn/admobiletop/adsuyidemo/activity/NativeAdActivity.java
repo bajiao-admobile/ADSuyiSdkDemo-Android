@@ -204,7 +204,7 @@ public class NativeAdActivity extends AppCompatActivity implements OnRefreshLoad
                 .setItems(R.array.native_ad_list, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        String toastContent = "设置完成，下次加载生效";
+                        String toastContent = "设置完成，加载广告生效";
                         switch (which) {
                             case 0:
                                 ADSuyiDemoConstant.NATIVE_AD_POS_ID = ADSuyiDemoConstant.NATIVE_AD_POS_ID1;
