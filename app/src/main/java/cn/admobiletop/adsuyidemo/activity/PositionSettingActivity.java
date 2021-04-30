@@ -192,7 +192,6 @@ public class PositionSettingActivity extends AppCompatActivity {
                 break;
             case ADSuyiAdType.TYPE_BANNER:
                 etPosId.setText(ADSuyiDemoConstant.BANNER_AD_POS_ID);
-                etOnlySupportPlatform.setText(ADSuyiDemoConstant.BANNER_AD_ONLY_SUPPORT_PLATFORM);
                 platformKey = getPlatformKey(platformMap, ADSuyiDemoConstant.BANNER_AD_ONLY_SUPPORT_PLATFORM);
                 etOnlySupportPlatform.setText(platformKey);
                 etAutoRefreshInterval.setText(String.valueOf(ADSuyiDemoConstant.BANNER_AD_AUTO_REFRESH_INTERVAL));

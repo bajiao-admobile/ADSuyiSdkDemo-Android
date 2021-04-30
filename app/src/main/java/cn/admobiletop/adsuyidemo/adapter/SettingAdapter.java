@@ -14,6 +14,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import cn.admobiletop.adsuyi.ad.data.ADSuyiAdType;
 import cn.admobiletop.adsuyidemo.R;
@@ -211,6 +212,22 @@ public class SettingAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             platformMap.put("讯飞(ifly)", "ifly");
             platformMap.put("快手(ksad)", "ksad");
             platformMap.put("米盟(mimo)", "mimo");
+            String currentFinalPlat = ADSuyiDemoConstant.SPLASH_AD_ONLY_SUPPORT_PLATFORM;
+            String displayPlat = getPlatformKey(platformMap, currentFinalPlat);
+            tvPlatform.setText(displayPlat);
+
+        }
+
+        private String getPlatformKey(Map<String, String> map, String value) {
+            if (TextUtils.isEmpty(value)) {
+                value = "";
+            }
+            for (Map.Entry<String, String> entry : map.entrySet()) {
+                if (value.equals(entry.getValue())) {
+                    return entry.getKey();
+                }
+            }
+            return "";
         }
 
         private void showPlatformSelectDialog(Context context) {
