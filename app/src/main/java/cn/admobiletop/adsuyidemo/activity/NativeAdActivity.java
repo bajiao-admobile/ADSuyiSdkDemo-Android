@@ -237,7 +237,7 @@ public class NativeAdActivity extends AppCompatActivity implements OnRefreshLoad
                             case 1:
                                 ADSuyiDemoConstant.NATIVE_AD_POS_ID = ADSuyiDemoConstant.NATIVE_AD_POS_ID2;;
                                 break;
-                            case 3:
+                            case 2:
                                 ADSuyiDemoConstant.NATIVE_AD_POS_ID = ADSuyiDemoConstant.NATIVE_AD_POS_ID4;
                             default:
                                 break;
