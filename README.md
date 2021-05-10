@@ -1,4 +1,4 @@
-# ADSuyiSdk Android Sdk——接入文档 V3.1.5.03022
+# ADSuyiSdk Android Sdk——接入文档 V3.2.0.03252
 
  目录 
 
@@ -35,6 +35,7 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | ksad      | 快手     | 快手     |
 | mimo   | 米盟     | 米盟   |
 | hwpps   | 华为广告联盟     | 华为广告联盟   |
+| yunma   | 云码     | 云码   |
 
 ### 1.4 ADSuyi必添包容量
 
@@ -56,6 +57,7 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | ksad      | 5.20M     |
 | mimo   | 0.45M     |
 | hwpps   | 1.01M     |
+| yunma   | 0.30M     |
 
 
 
@@ -190,9 +192,9 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
   
      // ADSuyiSdk核心库是必须导入的
-    implementation 'cn.admobiletop.adsuyi.ad:core:3.1.5.03022'
+    implementation 'cn.admobiletop.adsuyi.ad:core:3.2.0.03252'
     // common库是必须导入的，请保持和Demo中版本一致
-    implementation 'com.admobile:common:1.2.3'
+    implementation 'com.admobile:common:1.2.4'
     // material库是必须导入的，请保持和Demo中版本一致
     implementation 'cn.admobiletop.adsuyi.ad:material:1.0.1.02223'
 
@@ -201,10 +203,10 @@ dependencies {
     implementation(name: 'oaid_sdk_1.0.25', ext: 'aar')
 
     // 艾狄墨搏AdapterSdk，必须的`
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile:4.8.7.03031'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile:4.9.1.05102'
 
     // 广点通AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.333.1203.03141'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.333.1203.03291'
 
     // 头条AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:3.4.5.5.03102'
@@ -223,10 +225,10 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:ifly:5.0.0.03051'
 
     // 快手AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksad:3.3.11.02261'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksad:3.3.14.03311'
 
     // 米盟AdapterSdk，可选的（还需要gson和glide支持）
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:mimo:5.0.6.11262'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:mimo:5.0.6.11263'
     implementation 'com.google.code.gson:gson:2.8.5'
     implementation 'com.github.bumptech.glide:glide:4.9.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
@@ -269,6 +271,7 @@ dependencies {
    ```
 
 * 如果接入汇量，需要加入第三方依赖库https://dl.bintray.com/mintegral-official/Andorid_ad_SDK_for_china_support
+* 如果接入云码，需要加入第三方依赖库http://maven.aliyun.com/nexus/content/repositories/releases/
 * **广点通适配器4.270.1140版本及以上已经导入了腾讯的tbs，请移除原有的tbs避免编译失败；**
 * **广点通适配器4.310.1180版本及以上已经将腾讯tbs移除，媒体需要手动导入tbs，避免自身项目需要依赖tbs导致编译失败；**
 * **由于头条(穿山甲)渠道支持了Android R，引入了Android R的 <queries> 标签,需要对gradle版本进行限制，限制范围为：3.3.3、 3.4.3、 3.5.4、3.6.4、4.0.1 ，开发者根据自身情况酌情升级**
@@ -533,6 +536,7 @@ dependencies {
 -keep class com.kwad.sdk.** { *;}
 -keep class com.ksad.download.** { *;}
 -keep class com.kwai.filedownloader.** { *;}
+-keepclasseswithmembernames class * { native <methods>;}
 
 # AppicAd广告平台混淆
 -keep class * extends com.ap.android.trunk.sdk.core.base.ad.Ad
@@ -584,6 +588,13 @@ dependencies {
 -keep public class * extends com.bumptech.glide.module.AppGlideModule
 -keep public enum com.bumptech.glide.load.ImageHeaderParser$** { **[] $VALUES; public *; }
 -dontwarn com.bumptech.glide.load.resource.bitmap.VideoDecoder
+
+# 云码混淆
+-keep class com.alibaba.sdk.android.cloudcode.** {*;}
+-keep interface com.alibaba.sdk.android.logger.ILogger {*;}
+-keep enum com.alibaba.sdk.android.logger.LogLevel {*;}
+-keep class com.alibaba.sdk.android.error.** {*;}
+-keep class com.alibaba.sdk.android.startup.** {*;}
 
 # NovelAdapter混淆
 -keep class android.**{*;}
@@ -760,9 +771,9 @@ suyiBannerAd.loadAd(ADSuyiDemoConstant.BANNER_AD_POS_ID);
 
   ### <a name="ad_native">6.4 信息流广告示例</a>
 
-信息流广告，具备自渲染和模板两种广告样式：自渲染是SDK将返回广告标题、描述、Icon、图片、多媒体视图等信息，开发者可通过自行拼装渲染成喜欢的样式；模板样式则是返回拼装好的广告视图，开发者只需将视图添加到相应容器即可，模板样式的容器高度建议是自适应。**由于信息流广告不同广告平台支持的样式不一致，有些平台不支持自渲染，有些平台不支持模板，所以下发的广告可能是模板和自渲染混合，必须开发者参考Demo适配两种类型。**
-**请务必确保广告渲染时包含广告创意素材（至少包含一张图片）、平台logo、广告标识、关闭按钮； 模板广告不得被遮挡。**
-**注意，信息流广告点击关闭时，开发者需要在onAdClose回调中将广告容器隐藏或移除，避免如头条渠道点击关闭后视图依旧存在**
+信息流广告，具备自渲染和模板两种广告样式：自渲染是SDK将返回广告标题、描述、Icon、图片、多媒体视图等信息，开发者可通过自行拼装渲染成喜欢的样式；模板样式则是返回拼装好的广告视图，开发者只需将视图添加到相应容器即可，模板样式的容器高度建议是自适应。
+**请务必确保自渲染类型广告渲染时包含广告创意素材（至少包含一张图片）、平台logo、广告标识、关闭按钮；模板广告不得被遮挡。**
+**注意，信息流广告点击关闭时，开发者需要在onAdClose回调中将广告容器隐藏或移除，避免如头条渠道点击关闭后视图依旧存在问题**
 
 ``` lua
 ADSuyiNativeAdInfo -- 信息流对象 根据isNativeExpress()方法：true模板类型，false自渲染类型
@@ -780,10 +791,12 @@ adSuyiNativeAd = new ADSuyiNativeAd(this);
 int widthPixels = getResources().getDisplayMetrics().widthPixels;
 // 创建额外参数实例
 ADSuyiExtraParams extraParams = new ADSuyiExtraParams.Builder()
-// 设置整个广告视图预期宽高(目前仅头条平台需要，没有接入头条可不设置)，单位为px，高度如果小于等于0则高度自适应
+// 设置整个广告视图预期宽高(目前仅头条，艾狄墨搏平台需要，没有接入头条、艾狄墨搏可不设置)，单位为px，高度如果小于等于0则高度自适应
 		.adSize(new ADSuyiAdSize(widthPixels, 0))
     // 设置广告视图中MediaView的预期宽高(目前仅Inmobi平台需要,Inmobi的MediaView高度为自适应，没有接入Inmobi平台可不设置)，单位为px
     .nativeAdMediaViewSize(new ADSuyiAdSize(widthPixels))
+    // 设置模版广告文字、内边距特殊样式（目前仅艾狄墨搏平台需要，没有特殊需求可不设置，请查看demo进行设置）
+    .nativeStyle(nativeStyle)
     // 设置信息流广告适配播放是否静音，默认静音，目前广点通、百度、汇量、Admobile支持修改
     .nativeAdPlayWithMute(ADSuyiDemoConstant.NATIVE_AD_PLAY_WITH_MUTE)
    	.build();

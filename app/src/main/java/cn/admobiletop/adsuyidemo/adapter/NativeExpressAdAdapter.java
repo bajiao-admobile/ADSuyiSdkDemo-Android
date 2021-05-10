@@ -26,34 +26,21 @@ import cn.admobiletop.adsuyi.ad.listener.ADSuyiNativeVideoListener;
 import cn.admobiletop.adsuyi.util.ADSuyiAdUtil;
 import cn.admobiletop.adsuyi.util.ADSuyiViewUtil;
 import cn.admobiletop.adsuyidemo.R;
-import cn.admobiletop.adsuyidemo.adapter.holder.BaseNativeFeedAdViewHolder;
 import cn.admobiletop.adsuyidemo.adapter.holder.NativeExpressAdViewHolder;
-import cn.admobiletop.adsuyidemo.adapter.holder.NativeFeedAdMediaViewHolder;
-import cn.admobiletop.adsuyidemo.adapter.holder.NativeFeedAdViewHolder;
 import cn.admobiletop.adsuyidemo.adapter.holder.NormalDataViewHolder;
 import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
 import cn.admobiletop.adsuyidemo.entity.NativeAdSampleData;
 
 /**
  * @author ciba
- * @description 信息流广告Adapter
+ * @description 信息流模版广告Adapter
  * @date 2020/4/1
  */
-public class NativeAdAdapter extends BaseNativeAdAdapter {
+public class NativeExpressAdAdapter extends BaseNativeAdAdapter {
     /**
      * 普通数据类型（模拟数据）
      */
     private static final int ITEM_VIEW_TYPE_NORMAL_DATA = 0;
-
-    // 以下为三种信息流广告适配类型，模板一种，自渲染两种（没有MediaView）和（包含MediaView）。
-    /**
-     * 信息流原生广告类型（没有MediaView）
-     */
-    private static final int ITEM_VIEW_TYPE_NATIVE_AD = 1;
-    /**
-     * 信息流原生广告类型（包含MediaView）
-     */
-    private static final int ITEM_VIEW_TYPE_NATIVE_AD_HAS_MEDIA_VIEW = 2;
     /**
      * 信息流模板广告类型
      */
@@ -65,10 +52,6 @@ public class NativeAdAdapter extends BaseNativeAdAdapter {
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int itemViewType) {
         switch (itemViewType) {
-            case ITEM_VIEW_TYPE_NATIVE_AD:
-                return new NativeFeedAdViewHolder(viewGroup);
-            case ITEM_VIEW_TYPE_NATIVE_AD_HAS_MEDIA_VIEW:
-                return new NativeFeedAdMediaViewHolder(viewGroup);
             case ITEM_VIEW_TYPE_EXPRESS_AD:
                 return new NativeExpressAdViewHolder(viewGroup);
             default:
@@ -82,9 +65,6 @@ public class NativeAdAdapter extends BaseNativeAdAdapter {
         if (viewHolder instanceof NormalDataViewHolder) {
             // 普通数据类型的
             ((NormalDataViewHolder) viewHolder).setData((String) item);
-        } else if (viewHolder instanceof BaseNativeFeedAdViewHolder) {
-            // 信息流原生广告类型 NativeAdViewHolder or NativeAdMediaViewHolder
-            ((BaseNativeFeedAdViewHolder) viewHolder).setData((ADSuyiNativeFeedAdInfo) item);
         } else if (viewHolder instanceof NativeExpressAdViewHolder) {
             // 信息流模板广告类型
             ((NativeExpressAdViewHolder) viewHolder).setData((ADSuyiNativeExpressAdInfo) item);
@@ -99,20 +79,12 @@ public class NativeAdAdapter extends BaseNativeAdAdapter {
     @Override
     public int getItemViewType(int position) {
         Object item = dataList.get(position);
-        if (item instanceof String) {
-            return ITEM_VIEW_TYPE_NORMAL_DATA;
-        } else if (item instanceof ADSuyiNativeExpressAdInfo) {
+        if  (item instanceof ADSuyiNativeExpressAdInfo) {
+            // item 为信息流模版广告数据
             return ITEM_VIEW_TYPE_EXPRESS_AD;
         } else {
-            // isNativeExpress() false 信息流原生广告，原生信息流广告还分为包含MediaView和不包含MediaView两种情况
-            ADSuyiNativeFeedAdInfo nativeFeedAdInfo = (ADSuyiNativeFeedAdInfo) item;
-            if (nativeFeedAdInfo.hasMediaView()) {
-                // hasMediaView() true 包含MediaView的原生信息流广告
-                return ITEM_VIEW_TYPE_NATIVE_AD_HAS_MEDIA_VIEW;
-            }else {
-                // hasMediaView() false 没有MediaView的原生信息流广告
-                return ITEM_VIEW_TYPE_NATIVE_AD;
-            }
+            // item 为模拟数据
+            return ITEM_VIEW_TYPE_NORMAL_DATA;
         }
     }
 

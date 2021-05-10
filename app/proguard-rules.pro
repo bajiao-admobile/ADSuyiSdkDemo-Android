@@ -131,6 +131,7 @@
 -dontwarn com.kwad.**
 -dontwarn com.ksad.**
 -dontwarn aegon.chrome.**
+-keepclasseswithmembernames class * { native <methods>;}
 
 # 米盟混淆
 -keep class com.miui.zeus.mimo.sdk.* { *; }
@@ -159,6 +160,13 @@
 -keep public class * extends com.bumptech.glide.module.AppGlideModule
 -keep public enum com.bumptech.glide.load.ImageHeaderParser$** { **[] $VALUES; public *; }
 -dontwarn com.bumptech.glide.load.resource.bitmap.VideoDecoder
+
+# 云码混淆
+-keep class com.alibaba.sdk.android.cloudcode.** {*;}
+-keep interface com.alibaba.sdk.android.logger.ILogger {*;}
+-keep enum com.alibaba.sdk.android.logger.LogLevel {*;}
+-keep class com.alibaba.sdk.android.error.** {*;}
+-keep class com.alibaba.sdk.android.startup.** {*;}
 
 # NovelAdapter混淆
 -keep class android.**{*;}

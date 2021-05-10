@@ -23,13 +23,18 @@ import java.util.List;
 import cn.admobiletop.adsuyi.ad.ADSuyiNativeAd;
 import cn.admobiletop.adsuyi.ad.data.ADSuyiAdType;
 import cn.admobiletop.adsuyi.ad.data.ADSuyiNativeAdInfo;
+import cn.admobiletop.adsuyi.ad.entity.ADSuyiAdNativeStyle;
 import cn.admobiletop.adsuyi.ad.entity.ADSuyiAdSize;
 import cn.admobiletop.adsuyi.ad.entity.ADSuyiExtraParams;
 import cn.admobiletop.adsuyi.ad.error.ADSuyiError;
 import cn.admobiletop.adsuyi.ad.listener.ADSuyiNativeAdListener;
+import cn.admobiletop.adsuyi.util.ADSuyiDisplayUtil;
 import cn.admobiletop.adsuyi.util.ADSuyiToastUtil;
 import cn.admobiletop.adsuyidemo.R;
+import cn.admobiletop.adsuyidemo.adapter.BaseNativeAdAdapter;
 import cn.admobiletop.adsuyidemo.adapter.NativeAdAdapter;
+import cn.admobiletop.adsuyidemo.adapter.NativeExpressAdAdapter;
+import cn.admobiletop.adsuyidemo.adapter.NativeFeedAdAdapter;
 import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
 import cn.admobiletop.adsuyidemo.entity.NativeAdSampleData;
 import cn.admobiletop.adsuyidemo.widget.MySmartRefreshLayout;
@@ -41,9 +46,10 @@ import cn.admobiletop.adsuyidemo.widget.MySmartRefreshLayout;
  */
 public class NativeAdActivity extends AppCompatActivity implements OnRefreshLoadMoreListener {
     private MySmartRefreshLayout refreshLayout;
-    private NativeAdAdapter nativeAdAdapter;
+    private RecyclerView recyclerView;
+    private BaseNativeAdAdapter nativeAdAdapter;
     private ADSuyiNativeAd adSuyiNativeAd;
-    private List<NativeAdSampleData> tempDataList = new ArrayList<>();
+    private List<Object> tempDataList = new ArrayList<>();
     private int refreshType;
 
     @Override
@@ -54,17 +60,15 @@ public class NativeAdActivity extends AppCompatActivity implements OnRefreshLoad
         setSupportActionBar(toolbar);
 
         initView();
+        initNativeAdapter();
         initListener();
         initData();
     }
 
     private void initView() {
-        RecyclerView recyclerView = findViewById(R.id.recyclerView);
+        recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         refreshLayout = findViewById(R.id.refreshLayout);
-
-        nativeAdAdapter = new NativeAdAdapter(this);
-        recyclerView.setAdapter(nativeAdAdapter);
     }
 
     private void initListener() {
@@ -72,15 +76,18 @@ public class NativeAdActivity extends AppCompatActivity implements OnRefreshLoad
     }
 
     private void initData() {
+        // 模版广告容器宽度
         int widthPixels = getResources().getDisplayMetrics().widthPixels;
         // 创建信息流广告实例
         adSuyiNativeAd = new ADSuyiNativeAd(this);
         // 创建额外参数实例
         ADSuyiExtraParams extraParams = new ADSuyiExtraParams.Builder()
-                // 设置整个广告视图预期宽高(目前仅头条平台需要，没有接入头条可不设置)，单位为px，高度如果小于等于0则高度自适应
+                // 设置整个广告视图预期宽高(目前仅头条、艾狄墨搏平台需要，没有接入头条、艾狄墨搏可不设置)，单位为px，高度如果小于等于0则高度自适应
                 .adSize(new ADSuyiAdSize(widthPixels, 0))
                 // 设置广告视图中MediaView的预期宽高(目前仅Inmobi平台需要,Inmobi的MediaView高度为自适应，没有接入Inmobi平台可不设置)，单位为px
                 .nativeAdMediaViewSize(new ADSuyiAdSize((int) (widthPixels - 24 * getResources().getDisplayMetrics().density)))
+                // 设置模版广告文字、内边距特殊样式（目前仅艾狄墨搏平台需要，没有特殊需求可不设置）
+                .nativeStyle(getAdmobileNativeStyle())
                 // 设置信息流广告适配播放是否静音，默认静音，目前广点通、百度、汇量、快手、Admobile支持修改
                 .nativeAdPlayWithMute(ADSuyiDemoConstant.NATIVE_AD_PLAY_WITH_MUTE)
                 .build();
@@ -105,9 +112,9 @@ public class NativeAdActivity extends AppCompatActivity implements OnRefreshLoad
                     int index = i * 5;
                     ADSuyiNativeAdInfo nativeAdInfo = adInfoList.get(i);
                     if (index >= tempDataList.size()) {
-                        tempDataList.add(new NativeAdSampleData(nativeAdInfo));
+                        tempDataList.add(nativeAdInfo);
                     } else {
-                        tempDataList.add(index, new NativeAdSampleData(nativeAdInfo));
+                        tempDataList.add(index, nativeAdInfo);
                     }
                 }
                 nativeAdAdapter.addData(tempDataList);
@@ -146,6 +153,24 @@ public class NativeAdActivity extends AppCompatActivity implements OnRefreshLoad
         refreshLayout.autoRefresh();
     }
 
+    /**
+     * 获取admobile模版广告样式
+     */
+    private ADSuyiAdNativeStyle getAdmobileNativeStyle() {
+        // 艾狄墨搏模版广告上下左右内边距
+        int paddingLeft = ADSuyiDisplayUtil.dp2px(10);
+        int paddingTop = ADSuyiDisplayUtil.dp2px(10);
+        int paddingRight = ADSuyiDisplayUtil.dp2px(10);
+        int paddingBottom = ADSuyiDisplayUtil.dp2px(10);
+        // 模版广告样式，目前仅艾狄墨搏平台需要，如果有特殊需求可以传入
+        ADSuyiAdNativeStyle nativeStyle = new ADSuyiAdNativeStyle(paddingLeft, paddingTop, paddingRight, paddingBottom);
+        // 设置标题文字大小
+        nativeStyle.setTitleSize(12);
+        // 设置内容文字大小
+        nativeStyle.setDescSize(18);
+        return nativeStyle;
+    }
+
     @Override
     public void onLoadMore(@NonNull RefreshLayout refreshLayout) {
         refreshType = MySmartRefreshLayout.TYPE_LOAD_MORE;
@@ -177,7 +202,7 @@ public class NativeAdActivity extends AppCompatActivity implements OnRefreshLoad
      */
     private void mockNormalDataRequest() {
         for (int i = 0; i < 20; i++) {
-            tempDataList.add(new NativeAdSampleData("模拟的普通数据 : " + (nativeAdAdapter == null ? 0 : nativeAdAdapter.getItemCount() + i)));
+            tempDataList.add("模拟的普通数据 : " + (nativeAdAdapter == null ? 0 : nativeAdAdapter.getItemCount() + i));
         }
     }
 
@@ -204,7 +229,7 @@ public class NativeAdActivity extends AppCompatActivity implements OnRefreshLoad
                 .setItems(R.array.native_ad_list, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        String toastContent = "设置完成，下次加载生效";
+                        String toastContent = "设置完成，生效中";
                         switch (which) {
                             case 0:
                                 ADSuyiDemoConstant.NATIVE_AD_POS_ID = ADSuyiDemoConstant.NATIVE_AD_POS_ID1;
@@ -215,12 +240,42 @@ public class NativeAdActivity extends AppCompatActivity implements OnRefreshLoad
                             case 2:
                                 ADSuyiDemoConstant.NATIVE_AD_POS_ID = ADSuyiDemoConstant.NATIVE_AD_POS_ID3;
                                 break;
+                            case 3:
+                                ADSuyiDemoConstant.NATIVE_AD_POS_ID = ADSuyiDemoConstant.NATIVE_AD_POS_ID4;
                             default:
                                 break;
                         }
                         ADSuyiToastUtil.show(NativeAdActivity.this, toastContent);
                         dialog.dismiss();
+                        initNativeAdapter();
+                        loadData();
                     }
                 }).create().show();
+    }
+
+    /**
+     * 初始化信息流广告适配器，根据需求挑选
+     */
+    private void initNativeAdapter() {
+        switch (ADSuyiDemoConstant.NATIVE_AD_POS_ID) {
+            case ADSuyiDemoConstant.NATIVE_AD_POS_ID1:
+                // 自渲染
+                nativeAdAdapter = new NativeFeedAdAdapter();
+                break;
+            case ADSuyiDemoConstant.NATIVE_AD_POS_ID2:
+                // 模板自渲染混合
+                nativeAdAdapter = new NativeAdAdapter();
+            case ADSuyiDemoConstant.NATIVE_AD_POS_ID3:
+                // 广点通模板2.0
+                nativeAdAdapter = new NativeAdAdapter();
+                break;
+            case ADSuyiDemoConstant.NATIVE_AD_POS_ID4:
+                // 模版
+                nativeAdAdapter = new NativeExpressAdAdapter();
+                break;
+        }
+
+        recyclerView.setAdapter(nativeAdAdapter);
+        nativeAdAdapter.clearData();
     }
 }

@@ -39,6 +39,8 @@ public class NativeAdFragment extends BaseFragment implements OnRefreshLoadMoreL
     private ADSuyiNativeAd adSuyiNativeAd;
     private int refreshType;
 
+    private List<Object> tempDataList = new ArrayList<>();
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -61,7 +63,7 @@ public class NativeAdFragment extends BaseFragment implements OnRefreshLoadMoreL
         recyclerView.setLayoutManager(new LinearLayoutManager(inflate.getContext()));
         refreshLayout = inflate.findViewById(R.id.refreshLayout);
 
-        nativeAdAdapter = new NativeAdAdapter(inflate.getContext());
+        nativeAdAdapter = new NativeAdAdapter();
         recyclerView.setAdapter(nativeAdAdapter);
     }
 
@@ -96,12 +98,16 @@ public class NativeAdFragment extends BaseFragment implements OnRefreshLoadMoreL
             @Override
             public void onAdReceive(List<ADSuyiNativeAdInfo> adInfoList) {
                 Log.d(ADSuyiDemoConstant.TAG, "onAdReceive: " + adInfoList.size());
-                List<NativeAdSampleData> nativeAdSampleDataList = new ArrayList<>();
                 for (int i = 0; i < adInfoList.size(); i++) {
+                    int index = i * 5;
                     ADSuyiNativeAdInfo nativeAdInfo = adInfoList.get(i);
-                    nativeAdSampleDataList.add(new NativeAdSampleData(nativeAdInfo));
+                    if (index >= tempDataList.size()) {
+                        tempDataList.add(nativeAdInfo);
+                    } else {
+                        tempDataList.add(index, nativeAdInfo);
+                    }
                 }
-                nativeAdAdapter.addData(nativeAdSampleDataList);
+                nativeAdAdapter.addData(tempDataList);
                 refreshLayout.finish(refreshType, true, false);
             }
 
@@ -151,23 +157,21 @@ public class NativeAdFragment extends BaseFragment implements OnRefreshLoadMoreL
      * 加载数据和广告
      */
     private void loadData() {
-        List<NativeAdSampleData> normalDataList = mockNormalDataRequest();
-        nativeAdAdapter.addData(normalDataList);
+        tempDataList.clear();
+        mockNormalDataRequest();
 
+        // 信息流广告场景id（场景id非必选字段，如果需要可到开发者后台创建）
+        adSuyiNativeAd.setSceneId(ADSuyiDemoConstant.NATIVE_AD_SCENE_ID);
         // 请求广告数据，参数一广告位ID，参数二请求数量[1,3]
         adSuyiNativeAd.loadAd(ADSuyiDemoConstant.NATIVE_AD_POS_ID, ADSuyiDemoConstant.NATIVE_AD_COUNT);
     }
 
     /**
      * 模拟普通数据请求
-     *
-     * @return : 普通数据列表
      */
-    private List<NativeAdSampleData> mockNormalDataRequest() {
-        List<NativeAdSampleData> normalDataList = new ArrayList<>();
+    private void mockNormalDataRequest() {
         for (int i = 0; i < 20; i++) {
-            normalDataList.add(new NativeAdSampleData("模拟的普通数据 : " + (nativeAdAdapter.getItemCount() + i)));
+            tempDataList.add("模拟的普通数据 : " + (nativeAdAdapter == null ? 0 : nativeAdAdapter.getItemCount() + i));
         }
-        return normalDataList;
     }
 }
