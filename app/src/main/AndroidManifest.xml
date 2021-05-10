@@ -25,8 +25,6 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:replace="android:networkSecurityConfig,android:theme">
-        <activity android:name=".activity.DlModuleActivity"></activity>
-        <activity android:name=".activity.ContentModuleActivity" />
 
         <uses-library
             android:name="org.apache.http.legacy"
@@ -53,10 +51,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:theme="@style/AppThemeNoActionBar"
             android:name=".activity.MainActivity"
             android:launchMode="singleTask"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeNoActionBar" />
         <activity
             android:name=".activity.BannerAdActivity"
             android:label="@string/banner_ad"
@@ -75,10 +73,10 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".activity.NativeAdActivity"
-            android:theme="@style/AppThemeNoActionBar"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:label="@string/native_ad"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeNoActionBar" />
         <activity
             android:name=".activity.DrawVodActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
@@ -91,7 +89,7 @@
             android:label="@string/fragment_examples"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.SettingActivity"
+            android:name=".activity.PositionSettingActivity"
             android:label="@string/setting"
             android:screenOrientation="portrait" />
         <activity
@@ -113,6 +111,21 @@
         <activity
             android:name=".activity.ContentAllianceAdActivity"
             android:label="@string/content_alliance"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.SettingActivity"
+            android:label="@string/setting"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.DlModuleActivity"
+            android:label="@string/admobile_dl_ad"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.ContentModuleActivity"
+            android:label="@string/admobile_dl_ad"
             android:screenOrientation="portrait" />
     </application>
 

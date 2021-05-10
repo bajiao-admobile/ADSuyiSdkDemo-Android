@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.toolbar_setting:
-                showAdTypeCheckDialog();
+                startActivity(SettingActivity.class);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -96,60 +96,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    private void showAdTypeCheckDialog() {
-        new AlertDialog.Builder(this)
-                .setItems(R.array.ad_type_items, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        String adType = null;
-                        ArrayList<String> posIdList = new ArrayList<>();
-                        switch (which) {
-                            case 0:
-                                adType = ADSuyiAdType.TYPE_SPLASH;
-                                posIdList.add(ADSuyiDemoConstant.SPLASH_AD_POS_ID1);
-                                break;
-                            case 1:
-                                adType = ADSuyiAdType.TYPE_BANNER;
-                                posIdList.add(ADSuyiDemoConstant.BANNER_AD_POS_ID1);
-                                posIdList.add(ADSuyiDemoConstant.BANNER_AD_POS_ID2);
-                                posIdList.add(ADSuyiDemoConstant.BANNER_AD_POS_ID3);
-                                break;
-                            case 2:
-                                adType = ADSuyiAdType.TYPE_FLOW;
-                                posIdList.add(ADSuyiDemoConstant.NATIVE_AD_POS_ID1);
-                                posIdList.add(ADSuyiDemoConstant.NATIVE_AD_POS_ID2);
-                                posIdList.add(ADSuyiDemoConstant.NATIVE_AD_POS_ID3);
-                                break;
-                            case 3:
-                                adType = ADSuyiAdType.TYPE_REWARD_VOD;
-                                posIdList.add(ADSuyiDemoConstant.REWARD_VOD_AD_POS_ID1);
-                                posIdList.add(ADSuyiDemoConstant.REWARD_VOD_AD_POS_ID2);
-                                break;
-                            case 4:
-                                adType = ADSuyiAdType.TYPE_FULLSCREEN_VOD;
-                                posIdList.add(ADSuyiDemoConstant.FULL_SCREEN_VOD_AD_POS_ID1);
-                                break;
-                            case 5:
-                                adType = ADSuyiAdType.TYPE_INTERSTITIAL;
-                                posIdList.add(ADSuyiDemoConstant.INTERSTITIAL_AD_POS_ID1);
-                                break;
-                            case 6:
-                                adType = ADSuyiAdType.TYPE_DRAW_VOD;
-                                posIdList.add(ADSuyiDemoConstant.DRAW_VOD_AD_POS_ID1);
-                                break;
-                            case 7:
-                                FloatingAdSettingActivity.start(MainActivity.this);
-                                break;
-                            default:
-                                break;
-                        }
-                        if (!TextUtils.isEmpty(adType)) {
-                            SettingActivity.start(MainActivity.this, adType, posIdList);
-                        }
-                        dialog.dismiss();
-                    }
-                }).create().show();
-    }
 
     private void startActivity(Class<? extends Activity> activityClass) {
         Intent intent = new Intent(this, activityClass);
