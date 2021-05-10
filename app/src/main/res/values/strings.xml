@@ -125,7 +125,7 @@
     <string-array name="native_ad_list">
         <item>自渲染</item>
         <item>模板渲染</item>
-        <item>优量汇模板2.0渲染</item>
+<!--        <item>优量汇模板2.0渲染</item>-->
         <item>模版</item>
     </string-array>
 </resources>

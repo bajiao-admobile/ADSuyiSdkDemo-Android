@@ -237,9 +237,6 @@ public class NativeAdActivity extends AppCompatActivity implements OnRefreshLoad
                             case 1:
                                 ADSuyiDemoConstant.NATIVE_AD_POS_ID = ADSuyiDemoConstant.NATIVE_AD_POS_ID2;;
                                 break;
-                            case 2:
-                                ADSuyiDemoConstant.NATIVE_AD_POS_ID = ADSuyiDemoConstant.NATIVE_AD_POS_ID3;
-                                break;
                             case 3:
                                 ADSuyiDemoConstant.NATIVE_AD_POS_ID = ADSuyiDemoConstant.NATIVE_AD_POS_ID4;
                             default:
@@ -264,9 +261,6 @@ public class NativeAdActivity extends AppCompatActivity implements OnRefreshLoad
                 break;
             case ADSuyiDemoConstant.NATIVE_AD_POS_ID2:
                 // 模板自渲染混合
-                nativeAdAdapter = new NativeAdAdapter();
-            case ADSuyiDemoConstant.NATIVE_AD_POS_ID3:
-                // 广点通模板2.0
                 nativeAdAdapter = new NativeAdAdapter();
                 break;
             case ADSuyiDemoConstant.NATIVE_AD_POS_ID4:

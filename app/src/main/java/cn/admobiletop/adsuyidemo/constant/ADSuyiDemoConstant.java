@@ -65,7 +65,7 @@ public class ADSuyiDemoConstant {
      * 信息流广告位ID，模版
      */
     public static final String NATIVE_AD_POS_ID4 = "fd3b78d0c93e75330a";
-    public static String NATIVE_AD_POS_ID = NATIVE_AD_POS_ID1;
+    public static String NATIVE_AD_POS_ID = NATIVE_AD_POS_ID4;
     /**
      * 信息流广告一次拉取广告数量
      */
