@@ -57,7 +57,7 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | ksad      | 5.20M     |
 | mimo   | 0.45M     |
 | hwpps   | 1.01M     |
-| yunma   | 0.30M     |
+| yunma   | 6.30M     |
 
 
 
