@@ -235,6 +235,9 @@ dependencies {
 
     // 华为广告联盟AdadapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:hwpps:13.4.33.300.02261'
+
+    // 云码AdapterSdk，可选的
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:yunma:1.0.3.04211'
       
     // 小说内容SDK（还需要gson、glide4.9.0和recyclerview支持）
     implementation 'cn.admobiletop.adsuyi.ad.adapter:novel:1.2.4.03081'
