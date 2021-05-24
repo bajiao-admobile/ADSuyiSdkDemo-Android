@@ -83,6 +83,15 @@
         <!--米盟-->
         <item>mimo</item>
 
+        <!--华为广告联盟-->
+        <item>hwpps</item>
+
+        <!--云码-->
+        <item>yunma</item>
+
+        <!--爱奇艺-->
+        <item>iqy</item>
+
     </string-array>
 
     <string-array name="platforms_zh">
@@ -113,6 +122,8 @@
         <item>华为广告联盟(hwpps)</item>
 
         <item>云码(yunma)</item>
+
+        <item>爱奇艺(iqy)</item>
 
     </string-array>
 

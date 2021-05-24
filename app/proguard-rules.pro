@@ -73,6 +73,8 @@
 -keep class com.bytedance.sdk.openadsdk.** { *; }
 -keep public interface com.bytedance.sdk.openadsdk.downloadnew.** {*;}
 -keep class com.pgl.sys.ces.* {*;}
+-keep class com.bytedance.embed_dr.** {*;}
+-keep class com.bytedance.embedapplog.** {*;}
 
 # imobi广告平台混淆
 -dontwarn com.inmobi.**
@@ -167,6 +169,9 @@
 -keep enum com.alibaba.sdk.android.logger.LogLevel {*;}
 -keep class com.alibaba.sdk.android.error.** {*;}
 -keep class com.alibaba.sdk.android.startup.** {*;}
+
+# 爱奇艺
+-keep class com.mcto.sspsdk.** { *; }
 
 # NovelAdapter混淆
 -keep class android.**{*;}

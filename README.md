@@ -1,4 +1,4 @@
-# ADSuyiSdk Android Sdk——接入文档 V3.2.0.03252
+# ADSuyiSdk Android Sdk——接入文档 V3.2.1.04151
 
  目录 
 
@@ -36,6 +36,7 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | mimo   | 米盟     | 米盟   |
 | hwpps   | 华为广告联盟     | 华为广告联盟   |
 | yunma   | 云码     | 云码   |
+| iqy   | 爱奇艺     | 爱奇艺   |
 
 ### 1.4 ADSuyi必添包容量
 
@@ -58,6 +59,7 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | mimo   | 0.45M     |
 | hwpps   | 1.01M     |
 | yunma   | 6.30M     |
+| iqy   | 0.30M     |
 
 
 
@@ -194,7 +196,7 @@ dependencies {
      // ADSuyiSdk核心库是必须导入的
     implementation 'cn.admobiletop.adsuyi.ad:core:3.2.0.03252'
     // common库是必须导入的，请保持和Demo中版本一致
-    implementation 'com.admobile:common:1.2.4'
+    implementation 'com.admobile:common:1.2.6'
     // material库是必须导入的，请保持和Demo中版本一致
     implementation 'cn.admobiletop.adsuyi.ad:material:1.0.1.02223'
 
@@ -203,16 +205,16 @@ dependencies {
     implementation(name: 'oaid_sdk_1.0.25', ext: 'aar')
 
     // 艾狄墨搏AdapterSdk，必须的`
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile:4.9.1.05102'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile:4.9.2.05111'
 
     // 广点通AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.333.1203.03291'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.351.1221.04221'
 
     // 头条AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:3.4.5.5.03102'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:3.6.1.0.04224'
 
     // 百度AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu:5.97.04021'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu:5.98.04221'
 
     // 汇量AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:10.9.02.11114'
@@ -238,6 +240,9 @@ dependencies {
 
     // 云码AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:yunma:1.0.3.04211'
+
+    // 爱奇艺AdapterSdk，可选的
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:iqy:1.3.5.05122'
       
     // 小说内容SDK（还需要gson、glide4.9.0和recyclerview支持）
     implementation 'cn.admobiletop.adsuyi.ad.adapter:novel:1.2.4.03081'
@@ -504,6 +509,8 @@ dependencies {
 -keep class com.bytedance.sdk.openadsdk.** { *; }
 -keep public interface com.bytedance.sdk.openadsdk.downloadnew.** {*;}
 -keep class com.pgl.sys.ces.* {*;}
+-keep class com.bytedance.embed_dr.** {*;}
+-keep class com.bytedance.embedapplog.** {*;}
 
 # imobi广告平台混淆
 -dontwarn com.inmobi.**
@@ -598,6 +605,9 @@ dependencies {
 -keep enum com.alibaba.sdk.android.logger.LogLevel {*;}
 -keep class com.alibaba.sdk.android.error.** {*;}
 -keep class com.alibaba.sdk.android.startup.** {*;}
+
+# 爱奇艺
+-keep class com.mcto.sspsdk.** { *; }
 
 # NovelAdapter混淆
 -keep class android.**{*;}
