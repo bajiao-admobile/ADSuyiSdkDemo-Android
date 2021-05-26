@@ -1,4 +1,4 @@
-# ADSuyiSdk Android Sdk——接入文档 V3.2.1.04151
+# ADSuyiSdk Android Sdk——接入文档 V3.2.1.04153
 
  目录 
 
@@ -194,7 +194,7 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
   
      // ADSuyiSdk核心库是必须导入的
-    implementation 'cn.admobiletop.adsuyi.ad:core:3.2.1.04151'
+    implementation 'cn.admobiletop.adsuyi.ad:core:3.2.1.04153'
     // common库是必须导入的，请保持和Demo中版本一致
     implementation 'com.admobile:common:1.2.6'
     // material库是必须导入的，请保持和Demo中版本一致
@@ -301,7 +301,7 @@ dependencies {
 
 1. 导入安全联盟的OAID支持库 **oaid_sdk_1.0.25.aar**，可在Demo的libs目录下找到，**强烈建议使用和Demo中一样版本的OAID库（包括项目中已存在的依赖的oaid版本）；**
 
-2. 将Demo中assets文件夹下的**supplierconfig.json**文件复制到自己的assets目录下并按照**supplierconfig.json**文件中的说明进行OAID的 **AppId** 配置，**supplierconfig.json**文件名不可修改；
+2. 将Demo中assets文件夹下的**supplierconfig.json**文件复制到自己的assets目录下并按照**supplierconfig.json**文件中的说明进行OAID的 **AppId** 配置，**supplierconfig.json**文件名不可修改。需要设置 appid 的部分需要去对应厂商的应用商店的应用信息中查看。；
 
 3. 添加以下混淆配置；
 
