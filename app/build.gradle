@@ -115,7 +115,7 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
 
     // 华为广告联盟AdadapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:hwpps:13.4.33.300.02261'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:hwpps:13.4.40.302.06011'
 
     // 云码AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:yunma:1.0.3.04211'

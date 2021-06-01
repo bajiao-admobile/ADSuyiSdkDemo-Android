@@ -236,7 +236,7 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
 
     // 华为广告联盟AdadapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:hwpps:13.4.33.300.02261'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:hwpps:13.4.40.302.06011'
 
     // 云码AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:yunma:1.0.3.04211'
@@ -290,7 +290,7 @@ dependencies {
         targetCompatibility JavaVersion.VERSION_1_8
     }
    ```
-* **如对接华为广告联盟，激励视频要提前预加载，并且播放完成后需要预加载下一个激励视频；**
+* **如对接华为广告联盟，激励视频要提前预加载，并且播放完成后需要预加载下一个激励视频；banner广告使用场景是程序页面的顶部或者底部。**
 
 3. 激励、全屏视频、插屏等广告对象一次成功拉取的广告数据只允许展示一次，还需展示请再次加载广告。
 ### 5.2 OAID支持
