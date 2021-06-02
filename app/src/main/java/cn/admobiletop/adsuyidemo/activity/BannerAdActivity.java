@@ -21,21 +21,14 @@ import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
  * @date 2020/3/26
  */
 public class BannerAdActivity extends BaseAdActivity {
-
-    private FrameLayout flContainer;
-    private ADSuyiBannerAd suyiBannerAd;
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_banner);
-        flContainer = findViewById(R.id.flContainer);
+        FrameLayout flContainer = findViewById(R.id.flContainer);
 
-    }
-
-    private void loadBannerAd() {
         // 创建Banner广告实例，第一个参数可以是Activity或Fragment，第二个参数是广告容器（请保证容器不会拦截点击、触摸等事件）
-        suyiBannerAd = new ADSuyiBannerAd(this, flContainer);
+        ADSuyiBannerAd suyiBannerAd = new ADSuyiBannerAd(this, flContainer);
         // 设置自刷新时间间隔，0为不自动刷新（部分平台无效，如百度），其他取值范围为[30,120]，单位秒
         suyiBannerAd.setAutoRefreshInterval(ADSuyiDemoConstant.BANNER_AD_AUTO_REFRESH_INTERVAL);
         // 设置仅支持的广告平台，设置了这个值，获取广告时只会去获取该平台的广告，null或空字符串为不限制，默认为null，方便调试使用，上线时建议不设置
@@ -75,33 +68,5 @@ public class BannerAdActivity extends BaseAdActivity {
         suyiBannerAd.setSceneId(ADSuyiDemoConstant.BANNER_AD_SCENE_ID);
         // 加载Banner广告，参数为广告位ID，同一个ADSuyiBannerAd只有一次loadAd有效
         suyiBannerAd.loadAd(ADSuyiDemoConstant.BANNER_AD_POS_ID);
-    }
-
-    /**
-     * 释放广告
-     */
-    private void releaseBanner() {
-        if (suyiBannerAd != null) {
-            suyiBannerAd.release();
-            suyiBannerAd = null;
-        }
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        releaseBanner();
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        loadBannerAd();
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        releaseBanner();
     }
 }
