@@ -205,13 +205,13 @@ dependencies {
     implementation(name: 'oaid_sdk_1.0.25', ext: 'aar')
 
     // 艾狄墨搏AdapterSdk，必须的`
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile:4.9.2.05111'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile:4.9.2.05112'
 
     // 广点通AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.351.1221.04221'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.351.1221.04223'
 
     // 头条AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:3.6.1.0.04224'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:3.6.1.0.04225'
 
     // 百度AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu:5.98.04221'
@@ -227,7 +227,7 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:ifly:5.0.0.03051'
 
     // 快手AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksad:3.3.14.03311'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksad:3.3.14.03312'
 
     // 米盟AdapterSdk，可选的（还需要gson和glide支持）
     implementation 'cn.admobiletop.adsuyi.ad.adapter:mimo:5.0.6.11263'
