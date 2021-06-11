@@ -623,24 +623,26 @@ dependencies {
 **如果有更高需求，可以使用以下方法进行控制，但会对广告填充造成影响。**
 同时ADSuyiSDK初始化时开放以下接口，确保mac，imei等设备标识不被读取（目前部分三方广告平台支持）：
 ```java
-    // 是否同意隐私政策
-    .agreePrivacyStrategy(true)
-    // 是否同意使用oaid
-    .isCanUseOaid(true)
-    // 是否可读取wifi状态
-    .isCanUseWifiState(true)
-    // 是否可获取定位数据
-    .isCanUseLocation(true)
-    // 是否可获取设备信息
-    .isCanUsePhoneState(true)
+// 是否同意隐私政策
+.agreePrivacyStrategy(true)
+// 是否同意使用oaid
+.isCanUseOaid(true)
+// 是否可读取wifi状态
+.isCanUseWifiState(true)
+// 是否可获取定位数据
+.isCanUseLocation(true)
+// 是否可获取设备信息
+.isCanUsePhoneState(true)
 ```
 另外还可从根源上解决设备标识被读取等问题，可对配置清单中的权限增加tools:node="remove"配置；
 如下：
+```java
 <!-- 影响广告填充，强烈建议的权限 -->
 <uses-permission android:name="android.permission.READ_PHONE_STATE" tools:node="remove" />
 <!-- 为了提高广告收益，建议设置的权限 -->
 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" tools:node="remove" />
 <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" tools:node="remove" />
+```
 以上操作会对广告填充造成影响，请斟酌使用。
 
 ## 6. 示例代码
