@@ -121,10 +121,16 @@ public class SplashAdActivity extends AppCompatActivity {
                 .debug(BuildConfig.DEBUG)
                 // 是否同意隐私政策
                 .agreePrivacyStrategy(true)
-                // 是否过滤第三方平台的问题广告（例如: 已知某个广告平台在某些机型的Banner广告可能存在问题，如果开启过滤，则在该机型将不再去获取该平台的Banner广告）
-                .filterThirdQuestion(true)
                 // 是否同意使用oaid
                 .isCanUseOaid(true)
+                // 是否可读取wifi状态
+                .isCanUseWifiState(true)
+                // 是否可获取定位数据
+                .isCanUseLocation(true)
+                // 是否可获取设备信息
+                .isCanUsePhoneState(true)
+                // 是否过滤第三方平台的问题广告（例如: 已知某个广告平台在某些机型的Banner广告可能存在问题，如果开启过滤，则在该机型将不再去获取该平台的Banner广告）
+                .filterThirdQuestion(true)
                 // 如果开了浮窗广告，可设置不展示浮窗广告的界面，第一个参数为是否开启默认不展示的页面（例如:激励视频播放页面），第二可变参数为自定义不展示的页面
                 .floatingAdBlockList(false, "cn.admobiletop.adsuyidemo.activity.SplashAdActivity")
                 .build());
