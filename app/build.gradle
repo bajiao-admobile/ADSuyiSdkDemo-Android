@@ -84,7 +84,7 @@ dependencies {
     implementation(name: 'oaid_sdk_1.0.25', ext: 'aar')
 
     // 艾狄墨搏AdapterSdk，必须的`
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile:4.9.3.05143'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile:4.9.3.05144'
 
     // 广点通AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.362.1232.05132'
