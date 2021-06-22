@@ -177,3 +177,7 @@
 -keep class com.ecook.** {* ;}
 -keep class com.parting_soul.http.** {* ;}
 -keep class com.ttx.reader.support.** {* ;}
+-ignorewarnings
+-keepattributes Signature
+-keep class android.**{*;}
+-keep class com.ecook.novel_sdk.bookstore.data.bean.* {*;}

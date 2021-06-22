@@ -250,7 +250,7 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:iqy:1.3.5.05122'
       
     // 小说内容SDK（还需要gson、glide4.9.0和recyclerview支持）
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:novel:1.2.4.03081'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:novel:1.2.8.06112'
     implementation 'com.google.code.gson:gson:2.8.5'
     // 小说sdk必须依赖4.9.0版本glide
     implementation 'com.github.bumptech.glide:glide:4.9.0'
@@ -619,6 +619,10 @@ dependencies {
 -keep class com.ecook.** {* ;}
 -keep class com.parting_soul.http.** {* ;}
 -keep class com.ttx.reader.support.** {* ;}
+-ignorewarnings
+-keepattributes Signature
+-keep class android.**{*;}
+-keep class com.ecook.novel_sdk.bookstore.data.bean.* {*;}
 ```
 
 ### 5.5 隐私信息控制开关
