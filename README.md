@@ -1,4 +1,4 @@
-# ADSuyiSdk Android Sdk——接入文档 V3.2.1.04153
+# ADSuyiSdk Android Sdk——接入文档 V3.2.2.05073
 
  目录 
 
@@ -194,40 +194,40 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
   
      // ADSuyiSdk核心库是必须导入的
-    implementation 'cn.admobiletop.adsuyi.ad:core:3.2.1.04153'
+    implementation 'cn.admobiletop.adsuyi.ad:core:3.2.2.05073'
     // common库是必须导入的，请保持和Demo中版本一致
-    implementation 'com.admobile:common:1.2.6.1'
+    implementation 'com.admobile:common:1.2.7'
     // material库是必须导入的，请保持和Demo中版本一致
-    implementation 'cn.admobiletop.adsuyi.ad:material:1.0.1.02223'
+    implementation 'cn.admobiletop.adsuyi.ad:material:1.0.2.05111'
 
     // OAID库是必须导入的，请保持和Demo中版本一致（如果当前Suyi是3.0.9及以上版本，
     // 必须保证oaid版本为oaid_sdk_1.0.25，oaid_sdk_1.0.25为msa_mdid_1.0.13、oaid_sdk_1.0.23的升级版，请删除原有的msa_mdid）
     implementation(name: 'oaid_sdk_1.0.25', ext: 'aar')
 
     // 艾狄墨搏AdapterSdk，必须的`
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile:4.9.2.05114'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile:4.9.3.05143'
 
     // 广点通AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.351.1221.04223'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.362.1232.05132'
 
     // 头条AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:3.6.1.0.04225'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:3.7.0.2.06023'
 
     // 百度AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu:5.98.04221'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu:5.98.05131'
 
     // 汇量AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:10.9.02.11114'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:15.5.27.06012'
 
     // InmobiAdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:inmobi:7.5.1.11112'
     implementation 'com.squareup.picasso:picasso:2.5.2'
 
     // 讯飞AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ifly:5.0.0.03051'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:ifly:5.0.2.06011'
 
     // 快手AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksad:3.3.14.03312'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksad:3.3.10.06012'
 
     // 米盟AdapterSdk，可选的（还需要gson和glide支持）
     implementation 'cn.admobiletop.adsuyi.ad.adapter:mimo:5.0.6.11263'
@@ -278,7 +278,7 @@ dependencies {
    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt-without:x.x.x.x'
    ```
 
-* 如果接入汇量，需要加入第三方依赖库https://dl.bintray.com/mintegral-official/Andorid_ad_SDK_for_china_support
+* 如果接入汇量，需要加入第三方依赖库https://dl-maven-android.mintegral.com/repository/mbridge_android_sdk_support/
 * 如果接入云码，需要加入第三方依赖库http://maven.aliyun.com/nexus/content/repositories/releases/
 * **广点通适配器4.270.1140版本及以上已经导入了腾讯的tbs，请移除原有的tbs避免编译失败；**
 * **广点通适配器4.310.1180版本及以上已经将腾讯tbs移除，媒体需要手动导入tbs，避免自身项目需要依赖tbs导致编译失败；**
@@ -525,14 +525,13 @@ dependencies {
 -keep class com.iab.** {*;}
 
 # mintegral广告平台混淆
--dontwarn com.mintegral.**
 -keepattributes Signature
 -keepattributes *Annotation*
--keep class com.mintegral.** {*; }
--keep interface com.mintegral.** {*; }
--keep class com.alphab.** {*; }
--keep interface com.alphab.** {*; }
--keep class **.R$* { public static final int mintegral*; }
+-keep class com.mbridge.** {*; }
+-keep interface com.mbridge.** {*; }
+-keep class android.support.v4.** { *; }
+-dontwarn com.mbridge.**
+-keep class **.R$* { public static final int mbridge*; }
 
 # 快手广告平台混淆
 -keep class org.chromium.** { *; }

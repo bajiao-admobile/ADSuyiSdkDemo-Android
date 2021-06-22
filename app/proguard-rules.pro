@@ -89,14 +89,13 @@
 -keep class com.iab.** {*;}
 
 # mintegral广告平台混淆
--dontwarn com.mintegral.**
 -keepattributes Signature
 -keepattributes *Annotation*
--keep class com.mintegral.** {*; }
--keep interface com.mintegral.** {*; }
--keep class com.alphab.** {*; }
--keep interface com.alphab.** {*; }
--keep class **.R$* { public static final int mintegral*; }
+-keep class com.mbridge.** {*; }
+-keep interface com.mbridge.** {*; }
+-keep class android.support.v4.** { *; }
+-dontwarn com.mbridge.**
+-keep class **.R$* { public static final int mbridge*; }
 
 # 快手广告平台混淆
 -keep class org.chromium.** { *; }
