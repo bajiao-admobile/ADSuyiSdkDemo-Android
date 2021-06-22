@@ -32,7 +32,7 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | inmobi    | Inmobi   | Inmobi   |
 | mintegral | 汇量     | Mobvsita |
 | Ifly      | 讯飞     | 讯飞     |
-| ksad      | 快手基础版     | 快手基础版     |
+| ksadbase      | 快手基础版     | 快手基础版     |
 | ksadcontent   | 快手内容版   | 快手内容版     |
 | mimo   | 米盟     | 米盟   |
 | hwpps   | 华为广告联盟     | 华为广告联盟   |
@@ -56,7 +56,7 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | inmobi    | 0.95M   |
 | mintegral | 2.80M     |
 | Ifly      | 0.48M     |
-| ksad      | 2.30M     |
+| ksadbase      | 2.30M     |
 | ksadcontent      | 6.00M     |
 | mimo   | 0.45M     |
 | hwpps   | 1.01M     |
@@ -229,7 +229,7 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:ifly:5.0.2.06011'
 
     // 快手基础版AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksad:3.3.10.06012'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.10.06012'
 
     // 快手内容版AdapterSdk，可选的（比快手基础版多一个内容组件，不需要内容组件无需导入该版本，不可和快手基础版同时导入）
     implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadcontent:3.3.17.06011'
