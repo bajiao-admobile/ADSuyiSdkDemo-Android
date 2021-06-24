@@ -196,9 +196,9 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
   
      // ADSuyiSdk核心库是必须导入的
-    implementation 'cn.admobiletop.adsuyi.ad:core:3.2.2.05073'
+    implementation 'cn.admobiletop.adsuyi.ad:core:3.2.2.05074'
     // common库是必须导入的，请保持和Demo中版本一致
-    implementation 'com.admobile:common:1.2.7'
+    implementation 'com.admobile:common:1.2.8'
     // material库是必须导入的，请保持和Demo中版本一致
     implementation 'cn.admobiletop.adsuyi.ad:material:1.0.2.05111'
 
@@ -207,7 +207,7 @@ dependencies {
     implementation(name: 'oaid_sdk_1.0.25', ext: 'aar')
 
     // 艾狄墨搏AdapterSdk，必须的`
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile:4.9.3.05144'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile:4.9.4.06171'
 
     // 广点通AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.362.1232.05132'
