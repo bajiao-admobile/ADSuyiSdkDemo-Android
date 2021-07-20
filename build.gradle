@@ -21,10 +21,12 @@ allprojects {
         jcenter()
         maven { url "https://jitpack.io" }
         maven { url "http://101.37.191.20:9091/repository/maven-releases/" }
-        // 如果添加了汇量广告，需要添加汇量的远程依赖
+        // 如果添加了汇量广告，需要添加汇量的远程仓库依赖
         maven { url "https://dl-maven-android.mintegral.com/repository/mbridge_android_sdk_support/" }
-        // 如果添加了云码广告，需要添加云码的远程依赖
+        // 如果添加了云码广告，需要添加云码的远程仓库依赖
         maven { url 'http://maven.aliyun.com/nexus/content/repositories/releases/' }
+        // 如果添加了华为联盟广告，需要添加华为联盟的远程仓库依赖
+        maven { url 'https://developer.huawei.com/repo/' }
     }
 }
 

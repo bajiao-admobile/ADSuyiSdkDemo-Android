@@ -1,4 +1,4 @@
-# ADSuyiSdk Android Sdk——接入文档 V3.2.2.05074
+# ADSuyiSdk Android Sdk——接入文档 V3.2.3.06172
 
  目录 
 
@@ -196,7 +196,7 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
   
      // ADSuyiSdk核心库是必须导入的
-    implementation 'cn.admobiletop.adsuyi.ad:core:3.2.2.05074'
+    implementation 'cn.admobiletop.adsuyi.ad:core:3.2.3.06172'
     // common库是必须导入的，请保持和Demo中版本一致
     implementation 'com.admobile:common:1.2.8'
     // material库是必须导入的，请保持和Demo中版本一致
@@ -207,13 +207,13 @@ dependencies {
     implementation(name: 'oaid_sdk_1.0.25', ext: 'aar')
 
     // 艾狄墨搏AdapterSdk，必须的`
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile:4.9.4.06171'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile:4.9.6.07121'
 
     // 广点通AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.362.1232.05132'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.371.1241.06281'
 
     // 头条AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:3.7.0.2.06023'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:3.8.0.0.06231'
 
     // 百度AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu:5.98.05131'
@@ -229,10 +229,10 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:ifly:5.0.2.06011'
 
     // 快手基础版AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.10.06012'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.10.2.06181'
 
     // 快手内容版AdapterSdk，可选的（比快手基础版多一个内容组件，不需要内容组件无需导入该版本，不可和快手基础版同时导入）
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadcontent:3.3.17.06011'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadcontent:3.3.18.1.06181'
 
     // 米盟AdapterSdk，可选的（还需要gson和glide支持）
     implementation 'cn.admobiletop.adsuyi.ad.adapter:mimo:5.0.6.11263'
@@ -241,13 +241,13 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
 
     // 华为广告联盟AdadapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:hwpps:13.4.40.302.06011'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:hwpps:13.4.45.302.06281'
 
     // 云码AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:yunma:1.0.3.04211'
 
     // 爱奇艺AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:iqy:1.3.5.05122'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:iqy:1.3.11.06181'
       
     // 小说内容SDK（还需要gson、glide4.9.0和recyclerview支持）
     implementation 'cn.admobiletop.adsuyi.ad.adapter:novel:1.2.8.06112'
@@ -285,6 +285,7 @@ dependencies {
 
 * 如果接入汇量，需要加入第三方依赖库https://dl-maven-android.mintegral.com/repository/mbridge_android_sdk_support/
 * 如果接入云码，需要加入第三方依赖库http://maven.aliyun.com/nexus/content/repositories/releases/
+* 如果接入华为联盟，需要加入第三方依赖库https://developer.huawei.com/repo/
 * **广点通适配器4.270.1140版本及以上已经导入了腾讯的tbs，请移除原有的tbs避免编译失败；**
 * **广点通适配器4.310.1180版本及以上已经将腾讯tbs移除，媒体需要手动导入tbs，避免自身项目需要依赖tbs导致编译失败；**
 * **由于头条(穿山甲)渠道支持了Android R，引入了Android R的 <queries> 标签,需要对gradle版本进行限制，限制范围为：3.3.3、 3.4.3、 3.5.4、3.6.4、4.0.1 ，开发者根据自身情况酌情升级**
