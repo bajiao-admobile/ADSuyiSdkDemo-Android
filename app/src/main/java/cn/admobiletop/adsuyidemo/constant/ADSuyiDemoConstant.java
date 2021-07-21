@@ -139,7 +139,7 @@ public class ADSuyiDemoConstant {
     /**
      * Dl激励广告位ID
      */
-    public static String ADMOBILE_DL_AD_POS_ID = "63e91628640e20b35d";
+    public static String ADMOBILE_DL_AD_POS_ID = "fd3b78d0c93e75330a";
 
     /**
      * 内容联盟广告位场景id

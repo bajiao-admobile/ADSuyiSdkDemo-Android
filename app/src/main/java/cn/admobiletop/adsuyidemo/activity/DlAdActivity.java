@@ -14,8 +14,12 @@ import java.util.List;
 
 import cn.admobiletop.adsuyi.ad.ADSuyiNativeAd;
 import cn.admobiletop.adsuyi.ad.data.ADSuyiNativeAdInfo;
+import cn.admobiletop.adsuyi.ad.entity.ADSuyiAdNativeStyle;
+import cn.admobiletop.adsuyi.ad.entity.ADSuyiAdSize;
+import cn.admobiletop.adsuyi.ad.entity.ADSuyiExtraParams;
 import cn.admobiletop.adsuyi.ad.error.ADSuyiError;
 import cn.admobiletop.adsuyi.ad.listener.ADSuyiNativeAdListener;
+import cn.admobiletop.adsuyi.util.ADSuyiDisplayUtil;
 import cn.admobiletop.adsuyi.util.ADSuyiToastUtil;
 import cn.admobiletop.adsuyidemo.R;
 import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
@@ -47,8 +51,17 @@ public class DlAdActivity extends BaseAdActivity implements View.OnClickListener
     }
 
     private void initAd() {
+        // 模版广告容器宽度
+        int widthPixels = getResources().getDisplayMetrics().widthPixels;
         // 创建Dl广告实例 (注意dl广告用法与信息流广告相似，但是需要申请dl相应广告位，并非使用信息流的广告位)
         adSuyiNativeAd = new ADSuyiNativeAd(this);
+        // 创建额外参数实例
+        ADSuyiExtraParams extraParams = new ADSuyiExtraParams.Builder()
+                // 设置整个广告视图预期宽高，单位为px，高度如果小于等于0则高度自适应
+                .adSize(new ADSuyiAdSize(widthPixels, 0))
+                .build();
+        // 设置一些额外参数，有些平台的广告可能需要传入一些额外参数，如果有接入头条、Inmobi平台，如果包含这些平台该参数必须设置
+        adSuyiNativeAd.setLocalExtraParams(extraParams);
         // 设置广告监听
         adSuyiNativeAd.setListener(new ADSuyiNativeAdListener() {
             @Override
