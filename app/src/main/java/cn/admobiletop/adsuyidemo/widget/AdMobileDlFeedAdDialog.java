@@ -4,8 +4,6 @@ import android.app.Dialog;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.util.Log;
-import android.view.View;
-import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
@@ -14,29 +12,25 @@ import android.widget.RelativeLayout;
 import com.bumptech.glide.Glide;
 
 import cn.admobiletop.adsuyi.ad.data.ADSuyiNativeAdInfo;
-import cn.admobiletop.adsuyi.ad.data.ADSuyiNativeExpressAdInfo;
 import cn.admobiletop.adsuyi.ad.data.ADSuyiNativeFeedAdInfo;
 import cn.admobiletop.adsuyi.util.ADSuyiAdUtil;
-import cn.admobiletop.adsuyi.util.ADSuyiViewUtil;
 import cn.admobiletop.adsuyidemo.R;
 
 /**
  * @author maipian
- * @description admobileDl广告弹出框
+ * @description admobileDl自渲染广告弹出框
  * @date 2020/10/21
  */
-public class AdMobileDlAdDialog extends Dialog {
+public class AdMobileDlFeedAdDialog extends Dialog {
 
-    private Context context;
     private RelativeLayout rlAdContainer;
     private ImageView ivImage;
     private ImageView ivClose;
     private ImageView ivAdTarget;
 
-    public AdMobileDlAdDialog(@NonNull Context context) {
+    public AdMobileDlFeedAdDialog(@NonNull Context context) {
         super(context);
-        this.context = context;
-        setContentView(R.layout.dialog_admobile_dl_ad);
+        setContentView(R.layout.dialog_admobile_dl_ad2);
         rlAdContainer = findViewById(R.id.rlAdContainer);
         ivImage = findViewById(R.id.ivImage);
         ivClose = findViewById(R.id.ivClose);
@@ -50,27 +44,29 @@ public class AdMobileDlAdDialog extends Dialog {
     }
 
     public void render(ADSuyiNativeAdInfo adSuyiNativeAdInfo) {
-        if(adSuyiNativeAdInfo instanceof ADSuyiNativeExpressAdInfo) {
-            ADSuyiNativeExpressAdInfo nativeExpressAdInfo = (ADSuyiNativeExpressAdInfo) adSuyiNativeAdInfo;
-            if (nativeExpressAdInfo == null) {
-                Log.d("AdMobileDlAdDialog", "ADSuyiNativeExpressAdInfo is null");
+        if(adSuyiNativeAdInfo instanceof ADSuyiNativeFeedAdInfo) {
+            ADSuyiNativeFeedAdInfo nativeFeedAdInfo = (ADSuyiNativeFeedAdInfo) adSuyiNativeAdInfo;
+            if (nativeFeedAdInfo == null) {
+                Log.d("AdMobileDlAdDialog", "ADSuyiNativeFeedAdInfo is null");
+                return;
+            }
+            if (nativeFeedAdInfo.hasMediaView()) {
+                Log.d("AdMobileDlAdDialog", "dl广告没有MediaView");
                 return;
             }
             // 判断广告Info对象是否被释放（调用过ADSuyiNativeAd的release()或ADSuyiNativeAdInfo的release()会释放广告Info对象）
             // 释放后的广告Info对象不能再次使用
-            if (ADSuyiAdUtil.adInfoIsRelease(nativeExpressAdInfo)) {
+            if (ADSuyiAdUtil.adInfoIsRelease(nativeFeedAdInfo)) {
                 Log.d("AdMobileDlAdDialog", "dl广告对象已被释放");
                 return;
             }
-            RelativeLayout relativeLayout = findViewById(R.id.rlAdContainer);
-            // 当前是信息流模板广告，getNativeExpressAdView获取的是整个模板广告视图
-            View nativeExpressAdView = nativeExpressAdInfo.getNativeExpressAdView(relativeLayout);
-            // 将广告视图添加到容器中的便捷方法
-            ADSuyiViewUtil.addAdViewToAdContainer(relativeLayout, nativeExpressAdView);
-
-            // 渲染广告视图, 必须调用, 因为是模板广告, 所以传入ViewGroup和响应点击的控件可能并没有用
-            // 务必在最后调用
-            nativeExpressAdInfo.render(relativeLayout);
+            Glide.with(ivImage).load(nativeFeedAdInfo.getImageUrl()).into(ivImage);
+            ivAdTarget.setImageResource(nativeFeedAdInfo.getPlatformIcon());
+            // 注册关闭按钮，将关闭按钮点击事件交于SDK托管，以便于回调onAdClose
+            nativeFeedAdInfo.registerCloseView(ivClose);
+            // 注册广告交互, 必须调用
+            // 务必最后调用
+            nativeFeedAdInfo.registerViewForInteraction(rlAdContainer, rlAdContainer);
             show();
         } else {
             Log.d("AdMobileDlAdDialog", "dl广告对象类型异常");

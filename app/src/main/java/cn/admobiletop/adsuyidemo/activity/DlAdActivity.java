@@ -1,10 +1,7 @@
 package cn.admobiletop.adsuyidemo.activity;
 
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -14,16 +11,15 @@ import java.util.List;
 
 import cn.admobiletop.adsuyi.ad.ADSuyiNativeAd;
 import cn.admobiletop.adsuyi.ad.data.ADSuyiNativeAdInfo;
-import cn.admobiletop.adsuyi.ad.entity.ADSuyiAdNativeStyle;
 import cn.admobiletop.adsuyi.ad.entity.ADSuyiAdSize;
 import cn.admobiletop.adsuyi.ad.entity.ADSuyiExtraParams;
 import cn.admobiletop.adsuyi.ad.error.ADSuyiError;
 import cn.admobiletop.adsuyi.ad.listener.ADSuyiNativeAdListener;
-import cn.admobiletop.adsuyi.util.ADSuyiDisplayUtil;
 import cn.admobiletop.adsuyi.util.ADSuyiToastUtil;
 import cn.admobiletop.adsuyidemo.R;
 import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
-import cn.admobiletop.adsuyidemo.widget.AdMobileDlAdDialog;
+import cn.admobiletop.adsuyidemo.widget.AdMobileDlExpressAdDialog;
+import cn.admobiletop.adsuyidemo.widget.AdMobileDlFeedAdDialog;
 
 /**
  * @author maipian
@@ -33,7 +29,7 @@ import cn.admobiletop.adsuyidemo.widget.AdMobileDlAdDialog;
 public class DlAdActivity extends BaseAdActivity implements View.OnClickListener {
 
     private ADSuyiNativeAd adSuyiNativeAd;
-    AdMobileDlAdDialog adMobileDlAdDialog;
+    AdMobileDlFeedAdDialog adMobileDlAdDialog;
     private TextView tvDesc;
 
     @Override
@@ -75,7 +71,7 @@ public class DlAdActivity extends BaseAdActivity implements View.OnClickListener
                 Log.d(ADSuyiDemoConstant.TAG, "onAdReceive: " + adInfoList.size());
                 if (adInfoList != null && !adInfoList.isEmpty()) {
                     ADSuyiToastUtil.show(getApplicationContext(), "广告获取成功");
-                    adMobileDlAdDialog = new AdMobileDlAdDialog(DlAdActivity.this);
+                    adMobileDlAdDialog = new AdMobileDlFeedAdDialog(DlAdActivity.this);
                     adMobileDlAdDialog.render(adInfoList.get(0));
                     tvDesc.append("\n\n获取DL广告成功");
                 }

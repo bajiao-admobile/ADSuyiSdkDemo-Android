@@ -2,7 +2,6 @@ package cn.admobiletop.adsuyidemo.activity;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -18,10 +17,9 @@ import cn.admobiletop.adsuyi.ad.error.ADSuyiError;
 import cn.admobiletop.adsuyi.ad.listener.ADSuyiNativeAdListener;
 import cn.admobiletop.adsuyi.ad.listener.ADSuyiRewardVodAdListener;
 import cn.admobiletop.adsuyi.util.ADSuyiAdUtil;
-import cn.admobiletop.adsuyi.util.ADSuyiToastUtil;
 import cn.admobiletop.adsuyidemo.R;
 import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
-import cn.admobiletop.adsuyidemo.widget.AdMobileDlAdDialog;
+import cn.admobiletop.adsuyidemo.widget.AdMobileDlExpressAdDialog;
 
 /**
  * @author maipian
@@ -31,7 +29,7 @@ import cn.admobiletop.adsuyidemo.widget.AdMobileDlAdDialog;
 public class RewardAdSwitchActivity extends BaseAdActivity implements View.OnClickListener {
 
     private ADSuyiNativeAd adSuyiNativeAd;
-    AdMobileDlAdDialog adMobileDlAdDialog;
+    AdMobileDlExpressAdDialog adMobileDlAdDialog;
     private TextView tvDesc;
 
     @Override
@@ -64,7 +62,7 @@ public class RewardAdSwitchActivity extends BaseAdActivity implements View.OnCli
                 Log.d(ADSuyiDemoConstant.TAG, "onAdReceive: " + adInfoList.size());
                 if (adInfoList != null && !adInfoList.isEmpty()) {
                     tvDesc.append("\n\n获取DL广告成功");
-                    adMobileDlAdDialog = new AdMobileDlAdDialog(RewardAdSwitchActivity.this);
+                    adMobileDlAdDialog = new AdMobileDlExpressAdDialog(RewardAdSwitchActivity.this);
                     adMobileDlAdDialog.render(adInfoList.get(0));
                 }
             }
