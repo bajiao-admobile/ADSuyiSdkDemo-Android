@@ -177,7 +177,7 @@ allprojects {
         jcenter()
         mavenCentral()
         // 添加以下仓库地址
-        maven { url "http://101.37.191.20:9091/repository/maven-releases/" }
+        maven { url "https://maven.admobile.top/repository/maven-releases/" }
     }
 }
 ```
@@ -284,7 +284,7 @@ dependencies {
    ```
 
 * 如果接入汇量，需要加入第三方依赖库https://dl-maven-android.mintegral.com/repository/mbridge_android_sdk_support/
-* 如果接入云码，需要加入第三方依赖库http://maven.aliyun.com/nexus/content/repositories/releases/
+* 如果接入云码，需要加入第三方依赖库https://maven.aliyun.com/nexus/content/repositories/releases/
 * 如果接入华为联盟，需要加入第三方依赖库https://developer.huawei.com/repo/
 * **广点通适配器4.270.1140版本及以上已经导入了腾讯的tbs，请移除原有的tbs避免编译失败；**
 * **广点通适配器4.310.1180版本及以上已经将腾讯tbs移除，媒体需要手动导入tbs，避免自身项目需要依赖tbs导致编译失败；**
