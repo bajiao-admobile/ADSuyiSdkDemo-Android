@@ -37,6 +37,8 @@ public class BannerAdActivity extends BaseAdActivity {
     private void loadBannerAd() {
         // 创建Banner广告实例，第一个参数可以是Activity或Fragment，第二个参数是广告容器（请保证容器不会拦截点击、触摸等事件）
         suyiBannerAd = new ADSuyiBannerAd(this, flContainer);
+        // 设置自刷新时间
+        suyiBannerAd.setAutoRefreshInterval(ADSuyiDemoConstant.BANNER_AD_AUTO_REFRESH_INTERVAL);
         // 设置仅支持的广告平台，设置了这个值，获取广告时只会去获取该平台的广告，null或空字符串为不限制，默认为null，方便调试使用，上线时建议不设置
         suyiBannerAd.setOnlySupportPlatform(ADSuyiDemoConstant.BANNER_AD_ONLY_SUPPORT_PLATFORM);
         // 设置Banner广告监听

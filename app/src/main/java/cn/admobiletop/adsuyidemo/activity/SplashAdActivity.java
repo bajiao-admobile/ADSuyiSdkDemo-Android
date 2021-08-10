@@ -28,6 +28,7 @@ import cn.admobiletop.adsuyi.ad.error.ADSuyiError;
 import cn.admobiletop.adsuyi.ad.listener.ADSuyiSplashAdListener;
 import cn.admobiletop.adsuyi.config.ADSuyiInitConfig;
 import cn.admobiletop.adsuyi.util.ADSuyiToastUtil;
+import cn.admobiletop.adsuyidemo.ADSuyiApplication;
 import cn.admobiletop.adsuyidemo.BuildConfig;
 import cn.admobiletop.adsuyidemo.R;
 import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
@@ -113,7 +114,7 @@ public class SplashAdActivity extends AppCompatActivity {
      */
     private void initADSuyiSdkAndLoadSplashAd() {
         // 初始化ADSuyi广告SDK
-        ADSuyiSdk.getInstance().init(this, new ADSuyiInitConfig.Builder()
+        ADSuyiSdk.getInstance().init(ADSuyiApplication.context, new ADSuyiInitConfig.Builder()
                 // 设置APPID
                 .appId(ADSuyiDemoConstant.APP_ID)
                 // 是否开启Debug，开启会有详细的日志信息打印，如果用上ADSuyiToastUtil工具还会弹出toast提示。

@@ -39,7 +39,7 @@ public class ADSuyiDemoConstant {
     /**
      * Banner广告自刷新间隔时长，单位秒
      */
-    public static int BANNER_AD_AUTO_REFRESH_INTERVAL = 0;
+    public static int BANNER_AD_AUTO_REFRESH_INTERVAL = 30;
     /**
      * BANNER广告位仅支持的平台
      */

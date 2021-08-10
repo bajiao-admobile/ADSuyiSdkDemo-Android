@@ -21,6 +21,7 @@ import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
  * @date 2020/3/25
  */
 public class ADSuyiApplication extends Application {
+    public static Context context;
     /**
      * 检查是否需要再次打开开屏界面的间隔时长。
      * 180 * 1000 为 3分钟间隔时长，可自行修改时长
@@ -37,6 +38,7 @@ public class ADSuyiApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        context = this;
         // 添加bugly初始化（该初始化与广告SDK无关，广告SDK中不包含bugly相关内容，仅供Demo错误信息收集使用）
         CrashReport.initCrashReport(getApplicationContext(), "6d9d9f24ee", true);
 
