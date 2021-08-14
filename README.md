@@ -200,7 +200,7 @@ dependencies {
     // common库是必须导入的，请保持和Demo中版本一致
     implementation 'com.admobile:common:1.2.9'
     // material库是必须导入的，请保持和Demo中版本一致
-    implementation 'cn.admobiletop.adsuyi.ad:material:1.0.2.05111'
+    implementation 'cn.admobiletop.adsuyi.ad:material:1.0.3.07261'
 
     // OAID库是必须导入的，请保持和Demo中版本一致（如果当前Suyi是3.0.9及以上版本，
     // 必须保证oaid版本为oaid_sdk_1.0.25，oaid_sdk_1.0.25为msa_mdid_1.0.13、oaid_sdk_1.0.23的升级版，请删除原有的msa_mdid）
