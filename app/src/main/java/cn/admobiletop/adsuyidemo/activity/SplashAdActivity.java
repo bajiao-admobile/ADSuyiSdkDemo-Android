@@ -21,6 +21,12 @@ import java.util.List;
 
 import cn.admobiletop.adsuyi.ADSuyiSdk;
 import cn.admobiletop.adsuyi.ad.ADSuyiSplashAd;
+import cn.admobiletop.adsuyi.ad.api.ADSuyiNetworkRequestInfo;
+import cn.admobiletop.adsuyi.ad.api.BaiduSplashAdRequestInfo;
+import cn.admobiletop.adsuyi.ad.api.GdtSplashAdRequestInfo;
+import cn.admobiletop.adsuyi.ad.api.KsSplashAdRequestInfo;
+import cn.admobiletop.adsuyi.ad.api.TTSplashAdRequestInfo;
+import cn.admobiletop.adsuyi.ad.api.annotation.DownloadTipParam;
 import cn.admobiletop.adsuyi.ad.data.ADSuyiAdInfo;
 import cn.admobiletop.adsuyi.ad.entity.ADSuyiAdSize;
 import cn.admobiletop.adsuyi.ad.entity.ADSuyiExtraParams;
@@ -232,7 +238,8 @@ public class SplashAdActivity extends AppCompatActivity {
             ActivityCompat.requestPermissions(this, permissionList.toArray(new String[0]), REQUEST_CODE);
         } else {
             // 加载开屏广告，参数为广告位ID，同一个ADSuyiSplashAd只有一次loadAd有效
-            adSuyiSplashAd.loadAd(ADSuyiDemoConstant.SPLASH_AD_POS_ID);
+//            adSuyiSplashAd.loadAd(ADSuyiDemoConstant.SPLASH_AD_POS_ID);
+            loadSplashAd();
         }
     }
 
@@ -241,8 +248,29 @@ public class SplashAdActivity extends AppCompatActivity {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (REQUEST_CODE == requestCode) {
             // 加载开屏广告，参数为广告位ID，同一个ADSuyiSplashAd只有一次loadAd有效
-            adSuyiSplashAd.loadAd(ADSuyiDemoConstant.SPLASH_AD_POS_ID);
+            loadSplashAd();
         }
+    }
+
+    private void loadSplashAd() {
+        // 加载开屏广告，参数为广告位ID，同一个ADSuyiSplashAd只有一次loadAd有效
+//        adSuyiSplashAd.loadAd(ADSuyiDemoConstant.SPLASH_AD_POS_ID);
+        adSuyiSplashAd.loadAd(ADSuyiDemoConstant.SPLASH_AD_POS_ID,
+                getSplashInfo("e866cfb0", "2058622", "891", DownloadTipParam.DOWNLOAD_TIP_ALL));
+    }
+
+    /**
+     * 设置开屏保底广告 目前支持广点通、头条、百度、快手保底，保底是为了加速用户第一次获取开屏广告时的速度。
+     * demo中演示百度平台，有其它平台需求的可以查看文档或在对接群中咨询
+     *
+     * @param platformAppId suyi开屏广告源应用ID
+     * @param platformPosId suyi开屏广告源ID
+     * @param adPosListId suyi开屏广告源AdPosList ID
+     * @param downloadTip 下载提示 DOWNLOAD_TIP_NOTHING不提示 DOWNLOAD_TIP_MOBILE_TRAFFIC移动网络提示 DOWNLOAD_TIP_ALL 全提示
+     * @return
+     */
+    private ADSuyiNetworkRequestInfo getSplashInfo(String platformAppId, String platformPosId, String adPosListId, int downloadTip) {
+        return new KsSplashAdRequestInfo(platformAppId, platformPosId, adPosListId, downloadTip);
     }
 
     @Override

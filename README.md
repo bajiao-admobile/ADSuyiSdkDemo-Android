@@ -1,4 +1,4 @@
-# ADSuyiSdk Android Sdk——接入文档 V3.2.3.06172
+# ADSuyiSdk Android Sdk——接入文档 V3.3.0.07132
 
  目录 
 
@@ -196,9 +196,9 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
   
      // ADSuyiSdk核心库是必须导入的
-    implementation 'cn.admobiletop.adsuyi.ad:core:3.2.3.06172'
+    implementation 'cn.admobiletop.adsuyi.ad:core:3.3.0.07132'
     // common库是必须导入的，请保持和Demo中版本一致
-    implementation 'com.admobile:common:1.2.8'
+    implementation 'com.admobile:common:1.2.9'
     // material库是必须导入的，请保持和Demo中版本一致
     implementation 'cn.admobiletop.adsuyi.ad:material:1.0.2.05111'
 
@@ -207,19 +207,19 @@ dependencies {
     implementation(name: 'oaid_sdk_1.0.25', ext: 'aar')
 
     // 艾狄墨搏AdapterSdk，必须的`
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile:4.9.6.07121'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile:4.9.7.07141'
 
     // 广点通AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.371.1241.06281'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.380.1250.07211'
 
     // 头条AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:3.8.0.0.06231'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:3.8.0.3.07191'
 
     // 百度AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu:5.98.05131'
 
     // 汇量AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:15.5.27.06012'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:15.6.07.07192'
 
     // InmobiAdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:inmobi:7.5.1.11112'
@@ -229,10 +229,10 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:ifly:5.0.2.06011'
 
     // 快手基础版AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.10.2.06181'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.11.07171'
 
     // 快手内容版AdapterSdk，可选的（比快手基础版多一个内容组件，不需要内容组件无需导入该版本，不可和快手基础版同时导入）
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadcontent:3.3.18.1.06181'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadcontent:3.3.19.1.07171'
 
     // 米盟AdapterSdk，可选的（还需要gson和glide支持）
     implementation 'cn.admobiletop.adsuyi.ad.adapter:mimo:5.0.6.11263'
@@ -241,7 +241,7 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
 
     // 华为广告联盟AdadapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:hwpps:13.4.45.302.06281'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:hwpps:13.4.45.304.07192'
 
     // 云码AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:yunma:1.0.3.04211'
@@ -767,6 +767,49 @@ adSuyiSplashAd.setListener(new ADSuyiSplashAdListener() {
 
 // 加载开屏广告
 adSuyiSplashAd.loadAd(ADSuyiDemoConstant.SPLASH_AD_POS_ID);
+
+/**
+ * 加载开屏保底广告
+ * 功能说明：App在首次启动时，需要先请求获取广告位配置文件后，然后再去请求开屏广告，也就是首次加载开屏广告时需要两次串行网络请求，因此很容易因超时导致开屏广告展示失败。
+ * 解决方案：为避免开屏超时问题，开放此设置给开发者，开发者可以根据实际需求选择一家广告平台，通过API接口将必需参数传递给Suyi聚合SDK。（该设置只能指定一家广告平台，并且首次启动时只会请求该平台的广告，但App首次开屏广告将不受ADmobile后台控制，包括下载提示，广告位关闭。）
+ * 该设置仅会在首次加载开屏广告时，SDK会使用开发者传入的参数进行广告请求，同时获取后台配置文件的广告配置信息缓存到本地（首次请求广告平台广告和获取配置信息时并发进行），后续的开屏广告将按照缓存缓存的后台广告位配置顺序进行开屏广告请求。
+ * 支持穿山甲、优量汇、快手、百度
+ */
+adSuyiSplashAd.loadAd(ADSuyiDemoConstant.SPLASH_AD_POS_ID, new BaiduSplashAdRequestInfo(platformAppId, platformPosId, adPosListId, downloadTip));
+
+/**
+ * 获取百度开屏保底广告Info
+ *
+ * @param platformAppId suyi开屏广告源应用ID
+ * @param platformPosId suyi开屏广告源ID
+ * @param adPosListId suyi开屏广告源AdPosList ID
+ * @param downloadTip 下载提示 DownloadTipParam.DOWNLOAD_TIP_NOTHING不提示 DownloadTipParam.DOWNLOAD_TIP_MOBILE_TRAFFIC移动网络提示 DownloadTipParam.DOWNLOAD_TIP_ALL 全提示
+ * @return
+ */
+new BaiduSplashAdRequestInfo(String platformAppId, String platformPosId, String adPosListId, int downloadTip)
+/**
+ * 获取广点通开屏保底广告Info
+ * ...
+ */
+new GdtSplashAdRequestInfo(String platformAppId, String platformPosId, String adPosListId, int downloadTip)
+/**
+ * 获取快手开屏保底广告Info
+ * ...
+ */
+new KsSplashAdRequestInfo(String platformAppId, String platformPosId, String adPosListId, int downloadTip)
+
+/**
+ * 获取头条开屏保底广告Info
+ *
+ * @param platformAppId suyi开屏广告源应用ID
+ * @param platformPosId suyi开屏广告源ID
+ * @param adPosListId suyi开屏广告源AdPosList ID
+ * @param downloadTip 下载提示 DownloadTipParam.DOWNLOAD_TIP_NOTHING不提示 DownloadTipParam.DOWNLOAD_TIP_MOBILE_TRAFFIC移动网络提示 DownloadTipParam.DOWNLOAD_TIP_ALL 全提示
+ * @param renderTip 渲染方式 RenderTypeParam.RENDER_TYPE_NATIVE_EXPRESS模版渲染 RenderTypeParam.RENDER_TYPE_NATIVE原生渲染
+ * @return
+ */
+new TTSplashAdRequestInfo(String platformAppId, String platformPosId, String adPosListId, int downloadTip, int renderTip)
+
 ```
 
 > [开屏广告示例详情](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/SplashAdActivity.java)
