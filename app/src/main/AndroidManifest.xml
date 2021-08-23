@@ -8,6 +8,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <!-- 广点通广告必须的权限 -->
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
@@ -17,7 +18,6 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <!-- 为了提高广告收益，建议设置的权限 -->
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <!-- 如果有视频相关的广告播放请务必添加-->
