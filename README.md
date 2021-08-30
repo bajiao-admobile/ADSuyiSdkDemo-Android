@@ -320,11 +320,11 @@ dependencies {
 
 <font color=#ff0000>OAID是必须集成项，没有集成将会抛出异常提醒开发者</font>，OAID集成并不繁琐，SDK中已经进行了OAID的封装，只需以下几步即可完成OAID的支持；
 
-1. 导入安全联盟的OAID支持库 **oaid_sdk_1.0.25.aar或oaid_sdk_1.0.26.aar**，可在Demo的libs目录下找到，**强烈建议使用和Demo中一样版本的OAID库（包括项目中已存在的依赖的oaid版本）；**
-    由于oaid1.0.25版本和oaid1.0.26版本接口有变更，不能向下兼容，并且1.0.26版本还需要申请密钥才可使用，故suyi平台提供相应版本适配器进行适配。
-    如果没有特殊需求，可以使用oaid1.0.25及相应适配器。
-    如果有特殊需求，可以使用oaid1.0.26及相应适配器，并且在初始化时传入assets中的密钥（demo SplashAdActivity 145行），以便适配器中进行初始化。
-    媒体如果想获取ADSuyi中的oaid，可以使用改方法进行获取ADSuyiSdk.getInstance().getOAID()，由于oaid的获取是异步的，可能获取到空字符串的情况。
+1. 导入安全联盟的OAID支持库 **oaid_sdk_1.0.25.aar或oaid_sdk_1.0.26.aar**，可在Demo的libs目录下找到，**强烈建议使用和Demo中一样版本的OAID库（包括项目中已存在的依赖的oaid版本）；**<br>
+    由于oaid1.0.25版本和oaid1.0.26版本接口有变更，不能向下兼容，并且1.0.26版本还需要申请密钥才可使用，故suyi平台提供相应版本适配器进行适配。<br>
+    如果没有特殊需求，可以使用oaid1.0.25及相应适配器。<br>
+    如果有特殊需求，可以使用oaid1.0.26及相应适配器，并且在初始化时传入assets中的密钥（demo SplashAdActivity 145行），以便适配器中进行初始化。<br>
+    媒体如果想获取ADSuyi中的oaid，可以使用改方法进行获取ADSuyiSdk.getInstance().getOAID()，由于oaid的获取是异步的，可能获取到空字符串的情况。<br>
 
 2. 将Demo中assets文件夹下的**supplierconfig.json**文件复制到自己的assets目录下并按照**supplierconfig.json**文件中的说明进行OAID的 **AppId** 配置，**supplierconfig.json**文件名不可修改。需要设置 appid 的部分需要去对应厂商的应用商店的应用信息中查看。；
 
