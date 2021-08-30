@@ -140,6 +140,9 @@ public class SplashAdActivity extends AppCompatActivity {
                 .filterThirdQuestion(true)
                 // 如果开了浮窗广告，可设置不展示浮窗广告的界面，第一个参数为是否开启默认不展示的页面（例如:激励视频播放页面），第二可变参数为自定义不展示的页面
                 .floatingAdBlockList(false, "cn.admobiletop.adsuyidemo.activity.SplashAdActivity")
+                // 注意：如果使用oaid1.0.26版本，需要在assets中放置密钥，并将密钥传入ADSuyi（suyi内部初始化oaid需要使用）
+                // 密钥需要到移动安全联盟申请（非oaid1.0.26版本无需使用该接口）
+                .setOaidCertPath("cn.admobiletop.adsuyidemo.cert.pem")
                 .build());
 
         initSplashAd();

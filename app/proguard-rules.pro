@@ -163,11 +163,9 @@
 -dontwarn com.bumptech.glide.load.resource.bitmap.VideoDecoder
 
 # 云码混淆
--keep class com.alibaba.sdk.android.cloudcode.** {*;}
--keep interface com.alibaba.sdk.android.logger.ILogger {*;}
--keep enum com.alibaba.sdk.android.logger.LogLevel {*;}
--keep class com.alibaba.sdk.android.error.** {*;}
--keep class com.alibaba.sdk.android.startup.** {*;}
+-keep class com.alibaba.sdk.android.** {*;}
+-keep class io.vov.** {*;}
+-keep class com.UCMobile.Apollo.** {*;}
 
 # 爱奇艺
 -keep class com.mcto.sspsdk.** { *; }
