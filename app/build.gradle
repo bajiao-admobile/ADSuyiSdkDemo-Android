@@ -87,13 +87,13 @@ dependencies {
 
     // TODO OAID库是必须导入的，请保持和Demo中版本一致（如果当前Suyi是3.0.9及以上版本，
     // TODO 必须保证oaid版本为oaid_sdk_1.0.25，oaid_sdk_1.0.25为msa_mdid_1.0.13、oaid_sdk_1.0.23的升级版，请删除原有的msa_mdid）
-//    implementation(name: 'oaid_sdk_1.0.25', ext: 'aar')
-//    // oaid1.0.25版本适配器，导入1.0.25版本oaid必须的
-//    implementation 'cn.admobiletop.adsuyi.ad:oaid:1.0.25.08021'
+    implementation(name: 'oaid_sdk_1.0.25', ext: 'aar')
+    // oaid1.0.25版本适配器，导入1.0.25版本oaid必须的
+    implementation 'cn.admobiletop.adsuyi.ad:oaid:1.0.25.08021'
     // 注意 oaid1.0.26与oaid1.0.25版本间有差异，不能同时导入
-    implementation(name: 'oaid_sdk_1.0.26', ext: 'aar')
+//    implementation(name: 'oaid_sdk_1.0.26', ext: 'aar')
     // oaid1.0.26版本适配器，导入1.0.26版本oaid必须的
-    implementation 'cn.admobiletop.adsuyi.ad:oaid:1.0.26.08041'
+//    implementation 'cn.admobiletop.adsuyi.ad:oaid:1.0.26.08041'
 
     // 艾狄墨搏AdapterSdk，必须的`
     implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile:4.9.8.07291'

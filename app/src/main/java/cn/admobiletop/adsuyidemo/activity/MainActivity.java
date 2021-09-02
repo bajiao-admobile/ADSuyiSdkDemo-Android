@@ -20,6 +20,7 @@ import cn.admobiletop.adsuyi.ADSuyiSdk;
 import cn.admobiletop.adsuyi.ad.data.ADSuyiAdType;
 import cn.admobiletop.adsuyidemo.R;
 import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
+import cn.admobiletop.adsuyidemo.util.LoadAdUtil;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ((TextView) findViewById(R.id.tvVersion)).setText("V" + ADSuyiSdk.getInstance().getSdkVersion());
 
         findViewById(R.id.btnSplashAd).setOnClickListener(this);
+        findViewById(R.id.btnSplashVPlusAd).setOnClickListener(this);
         findViewById(R.id.btnBannerAd).setOnClickListener(this);
         findViewById(R.id.btnNativeAd).setOnClickListener(this);
         findViewById(R.id.btnRewardVodAd).setOnClickListener(this);
@@ -48,6 +50,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()) {
             case R.id.btnSplashAd:
                 startActivity(SplashAdActivity.class);
+                break;
+            case R.id.btnSplashVPlusAd:
+                LoadAdUtil.loadSplashVPlusAd(this, findViewById(R.id.flContainer));
                 break;
             case R.id.btnBannerAd:
                 startActivity(BannerAdActivity.class);

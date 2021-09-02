@@ -34,14 +34,32 @@
                 android:layout_marginRight="16dp"
                 android:orientation="vertical">
 
-                <Button
-                    android:id="@+id/btnSplashAd"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:background="@drawable/shape_background_button_selector"
-                    android:stateListAnimator="@null"
-                    android:text="@string/splash_ad" />
+                    android:orientation="horizontal"
+                    android:layout_marginTop="16dp">
+
+                    <Button
+                        android:id="@+id/btnSplashAd"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/shape_background_button_selector"
+                        android:stateListAnimator="@null"
+                        android:text="@string/splash_ad" />
+
+                    <Button
+                        android:id="@+id/btnSplashVPlusAd"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/shape_background_button_selector"
+                        android:stateListAnimator="@null"
+                        android:text="@string/splash_v_plus_ad"
+                        android:layout_marginLeft="16dp"/>
+
+                </LinearLayout>
 
                 <Button
                     android:id="@+id/btnNativeAd"
@@ -137,5 +155,11 @@
             android:textColor="@color/colorPrimaryDark"
             android:textSize="16sp" />
     </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/flContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
 
 </RelativeLayout>

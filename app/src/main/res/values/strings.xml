@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">ADmobile 广告聚合SDK Demo</string>
     <string name="splash_ad">开屏广告</string>
+    <string name="splash_v_plus_ad">V+开屏广告</string>
     <string name="banner_ad">Banner广告</string>
     <string name="native_ad">信息流广告</string>
     <string name="reward_vod_ad">激励视频广告</string>
