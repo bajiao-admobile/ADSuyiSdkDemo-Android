@@ -75,6 +75,11 @@
 -keep class com.pgl.sys.ces.* {*;}
 -keep class com.bytedance.embed_dr.** {*;}
 -keep class com.bytedance.embedapplog.** {*;}
+-keep class com.bytedance.frameworks.** { *; }
+-keep class ms.bd.c.Pgl.**{*;}
+-keep class com.bytedance.mobsec.metasec.ml.**{*;}
+-keep class com.ss.android.**{*;}
+-keep class com.bykv.vk.** {*;}
 
 # imobi广告平台混淆
 -dontwarn com.inmobi.**
