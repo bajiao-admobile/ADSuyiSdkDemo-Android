@@ -50,7 +50,7 @@
         </provider>
 
         <activity
-            android:name=".activity.SplashAdActivity"
+            android:name=".activity.ad.SplashAdActivity"
             android:screenOrientation="portrait"
             android:theme="@style/splash">
             <intent-filter>
@@ -65,75 +65,75 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeNoActionBar" />
         <activity
-            android:name=".activity.BannerAdActivity"
+            android:name=".activity.ad.BannerAdActivity"
             android:label="@string/banner_ad"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.RewardVodAdActivity"
+            android:name=".activity.ad.RewardVodAdActivity"
             android:label="@string/reward_vod_ad"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.FullScreenVodAdActivity"
+            android:name=".activity.ad.FullScreenVodAdActivity"
             android:label="@string/full_screen_vod_ad"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.InterstitialAdActivity"
+            android:name=".activity.ad.InterstitialAdActivity"
             android:label="@string/interstitial_ad"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.NativeAdActivity"
+            android:name=".activity.ad.NativeAdActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:label="@string/native_ad"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeNoActionBar" />
         <activity
-            android:name=".activity.DrawVodActivity"
+            android:name=".activity.ad.DrawVodActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:label="@string/draw_vod_ad"
             android:screenOrientation="portrait"
             android:theme="@style/noActionBar" />
         <activity
-            android:name=".activity.FragmentActivity"
+            android:name=".activity.other.FragmentActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:label="@string/fragment_examples"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.PositionSettingActivity"
+            android:name=".activity.setting.PositionSettingActivity"
             android:label="@string/setting"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.FloatingAdSettingActivity"
+            android:name=".activity.setting.FloatingAdSettingActivity"
             android:label="@string/setting"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.NormalWebActivity"
+            android:name=".activity.other.NormalWebActivity"
             android:label="@string/web"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.DlAdActivity"
+            android:name=".activity.other.DlAdActivity"
             android:label="@string/admobile_dl_ad"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.RewardAdSwitchActivity"
+            android:name=".activity.other.RewardAdSwitchActivity"
             android:label="@string/admobile_dl_ad"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.ContentAllianceAdActivity"
+            android:name=".activity.other.ContentAllianceAdActivity"
             android:label="@string/content_alliance"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".activity.SettingActivity"
+            android:name=".activity.setting.SettingActivity"
             android:label="@string/setting"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".activity.DlModuleActivity"
+            android:name=".activity.other.DlModuleActivity"
             android:label="@string/admobile_dl_ad"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".activity.ContentModuleActivity"
+            android:name=".activity.other.ContentModuleActivity"
             android:label="@string/admobile_dl_ad"
             android:screenOrientation="portrait" />
     </application>

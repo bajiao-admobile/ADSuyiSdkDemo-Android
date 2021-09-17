@@ -1,4 +1,4 @@
-package cn.admobiletop.adsuyidemo.activity;
+package cn.admobiletop.adsuyidemo.activity.setting;
 
 import android.content.Context;
 import android.content.Intent;
@@ -7,7 +7,6 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SwitchCompat;
 import android.view.View;
-import android.widget.CheckBox;
 import android.widget.RadioButton;
 
 import cn.admobiletop.adsuyi.ADSuyiSdk;

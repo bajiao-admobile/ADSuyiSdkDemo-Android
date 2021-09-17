@@ -1,8 +1,7 @@
-package cn.admobiletop.adsuyidemo.activity;
+package cn.admobiletop.adsuyidemo.activity.other;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -10,6 +9,7 @@ import android.widget.Toast;
 import cn.admobiletop.adsuyi.ADSuyiSdk;
 import cn.admobiletop.adsuyi.util.ADSuyiToastUtil;
 import cn.admobiletop.adsuyidemo.R;
+import cn.admobiletop.adsuyidemo.activity.base.BaseAdActivity;
 
 
 public class ContentModuleActivity extends BaseAdActivity implements View.OnClickListener {

@@ -1,4 +1,4 @@
-package cn.admobiletop.adsuyidemo.activity;
+package cn.admobiletop.adsuyidemo.activity.ad;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;

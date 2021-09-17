@@ -1,8 +1,7 @@
-package cn.admobiletop.adsuyidemo.activity;
+package cn.admobiletop.adsuyidemo.activity.ad;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -14,6 +13,7 @@ import cn.admobiletop.adsuyi.ad.listener.ADSuyiInterstitialAdListener;
 import cn.admobiletop.adsuyi.util.ADSuyiAdUtil;
 import cn.admobiletop.adsuyi.util.ADSuyiToastUtil;
 import cn.admobiletop.adsuyidemo.R;
+import cn.admobiletop.adsuyidemo.activity.base.BaseAdActivity;
 import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
 
 /**

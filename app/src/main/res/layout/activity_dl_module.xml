@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/pageColorPrimary"
-    tools:context=".activity.DlModuleActivity">
+    tools:context=".activity.other.DlModuleActivity">
 
     <Button
         android:id="@+id/btnDlNormal"

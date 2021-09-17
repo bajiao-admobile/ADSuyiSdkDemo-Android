@@ -18,8 +18,8 @@ import java.util.Map;
 
 import cn.admobiletop.adsuyi.ad.data.ADSuyiAdType;
 import cn.admobiletop.adsuyidemo.R;
-import cn.admobiletop.adsuyidemo.activity.FloatingAdSettingActivity;
-import cn.admobiletop.adsuyidemo.activity.PositionSettingActivity;
+import cn.admobiletop.adsuyidemo.activity.setting.FloatingAdSettingActivity;
+import cn.admobiletop.adsuyidemo.activity.setting.PositionSettingActivity;
 import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
 import cn.admobiletop.adsuyidemo.entity.AdSettingData;
 

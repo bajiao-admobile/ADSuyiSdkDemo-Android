@@ -32,8 +32,8 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | inmobi    | Inmobi   | Inmobi   |
 | mintegral | 汇量     | Mobvsita |
 | Ifly      | 讯飞     | 讯飞     |
-| ksadbase      | 快手基础版     | 快手基础版     |
-| ksadcontent   | 快手内容版   | 快手内容版     |
+| ksad      | 快手基础版     | 快手基础版     |
+| ksad   | 快手内容版   | 快手内容版     |
 | mimo   | 米盟     | 米盟   |
 | hwpps   | 华为广告联盟     | 华为广告联盟   |
 | yunma   | 云码     | 云码   |
@@ -57,8 +57,8 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | inmobi    | 0.95M   |
 | mintegral | 2.80M     |
 | Ifly      | 0.48M     |
-| ksadbase      | 2.30M     |
-| ksadcontent      | 6.00M     |
+| ksad(快手基础版)      | 2.30M     |
+| ksadcontent(快手内容版)      | 6.00M     |
 | mimo   | 0.45M     |
 | hwpps   | 1.01M     |
 | yunma   | 6.30M     |
@@ -836,7 +836,7 @@ new TTSplashAdRequestInfo(String platformAppId, String platformPosId, String adP
 
 ```
 
-> [开屏广告示例详情](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/SplashAdActivity.java)
+> [开屏广告示例详情](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/ad/SplashAdActivity.java)
 
 
 
@@ -888,7 +888,7 @@ suyiBannerAd.setSceneId(ADSuyiDemoConstant.BANNER_AD_SCENE_ID);
 suyiBannerAd.loadAd(ADSuyiDemoConstant.BANNER_AD_POS_ID);
 ```
 
->[Banner广告示例详情](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/BannerAdActivity.java)
+>[Banner广告示例详情](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/ad/BannerAdActivity.java)
 
 
 
@@ -980,7 +980,7 @@ adSuyiNativeAd.setSceneId(ADSuyiDemoConstant.NATIVE_AD_SCENE_ID);
 adSuyiNativeAd.loadAd(ADSuyiDemoConstant.NATIVE_AD_POS_ID, ADSuyiDemoConstant.NATIVE_AD_COUNT);
 ```
 
-> [信息流广告示例详情](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/NativeAdActivity.java)
+> [信息流广告示例详情](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/ad/NativeAdActivity.java)
 
 
 
@@ -1062,7 +1062,7 @@ rewardVodAd.loadAd(ADSuyiDemoConstant.REWARD_VOD_AD_POS_ID);
 ADSuyiAdUtil.showRewardVodAdConvenient(this, RewardVodAdActivity.this.rewardVodAdInfo);
 ```
 
-> [激励视频广告示例详情](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/RewardVodAdActivity.java)
+> [激励视频广告示例详情](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/ad/RewardVodAdActivity.java)
 
 
 
@@ -1127,7 +1127,7 @@ fullScreenVodAd.loadAd(ADSuyiDemoConstant.FULL_SCREEN_VOD_AD_POS_ID);
 ADSuyiAdUtil.showFullScreenAdConvenient(this, FullScreenVodAdActivity.this.fullScreenVodAdInfo);
 ```
 
-> [全屏视频广告示例详情](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/FullScreenVodAdActivity.java)
+> [全屏视频广告示例详情](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/ad/FullScreenVodAdActivity.java)
 
 
 
@@ -1185,7 +1185,7 @@ interstitialAd.loadAd(ADSuyiDemoConstant.INTERSTITIAL_AD_POS_ID);
 ADSuyiAdUtil.showInterstitialAdConvenient(this, InterstitialAdActivity.this.interstitialAdInfo);
 ```
 
-> [插屏广告示例详情](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/InterstitialAdActivity.java)
+> [插屏广告示例详情](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/ad/InterstitialAdActivity.java)
 
 
 
@@ -1257,7 +1257,7 @@ drawVodAd.setListener(new ADSuyiDrawVodAdListener() {
 drawVodAd.loadAd(ADSuyiDemoConstant.DRAW_VOD_AD_POS_ID, ADSuyiDemoConstant.DRAW_VOD_AD_COUNT);
 ```
 
-> [DrawVod广告示例详情](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/DrawVodActivity.java)
+> [DrawVod广告示例详情](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/ad/DrawVodActivity.java)
 
 
 
@@ -1273,7 +1273,7 @@ ADSuyiSdk.getInstance().init(this, new ADSuyiInitConfig.Builder()
     // 可以通过设置该值手动关闭或开启浮窗广告，默认开启（服务端没有配置开启也不会有浮窗广告）                         
     .openFloatingAd(false)                         
     // 如果开了浮窗广告，可设置不展示浮窗广告的界面，第一个参数为是否开启默认不展示的页面（例如:激励视频播放页面），第二可变参数为自定义不展示的页面
-    .floatingAdBlockList(false, "cn.admobiletop.adsuyidemo.activity.SplashAdActivity")
+    .floatingAdBlockList(false, "cn.admobiletop.adsuyidemo.activity.ad.SplashAdActivity")
     .build());
 ```
 
@@ -1345,7 +1345,7 @@ adSuyiContentAllianceAd.loadAd(ADSuyiDemoConstant.CONTENT_ALLIANCE_AD_POS_ID);
 contentAllianceAdInfo.openKSContentPage(this)
 ```
 
-> [内容联盟示例详情](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/ContentAllianceAdActivity.java)
+> [内容联盟示例详情](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/other/ContentAllianceAdActivity.java)
 
 ### 6.11 备注
 

@@ -10,10 +10,7 @@ import android.support.multidex.MultiDex;
 
 import com.tencent.bugly.crashreport.CrashReport;
 
-import cn.admobiletop.adsuyi.ADSuyiSdk;
-import cn.admobiletop.adsuyi.config.ADSuyiInitConfig;
-import cn.admobiletop.adsuyidemo.activity.SplashAdActivity;
-import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
+import cn.admobiletop.adsuyidemo.activity.ad.SplashAdActivity;
 
 /**
  * @author ciba
@@ -54,7 +51,7 @@ public class ADSuyiApplication extends Application {
 //                // 是否过滤第三方平台的问题广告（例如: 已知某个广告平台在某些机型的Banner广告可能存在问题，如果开启过滤，则在该机型将不再去获取该平台的Banner广告）
 //                .filterThirdQuestion(true)
 //                // 如果开了浮窗广告，可设置不展示浮窗广告的界面，第一个参数为是否开启默认不展示的页面（例如:激励视频播放页面），第二可变参数为自定义不展示的页面
-//                .floatingAdBlockList(false, "cn.admobiletop.adsuyidemo.activity.SplashAdActivity")
+//                .floatingAdBlockList(false, "cn.admobiletop.adsuyidemo.activity.ad.SplashAdActivity")
 //                .build());
 
         // 如果有接开屏广告，可以设置应用进入后台一段时间后回到应用再次开启开屏界面，增加开屏广告收益（仅供参考，无需要可不设置）

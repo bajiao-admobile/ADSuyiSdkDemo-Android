@@ -1,20 +1,18 @@
-package cn.admobiletop.adsuyidemo.activity;
+package cn.admobiletop.adsuyidemo.activity.ad;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 
 import cn.admobiletop.adsuyi.ad.ADSuyiRewardVodAd;
 import cn.admobiletop.adsuyi.ad.data.ADSuyiRewardVodAdInfo;
-import cn.admobiletop.adsuyi.ad.entity.ADSuyiExtraParams;
-import cn.admobiletop.adsuyi.ad.entity.ADSuyiRewardExtra;
 import cn.admobiletop.adsuyi.ad.error.ADSuyiError;
 import cn.admobiletop.adsuyi.ad.listener.ADSuyiRewardVodAdListener;
 import cn.admobiletop.adsuyi.util.ADSuyiAdUtil;
 import cn.admobiletop.adsuyi.util.ADSuyiToastUtil;
 import cn.admobiletop.adsuyidemo.R;
+import cn.admobiletop.adsuyidemo.activity.base.BaseAdActivity;
 import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
 
 /**

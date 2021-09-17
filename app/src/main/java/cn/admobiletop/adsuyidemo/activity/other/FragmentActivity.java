@@ -1,4 +1,4 @@
-package cn.admobiletop.adsuyidemo.activity;
+package cn.admobiletop.adsuyidemo.activity.other;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -6,13 +6,13 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import cn.admobiletop.adsuyi.ADSuyiSdk;
 import cn.admobiletop.adsuyidemo.R;
+import cn.admobiletop.adsuyidemo.activity.base.BaseAdActivity;
 import cn.admobiletop.adsuyidemo.fragment.BaseFragment;
 import cn.admobiletop.adsuyidemo.fragment.OtherFragment;
 import cn.admobiletop.adsuyidemo.fragment.TestFragment;

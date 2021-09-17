@@ -1,4 +1,4 @@
-package cn.admobiletop.adsuyidemo.activity;
+package cn.admobiletop.adsuyidemo.activity.setting;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;

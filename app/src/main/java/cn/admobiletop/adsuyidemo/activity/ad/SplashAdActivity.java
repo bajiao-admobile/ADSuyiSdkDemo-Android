@@ -1,4 +1,4 @@
-package cn.admobiletop.adsuyidemo.activity;
+package cn.admobiletop.adsuyidemo.activity.ad;
 
 import android.Manifest;
 import android.content.Intent;
@@ -37,6 +37,7 @@ import cn.admobiletop.adsuyi.util.ADSuyiToastUtil;
 import cn.admobiletop.adsuyidemo.ADSuyiApplication;
 import cn.admobiletop.adsuyidemo.BuildConfig;
 import cn.admobiletop.adsuyidemo.R;
+import cn.admobiletop.adsuyidemo.activity.MainActivity;
 import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
 import cn.admobiletop.adsuyidemo.util.SPUtil;
 import cn.admobiletop.adsuyidemo.widget.PrivacyPolicyDialog;
@@ -139,7 +140,7 @@ public class SplashAdActivity extends AppCompatActivity {
                 // 是否过滤第三方平台的问题广告（例如: 已知某个广告平台在某些机型的Banner广告可能存在问题，如果开启过滤，则在该机型将不再去获取该平台的Banner广告）
                 .filterThirdQuestion(true)
                 // 如果开了浮窗广告，可设置不展示浮窗广告的界面，第一个参数为是否开启默认不展示的页面（例如:激励视频播放页面），第二可变参数为自定义不展示的页面
-                .floatingAdBlockList(false, "cn.admobiletop.adsuyidemo.activity.SplashAdActivity")
+                .floatingAdBlockList(false, "cn.admobiletop.adsuyidemo.activity.ad.SplashAdActivity")
                 // 注意：如果使用oaid1.0.26版本，需要在assets中放置密钥，并将密钥传入ADSuyi（suyi内部初始化oaid需要使用）
                 // 密钥需要到移动安全联盟申请（非oaid1.0.26版本无需使用该接口）
                 .setOaidCertPath("cn.admobiletop.adsuyidemo.cert.pem")

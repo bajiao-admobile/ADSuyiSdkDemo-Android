@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/pageColorPrimary"
-    tools:context=".activity.SettingActivity">
+    tools:context=".activity.setting.SettingActivity">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler"

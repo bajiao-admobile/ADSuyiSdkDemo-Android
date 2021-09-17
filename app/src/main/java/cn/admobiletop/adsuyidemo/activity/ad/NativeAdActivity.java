@@ -1,4 +1,4 @@
-package cn.admobiletop.adsuyidemo.activity;
+package cn.admobiletop.adsuyidemo.activity.ad;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -9,7 +9,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.text.TextUtils;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -21,7 +20,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import cn.admobiletop.adsuyi.ad.ADSuyiNativeAd;
-import cn.admobiletop.adsuyi.ad.data.ADSuyiAdType;
 import cn.admobiletop.adsuyi.ad.data.ADSuyiNativeAdInfo;
 import cn.admobiletop.adsuyi.ad.entity.ADSuyiAdNativeStyle;
 import cn.admobiletop.adsuyi.ad.entity.ADSuyiAdSize;
@@ -36,7 +34,6 @@ import cn.admobiletop.adsuyidemo.adapter.NativeAdAdapter;
 import cn.admobiletop.adsuyidemo.adapter.NativeExpressAdAdapter;
 import cn.admobiletop.adsuyidemo.adapter.NativeFeedAdAdapter;
 import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
-import cn.admobiletop.adsuyidemo.entity.NativeAdSampleData;
 import cn.admobiletop.adsuyidemo.widget.MySmartRefreshLayout;
 
 /**

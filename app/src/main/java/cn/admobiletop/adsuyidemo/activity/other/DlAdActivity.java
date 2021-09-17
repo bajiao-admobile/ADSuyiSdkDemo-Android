@@ -1,4 +1,4 @@
-package cn.admobiletop.adsuyidemo.activity;
+package cn.admobiletop.adsuyidemo.activity.other;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -17,8 +17,8 @@ import cn.admobiletop.adsuyi.ad.error.ADSuyiError;
 import cn.admobiletop.adsuyi.ad.listener.ADSuyiNativeAdListener;
 import cn.admobiletop.adsuyi.util.ADSuyiToastUtil;
 import cn.admobiletop.adsuyidemo.R;
+import cn.admobiletop.adsuyidemo.activity.base.BaseAdActivity;
 import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
-import cn.admobiletop.adsuyidemo.widget.AdMobileDlExpressAdDialog;
 import cn.admobiletop.adsuyidemo.widget.AdMobileDlFeedAdDialog;
 
 /**

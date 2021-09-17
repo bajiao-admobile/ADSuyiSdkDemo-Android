@@ -2,24 +2,27 @@ package cn.admobiletop.adsuyidemo.activity;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-
 import cn.admobiletop.adsuyi.ADSuyiSdk;
-import cn.admobiletop.adsuyi.ad.data.ADSuyiAdType;
 import cn.admobiletop.adsuyidemo.R;
-import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
+import cn.admobiletop.adsuyidemo.activity.ad.BannerAdActivity;
+import cn.admobiletop.adsuyidemo.activity.ad.DrawVodActivity;
+import cn.admobiletop.adsuyidemo.activity.ad.FullScreenVodAdActivity;
+import cn.admobiletop.adsuyidemo.activity.ad.InterstitialAdActivity;
+import cn.admobiletop.adsuyidemo.activity.ad.NativeAdActivity;
+import cn.admobiletop.adsuyidemo.activity.ad.RewardVodAdActivity;
+import cn.admobiletop.adsuyidemo.activity.ad.SplashAdActivity;
+import cn.admobiletop.adsuyidemo.activity.other.ContentModuleActivity;
+import cn.admobiletop.adsuyidemo.activity.other.DlModuleActivity;
+import cn.admobiletop.adsuyidemo.activity.setting.SettingActivity;
 import cn.admobiletop.adsuyidemo.util.LoadAdUtil;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {

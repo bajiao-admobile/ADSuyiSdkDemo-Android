@@ -1,4 +1,4 @@
-package cn.admobiletop.adsuyidemo.activity;
+package cn.admobiletop.adsuyidemo.activity.setting;
 
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -9,6 +9,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import cn.admobiletop.adsuyidemo.R;
+import cn.admobiletop.adsuyidemo.activity.base.BaseAdActivity;
 import cn.admobiletop.adsuyidemo.adapter.SettingAdapter;
 import cn.admobiletop.adsuyidemo.entity.AdSettingData;
 
