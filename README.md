@@ -364,13 +364,13 @@ dependencies {
   ```java
     <!-- 广告必须的权限 -->
     <uses-permission android:name="android.permission.INTERNET" />
-    <!-- 写入权限，用于下载类广告数据写入 -->
+    <!-- 广告必须的权限，写入权限，用于下载类广告数据写入 -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <!-- 读取权限，用于下载类广告数据读取（如判断是否已下载过该APK，避免重复下载）-->
+    <!-- 广告必须的权限，读取权限，用于下载类广告数据读取（如判断是否已下载过该APK，避免重复下载）-->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <!-- 允许安装未知来源权限（如下载类广告下载完成后唤起安卓） -->
+    <!-- 广告必须的权限，允许安装未知来源权限（如下载类广告下载完成后唤起安卓） -->
     <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
-    <!-- 地理位置权限，获取位置信息 -->
+    <!-- 广告必须的权限，地理位置权限，获取位置信息 -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <!-- 广点通广告必须的权限 -->
