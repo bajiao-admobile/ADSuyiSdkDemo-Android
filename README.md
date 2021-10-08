@@ -201,7 +201,7 @@ dependencies {
     // ADSuyiSdk核心库是必须导入的
     implementation 'cn.admobiletop.adsuyi.ad:core:3.3.2.08201'
     // common库是必须导入的，请保持和Demo中版本一致
-    implementation 'com.admobile:common:1.3.1'
+    implementation 'com.admobile:common:1.3.2'
     // material库是必须导入的，请保持和Demo中版本一致
     implementation 'cn.admobiletop.adsuyi.ad:material:1.0.4.08191'
 
