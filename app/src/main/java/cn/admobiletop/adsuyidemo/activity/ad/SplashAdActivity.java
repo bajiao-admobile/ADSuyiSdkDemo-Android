@@ -181,8 +181,8 @@ public class SplashAdActivity extends AppCompatActivity {
         // 设置仅支持的广告平台，设置了这个值，获取广告时只会去获取该平台的广告，null或空字符串为不限制，默认为null，方便调试使用，上线时建议不设置
         adSuyiSplashAd.setOnlySupportPlatform(ADSuyiDemoConstant.SPLASH_AD_ONLY_SUPPORT_PLATFORM);
         if (ADSuyiDemoConstant.SPLASH_AD_CUSTOM_SKIP_VIEW) {
-            // 设置自定义跳过按钮和倒计时时长（非必传，倒计时时长范围[3000,5000]建议不要传入倒计时时长） 目前不支持inmobi, ksad, oneway, ifly平台自定义跳过按钮
-            adSuyiSplashAd.setSkipView(skipView, 5000);
+            // 设置自定义跳过按钮和倒计时时长（非必传，倒计时时长范围[3000,5000]建议不要传入倒计时时长） 目前不支持广点通、讯飞、快手、华为广告联盟、云码、爱奇艺，平台自定义跳过按钮
+            adSuyiSplashAd.setSkipView(skipView);
         }
         // 设置开屏广告监听
         adSuyiSplashAd.setListener(new ADSuyiSplashAdListener() {

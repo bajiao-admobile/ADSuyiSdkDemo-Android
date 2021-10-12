@@ -207,7 +207,6 @@ public class SettingAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             platformMap.put("百度/百青藤(baidu)", "baidu");
             platformMap.put("inmobi", "inmobi");
             platformMap.put("汇量/Mobvsita(mintegral)", "mintegral");
-            platformMap.put("万维(oneway)", "oneway");
             platformMap.put("appic", "appic");
             platformMap.put("讯飞(ifly)", "ifly");
             platformMap.put("快手(ksad)", "ksad");
