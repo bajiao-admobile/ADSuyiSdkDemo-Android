@@ -96,7 +96,7 @@ dependencies {
 //    implementation 'cn.admobiletop.adsuyi.ad:oaid:1.0.26.08041'
 
     // 艾狄墨搏AdapterSdk，必须的`
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile:5.0.0.10091'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile:5.0.1.10222'
 
     // 广点通AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.400.1270.09022'
