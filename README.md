@@ -244,7 +244,7 @@ dependencies {
 //    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.14.1.09021'
 
     // 快手内容版AdapterSdk，可选的（比快手基础版多一个内容组件，不需要内容组件无需导入该版本，不可和快手基础版同时导入）
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadcontent:3.3.22.3.09013'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadcontent:3.3.23.10141'
 
     // 米盟AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:mimo:5.1.1.08111'
