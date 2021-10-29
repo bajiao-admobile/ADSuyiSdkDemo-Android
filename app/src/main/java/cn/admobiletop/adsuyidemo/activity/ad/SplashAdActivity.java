@@ -258,9 +258,9 @@ public class SplashAdActivity extends AppCompatActivity {
 
     private void loadSplashAd() {
         // 加载开屏广告，参数为广告位ID，同一个ADSuyiSplashAd只有一次loadAd有效
-//        adSuyiSplashAd.loadAd(ADSuyiDemoConstant.SPLASH_AD_POS_ID);
-        adSuyiSplashAd.loadAd(ADSuyiDemoConstant.SPLASH_AD_POS_ID,
-                getSplashInfo("e866cfb0", "2058622", "891", DownloadTipParam.DOWNLOAD_TIP_ALL));
+        adSuyiSplashAd.loadAd(ADSuyiDemoConstant.SPLASH_AD_POS_ID);
+//        adSuyiSplashAd.loadAd(ADSuyiDemoConstant.SPLASH_AD_POS_ID,
+//                getSplashInfo("e866cfb0", "2058622", "891", DownloadTipParam.DOWNLOAD_TIP_ALL));
     }
 
     /**
