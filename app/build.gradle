@@ -79,7 +79,7 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
 
     // ADSuyiSdk、common和OAID库是必须导入的
-    implementation 'cn.admobiletop.adsuyi.ad:core:3.3.2.08201'
+    implementation 'cn.admobiletop.adsuyi.ad:core-alpha:3.4.0.10141'
     // common库请保持和Demo中版本一致
     implementation 'com.admobile:common:1.3.2'
     // material库请保证和Demo中版本一致
@@ -99,19 +99,19 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile:5.0.1.10222'
 
     // 广点通AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.400.1270.09022'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt-alpha:4.420.1290.10191'
 
     // 头条AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:3.9.0.5.09025'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao-alpha:4.0.1.1.10181'
 
     // 百度AdapterSdk，可选的
 //    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu:5.98.05132'
 
     // 百度增强版AdapterSdk，可选的（请勿与百度同时导入）
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced:9.15.09021'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced-alpha:9.16.10192'
 
     // 汇量AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:15.7.17.09021'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral-alpha:15.7.37.10191'
 
     // InmobiAdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:inmobi:7.5.1.11112'
