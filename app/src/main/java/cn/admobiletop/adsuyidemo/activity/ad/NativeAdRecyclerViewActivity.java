@@ -38,10 +38,10 @@ import cn.admobiletop.adsuyidemo.widget.MySmartRefreshLayout;
 
 /**
  * @author ciba
- * @description 信息流广告示例
+ * @description 将信息流广告放到RecyclerView中进行展示示例
  * @date 2020/4/1
  */
-public class NativeAdActivity extends AppCompatActivity implements OnRefreshLoadMoreListener {
+public class NativeAdRecyclerViewActivity extends AppCompatActivity implements OnRefreshLoadMoreListener {
     private MySmartRefreshLayout refreshLayout;
     private RecyclerView recyclerView;
     private BaseNativeAdAdapter nativeAdAdapter;
@@ -52,7 +52,7 @@ public class NativeAdActivity extends AppCompatActivity implements OnRefreshLoad
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_native_ad);
+        setContentView(R.layout.activity_native_recyclerview_ad);
         Toolbar toolbar = findViewById(R.id.toolBar);
         setSupportActionBar(toolbar);
 
@@ -239,7 +239,7 @@ public class NativeAdActivity extends AppCompatActivity implements OnRefreshLoad
                             default:
                                 break;
                         }
-                        ADSuyiToastUtil.show(NativeAdActivity.this, toastContent);
+                        ADSuyiToastUtil.show(NativeAdRecyclerViewActivity.this, toastContent);
                         dialog.dismiss();
                         initNativeAdapter();
                         loadData();

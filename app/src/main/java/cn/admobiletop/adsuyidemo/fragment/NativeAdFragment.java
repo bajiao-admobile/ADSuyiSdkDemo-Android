@@ -25,7 +25,6 @@ import cn.admobiletop.adsuyi.ad.listener.ADSuyiNativeAdListener;
 import cn.admobiletop.adsuyidemo.R;
 import cn.admobiletop.adsuyidemo.adapter.NativeAdAdapter;
 import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
-import cn.admobiletop.adsuyidemo.entity.NativeAdSampleData;
 import cn.admobiletop.adsuyidemo.widget.MySmartRefreshLayout;
 
 /**
@@ -44,7 +43,7 @@ public class NativeAdFragment extends BaseFragment implements OnRefreshLoadMoreL
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View inflate = inflater.inflate(R.layout.activity_native_ad, null);
+        View inflate = inflater.inflate(R.layout.activity_native_recyclerview_ad, null);
 
         initView(inflate);
         initListener();

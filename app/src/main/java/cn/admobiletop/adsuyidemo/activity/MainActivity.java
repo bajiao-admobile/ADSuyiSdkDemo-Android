@@ -17,11 +17,11 @@ import cn.admobiletop.adsuyidemo.activity.ad.BannerAdActivity;
 import cn.admobiletop.adsuyidemo.activity.ad.DrawVodActivity;
 import cn.admobiletop.adsuyidemo.activity.ad.FullScreenVodAdActivity;
 import cn.admobiletop.adsuyidemo.activity.ad.InterstitialAdActivity;
-import cn.admobiletop.adsuyidemo.activity.ad.NativeAdActivity;
 import cn.admobiletop.adsuyidemo.activity.ad.RewardVodAdActivity;
 import cn.admobiletop.adsuyidemo.activity.ad.SplashAdActivity;
 import cn.admobiletop.adsuyidemo.activity.other.ContentModuleActivity;
 import cn.admobiletop.adsuyidemo.activity.other.DlModuleActivity;
+import cn.admobiletop.adsuyidemo.activity.other.NativeAdActivity;
 import cn.admobiletop.adsuyidemo.activity.setting.SettingActivity;
 import cn.admobiletop.adsuyidemo.util.LoadAdUtil;
 

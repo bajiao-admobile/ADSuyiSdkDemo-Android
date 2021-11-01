@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 30
     defaultConfig {
         applicationId "cn.admobiletop.adsuyidemo"
         minSdkVersion 19
-        targetSdkVersion 29
-        versionCode 202109221
-        versionName "1.202109221"
+        targetSdkVersion 30
+        versionCode 202111011
+        versionName "1.202111011"
         multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         ndk {
