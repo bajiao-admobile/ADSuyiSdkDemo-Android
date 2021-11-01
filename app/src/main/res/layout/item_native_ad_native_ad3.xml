@@ -50,11 +50,5 @@
             android:layout_alignBottom="@+id/flImageMediaContainer"
             android:scaleType="centerCrop" />
 
-        <TextView
-            android:id="@+id/tvAdType"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="gone"/>
-
     </RelativeLayout>
 </com.qq.e.ads.nativ.widget.NativeAdContainer>

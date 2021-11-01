@@ -18,21 +18,19 @@ import cn.admobiletop.adsuyidemo.R;
 
 /**
  * @author maipian
- * @description admobileDl广告弹出框
+ * @description admobileDl自渲染广告弹出框
  * @date 2020/10/21
  */
-public class AdMobileDlAdDialog extends Dialog {
+public class AdMobileDlFeedAdDialog extends Dialog {
 
-    private Context context;
     private RelativeLayout rlAdContainer;
     private ImageView ivImage;
     private ImageView ivClose;
     private ImageView ivAdTarget;
 
-    public AdMobileDlAdDialog(@NonNull Context context) {
+    public AdMobileDlFeedAdDialog(@NonNull Context context) {
         super(context);
-        this.context = context;
-        setContentView(R.layout.dialog_admobile_dl_ad);
+        setContentView(R.layout.dialog_admobile_dl_ad2);
         rlAdContainer = findViewById(R.id.rlAdContainer);
         ivImage = findViewById(R.id.ivImage);
         ivClose = findViewById(R.id.ivClose);
@@ -62,7 +60,7 @@ public class AdMobileDlAdDialog extends Dialog {
                 Log.d("AdMobileDlAdDialog", "dl广告对象已被释放");
                 return;
             }
-            Glide.with(context).load(nativeFeedAdInfo.getImageUrl()).into(ivImage);
+            Glide.with(ivImage).load(nativeFeedAdInfo.getImageUrl()).into(ivImage);
             ivAdTarget.setImageResource(nativeFeedAdInfo.getPlatformIcon());
             // 注册关闭按钮，将关闭按钮点击事件交于SDK托管，以便于回调onAdClose
             nativeFeedAdInfo.registerCloseView(ivClose);

@@ -43,6 +43,7 @@
 -keep class com.bun.miitmdid.**{*;}
 -keep class com.huawei.hms.ads.identifier.**{*;}
 -keep class com.samsung.android.deviceidservice.**{*;}
+-keep class com.zui.opendeviceidlibrary.**{*;}
 -keep class org.json.**{*;}
 -keep public class com.netease.nis.sdkwrapper.Utils {public <methods>;}
 
@@ -72,6 +73,13 @@
 -keep class com.bytedance.sdk.openadsdk.** { *; }
 -keep public interface com.bytedance.sdk.openadsdk.downloadnew.** {*;}
 -keep class com.pgl.sys.ces.* {*;}
+-keep class com.bytedance.embed_dr.** {*;}
+-keep class com.bytedance.embedapplog.** {*;}
+-keep class com.bytedance.frameworks.** { *; }
+-keep class ms.bd.c.Pgl.**{*;}
+-keep class com.bytedance.mobsec.metasec.ml.**{*;}
+-keep class com.ss.android.**{*;}
+-keep class com.bykv.vk.** {*;}
 
 # imobi广告平台混淆
 -dontwarn com.inmobi.**
@@ -86,14 +94,13 @@
 -keep class com.iab.** {*;}
 
 # mintegral广告平台混淆
--dontwarn com.mintegral.**
 -keepattributes Signature
 -keepattributes *Annotation*
--keep class com.mintegral.** {*; }
--keep interface com.mintegral.** {*; }
--keep class com.alphab.** {*; }
--keep interface com.alphab.** {*; }
--keep class **.R$* { public static final int mintegral*; }
+-keep class com.mbridge.** {*; }
+-keep interface com.mbridge.** {*; }
+-keep class android.support.v4.** { *; }
+-dontwarn com.mbridge.**
+-keep class **.R$* { public static final int mbridge*; }
 
 # 快手广告平台混淆
 -keep class org.chromium.** { *; }
@@ -117,6 +124,9 @@
 -dontwarn com.iflytek.**
 -keep class com.iflytek.** {* ;}
 -keep class android.support.v4.**{public * ;}
+-dontwarn com.shu.priory.**
+-keep class com.shu.priory.**{*;}
+-keep class android.support.v4.**{public * ;}
 
 # 快手广告平台混淆
 -keep class org.chromium.** { *; }
@@ -127,6 +137,7 @@
 -dontwarn com.kwad.**
 -dontwarn com.ksad.**
 -dontwarn aegon.chrome.**
+-keepclasseswithmembernames class * { native <methods>;}
 
 # 米盟混淆
 -keep class com.miui.zeus.mimo.sdk.* { *; }
@@ -148,8 +159,28 @@
 -keep public enum com.bumptech.glide.load.ImageHeaderParser$** {**[] $VALUES;public *;}
 -keep class com.bumptech.glide.load.data.ParcelFileDescriptorRewinder$InternalRewinder {*** rewind();}
 
+# 华为广告联盟混淆
+-keep class com.huawei.openalliance.ad.** { *; }
+-dontwarn com.huawei.openalliance.ad.activity.PPSActivity
+-keep public class * implements com.bumptech.glide.module.GlideModule
+-keep public class * extends com.bumptech.glide.module.AppGlideModule
+-keep public enum com.bumptech.glide.load.ImageHeaderParser$** { **[] $VALUES; public *; }
+-dontwarn com.bumptech.glide.load.resource.bitmap.VideoDecoder
+
+# 云码混淆
+-keep class com.alibaba.sdk.android.** {*;}
+-keep class io.vov.** {*;}
+-keep class com.UCMobile.Apollo.** {*;}
+
+# 爱奇艺
+-keep class com.mcto.sspsdk.** { *; }
+
 # NovelAdapter混淆
 -keep class android.**{*;}
 -keep class com.ecook.** {* ;}
 -keep class com.parting_soul.http.** {* ;}
 -keep class com.ttx.reader.support.** {* ;}
+-ignorewarnings
+-keepattributes Signature
+-keep class android.**{*;}
+-keep class com.ecook.novel_sdk.bookstore.data.bean.* {*;}

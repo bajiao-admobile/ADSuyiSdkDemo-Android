@@ -77,11 +77,5 @@
             android:textSize="12sp"
             android:text="广告内容"/>
 
-        <TextView
-            android:id="@+id/tvAdType"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="gone"/>
-
     </RelativeLayout>
 </com.qq.e.ads.nativ.widget.NativeAdContainer>

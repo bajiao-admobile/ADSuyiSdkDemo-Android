@@ -1,4 +1,4 @@
-package cn.admobiletop.adsuyidemo.activity;
+package cn.admobiletop.adsuyidemo.activity.ad;
 
 import android.Manifest;
 import android.content.Intent;
@@ -21,6 +21,12 @@ import java.util.List;
 
 import cn.admobiletop.adsuyi.ADSuyiSdk;
 import cn.admobiletop.adsuyi.ad.ADSuyiSplashAd;
+import cn.admobiletop.adsuyi.ad.api.ADSuyiNetworkRequestInfo;
+import cn.admobiletop.adsuyi.ad.api.BaiduSplashAdRequestInfo;
+import cn.admobiletop.adsuyi.ad.api.GdtSplashAdRequestInfo;
+import cn.admobiletop.adsuyi.ad.api.KsSplashAdRequestInfo;
+import cn.admobiletop.adsuyi.ad.api.TTSplashAdRequestInfo;
+import cn.admobiletop.adsuyi.ad.api.annotation.DownloadTipParam;
 import cn.admobiletop.adsuyi.ad.data.ADSuyiAdInfo;
 import cn.admobiletop.adsuyi.ad.entity.ADSuyiAdSize;
 import cn.admobiletop.adsuyi.ad.entity.ADSuyiExtraParams;
@@ -28,8 +34,10 @@ import cn.admobiletop.adsuyi.ad.error.ADSuyiError;
 import cn.admobiletop.adsuyi.ad.listener.ADSuyiSplashAdListener;
 import cn.admobiletop.adsuyi.config.ADSuyiInitConfig;
 import cn.admobiletop.adsuyi.util.ADSuyiToastUtil;
+import cn.admobiletop.adsuyidemo.ADSuyiApplication;
 import cn.admobiletop.adsuyidemo.BuildConfig;
 import cn.admobiletop.adsuyidemo.R;
+import cn.admobiletop.adsuyidemo.activity.MainActivity;
 import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
 import cn.admobiletop.adsuyidemo.util.SPUtil;
 import cn.admobiletop.adsuyidemo.widget.PrivacyPolicyDialog;
@@ -113,7 +121,7 @@ public class SplashAdActivity extends AppCompatActivity {
      */
     private void initADSuyiSdkAndLoadSplashAd() {
         // 初始化ADSuyi广告SDK
-        ADSuyiSdk.getInstance().init(this, new ADSuyiInitConfig.Builder()
+        ADSuyiSdk.getInstance().init(ADSuyiApplication.context, new ADSuyiInitConfig.Builder()
                 // 设置APPID
                 .appId(ADSuyiDemoConstant.APP_ID)
                 // 是否开启Debug，开启会有详细的日志信息打印，如果用上ADSuyiToastUtil工具还会弹出toast提示。
@@ -121,12 +129,21 @@ public class SplashAdActivity extends AppCompatActivity {
                 .debug(BuildConfig.DEBUG)
                 // 是否同意隐私政策
                 .agreePrivacyStrategy(true)
-                // 是否过滤第三方平台的问题广告（例如: 已知某个广告平台在某些机型的Banner广告可能存在问题，如果开启过滤，则在该机型将不再去获取该平台的Banner广告）
-                .filterThirdQuestion(true)
                 // 是否同意使用oaid
                 .isCanUseOaid(true)
+                // 是否可读取wifi状态
+                .isCanUseWifiState(true)
+                // 是否可获取定位数据
+                .isCanUseLocation(true)
+                // 是否可获取设备信息
+                .isCanUsePhoneState(true)
+                // 是否过滤第三方平台的问题广告（例如: 已知某个广告平台在某些机型的Banner广告可能存在问题，如果开启过滤，则在该机型将不再去获取该平台的Banner广告）
+                .filterThirdQuestion(true)
                 // 如果开了浮窗广告，可设置不展示浮窗广告的界面，第一个参数为是否开启默认不展示的页面（例如:激励视频播放页面），第二可变参数为自定义不展示的页面
-                .floatingAdBlockList(false, "cn.admobiletop.adsuyidemo.activity.SplashAdActivity")
+                .floatingAdBlockList(false, "cn.admobiletop.adsuyidemo.activity.ad.SplashAdActivity")
+                // 注意：如果使用oaid1.0.26版本，需要在assets中放置密钥，并将密钥传入ADSuyi（suyi内部初始化oaid需要使用）
+                // 密钥需要到移动安全联盟申请（非oaid1.0.26版本无需使用该接口）
+                .setOaidCertPath("cn.admobiletop.adsuyidemo.cert.pem")
                 .build());
 
         initSplashAd();
@@ -164,18 +181,18 @@ public class SplashAdActivity extends AppCompatActivity {
         // 设置仅支持的广告平台，设置了这个值，获取广告时只会去获取该平台的广告，null或空字符串为不限制，默认为null，方便调试使用，上线时建议不设置
         adSuyiSplashAd.setOnlySupportPlatform(ADSuyiDemoConstant.SPLASH_AD_ONLY_SUPPORT_PLATFORM);
         if (ADSuyiDemoConstant.SPLASH_AD_CUSTOM_SKIP_VIEW) {
-            // 设置自定义跳过按钮和倒计时时长（非必传，倒计时时长范围[3000,5000]建议不要传入倒计时时长） 目前不支持inmobi, ksad, oneway, ifly平台自定义跳过按钮
-            adSuyiSplashAd.setSkipView(skipView, 5000);
+            // 设置自定义跳过按钮和倒计时时长（非必传，倒计时时长范围[3000,5000]建议不要传入倒计时时长） 目前不支持广点通、讯飞、快手、华为广告联盟、云码、爱奇艺，平台自定义跳过按钮
+            adSuyiSplashAd.setSkipView(skipView);
         }
         // 设置开屏广告监听
         adSuyiSplashAd.setListener(new ADSuyiSplashAdListener() {
 
             @Override
-            public void onADTick(long millisUntilFinished) {
+            public void onADTick(long countdownSeconds) {
                 // 如果没有设置自定义跳过按钮不会回调该方法
-                Log.d(ADSuyiDemoConstant.TAG, "倒计时剩余时长" + millisUntilFinished);
+                Log.d(ADSuyiDemoConstant.TAG, "倒计时剩余时长（单位秒）" + countdownSeconds);
                 if (ADSuyiDemoConstant.SPLASH_AD_CUSTOM_SKIP_VIEW && skipView != null) {
-                    skipView.setText("跳过" + millisUntilFinished + "s");
+                    skipView.setText("跳过" + countdownSeconds + "s");
                 }
             }
 
@@ -189,6 +206,7 @@ public class SplashAdActivity extends AppCompatActivity {
                 Log.d(ADSuyiDemoConstant.TAG, "广告获取成功回调... ");
                 if (ADSuyiDemoConstant.SPLASH_AD_CUSTOM_SKIP_VIEW && skipView != null) {
                     skipView.setVisibility(View.VISIBLE);
+                    skipView.setAlpha(1);
                 }
             }
 
@@ -224,7 +242,8 @@ public class SplashAdActivity extends AppCompatActivity {
             ActivityCompat.requestPermissions(this, permissionList.toArray(new String[0]), REQUEST_CODE);
         } else {
             // 加载开屏广告，参数为广告位ID，同一个ADSuyiSplashAd只有一次loadAd有效
-            adSuyiSplashAd.loadAd(ADSuyiDemoConstant.SPLASH_AD_POS_ID);
+//            adSuyiSplashAd.loadAd(ADSuyiDemoConstant.SPLASH_AD_POS_ID);
+            loadSplashAd();
         }
     }
 
@@ -233,8 +252,29 @@ public class SplashAdActivity extends AppCompatActivity {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (REQUEST_CODE == requestCode) {
             // 加载开屏广告，参数为广告位ID，同一个ADSuyiSplashAd只有一次loadAd有效
-            adSuyiSplashAd.loadAd(ADSuyiDemoConstant.SPLASH_AD_POS_ID);
+            loadSplashAd();
         }
+    }
+
+    private void loadSplashAd() {
+        // 加载开屏广告，参数为广告位ID，同一个ADSuyiSplashAd只有一次loadAd有效
+        adSuyiSplashAd.loadAd(ADSuyiDemoConstant.SPLASH_AD_POS_ID);
+//        adSuyiSplashAd.loadAd(ADSuyiDemoConstant.SPLASH_AD_POS_ID,
+//                getSplashInfo("e866cfb0", "2058622", "891", DownloadTipParam.DOWNLOAD_TIP_ALL));
+    }
+
+    /**
+     * 设置开屏保底广告 目前支持广点通、头条、百度、快手保底，保底是为了加速用户第一次获取开屏广告时的速度。
+     * demo中演示百度平台，有其它平台需求的可以查看文档或在对接群中咨询
+     *
+     * @param platformAppId suyi开屏广告源应用ID
+     * @param platformPosId suyi开屏广告源ID
+     * @param adPosListId suyi开屏广告源AdPosList ID
+     * @param downloadTip 下载提示 DOWNLOAD_TIP_NOTHING不提示 DOWNLOAD_TIP_MOBILE_TRAFFIC移动网络提示 DOWNLOAD_TIP_ALL 全提示
+     * @return
+     */
+    private ADSuyiNetworkRequestInfo getSplashInfo(String platformAppId, String platformPosId, String adPosListId, int downloadTip) {
+        return new KsSplashAdRequestInfo(platformAppId, platformPosId, adPosListId, downloadTip);
     }
 
     @Override

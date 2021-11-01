@@ -1,8 +1,7 @@
-package cn.admobiletop.adsuyidemo.activity;
+package cn.admobiletop.adsuyidemo.activity.ad;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -14,6 +13,7 @@ import cn.admobiletop.adsuyi.ad.listener.ADSuyiInterstitialAdListener;
 import cn.admobiletop.adsuyi.util.ADSuyiAdUtil;
 import cn.admobiletop.adsuyi.util.ADSuyiToastUtil;
 import cn.admobiletop.adsuyidemo.R;
+import cn.admobiletop.adsuyidemo.activity.base.BaseAdActivity;
 import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
 
 /**
@@ -21,7 +21,7 @@ import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
  * @description 插屏广告示例
  * @date 2020/3/27
  */
-public class InterstitialAdActivity extends AppCompatActivity implements View.OnClickListener {
+public class InterstitialAdActivity extends BaseAdActivity implements View.OnClickListener {
     private ADSuyiInterstitialAd interstitialAd;
     private ADSuyiInterstitialAdInfo interstitialAdInfo;
 

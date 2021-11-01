@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import cn.admobiletop.adsuyidemo.R;
-import cn.admobiletop.adsuyidemo.activity.NormalWebActivity;
+import cn.admobiletop.adsuyidemo.activity.other.NormalWebActivity;
 import cn.admobiletop.adsuyidemo.util.StringUtil;
 
 /**

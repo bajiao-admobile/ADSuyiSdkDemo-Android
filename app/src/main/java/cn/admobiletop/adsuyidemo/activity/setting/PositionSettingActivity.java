@@ -1,4 +1,4 @@
-package cn.admobiletop.adsuyidemo.activity;
+package cn.admobiletop.adsuyidemo.activity.setting;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
@@ -8,13 +8,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.SwitchCompat;
 import android.view.View;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import cn.admobiletop.adsuyi.ad.data.ADSuyiAdType;
 import cn.admobiletop.adsuyi.util.ADSuyiToastUtil;
@@ -26,7 +28,7 @@ import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
  * @description 设置界面
  * @date 2020/4/7
  */
-public class SettingActivity extends AppCompatActivity {
+public class PositionSettingActivity extends AppCompatActivity {
     private static final String AD_TYPE = "AD_TYPE";
     private static final String POS_ID_LIST = "POS_ID_LIST";
     private EditText etPosId;
@@ -34,17 +36,18 @@ public class SettingActivity extends AppCompatActivity {
     private EditText etCount;
     private TextView tvAutoRefreshInterval;
     private EditText etAutoRefreshInterval;
-    private CheckBox cbNativeMute;
+    private SwitchCompat cbNativeMute;
     private String adType;
     private EditText etOnlySupportPlatform;
     private List<String> posIdList;
-    private CheckBox cbOnlySupportPlatform;
+    private SwitchCompat cbOnlySupportPlatform;
     private TextView tvScene;
     private EditText etScene;
-    private CheckBox cbCustomSkipView;
+    private SwitchCompat cbCustomSkipView;
+    private HashMap<String, String> platformMap = new HashMap<>();
 
     public static void start(Context context, String adType, ArrayList<String> posIdList) {
-        Intent intent = new Intent(context, SettingActivity.class);
+        Intent intent = new Intent(context, PositionSettingActivity.class);
         intent.putExtra(AD_TYPE, adType);
         intent.putStringArrayListExtra(POS_ID_LIST, posIdList);
         context.startActivity(intent);
@@ -53,16 +56,44 @@ public class SettingActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_setting);
-
+        setContentView(R.layout.activity_position_setting);
+        initPlatformData();
         initView();
         initListener();
         initData();
     }
 
+    private void initPlatformData() {
+        platformMap.put("所有(null或空字符串)", "");
+        platformMap.put("艾狄墨搏(admobile)", "admobile");
+        platformMap.put("广点通/优量汇(gdt)", "gdt");
+        platformMap.put("头条/穿山甲(toutiao)", "toutiao");
+        platformMap.put("百度/百青藤(baidu)", "baidu");
+        platformMap.put("inmobi", "inmobi");
+        platformMap.put("汇量/Mobvsita(mintegral)", "mintegral");
+        platformMap.put("appic", "appic");
+        platformMap.put("讯飞(ifly)", "ifly");
+        platformMap.put("快手(ksad)", "ksad");
+        platformMap.put("米盟(mimo)", "mimo");
+        platformMap.put("华为广告联盟(hwpps)", "hwpps");
+        platformMap.put("云码(yunma)", "yunma");
+        platformMap.put("爱奇艺(iqy)", "iqy");
+    }
+
+    private String getPlatformKey(Map<String, String> map, String value) {
+        if (value == null) {
+            value = "";
+        }
+        for (Map.Entry<String, String> entry : map.entrySet()) {
+            if (value.equals(entry.getValue())) {
+                return entry.getKey();
+            }
+        }
+        return "";
+    }
+
     private void initView() {
         etPosId = findViewById(R.id.etPosId);
-
         tvCount = findViewById(R.id.tvCount);
         etCount = findViewById(R.id.etCount);
 
@@ -99,6 +130,24 @@ public class SettingActivity extends AppCompatActivity {
                 showPosIdSelectDialog();
             }
         });
+        etCount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showAdCountSelectDialog();
+            }
+        });
+    }
+
+    private void showAdCountSelectDialog() {
+        new AlertDialog.Builder(this)
+                .setItems(R.array.ad_count, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        etCount.setText(getResources().getStringArray(R.array.ad_count)[which]);
+                    }
+                })
+                .create()
+                .show();
     }
 
     private void showPosIdSelectDialog() {
@@ -118,10 +167,10 @@ public class SettingActivity extends AppCompatActivity {
 
     private void showPlatformSelectDialog() {
         new AlertDialog.Builder(this)
-                .setItems(R.array.platforms, new DialogInterface.OnClickListener() {
+                .setItems(R.array.platforms_zh, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        etOnlySupportPlatform.setText(0 == which ? null : getResources().getStringArray(R.array.platforms)[which]);
+                        etOnlySupportPlatform.setText(getResources().getStringArray(R.array.platforms_zh)[which]);
                     }
                 })
                 .create()
@@ -138,13 +187,15 @@ public class SettingActivity extends AppCompatActivity {
         switch (adType) {
             case ADSuyiAdType.TYPE_SPLASH:
                 etPosId.setText(ADSuyiDemoConstant.SPLASH_AD_POS_ID);
-                etOnlySupportPlatform.setText(ADSuyiDemoConstant.SPLASH_AD_ONLY_SUPPORT_PLATFORM);
+                String platformKey = getPlatformKey(platformMap, ADSuyiDemoConstant.SPLASH_AD_ONLY_SUPPORT_PLATFORM);
+                etOnlySupportPlatform.setText(platformKey);
                 cbCustomSkipView.setVisibility(View.VISIBLE);
                 cbCustomSkipView.setChecked(ADSuyiDemoConstant.SPLASH_AD_CUSTOM_SKIP_VIEW);
                 break;
             case ADSuyiAdType.TYPE_BANNER:
                 etPosId.setText(ADSuyiDemoConstant.BANNER_AD_POS_ID);
-                etOnlySupportPlatform.setText(ADSuyiDemoConstant.BANNER_AD_ONLY_SUPPORT_PLATFORM);
+                platformKey = getPlatformKey(platformMap, ADSuyiDemoConstant.BANNER_AD_ONLY_SUPPORT_PLATFORM);
+                etOnlySupportPlatform.setText(platformKey);
                 etAutoRefreshInterval.setText(String.valueOf(ADSuyiDemoConstant.BANNER_AD_AUTO_REFRESH_INTERVAL));
                 tvAutoRefreshInterval.setVisibility(View.VISIBLE);
                 etAutoRefreshInterval.setVisibility(View.VISIBLE);
@@ -154,7 +205,8 @@ public class SettingActivity extends AppCompatActivity {
                 break;
             case ADSuyiAdType.TYPE_FLOW:
                 etPosId.setText(ADSuyiDemoConstant.NATIVE_AD_POS_ID);
-                etOnlySupportPlatform.setText(ADSuyiDemoConstant.NATIVE_AD_ONLY_SUPPORT_PLATFORM);
+                platformKey = getPlatformKey(platformMap, ADSuyiDemoConstant.BANNER_AD_ONLY_SUPPORT_PLATFORM);
+                etOnlySupportPlatform.setText(platformKey);
                 etCount.setText(String.valueOf(ADSuyiDemoConstant.NATIVE_AD_COUNT));
                 etCount.setVisibility(View.VISIBLE);
                 tvCount.setVisibility(View.VISIBLE);
@@ -166,18 +218,21 @@ public class SettingActivity extends AppCompatActivity {
                 break;
             case ADSuyiAdType.TYPE_REWARD_VOD:
                 etPosId.setText(ADSuyiDemoConstant.REWARD_VOD_AD_POS_ID);
-                etOnlySupportPlatform.setText(ADSuyiDemoConstant.REWARD_VOD_AD_ONLY_SUPPORT_PLATFORM);
+                platformKey = getPlatformKey(platformMap, ADSuyiDemoConstant.REWARD_VOD_AD_ONLY_SUPPORT_PLATFORM);
+                etOnlySupportPlatform.setText(platformKey);
                 tvScene.setVisibility(View.VISIBLE);
                 etScene.setVisibility(View.VISIBLE);
                 etScene.setText(String.valueOf(ADSuyiDemoConstant.REWARD_VOD_AD_SCENE_ID));
                 break;
             case ADSuyiAdType.TYPE_FULLSCREEN_VOD:
                 etPosId.setText(ADSuyiDemoConstant.FULL_SCREEN_VOD_AD_POS_ID);
-                etOnlySupportPlatform.setText(ADSuyiDemoConstant.FULL_SCREEN_VOD_AD_ONLY_SUPPORT_PLATFORM);
+                platformKey = getPlatformKey(platformMap, ADSuyiDemoConstant.FULL_SCREEN_VOD_AD_ONLY_SUPPORT_PLATFORM);
+                etOnlySupportPlatform.setText(platformKey);
                 break;
             case ADSuyiAdType.TYPE_INTERSTITIAL:
                 etPosId.setText(ADSuyiDemoConstant.INTERSTITIAL_AD_POS_ID);
-                etOnlySupportPlatform.setText(ADSuyiDemoConstant.INTERSTITIAL_AD_ONLY_SUPPORT_PLATFORM);
+                platformKey = getPlatformKey(platformMap, ADSuyiDemoConstant.INTERSTITIAL_AD_ONLY_SUPPORT_PLATFORM);
+                etOnlySupportPlatform.setText(platformKey);
                 tvScene.setVisibility(View.VISIBLE);
                 etScene.setVisibility(View.VISIBLE);
                 etScene.setText(String.valueOf(ADSuyiDemoConstant.INTERSTITIAL_AD_SCENE_ID));
@@ -185,7 +240,8 @@ public class SettingActivity extends AppCompatActivity {
             case ADSuyiAdType.TYPE_DRAW_VOD:
                 etPosId.setText(ADSuyiDemoConstant.DRAW_VOD_AD_POS_ID);
                 etCount.setText(String.valueOf(ADSuyiDemoConstant.NATIVE_AD_COUNT));
-                etOnlySupportPlatform.setText(ADSuyiDemoConstant.DRAW_VOD_AD_ONLY_SUPPORT_PLATFORM);
+                platformKey = getPlatformKey(platformMap, ADSuyiDemoConstant.DRAW_VOD_AD_ONLY_SUPPORT_PLATFORM);
+                etOnlySupportPlatform.setText(platformKey);
                 etCount.setVisibility(View.VISIBLE);
                 tvCount.setVisibility(View.VISIBLE);
                 break;
@@ -198,8 +254,8 @@ public class SettingActivity extends AppCompatActivity {
 
     private void updateData() {
         String posId = etPosId.getText().toString().trim();
-        String onlySupportPlatform = etOnlySupportPlatform.getText().toString().trim();
-
+        String platformKey = etOnlySupportPlatform.getText().toString().trim();
+        String onlySupportPlatform = platformMap.get(platformKey);
         switch (adType) {
             case ADSuyiAdType.TYPE_SPLASH:
                 ADSuyiDemoConstant.SPLASH_AD_POS_ID = posId;

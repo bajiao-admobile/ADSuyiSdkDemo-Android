@@ -1,6 +1,7 @@
 <resources>
-    <string name="app_name">艾狄墨搏广告SdkDemo</string>
+    <string name="app_name">ADmobile 广告聚合SDK Demo</string>
     <string name="splash_ad">开屏广告</string>
+    <string name="splash_v_plus_ad">V+开屏广告</string>
     <string name="banner_ad">Banner广告</string>
     <string name="native_ad">信息流广告</string>
     <string name="reward_vod_ad">激励视频广告</string>
@@ -13,16 +14,28 @@
     <string name="content_alliance">内容联盟</string>
     <string name="reward_ad_switch">组合广告异常切换示例</string>
     <string name="reward_ad_">Dl激励广告</string>
+
+    <string name="content_recipe">菜谱</string>
+    <string name="content_recipe_entry">菜谱入口</string>
+    <string name="content_recipe_tab">菜谱Tab</string>
+
+    <string name="content_novel">小说</string>
+    <string name="content_novel_entry">小说入口</string>
+    <string name="content_novel_tab">小说Tab</string>
+
     <string name="define">确定</string>
     <string name="setting">设置</string>
     <string name="web">Web</string>
+    <string name="content_module">内容组件</string>
 
     <string name="privacy_policy">亲爱的开发者，非常感谢您选择并选用ADmobile 广告聚合SaaS服务！\n\n
 为了保证您的App顺利通过合规检测，本提示将向你演示ADSuyiSdk初始化合规方案；\n
 \t1. APP首次运行时请通过弹窗等明显方式提示用户阅读《隐私政策》，用户确认同意《隐私政策》后，再启用SDK进行个人信息的收集与处理。\n
 \t2. 本提示的内容及《用户协议》、《隐私政策》需根据你的APP业务需求进行编写，可参考《网络安全标准实践指南—移动互联网应用程序（App）收集使用个人信息自评估指南》或咨询对接人员；\n\n
 你可以通过阅读完整版的ADmobile 《隐私政策》了解ADmobile详细隐私策略。
-</string>
+    </string>
+
+
 
 
     <string-array name="ad_type_items">
@@ -56,9 +69,6 @@
         <!--汇量/Mobvsita-->
         <item>mintegral</item>
 
-        <!--万维-->
-        <item>oneway</item>
-
         <!--appic-->
         <item>appic</item>
 
@@ -71,5 +81,58 @@
         <!--米盟-->
         <item>mimo</item>
 
+        <!--华为广告联盟-->
+        <item>hwpps</item>
+
+        <!--云码-->
+        <item>yunma</item>
+
+        <!--爱奇艺-->
+        <item>iqy</item>
+
+    </string-array>
+
+    <string-array name="platforms_zh">
+        <item>所有(null或空字符串)</item>
+
+        <item>艾狄墨搏(admobile)</item>
+
+        <item>广点通/优量汇(gdt)</item>
+
+        <item>头条/穿山甲(toutiao)</item>
+
+        <item>百度/百青藤(baidu)</item>
+
+        <item>inmobi</item>
+
+        <item>汇量/Mobvsita(mintegral)</item>
+
+        <item>appic</item>
+
+        <item>讯飞(ifly)</item>
+
+        <item>快手(ksad)</item>
+
+        <item>米盟(mimo)</item>
+
+        <item>华为广告联盟(hwpps)</item>
+
+        <item>云码(yunma)</item>
+
+        <item>爱奇艺(iqy)</item>
+
+    </string-array>
+
+    <string-array name="ad_count">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="native_ad_list">
+        <item>自渲染</item>
+        <item>模板渲染</item>
+<!--        <item>优量汇模板2.0渲染</item>-->
+        <item>模版</item>
     </string-array>
 </resources>

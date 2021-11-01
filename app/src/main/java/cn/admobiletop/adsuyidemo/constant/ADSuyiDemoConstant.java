@@ -6,7 +6,7 @@ package cn.admobiletop.adsuyidemo.constant;
  * @date 2020/4/7
  */
 public class ADSuyiDemoConstant {
-    public static final String APP_ID = "3801556";
+    public static final String APP_ID = "3606338";
     public static final String TAG = "ADSuyiDemoLog";
     /**
      * 开屏广告位ID
@@ -39,7 +39,7 @@ public class ADSuyiDemoConstant {
     /**
      * Banner广告自刷新间隔时长，单位秒
      */
-    public static int BANNER_AD_AUTO_REFRESH_INTERVAL = 60;
+    public static int BANNER_AD_AUTO_REFRESH_INTERVAL = 30;
     /**
      * BANNER广告位仅支持的平台
      */
@@ -61,7 +61,11 @@ public class ADSuyiDemoConstant {
      * 信息流广告位ID，只建了广点通模板2.0
      */
     public static final String NATIVE_AD_POS_ID3 = "6552acfed554d68c78";
-    public static String NATIVE_AD_POS_ID = NATIVE_AD_POS_ID1;
+    /**
+     * 信息流广告位ID，模版
+     */
+    public static final String NATIVE_AD_POS_ID4 = "1e38a4c243ef7bac32";
+    public static String NATIVE_AD_POS_ID = NATIVE_AD_POS_ID4;
     /**
      * 信息流广告一次拉取广告数量
      */
@@ -135,7 +139,7 @@ public class ADSuyiDemoConstant {
     /**
      * Dl激励广告位ID
      */
-    public static String ADMOBILE_DL_AD_POS_ID = "63e91628640e20b35d";
+    public static String ADMOBILE_DL_AD_POS_ID = "c078638e143ac16f46";
 
     /**
      * 内容联盟广告位场景id

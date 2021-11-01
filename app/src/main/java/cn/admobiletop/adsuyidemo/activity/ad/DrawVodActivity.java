@@ -1,4 +1,4 @@
-package cn.admobiletop.adsuyidemo.activity;
+package cn.admobiletop.adsuyidemo.activity.ad;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -32,11 +32,6 @@ import cn.admobiletop.adsuyidemo.widget.ViewPagerLayoutManager;
  * @date 2020/4/7
  */
 public class DrawVodActivity extends AppCompatActivity implements OnRefreshLoadMoreListener {
-    private static final String[] MOCK_IMAGE_URLS = {"https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3866740925,837396992&fm=26&gp=0.jpg"
-            , "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1586249535109&di=0b7de387c7b00bcb4b8564b9f8f0e230&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201306%2F06%2F20130606201616_4ZivY.jpeg"
-            , "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1586249535108&di=d9a6b1312cfe8d48d3ff742dab50cb90&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201708%2F13%2F20170813181506_Q2YUw.jpeg"
-            , "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=357485033,2928965735&fm=15&gp=0.jpg"
-            , "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1586249580122&di=bc848ed60b06740e3fd84fcf69319a21&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fforum%2Fw%253d580%2Fsign%3Daa5b70becd1b9d168ac79a69c3dfb4eb%2F4d1833fa828ba61e744e2a4e4234970a314e59d9.jpg"};
     private MySmartRefreshLayout refreshLayout;
     private ADSuyiDrawVodAd drawVodAd;
     private DrawVodAdAdapter drawVodAdAdapter;
@@ -53,7 +48,6 @@ public class DrawVodActivity extends AppCompatActivity implements OnRefreshLoadM
 
     private void initView() {
         refreshLayout = findViewById(R.id.refreshLayout);
-
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new ViewPagerLayoutManager(this, LinearLayoutManager.VERTICAL));
         drawVodAdAdapter = new DrawVodAdAdapter(this);
@@ -68,7 +62,7 @@ public class DrawVodActivity extends AppCompatActivity implements OnRefreshLoadM
         drawVodAd = new ADSuyiDrawVodAd(this);
 
         int width = getResources().getDisplayMetrics().widthPixels;
-        int height = width * 16 / 9;
+        int height = getResources().getDisplayMetrics().heightPixels;
         // 创建额外参数实例
         ADSuyiExtraParams extraParams = new ADSuyiExtraParams.Builder()
                 // 设置广告预期宽高(目前仅头条平台需要，没有接入头条平台可不设置)，单位为px，宽高均不能小于等于0
@@ -97,6 +91,7 @@ public class DrawVodActivity extends AppCompatActivity implements OnRefreshLoadM
                 }
                 drawVodAdAdapter.addData(drawVodAdSampleDataList);
                 refreshLayout.finish(refreshType, true, false);
+                refreshLayout.autoRefresh();
             }
 
             @Override
@@ -123,6 +118,7 @@ public class DrawVodActivity extends AppCompatActivity implements OnRefreshLoadM
                     Log.d(ADSuyiDemoConstant.TAG, "onAdFailed : " + failedJson);
                 }
                 refreshLayout.finish(refreshType, false, false);
+                refreshLayout.autoRefresh();
             }
         });
         refreshLayout.autoRefresh();
@@ -156,8 +152,8 @@ public class DrawVodActivity extends AppCompatActivity implements OnRefreshLoadM
      */
     private List<DrawVodAdSampleData> mockNormalDataRequest() {
         List<DrawVodAdSampleData> normalDataList = new ArrayList<>();
-        for (int i = 0; i < 5; i++) {
-            normalDataList.add(new DrawVodAdSampleData(MOCK_IMAGE_URLS[i % MOCK_IMAGE_URLS.length]));
+        for (int i = 0; i < 2; i++) {
+            normalDataList.add(new DrawVodAdSampleData("Normal Data Page"));
         }
         return normalDataList;
     }
