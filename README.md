@@ -1,4 +1,4 @@
-# ADSuyiSdk Android Sdk——接入文档 V3.3.2.08201
+# ADSuyiSdk Android Sdk——接入文档 V3.3.2.08204
 
  目录 
 
@@ -199,7 +199,7 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
   
     // ADSuyiSdk核心库是必须导入的
-    implementation 'cn.admobiletop.adsuyi.ad:core:3.3.2.08201'
+    implementation 'cn.admobiletop.adsuyi.ad:core:3.3.2.08204'
     // common库是必须导入的，请保持和Demo中版本一致
     implementation 'com.admobile:common:1.3.2'
     // material库是必须导入的，请保持和Demo中版本一致
