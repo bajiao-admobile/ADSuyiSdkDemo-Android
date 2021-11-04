@@ -126,6 +126,7 @@ public class SplashAdActivity extends AppCompatActivity {
 //        OAIDManager.getInstance().setCustomAAID("请传入AAID");
 //        OAIDManager.getInstance().setCustomVAID("请传入VAID");
 
+
         // 初始化ADSuyi广告SDK
         ADSuyiSdk.getInstance().init(ADSuyiApplication.context, new ADSuyiInitConfig.Builder()
                 // 设置APPID
