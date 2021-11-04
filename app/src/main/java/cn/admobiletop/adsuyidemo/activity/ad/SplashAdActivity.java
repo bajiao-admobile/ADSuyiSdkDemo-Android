@@ -32,6 +32,7 @@ import cn.admobiletop.adsuyi.ad.entity.ADSuyiAdSize;
 import cn.admobiletop.adsuyi.ad.entity.ADSuyiExtraParams;
 import cn.admobiletop.adsuyi.ad.error.ADSuyiError;
 import cn.admobiletop.adsuyi.ad.listener.ADSuyiSplashAdListener;
+import cn.admobiletop.adsuyi.adapter.oaid.OAIDManager;
 import cn.admobiletop.adsuyi.config.ADSuyiInitConfig;
 import cn.admobiletop.adsuyi.util.ADSuyiToastUtil;
 import cn.admobiletop.adsuyidemo.ADSuyiApplication;
@@ -120,6 +121,11 @@ public class SplashAdActivity extends AppCompatActivity {
      * 初始化广告SDK并且跳转开屏界面
      */
     private void initADSuyiSdkAndLoadSplashAd() {
+        // 可以自行通过OAID官方aar获取OAID、AAID、VAID，可增加ADSuyi三方渠道广告填充率
+//        OAIDManager.getInstance().setCustomOAID("请传入OAID");
+//        OAIDManager.getInstance().setCustomAAID("请传入AAID");
+//        OAIDManager.getInstance().setCustomVAID("请传入VAID");
+
         // 初始化ADSuyi广告SDK
         ADSuyiSdk.getInstance().init(ADSuyiApplication.context, new ADSuyiInitConfig.Builder()
                 // 设置APPID
@@ -141,9 +147,6 @@ public class SplashAdActivity extends AppCompatActivity {
                 .filterThirdQuestion(true)
                 // 如果开了浮窗广告，可设置不展示浮窗广告的界面，第一个参数为是否开启默认不展示的页面（例如:激励视频播放页面），第二可变参数为自定义不展示的页面
                 .floatingAdBlockList(false, "cn.admobiletop.adsuyidemo.activity.ad.SplashAdActivity")
-                // 注意：如果使用oaid1.0.26版本，需要在assets中放置密钥，并将密钥传入ADSuyi（suyi内部初始化oaid需要使用）
-                // 密钥需要到移动安全联盟申请（非oaid1.0.26版本无需使用该接口）
-                .setOaidCertPath("cn.admobiletop.adsuyidemo.cert.pem")
                 .build());
 
         initSplashAd();

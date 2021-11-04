@@ -1,4 +1,4 @@
-# ADSuyiSdk Android Sdk——接入文档 V3.3.2.08204
+# ADSuyiSdk Android Sdk——接入文档 V3.4.0.10144
 
  目录 
 
@@ -202,46 +202,40 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad:core:3.3.2.08204'
     // common库是必须导入的，请保持和Demo中版本一致
     implementation 'com.admobile:common:1.3.2'
-    // material库是必须导入的，请保持和Demo中版本一致
-    implementation 'cn.admobiletop.adsuyi.ad:material:1.0.4.08191'
 
-    // OAID库是必须导入的，请保持和Demo中版本一致（如果当前Suyi是3.0.9及以上版本，
-    // 必须保证oaid版本为oaid_sdk_1.0.25，oaid_sdk_1.0.25为msa_mdid_1.0.13、oaid_sdk_1.0.23的升级版，请删除原有的msa_mdid）
+    // OAID库是必须导入的，请保持和Demo中版本一致
     implementation(name: 'oaid_sdk_1.0.25', ext: 'aar')
     // oaid1.0.25版本适配器，导入1.0.25版本oaid必须的
     implementation 'cn.admobiletop.adsuyi.ad:oaid:1.0.25.08021'
-    // 注意 oaid1.0.26与oaid1.0.25版本间有差异，不能同时导入
-//    implementation(name: 'oaid_sdk_1.0.26', ext: 'aar')
-    // oaid1.0.26版本适配器，导入1.0.26版本oaid必须的
-//    implementation 'cn.admobiletop.adsuyi.ad:oaid:1.0.26.08041'
+    // 如果要使用其他版本，可以查看文档中适配高版本或低版本的方案（搜索OAID自定义）
 
     // 艾狄墨搏AdapterSdk，必须的`
     implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile:5.0.1.10223'
 
     // 广点通AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.400.1270.09022'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.422.1292.11021'
 
     // 头条AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:3.9.0.5.09025'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:4.0.1.9.11021'
 
     // 百度AdapterSdk，可选的
-//    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu:5.98.05132'
+		implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu:5.98.05132'
 
     // 百度增强版AdapterSdk，可选的（请勿与百度同时导入）
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced:9.15.09021'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced:9.16.10192'
 
     // 汇量AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:15.7.17.09021'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:15.7.47.11021'
 
     // InmobiAdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:inmobi:7.5.1.11112'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:inmobi:7.5.3.10191'
     implementation 'com.squareup.picasso:picasso:2.5.2'
 
     // 讯飞AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:ifly:5.0.2.06011'
 
     // 快手基础版AdapterSdk，可选的
-//    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.14.1.09021'
+		implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.16.2.10191'
 
     // 快手内容版AdapterSdk，可选的（比快手基础版多一个内容组件，不需要内容组件无需导入该版本，不可和快手基础版同时导入）
     implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadcontent:3.3.23.10141'
@@ -259,7 +253,7 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:yunma:1.0.5.09021'
 
     // 爱奇艺AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:iqy:1.3.12.08111'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:iqy:1.3.19.10191'
       
     // 小说内容SDK（还需要gson、glide4.9.0和recyclerview支持）
     implementation 'cn.admobiletop.adsuyi.ad.adapter:novel:1.2.8.06112'
@@ -280,7 +274,7 @@ dependencies {
   ```java
   ndk {
   	// 设置支持的SO库架构，暂不支持x86
-  	abiFilters 'armeabi-v7a', 'arm64-v8a' // 'armeabi'
+  	abiFilters 'armeabi-v7a', 'arm64-v8a'
   }
   ```
 
@@ -355,7 +349,21 @@ dependencies {
 
 **PS：需要更多帮助可参考目录下《移动智能终端补充设备标识体系统一调用SDK开发者说明文档》；**
 
+4. OAID自定义
 
+    ```java
+    // 如果要适配高版本oaid，如oaid1.0.29版本，可以导入以下依赖
+    implementation 'cn.admobiletop.adsuyi.ad:oaid:custom.10181'
+    ```
+
+    代码中自行获取OAID后将调用ADSuyi相关方法传入OAID、AAID、VAID
+
+    ```java
+    // 可以自行通过OAID官方aar获取OAID、AAID、VAID，可增加ADSuyi三方渠道广告填充率
+    OAIDManager.getInstance().setCustomOAID("请传入OAID");
+    OAIDManager.getInstance().setCustomAAID("请传入AAID");
+    OAIDManager.getInstance().setCustomVAID("请传入VAID");
+    ```
 
 ### 5.3 权限申请
 
