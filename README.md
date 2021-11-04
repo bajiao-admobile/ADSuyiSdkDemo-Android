@@ -199,7 +199,7 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
   
     // ADSuyiSdk核心库是必须导入的
-    implementation 'cn.admobiletop.adsuyi.ad:core:3.3.2.08204'
+    implementation 'cn.admobiletop.adsuyi.ad:core:3.4.0.10144'
     // common库是必须导入的，请保持和Demo中版本一致
     implementation 'com.admobile:common:1.3.2'
 
