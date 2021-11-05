@@ -21,6 +21,7 @@ public class LoadAdUtil {
         flContainer.setVisibility(View.VISIBLE);
         // 创建开屏广告实例，第一个参数可以是Activity或Fragment，第二个参数是广告容器（请保证容器不会拦截点击、触摸等事件，高度不小于真实屏幕高度的75%，并且处于可见状态）
         ADSuyiSplashAd adSuyiSplashAd = new ADSuyiSplashAd(activity, flContainer);
+        adSuyiSplashAd.setOnlySupportPlatform(ADSuyiDemoConstant.SPLASH_AD_ONLY_SUPPORT_PLATFORM);
         // 设置开屏广告监听
         adSuyiSplashAd.setListener(new ADSuyiSplashAdListener() {
 
@@ -51,7 +52,11 @@ public class LoadAdUtil {
             @Override
             public void onAdClose(ADSuyiAdInfo adSuyiAdInfo) {
                 Log.d(ADSuyiDemoConstant.TAG, "广告关闭回调，需要在此进行页面跳转");
+                flContainer.removeAllViews();
                 flContainer.setVisibility(View.GONE);
+                if (adSuyiSplashAd != null) {
+                    adSuyiSplashAd.release();
+                }
             }
 
             @Override
@@ -61,7 +66,11 @@ public class LoadAdUtil {
                     Log.d(ADSuyiDemoConstant.TAG, "onAdFailed----->" + failedJson);
                     // ADSuyiToastUtil.show(getApplicationContext(), "广告获取失败 : " + failedJson);
                 }
+                flContainer.removeAllViews();
                 flContainer.setVisibility(View.GONE);
+                if (adSuyiSplashAd != null) {
+                    adSuyiSplashAd.release();
+                }
             }
         });
 
