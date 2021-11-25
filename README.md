@@ -269,7 +269,7 @@ dependencies {
 
 #### 5.1.3 注意事项 
 
-* 支持主流架构，x86架构暂不支持
+* 支持主流架构，x86架构暂不支持，必须在build.gradle中添加'armeabi-v7a', 'arm64-v8a'两个架构
 
   ```java
   ndk {
