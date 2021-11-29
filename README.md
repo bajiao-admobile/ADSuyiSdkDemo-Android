@@ -210,7 +210,7 @@ dependencies {
     // 如果要使用其他版本，可以查看文档中适配高版本或低版本的方案（搜索OAID自定义）
 
     // 艾狄墨搏AdapterSdk，必须的`
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile:5.0.1.10223'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile:5.0.1.10224'
 
     // 广点通AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.422.1292.11021'
@@ -269,7 +269,7 @@ dependencies {
 
 #### 5.1.3 注意事项 
 
-* 支持主流架构，x86架构暂不支持，必须在build.gradle中添加'armeabi-v7a', 'arm64-v8a'两个架构
+* 支持主流架构，x86架构暂不支持
 
   ```java
   ndk {
