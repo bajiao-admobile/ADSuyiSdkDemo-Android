@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -22,19 +21,13 @@ import java.util.List;
 import cn.admobiletop.adsuyi.ADSuyiSdk;
 import cn.admobiletop.adsuyi.ad.ADSuyiSplashAd;
 import cn.admobiletop.adsuyi.ad.api.ADSuyiNetworkRequestInfo;
-import cn.admobiletop.adsuyi.ad.api.BaiduSplashAdRequestInfo;
-import cn.admobiletop.adsuyi.ad.api.GdtSplashAdRequestInfo;
 import cn.admobiletop.adsuyi.ad.api.KsSplashAdRequestInfo;
-import cn.admobiletop.adsuyi.ad.api.TTSplashAdRequestInfo;
-import cn.admobiletop.adsuyi.ad.api.annotation.DownloadTipParam;
 import cn.admobiletop.adsuyi.ad.data.ADSuyiAdInfo;
 import cn.admobiletop.adsuyi.ad.entity.ADSuyiAdSize;
 import cn.admobiletop.adsuyi.ad.entity.ADSuyiExtraParams;
 import cn.admobiletop.adsuyi.ad.error.ADSuyiError;
 import cn.admobiletop.adsuyi.ad.listener.ADSuyiSplashAdListener;
-import cn.admobiletop.adsuyi.adapter.oaid.OAIDManager;
 import cn.admobiletop.adsuyi.config.ADSuyiInitConfig;
-import cn.admobiletop.adsuyi.util.ADSuyiToastUtil;
 import cn.admobiletop.adsuyidemo.ADSuyiApplication;
 import cn.admobiletop.adsuyidemo.BuildConfig;
 import cn.admobiletop.adsuyidemo.R;
@@ -53,9 +46,7 @@ public class SplashAdActivity extends AppCompatActivity {
     /**
      * 根据实际情况申请
      */
-    private static final String[] PERMISSIONS = {Manifest.permission.READ_PHONE_STATE
-            , Manifest.permission.WRITE_EXTERNAL_STORAGE
-            , Manifest.permission.ACCESS_COARSE_LOCATION
+    private static final String[] PERMISSIONS = {Manifest.permission.ACCESS_COARSE_LOCATION
             , Manifest.permission.ACCESS_FINE_LOCATION
     };
     private static final int REQUEST_CODE = 7722;
