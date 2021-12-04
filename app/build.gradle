@@ -6,8 +6,8 @@ android {
         applicationId "cn.admobiletop.adsuyidemo"
         minSdkVersion 19
         targetSdkVersion 30
-        versionCode 202112021
-        versionName "1.202112021"
+        versionCode 202112041
+        versionName "1.202112041"
         multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         ndk {
@@ -96,7 +96,7 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.422.1292.11122'
 
     // 头条AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:4.0.2.2.11151'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:4.0.2.2.11152'
 
     // 百度AdapterSdk，可选的
 //    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu:5.98.05132'
