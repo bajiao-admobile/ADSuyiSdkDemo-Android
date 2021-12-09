@@ -19,6 +19,7 @@ import cn.admobiletop.adsuyi.util.ADSuyiToastUtil;
 import cn.admobiletop.adsuyidemo.R;
 import cn.admobiletop.adsuyidemo.activity.base.BaseAdActivity;
 import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
+import cn.admobiletop.adsuyidemo.widget.AdMobileDlExpressAdDialog;
 import cn.admobiletop.adsuyidemo.widget.AdMobileDlFeedAdDialog;
 
 /**
@@ -29,7 +30,8 @@ import cn.admobiletop.adsuyidemo.widget.AdMobileDlFeedAdDialog;
 public class DlAdActivity extends BaseAdActivity implements View.OnClickListener {
 
     private ADSuyiNativeAd adSuyiNativeAd;
-    AdMobileDlFeedAdDialog adMobileDlAdDialog;
+    private AdMobileDlFeedAdDialog adMobileDlAdDialog;
+    private AdMobileDlExpressAdDialog adMobileDlExpressAdDialog;
     private TextView tvDesc;
 
     @Override
@@ -47,6 +49,7 @@ public class DlAdActivity extends BaseAdActivity implements View.OnClickListener
     }
 
     private void initAd() {
+        dialogDismiss();
         // 模版广告容器宽度
         int widthPixels = getResources().getDisplayMetrics().widthPixels;
         // 创建Dl广告实例 (注意dl广告用法与信息流广告相似，但是需要申请dl相应广告位，并非使用信息流的广告位)
@@ -71,8 +74,14 @@ public class DlAdActivity extends BaseAdActivity implements View.OnClickListener
                 Log.d(ADSuyiDemoConstant.TAG, "onAdReceive: " + adInfoList.size());
                 if (adInfoList != null && !adInfoList.isEmpty()) {
                     ADSuyiToastUtil.show(getApplicationContext(), "广告获取成功");
-                    adMobileDlAdDialog = new AdMobileDlFeedAdDialog(DlAdActivity.this);
-                    adMobileDlAdDialog.render(adInfoList.get(0));
+                    // 判断是否为自渲染广告
+                    if (adInfoList.get(0).isNativeExpress()) {
+                        adMobileDlExpressAdDialog = new AdMobileDlExpressAdDialog(DlAdActivity.this);
+                        adMobileDlExpressAdDialog.render(adInfoList.get(0));
+                    } else {
+                        adMobileDlAdDialog = new AdMobileDlFeedAdDialog(DlAdActivity.this);
+                        adMobileDlAdDialog.render(adInfoList.get(0));
+                    }
                     tvDesc.append("\n\n获取DL广告成功");
                 }
             }
@@ -97,9 +106,7 @@ public class DlAdActivity extends BaseAdActivity implements View.OnClickListener
             @Override
             public void onAdClose(ADSuyiNativeAdInfo adSuyiNativeAdInfo) {
                 Log.d(ADSuyiDemoConstant.TAG, "onAdClose: " + adSuyiNativeAdInfo.hashCode());
-                if (adMobileDlAdDialog != null) {
-                    adMobileDlAdDialog.dismiss();
-                }
+                dialogDismiss();
                 tvDesc.append("\n\nDL广告被关闭");
             }
 
@@ -108,9 +115,7 @@ public class DlAdActivity extends BaseAdActivity implements View.OnClickListener
                 if (adSuyiError != null) {
                     Log.d(ADSuyiDemoConstant.TAG, "onAdFailed: " + adSuyiError.toString());
                 }
-                if (adMobileDlAdDialog != null) {
-                    adMobileDlAdDialog.dismiss();
-                }
+                dialogDismiss();
                 tvDesc.append("\n\n获取DL广告失败");
 
 
@@ -137,12 +142,20 @@ public class DlAdActivity extends BaseAdActivity implements View.OnClickListener
         adSuyiNativeAd.loadAd(ADSuyiDemoConstant.ADMOBILE_DL_AD_POS_ID);
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
+    private void dialogDismiss() {
         if (adMobileDlAdDialog != null) {
             adMobileDlAdDialog.dismiss();
             adMobileDlAdDialog = null;
         }
+        if (adMobileDlExpressAdDialog != null) {
+            adMobileDlExpressAdDialog.dismiss();
+            adMobileDlExpressAdDialog = null;
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        dialogDismiss();
     }
 }

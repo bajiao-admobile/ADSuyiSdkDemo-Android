@@ -88,7 +88,7 @@
             android:label="@string/interstitial_ad"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.ad.NativeAdRecyclerViewActivity"
+            android:name=".activity.ad.feed.NativeAdRecyclerViewActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:label="@string/native_ad"
             android:screenOrientation="portrait"
@@ -143,8 +143,9 @@
             android:name=".activity.other.ContentModuleActivity"
             android:label="@string/admobile_dl_ad"
             android:screenOrientation="portrait" />
-        <activity android:name=".activity.ad.NativeExpressActivity" />
+        <activity android:name=".activity.ad.feed.NativeExpressActivity" />
         <activity android:name=".activity.other.NativeAdActivity" />
+        <activity android:name=".activity.ad.feed.NativeSlideshowActivity" />
     </application>
 
 </manifest>

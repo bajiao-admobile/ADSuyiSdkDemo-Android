@@ -3,13 +3,13 @@ package cn.admobiletop.adsuyidemo.activity.other;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import cn.admobiletop.adsuyidemo.R;
-import cn.admobiletop.adsuyidemo.activity.ad.NativeAdRecyclerViewActivity;
-import cn.admobiletop.adsuyidemo.activity.ad.NativeExpressActivity;
+import cn.admobiletop.adsuyidemo.activity.ad.feed.NativeAdRecyclerViewActivity;
+import cn.admobiletop.adsuyidemo.activity.ad.feed.NativeExpressActivity;
+import cn.admobiletop.adsuyidemo.activity.ad.feed.NativeSlideshowActivity;
 
 /**
  * @author : maipian
@@ -20,10 +20,11 @@ public class NativeAdActivity extends AppCompatActivity implements View.OnClickL
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_native);
+        setContentView(R.layout.activity_feed_native);
 
         findViewById(R.id.btnNativeRecyclerView).setOnClickListener(this);
         findViewById(R.id.btnNativeRelativeLayout).setOnClickListener(this);
+        findViewById(R.id.btnNativeSlideshow).setOnClickListener(this);
     }
 
     @Override
@@ -34,6 +35,9 @@ public class NativeAdActivity extends AppCompatActivity implements View.OnClickL
                 break;
             case R.id.btnNativeRelativeLayout:
                 startActivity(NativeExpressActivity.class);
+                break;
+            case R.id.btnNativeSlideshow:
+                startActivity(NativeSlideshowActivity.class);
                 break;
             default:
                 break;

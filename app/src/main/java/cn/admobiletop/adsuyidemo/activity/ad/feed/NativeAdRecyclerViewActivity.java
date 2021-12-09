@@ -1,4 +1,4 @@
-package cn.admobiletop.adsuyidemo.activity.ad;
+package cn.admobiletop.adsuyidemo.activity.ad.feed;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -52,7 +52,7 @@ public class NativeAdRecyclerViewActivity extends AppCompatActivity implements O
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_native_recyclerview_ad);
+        setContentView(R.layout.activity_feed_native_recyclerview_ad);
         Toolbar toolbar = findViewById(R.id.toolBar);
         setSupportActionBar(toolbar);
 
