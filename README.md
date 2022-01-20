@@ -1080,6 +1080,10 @@ rewardVodAd.setListener(new ADSuyiRewardVodAdListener() {
 rewardVodAd.setSceneId(ADSuyiDemoConstant.REWARD_VOD_AD_SCENE_ID);
 // 加载激励视频广告，参数为广告位ID
 rewardVodAd.loadAd(ADSuyiDemoConstant.REWARD_VOD_AD_POS_ID);
+```
+
+广告展示。<font color=#ff0000>注意广告对象的获取是异步的，请在onAdReceive或onVideoCache回调后展示广告</font>
+```java
 // 激励视频的展示，由于激励视频的获取是异步的，请在onAdReceive后调用该方法对激励视频进行展示（部分平台需要在onVideoCache回调后）
 ADSuyiAdUtil.showRewardVodAdConvenient(this, RewardVodAdActivity.this.rewardVodAdInfo);
 ```
@@ -1152,6 +1156,10 @@ fullScreenVodAd.setListener(new ADSuyiFullScreenVodAdListener() {
 
 // 加载全屏视频广告
 fullScreenVodAd.loadAd(ADSuyiDemoConstant.FULL_SCREEN_VOD_AD_POS_ID);
+```
+
+广告展示。<font color=#ff0000>注意广告对象的获取是异步的，请在onAdReceive或onVideoCache回调后展示广告</font>
+```java
 // 全屏视频的展示，由于全屏视频的获取是异步的，请在onAdReceive后调用该方法对全屏视频进行展示（部分平台需要在onVideoCache回调后）
 ADSuyiAdUtil.showFullScreenAdConvenient(this, FullScreenVodAdActivity.this.fullScreenVodAdInfo);
 ```
@@ -1215,6 +1223,10 @@ interstitialAd.setListener(new ADSuyiInterstitialAdListener() {
 interstitialAd.setSceneId(ADSuyiDemoConstant.INTERSTITIAL_AD_SCENE_ID);
 // 加载插屏广告
 interstitialAd.loadAd(ADSuyiDemoConstant.INTERSTITIAL_AD_POS_ID);
+```
+
+广告展示。<font color=#ff0000>注意广告对象的获取是异步的，请在onAdReceive或onAdReady回调后展示广告</font>
+```java
 // 插屏的展示，由于插屏的获取是异步的，请在onAdReceive后调用该方法对插屏进行展示
 ADSuyiAdUtil.showInterstitialAdConvenient(this, InterstitialAdActivity.this.interstitialAdInfo);
 ```
