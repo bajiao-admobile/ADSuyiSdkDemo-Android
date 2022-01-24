@@ -146,6 +146,9 @@
         <activity android:name=".activity.ad.feed.NativeExpressActivity" />
         <activity android:name=".activity.other.NativeAdActivity" />
         <activity android:name=".activity.ad.feed.NativeSlideshowActivity" />
+        <activity android:name=".activity.ad.feed.NativeSplashActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/splash"/>
     </application>
 
 </manifest>

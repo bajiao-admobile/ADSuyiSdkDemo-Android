@@ -10,6 +10,7 @@ import cn.admobiletop.adsuyidemo.R;
 import cn.admobiletop.adsuyidemo.activity.ad.feed.NativeAdRecyclerViewActivity;
 import cn.admobiletop.adsuyidemo.activity.ad.feed.NativeExpressActivity;
 import cn.admobiletop.adsuyidemo.activity.ad.feed.NativeSlideshowActivity;
+import cn.admobiletop.adsuyidemo.activity.ad.feed.NativeSplashActivity;
 
 /**
  * @author : maipian
@@ -25,6 +26,7 @@ public class NativeAdActivity extends AppCompatActivity implements View.OnClickL
         findViewById(R.id.btnNativeRecyclerView).setOnClickListener(this);
         findViewById(R.id.btnNativeRelativeLayout).setOnClickListener(this);
         findViewById(R.id.btnNativeSlideshow).setOnClickListener(this);
+        findViewById(R.id.btnNativeSplash).setOnClickListener(this);
     }
 
     @Override
@@ -38,6 +40,9 @@ public class NativeAdActivity extends AppCompatActivity implements View.OnClickL
                 break;
             case R.id.btnNativeSlideshow:
                 startActivity(NativeSlideshowActivity.class);
+                break;
+            case R.id.btnNativeSplash:
+                startActivity(NativeSplashActivity.class);
                 break;
             default:
                 break;
