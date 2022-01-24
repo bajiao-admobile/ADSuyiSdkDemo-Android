@@ -103,6 +103,14 @@
         </RelativeLayout>
     </com.qq.e.ads.nativ.widget.NativeAdContainer>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="该广告为开发者自行适配"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:gravity="center"/>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="68dp"
