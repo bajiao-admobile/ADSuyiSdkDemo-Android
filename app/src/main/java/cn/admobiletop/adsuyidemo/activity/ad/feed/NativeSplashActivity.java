@@ -99,6 +99,7 @@ public class NativeSplashActivity extends AppCompatActivity {
                 .build();
         // 设置一些额外参数，有些平台的广告可能需要传入一些额外参数，如果有接入头条、Inmobi平台，如果包含这些平台该参数必须设置
         adSuyiNativeAd.setLocalExtraParams(extraParams);
+        adSuyiNativeAd.setTimeout(5000);
 
         // 设置仅支持的广告平台，设置了这个值，获取广告时只会去获取该平台的广告，null或空字符串为不限制，默认为null，方便调试使用，上线时建议不设置
         adSuyiNativeAd.setOnlySupportPlatform(ADSuyiDemoConstant.NATIVE_AD_ONLY_SUPPORT_PLATFORM);
