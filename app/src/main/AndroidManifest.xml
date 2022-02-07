@@ -144,11 +144,16 @@
             android:label="@string/admobile_dl_ad"
             android:screenOrientation="portrait" />
         <activity android:name=".activity.ad.feed.NativeExpressActivity" />
-        <activity android:name=".activity.other.NativeAdActivity" />
+        <activity android:name=".activity.other.NativeAdActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeNoActionBar"/>
         <activity android:name=".activity.ad.feed.NativeSlideshowActivity" />
         <activity android:name=".activity.ad.feed.NativeSplashActivity"
             android:screenOrientation="portrait"
             android:theme="@style/splash"/>
+        <activity android:name=".activity.ad.feed.NativeInterstitialActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>
