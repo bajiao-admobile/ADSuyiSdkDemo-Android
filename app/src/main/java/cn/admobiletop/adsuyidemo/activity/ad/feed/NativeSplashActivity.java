@@ -49,6 +49,8 @@ public class NativeSplashActivity extends AppCompatActivity {
     private TextView tvDesc;
     private TextView tvSkip;
 
+    private FrameLayout flContainer2;
+
     private ADSuyiNativeAd adSuyiNativeAd;
     private ADSuyiNativeAdInfo adSuyiNativeAdInfo;
 
@@ -72,6 +74,8 @@ public class NativeSplashActivity extends AppCompatActivity {
         tvTitle = findViewById(R.id.tvTitle);
         tvDesc = findViewById(R.id.tvDesc);
         tvSkip = findViewById(R.id.tvSkip);
+
+        flContainer2 = findViewById(R.id.rlAdContainer2);
     }
 
     private void initListener() {
@@ -114,7 +118,6 @@ public class NativeSplashActivity extends AppCompatActivity {
             public void onAdReceive(List<ADSuyiNativeAdInfo> adInfoList) {
                 Log.d(ADSuyiDemoConstant.TAG, "onAdReceive: " + adInfoList.size());
                 if (adInfoList != null && adInfoList.size() > 0) {
-                    nativeAdContainer.setVisibility(View.VISIBLE);
                     Toast.makeText(NativeSplashActivity.this, "广告获取成功", Toast.LENGTH_SHORT).show();
                     adSuyiNativeAdInfo = adInfoList.get(0);
 
@@ -168,14 +171,37 @@ public class NativeSplashActivity extends AppCompatActivity {
             return;
         }
 
-        ADSuyiNativeFeedAdInfo nativeFeedAdInfo;
         if (adSuyiNativeAdInfo.isNativeExpress()) {
-            Toast.makeText(this, "当前请求到广告非信息流自渲染广告，请使用信息流自渲染广告位", Toast.LENGTH_SHORT).show();
-            Log.d(ADSuyiDemoConstant.TAG, "当前请求到广告非信息流自渲染广告，请使用信息流自渲染广告位");
-            return;
+            showNativeExpressAd();
         } else {
-            nativeFeedAdInfo = (ADSuyiNativeFeedAdInfo) adSuyiNativeAdInfo;
+            showNativeFeedAd();
         }
+    }
+
+    /**
+     * 展示信息流模版广告
+     */
+    private void showNativeExpressAd() {
+        flContainer2.setVisibility(View.VISIBLE);
+
+        ADSuyiNativeExpressAdInfo nativeExpressAdInfo = (ADSuyiNativeExpressAdInfo) adSuyiNativeAdInfo;
+        // 当前是信息流模板广告，getNativeExpressAdView获取的是整个模板广告视图
+        View nativeExpressAdView = nativeExpressAdInfo.getNativeExpressAdView(flContainer2);
+        // 将广告视图添加到容器中的便捷方法
+        ADSuyiViewUtil.addAdViewToAdContainer(flContainer2, nativeExpressAdView);
+
+        // 渲染广告视图, 必须调用, 因为是模板广告, 所以传入ViewGroup和响应点击的控件可能并没有用
+        // 务必在最后调用
+        nativeExpressAdInfo.render(flContainer2);
+    }
+
+    /**
+     * 展示信息流自渲染广告
+     */
+    private void showNativeFeedAd() {
+        nativeAdContainer.setVisibility(View.VISIBLE);
+
+        ADSuyiNativeFeedAdInfo nativeFeedAdInfo = (ADSuyiNativeFeedAdInfo) adSuyiNativeAdInfo;
 
         if (ivIcon != null) {
             // 广告icon
@@ -211,7 +237,6 @@ public class NativeSplashActivity extends AppCompatActivity {
         // 注意：广点通只会响应View...actionViews的点击事件，且这些View都应该是com.qq.e.ads.nativ.widget.NativeAdContainer的子View
         // 务必最后调用
         nativeFeedAdInfo.registerViewForInteraction(nativeAdContainer, rlAdContainer);
-
     }
 
     CountDownTimer timer = new CountDownTimer(5000, 1000) {
