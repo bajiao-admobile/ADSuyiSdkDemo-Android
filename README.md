@@ -65,7 +65,9 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | iqy   | 0.30M     | v1.3.32.01131 | c03511f14bfd37056377da528443dae6 |
 | appic   | 3.32M     | v4.5.2.3.01051 | f6c20493a3ac7043f9cf1ee9d97c6e1b |
 
+### 1.6 头部竞价功能
 
+> [头部竞价功能对接文档](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/README-Bidding.md)
 
 ## 2. 支持的广告类型
 
