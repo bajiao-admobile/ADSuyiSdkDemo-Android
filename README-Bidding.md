@@ -69,4 +69,4 @@ dependencies {
 }
 ```
 
-## 竞价功能集成完毕，可打包提交测试 ##
+## 竞价功能集成完毕，请进行调试或参照[ADSuyi聚合文档](https://gitee.com/admobile/ADSuyiSdkDemo-Android)继续完成接入 ##
