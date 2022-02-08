@@ -93,6 +93,7 @@ public class ADSuyiDemoConstant {
      * 激励视频广告位仅支持的平台
      */
     public static String REWARD_VOD_AD_ONLY_SUPPORT_PLATFORM = null;
+    public static boolean REWARD_AD_PLAY_WITH_MUTE = false;
 
     /**
      * 全屏视频广告位ID
@@ -117,6 +118,8 @@ public class ADSuyiDemoConstant {
      * 插屏广告位仅支持的平台
      */
     public static String INTERSTITIAL_AD_ONLY_SUPPORT_PLATFORM = null;
+    public static boolean INTERSTITIAL_AD_PLAY_WITH_MUTE = false;
+
     /**
      * 插屏广告位场景id
      */

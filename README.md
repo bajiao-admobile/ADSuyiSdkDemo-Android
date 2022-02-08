@@ -1,4 +1,4 @@
-# ADSuyiSdk Android Sdk——接入文档 V3.4.2.12041
+# ADSuyiSdk Android Sdk——接入文档 V3.5.0.12291
 
  目录 
 
@@ -50,19 +50,20 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 
 | Name      | 容量 | 版本号 | MD5值 |
 | --------- | -------- | --------- | --------- |
-| ADmobile       | 0.62M   | v5.0.3.12171 | 8ae0d24f2aaafbbeb5c5c78cc8f721f0 |
-| gdt       | 1.41M   | v4.431.1301.12161 | f65430b140c0cf7de55e8a51558cf088 |
-| toutiao   | 4.11M     | v4.2.0.3.12282 | af260c98c85247f979ed17125053ada3 |
-| baidu     | 1.20M     | v9.18.12161 | a72f0678923501dec892cf0fee075f5d |
+| ADmobile       | 0.62M   | v5.0.4.01131 | c1df2302b9b236ad190fc7068213284f |
+| gdt       | 1.41M   | v4.441.1311.01131 | fb715a956f1f4b6d2aa986c44b975295 |
+| toutiao   | 4.11M     | v4.2.5.2.01201 | b7f91627e041ea987f46e7a3b12dfa53 |
+| baidu     | 1.20M     | v9.183.01131 | af1ab9e26a8d98acc58ed83ac135205d |
 | inmobi    | 0.95M   | v7.5.3.10191 | 5ac0ca9e011497eae054f5abd05c3002 |
-| mintegral | 2.80M     | v15.7.77.12162 | 7b94bc652b8fb6facb7e4935cfc12dc7 |
+| mintegral | 2.80M     | v16.0.17.01192 | e1e5a8edb9e912aa4a0dc169cc92e5e3 |
 | Ifly      | 0.48M     | v5.0.2.06012 | 4cad10aca3d43bd368aff25c0e5c2db0 |
-| ksad(快手基础版)      | 2.30M     | v3.3.19.2.12161 | 2784a6878652674715f7bd0b758c6095 |
-| ksad(快手内容版)      | 6.00M     | v3.3.25.3.12161 | c674c9fcf159050f3ca34cb9e6a51c82 |
+| ksad(快手基础版)      | 2.30M     | v3.3.20.01131 | 0941d2441eeb8eb57fb05fbbbd37786b |
+| ksad(快手内容版)      | 6.00M     | v3.3.27.3.01131 | 8192bea5026da5e45df84e60155ed68c |
 | mimo   | 0.45M     | v5.1.5.12161 | 51ba01846faccdf5b6a00e7a336d42d4 |
 | hwpps   | 1.01M     | v13.4.49.301.12201 | f14a455c43e7cc74d7dca602553fcac1 |
 | yunma   | 1.00M     | v1.0.5.09022 | c2cbd42dc22a3ba3e4669819035171e2 |
-| iqy   | 0.30M     | v1.3.29.12162 | 2ee545fe171671a76780dc41d26b91df |
+| iqy   | 0.30M     | v1.3.32.01131 | c03511f14bfd37056377da528443dae6 |
+| appic   | 3.32M     | v4.5.2.3.01051 | f6c20493a3ac7043f9cf1ee9d97c6e1b |
 
 
 
@@ -199,7 +200,7 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
   
     // ADSuyiSdk核心库是必须导入的
-    implementation 'cn.admobiletop.adsuyi.ad:core:3.4.2.12041'
+    implementation 'cn.admobiletop.adsuyi.ad:core:3.5.0.12291'
 
     // OAID库是必须导入的，请保持和Demo中版本一致
     implementation(name: 'oaid_sdk_1.0.25', ext: 'aar')
@@ -207,19 +208,19 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad:oaid:1.0.25.08021'
 
     // 艾狄墨搏AdapterSdk，必须的`
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile:5.0.3.12172'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile:5.0.4.01131'
 
-    // 广点通AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.431.1301.12161'
+    // 广点通（优量汇）AdapterSdk，可选的
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.441.1311.01131'
 
     // 头条AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:4.2.0.3.12282'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:4.2.5.2.01201'
 
-    // 百度增强版AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced:9.18.12163'
+    // 百度增强版AdapterSdk，可选的（请勿与百度同时导入）
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced:9.183.01131'
 
     // 汇量AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:15.7.77.12162'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:16.0.17.01192'
 
     // InmobiAdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:inmobi:7.5.3.10191'
@@ -229,10 +230,10 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:ifly:5.0.2.06012'
 
     // 快手基础版AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.19.2.12161'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.20.01131'
 
     // 快手内容版AdapterSdk，可选的（比快手基础版多一个内容组件，不需要内容组件无需导入该版本，不可和快手基础版同时导入）
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadcontent:3.3.25.3.12161'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadcontent:3.3.27.3.01131'
 
     // 米盟AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:mimo:5.1.5.12161'
@@ -247,7 +248,14 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:yunma:1.0.5.09022'
 
     // 爱奇艺AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:iqy:1.3.29.12162'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:iqy:1.3.32.01131'
+
+    // AppicAdapterSdk，可选的
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:appic:4.5.2.3.01051'
+    // Appic还需要以下两个三方库支持
+    implementation 'com.squareup.okhttp3:okhttp:3.12.0'
+    implementation 'com.android.volley:volley:1.1.0'
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.6'
       
     // 小说内容SDK（还需要gson、glide4.9.0和recyclerview支持）
     implementation 'cn.admobiletop.adsuyi.ad.adapter:novel:1.2.8.06112'
@@ -1013,7 +1021,16 @@ adSuyiRewardExtra.setCustomData("设置激励视频服务端验证的自定义�
 adSuyiRewardExtra.setRewardName("激励名称");
 // 设置激励视频服务端激励数量(mintegral渠道不支持)
 adSuyiRewardExtra.setRewardAmount(1);
-rewardVodAd.setLocalExtraParams(new ADSuyiExtraParams.Builder().rewardExtra(adSuyiRewardExtra).build());
+
+// 创建额外参数实例
+ADSuyiExtraParams extraParams = new ADSuyiExtraParams.Builder()
+    // 设置激励视频额外参数（可不设置）
+    .rewardExtra(adSuyiRewardExtra)
+    // 设置视频类广告是否静音（部分渠道支持）
+    .setVideoWithMute(false)
+    .build();
+
+rewardVodAd.setLocalExtraParams(extraParams);
 
 // 设置激励视频广告监听
 rewardVodAd.setListener(new ADSuyiRewardVodAdListener() {
@@ -1174,6 +1191,13 @@ ADSuyiAdUtil.showFullScreenAdConvenient(this, FullScreenVodAdActivity.this.fullS
 
 ```java
 interstitialAd = new ADSuyiInterstitialAd(this);
+
+// 创建额外参数实例
+ADSuyiExtraParams extraParams = new ADSuyiExtraParams.Builder()
+    // 设置视频类广告是否静音（部分渠道支持）
+    .setVideoWithMute(false)
+    .build();
+interstitialAd.setLocalExtraParams(extraParams);
 
 // 设置插屏广告监听
 interstitialAd.setListener(new ADSuyiInterstitialAdListener() {
