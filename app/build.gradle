@@ -6,8 +6,8 @@ android {
         applicationId "cn.admobiletop.adsuyidemo"
         minSdkVersion 19
         targetSdkVersion 30
-        versionCode 202202081
-        versionName "1.202202081"
+        versionCode 202202091
+        versionName "1.202202091"
         multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         ndk {
@@ -21,7 +21,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         debug {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -148,5 +148,10 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.5'
     // 小说sdk必须依赖4.9.0版本glide
     implementation 'com.github.bumptech.glide:glide:4.9.0'
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+
+    // 菜谱内容SDK（还需要gson和recyclerview支持）
+    implementation 'cn.admobiletop.adsuyi.ad:cookbook:1.0.3.02091'
+    implementation 'com.google.code.gson:gson:2.8.5'
     implementation 'com.android.support:recyclerview-v7:28.0.0'
 }

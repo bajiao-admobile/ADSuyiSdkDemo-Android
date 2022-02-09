@@ -16,13 +16,14 @@ import cn.admobiletop.adsuyidemo.activity.base.BaseAdActivity;
 import cn.admobiletop.adsuyidemo.fragment.BaseFragment;
 import cn.admobiletop.adsuyidemo.fragment.OtherFragment;
 import cn.admobiletop.adsuyidemo.fragment.TestFragment;
+import cn.admobiletop.cookbook.support.CookbookSDKManger;
 
 /**
  * @author ciba
- * @description 描述
+ * @description 将菜谱放到fragment页面中进行展示案例
  * @date 2020/4/20
  */
-public class FragmentActivity extends BaseAdActivity {
+public class FragmentAndCookbookActivity extends BaseAdActivity {
     private ViewPager viewPager;
     private TabLayout tabLayout;
 
@@ -42,9 +43,9 @@ public class FragmentActivity extends BaseAdActivity {
     private void initData() {
         final List<Fragment> fragmentList = new ArrayList<>();
         fragmentList.add(new TestFragment());
-        Fragment novelFragment = ADSuyiSdk.getInstance().getNovelFragment();
-        if (novelFragment != null) {
-            fragmentList.add(novelFragment);
+        Fragment cookbookFragment = CookbookSDKManger.getInstance().getCookbookFragment();
+        if (cookbookFragment != null) {
+            fragmentList.add(cookbookFragment);
         }
         fragmentList.add(new OtherFragment());
 
@@ -68,7 +69,7 @@ public class FragmentActivity extends BaseAdActivity {
                 if (fragment instanceof BaseFragment) {
                     return ((BaseFragment) fragment).getTitle();
                 }
-                return "小说内容";
+                return "菜谱内容";
             }
         });
         tabLayout.setupWithViewPager(viewPager);

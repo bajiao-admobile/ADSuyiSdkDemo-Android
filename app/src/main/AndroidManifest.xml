@@ -100,7 +100,12 @@
             android:screenOrientation="portrait"
             android:theme="@style/noActionBar" />
         <activity
-            android:name=".activity.other.FragmentActivity"
+            android:name=".activity.other.FragmentAndNovelActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:label="@string/fragment_examples"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.other.FragmentAndCookbookActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:label="@string/fragment_examples"
             android:screenOrientation="portrait" />

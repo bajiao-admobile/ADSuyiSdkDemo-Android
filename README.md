@@ -69,6 +69,10 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 
 > [头部竞价功能对接文档](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/README-Bidding.md)
 
+### 1.7 菜谱内容功能
+
+> [菜谱内容功能对接文档](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/README-Cookbook.md)
+
 ## 2. 支持的广告类型
 
 <table>

@@ -184,3 +184,6 @@
 -keepattributes Signature
 -keep class android.**{*;}
 -keep class com.ecook.novel_sdk.bookstore.data.bean.* {*;}
+
+# CookbookAdapter混淆
+-keep class cn.admobiletop.cookbook.**{*;}
