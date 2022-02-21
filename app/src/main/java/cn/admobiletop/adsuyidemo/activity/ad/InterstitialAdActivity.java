@@ -60,7 +60,7 @@ public class InterstitialAdActivity extends BaseAdActivity implements View.OnCli
         interstitialAd.setListener(new ADSuyiInterstitialAdListener() {
             @Override
             public void onAdReady(ADSuyiInterstitialAdInfo interstitialAdInfo) {
-                // 建议在该回调之后展示广告
+                // 目前汇量和Inmobi走了该回调之后才准备好
                 Log.d(ADSuyiDemoConstant.TAG, "onAdReady...");
             }
 
