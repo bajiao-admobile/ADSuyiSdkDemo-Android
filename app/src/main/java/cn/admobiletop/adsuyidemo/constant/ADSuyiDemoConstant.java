@@ -119,6 +119,7 @@ public class ADSuyiDemoConstant {
      */
     public static String INTERSTITIAL_AD_ONLY_SUPPORT_PLATFORM = null;
     public static boolean INTERSTITIAL_AD_PLAY_WITH_MUTE = false;
+    public static boolean INTERSTITIAL_AD_AUTO_CLOSE = false;
 
     /**
      * 插屏广告位场景id

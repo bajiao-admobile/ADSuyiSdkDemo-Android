@@ -5,6 +5,9 @@ import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.TextView;
 
 import cn.admobiletop.adsuyi.ad.ADSuyiInterstitialAd;
 import cn.admobiletop.adsuyi.ad.data.ADSuyiInterstitialAdInfo;
@@ -16,6 +19,7 @@ import cn.admobiletop.adsuyi.util.ADSuyiToastUtil;
 import cn.admobiletop.adsuyidemo.R;
 import cn.admobiletop.adsuyidemo.activity.base.BaseAdActivity;
 import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
+import cn.admobiletop.adsuyidemo.manager.ADSuyiInterstitialManager;
 
 /**
  * @author ciba
@@ -29,7 +33,7 @@ public class InterstitialAdActivity extends BaseAdActivity implements View.OnCli
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_reward_vod);
+        setContentView(R.layout.activity_interstitial_ad);
 
         initListener();
         initAd();
@@ -38,12 +42,20 @@ public class InterstitialAdActivity extends BaseAdActivity implements View.OnCli
     private void initListener() {
         Button btnLoadAd = findViewById(R.id.btnLoadAd);
         Button btnShowAd = findViewById(R.id.btnShowAd);
+        CheckBox cbAutoClose = findViewById(R.id.cbAutoClose);
 
         btnLoadAd.setText("获取插屏广告");
         btnShowAd.setText("展示插屏广告");
 
         btnLoadAd.setOnClickListener(this);
         btnShowAd.setOnClickListener(this);
+
+        cbAutoClose.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                ADSuyiDemoConstant.INTERSTITIAL_AD_AUTO_CLOSE = b;
+            }
+        });
     }
 
     private void initAd() {
@@ -75,6 +87,10 @@ public class InterstitialAdActivity extends BaseAdActivity implements View.OnCli
             @Override
             public void onAdExpose(ADSuyiInterstitialAdInfo interstitialAdInfo) {
                 Log.d(ADSuyiDemoConstant.TAG, "onAdExpose...");
+
+                if (ADSuyiDemoConstant.INTERSTITIAL_AD_AUTO_CLOSE) {
+                    ADSuyiInterstitialManager.getInstance().addJumpView(interstitialAdInfo, InterstitialAdActivity.this);
+                }
             }
 
             @Override
