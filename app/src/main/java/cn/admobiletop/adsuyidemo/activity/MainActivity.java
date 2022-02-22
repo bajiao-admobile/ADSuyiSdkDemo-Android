@@ -16,9 +16,10 @@ import cn.admobiletop.adsuyidemo.R;
 import cn.admobiletop.adsuyidemo.activity.ad.BannerAdActivity;
 import cn.admobiletop.adsuyidemo.activity.ad.DrawVodActivity;
 import cn.admobiletop.adsuyidemo.activity.ad.FullScreenVodAdActivity;
-import cn.admobiletop.adsuyidemo.activity.ad.InterstitialAdActivity;
+import cn.admobiletop.adsuyidemo.activity.ad.interstitial.InterstitialAdActivity;
 import cn.admobiletop.adsuyidemo.activity.ad.RewardVodAdActivity;
 import cn.admobiletop.adsuyidemo.activity.ad.SplashAdActivity;
+import cn.admobiletop.adsuyidemo.activity.ad.interstitial.InterstitialAdAutoCloseActivity;
 import cn.admobiletop.adsuyidemo.activity.other.ContentModuleActivity;
 import cn.admobiletop.adsuyidemo.activity.other.DlModuleActivity;
 import cn.admobiletop.adsuyidemo.activity.other.NativeAdActivity;
@@ -46,6 +47,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.btnDrawVodAd).setOnClickListener(this);
         findViewById(R.id.btnContentMoudle).setOnClickListener(this);
         findViewById(R.id.btnAdmobileDlAdModule).setOnClickListener(this);
+        findViewById(R.id.btnInterstitialAutoClose).setOnClickListener(this);
     }
 
     @Override
@@ -80,6 +82,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btnAdmobileDlAdModule:
                 startActivity(DlModuleActivity.class);
+                break;
+            case R.id.btnInterstitialAutoClose:
+                startActivity(InterstitialAdAutoCloseActivity.class);
                 break;
             default:
                 break;

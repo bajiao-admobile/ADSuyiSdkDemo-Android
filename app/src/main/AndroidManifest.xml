@@ -84,7 +84,11 @@
             android:label="@string/full_screen_vod_ad"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.ad.InterstitialAdActivity"
+            android:name=".activity.ad.interstitial.InterstitialAdActivity"
+            android:label="@string/interstitial_ad"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ad.interstitial.InterstitialAdAutoCloseActivity"
             android:label="@string/interstitial_ad"
             android:screenOrientation="portrait" />
         <activity

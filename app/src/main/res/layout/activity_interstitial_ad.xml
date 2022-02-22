@@ -7,45 +7,59 @@
     android:orientation="vertical"
     android:padding="24dp">
 
-    <Button
-        android:layout_marginTop="120dp"
-        android:id="@+id/btnLoadAd"
+    <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/shape_background_button_selector"
-        android:stateListAnimator="@null"
-        android:text="加载插屏广告"
-        android:textColor="@color/textColorBlack" />
+        android:layout_height="match_parent">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:orientation="vertical">
-
-        <CheckBox
-            android:id="@+id/cbAutoClose"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="插屏自动关闭"/>
+            android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:textColor="#F44336"
-            android:lineSpacingExtra="3dp"
-            android:textSize="18sp"
-            android:text="注意:\n1.该功能非sdk功能，仅demo演示，如果有需要可参考demo中的代码按需求开发；\n2.自动关闭倒计时最好大于5秒，避免曝光异常影响收益；\n3.目前支持广点通、头条、快手、admobile渠道，渠道陆续增加中;\n4.目前仅支持插屏半屏（头条渠道支持半屏和全屏）;"/>
+            <Button
+                android:id="@+id/btnLoadAd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_background_button_selector"
+                android:stateListAnimator="@null"
+                android:text="加载插屏广告"
+                android:textColor="@color/textColorBlack" />
 
-    </LinearLayout>
-    
-    <Button
-        android:id="@+id/btnShowAd"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/shape_background_button_selector"
-        android:stateListAnimator="@null"
-        android:text="展示插屏广告"
-        android:textColor="@color/textColorBlack" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/cbAutoClose"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="插屏自动关闭"
+                    android:textSize="8sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textColor="#F44336"
+                    android:lineSpacingExtra="3dp"
+                    android:textSize="18sp"
+                    android:text="@string/interstitial_auto_close_attention"/>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnShowAd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/shape_background_button_selector"
+                android:stateListAnimator="@null"
+                android:text="展示插屏广告"
+                android:textColor="@color/textColorBlack" />
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
 </LinearLayout>

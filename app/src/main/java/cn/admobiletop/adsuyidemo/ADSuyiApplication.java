@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.multidex.MultiDex;
 
+import com.bytedance.sdk.openadsdk.stub.activity.Stub_Standard_Landscape_Activity;
 import com.bytedance.sdk.openadsdk.stub.activity.Stub_Standard_Portrait_Activity;
 import com.tencent.bugly.crashreport.CrashReport;
 
@@ -55,7 +56,8 @@ public class ADSuyiApplication extends Application {
             @Override
             public void onActivityCreated(@NonNull Activity activity, Bundle savedInstanceState) {
                 if (ADSuyiDemoConstant.INTERSTITIAL_AD_AUTO_CLOSE) {
-                    if (activity instanceof Stub_Standard_Portrait_Activity) {
+                    if (activity instanceof Stub_Standard_Portrait_Activity
+                            || activity instanceof Stub_Standard_Landscape_Activity) {
                         // 将头条activity放置到插屏管理类中，用于倒计时
                         ADSuyiInterstitialManager.getInstance().setAdInterstitialActivity(activity);
                     }
