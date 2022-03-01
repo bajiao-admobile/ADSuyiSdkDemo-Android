@@ -51,9 +51,9 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | Name      | 容量 | 版本号 | MD5值 |
 | --------- | -------- | --------- | --------- |
 | ADmobile       | 0.62M   | v5.0.4.01131 | c1df2302b9b236ad190fc7068213284f |
-| gdt       | 1.41M   | v4.441.1311.01131 | fb715a956f1f4b6d2aa986c44b975295 |
+| gdt       | 1.41M   | v4.441.1311.01132 | fb715a956f1f4b6d2aa986c44b975295 |
 | toutiao   | 4.11M     | v4.2.5.2.01201 | b7f91627e041ea987f46e7a3b12dfa53 |
-| baidu     | 1.20M     | v9.183.01131 | af1ab9e26a8d98acc58ed83ac135205d |
+| baidu     | 1.20M     | v9.183.01132 | af1ab9e26a8d98acc58ed83ac135205d |
 | inmobi    | 0.95M   | v7.5.3.10191 | 5ac0ca9e011497eae054f5abd05c3002 |
 | mintegral | 2.80M     | v16.0.17.01192 | e1e5a8edb9e912aa4a0dc169cc92e5e3 |
 | Ifly      | 0.48M     | v5.0.2.06012 | 4cad10aca3d43bd368aff25c0e5c2db0 |
