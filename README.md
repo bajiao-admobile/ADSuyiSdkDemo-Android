@@ -711,7 +711,7 @@ dependencies {
 
 ### 6.1 SDK初始化
 
-  在Application中进行SDK的初始化(详情请参考Demo)
+  在隐私同意后进行SDK的初始化(详情请参考Demo SplashAdActivity.java类)
 
   ```java
 // 初始化ADSuyi广告SDK
