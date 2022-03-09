@@ -1,4 +1,4 @@
-# ADSuyiSdk Android Sdk——接入文档 V3.4.0.10141-Alpha
+# ADSuyiSdk Android Sdk——接入文档 V3.5.0.12291
 
  目录 
 
@@ -41,30 +41,37 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 
 ### 1.4 ADSuyi必添包容量
 
-| Name      | 大小 |
-| --------- | -------- |
-| ADSuyi基础包  |0.8M  |
-| OAID  |1.1M  |
+| Name      | 大小 | 版本号 | MD5值 |
+| --------- | -------- | --------- | --------- |
+| ADSuyi基础包  |0.3M  |V3.5.0.12291  |f1f6ebb7964ba91f33ae8ba5a1a12566  |
+| OAID  |1.1M  |—  |—  |
 
 ### 1.5 三方广告平台适配器+三方广告sdk总容量
 
-| Name      | 容量 |
-| --------- | -------- |
-| gdt       | 1.41M   |
-| toutiao   | 4.11M     |
-| baidu     | 1.00M     |
-| baiduenhanced     | 1.20M     |
-| inmobi    | 0.95M   |
-| mintegral | 2.80M     |
-| Ifly      | 0.48M     |
-| ksad(快手基础版)      | 2.30M     |
-| ksadcontent(快手内容版)      | 6.00M     |
-| mimo   | 0.45M     |
-| hwpps   | 1.01M     |
-| yunma   | 1.00M     |
-| iqy   | 0.30M     |
+| Name      | 容量 | 版本号 | MD5值 |
+| --------- | -------- | --------- | --------- |
+| ADmobile       | 0.62M   | v5.0.4.01131 | c1df2302b9b236ad190fc7068213284f |
+| gdt       | 1.41M   | v4.441.1311.01132 | fb715a956f1f4b6d2aa986c44b975295 |
+| toutiao   | 4.11M     | v4.2.5.2.01201 | b7f91627e041ea987f46e7a3b12dfa53 |
+| baidu     | 1.20M     | v9.183.01133 | af1ab9e26a8d98acc58ed83ac135205d |
+| inmobi    | 0.95M   | v7.5.3.10191 | 5ac0ca9e011497eae054f5abd05c3002 |
+| mintegral | 2.80M     | v16.0.17.01192 | e1e5a8edb9e912aa4a0dc169cc92e5e3 |
+| Ifly      | 0.48M     | v5.0.2.06012 | 4cad10aca3d43bd368aff25c0e5c2db0 |
+| ksad(快手基础版)      | 2.30M     | v3.3.20.01131 | 0941d2441eeb8eb57fb05fbbbd37786b |
+| ksad(快手内容版)      | 6.00M     | v3.3.27.3.01131 | 8192bea5026da5e45df84e60155ed68c |
+| mimo   | 0.45M     | v5.1.5.12161 | 51ba01846faccdf5b6a00e7a336d42d4 |
+| hwpps   | 1.01M     | v13.4.49.301.12201 | f14a455c43e7cc74d7dca602553fcac1 |
+| yunma   | 1.00M     | v1.0.5.09022 | c2cbd42dc22a3ba3e4669819035171e2 |
+| iqy   | 0.30M     | v1.3.32.01131 | c03511f14bfd37056377da528443dae6 |
+| appic   | 3.32M     | v4.5.2.3.01051 | f6c20493a3ac7043f9cf1ee9d97c6e1b |
 
+### 1.6 头部竞价功能
 
+> [头部竞价功能对接文档](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/README-Bidding.md)
+
+### 1.7 菜谱内容功能
+
+> [菜谱内容功能对接文档](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/README-Cookbook.md)
 
 ## 2. 支持的广告类型
 
@@ -199,67 +206,62 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
   
     // ADSuyiSdk核心库是必须导入的
-    implementation 'cn.admobiletop.adsuyi.ad:core-alpha:3.4.0.10141'
-    // common库是必须导入的，请保持和Demo中版本一致
-    implementation 'com.admobile:common:1.3.2'
-    // material库是必须导入的，请保持和Demo中版本一致
-    implementation 'cn.admobiletop.adsuyi.ad:material:1.0.4.08191'
+    implementation 'cn.admobiletop.adsuyi.ad:core:3.5.0.12291'
 
-    // OAID库是必须导入的，请保持和Demo中版本一致（如果当前Suyi是3.0.9及以上版本，
-    // 必须保证oaid版本为oaid_sdk_1.0.25，oaid_sdk_1.0.25为msa_mdid_1.0.13、oaid_sdk_1.0.23的升级版，请删除原有的msa_mdid）
+    // OAID库是必须导入的，请保持和Demo中版本一致
     implementation(name: 'oaid_sdk_1.0.25', ext: 'aar')
     // oaid1.0.25版本适配器，导入1.0.25版本oaid必须的
     implementation 'cn.admobiletop.adsuyi.ad:oaid:1.0.25.08021'
-    // 注意 oaid1.0.26与oaid1.0.25版本间有差异，不能同时导入
-//    implementation(name: 'oaid_sdk_1.0.26', ext: 'aar')
-    // oaid1.0.26版本适配器，导入1.0.26版本oaid必须的
-//    implementation 'cn.admobiletop.adsuyi.ad:oaid:1.0.26.08041'
 
     // 艾狄墨搏AdapterSdk，必须的`
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile:5.0.1.10223'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile:5.0.4.01131'
 
-    // 广点通AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt-alpha:4.420.1290.10191'
+    // 广点通（优量汇）AdapterSdk，可选的
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.441.1311.01132'
 
     // 头条AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao-alpha:4.0.1.1.10181'
-
-    // 百度AdapterSdk，可选的
-//    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu:5.98.05132'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:4.2.5.2.01201'
 
     // 百度增强版AdapterSdk，可选的（请勿与百度同时导入）
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced-alpha:9.16.10192'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced:9.183.01133'
 
     // 汇量AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral-alpha:15.7.37.10191'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:16.0.17.01192'
 
     // InmobiAdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:inmobi:7.5.1.11112'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:inmobi:7.5.3.10191'
     implementation 'com.squareup.picasso:picasso:2.5.2'
 
     // 讯飞AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ifly:5.0.2.06011'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:ifly:5.0.2.06012'
 
     // 快手基础版AdapterSdk，可选的
-//    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.14.1.09021'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.20.01131'
 
     // 快手内容版AdapterSdk，可选的（比快手基础版多一个内容组件，不需要内容组件无需导入该版本，不可和快手基础版同时导入）
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadcontent:3.3.23.10141'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadcontent:3.3.27.3.01131'
 
     // 米盟AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:mimo:5.1.1.08111'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:mimo:5.1.5.12161'
     implementation 'com.google.code.gson:gson:2.8.5'
     implementation 'com.github.bumptech.glide:glide:4.9.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
 
     // 华为广告联盟AdadapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:hwpps:13.4.45.308.08111'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:hwpps:13.4.49.301.12201'
 
     // 云码AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:yunma:1.0.5.09021'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:yunma:1.0.5.09022'
 
     // 爱奇艺AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:iqy:1.3.12.08111'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:iqy:1.3.32.01131'
+
+    // AppicAdapterSdk，可选的
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:appic:4.5.2.3.01051'
+    // Appic还需要以下两个三方库支持
+    implementation 'com.squareup.okhttp3:okhttp:3.12.0'
+    implementation 'com.android.volley:volley:1.1.0'
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.6'
       
     // 小说内容SDK（还需要gson、glide4.9.0和recyclerview支持）
     implementation 'cn.admobiletop.adsuyi.ad.adapter:novel:1.2.8.06112'
@@ -280,7 +282,7 @@ dependencies {
   ```java
   ndk {
   	// 设置支持的SO库架构，暂不支持x86
-  	abiFilters 'armeabi-v7a', 'arm64-v8a' // 'armeabi'
+  	abiFilters 'armeabi-v7a', 'arm64-v8a'
   }
   ```
 
@@ -355,36 +357,55 @@ dependencies {
 
 **PS：需要更多帮助可参考目录下《移动智能终端补充设备标识体系统一调用SDK开发者说明文档》；**
 
+4. OAID自定义
+    对OAID版本没有特殊需求可以不参考以下方法，OAID自定义方案与demo中提供的适配1.0.25版本的方案二选一即可
 
+    ```java
+    // 如果要适配高版本oaid，如oaid1.0.29版本，可以导入以下依赖
+    implementation 'cn.admobiletop.adsuyi.ad:oaid:custom.10181'
+    ```
+
+    代码中自行获取OAID后将调用ADSuyi相关方法传入OAID、AAID、VAID
+
+    ```java
+    // 可以自行通过OAID官方aar获取OAID、AAID、VAID，可增加ADSuyi三方渠道广告填充率
+    OAIDManager.getInstance().setCustomOAID("请传入OAID");
+    OAIDManager.getInstance().setCustomAAID("请传入AAID");
+    OAIDManager.getInstance().setCustomVAID("请传入VAID");
+    ```
 
 ### 5.3 权限申请
 
   使用SDK时可能需要以下权限，为了保证使用广告的正确，请在6.0及以上的手机中使用SDK前及时申请。
 
   ```java
-    <!-- 广告必须的权限 -->
+    <!-- 广告必须的权限，允许网络访问 -->
     <uses-permission android:name="android.permission.INTERNET" />
-    <!-- 广告必须的权限，写入权限，用于下载类广告数据写入 -->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <!-- 广告必须的权限，读取权限，用于下载类广告数据读取（如判断是否已下载过该APK，避免重复下载）-->
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <!-- 广告必须的权限，允许安装未知来源权限（如下载类广告下载完成后唤起安卓） -->
     <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
-    <!-- 广告必须的权限，地理位置权限，获取位置信息 -->
+    <!-- 广告必须的权限，地理位置权限，获取位置信息，用于广告投放 -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
-    <!-- 广点通广告必须的权限 -->
+    <!-- 如果有视频相关的广告播放请务必添加，屏幕保持唤醒不锁屏（部分渠道未添加该权限时会出现视频类广告黑屏）-->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <!-- 如果接入了广点通渠道，必须加入以下权限，不然会导致广点通填充失败 -->
+    <!-- 允许应用获取 MAC 地址，可选权限，采用 App 内推广时会用到此权限 -->
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 允许应用检测网络状态，SDK 会根据网络状态选择是否发送数据 -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
-    <!-- 影响广告填充，强烈建议的权限，获取设备信息 -->
+    <!-- 影响广告填充，强烈建议的权限，获取设备信息，允许应用获取手机状态（包括手机号码、IMEI、IMSI权限等），采用 App 内推广时会用到此权限 -->
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <!-- 为了提高广告收益，建议设置的权限，写入权限，用于下载类广告数据写入 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 为了提高广告收益，建议设置的权限，读取权限，用于下载类广告数据读取（如判断是否已下载过该APK，避免重复下载）-->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <!-- 为了提高广告收益，建议设置的权限，获取粗略位置信息 -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
-    <!-- 如果有视频相关的广告播放请务必添加，屏幕保持唤醒不锁屏（部分渠道未添加该权限时会出现视频类广告黑屏）-->
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
   ```
 
 
@@ -690,7 +711,7 @@ dependencies {
 
 ### 6.1 SDK初始化
 
-  在Application中进行SDK的初始化(详情请参考Demo)
+  在隐私同意后进行SDK的初始化(详情请参考Demo SplashAdActivity.java类)
 
   ```java
 // 初始化ADSuyi广告SDK
@@ -1006,7 +1027,16 @@ adSuyiRewardExtra.setCustomData("设置激励视频服务端验证的自定义�
 adSuyiRewardExtra.setRewardName("激励名称");
 // 设置激励视频服务端激励数量(mintegral渠道不支持)
 adSuyiRewardExtra.setRewardAmount(1);
-rewardVodAd.setLocalExtraParams(new ADSuyiExtraParams.Builder().rewardExtra(adSuyiRewardExtra).build());
+
+// 创建额外参数实例
+ADSuyiExtraParams extraParams = new ADSuyiExtraParams.Builder()
+    // 设置激励视频额外参数（可不设置）
+    .rewardExtra(adSuyiRewardExtra)
+    // 设置视频类广告是否静音（部分渠道支持）
+    .setVideoWithMute(false)
+    .build();
+
+rewardVodAd.setLocalExtraParams(extraParams);
 
 // 设置激励视频广告监听
 rewardVodAd.setListener(new ADSuyiRewardVodAdListener() {
@@ -1073,6 +1103,10 @@ rewardVodAd.setListener(new ADSuyiRewardVodAdListener() {
 rewardVodAd.setSceneId(ADSuyiDemoConstant.REWARD_VOD_AD_SCENE_ID);
 // 加载激励视频广告，参数为广告位ID
 rewardVodAd.loadAd(ADSuyiDemoConstant.REWARD_VOD_AD_POS_ID);
+```
+
+广告展示。<font color=#ff0000>注意广告对象的获取是异步的，请在onAdReceive或onVideoCache回调后展示广告</font>
+```java
 // 激励视频的展示，由于激励视频的获取是异步的，请在onAdReceive后调用该方法对激励视频进行展示（部分平台需要在onVideoCache回调后）
 ADSuyiAdUtil.showRewardVodAdConvenient(this, RewardVodAdActivity.this.rewardVodAdInfo);
 ```
@@ -1145,6 +1179,10 @@ fullScreenVodAd.setListener(new ADSuyiFullScreenVodAdListener() {
 
 // 加载全屏视频广告
 fullScreenVodAd.loadAd(ADSuyiDemoConstant.FULL_SCREEN_VOD_AD_POS_ID);
+```
+
+广告展示。<font color=#ff0000>注意广告对象的获取是异步的，请在onAdReceive或onVideoCache回调后展示广告</font>
+```java
 // 全屏视频的展示，由于全屏视频的获取是异步的，请在onAdReceive后调用该方法对全屏视频进行展示（部分平台需要在onVideoCache回调后）
 ADSuyiAdUtil.showFullScreenAdConvenient(this, FullScreenVodAdActivity.this.fullScreenVodAdInfo);
 ```
@@ -1159,6 +1197,13 @@ ADSuyiAdUtil.showFullScreenAdConvenient(this, FullScreenVodAdActivity.this.fullS
 
 ```java
 interstitialAd = new ADSuyiInterstitialAd(this);
+
+// 创建额外参数实例
+ADSuyiExtraParams extraParams = new ADSuyiExtraParams.Builder()
+    // 设置视频类广告是否静音（部分渠道支持）
+    .setVideoWithMute(false)
+    .build();
+interstitialAd.setLocalExtraParams(extraParams);
 
 // 设置插屏广告监听
 interstitialAd.setListener(new ADSuyiInterstitialAdListener() {
@@ -1208,6 +1253,10 @@ interstitialAd.setListener(new ADSuyiInterstitialAdListener() {
 interstitialAd.setSceneId(ADSuyiDemoConstant.INTERSTITIAL_AD_SCENE_ID);
 // 加载插屏广告
 interstitialAd.loadAd(ADSuyiDemoConstant.INTERSTITIAL_AD_POS_ID);
+```
+
+广告展示。<font color=#ff0000>注意广告对象的获取是异步的，请在onAdReceive或onAdReady回调后展示广告</font>
+```java
 // 插屏的展示，由于插屏的获取是异步的，请在onAdReceive后调用该方法对插屏进行展示
 ADSuyiAdUtil.showInterstitialAdConvenient(this, InterstitialAdActivity.this.interstitialAdInfo);
 ```

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/pageColorPrimary">
+
+    <TextView
+        android:id="@+id/tvTips1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="#555"
+        android:lineSpacingExtra="5dp"
+        android:layout_margin="10dp"
+        android:text="轮播demo，使用第三方轮播控件，由于所使用的第三方控件开启轮播会白屏，所以未做轮播，大家可以挑选其它第三方控件做适配，本demo仅做参考"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <com.zhengsr.viewpagerlib.view.BannerViewPager
+        android:id="@+id/bannerViewPager"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:banner_looptime="3000"
+        app:banner_transformer="mz"
+        app:banner_switchtime="600"
+        app:layout_constraintTop_toBottomOf="@+id/tvTips1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintDimensionRatio="16:9"/>
+
+    <com.zhengsr.viewpagerlib.indicator.CircleIndicator
+        android:id="@+id/circleIndicator"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_gravity="end|bottom"
+        app:cir_size="5dp"
+        app:cir_rect_width="10dp"
+        app:cir_normalColor="#ccc"
+        app:cir_selectedColor="#000"
+        app:cir_horizon_margin="10dp"
+        app:cir_type="cirToRect"
+        app:layout_constraintBottom_toBottomOf="@+id/bannerViewPager"
+        app:layout_constraintLeft_toLeftOf="@+id/bannerViewPager"
+        app:layout_constraintRight_toRightOf="@+id/bannerViewPager"/>
+
+    <TextView
+        android:id="@+id/tvTips2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="#555"
+        android:textStyle="bold"
+        android:lineSpacingExtra="5dp"
+        android:layout_margin="10dp"
+        android:text="注意一：由于信息流广告高度不不固定，如需接入轮播控件中，需要开发者固定轮播控件比例(16:9)，避免广告素材展示不完全"
+        app:layout_constraintTop_toBottomOf="@+id/bannerViewPager"/>
+
+</android.support.constraint.ConstraintLayout>

@@ -223,6 +223,8 @@ public class PositionSettingActivity extends AppCompatActivity {
                 tvScene.setVisibility(View.VISIBLE);
                 etScene.setVisibility(View.VISIBLE);
                 etScene.setText(String.valueOf(ADSuyiDemoConstant.REWARD_VOD_AD_SCENE_ID));
+                cbNativeMute.setVisibility(View.VISIBLE);
+                cbNativeMute.setChecked(ADSuyiDemoConstant.REWARD_AD_PLAY_WITH_MUTE);
                 break;
             case ADSuyiAdType.TYPE_FULLSCREEN_VOD:
                 etPosId.setText(ADSuyiDemoConstant.FULL_SCREEN_VOD_AD_POS_ID);
@@ -236,6 +238,8 @@ public class PositionSettingActivity extends AppCompatActivity {
                 tvScene.setVisibility(View.VISIBLE);
                 etScene.setVisibility(View.VISIBLE);
                 etScene.setText(String.valueOf(ADSuyiDemoConstant.INTERSTITIAL_AD_SCENE_ID));
+                cbNativeMute.setVisibility(View.VISIBLE);
+                cbNativeMute.setChecked(ADSuyiDemoConstant.INTERSTITIAL_AD_PLAY_WITH_MUTE);
                 break;
             case ADSuyiAdType.TYPE_DRAW_VOD:
                 etPosId.setText(ADSuyiDemoConstant.DRAW_VOD_AD_POS_ID);
@@ -278,6 +282,7 @@ public class PositionSettingActivity extends AppCompatActivity {
             case ADSuyiAdType.TYPE_REWARD_VOD:
                 ADSuyiDemoConstant.REWARD_VOD_AD_POS_ID = posId;
                 ADSuyiDemoConstant.REWARD_VOD_AD_ONLY_SUPPORT_PLATFORM = onlySupportPlatform;
+                ADSuyiDemoConstant.REWARD_AD_PLAY_WITH_MUTE = cbNativeMute.isChecked();
                 ADSuyiDemoConstant.REWARD_VOD_AD_SCENE_ID = getSceneId();
                 break;
             case ADSuyiAdType.TYPE_FULLSCREEN_VOD:
@@ -287,6 +292,7 @@ public class PositionSettingActivity extends AppCompatActivity {
             case ADSuyiAdType.TYPE_INTERSTITIAL:
                 ADSuyiDemoConstant.INTERSTITIAL_AD_POS_ID = posId;
                 ADSuyiDemoConstant.INTERSTITIAL_AD_ONLY_SUPPORT_PLATFORM = onlySupportPlatform;
+                ADSuyiDemoConstant.INTERSTITIAL_AD_PLAY_WITH_MUTE = cbNativeMute.isChecked();
                 ADSuyiDemoConstant.INTERSTITIAL_AD_SCENE_ID = getSceneId();
                 break;
             case ADSuyiAdType.TYPE_DRAW_VOD:

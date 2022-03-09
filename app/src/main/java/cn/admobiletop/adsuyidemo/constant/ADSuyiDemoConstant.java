@@ -65,7 +65,7 @@ public class ADSuyiDemoConstant {
      * 信息流广告位ID，模版
      */
     public static final String NATIVE_AD_POS_ID4 = "fd3b78d0c93e75330a";
-    public static String NATIVE_AD_POS_ID = NATIVE_AD_POS_ID4;
+    public static String NATIVE_AD_POS_ID = NATIVE_AD_POS_ID1;
     /**
      * 信息流广告一次拉取广告数量
      */
@@ -93,6 +93,7 @@ public class ADSuyiDemoConstant {
      * 激励视频广告位仅支持的平台
      */
     public static String REWARD_VOD_AD_ONLY_SUPPORT_PLATFORM = null;
+    public static boolean REWARD_AD_PLAY_WITH_MUTE = false;
 
     /**
      * 全屏视频广告位ID
@@ -117,6 +118,9 @@ public class ADSuyiDemoConstant {
      * 插屏广告位仅支持的平台
      */
     public static String INTERSTITIAL_AD_ONLY_SUPPORT_PLATFORM = null;
+    public static boolean INTERSTITIAL_AD_PLAY_WITH_MUTE = false;
+    public static boolean INTERSTITIAL_AD_AUTO_CLOSE = false;
+
     /**
      * 插屏广告位场景id
      */
@@ -139,7 +143,7 @@ public class ADSuyiDemoConstant {
     /**
      * Dl激励广告位ID
      */
-    public static String ADMOBILE_DL_AD_POS_ID = "c078638e143ac16f46";
+    public static String ADMOBILE_DL_AD_POS_ID = "ac966d36094a167687";
 
     /**
      * 内容联盟广告位场景id
