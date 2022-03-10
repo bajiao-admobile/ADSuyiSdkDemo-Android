@@ -1,4 +1,4 @@
-# ADSuyiSdk Android Sdk——接入文档 V3.5.0.12291
+# ADSuyiSdk Android Sdk——接入文档 V3.5.1.02231-Alpha
 
  目录 
 
@@ -43,26 +43,26 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 
 | Name      | 大小 | 版本号 | MD5值 |
 | --------- | -------- | --------- | --------- |
-| ADSuyi基础包  |0.3M  |V3.5.0.12291  |f1f6ebb7964ba91f33ae8ba5a1a12566  |
+| ADSuyi基础包  |0.3M  |V3.5.1.02231  |f1f6ebb7964ba91f33ae8ba5a1a12566  |
 | OAID  |1.1M  |—  |—  |
 
 ### 1.5 三方广告平台适配器+三方广告sdk总容量
 
 | Name      | 容量 | 版本号 | MD5值 |
 | --------- | -------- | --------- | --------- |
-| ADmobile       | 0.62M   | v5.0.4.01131 | c1df2302b9b236ad190fc7068213284f |
-| gdt       | 1.41M   | v4.441.1311.01132 | fb715a956f1f4b6d2aa986c44b975295 |
-| toutiao   | 4.11M     | v4.2.5.2.01201 | b7f91627e041ea987f46e7a3b12dfa53 |
-| baidu     | 1.20M     | v9.183.01133 | af1ab9e26a8d98acc58ed83ac135205d |
+| ADmobile       | 0.62M   | v5.0.5.02251 | c1df2302b9b236ad190fc7068213284f |
+| gdt       | 1.41M   | v4.450.1320.02231 | fb715a956f1f4b6d2aa986c44b975295 |
+| toutiao   | 4.11M     | v4.3.0.1.02241 | b7f91627e041ea987f46e7a3b12dfa53 |
+| baidu     | 1.20M     | v9.19.02243 | af1ab9e26a8d98acc58ed83ac135205d |
 | inmobi    | 0.95M   | v7.5.3.10191 | 5ac0ca9e011497eae054f5abd05c3002 |
 | mintegral | 2.80M     | v16.0.17.01192 | e1e5a8edb9e912aa4a0dc169cc92e5e3 |
 | Ifly      | 0.48M     | v5.0.2.06012 | 4cad10aca3d43bd368aff25c0e5c2db0 |
-| ksad(快手基础版)      | 2.30M     | v3.3.20.01131 | 0941d2441eeb8eb57fb05fbbbd37786b |
+| ksad(快手基础版)      | 2.30M     | v3.3.21.02241 | 0941d2441eeb8eb57fb05fbbbd37786b |
 | ksad(快手内容版)      | 6.00M     | v3.3.27.3.01131 | 8192bea5026da5e45df84e60155ed68c |
 | mimo   | 0.45M     | v5.1.5.12161 | 51ba01846faccdf5b6a00e7a336d42d4 |
-| hwpps   | 1.01M     | v13.4.49.301.12201 | f14a455c43e7cc74d7dca602553fcac1 |
-| yunma   | 1.00M     | v1.0.5.09022 | c2cbd42dc22a3ba3e4669819035171e2 |
-| iqy   | 0.30M     | v1.3.32.01131 | c03511f14bfd37056377da528443dae6 |
+| hwpps   | 1.01M     | v13.4.50.300.02241 | f14a455c43e7cc74d7dca602553fcac1 |
+| yunma   | 1.00M     | v2.0.0.02241 | c2cbd42dc22a3ba3e4669819035171e2 |
+| iqy   | 0.30M     | v1.3.34.02241 | c03511f14bfd37056377da528443dae6 |
 | appic   | 3.32M     | v4.5.2.3.01051 | f6c20493a3ac7043f9cf1ee9d97c6e1b |
 
 ### 1.6 头部竞价功能
@@ -206,7 +206,7 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
   
     // ADSuyiSdk核心库是必须导入的
-    implementation 'cn.admobiletop.adsuyi.ad:core:3.5.0.12291'
+    implementation 'cn.admobiletop.adsuyi.ad:core-alpha:3.5.1.02231'
 
     // OAID库是必须导入的，请保持和Demo中版本一致
     implementation(name: 'oaid_sdk_1.0.25', ext: 'aar')
@@ -214,16 +214,16 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad:oaid:1.0.25.08021'
 
     // 艾狄墨搏AdapterSdk，必须的`
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile:5.0.4.01131'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile-alpha:5.0.5.02251'
 
     // 广点通（优量汇）AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.441.1311.01132'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt-alpha:4.450.1320.02231'
 
     // 头条AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:4.2.5.2.01201'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao-alpha:4.3.0.1.02241'
 
     // 百度增强版AdapterSdk，可选的（请勿与百度同时导入）
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced:9.183.01133'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced-alpha:9.19.02243'
 
     // 汇量AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:16.0.17.01192'
@@ -236,10 +236,10 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:ifly:5.0.2.06012'
 
     // 快手基础版AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.20.01131'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase-alpha:3.3.21.02241'
 
     // 快手内容版AdapterSdk，可选的（比快手基础版多一个内容组件，不需要内容组件无需导入该版本，不可和快手基础版同时导入）
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadcontent:3.3.27.3.01131'
+//    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadcontent:3.3.27.3.01131'
 
     // 米盟AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:mimo:5.1.5.12161'
@@ -248,13 +248,13 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
 
     // 华为广告联盟AdadapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:hwpps:13.4.49.301.12201'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:hwpps-alpha:13.4.50.300.02241'
 
     // 云码AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:yunma:1.0.5.09022'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:yunma-alpha:2.0.0.02241'
 
     // 爱奇艺AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:iqy:1.3.32.01131'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:iqy-alpha:1.3.34.02241'
 
     // AppicAdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:appic:4.5.2.3.01051'

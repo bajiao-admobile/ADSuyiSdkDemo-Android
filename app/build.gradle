@@ -83,7 +83,7 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
 
     // ADSuyiSdk、common和OAID库是必须导入的
-    implementation 'cn.admobiletop.adsuyi.ad:core:3.5.0.12291'
+    implementation 'cn.admobiletop.adsuyi.ad:core-alpha:3.5.1.02231'
 
     // TODO OAID库是必须导入的，请保持和Demo中版本一致（如果当前Suyi是3.0.9及以上版本，
     // TODO 必须保证oaid版本为oaid_sdk_1.0.25，oaid_sdk_1.0.25为msa_mdid_1.0.13、oaid_sdk_1.0.23的升级版，请删除原有的msa_mdid）
@@ -94,16 +94,16 @@ dependencies {
 //    implementation 'cn.admobiletop.adsuyi.ad:oaid:custom.10181'
 
     // 艾狄墨搏AdapterSdk，必须的`
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile:5.0.4.01131'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile-alpha:5.0.5.02251'
 
     // 广点通（优量汇）AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.441.1311.01132'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt-alpha:4.450.1320.02231'
 
     // 头条AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:4.2.5.2.01201'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao-alpha:4.3.0.1.02241'
 
     // 百度增强版AdapterSdk，可选的（请勿与百度同时导入）
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced:9.183.01133'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced-alpha:9.19.02243'
 
     // 汇量AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:16.0.17.01192'
@@ -116,10 +116,10 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:ifly:5.0.2.06012'
 
     // 快手基础版AdapterSdk，可选的
-//     implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.20.01131'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase-alpha:3.3.21.02241'
 
     // 快手内容版AdapterSdk，可选的（比快手基础版多一个内容组件，不需要内容组件无需导入该版本，不可和快手基础版同时导入）
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadcontent:3.3.27.3.01131'
+//    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadcontent:3.3.27.3.01131'
 
     // 米盟AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:mimo:5.1.5.12161'
@@ -128,13 +128,13 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
 
     // 华为广告联盟AdadapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:hwpps:13.4.49.301.12201'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:hwpps-alpha:13.4.50.300.02241'
 
     // 云码AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:yunma:1.0.5.09022'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:yunma-alpha:2.0.0.02241'
 
     // 爱奇艺AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:iqy:1.3.32.01131'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:iqy-alpha:1.3.34.02241'
 
     // AppicAdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:appic:4.5.2.3.01051'
