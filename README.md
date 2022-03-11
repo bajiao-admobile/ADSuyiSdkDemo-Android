@@ -1261,7 +1261,7 @@ interstitialAd.loadAd(ADSuyiDemoConstant.INTERSTITIAL_AD_POS_ID);
 ADSuyiAdUtil.showInterstitialAdConvenient(this, InterstitialAdActivity.this.interstitialAdInfo);
 ```
 
-> [插屏广告示例详情](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/ad/InterstitialAdActivity.java)
+> [插屏广告示例详情](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/ad/interstitial/InterstitialAdActivity.java)
 
 
 
