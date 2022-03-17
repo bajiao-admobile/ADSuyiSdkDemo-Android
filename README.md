@@ -1,4 +1,4 @@
-# ADSuyiSdk Android Sdk——接入文档 V3.5.0.12291
+# ADSuyiSdk Android Sdk——接入文档 V3.5.1.02231
 
  目录 
 
@@ -43,26 +43,26 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 
 | Name      | 大小 | 版本号 | MD5值 |
 | --------- | -------- | --------- | --------- |
-| ADSuyi基础包  |0.3M  |V3.5.0.12291  |f1f6ebb7964ba91f33ae8ba5a1a12566  |
+| ADSuyi基础包  |0.3M  |V3.5.1.02231  |4838d6b52ee6d4265209ffd1cd9e7ba6  |
 | OAID  |1.1M  |—  |—  |
 
 ### 1.5 三方广告平台适配器+三方广告sdk总容量
 
 | Name      | 容量 | 版本号 | MD5值 |
 | --------- | -------- | --------- | --------- |
-| ADmobile       | 0.62M   | v5.0.4.01131 | c1df2302b9b236ad190fc7068213284f |
-| gdt       | 1.41M   | v4.441.1311.01132 | fb715a956f1f4b6d2aa986c44b975295 |
-| toutiao   | 4.11M     | v4.2.5.2.01201 | b7f91627e041ea987f46e7a3b12dfa53 |
-| baidu     | 1.20M     | v9.183.01133 | af1ab9e26a8d98acc58ed83ac135205d |
+| ADmobile       | 0.62M   | v5.0.5.02251 | 38f1d54fefc2dfa52abcac1cdf58dc08 |
+| gdt       | 1.41M   | v4.450.1320.02231 | 9e386cb62a9ad4617f85b4bf0361d35c |
+| toutiao   | 4.11M     | v4.3.0.1.02241 | 4cdbf1ca8b0b7646daf5d17cb0ae5335 |
+| baidu     | 1.20M     | v9.19.02243 | e4cedff456568609e6d1593b31482103 |
 | inmobi    | 0.95M   | v7.5.3.10191 | 5ac0ca9e011497eae054f5abd05c3002 |
 | mintegral | 2.80M     | v16.0.17.01192 | e1e5a8edb9e912aa4a0dc169cc92e5e3 |
 | Ifly      | 0.48M     | v5.0.2.06012 | 4cad10aca3d43bd368aff25c0e5c2db0 |
-| ksad(快手基础版)      | 2.30M     | v3.3.20.01131 | 0941d2441eeb8eb57fb05fbbbd37786b |
+| ksad(快手基础版)      | 2.30M     | v3.3.21.02242 | a649a4a516f4311b6f0a2f5ccb6d859a |
 | ksad(快手内容版)      | 6.00M     | v3.3.27.3.01131 | 8192bea5026da5e45df84e60155ed68c |
-| mimo   | 0.45M     | v5.1.5.12161 | 51ba01846faccdf5b6a00e7a336d42d4 |
-| hwpps   | 1.01M     | v13.4.49.301.12201 | f14a455c43e7cc74d7dca602553fcac1 |
-| yunma   | 1.00M     | v1.0.5.09022 | c2cbd42dc22a3ba3e4669819035171e2 |
-| iqy   | 0.30M     | v1.3.32.01131 | c03511f14bfd37056377da528443dae6 |
+| mimo   | 0.45M     | v5.1.6.02241 | b04d1b7a3e4b7bd0c82191db586d1511 |
+| hwpps   | 1.01M     | v13.4.50.300.02241 | 12322c9be4182fde54b804426d5130a4 |
+| yunma   | 1.00M     | v2.0.0.02241 | ba6ba19a6e90a662b2d60c996428d761 |
+| iqy   | 0.30M     | v1.3.34.02241 | b815338a396cfd36efbed4cc5c48cf43 |
 | appic   | 3.32M     | v4.5.2.3.01051 | f6c20493a3ac7043f9cf1ee9d97c6e1b |
 
 ### 1.6 头部竞价功能
@@ -135,7 +135,7 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 >
 > [ADSuyiSdkDemo-演示APK下载地址](https://doc.admobile.top/file/ADSuyiSdkDemo.apk)
 >
-> [SDK版本更新日志](http://doc.admobile.top/ssp/4-%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/1-androidchangelog.html)
+> [SDK版本更新日志](https://doc.admobile.top/ssp/4changelog/1-androidchangelog.html)
 
 
 
@@ -156,14 +156,6 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 ### 4.3 AdapterSdk和ADSuyiSdk版本对应说明
 
 AdapterSdk会指定支持的ADSuyiSdk版本，**如果导入的AdapterSdk和ADSuyiSdk版本不对应会抛出异常提醒开发者使用相对应的版本**；
-
-
-
-### 4.4 ADMobGenSdk升级ADSuyiSdk指引
-
-1. 升级ADSuyiSdk前请先移除ADMobGenSdk的SDK依赖和相关配置；
-2. ADMobGenSdk移除之后再根据ADSuyiSdk文档接入ADSuyiSdk；
-3. 无对接过ADMobGenSdk可忽略。
 
 
 
@@ -206,7 +198,7 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
   
     // ADSuyiSdk核心库是必须导入的
-    implementation 'cn.admobiletop.adsuyi.ad:core:3.5.0.12291'
+    implementation 'cn.admobiletop.adsuyi.ad:core:3.5.1.02231'
 
     // OAID库是必须导入的，请保持和Demo中版本一致
     implementation(name: 'oaid_sdk_1.0.25', ext: 'aar')
@@ -214,16 +206,16 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad:oaid:1.0.25.08021'
 
     // 艾狄墨搏AdapterSdk，必须的`
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile:5.0.4.01131'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile:5.0.5.02251'
 
     // 广点通（优量汇）AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.441.1311.01132'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.450.1320.02231'
 
     // 头条AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:4.2.5.2.01201'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:4.3.0.1.02241'
 
     // 百度增强版AdapterSdk，可选的（请勿与百度同时导入）
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced:9.183.01133'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced:9.19.02243'
 
     // 汇量AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:16.0.17.01192'
@@ -236,25 +228,25 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:ifly:5.0.2.06012'
 
     // 快手基础版AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.20.01131'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.21.02242'
 
     // 快手内容版AdapterSdk，可选的（比快手基础版多一个内容组件，不需要内容组件无需导入该版本，不可和快手基础版同时导入）
     implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadcontent:3.3.27.3.01131'
 
     // 米盟AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:mimo:5.1.5.12161'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:mimo:5.1.6.02241'
     implementation 'com.google.code.gson:gson:2.8.5'
     implementation 'com.github.bumptech.glide:glide:4.9.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
 
     // 华为广告联盟AdadapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:hwpps:13.4.49.301.12201'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:hwpps:13.4.50.300.02241'
 
     // 云码AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:yunma:1.0.5.09022'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:yunma:2.0.0.02241'
 
     // 爱奇艺AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:iqy:1.3.32.01131'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:iqy:1.3.34.02241'
 
     // AppicAdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:appic:4.5.2.3.01051'
@@ -262,13 +254,6 @@ dependencies {
     implementation 'com.squareup.okhttp3:okhttp:3.12.0'
     implementation 'com.android.volley:volley:1.1.0'
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.6'
-      
-    // 小说内容SDK（还需要gson、glide4.9.0和recyclerview支持）
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:novel:1.2.8.06112'
-    implementation 'com.google.code.gson:gson:2.8.5'
-    // 小说sdk必须依赖4.9.0版本glide
-    implementation 'com.github.bumptech.glide:glide:4.9.0'
-    implementation 'com.android.support:recyclerview-v7:28.0.0'
 
 }
 ```
@@ -303,13 +288,6 @@ dependencies {
 * **广点通适配器4.270.1140版本及以上已经导入了腾讯的tbs，请移除原有的tbs避免编译失败；**
 * **广点通适配器4.310.1180版本及以上已经将腾讯tbs移除，媒体需要手动导入tbs，避免自身项目需要依赖tbs导致编译失败；**
 * **由于头条(穿山甲)渠道支持了Android R，引入了Android R的 <queries> 标签,需要对gradle版本进行限制，限制范围为：3.3.3、 3.4.3、 3.5.4、3.6.4、4.0.1 ，开发者根据自身情况酌情升级**
-* **如果要对接小说sdk，需要导入java8配置**
-   ```java
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
-   ```
 * **如对接华为广告联盟，激励视频要提前预加载，并且播放完成后需要预加载下一个激励视频；banner广告使用场景是程序页面的顶部或者底部。**
 * **快手区分为基础版和内容版，内容版比基础版多了一个内容组件，请开发者按需求进行导入。**
 
@@ -322,12 +300,9 @@ dependencies {
 
 <font color=#ff0000>OAID是必须集成项，没有集成将会抛出异常提醒开发者</font>，OAID集成并不繁琐，SDK中已经进行了OAID的封装，只需以下几步即可完成OAID的支持；
 
-1. 导入安全联盟的OAID支持库 **oaid_sdk_1.0.25.aar或oaid_sdk_1.0.26.aar**，可在Demo的libs目录下找到，**强烈建议使用和Demo中一样版本的OAID库（包括项目中已存在的依赖的oaid版本）；**<br>
-    由于oaid1.0.25版本和oaid1.0.26版本接口有变更，不能向下兼容，并且1.0.26版本还需要申请密钥才可使用，故suyi平台提供相应版本适配器进行适配。<br>
-    如果没有特殊需求，可以使用oaid1.0.25及相应适配器。<br>
-    如果有特殊需求，可以使用oaid1.0.26及相应适配器，并且在初始化时传入assets中的密钥（demo SplashAdActivity 145行），以便适配器中进行初始化。<br>
+1. 导入安全联盟的OAID支持库 **oaid_sdk_1.0.25.aar**，可在Demo的libs目录下找到，**强烈建议使用和Demo中一样版本的OAID库（包括项目中已存在的依赖的oaid版本）；**<br>
     媒体如果想获取ADSuyi中的oaid，可以使用改方法进行获取ADSuyiSdk.getInstance().getOAID()，由于oaid的获取是异步的，可能获取到空字符串的情况。<br>
-
+    
 2. 将Demo中assets文件夹下的**supplierconfig.json**文件复制到自己的assets目录下并按照**supplierconfig.json**文件中的说明进行OAID的 **AppId** 配置，**supplierconfig.json**文件名不可修改。需要设置 appid 的部分需要去对应厂商的应用商店的应用信息中查看。；
 
 3. 添加以下混淆配置；
@@ -378,35 +353,34 @@ dependencies {
 
   使用SDK时可能需要以下权限，为了保证使用广告的正确，请在6.0及以上的手机中使用SDK前及时申请。
 
-  ```java
-    <!-- 广告必须的权限，允许网络访问 -->
-    <uses-permission android:name="android.permission.INTERNET" />
-    <!-- 广告必须的权限，允许安装未知来源权限（如下载类广告下载完成后唤起安卓） -->
-    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
-    <!-- 广告必须的权限，地理位置权限，获取位置信息，用于广告投放 -->
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+```java
+<!-- 广告必须的权限，允许网络访问 -->
+<uses-permission android:name="android.permission.INTERNET" />
+<!-- 广告必须的权限，允许安装未知来源权限（如下载类广告下载完成后唤起安卓） -->
+<uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+<!-- 广告必须的权限，地理位置权限，获取位置信息，用于广告投放。精准广告投放及反作弊 -->
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
-    <!-- 如果有视频相关的广告播放请务必添加，屏幕保持唤醒不锁屏（部分渠道未添加该权限时会出现视频类广告黑屏）-->
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
+<!-- 如果有视频相关的广告播放请务必添加，屏幕保持唤醒不锁屏（部分渠道未添加该权限时会出现视频类广告黑屏）-->
+<uses-permission android:name="android.permission.WAKE_LOCK" />
 
-    <!-- 如果接入了广点通渠道，必须加入以下权限，不然会导致广点通填充失败 -->
-    <!-- 允许应用获取 MAC 地址，可选权限，采用 App 内推广时会用到此权限 -->
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <!-- 允许应用检测网络状态，SDK 会根据网络状态选择是否发送数据 -->
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+<!-- 如果接入了广点通渠道，必须加入以下权限，不然会导致广点通填充失败 -->
+<!-- 允许应用获取 MAC 地址。广告投放及广告监测归因、反作弊 -->
+<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+<!-- 允许应用检测网络状态，SDK 会根据网络状态选择是否发送数据 -->
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
-    <!-- 影响广告填充，强烈建议的权限，获取设备信息，允许应用获取手机状态（包括手机号码、IMEI、IMSI权限等），采用 App 内推广时会用到此权限 -->
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+<!-- 影响广告填充，强烈建议的权限，获取设备信息，允许应用获取手机状态（包括手机号码、IMEI、IMSI权限等）。广告投放及广告监测归因、反作弊 -->
+<uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
-    <!-- 为了提高广告收益，建议设置的权限，写入权限，用于下载类广告数据写入 -->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <!-- 为了提高广告收益，建议设置的权限，读取权限，用于下载类广告数据读取（如判断是否已下载过该APK，避免重复下载）-->
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+<!-- 为了提高广告收益，建议设置的权限，写入权限，用于下载类广告数据写入 -->
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+<!-- 为了提高广告收益，建议设置的权限，读取权限，用于下载类广告数据读取（如判断是否已下载过该APK，避免重复下载）-->
+<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
-    <!-- 为了提高广告收益，建议设置的权限，获取粗略位置信息 -->
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-
-  ```
+<!-- 为了提高广告收益，建议设置的权限，获取粗略位置信息。精准广告投放及反作弊 -->
+<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+```
 
 
 

@@ -26,8 +26,6 @@ public class ContentModuleActivity extends BaseAdActivity implements View.OnClic
 
         findViewById(R.id.btnRecipeEntry).setOnClickListener(this);
         findViewById(R.id.btnRecipeTab).setOnClickListener(this);
-        findViewById(R.id.btnNovelEntry).setOnClickListener(this);
-        findViewById(R.id.btnNovelTab).setOnClickListener(this);
 
         // 初始化菜谱sdk
         CookbookSDKManger.getInstance().init(this, new ADSuyiAdRecipeConfig.Builder()
@@ -46,7 +44,6 @@ public class ContentModuleActivity extends BaseAdActivity implements View.OnClic
                         .debug(BuildConfig.DEBUG)
                         .build());
 
-        // 初始化小说sdk（目前小说已在ADSuyiSdk中初始化，所以开发者不需要单独初始化）
     }
 
     @Override
@@ -59,13 +56,6 @@ public class ContentModuleActivity extends BaseAdActivity implements View.OnClic
                 break;
             case R.id.btnRecipeTab:
                 startActivity(FragmentAndCookbookActivity.class);
-                break;
-            case R.id.btnNovelEntry:
-                boolean openNovelSuccess = ADSuyiSdk.getInstance().openNovelActivity();
-                ADSuyiToastUtil.show(getApplicationContext(), openNovelSuccess ? "打开成功" : "打开失败");
-                break;
-            case R.id.btnNovelTab:
-                startActivity(FragmentAndNovelActivity.class);
                 break;
             default:
                 break;
