@@ -7,6 +7,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.kwad.sdk.api.KsInterstitialAd;
@@ -161,6 +162,30 @@ public class ADSuyiInterstitialManager {
             }
         }
     }
+
+    /**
+     * 广点通插屏页面添加跳过按钮，该渠道是通过activity作为插屏
+     */
+//    public void gdtAddJumpButton() {
+//        ViewGroup content = adInterstitialActivity.findViewById(android.R.id.content);
+//        if (content != null && content.getChildCount() > 0) {
+//            for (int i = 0; i < content.getChildCount(); i++) {
+//                View view = content.getChildAt(i);
+//                if (view != null && view instanceof LinearLayout) {
+//                    LinearLayout linearLayout = (LinearLayout) view;
+//                    if (linearLayout.getChildCount() > 0) {
+//                        View viewY = linearLayout.getChildAt(linearLayout.getChildCount() - 1);
+//                        if (viewY != null && viewY instanceof FrameLayout) {
+//                            jumpView = getJumpView((ViewGroup) viewY);
+//                            ((ViewGroup) viewY).addView(jumpView);
+//                            startCountDown();
+//                            break;
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//    }
 
     /**
      * 头条插屏页面添加跳过按钮，该渠道是通过activity作为插屏
