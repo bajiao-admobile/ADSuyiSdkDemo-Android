@@ -6,8 +6,8 @@ android {
         applicationId "cn.admobiletop.adsuyidemo"
         minSdkVersion 19
         targetSdkVersion 30
-        versionCode 202203171
-        versionName "1.202203171"
+        versionCode 202203261
+        versionName "1.202203261"
         multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         ndk {
@@ -105,7 +105,13 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced:9.19.02243'
 
     // 汇量AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:16.0.17.01192'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:16.0.17.01193'
+
+    // 快手基础版AdapterSdk，可选的
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.21.02242'
+
+    // 快手内容版AdapterSdk，可选的（比快手基础版多一个内容组件，不需要内容组件无需导入该版本，不可和快手基础版同时导入）
+//    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadcontent:3.3.27.3.01131'
 
     // InmobiAdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:inmobi:7.5.3.10191'
@@ -113,12 +119,6 @@ dependencies {
 
     // 讯飞AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:ifly:5.0.2.06012'
-
-    // 快手基础版AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.21.02242'
-
-    // 快手内容版AdapterSdk，可选的（比快手基础版多一个内容组件，不需要内容组件无需导入该版本，不可和快手基础版同时导入）
-//    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadcontent:3.3.27.3.01131'
 
     // 米盟AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:mimo:5.1.6.02241'

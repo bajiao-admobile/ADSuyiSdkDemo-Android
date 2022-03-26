@@ -55,7 +55,7 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | toutiao   | 4.11M     | v4.3.0.1.02241 | 4cdbf1ca8b0b7646daf5d17cb0ae5335 |
 | baidu     | 1.20M     | v9.19.02243 | e4cedff456568609e6d1593b31482103 |
 | inmobi    | 0.95M   | v7.5.3.10191 | 5ac0ca9e011497eae054f5abd05c3002 |
-| mintegral | 2.80M     | v16.0.17.01192 | e1e5a8edb9e912aa4a0dc169cc92e5e3 |
+| mintegral | 2.80M     | v16.0.17.01193 | 68cce473ec55025f357ef132761e767e |
 | Ifly      | 0.48M     | v5.0.2.06012 | 4cad10aca3d43bd368aff25c0e5c2db0 |
 | ksad(快手基础版)      | 2.30M     | v3.3.21.02242 | a649a4a516f4311b6f0a2f5ccb6d859a |
 | ksad(快手内容版)      | 6.00M     | v3.3.27.3.01131 | 8192bea5026da5e45df84e60155ed68c |
@@ -218,7 +218,13 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced:9.19.02243'
 
     // 汇量AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:16.0.17.01192'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:16.0.17.01193'
+
+    // 快手基础版AdapterSdk，可选的
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.21.02242'
+
+    // 快手内容版AdapterSdk，可选的（比快手基础版多一个内容组件，不需要内容组件无需导入该版本，不可和快手基础版同时导入）
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadcontent:3.3.27.3.01131'
 
     // InmobiAdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:inmobi:7.5.3.10191'
@@ -226,12 +232,6 @@ dependencies {
 
     // 讯飞AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:ifly:5.0.2.06012'
-
-    // 快手基础版AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.21.02242'
-
-    // 快手内容版AdapterSdk，可选的（比快手基础版多一个内容组件，不需要内容组件无需导入该版本，不可和快手基础版同时导入）
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadcontent:3.3.27.3.01131'
 
     // 米盟AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:mimo:5.1.6.02241'
@@ -1014,29 +1014,6 @@ rewardVodAd.setLocalExtraParams(extraParams);
 
 // 设置激励视频广告监听
 rewardVodAd.setListener(new ADSuyiRewardVodAdListener() {
-		@Override
-    public void onVideoCache(ADSuyiRewardVodAdInfo adSuyiRewardVodAdInfo) {
-    		Log.d(ADSuyiDemoConstant.TAG, "onVideoCache----->");
-    		Log.d(ADSuyiDemoConstant.TAG, "广告视频缓存成功回调... ");
-    }
-
-		@Override
-    public void onVideoComplete(ADSuyiRewardVodAdInfo adSuyiRewardVodAdInfo) {
-    		Log.d(ADSuyiDemoConstant.TAG, "onVideoComplete----->");
-    		Log.d(ADSuyiDemoConstant.TAG, "广告观看完成回调... ");
-    }
-
-    @Override
-    public void onVideoError(ADSuyiRewardVodAdInfo adSuyiRewardVodAdInfo, ADSuyiError adSuyiError) {
-    		Log.d(ADSuyiDemoConstant.TAG, "onVideoError----->");
-    		Log.d(ADSuyiDemoConstant.TAG, "广告播放错误回调... ");
-    }
-
-    @Override
-    public void onReward(ADSuyiRewardVodAdInfo adSuyiRewardVodAdInfo) {
-    		Log.d(ADSuyiDemoConstant.TAG, "onReward----->");
-    		Log.d(ADSuyiDemoConstant.TAG, "广告激励发放回调... ");
-    }
 
     @Override
     public void onAdReceive(ADSuyiRewardVodAdInfo rewardVodAdInfo) {
@@ -1047,27 +1024,52 @@ rewardVodAd.setListener(new ADSuyiRewardVodAdListener() {
     }
 
     @Override
+    public void onVideoCache(ADSuyiRewardVodAdInfo adSuyiRewardVodAdInfo) {
+        // 部分渠道存在激励展示类广告，不会回调该方法，建议在onAdReceive做广告展示处理
+        Log.d(ADSuyiDemoConstant.TAG, "onVideoCache----->");
+        Log.d(ADSuyiDemoConstant.TAG, "广告视频缓存成功回调... ");
+    }
+
+    @Override
+    public void onVideoComplete(ADSuyiRewardVodAdInfo adSuyiRewardVodAdInfo) {
+        Log.d(ADSuyiDemoConstant.TAG, "onVideoComplete----->");
+        Log.d(ADSuyiDemoConstant.TAG, "广告观看完成回调... ");
+    }
+
+    @Override
+    public void onVideoError(ADSuyiRewardVodAdInfo adSuyiRewardVodAdInfo, ADSuyiError adSuyiError) {
+        Log.d(ADSuyiDemoConstant.TAG, "onVideoError----->");
+        Log.d(ADSuyiDemoConstant.TAG, "广告播放错误回调... ");
+    }
+
+    @Override
+    public void onReward(ADSuyiRewardVodAdInfo adSuyiRewardVodAdInfo) {
+        Log.d(ADSuyiDemoConstant.TAG, "onReward----->");
+        Log.d(ADSuyiDemoConstant.TAG, "广告激励发放回调... ");
+    }
+
+    @Override
     public void onAdExpose(ADSuyiRewardVodAdInfo adSuyiRewardVodAdInfo) {
-    		Log.d(ADSuyiDemoConstant.TAG, "onAdExpose----->");
-    		Log.d(ADSuyiDemoConstant.TAG, "广告展示回调，有展示回调不一定是有效曝光，如网络等情况导致上报失败");
+        Log.d(ADSuyiDemoConstant.TAG, "onAdExpose----->");
+        Log.d(ADSuyiDemoConstant.TAG, "广告展示回调，有展示回调不一定是有效曝光，如网络等情况导致上报失败");
     }
 
     @Override
     public void onAdClick(ADSuyiRewardVodAdInfo adSuyiRewardVodAdInfo) {
-    		Log.d(ADSuyiDemoConstant.TAG, "onAdClick----->");
-    		Log.d(ADSuyiDemoConstant.TAG, "广告点击回调，有点击回调不一定是有效点击，如网络等情况导致上报失败");
+        Log.d(ADSuyiDemoConstant.TAG, "onAdClick----->");
+        Log.d(ADSuyiDemoConstant.TAG, "广告点击回调，有点击回调不一定是有效点击，如网络等情况导致上报失败");
     }
 
     @Override
     public void onAdClose(ADSuyiRewardVodAdInfo adSuyiRewardVodAdInfo) {
-    		Log.d(ADSuyiDemoConstant.TAG, "onAdClose----->");
-    		Log.d(ADSuyiDemoConstant.TAG, "广告关闭回调");
+        Log.d(ADSuyiDemoConstant.TAG, "onAdClose----->");
+        Log.d(ADSuyiDemoConstant.TAG, "广告关闭回调");
     }
 
     @Override
     public void onAdFailed(ADSuyiError adSuyiError) {
-    		if (adSuyiError != null) {
-        		String failedJosn = adSuyiError.toString();
+        if (adSuyiError != null) {
+            String failedJosn = adSuyiError.toString();
             Log.d(ADSuyiDemoConstant.TAG, "onAdFailed----->" + failedJosn);
         }
     }
@@ -1098,54 +1100,55 @@ fullScreenVodAd = new ADSuyiFullScreenVodAd(this);
 
 // 设置全屏视频监听
 fullScreenVodAd.setListener(new ADSuyiFullScreenVodAdListener() {
-		@Override
-    public void onVideoCache(ADSuyiFullScreenVodAdInfo adSuyiFullScreenVodAdInfo) {
-    		Log.d(ADSuyiDemoConstant.TAG, "onVideoCache----->");
-    		Log.d(ADSuyiDemoConstant.TAG, "广告视频缓存成功回调... ");
-		}
-
-    @Override
-    public void onVideoComplete(ADSuyiFullScreenVodAdInfo adSuyiFullScreenVodAdInfo) {
-    		Log.d(ADSuyiDemoConstant.TAG, "onVideoComplete----->");
-    		Log.d(ADSuyiDemoConstant.TAG, "广告观看完成回调... ");
-   	}
-
-    @Override
-    public void onVideoError(ADSuyiFullScreenVodAdInfo adSuyiFullScreenVodAdInfo, ADSuyiError adSuyiError) {
-    		Log.d(ADSuyiDemoConstant.TAG, "onVideoError----->" + adSuyiError.toString());
-    		Log.d(ADSuyiDemoConstant.TAG, "广告播放错误回调... ");
-    }
 
     @Override
     public void onAdReceive(ADSuyiFullScreenVodAdInfo fullScreenVodAdInfo) {
         // 全屏视频广告对象一次成功拉取的广告数据只允许展示一次
         Log.d(ADSuyiDemoConstant.TAG, "广告获取成功回调... ");
-    		FullScreenVodAdActivity.this.fullScreenVodAdInfo = fullScreenVodAdInfo;
+        FullScreenVodAdActivity.this.fullScreenVodAdInfo = fullScreenVodAdInfo;
         Log.d(ADSuyiDemoConstant.TAG, "onAdReceive----->");
     }
 
     @Override
+    public void onVideoCache(ADSuyiFullScreenVodAdInfo adSuyiFullScreenVodAdInfo) {
+        Log.d(ADSuyiDemoConstant.TAG, "onVideoCache----->");
+        Log.d(ADSuyiDemoConstant.TAG, "广告视频缓存成功回调... ");
+    }
+
+    @Override
+    public void onVideoComplete(ADSuyiFullScreenVodAdInfo adSuyiFullScreenVodAdInfo) {
+        Log.d(ADSuyiDemoConstant.TAG, "onVideoComplete----->");
+        Log.d(ADSuyiDemoConstant.TAG, "广告观看完成回调... ");
+   	}
+
+    @Override
+    public void onVideoError(ADSuyiFullScreenVodAdInfo adSuyiFullScreenVodAdInfo, ADSuyiError adSuyiError) {
+        Log.d(ADSuyiDemoConstant.TAG, "onVideoError----->" + adSuyiError.toString());
+        Log.d(ADSuyiDemoConstant.TAG, "广告播放错误回调... ");
+    }
+
+    @Override
     public void onAdExpose(ADSuyiFullScreenVodAdInfo adSuyiFullScreenVodAdInfo) {
-    		Log.d(ADSuyiDemoConstant.TAG, "onAdExpose----->");
-    		Log.d(ADSuyiDemoConstant.TAG, "广告展示回调，有展示回调不一定是有效曝光，如网络等情况导致上报失败");
+        Log.d(ADSuyiDemoConstant.TAG, "onAdExpose----->");
+        Log.d(ADSuyiDemoConstant.TAG, "广告展示回调，有展示回调不一定是有效曝光，如网络等情况导致上报失败");
     }
 
     @Override
     public void onAdClick(ADSuyiFullScreenVodAdInfo adSuyiFullScreenVodAdInfo) {
-    		Log.d(ADSuyiDemoConstant.TAG, "onAdClick----->");
-    		Log.d(ADSuyiDemoConstant.TAG, "广告点击回调，有点击回调不一定是有效点击，如网络等情况导致上报失败");
+        Log.d(ADSuyiDemoConstant.TAG, "onAdClick----->");
+        Log.d(ADSuyiDemoConstant.TAG, "广告点击回调，有点击回调不一定是有效点击，如网络等情况导致上报失败");
     }
 
     @Override
     public void onAdClose(ADSuyiFullScreenVodAdInfo adSuyiFullScreenVodAdInfo) {
-    		Log.d(ADSuyiDemoConstant.TAG, "onAdClose----->");
-    		Log.d(ADSuyiDemoConstant.TAG, "广告点击关闭回调");
+        Log.d(ADSuyiDemoConstant.TAG, "onAdClose----->");
+        Log.d(ADSuyiDemoConstant.TAG, "广告点击关闭回调");
     }
 
     @Override
     public void onAdFailed(ADSuyiError adSuyiError) {
-    		if (adSuyiError != null) {
-        		String failedJson = adSuyiError.toString();
+        if (adSuyiError != null) {
+            String failedJson = adSuyiError.toString();
             Log.d(ADSuyiDemoConstant.TAG, "onAdFailed----->" + failedJson);
         }
    	}
@@ -1181,12 +1184,6 @@ interstitialAd.setLocalExtraParams(extraParams);
 
 // 设置插屏广告监听
 interstitialAd.setListener(new ADSuyiInterstitialAdListener() {
-		@Override
-    public void onAdReady(ADSuyiInterstitialAdInfo interstitialAdInfo) {
-    		// 建议在该回调之后展示广告
-        Log.d(ADSuyiDemoConstant.TAG, "onAdReady----->");
-        Log.d(ADSuyiDemoConstant.TAG, "广告准备完毕回调... ");
-    }
 
     @Override
     public void onAdReceive(ADSuyiInterstitialAdInfo interstitialAdInfo) {
@@ -1197,27 +1194,34 @@ interstitialAd.setListener(new ADSuyiInterstitialAdListener() {
     }
 
     @Override
+    public void onAdReady(ADSuyiInterstitialAdInfo interstitialAdInfo) {
+        // 建议在该回调之后展示广告
+        Log.d(ADSuyiDemoConstant.TAG, "onAdReady----->");
+        Log.d(ADSuyiDemoConstant.TAG, "广告准备完毕回调... ");
+    }
+
+    @Override
     public void onAdExpose(ADSuyiInterstitialAdInfo interstitialAdInfo) {
-   			Log.d(ADSuyiDemoConstant.TAG, "onAdExpose----->");
-   			Log.d(ADSuyiDemoConstant.TAG, "广告展示回调，有展示回调不一定是有效曝光，如网络等情况导致上报失败");
+        Log.d(ADSuyiDemoConstant.TAG, "onAdExpose----->");
+        Log.d(ADSuyiDemoConstant.TAG, "广告展示回调，有展示回调不一定是有效曝光，如网络等情况导致上报失败");
     }
 
     @Override
     public void onAdClick(ADSuyiInterstitialAdInfo interstitialAdInfo) {
-    		Log.d(ADSuyiDemoConstant.TAG, "onAdClick----->");
-    		Log.d(ADSuyiDemoConstant.TAG, "广告点击回调，有点击回调不一定是有效点击，如网络等情况导致上报失败");
+        Log.d(ADSuyiDemoConstant.TAG, "onAdClick----->");
+        Log.d(ADSuyiDemoConstant.TAG, "广告点击回调，有点击回调不一定是有效点击，如网络等情况导致上报失败");
     }
 
     @Override
     public void onAdClose(ADSuyiInterstitialAdInfo interstitialAdInfo) {
-    		Log.d(ADSuyiDemoConstant.TAG, "onAdClose----->");
-    		Log.d(ADSuyiDemoConstant.TAG, "广告点击关闭回调");
+        Log.d(ADSuyiDemoConstant.TAG, "onAdClose----->");
+        Log.d(ADSuyiDemoConstant.TAG, "广告点击关闭回调");
     }
 
     @Override
     public void onAdFailed(ADSuyiError adSuyiError) {
-    		if (adSuyiError != null) {
-        		String failedJson = adSuyiError.toString();
+        if (adSuyiError != null) {
+            String failedJson = adSuyiError.toString();
             Log.d(ADSuyiDemoConstant.TAG, "onAdFailed----->" + failedJson);
         }
     }

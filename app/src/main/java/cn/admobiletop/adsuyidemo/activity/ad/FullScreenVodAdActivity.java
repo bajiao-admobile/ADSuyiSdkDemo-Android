@@ -51,9 +51,18 @@ public class FullScreenVodAdActivity extends BaseAdActivity implements View.OnCl
         fullScreenVodAd.setOnlySupportPlatform(ADSuyiDemoConstant.FULL_SCREEN_VOD_AD_ONLY_SUPPORT_PLATFORM);
         // 设置全屏视频监听
         fullScreenVodAd.setListener(new ADSuyiFullScreenVodAdListener() {
+
+            @Override
+            public void onAdReceive(ADSuyiFullScreenVodAdInfo fullScreenVodAdInfo) {
+                // 建议在该回调中展示广告
+                // TODO 全屏视频广告对象一次成功拉取的广告数据只允许展示一次
+                FullScreenVodAdActivity.this.fullScreenVodAdInfo = fullScreenVodAdInfo;
+                ADSuyiToastUtil.show(getApplicationContext(), "全屏视频广告获取成功");
+                Log.d(ADSuyiDemoConstant.TAG, "onAdReceive...");
+            }
+
             @Override
             public void onVideoCache(ADSuyiFullScreenVodAdInfo adSuyiFullScreenVodAdInfo) {
-                // 目前汇量和Inmobi走了该回调之后才准备好
                 Log.d(ADSuyiDemoConstant.TAG, "onVideoCache...");
             }
 
@@ -65,14 +74,6 @@ public class FullScreenVodAdActivity extends BaseAdActivity implements View.OnCl
             @Override
             public void onVideoError(ADSuyiFullScreenVodAdInfo adSuyiFullScreenVodAdInfo, ADSuyiError adSuyiError) {
                 Log.d(ADSuyiDemoConstant.TAG, "onVideoError..." + adSuyiError.toString());
-            }
-
-            @Override
-            public void onAdReceive(ADSuyiFullScreenVodAdInfo fullScreenVodAdInfo) {
-                // TODO 全屏视频广告对象一次成功拉取的广告数据只允许展示一次
-                FullScreenVodAdActivity.this.fullScreenVodAdInfo = fullScreenVodAdInfo;
-                ADSuyiToastUtil.show(getApplicationContext(), "全屏视频广告获取成功");
-                Log.d(ADSuyiDemoConstant.TAG, "onAdReceive...");
             }
 
             @Override
