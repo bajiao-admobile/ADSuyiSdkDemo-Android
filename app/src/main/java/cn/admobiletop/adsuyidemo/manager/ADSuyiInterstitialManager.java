@@ -44,7 +44,7 @@ public class ADSuyiInterstitialManager {
     /**
      * 快手插屏弹窗对象，没有接入快手可注释掉
      */
-    private com.kwad.components.ad.b.c kuaishouDialog;
+    private com.kwad.components.ad.d.c kuaishouDialog;
 
     private static ADSuyiInterstitialManager instance;
 
@@ -122,7 +122,7 @@ public class ADSuyiInterstitialManager {
             KsInterstitialAd ksInterstitialAd = (KsInterstitialAd) fieldAdapterAdInfo.get(interstitialAdInfo);
             Field fieldD = ksInterstitialAd.getClass().getDeclaredField("d");
             fieldD.setAccessible(true);
-            kuaishouDialog = (com.kwad.components.ad.b.c) fieldD.get(ksInterstitialAd);
+            kuaishouDialog = (com.kwad.components.ad.d.c) fieldD.get(ksInterstitialAd);
         } catch (Exception e) {
             e.printStackTrace();
         }

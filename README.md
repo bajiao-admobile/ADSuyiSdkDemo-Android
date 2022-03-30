@@ -57,7 +57,7 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | inmobi    | 0.95M   | v7.5.3.10191 | 5ac0ca9e011497eae054f5abd05c3002 |
 | mintegral | 2.80M     | v16.0.27.03112 | f856e9b50b288cddaead0efcea23f6a6 |
 | Ifly      | 0.48M     | v5.0.2.06012 | 4cad10aca3d43bd368aff25c0e5c2db0 |
-| ksad(快手基础版)      | 2.30M     | v3.3.21.02242 | a649a4a516f4311b6f0a2f5ccb6d859a |
+| ksad(快手基础版)      | 2.30M     | v3.3.22.3.03301 | 0d30d47e4e6dd8c493425e185d97f0fd |
 | ksad(快手内容版)      | 6.00M     | v3.3.27.3.01131 | 8192bea5026da5e45df84e60155ed68c |
 | mimo   | 0.45M     | v5.1.7.03111 | 117e1195571a8105c1890bfb8db5986f |
 | hwpps   | 1.01M     | v13.4.52.302.03111 | 8c3b48c69812ed41b5a8d743a76294f8 |
@@ -221,7 +221,7 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:16.0.27.03112'
 
     // 快手基础版AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.21.02242'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.22.3.03301'
 
     // 快手内容版AdapterSdk，可选的（比快手基础版多一个内容组件，不需要内容组件无需导入该版本，不可和快手基础版同时导入）
     implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadcontent:3.3.27.3.01131'
