@@ -1,4 +1,4 @@
-# ADSuyiSdk Android Sdk——接入文档 V3.5.1.02231
+# ADSuyiSdk Android Sdk——接入文档 V3.5.2.03071
 
  目录 
 
@@ -43,24 +43,24 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 
 | Name      | 大小 | 版本号 | MD5值 |
 | --------- | -------- | --------- | --------- |
-| ADSuyi基础包  |0.3M  |V3.5.1.02231  |4838d6b52ee6d4265209ffd1cd9e7ba6  |
+| ADSuyi基础包  |0.3M  |V3.5.2.03071  |9a229840fabb5210b928370f00373334  |
 | OAID  |1.1M  |—  |—  |
 
 ### 1.5 三方广告平台适配器+三方广告sdk总容量
 
 | Name      | 容量 | 版本号 | MD5值 |
 | --------- | -------- | --------- | --------- |
-| ADmobile       | 0.62M   | v5.0.5.02251 | 38f1d54fefc2dfa52abcac1cdf58dc08 |
-| gdt       | 1.41M   | v4.450.1320.02232 | 132c572f7ecbe4912329db27b4776fbe |
-| toutiao   | 4.11M     | v4.3.0.1.02241 | 4cdbf1ca8b0b7646daf5d17cb0ae5335 |
-| baidu     | 1.20M     | v9.19.02243 | e4cedff456568609e6d1593b31482103 |
+| ADmobile       | 0.62M   | v5.0.6.03111 | eb3b6e045b56e80eef1eaf34e5937461 |
+| gdt       | 1.41M   | v4.452.1322.03112 | 3c676b845678784dd38d53b5926e6257 |
+| toutiao   | 4.11M     | v4.3.0.8.03111 | 3e83d4837321a970e62dfb451970747a |
+| baidu     | 1.20M     | v9.20.03111 | a9f054095b9e97aae58e057cccd8d17d |
 | inmobi    | 0.95M   | v7.5.3.10191 | 5ac0ca9e011497eae054f5abd05c3002 |
-| mintegral | 2.80M     | v16.0.17.01193 | 68cce473ec55025f357ef132761e767e |
+| mintegral | 2.80M     | v16.0.27.03112 | f856e9b50b288cddaead0efcea23f6a6 |
 | Ifly      | 0.48M     | v5.0.2.06012 | 4cad10aca3d43bd368aff25c0e5c2db0 |
 | ksad(快手基础版)      | 2.30M     | v3.3.21.02242 | a649a4a516f4311b6f0a2f5ccb6d859a |
 | ksad(快手内容版)      | 6.00M     | v3.3.27.3.01131 | 8192bea5026da5e45df84e60155ed68c |
-| mimo   | 0.45M     | v5.1.6.02241 | b04d1b7a3e4b7bd0c82191db586d1511 |
-| hwpps   | 1.01M     | v13.4.50.300.02241 | 12322c9be4182fde54b804426d5130a4 |
+| mimo   | 0.45M     | v5.1.7.03111 | 117e1195571a8105c1890bfb8db5986f |
+| hwpps   | 1.01M     | v13.4.52.302.03111 | 8c3b48c69812ed41b5a8d743a76294f8 |
 | yunma   | 1.00M     | v2.0.0.02241 | ba6ba19a6e90a662b2d60c996428d761 |
 | iqy   | 0.30M     | v1.3.34.02241 | b815338a396cfd36efbed4cc5c48cf43 |
 | appic   | 3.32M     | v4.5.2.3.01051 | f6c20493a3ac7043f9cf1ee9d97c6e1b |
@@ -197,8 +197,8 @@ dependencies {
     implementation 'com.android.support:support-v4:28.0.0'
     implementation 'com.android.support:design:28.0.0'
   
-    // ADSuyiSdk核心库是必须导入的
-    implementation 'cn.admobiletop.adsuyi.ad:core:3.5.1.02231'
+    // ADSuyiSdk、common和OAID库是必须导入的
+    implementation 'cn.admobiletop.adsuyi.ad:core:3.5.2.03071'
 
     // OAID库是必须导入的，请保持和Demo中版本一致
     implementation(name: 'oaid_sdk_1.0.25', ext: 'aar')
@@ -206,19 +206,19 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad:oaid:1.0.25.08021'
 
     // 艾狄墨搏AdapterSdk，必须的`
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile:5.0.5.02251'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile:5.0.6.03111'
 
     // 广点通（优量汇）AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.450.1320.02232'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.452.1322.03112'
 
     // 头条AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:4.3.0.1.02241'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:4.3.0.8.03111'
 
     // 百度增强版AdapterSdk，可选的（请勿与百度同时导入）
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced:9.19.02243'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced:9.20.03111'
 
     // 汇量AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:16.0.17.01193'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:16.0.27.03112'
 
     // 快手基础版AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.21.02242'
@@ -234,13 +234,13 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:ifly:5.0.2.06012'
 
     // 米盟AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:mimo:5.1.6.02241'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:mimo:5.1.7.03111'
     implementation 'com.google.code.gson:gson:2.8.5'
     implementation 'com.github.bumptech.glide:glide:4.9.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
 
     // 华为广告联盟AdadapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:hwpps:13.4.50.300.02241'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:hwpps:13.4.52.302.03111'
 
     // 云码AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:yunma:2.0.0.02241'
@@ -1409,7 +1409,7 @@ contentAllianceAdInfo.openKSContentPage(this)
 
 ## 7. 常见问题和错误调试
 
-> [常见问题和错误调试及错误码](https://doc.admobile.top/ssp/2-%E6%8A%80%E6%9C%AF%E5%AF%B9%E6%8E%A5/6-Android_QA.html)
+> [常见问题和错误调试及错误码](https://doc.admobile.top/ssp/2jieru/3-ADSuyiSDK_And_Error_code.html#%E9%94%99%E8%AF%AF%E7%A0%81)
 
 如果以上地址无法跳转，请访问[备用地址](http://doc.admobile.top/ssp/)，下拉找到**Android集成常见问题**
 
