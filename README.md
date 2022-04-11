@@ -52,7 +52,7 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | --------- | -------- | --------- | --------- |
 | ADmobile       | 0.62M   | v5.0.6.03111 | eb3b6e045b56e80eef1eaf34e5937461 |
 | gdt       | 1.41M   | v4.452.1322.03112 | 3c676b845678784dd38d53b5926e6257 |
-| toutiao   | 4.11M     | v4.3.0.8.03111 | 3e83d4837321a970e62dfb451970747a |
+| toutiao   | 4.11M     | v4.4.0.2.04091 | 565f6d50a85b9180aa97a98d8c063b6a |
 | baidu     | 1.20M     | v9.20.03111 | a9f054095b9e97aae58e057cccd8d17d |
 | inmobi    | 0.95M   | v7.5.3.10191 | 5ac0ca9e011497eae054f5abd05c3002 |
 | mintegral | 2.80M     | v16.0.27.03112 | f856e9b50b288cddaead0efcea23f6a6 |
@@ -212,7 +212,7 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.452.1322.03112'
 
     // 头条AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:4.3.0.8.03111'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:4.4.0.2.04091'
 
     // 百度增强版AdapterSdk，可选的（请勿与百度同时导入）
     implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced:9.20.03111'
