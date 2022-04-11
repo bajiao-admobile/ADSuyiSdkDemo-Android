@@ -62,9 +62,9 @@ dependencies {
     ...
 
     // 汇量AdapterSdk（如已导入请忽视）
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:16.0.17.01192'
-    // 汇量竞价AdapterSdk（需要与上述版本号对应，如16.0.17）
-    implementation 'cn.admobiletop.adsuyi.bid.adapter:mintegral-bid:16.0.17.01191'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:16.0.27.03112'
+    // 汇量竞价AdapterSdk（需要与上述版本号对应，如16.0.27）
+    implementation 'cn.admobiletop.adsuyi.bid.adapter:mintegral-bid:16.0.27.03111'
 
 }
 ```
