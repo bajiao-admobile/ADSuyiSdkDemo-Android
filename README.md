@@ -38,6 +38,8 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | hwpps   | 华为广告联盟     | 华为广告联盟   |
 | yunma   | 云码     | 云码   |
 | iqy   | 爱奇艺     | 爱奇艺   |
+| appic   | appic     | appic   |
+| gromore   | gromore     | gromore   |
 
 ### 1.4 ADSuyi必添包容量
 
@@ -64,6 +66,7 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | yunma   | 1.00M     | v2.0.0.02241 | ba6ba19a6e90a662b2d60c996428d761 |
 | iqy   | 0.30M     | v1.3.34.02241 | b815338a396cfd36efbed4cc5c48cf43 |
 | appic   | 3.32M     | v4.5.2.3.01051 | f6c20493a3ac7043f9cf1ee9d97c6e1b |
+| gromore   | ～M     | v3.3.1.0.04091 | 4f2a55b98e746bd8ce2290a3833f4bcf |
 
 ### 1.6 头部竞价功能
 
@@ -178,8 +181,16 @@ allprojects {
         google()
         jcenter()
         mavenCentral()
-        // 添加以下仓库地址
+        // 添加ADSuyi相关仓库依赖
         maven { url "https://maven.admobile.top/repository/maven-releases/" }
+        // 如果添加了汇量广告，需要添加汇量的远程仓库依赖
+        maven { url "https://dl-maven-android.mintegral.com/repository/mbridge_android_sdk_support/" }
+        // 如果添加了云码广告，需要添加云码的远程仓库依赖
+        maven { url 'https://maven.aliyun.com/nexus/content/repositories/releases/' }
+        // 如果添加了华为联盟广告，需要添加华为联盟的远程仓库依赖
+        maven { url 'https://developer.huawei.com/repo/' }
+        // 如果添加了gromore广告，需要添加gromore的远程仓库依赖
+        maven { url "https://artifact.bytedance.com/repository/pangle" }
     }
 }
 ```
@@ -247,6 +258,12 @@ dependencies {
 
     // 爱奇艺AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:iqy:1.3.34.02241'
+
+    // gromoreAdapterSdk，可选的。如果要使用gromore，请联系开发者。
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:gromore:3.3.1.0.04091'
+    implementation "com.gromore.cn:gdt-adapter:4.453.1323.0" //广点通 adapter
+    implementation "com.gromore.cn:pangle-adapter:4.3.0.8.0" //穿山甲 adapter
+    // 有gromore其他渠道需求，请联系开发者。
 
     // AppicAdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:appic:4.5.2.3.01051'
@@ -634,6 +651,9 @@ dependencies {
 
 # 爱奇艺
 -keep class com.mcto.sspsdk.** { *; }
+
+# gromore
+请参考gromore-proguard-rules.pro文件
 
 # NovelAdapter混淆
 -keep class android.**{*;}

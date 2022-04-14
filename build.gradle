@@ -27,6 +27,8 @@ allprojects {
         maven { url 'https://maven.aliyun.com/nexus/content/repositories/releases/' }
         // 如果添加了华为联盟广告，需要添加华为联盟的远程仓库依赖
         maven { url 'https://developer.huawei.com/repo/' }
+        // 如果添加了gromore广告，需要添加gromore的远程仓库依赖
+        maven { url "https://artifact.bytedance.com/repository/pangle" }
     }
 }
 
