@@ -98,7 +98,7 @@ public class NativeExpressActivity extends AppCompatActivity {
         adSuyiNativeAd = new ADSuyiNativeAd(this);
         // 创建额外参数实例
         ADSuyiExtraParams extraParams = new ADSuyiExtraParams.Builder()
-                // 设置整个广告视图预期宽高(目前仅头条、艾狄墨搏平台需要，没有接入头条、艾狄墨搏可不设置)，单位为px，高度如果小于等于0则高度自适应
+                // 设置整个广告视图预期宽高(目前仅广点通、头条、艾狄墨搏平台需要，没有接入广点通、头条、艾狄墨搏可不设置)，单位为px，高度如果小于等于0则高度自适应
                 .adSize(new ADSuyiAdSize(widthPixels, 0))
                 // 设置广告视图中MediaView的预期宽高(目前仅Inmobi平台需要,Inmobi的MediaView高度为自适应，没有接入Inmobi平台可不设置)，单位为px
                 .nativeAdMediaViewSize(new ADSuyiAdSize((int) (widthPixels - 24 * getResources().getDisplayMetrics().density)))

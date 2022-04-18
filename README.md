@@ -1,4 +1,4 @@
-# ADSuyiSdk Android Sdk——接入文档 V3.5.2.03071
+# ADSuyiSdk Android Sdk——接入文档 V3.5.3.03162
 
  目录 
 
@@ -31,14 +31,14 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | baidu     | 百度     | 百青藤   |
 | inmobi    | Inmobi   | Inmobi   |
 | mintegral | 汇量     | Mobvsita |
-| Ifly      | 讯飞     | 讯飞     |
+| ifly      | 讯飞     | 讯飞     |
 | ksad      | 快手基础版     | 快手基础版     |
-| ksad   | 快手内容版   | 快手内容版     |
 | mimo   | 米盟     | 米盟   |
 | hwpps   | 华为广告联盟     | 华为广告联盟   |
 | yunma   | 云码     | 云码   |
 | iqy   | 爱奇艺     | 爱奇艺   |
 | appic   | appic     | appic   |
+| tianmu   | 天目     | 天目   |
 | gromore   | gromore     | gromore   |
 
 ### 1.4 ADSuyi必添包容量
@@ -52,20 +52,20 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 
 | Name      | 容量 | 版本号 | MD5值 |
 | --------- | -------- | --------- | --------- |
-| ADmobile       | 0.62M   | v5.0.6.03111 | eb3b6e045b56e80eef1eaf34e5937461 |
-| gdt       | 1.41M   | v4.452.1322.03112 | 3c676b845678784dd38d53b5926e6257 |
+| admobile       | 0.62M   | v5.0.7.04021 | c1da662539c824cba9c85cc842db0e31 |
+| gdt       | 1.41M   | v4.453.1323.03311 | ee57ec712d35945f690d71bd71263a64 |
 | toutiao   | 4.11M     | v4.4.0.2.04091 | 565f6d50a85b9180aa97a98d8c063b6a |
-| baidu     | 1.20M     | v9.20.03111 | a9f054095b9e97aae58e057cccd8d17d |
+| baidu     | 1.20M     | v9.202.03312 | 87475d760231d4a651c6cf15471028cf |
 | inmobi    | 0.95M   | v7.5.3.10191 | 5ac0ca9e011497eae054f5abd05c3002 |
-| mintegral | 2.80M     | v16.0.27.03112 | f856e9b50b288cddaead0efcea23f6a6 |
-| Ifly      | 0.48M     | v5.0.2.06012 | 4cad10aca3d43bd368aff25c0e5c2db0 |
+| mintegral | 2.80M     | v16.0.37.03311 | 16593eae59f055405a382dab56214aef |
+| ifly      | 0.48M     | v5.0.2.06012 | 4cad10aca3d43bd368aff25c0e5c2db0 |
 | ksad(快手基础版)      | 2.30M     | v3.3.22.3.03301 | 0d30d47e4e6dd8c493425e185d97f0fd |
-| ksad(快手内容版)      | 6.00M     | v3.3.27.3.01131 | 8192bea5026da5e45df84e60155ed68c |
 | mimo   | 0.45M     | v5.1.7.03111 | 117e1195571a8105c1890bfb8db5986f |
 | hwpps   | 1.01M     | v13.4.52.302.03111 | 8c3b48c69812ed41b5a8d743a76294f8 |
 | yunma   | 1.00M     | v2.0.0.02241 | ba6ba19a6e90a662b2d60c996428d761 |
-| iqy   | 0.30M     | v1.3.34.02241 | b815338a396cfd36efbed4cc5c48cf43 |
+| iqy   | 0.30M     | v1.4.01.03311 | fb597dbdd0d8098499ecc0b1910a66be |
 | appic   | 3.32M     | v4.5.2.3.01051 | f6c20493a3ac7043f9cf1ee9d97c6e1b |
+| tianmu   | 1.4M     | v1.1.0.03231 | 3a4e9d1f9d004c640ddd34cb935c0c7c |
 | gromore   | ～M     | v3.3.1.0.04091 | 4f2a55b98e746bd8ce2290a3833f4bcf |
 
 ### 1.6 头部竞价功能
@@ -217,25 +217,22 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad:oaid:1.0.25.08021'
 
     // 艾狄墨搏AdapterSdk，必须的`
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile:5.0.6.03111'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile:5.0.7.04021'
 
     // 广点通（优量汇）AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.452.1322.03112'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.453.1323.03311'
 
     // 头条AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:4.4.0.2.04091'
 
     // 百度增强版AdapterSdk，可选的（请勿与百度同时导入）
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced:9.20.03111'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced:9.202.03312'
 
     // 汇量AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:16.0.27.03112'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:16.0.37.03311'
 
     // 快手基础版AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.22.3.03301'
-
-    // 快手内容版AdapterSdk，可选的（比快手基础版多一个内容组件，不需要内容组件无需导入该版本，不可和快手基础版同时导入）
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadcontent:3.3.27.3.01131'
 
     // InmobiAdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:inmobi:7.5.3.10191'
@@ -257,7 +254,7 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:yunma:2.0.0.02241'
 
     // 爱奇艺AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:iqy:1.3.34.02241'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:iqy:1.4.01.03311'
 
     // gromoreAdapterSdk，可选的。如果要使用gromore，请联系开发者。
     implementation 'cn.admobiletop.adsuyi.ad.adapter:gromore:3.3.1.0.04091'
@@ -1363,65 +1360,7 @@ ADSuyiSdk.getInstance().pauseFloatingAd();
 ADSuyiSdk.getInstance().restartFloatingAd();
 ```
 
-  ### <a name="ad_content_alliance">6.10 内容联盟示例</a>
-
-**内容联盟，目前支持快手入口组件**
-
-```java
-// 创建内容联盟实例
-adSuyiContentAllianceAd = new ADSuyiContentAllianceAd(this);
-// 设置监听
-adSuyiContentAllianceAd.setListener(new ADSuyiContentAllianceAdListener() {
-
-
-    @Override
-    public void onAdReceive(ADSuyiContentAllianceAdInfo adSuyiContentAllianceAdInfo) {
-        Log.d(ADSuyiDemoConstant.TAG, "onAdReceive: " + adSuyiContentAllianceAdInfo);
-        if (adSuyiContentAllianceAdInfo != null) {
-            contentAllianceAdInfo = adSuyiContentAllianceAdInfo;
-            // 可以根据demo中将广告对象放入适配器中进行渲染或在必要的位置调用contentAllianceAdInfo.openKSContentPage(this)方法进行内容详情页的跳转
-            tempDataList.add(new ContentAllianceAdSampleData(adSuyiContentAllianceAdInfo));
-            contentAllianceAdAdapter.addData(tempDataList);
-        }
-        refreshLayout.finish(refreshType, true, false);
-    }
-
-    @Override
-    public void onAdExpose(ADSuyiContentAllianceAdInfo adSuyiContentAllianceAdInfo) {
-        Log.d(ADSuyiDemoConstant.TAG, "onAdExpose: " + adSuyiContentAllianceAdInfo);
-    }
-
-    @Override
-    public void onAdClick(ADSuyiContentAllianceAdInfo adSuyiContentAllianceAdInfo) {
-        Log.d(ADSuyiDemoConstant.TAG, "onAdClick: " + adSuyiContentAllianceAdInfo);
-    }
-
-    @Override
-    public void onAdClose(ADSuyiContentAllianceAdInfo adSuyiContentAllianceAdInfo) {
-        Log.d(ADSuyiDemoConstant.TAG, "onAdClose: " + adSuyiContentAllianceAdInfo);
-    }
-
-    @Override
-    public void onAdFailed(ADSuyiError adSuyiError) {
-        if (adSuyiError != null) {
-            Log.d(ADSuyiDemoConstant.TAG, "onAdFailed: " + adSuyiError.toString());
-        }
-        contentAllianceAdAdapter.addData(tempDataList);
-        refreshLayout.finish(refreshType, false, false);
-    }
-});
-
-// 内容联盟广告场景id（场景id非必选字段，如果需要可到开发者后台创建）
-adSuyiContentAllianceAd.setSceneId(ADSuyiDemoConstant.CONTENT_ALLIANCE_AD_SCENE_ID);
-// 请求广告数据，参数一广告位ID
-adSuyiContentAllianceAd.loadAd(ADSuyiDemoConstant.CONTENT_ALLIANCE_AD_POS_ID);
-// 不放入适配器中直接跳转展示内容，由于内容联盟的获取是异步的，请在onAdReceive后调用该方法进行跳转展示
-contentAllianceAdInfo.openKSContentPage(this)
-```
-
-> [内容联盟示例详情](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/other/ContentAllianceAdActivity.java)
-
-### 6.11 备注
+### 6.10 备注
 
 具体的接入代码和流程，请参考Demo
 
