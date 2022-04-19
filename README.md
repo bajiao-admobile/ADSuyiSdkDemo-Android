@@ -32,7 +32,7 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | inmobi    | Inmobi   | Inmobi   |
 | mintegral | 汇量     | Mobvsita |
 | ifly      | 讯飞     | 讯飞     |
-| ksad      | 快手基础版     | 快手基础版     |
+| ksad      | 快手     | 快手     |
 | mimo   | 米盟     | 米盟   |
 | hwpps   | 华为广告联盟     | 华为广告联盟   |
 | iqy   | 爱奇艺     | 爱奇艺   |
@@ -58,7 +58,7 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | inmobi    | 0.95M   | v7.5.3.10191 | 5ac0ca9e011497eae054f5abd05c3002 |
 | mintegral | 2.80M     | v16.0.37.03311 | 16593eae59f055405a382dab56214aef |
 | ifly      | 0.48M     | v5.0.2.06012 | 4cad10aca3d43bd368aff25c0e5c2db0 |
-| ksad(快手基础版)      | 2.30M     | v3.3.22.3.03301 | 0d30d47e4e6dd8c493425e185d97f0fd |
+| ksad      | 2.30M     | v3.3.22.3.03301 | 0d30d47e4e6dd8c493425e185d97f0fd |
 | mimo   | 0.45M     | v5.1.7.03111 | 117e1195571a8105c1890bfb8db5986f |
 | hwpps   | 1.01M     | v13.4.52.302.03111 | 8c3b48c69812ed41b5a8d743a76294f8 |
 | iqy   | 0.30M     | v1.4.01.03311 | fb597dbdd0d8098499ecc0b1910a66be |
@@ -227,7 +227,7 @@ dependencies {
     // 汇量AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:16.0.37.03311'
 
-    // 快手基础版AdapterSdk，可选的
+    // 快手AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.22.3.03301'
 
     // InmobiAdapterSdk，可选的
@@ -294,8 +294,7 @@ dependencies {
 * **广点通适配器4.270.1140版本及以上已经导入了腾讯的tbs，请移除原有的tbs避免编译失败；**
 * **广点通适配器4.310.1180版本及以上已经将腾讯tbs移除，媒体需要手动导入tbs，避免自身项目需要依赖tbs导致编译失败；**
 * **由于头条(穿山甲)渠道支持了Android R，引入了Android R的 <queries> 标签,需要对gradle版本进行限制，限制范围为：3.3.3、 3.4.3、 3.5.4、3.6.4、4.0.1 ，开发者根据自身情况酌情升级**
-* **如对接华为广告联盟，激励视频要提前预加载，并且播放完成后需要预加载下一个激励视频；banner广告使用场景是程序页面的顶部或者底部。**
-* **快手区分为基础版和内容版，内容版比基础版多了一个内容组件，请开发者按需求进行导入。**
+* **如对接华为广告联盟，激励视频要提前预加载，并且播放完成后需要预加载下一个激励视频，华为渠道点击事件无法统计；banner广告使用场景是程序页面的顶部或者底部。**
 
 3. 激励、全屏视频、插屏等广告对象一次成功拉取的广告数据只允许展示一次，还需展示请再次加载广告。
 

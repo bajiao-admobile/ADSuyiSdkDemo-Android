@@ -110,7 +110,7 @@ dependencies {
     // 汇量AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:16.0.37.03311'
 
-    // 快手基础版AdapterSdk，可选的
+    // 快手AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.22.3.03301'
 
     // InmobiAdapterSdk，可选的
