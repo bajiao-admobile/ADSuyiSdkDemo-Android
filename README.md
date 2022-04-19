@@ -35,7 +35,6 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | ksad      | 快手基础版     | 快手基础版     |
 | mimo   | 米盟     | 米盟   |
 | hwpps   | 华为广告联盟     | 华为广告联盟   |
-| yunma   | 云码     | 云码   |
 | iqy   | 爱奇艺     | 爱奇艺   |
 | appic   | appic     | appic   |
 | tianmu   | 天目     | 天目   |
@@ -62,7 +61,6 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | ksad(快手基础版)      | 2.30M     | v3.3.22.3.03301 | 0d30d47e4e6dd8c493425e185d97f0fd |
 | mimo   | 0.45M     | v5.1.7.03111 | 117e1195571a8105c1890bfb8db5986f |
 | hwpps   | 1.01M     | v13.4.52.302.03111 | 8c3b48c69812ed41b5a8d743a76294f8 |
-| yunma   | 1.00M     | v2.0.0.02241 | ba6ba19a6e90a662b2d60c996428d761 |
 | iqy   | 0.30M     | v1.4.01.03311 | fb597dbdd0d8098499ecc0b1910a66be |
 | appic   | 3.32M     | v4.5.2.3.01051 | f6c20493a3ac7043f9cf1ee9d97c6e1b |
 | tianmu   | 1.4M     | v1.1.0.03231 | 3a4e9d1f9d004c640ddd34cb935c0c7c |
@@ -185,8 +183,6 @@ allprojects {
         maven { url "https://maven.admobile.top/repository/maven-releases/" }
         // 如果添加了汇量广告，需要添加汇量的远程仓库依赖
         maven { url "https://dl-maven-android.mintegral.com/repository/mbridge_android_sdk_support/" }
-        // 如果添加了云码广告，需要添加云码的远程仓库依赖
-        maven { url 'https://maven.aliyun.com/nexus/content/repositories/releases/' }
         // 如果添加了华为联盟广告，需要添加华为联盟的远程仓库依赖
         maven { url 'https://developer.huawei.com/repo/' }
         // 如果添加了gromore广告，需要添加gromore的远程仓库依赖
@@ -250,9 +246,6 @@ dependencies {
     // 华为广告联盟AdadapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:hwpps:13.4.52.302.03111'
 
-    // 云码AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:yunma:2.0.0.02241'
-
     // 爱奇艺AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:iqy:1.4.01.03311'
 
@@ -297,7 +290,6 @@ dependencies {
    ```
 
 * 如果接入汇量，需要加入第三方依赖库https://dl-maven-android.mintegral.com/repository/mbridge_android_sdk_support/
-* 如果接入云码，需要加入第三方依赖库https://maven.aliyun.com/nexus/content/repositories/releases/
 * 如果接入华为联盟，需要加入第三方依赖库https://developer.huawei.com/repo/
 * **广点通适配器4.270.1140版本及以上已经导入了腾讯的tbs，请移除原有的tbs避免编译失败；**
 * **广点通适配器4.310.1180版本及以上已经将腾讯tbs移除，媒体需要手动导入tbs，避免自身项目需要依赖tbs导致编译失败；**
@@ -640,11 +632,6 @@ dependencies {
 -keep public class * extends com.bumptech.glide.module.AppGlideModule
 -keep public enum com.bumptech.glide.load.ImageHeaderParser$** { **[] $VALUES; public *; }
 -dontwarn com.bumptech.glide.load.resource.bitmap.VideoDecoder
-
-# 云码混淆
--keep class com.alibaba.sdk.android.** {*;}
--keep class io.vov.** {*;}
--keep class com.UCMobile.Apollo.** {*;}
 
 # 爱奇艺
 -keep class com.mcto.sspsdk.** { *; }

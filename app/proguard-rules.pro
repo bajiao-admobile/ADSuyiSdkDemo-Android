@@ -167,11 +167,6 @@
 -keep public enum com.bumptech.glide.load.ImageHeaderParser$** { **[] $VALUES; public *; }
 -dontwarn com.bumptech.glide.load.resource.bitmap.VideoDecoder
 
-# 云码混淆
--keep class com.alibaba.sdk.android.** {*;}
--keep class io.vov.** {*;}
--keep class com.UCMobile.Apollo.** {*;}
-
 # 爱奇艺
 -keep class com.mcto.sspsdk.** { *; }
 

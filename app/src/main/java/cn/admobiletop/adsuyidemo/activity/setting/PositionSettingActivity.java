@@ -76,7 +76,7 @@ public class PositionSettingActivity extends AppCompatActivity {
         platformMap.put("快手(ksad)", "ksad");
         platformMap.put("米盟(mimo)", "mimo");
         platformMap.put("华为广告联盟(hwpps)", "hwpps");
-        platformMap.put("云码(yunma)", "yunma");
+        platformMap.put("gromore", "gromore");
         platformMap.put("爱奇艺(iqy)", "iqy");
     }
 

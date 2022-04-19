@@ -129,9 +129,6 @@ dependencies {
     // 华为广告联盟AdadapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:hwpps:13.4.52.302.03111'
 
-    // 云码AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:yunma:2.0.0.02241'
-
     // 爱奇艺AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:iqy:1.4.01.03311'
 
