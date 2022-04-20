@@ -58,7 +58,7 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | inmobi    | 0.95M   | v7.5.3.10191 | 5ac0ca9e011497eae054f5abd05c3002 |
 | mintegral | 2.80M     | v16.0.37.03311 | 16593eae59f055405a382dab56214aef |
 | ifly      | 0.48M     | v5.0.2.06012 | 4cad10aca3d43bd368aff25c0e5c2db0 |
-| ksad      | 2.30M     | v3.3.22.3.03301 | 0d30d47e4e6dd8c493425e185d97f0fd |
+| ksad      | 2.30M     | v3.3.23.04011 | b58b79ffb3cbaad57969a68f738f64ef |
 | mimo   | 0.45M     | v5.1.7.03111 | 117e1195571a8105c1890bfb8db5986f |
 | hwpps   | 1.01M     | v13.4.52.302.03111 | 8c3b48c69812ed41b5a8d743a76294f8 |
 | iqy   | 0.30M     | v1.4.01.03311 | fb597dbdd0d8098499ecc0b1910a66be |
@@ -228,7 +228,7 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:16.0.37.03311'
 
     // 快手AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.22.3.03301'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.23.04011'
 
     // InmobiAdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:inmobi:7.5.3.10191'
