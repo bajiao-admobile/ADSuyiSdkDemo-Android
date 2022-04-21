@@ -54,7 +54,7 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | admobile       | 0.62M   | v5.0.7.04021 | c1da662539c824cba9c85cc842db0e31 |
 | gdt       | 1.41M   | v4.453.1323.03311 | ee57ec712d35945f690d71bd71263a64 |
 | toutiao   | 4.11M     | v4.4.0.2.04091 | 565f6d50a85b9180aa97a98d8c063b6a |
-| baidu     | 1.20M     | v9.202.03312 | 87475d760231d4a651c6cf15471028cf |
+| baidu     | 1.20M     | v9.202.03313 | 04988a219151d865a6af8b0e1c45a867 |
 | inmobi    | 0.95M   | v7.5.3.10191 | 5ac0ca9e011497eae054f5abd05c3002 |
 | mintegral | 2.80M     | v16.0.37.03311 | 16593eae59f055405a382dab56214aef |
 | ifly      | 0.48M     | v5.0.2.06012 | 4cad10aca3d43bd368aff25c0e5c2db0 |
@@ -225,7 +225,7 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:4.4.0.2.04091'
 
     // 百度增强版AdapterSdk，可选的（请勿与百度同时导入）
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced:9.202.03312'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced:9.202.03313'
 
     // 汇量AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:16.0.37.03311'
