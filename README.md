@@ -215,6 +215,9 @@ dependencies {
     // 艾狄墨搏AdapterSdk，必须的`
     implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile:5.0.7.04021'
 
+    // 天目AdapterSdk，可选的
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:tianmu:1.1.0.03231'
+
     // 广点通（优量汇）AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.453.1323.03311'
 
