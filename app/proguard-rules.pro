@@ -170,6 +170,9 @@
 # 爱奇艺
 -keep class com.mcto.sspsdk.** { *; }
 
+# gromore
+# 请参考gromore-proguard-rules.pro文件
+
 # NovelAdapter混淆
 -keep class android.**{*;}
 -keep class com.ecook.** {* ;}
@@ -179,6 +182,9 @@
 -keepattributes Signature
 -keep class android.**{*;}
 -keep class com.ecook.novel_sdk.bookstore.data.bean.* {*;}
+
+# 天目
+-keep class com.tianmu.**{ *; }
 
 # CookbookAdapter混淆
 -keep class cn.admobiletop.cookbook.**{*;}

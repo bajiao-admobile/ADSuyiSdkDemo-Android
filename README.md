@@ -123,11 +123,6 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
     <td>类似通知栏样式展示的广告，只在应用中弹出，几乎不影响用户操作，用户可以上滑左右滑动移除广告</td>
     <td>任意场景</td>
   </tr>
-  <tr>
-      <td><a href="#ad_content_alliance">内容联盟</a></td>
-      <td>增加App内容。注意目前仅支持快手</td>
-      <td>根据需求添加</td>
-    </tr>
 </table>
 
 ## 3. Demo及SDK下载链接
@@ -639,17 +634,14 @@ dependencies {
 -keep class com.mcto.sspsdk.** { *; }
 
 # gromore
-请参考gromore-proguard-rules.pro文件
+# 请参考gromore-proguard-rules.pro文件
 
-# NovelAdapter混淆
--keep class android.**{*;}
--keep class com.ecook.** {* ;}
--keep class com.parting_soul.http.** {* ;}
--keep class com.ttx.reader.support.** {* ;}
--ignorewarnings
--keepattributes Signature
--keep class android.**{*;}
--keep class com.ecook.novel_sdk.bookstore.data.bean.* {*;}
+# 天目
+-keep class com.tianmu.**{ *; }
+
+# CookbookAdapter混淆
+-keep class cn.admobiletop.cookbook.**{*;}
+
 ```
 
 ### 5.5 隐私信息控制开关
