@@ -63,7 +63,7 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | hwpps   | 1.01M     | v13.4.52.302.03111 | 8c3b48c69812ed41b5a8d743a76294f8 |
 | iqy   | 0.30M     | v1.4.01.03311 | fb597dbdd0d8098499ecc0b1910a66be |
 | appic   | 3.32M     | v4.5.2.3.01051 | f6c20493a3ac7043f9cf1ee9d97c6e1b |
-| tianmu   | 1.4M     | v1.1.0.03231 | 3a4e9d1f9d004c640ddd34cb935c0c7c |
+| tianmu   | 1.4M     | v1.1.0.03232 | ea8c92af78883bf634a54acfabaa623b |
 | gromore   | ～M     | v3.3.1.0.04091 | 4f2a55b98e746bd8ce2290a3833f4bcf |
 
 ### 1.6 头部竞价功能
@@ -211,7 +211,7 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile:5.0.7.04021'
 
     // 天目AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:tianmu:1.1.0.03231'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:tianmu:1.1.0.03232'
 
     // 广点通（优量汇）AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.453.1323.03312'
