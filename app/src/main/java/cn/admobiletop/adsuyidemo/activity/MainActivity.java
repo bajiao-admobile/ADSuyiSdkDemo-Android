@@ -9,6 +9,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.CompoundButton;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import cn.admobiletop.adsuyi.ADSuyiSdk;
@@ -25,8 +27,11 @@ import cn.admobiletop.adsuyidemo.activity.other.DlModuleActivity;
 import cn.admobiletop.adsuyidemo.activity.other.NativeAdActivity;
 import cn.admobiletop.adsuyidemo.activity.setting.SettingActivity;
 import cn.admobiletop.adsuyidemo.util.LoadAdUtil;
+import cn.admobiletop.adsuyidemo.util.SPUtil;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
+    private Switch switchPersonalized;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -48,6 +53,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.btnContentMoudle).setOnClickListener(this);
         findViewById(R.id.btnAdmobileDlAdModule).setOnClickListener(this);
         findViewById(R.id.btnInterstitialAutoClose).setOnClickListener(this);
+
+        switchPersonalized = findViewById(R.id.switchPersonalized);
+
+        boolean personalized = SPUtil.getBoolean(this, SettingActivity.KEY_PERSONALIZED, true);
+        switchPersonalized.setChecked(personalized);
+        ADSuyiSdk.setPersonalizedAdEnabled(personalized);
+
+        switchPersonalized.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                ADSuyiSdk.setPersonalizedAdEnabled(isChecked);
+                SPUtil.putBoolean(MainActivity.this, SettingActivity.KEY_PERSONALIZED, isChecked);
+            }
+        });
     }
 
     @Override

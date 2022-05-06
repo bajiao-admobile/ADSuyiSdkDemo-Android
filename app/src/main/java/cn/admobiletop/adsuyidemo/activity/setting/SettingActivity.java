@@ -18,6 +18,7 @@ public class SettingActivity extends BaseAdActivity {
     private RecyclerView mRv;
     private SettingAdapter mAdapter;
     private List<AdSettingData> mData = new ArrayList<>();
+    public static final String KEY_PERSONALIZED = "KEY_PERSONALIZED";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
