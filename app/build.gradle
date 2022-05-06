@@ -139,11 +139,11 @@ dependencies {
     implementation 'com.android.volley:volley:1.1.0'
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.6'
 
-//    // gromoreAdapterSdk，可选的。如果要使用gromore，请联系开发者。
-//    implementation 'cn.admobiletop.adsuyi.ad.adapter:gromore:3.3.1.0.04091'
-//    implementation "com.gromore.cn:gdt-adapter:4.453.1323.0" //广点通 adapter
-//    implementation "com.gromore.cn:pangle-adapter:4.3.0.8.0" //穿山甲 adapter
-//    // 有gromore其他渠道需求，请联系开发者。
+    // gromoreAdapterSdk，可选的。如果要使用gromore的其他渠道，请联系开发者。
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:gromore:3.3.1.1.05061'
+    implementation "com.gromore.cn:gdt-adapter:4.460.1330.0" //广点通 adapter
+    implementation "com.gromore.cn:pangle-adapter:4.4.0.2.0" //穿山甲 adapter
+    // 有gromore其他渠道需求，请联系开发者。
 
     // 菜谱内容SDK（还需要gson和recyclerview支持）
     implementation 'cn.admobiletop.adsuyi.ad:cookbook:1.0.3.02091'
