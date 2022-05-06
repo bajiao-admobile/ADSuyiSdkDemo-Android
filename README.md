@@ -34,7 +34,6 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | admobile  | 艾狄墨搏 | 艾狄墨搏 |
 | mimo   | 米盟     | 米盟   |
 | hwpps   | 华为广告联盟     | 华为广告联盟   |
-| iqy   | 爱奇艺     | 爱奇艺   |
 | appic   | appic     | appic   |
 | inmobi    | Inmobi   | Inmobi   |
 | ifly      | 讯飞     | 讯飞     |
@@ -60,11 +59,10 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | admobile       | 0.62M   | v5.0.7.04021 | c1da662539c824cba9c85cc842db0e31 |
 | mimo   | 0.45M     | v5.1.7.04131 | 1b4126cd97b75608e4f219f9c3b7c8b4 |
 | hwpps   | 1.01M     | v13.4.53.300.04131 | eebe84ac67a74625c7f76658f5271838 |
-| iqy   | 0.30M     | v1.4.01.03311 | fb597dbdd0d8098499ecc0b1910a66be |
 | appic   | 3.32M     | v4.5.2.3.01051 | f6c20493a3ac7043f9cf1ee9d97c6e1b |
 | inmobi    | 0.95M   | v7.5.3.10191 | 5ac0ca9e011497eae054f5abd05c3002 |
 | ifly      | 0.48M     | v5.0.2.06012 | 4cad10aca3d43bd368aff25c0e5c2db0 |
-| gromore   | ～M     | v3.3.1.0.04091 | 4f2a55b98e746bd8ce2290a3833f4bcf |
+| gromore   |—     | v3.3.1.0.04091 | 4f2a55b98e746bd8ce2290a3833f4bcf |
 
 ### 1.6 菜谱内容功能
 
@@ -239,9 +237,6 @@ dependencies {
 
     // 华为广告联盟AdadapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:hwpps:13.4.53.300.04131'
-
-    // 爱奇艺AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:iqy:1.4.01.03311'
 
     // gromoreAdapterSdk，可选的。如果要使用gromore，请联系开发者。
     implementation 'cn.admobiletop.adsuyi.ad.adapter:gromore:3.3.1.0.04091'
