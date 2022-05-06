@@ -44,7 +44,7 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 
 | Name      | 大小 | 版本号 | MD5值 |
 | --------- | -------- | --------- | --------- |
-| ADSuyi基础包  |0.3M  |V3.6.0.04091  |d535eb933a77bf38bfb25927cdff54be  |
+| ADSuyi基础包  |0.3M  |V3.6.0.04091  |51da3a6430a4cbe5b2e1503bc5dfa49b  |
 | OAID  |1.1M  |—  |—  |
 
 ### 1.5 三方广告平台适配器+三方广告sdk总容量
