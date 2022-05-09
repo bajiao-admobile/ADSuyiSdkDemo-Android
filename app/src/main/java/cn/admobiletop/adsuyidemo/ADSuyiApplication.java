@@ -13,8 +13,10 @@ import com.bytedance.sdk.openadsdk.stub.activity.Stub_Standard_Portrait_Activity
 import com.tencent.bugly.crashreport.CrashReport;
 
 import cn.admobiletop.adsuyidemo.activity.ad.SplashAdActivity;
+import cn.admobiletop.adsuyidemo.activity.setting.SettingActivity;
 import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
 import cn.admobiletop.adsuyidemo.manager.ADSuyiInterstitialManager;
+import cn.admobiletop.adsuyidemo.util.SPUtil;
 
 /**
  * @author ciba
@@ -40,6 +42,7 @@ public class ADSuyiApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        setOnlySupportPlatform();
         context = this;
         // 添加bugly初始化（该初始化与广告SDK无关，广告SDK中不包含bugly相关内容，仅供Demo错误信息收集使用）
         CrashReport.initCrashReport(getApplicationContext(), "6d9d9f24ee", true);
@@ -107,5 +110,17 @@ public class ADSuyiApplication extends Application {
             activity.startActivity(new Intent(activity, SplashAdActivity.class));
         }
         preMillis = millis;
+    }
+
+    /**
+     * 设置仅仅支持平台
+     */
+    private void setOnlySupportPlatform() {
+        String onlySupportPlatform = SPUtil.getString(this, SettingActivity.KEY_ONLY_SUPPORT_PLATFORM, null);
+        ADSuyiDemoConstant.SPLASH_AD_ONLY_SUPPORT_PLATFORM = onlySupportPlatform;
+        ADSuyiDemoConstant.BANNER_AD_ONLY_SUPPORT_PLATFORM = onlySupportPlatform;
+        ADSuyiDemoConstant.NATIVE_AD_ONLY_SUPPORT_PLATFORM = onlySupportPlatform;
+        ADSuyiDemoConstant.REWARD_VOD_AD_ONLY_SUPPORT_PLATFORM = onlySupportPlatform;
+        ADSuyiDemoConstant.INTERSTITIAL_AD_ONLY_SUPPORT_PLATFORM = onlySupportPlatform;
     }
 }

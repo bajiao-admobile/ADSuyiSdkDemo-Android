@@ -50,77 +50,49 @@
     </string-array>
     <string-array name="platforms">
         <item>所有(null或空字符串)</item>
-
-        <!--艾狄墨搏-->
-        <item>admobile</item>
-
+        <!--天目-->
+        <item>tianmu</item>
         <!--广点通/优量汇-->
         <item>gdt</item>
-
         <!--头条/穿山甲-->
         <item>toutiao</item>
-
         <!--百度/百青藤-->
         <item>baidu</item>
-
-        <!--inmobi-->
-        <item>inmobi</item>
-
         <!--汇量/Mobvsita-->
         <item>mintegral</item>
-
-        <!--appic-->
-        <item>appic</item>
-
-        <!--讯飞-->
-        <item>ifly</item>
-
         <!--快手-->
         <item>ksad</item>
-
+        <!--艾狄墨搏-->
+        <item>admobile</item>
+        <!--inmobi-->
+        <item>inmobi</item>
+        <!--appic-->
+        <item>appic</item>
+        <!--讯飞-->
+        <item>ifly</item>
         <!--米盟-->
         <item>mimo</item>
-
         <!--华为广告联盟-->
         <item>hwpps</item>
-
         <!--gromore-->
         <item>gromore</item>
-
-        <!--爱奇艺-->
-        <item>iqy</item>
-
     </string-array>
 
     <string-array name="platforms_zh">
         <item>所有(null或空字符串)</item>
-
-        <item>艾狄墨搏(admobile)</item>
-
+        <item>天目(tianmu)</item>
         <item>广点通/优量汇(gdt)</item>
-
         <item>头条/穿山甲(toutiao)</item>
-
         <item>百度/百青藤(baidu)</item>
-
-        <item>inmobi</item>
-
         <item>汇量/Mobvsita(mintegral)</item>
-
-        <item>appic</item>
-
-        <item>讯飞(ifly)</item>
-
         <item>快手(ksad)</item>
-
+        <item>艾狄墨搏(admobile)</item>
+        <item>inmobi</item>
+        <item>appic</item>
+        <item>讯飞(ifly)</item>
         <item>米盟(mimo)</item>
-
         <item>华为广告联盟(hwpps)</item>
-
         <item>gromore</item>
-
-        <item>爱奇艺(iqy)</item>
-
     </string-array>
 
     <string-array name="ad_count">

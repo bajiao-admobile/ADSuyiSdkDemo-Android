@@ -21,4 +21,12 @@ public class SPUtil {
     public static boolean getBoolean(Context context, String key, boolean defaultValue) {
         return getSP(context).getBoolean(key, defaultValue);
     }
+
+    public static void putString(Context context, String key, String value) {
+        getSP(context).edit().putString(key, value).apply();
+    }
+
+    public static String getString(Context context, String key, String defaultValue) {
+        return getSP(context).getString(key, defaultValue);
+    }
 }

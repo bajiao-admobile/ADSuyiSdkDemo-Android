@@ -14,6 +14,7 @@ import cn.admobiletop.adsuyidemo.adapter.SettingAdapter;
 import cn.admobiletop.adsuyidemo.entity.AdSettingData;
 
 public class SettingActivity extends BaseAdActivity {
+    public static final String KEY_ONLY_SUPPORT_PLATFORM = "KEY_ONLY_SUPPORT_PLATFORM";
 
     private RecyclerView mRv;
     private SettingAdapter mAdapter;
