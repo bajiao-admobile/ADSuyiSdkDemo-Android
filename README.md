@@ -199,7 +199,7 @@ dependencies {
     // OAID库是必须导入的，请保持和Demo中版本一致
     implementation(name: 'oaid_sdk_1.0.25', ext: 'aar')
     // oaid1.0.25版本适配器，导入1.0.25版本oaid必须的
-    implementation 'cn.admobiletop.adsuyi.ad:oaid:1.0.25.08021'
+    implementation 'cn.admobiletop.adsuyi.ad:oaid:1.0.25.08022'
 
     // 天目AdapterSdk，必须的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:tianmu:1.2.0.05116'

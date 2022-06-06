@@ -88,7 +88,7 @@ dependencies {
     // TODO 必须保证oaid版本为oaid_sdk_1.0.25，oaid_sdk_1.0.25为msa_mdid_1.0.13、oaid_sdk_1.0.23的升级版，请删除原有的msa_mdid）
     implementation(name: 'oaid_sdk_1.0.25', ext: 'aar')
     // oaid1.0.25版本适配器，导入1.0.25版本oaid必须的
-    implementation 'cn.admobiletop.adsuyi.ad:oaid:1.0.25.08021'
+    implementation 'cn.admobiletop.adsuyi.ad:oaid:1.0.25.08022'
     // 如果要适配高版本oaid，如oaid1.0.29版本，可以导入以下依赖，上面两个依赖千万别导入。自行传入oaid相关配置
 //    implementation 'cn.admobiletop.adsuyi.ad:oaid:custom.10181'
 
