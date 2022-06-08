@@ -28,10 +28,12 @@ import cn.admobiletop.adsuyi.ad.entity.ADSuyiExtraParams;
 import cn.admobiletop.adsuyi.ad.error.ADSuyiError;
 import cn.admobiletop.adsuyi.ad.listener.ADSuyiSplashAdListener;
 import cn.admobiletop.adsuyi.config.ADSuyiInitConfig;
+import cn.admobiletop.adsuyi.listener.ADSuyiInitListener;
 import cn.admobiletop.adsuyidemo.ADSuyiApplication;
 import cn.admobiletop.adsuyidemo.BuildConfig;
 import cn.admobiletop.adsuyidemo.R;
 import cn.admobiletop.adsuyidemo.activity.MainActivity;
+import cn.admobiletop.adsuyidemo.activity.setting.SettingActivity;
 import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
 import cn.admobiletop.adsuyidemo.util.SPUtil;
 import cn.admobiletop.adsuyidemo.widget.PrivacyPolicyDialog;
@@ -120,26 +122,41 @@ public class SplashAdActivity extends AppCompatActivity {
 
         // 初始化ADSuyi广告SDK
         ADSuyiSdk.getInstance().init(ADSuyiApplication.context, new ADSuyiInitConfig.Builder()
-                // 设置APPID
-                .appId(ADSuyiDemoConstant.APP_ID)
-                // 是否开启Debug，开启会有详细的日志信息打印，如果用上ADSuyiToastUtil工具还会弹出toast提示。
-                // TODO 注意上线后请置为false
-                .debug(BuildConfig.DEBUG)
-                // 是否同意隐私政策
-                .agreePrivacyStrategy(true)
-                // 是否同意使用oaid
-                .isCanUseOaid(true)
-                // 是否可读取wifi状态
-                .isCanUseWifiState(true)
-                // 是否可获取定位数据
-                .isCanUseLocation(true)
-                // 是否可获取设备信息
-                .isCanUsePhoneState(true)
-                // 是否过滤第三方平台的问题广告（例如: 已知某个广告平台在某些机型的Banner广告可能存在问题，如果开启过滤，则在该机型将不再去获取该平台的Banner广告）
-                .filterThirdQuestion(true)
-                // 如果开了浮窗广告，可设置不展示浮窗广告的界面，第一个参数为是否开启默认不展示的页面（例如:激励视频播放页面），第二可变参数为自定义不展示的页面
-                .floatingAdBlockList(false, "cn.admobiletop.adsuyidemo.activity.ad.SplashAdActivity")
-                .build());
+                        // 设置APPID
+                        .appId(ADSuyiDemoConstant.APP_ID)
+                        // 是否开启Debug，开启会有详细的日志信息打印，如果用上ADSuyiToastUtil工具还会弹出toast提示。
+                        // TODO 注意上线后请置为false
+                        .debug(BuildConfig.DEBUG)
+                        // 是否同意隐私政策
+                        .agreePrivacyStrategy(true)
+                        // 是否同意使用oaid
+                        .isCanUseOaid(true)
+                        // 是否可读取wifi状态
+                        .isCanUseWifiState(true)
+                        // 是否可获取定位数据
+                        .isCanUseLocation(true)
+                        // 是否可获取设备信息
+                        .isCanUsePhoneState(true)
+                        // 是否过滤第三方平台的问题广告（例如: 已知某个广告平台在某些机型的Banner广告可能存在问题，如果开启过滤，则在该机型将不再去获取该平台的Banner广告）
+                        .filterThirdQuestion(true)
+                        // 如果开了浮窗广告，可设置不展示浮窗广告的界面，第一个参数为是否开启默认不展示的页面（例如:激励视频播放页面），第二可变参数为自定义不展示的页面
+                        .floatingAdBlockList(false, "cn.admobiletop.adsuyidemo.activity.ad.SplashAdActivity")
+                        .build(),
+                new ADSuyiInitListener() {
+                    @Override
+                    public void onSuccess() {
+                        // ADSuyi初始化成功
+
+                        // 重置个性化状态
+                        boolean personalized = SPUtil.getBoolean(SplashAdActivity.this, SettingActivity.KEY_PERSONALIZED, true);
+                        ADSuyiSdk.setPersonalizedAdEnabled(personalized);
+                    }
+
+                    @Override
+                    public void onFailed(String error) {
+                        // ADSuyi初始化失败
+                    }
+                });
 
         initSplashAd();
     }

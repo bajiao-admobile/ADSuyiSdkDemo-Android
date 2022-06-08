@@ -82,33 +82,30 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
 
     // ADSuyiSdk、common和OAID库是必须导入的
-    implementation 'cn.admobiletop.adsuyi.ad:core:3.6.0.04092'
+    implementation 'cn.admobiletop.adsuyi.ad:core:3.6.1.05181'
 
-    // TODO OAID库是必须导入的，请保持和Demo中版本一致（如果当前Suyi是3.0.9及以上版本，
-    // TODO 必须保证oaid版本为oaid_sdk_1.0.25，oaid_sdk_1.0.25为msa_mdid_1.0.13、oaid_sdk_1.0.23的升级版，请删除原有的msa_mdid）
+    // OAID库是必须导入的，请保持和Demo中版本一致，必须的
     implementation(name: 'oaid_sdk_1.0.25', ext: 'aar')
-    // oaid1.0.25版本适配器，导入1.0.25版本oaid必须的
+    // oaid1.0.25版本适配器，导入1.0.25版本oaid必须的，必须的
     implementation 'cn.admobiletop.adsuyi.ad:oaid:1.0.25.08022'
-    // 如果要适配高版本oaid，如oaid1.0.29版本，可以导入以下依赖，上面两个依赖千万别导入。自行传入oaid相关配置
-//    implementation 'cn.admobiletop.adsuyi.ad:oaid:custom.10181'
 
     // 天目AdapterSdk，必选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:tianmu:1.2.0.05117'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:tianmu:1.3.0.05181'
 
     // 广点通（优量汇）AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.460.1330.04133'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.462.1332.05181'
 
     // 头条AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:4.4.0.2.04131'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:4.5.1.1.05181'
 
     // 百度增强版AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced:9.202.04132'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced:9.212.05181'
 
     // 汇量AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:16.1.17.04131'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:16.1.17.05181'
 
     // 快手AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.23.04131'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.24.05181'
 
     // 艾狄墨搏AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile:5.0.7.04021'
@@ -127,7 +124,7 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
 
     // 华为广告联盟AdadapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:hwpps:13.4.53.300.04131'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:hwpps:13.4.54.300.05181'
 
     // 爱奇艺AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:iqy:1.4.01.03311'
@@ -140,9 +137,9 @@ dependencies {
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.6'
 
     // gromoreAdapterSdk，可选的。如果要使用gromore的其他渠道，请联系开发者。
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:gromore:3.3.1.1.05061'
-    implementation "com.gromore.cn:gdt-adapter:4.460.1330.0" //广点通 adapter
-    implementation "com.gromore.cn:pangle-adapter:4.4.0.2.0" //穿山甲 adapter
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:gromore:3.4.0.3.05191'
+    implementation "com.gromore.cn:gdt-adapter:4.462.1332.0" //广点通 adapter
+    implementation "com.gromore.cn:pangle-adapter:4.4.0.9.0" //穿山甲 adapter
     // 有gromore其他渠道需求，请联系开发者。
 
     // 菜谱内容SDK（还需要gson和recyclerview支持）

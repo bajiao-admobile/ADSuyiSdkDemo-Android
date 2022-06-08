@@ -188,3 +188,7 @@
 
 # CookbookAdapter混淆
 -keep class cn.admobiletop.cookbook.**{*;}
+
+# ADSyid混淆
+-keep class adsuyi.com.** { *; }
+-keep interface adsuyi.com.** { *; }

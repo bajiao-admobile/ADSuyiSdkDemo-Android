@@ -1,4 +1,4 @@
-# ADSuyiSdk Android Sdk——接入文档 V3.6.0.04092
+# ADSuyiSdk Android Sdk——接入文档 V3.6.1.05181
 
  目录 
 
@@ -43,26 +43,26 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 
 | Name      | 大小 | 版本号 | MD5值 |
 | --------- | -------- | --------- | --------- |
-| ADSuyi基础包  |0.3M  |V3.6.0.04092  |fc246e5d7def472a803368671194e1df  |
+| ADSuyi基础包  |0.3M  |V3.6.1.05181  |9371bacdf36e85928616121d2edd5de0  |
 | OAID  |1.1M  |—  |—  |
 
 ### 1.5 三方广告平台适配器+三方广告sdk总容量
 
 | Name      | 容量 | 版本号 | MD5值 |
 | --------- | -------- | --------- | --------- |
-| tianmu   | 1.4M     | v1.2.0.05117 | 3d07464f9f0317fc54a7594b2170e238 |
-| gdt       | 1.41M   | v4.460.1330.04133 | 76c99e0892c7369ea653a4f38416c31e |
-| toutiao   | 4.11M     | v4.4.0.2.04131 | bf8b5bc39d7256c161033cb7a8cff9a3 |
-| baidu     | 1.20M     | v9.202.04132 | ae7e05e17eacc7fc9748bbc7ee785df3 |
-| mintegral | 2.80M     | v16.1.17.04131 | dfd02cebac7072e858d9b8b0a919bcb6 |
-| ksad      | 2.30M     | v3.3.23.04131 | b66c078a40b907a9290c9f8b485aab70 |
+| tianmu   | 1.4M     | v1.3.0.05181 | 8fc2bac89543978fca371f9c82e48c8e |
+| gdt       | 1.41M   | v4.462.1332.05181 | a1b943154cbd68afecc71421efc15816 |
+| toutiao   | 4.11M     | v4.5.1.1.05181 | 45f19fd1179fe48fb58534687acf4579 |
+| baidu     | 1.20M     | v9.212.05181 | 441275b92c0783ba05ece276780c907d |
+| mintegral | 2.80M     | v16.1.17.05181 | ac9d874c3fca04e23794e0a565f85e0c |
+| ksad      | 2.30M     | v3.3.24.05181 | b384faa9c3edf137a7bb6817cd7253f1 |
 | admobile       | 0.62M   | v5.0.7.04021 | c1da662539c824cba9c85cc842db0e31 |
 | mimo   | 0.45M     | v5.1.7.04131 | 1b4126cd97b75608e4f219f9c3b7c8b4 |
-| hwpps   | 1.01M     | v13.4.53.300.04131 | eebe84ac67a74625c7f76658f5271838 |
+| hwpps   | 1.01M     | v13.4.54.300.05181 | abdb1c5fd9a87fac088320b5dc2a71ad |
 | appic   | 3.32M     | v4.5.2.3.01051 | f6c20493a3ac7043f9cf1ee9d97c6e1b |
 | inmobi    | 0.95M   | v7.5.3.10191 | 5ac0ca9e011497eae054f5abd05c3002 |
 | ifly      | 0.48M     | v5.0.2.06012 | 4cad10aca3d43bd368aff25c0e5c2db0 |
-| gromore   |—     | v3.3.1.1.05061 | e12f93f1b79b656bada9e8c52dc83eb2 |
+| gromore   |—     | v3.4.0.3.05191 | 51208ce7cfee7f1f0fabc47c6f6d1f74 |
 
 ### 1.6 菜谱内容功能
 
@@ -194,30 +194,30 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
   
     // ADSuyiSdk、common和OAID库是必须导入的
-    implementation 'cn.admobiletop.adsuyi.ad:core:3.6.0.04092'
+    implementation 'cn.admobiletop.adsuyi.ad:core:3.6.1.05181'
 
-    // OAID库是必须导入的，请保持和Demo中版本一致
+    // OAID库是必须导入的，请保持和Demo中版本一致，必须的
     implementation(name: 'oaid_sdk_1.0.25', ext: 'aar')
-    // oaid1.0.25版本适配器，导入1.0.25版本oaid必须的
+    // oaid1.0.25版本适配器，导入1.0.25版本oaid必须的，必须的
     implementation 'cn.admobiletop.adsuyi.ad:oaid:1.0.25.08022'
 
     // 天目AdapterSdk，必须的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:tianmu:1.2.0.05117'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:tianmu:1.3.0.05181'
 
     // 广点通（优量汇）AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.460.1330.04133'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.462.1332.05181'
 
     // 头条AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:4.4.0.2.04131'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:4.5.1.1.05181'
 
     // 百度增强版AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced:9.202.04132'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced:9.212.05181'
 
     // 汇量AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:16.1.17.04131'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:16.1.17.05181'
 
     // 快手AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.23.04131'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.24.05181'
 
     // 艾狄墨搏AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile:5.0.7.04021'
@@ -236,12 +236,12 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
 
     // 华为广告联盟AdadapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:hwpps:13.4.53.300.04131'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:hwpps:13.4.54.300.05181'
 
     // gromoreAdapterSdk，可选的。如果要使用gromore的其他渠道，请联系开发者。
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:gromore:3.3.1.1.05061'
-    implementation "com.gromore.cn:gdt-adapter:4.460.1330.0" //广点通 adapter
-    implementation "com.gromore.cn:pangle-adapter:4.4.0.2.0" //穿山甲 adapter
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:gromore:3.4.0.3.05191'
+    implementation "com.gromore.cn:gdt-adapter:4.462.1332.0" //广点通 adapter
+    implementation "com.gromore.cn:pangle-adapter:4.4.0.9.0" //穿山甲 adapter
     // 有gromore其他渠道需求，请联系开发者。
 
     // AppicAdapterSdk，可选的
@@ -280,8 +280,6 @@ dependencies {
 
 * 如果接入汇量，需要加入第三方依赖库https://dl-maven-android.mintegral.com/repository/mbridge_android_sdk_support/
 * 如果接入华为联盟，需要加入第三方依赖库https://developer.huawei.com/repo/
-* **广点通适配器4.270.1140版本及以上已经导入了腾讯的tbs，请移除原有的tbs避免编译失败；**
-* **广点通适配器4.310.1180版本及以上已经将腾讯tbs移除，媒体需要手动导入tbs，避免自身项目需要依赖tbs导致编译失败；**
 * **由于头条(穿山甲)渠道支持了Android R，引入了Android R的 <queries> 标签,需要对gradle版本进行限制，限制范围为：3.3.3、 3.4.3、 3.5.4、3.6.4、4.0.1 ，开发者根据自身情况酌情升级**
 * **如对接华为广告联盟，激励视频要提前预加载，并且播放完成后需要预加载下一个激励视频，华为渠道点击事件无法统计；banner广告使用场景是程序页面的顶部或者底部。**
 
@@ -325,23 +323,6 @@ dependencies {
     ```
 
 **PS：需要更多帮助可参考目录下《移动智能终端补充设备标识体系统一调用SDK开发者说明文档》；**
-
-4. OAID自定义
-    对OAID版本没有特殊需求可以不参考以下方法，OAID自定义方案与demo中提供的适配1.0.25版本的方案二选一即可
-
-    ```java
-    // 如果要适配高版本oaid，如oaid1.0.29版本，可以导入以下依赖
-    implementation 'cn.admobiletop.adsuyi.ad:oaid:custom.10181'
-    ```
-
-    代码中自行获取OAID后将调用ADSuyi相关方法传入OAID、AAID、VAID
-
-    ```java
-    // 可以自行通过OAID官方aar获取OAID、AAID、VAID，可增加ADSuyi三方渠道广告填充率
-    OAIDManager.getInstance().setCustomOAID("请传入OAID");
-    OAIDManager.getInstance().setCustomAAID("请传入AAID");
-    OAIDManager.getInstance().setCustomVAID("请传入VAID");
-    ```
 
 ### 5.3 权限申请
 
@@ -633,6 +614,10 @@ dependencies {
 # CookbookAdapter混淆
 -keep class cn.admobiletop.cookbook.**{*;}
 
+# ADSyid混淆
+-keep class adsuyi.com.** { *; }
+-keep interface adsuyi.com.** { *; }
+
 ```
 
 ### 5.5 隐私信息控制开关
@@ -706,10 +691,21 @@ ADSuyiSdk.getInstance().init(this, new ADSuyiInitConfig.Builder()
          .isCanUsePhoneState(true)
          // 是否过滤第三方平台的问题广告（例如: 已知某个广告平台在某些机型的Banner广告可能存在问题，如果开启过滤，则在该机型将不再去获取该平台的Banner广告）
          .filterThirdQuestion(true)
-         // 注意：如果使用oaid1.0.26版本，需要在assets中放置密钥，并将密钥传入ADSuyi（suyi内部初始化oaid需要使用）
-         // 密钥需要到移动安全联盟申请（非oaid1.0.26版本无需使用该接口）
-         .setOaidCertPath("cn.admobiletop.adsuyidemo.cert.pem")
-         .build());
+         .build(),
+         new ADSuyiInitListener() {
+             @Override
+             public void onSuccess() {
+                 // ADSuyi初始化成功
+               
+               	 // 可再此处重新设置个性化开关配置参数，如用户在设置页面将个性化关闭后，重新打开app，可以在此回调中对用户修改的状态进行设置
+                 ADSuyiSdk.setPersonalizedAdEnabled(true);
+             }
+
+             @Override
+             public void onFailed(String error) {
+                 // ADSuyi初始化失败
+             }
+         });
   ```
 
   <font color=#ff0000>PS ：AppId通过后台配置生成，初始化必须在主线程中进行，SDK暂不支持多进程。</font>
