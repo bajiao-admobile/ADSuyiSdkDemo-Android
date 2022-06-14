@@ -31,18 +31,38 @@
         android:text="列表渲染信息流案例"
         android:textColor="@color/textColorBlack" />
 
-    <Button
-        android:id="@+id/btnNativeRelativeLayout"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="30dp"
         android:layout_marginRight="16dp"
-        android:background="@drawable/shape_background_button_selector"
-        android:stateListAnimator="@null"
-        android:text="直接渲染信息流案例"
-        android:textAllCaps="false"
-        android:textColor="@color/textColorBlack" />
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnNativeExpressLayout"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_background_button_selector"
+            android:stateListAnimator="@null"
+            android:text="模版信息流案例"
+            android:layout_marginRight="16dp"
+            android:textAllCaps="false"
+            android:textColor="@color/textColorBlack" />
+
+        <Button
+            android:id="@+id/btnNativeSelfRenderLayout"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_background_button_selector"
+            android:stateListAnimator="@null"
+            android:text="自渲染信息流案例"
+            android:textAllCaps="false"
+            android:textColor="@color/textColorBlack" />
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/btnNativeSlideshow"

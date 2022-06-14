@@ -147,7 +147,8 @@
             android:name=".activity.other.ContentModuleActivity"
             android:label="@string/admobile_dl_ad"
             android:screenOrientation="portrait" />
-        <activity android:name=".activity.ad.feed.NativeExpressActivity" />
+        <activity android:name=".activity.ad.feed.NativeExpressActivity"
+            android:label="@string/native_express"/>
         <activity android:name=".activity.other.NativeAdActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait"
@@ -158,6 +159,8 @@
             android:theme="@style/splash"/>
         <activity android:name=".activity.ad.feed.NativeInterstitialActivity"
             android:screenOrientation="portrait" />
+        <activity android:name=".activity.ad.feed.NativeSelfRenderActivity"
+            android:label="@string/native_self_render"/>
     </application>
 
 </manifest>
