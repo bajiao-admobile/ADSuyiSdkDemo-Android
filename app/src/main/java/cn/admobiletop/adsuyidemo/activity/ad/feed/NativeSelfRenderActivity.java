@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.qq.e.ads.nativ.widget.NativeAdContainer;
 
 import java.util.List;
 
@@ -45,6 +46,7 @@ public class NativeSelfRenderActivity extends AppCompatActivity {
      * 自渲染相关布局
      */
     private ImageView ivIcon;
+    private NativeAdContainer nativeAdContainer;
     private RelativeLayout rlAdContainer;
     private FrameLayout flContent;
     private ImageView ivAdTarget;
@@ -70,6 +72,7 @@ public class NativeSelfRenderActivity extends AppCompatActivity {
         btnLoadAd = findViewById(R.id.btnLoadAd);
         btnShowAd = findViewById(R.id.btnShowAd);
 
+        nativeAdContainer = findViewById(R.id.nativeAdContainer);
         rlAdContainer = findViewById(R.id.rlAdContainer);
         flContent = findViewById(R.id.flContent);
         ivIcon = findViewById(R.id.ivIcon);
@@ -238,16 +241,16 @@ public class NativeSelfRenderActivity extends AppCompatActivity {
         // 注册广告交互, 必须调用
         // 注意：广点通只会响应View...actionViews的点击事件，且这些View都应该是com.qq.e.ads.nativ.widget.NativeAdContainer的子View
         // 务必最后调用
-        nativeFeedAdInfo.registerViewForInteraction(rlAdContainer, rlAdContainer);
+        nativeFeedAdInfo.registerViewForInteraction(nativeAdContainer, rlAdContainer);
 
-        rlAdContainer.setVisibility(View.VISIBLE);
+        nativeAdContainer.setVisibility(View.VISIBLE);
     }
 
     /**
      * 关闭广告
      */
     private void closeAd() {
-        rlAdContainer.setVisibility(View.GONE);
+        nativeAdContainer.setVisibility(View.GONE);
         releaseAd();
     }
 
