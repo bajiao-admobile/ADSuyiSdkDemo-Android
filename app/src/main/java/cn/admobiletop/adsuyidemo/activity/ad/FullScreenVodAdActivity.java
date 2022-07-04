@@ -120,6 +120,10 @@ public class FullScreenVodAdActivity extends BaseAdActivity implements View.OnCl
      * 加载广告
      */
     private void loadAd() {
+        if (fullScreenVodAdInfo != null) {
+            fullScreenVodAdInfo.release();
+            fullScreenVodAdInfo = null;
+        }
         fullScreenVodAd.loadAd(ADSuyiDemoConstant.FULL_SCREEN_VOD_AD_POS_ID);
     }
 

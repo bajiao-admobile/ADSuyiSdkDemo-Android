@@ -22,8 +22,8 @@ import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
  * @date 2020/3/27
  */
 public class RewardVodAdActivity extends BaseAdActivity implements View.OnClickListener {
-    private ADSuyiRewardVodAdInfo rewardVodAdInfo;
     private ADSuyiRewardVodAd rewardVodAd;
+    private ADSuyiRewardVodAdInfo rewardVodAdInfo;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -139,6 +139,11 @@ public class RewardVodAdActivity extends BaseAdActivity implements View.OnClickL
      * 加载广告
      */
     private void loadAd() {
+        if (rewardVodAdInfo != null) {
+            rewardVodAdInfo.release();
+            rewardVodAdInfo = null;
+        }
+
         // 激励广告场景id（场景id非必选字段，如果需要可到开发者后台创建）
         rewardVodAd.setSceneId(ADSuyiDemoConstant.REWARD_VOD_AD_SCENE_ID);
         // 加载激励视频广告，参数为广告位ID

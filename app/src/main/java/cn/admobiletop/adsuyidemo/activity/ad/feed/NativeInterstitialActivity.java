@@ -161,10 +161,10 @@ public class NativeInterstitialActivity extends AppCompatActivity {
 
         if (adSuyiNativeAdInfo.isNativeExpress()) {
             interstitialAdDialog = new NativeExpressAdapterInterstitialAdDialog(this);
-            ((NativeExpressAdapterInterstitialAdDialog)interstitialAdDialog).render(adSuyiNativeAdInfo);
+            interstitialAdDialog.render(adSuyiNativeAdInfo);
         } else {
             interstitialAdDialog = new NativeFeedAdapterInterstitialAdDialog(this);
-            ((NativeFeedAdapterInterstitialAdDialog)interstitialAdDialog).render(adSuyiNativeAdInfo);
+            interstitialAdDialog.render(adSuyiNativeAdInfo);
         }
     }
 
