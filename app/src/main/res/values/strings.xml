@@ -9,6 +9,7 @@
     <string name="interstitial_ad">插屏广告</string>
     <string name="draw_vod_ad">Draw视频广告</string>
     <string name="fragment_examples">Fragment示例</string>
+    <string name="inner_notice">浮窗广告</string>
     <string name="admobile_dl_ad">组合广告</string>
     <string name="interstitial_auto_close_ad">插屏自动关闭</string>
     <string name="content_alliance">内容联盟</string>
@@ -70,14 +71,14 @@
         <item>inmobi</item>
         <!--appic-->
         <item>appic</item>
-        <!--讯飞-->
-        <item>ifly</item>
         <!--米盟-->
         <item>mimo</item>
         <!--华为广告联盟-->
         <item>hwpps</item>
         <!--gromore-->
         <item>gromore</item>
+        <!--jiguang-->
+        <item>jiguang</item>
     </string-array>
 
     <string-array name="platforms_zh">
@@ -91,10 +92,10 @@
         <item>艾狄墨搏(admobile)</item>
         <item>inmobi</item>
         <item>appic</item>
-        <item>讯飞(ifly)</item>
         <item>米盟(mimo)</item>
         <item>华为广告联盟(hwpps)</item>
         <item>gromore</item>
+        <item>极光联盟(jiguang)</item>
     </string-array>
 
     <string-array name="ad_count">

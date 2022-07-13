@@ -12,6 +12,7 @@ import com.bytedance.sdk.openadsdk.stub.activity.Stub_Standard_Landscape_Activit
 import com.bytedance.sdk.openadsdk.stub.activity.Stub_Standard_Portrait_Activity;
 import com.tencent.bugly.crashreport.CrashReport;
 
+import cn.admobiletop.adsuyi.util.SuyiPackageStrategy;
 import cn.admobiletop.adsuyidemo.activity.ad.SplashAdActivity;
 import cn.admobiletop.adsuyidemo.activity.setting.SettingActivity;
 import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
@@ -122,5 +123,10 @@ public class ADSuyiApplication extends Application {
         ADSuyiDemoConstant.NATIVE_AD_ONLY_SUPPORT_PLATFORM = onlySupportPlatform;
         ADSuyiDemoConstant.REWARD_VOD_AD_ONLY_SUPPORT_PLATFORM = onlySupportPlatform;
         ADSuyiDemoConstant.INTERSTITIAL_AD_ONLY_SUPPORT_PLATFORM = onlySupportPlatform;
+    }
+
+    @Override
+    public String getPackageName() {
+        return SuyiPackageStrategy.getSuyiPackageName(this);
     }
 }

@@ -6,14 +6,19 @@ android {
         applicationId "cn.admobiletop.adsuyidemo"
         minSdkVersion 19
         targetSdkVersion 30
-        versionCode 202206141
-        versionName "1.202206141"
+        versionCode 202207131
+        versionName "1.202207131"
         multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         ndk {
             // 设置支持的SO库架构，暂不支持x86
             abiFilters 'armeabi-v7a', 'arm64-v8a'// 'armeabi'
         }
+        manifestPlaceholders = [
+                //值来自极光开发者平台取得的AppKey，请误使用demo中对key在项目中
+                JPUSH_APPKEY  : "3838efae68a665a6d347c4e3",
+                JPUSH_CHANNEL : "default_developer"
+        ]
     }
     buildTypes {
         release {
@@ -82,7 +87,7 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
 
     // ADSuyiSdk、common和OAID库是必须导入的
-    implementation 'cn.admobiletop.adsuyi.ad:core:3.6.1.05181'
+    implementation 'cn.admobiletop.adsuyi.ad:core:3.6.2.06141'
 
     // OAID库是必须导入的，请保持和Demo中版本一致，必须的
     implementation(name: 'oaid_sdk_1.0.25', ext: 'aar')
@@ -90,22 +95,22 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad:oaid:1.0.25.08022'
 
     // 天目AdapterSdk，必选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:tianmu:1.3.0.05181'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:tianmu:1.3.1.06231'
 
     // 广点通（优量汇）AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.462.1332.05181'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.471.1341.06271'
 
     // 头条AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:4.5.1.1.05181'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:4.6.0.2.06231'
 
     // 百度增强版AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced:9.212.05181'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced:9.22.06231'
 
     // 汇量AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:16.1.17.05181'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:16.1.57.06231'
 
     // 快手AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.24.05181'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.25.06231'
 
     // 艾狄墨搏AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile:5.0.7.04021'
@@ -114,9 +119,6 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:inmobi:7.5.3.10191'
     implementation 'com.squareup.picasso:picasso:2.5.2'
 
-    // 讯飞AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ifly:5.0.2.06012'
-
     // 米盟AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:mimo:5.1.7.04131'
     implementation 'com.google.code.gson:gson:2.8.5'
@@ -124,10 +126,7 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
 
     // 华为广告联盟AdadapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:hwpps:13.4.54.300.05181'
-
-    // 爱奇艺AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:iqy:1.4.01.03311'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:hwpps:13.4.55.300.06231'
 
     // AppicAdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:appic:4.5.2.3.01051'
@@ -135,6 +134,10 @@ dependencies {
     implementation 'com.squareup.okhttp3:okhttp:3.12.0'
     implementation 'com.android.volley:volley:1.1.0'
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.6'
+
+    // 极光联盟AdapterSdk，可选的
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:jiguang:5.0.4.06201'
+    implementation 'cn.jiguang.sdk:jcore:3.2.2'
 
     // gromoreAdapterSdk，可选的。如果要使用gromore的其他渠道，请联系开发者。
     implementation 'cn.admobiletop.adsuyi.ad.adapter:gromore:3.4.0.3.05191'

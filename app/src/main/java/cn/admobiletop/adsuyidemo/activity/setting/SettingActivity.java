@@ -15,6 +15,7 @@ import cn.admobiletop.adsuyidemo.entity.AdSettingData;
 
 public class SettingActivity extends BaseAdActivity {
     public static final String KEY_ONLY_SUPPORT_PLATFORM = "KEY_ONLY_SUPPORT_PLATFORM";
+    public static final String KEY_OPEN_FLOATING_AD = "KEY_OPEN_FLOATING_AD";
 
     private RecyclerView mRv;
     private SettingAdapter mAdapter;

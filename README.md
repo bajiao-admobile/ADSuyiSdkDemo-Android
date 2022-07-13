@@ -1,4 +1,4 @@
-# ADSuyiSdk Android Sdk——接入文档 V3.6.1.05181
+# ADSuyiSdk Android Sdk——接入文档 V3.6.2.06141
 
  目录 
 
@@ -36,33 +36,33 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | hwpps   | 华为广告联盟     | 华为广告联盟   |
 | appic   | appic     | appic   |
 | inmobi    | Inmobi   | Inmobi   |
-| ifly      | 讯飞     | 讯飞     |
 | gromore   | gromore     | gromore   |
+| jiguang   | 极光联盟     | 极光联盟   |
 
 ### 1.4 ADSuyi必添包容量
 
 | Name      | 大小 | 版本号 | MD5值 |
 | --------- | -------- | --------- | --------- |
-| ADSuyi基础包  |0.3M  |V3.6.1.05181  |9371bacdf36e85928616121d2edd5de0  |
+| ADSuyi基础包  |0.3M  |V3.6.2.06141  |2be45d14669d19dd863f0951709d3dfd  |
 | OAID  |1.1M  |—  |—  |
 
 ### 1.5 三方广告平台适配器+三方广告sdk总容量
 
 | Name      | 容量 | 版本号 | MD5值 |
 | --------- | -------- | --------- | --------- |
-| tianmu   | 1.4M     | v1.3.0.05181 | 8fc2bac89543978fca371f9c82e48c8e |
-| gdt       | 1.41M   | v4.462.1332.05181 | a1b943154cbd68afecc71421efc15816 |
-| toutiao   | 4.11M     | v4.5.1.1.05181 | 45f19fd1179fe48fb58534687acf4579 |
-| baidu     | 1.20M     | v9.212.05181 | 441275b92c0783ba05ece276780c907d |
-| mintegral | 2.80M     | v16.1.17.05181 | ac9d874c3fca04e23794e0a565f85e0c |
-| ksad      | 2.30M     | v3.3.24.05181 | b384faa9c3edf137a7bb6817cd7253f1 |
+| tianmu   | 1.4M     | v1.3.1.06231 | 8fc2bac89543978fca371f9c82e48c8e |
+| gdt       | 1.41M   | v4.471.1341.06271 | 119f0e344b8cc1d3bd3f70ff18964c93 |
+| toutiao   | 4.11M     | v4.6.0.2.06231 | 068780e4979321d10127aede4bc593c1 |
+| baidu     | 1.20M     | v9.22.06231 | 8da76ab55e4c978e539d1354e51d0298 |
+| mintegral | 2.80M     | v16.1.57.06231 | 0782d71ce9b7687231941a7ab7f51f26 |
+| ksad      | 2.30M     | v3.3.25.06231 | d345314d16421870f9bf62fde47f6317 |
 | admobile       | 0.62M   | v5.0.7.04021 | c1da662539c824cba9c85cc842db0e31 |
 | mimo   | 0.45M     | v5.1.7.04131 | 1b4126cd97b75608e4f219f9c3b7c8b4 |
-| hwpps   | 1.01M     | v13.4.54.300.05181 | abdb1c5fd9a87fac088320b5dc2a71ad |
+| hwpps   | 1.01M     | v13.4.55.300.06231 | 2b49b458d8fca197250c0c94eee277a7 |
 | appic   | 3.32M     | v4.5.2.3.01051 | f6c20493a3ac7043f9cf1ee9d97c6e1b |
 | inmobi    | 0.95M   | v7.5.3.10191 | 5ac0ca9e011497eae054f5abd05c3002 |
-| ifly      | 0.48M     | v5.0.2.06012 | 4cad10aca3d43bd368aff25c0e5c2db0 |
 | gromore   |—     | v3.4.0.3.05191 | 51208ce7cfee7f1f0fabc47c6f6d1f74 |
+| jiguang   |0.50M     | v5.0.4.06201 | f8ac3d1acdd3b10336503ca1d3977ebc |
 
 ### 1.6 菜谱内容功能
 
@@ -194,7 +194,7 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
   
     // ADSuyiSdk、common和OAID库是必须导入的
-    implementation 'cn.admobiletop.adsuyi.ad:core:3.6.1.05181'
+    implementation 'cn.admobiletop.adsuyi.ad:core:3.6.2.06141'
 
     // OAID库是必须导入的，请保持和Demo中版本一致，必须的
     implementation(name: 'oaid_sdk_1.0.25', ext: 'aar')
@@ -202,22 +202,22 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad:oaid:1.0.25.08022'
 
     // 天目AdapterSdk，必须的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:tianmu:1.3.0.05181'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:tianmu:1.3.1.06231'
 
     // 广点通（优量汇）AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.462.1332.05181'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.471.1341.06271'
 
     // 头条AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:4.5.1.1.05181'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:4.6.0.2.06231'
 
     // 百度增强版AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced:9.212.05181'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced:9.22.06231'
 
     // 汇量AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:16.1.17.05181'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:16.1.57.06231'
 
     // 快手AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.24.05181'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.25.06231'
 
     // 艾狄墨搏AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile:5.0.7.04021'
@@ -226,9 +226,6 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:inmobi:7.5.3.10191'
     implementation 'com.squareup.picasso:picasso:2.5.2'
 
-    // 讯飞AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ifly:5.0.2.06012'
-
     // 米盟AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:mimo:5.1.7.04131'
     implementation 'com.google.code.gson:gson:2.8.5'
@@ -236,7 +233,7 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
 
     // 华为广告联盟AdadapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:hwpps:13.4.54.300.05181'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:hwpps:13.4.55.300.06231'
 
     // gromoreAdapterSdk，可选的。如果要使用gromore的其他渠道，请联系开发者。
     implementation 'cn.admobiletop.adsuyi.ad.adapter:gromore:3.4.0.3.05191'
@@ -250,6 +247,13 @@ dependencies {
     implementation 'com.squareup.okhttp3:okhttp:3.12.0'
     implementation 'com.android.volley:volley:1.1.0'
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.6'
+
+    // 极光联盟AdapterSdk，可选的
+    极光联盟对接需要手动在app/build.gradle defaultConfig中添加JPUSH_APPKEY
+    导入极光联盟Adapter后，如果还有其他问题，请及时和我们联系
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:jiguang:5.0.4.06201'
+    // 极光核心库，如已导入可不导入该依赖
+    implementation 'cn.jiguang.sdk:jcore:3.2.2'
 
 }
 ```
@@ -286,6 +290,29 @@ dependencies {
 3. 激励、全屏视频、插屏等广告对象一次成功拉取的广告数据只允许展示一次，还需展示请再次加载广告。
 
 4. 关于项目使用autosize后出现广告样式出现异常问题处理方案，请参考master-screen-adapter分支中的BannerActivity，并将适配单位改为pt。
+
+5. 如果对接极光联盟，请修改AndroidManifest.xml，**极光联盟 SDK minSdkVersion为21，如果应用的minSdkVersion小于21，则添加：**
+    ```java
+    <uses-sdk tools:overrideLibrary="cn.jiguang.ads"/>
+    ```
+
+6. 如果对接极光联盟，请手动在项目app/build.gradle中添加该配置
+    ```java
+    android {
+        ...
+        defaultConfig {
+            ...
+            manifestPlaceholders = [
+                    //值来自极光开发者平台取得的AppKey
+                    JPUSH_APPKEY  : "极光联盟后台有提供，可向运营获取",
+                    JPUSH_CHANNEL : "default_developer"
+            ]
+        }
+        ...
+    }
+    ```
+    导入极光联盟Adapter后，如果还有其他问题，请及时和我们联系
+
 ### 5.2 OAID支持
 
 **Android10之后IMEI等数据无法获取，这对广告投放将产生一定影响，所以移动安全联盟(MSA)提出OAID来代替IMEI参与广告投放决策，OAID的支持会在一定程度上影响广告收益；**
@@ -556,14 +583,6 @@ dependencies {
 -keep class * extends com.ap.android.trunk.sdk.core.base.ad.AdSDK
 -keep class * implements com.ap.android.trunk.sdk.core.base.lifecycle.IApplicationLifecycle
 
-# 讯飞广告平台混淆
--dontwarn com.iflytek.**
--keep class com.iflytek.** {* ;}
--keep class android.support.v4.**{public * ;}
--dontwarn com.shu.priory.**
--keep class com.shu.priory.**{*;}
--keep class android.support.v4.**{public * ;}
-
 # 快手广告平台混淆
 -keep class org.chromium.** { *; }
 -keep class aegon.chrome.** { *; }
@@ -602,9 +621,6 @@ dependencies {
 -keep public enum com.bumptech.glide.load.ImageHeaderParser$** { **[] $VALUES; public *; }
 -dontwarn com.bumptech.glide.load.resource.bitmap.VideoDecoder
 
-# 爱奇艺
--keep class com.mcto.sspsdk.** { *; }
-
 # gromore
 # 请参考gromore-proguard-rules.pro文件
 
@@ -617,6 +633,12 @@ dependencies {
 # ADSyid混淆
 -keep class adsuyi.com.** { *; }
 -keep interface adsuyi.com.** { *; }
+
+# 极光混淆
+-dontwarn cn.jpush.**
+-keep class cn.jpush.** { *; }
+-dontwarn cn.jiguang.**
+-keep class cn.jiguang.** { *; }
 
 ```
 
@@ -737,7 +759,7 @@ adSuyiSplashAd.setLocalExtraParams(extraParams);
 // 设置是否是沉浸式，如果为true，跳过按钮距离顶部的高度会加上状态栏高度
 adSuyiSplashAd.setImmersive(false);
 
-// 设置自定义跳过按钮和倒计时时长（非必传，倒计时时长范围[3000,5000]建议不要传入倒计时时长） 目前不支持inmobi, ksad, oneway, ifly平台自定义跳过按钮
+// 设置自定义跳过按钮和倒计时时长（非必传，倒计时时长范围[3000,5000]建议不要传入倒计时时长） 目前不支持gdt、mintegral、inmobi, ksad、hwpps、gromore，平台自定义跳过按钮
 // 注意不要隐藏跳过按钮，可以在布局中将跳过按钮alpha设置为0，在onAdReceive回调中将alpha设置为1
 adSuyiSplashAd.setSkipView(skipView, 5000);
 
@@ -1320,13 +1342,11 @@ ADSuyiSdk.getInstance().init(this, new ADSuyiInitConfig.Builder()
 		// 设置APPID
     .appId(ADSuyiDemoConstant.APP_ID)
     // 可以通过设置该值手动关闭或开启浮窗广告，默认开启（服务端没有配置开启也不会有浮窗广告）                         
-    .openFloatingAd(false)                         
+    .openFloatingAd(true:开启，false:关闭)
     // 如果开了浮窗广告，可设置不展示浮窗广告的界面，第一个参数为是否开启默认不展示的页面（例如:激励视频播放页面），第二可变参数为自定义不展示的页面
     .floatingAdBlockList(false, "cn.admobiletop.adsuyidemo.activity.ad.SplashAdActivity")
     .build());
 ```
-
-
 
 **浮窗广告的暂停和恢复**
 
@@ -1336,6 +1356,42 @@ ADSuyiSdk.getInstance().pauseFloatingAd();
 
 // 可通过调用此方法恢复浮窗广告投放
 ADSuyiSdk.getInstance().restartFloatingAd();
+```
+
+**开发者也可自行控制浮窗广告的展示**
+
+1.首先将openFloatingAd设置为false
+```java
+ // 初始化ADSuyi广告SDK
+ADSuyiSdk.getInstance().init(this, new ADSuyiInitConfig.Builder()
+		// 设置APPID
+    .appId(ADSuyiDemoConstant.APP_ID)
+    // 可以通过设置该值手动关闭或开启浮窗广告，默认开启（服务端没有配置开启也不会有浮窗广告）
+    .openFloatingAd(false)
+    // 如果开了浮窗广告，可设置不展示浮窗广告的界面，第一个参数为是否开启默认不展示的页面（例如:激励视频播放页面），第二可变参数为自定义不展示的页面
+    .floatingAdBlockList(false, "cn.admobiletop.adsuyidemo.activity.ad.SplashAdActivity")
+    .build());
+```
+
+2.获取浮窗广告
+```java
+// 获取并展示广告
+ADSuyiInnerNoticeManager.getInstance().loadInnerNoticeAd(InnerNoticeActivity.this, new ADSuyiInnerNoticeListener() {
+    @Override
+    public void onAdFailed(String errorMessage) {
+        // 浮窗广告获取失败回调
+    }
+
+    @Override
+    public void onAdSuccess() {
+        // 浮窗广告展示成功回调
+    }
+
+    @Override
+    public void onAdDelay(int i) {
+        // 浮窗广告距离下一次可展示剩余时长
+    }
+});
 ```
 
 ### 6.10 备注

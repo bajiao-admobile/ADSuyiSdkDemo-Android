@@ -120,14 +120,6 @@
 -keep class * extends com.ap.android.trunk.sdk.core.base.ad.AdSDK
 -keep class * implements com.ap.android.trunk.sdk.core.base.lifecycle.IApplicationLifecycle
 
-# 讯飞广告平台混淆
--dontwarn com.iflytek.**
--keep class com.iflytek.** {* ;}
--keep class android.support.v4.**{public * ;}
--dontwarn com.shu.priory.**
--keep class com.shu.priory.**{*;}
--keep class android.support.v4.**{public * ;}
-
 # 快手广告平台混淆
 -keep class org.chromium.** { *; }
 -keep class aegon.chrome.** { *; }
@@ -167,9 +159,6 @@
 -keep public enum com.bumptech.glide.load.ImageHeaderParser$** { **[] $VALUES; public *; }
 -dontwarn com.bumptech.glide.load.resource.bitmap.VideoDecoder
 
-# 爱奇艺
--keep class com.mcto.sspsdk.** { *; }
-
 # gromore
 # 请参考gromore-proguard-rules.pro文件
 
@@ -192,3 +181,9 @@
 # ADSyid混淆
 -keep class adsuyi.com.** { *; }
 -keep interface adsuyi.com.** { *; }
+
+# 极光混淆
+-dontwarn cn.jpush.**
+-keep class cn.jpush.** { *; }
+-dontwarn cn.jiguang.**
+-keep class cn.jiguang.** { *; }

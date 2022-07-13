@@ -30,6 +30,9 @@
     <!-- 为了提高广告收益，建议设置的权限，获取粗略位置信息。精准广告投放及反作弊 -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
+    <uses-sdk
+        tools:overrideLibrary="cn.jiguang.ads"/>
+
     <application
         android:name=".ADSuyiApplication"
         android:allowBackup="true"
@@ -161,6 +164,7 @@
             android:screenOrientation="portrait" />
         <activity android:name=".activity.ad.feed.NativeSelfRenderActivity"
             android:label="@string/native_self_render"/>
+        <activity android:name=".activity.ad.InnerNoticeActivity" />
     </application>
 
 </manifest>

@@ -114,11 +114,8 @@ public class SplashAdActivity extends AppCompatActivity {
      * 初始化广告SDK并且跳转开屏界面
      */
     private void initADSuyiSdkAndLoadSplashAd() {
-        // 可以自行通过OAID官方aar获取OAID、AAID、VAID，可增加ADSuyi三方渠道广告填充率
-//        OAIDManager.getInstance().setCustomOAID("请传入OAID");
-//        OAIDManager.getInstance().setCustomAAID("请传入AAID");
-//        OAIDManager.getInstance().setCustomVAID("请传入VAID");
 
+        boolean isOpenFloatingAd = SPUtil.getBoolean(this, SettingActivity.KEY_OPEN_FLOATING_AD, true);
 
         // 初始化ADSuyi广告SDK
         ADSuyiSdk.getInstance().init(ADSuyiApplication.context, new ADSuyiInitConfig.Builder()
@@ -137,29 +134,33 @@ public class SplashAdActivity extends AppCompatActivity {
                         .isCanUseLocation(true)
                         // 是否可获取设备信息
                         .isCanUsePhoneState(true)
+                        // 是否开启浮窗（默认true。true：浮窗广告交由ADSuyiSdk控制，false：媒体自行拉取广告并展示广告）
+                        .openFloatingAd(isOpenFloatingAd)
                         // 是否过滤第三方平台的问题广告（例如: 已知某个广告平台在某些机型的Banner广告可能存在问题，如果开启过滤，则在该机型将不再去获取该平台的Banner广告）
                         .filterThirdQuestion(true)
                         // 如果开了浮窗广告，可设置不展示浮窗广告的界面，第一个参数为是否开启默认不展示的页面（例如:激励视频播放页面），第二可变参数为自定义不展示的页面
                         .floatingAdBlockList(false, "cn.admobiletop.adsuyidemo.activity.ad.SplashAdActivity")
                         .build(),
-                new ADSuyiInitListener() {
-                    @Override
-                    public void onSuccess() {
-                        // ADSuyi初始化成功
-
-                        // 重置个性化状态
-                        boolean personalized = SPUtil.getBoolean(SplashAdActivity.this, SettingActivity.KEY_PERSONALIZED, true);
-                        ADSuyiSdk.setPersonalizedAdEnabled(personalized);
-                    }
-
-                    @Override
-                    public void onFailed(String error) {
-                        // ADSuyi初始化失败
-                    }
-                });
+                        adSuyiInitListener);
 
         initSplashAd();
     }
+
+    private ADSuyiInitListener adSuyiInitListener = new ADSuyiInitListener() {
+        @Override
+        public void onSuccess() {
+            // ADSuyi初始化成功
+
+            // 重置个性化状态
+            boolean personalized = SPUtil.getBoolean(SplashAdActivity.this, SettingActivity.KEY_PERSONALIZED, true);
+            ADSuyiSdk.setPersonalizedAdEnabled(personalized);
+        }
+
+        @Override
+        public void onFailed(String error) {
+            // ADSuyi初始化失败
+        }
+    };
 
     private void initSplashAd() {
         // 6.0及以上获取没有申请的权限
@@ -193,7 +194,7 @@ public class SplashAdActivity extends AppCompatActivity {
         // 设置仅支持的广告平台，设置了这个值，获取广告时只会去获取该平台的广告，null或空字符串为不限制，默认为null，方便调试使用，上线时建议不设置
         adSuyiSplashAd.setOnlySupportPlatform(ADSuyiDemoConstant.SPLASH_AD_ONLY_SUPPORT_PLATFORM);
         if (ADSuyiDemoConstant.SPLASH_AD_CUSTOM_SKIP_VIEW) {
-            // 设置自定义跳过按钮和倒计时时长（非必传，倒计时时长范围[3000,5000]建议不要传入倒计时时长） 目前不支持广点通、讯飞、快手、华为广告联盟、爱奇艺，平台自定义跳过按钮
+            // 设置自定义跳过按钮和倒计时时长（非必传，倒计时时长范围[3000,5000]建议不要传入倒计时时长） 目前不支持gdt、mintegral、inmobi, ksad、hwpps、gromore，平台自定义跳过按钮
             adSuyiSplashAd.setSkipView(skipView);
         }
         // 设置开屏广告监听
@@ -300,5 +301,11 @@ public class SplashAdActivity extends AppCompatActivity {
     private void jumpMain() {
         startActivity(new Intent(this, MainActivity.class));
         finish();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        adSuyiInitListener = null;
     }
 }
