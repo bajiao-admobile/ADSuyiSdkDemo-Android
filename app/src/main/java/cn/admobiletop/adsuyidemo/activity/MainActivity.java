@@ -21,8 +21,9 @@ import cn.admobiletop.adsuyidemo.activity.ad.FullScreenVodAdActivity;
 import cn.admobiletop.adsuyidemo.activity.ad.InnerNoticeActivity;
 import cn.admobiletop.adsuyidemo.activity.ad.interstitial.InterstitialAdActivity;
 import cn.admobiletop.adsuyidemo.activity.ad.RewardVodAdActivity;
-import cn.admobiletop.adsuyidemo.activity.ad.SplashAdActivity;
+import cn.admobiletop.adsuyidemo.activity.ad.ADSuyiInitAndLoadSplashAdActivity;
 import cn.admobiletop.adsuyidemo.activity.ad.interstitial.InterstitialAdAutoCloseActivity;
+import cn.admobiletop.adsuyidemo.activity.ad.splash.SplashAdSettingActivity;
 import cn.admobiletop.adsuyidemo.activity.other.ContentModuleActivity;
 import cn.admobiletop.adsuyidemo.activity.other.DlModuleActivity;
 import cn.admobiletop.adsuyidemo.activity.other.NativeAdActivity;
@@ -75,7 +76,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btnSplashAd:
-                startActivity(SplashAdActivity.class);
+                startActivity(SplashAdSettingActivity.class);
                 break;
             case R.id.btnSplashVPlusAd:
                 LoadAdUtil.loadSplashVPlusAd(this, findViewById(R.id.flContainer));

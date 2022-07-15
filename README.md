@@ -52,7 +52,7 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | --------- | -------- | --------- | --------- |
 | tianmu   | 1.4M     | v1.3.1.06231 | 8fc2bac89543978fca371f9c82e48c8e |
 | gdt       | 1.41M   | v4.471.1341.06271 | 119f0e344b8cc1d3bd3f70ff18964c93 |
-| toutiao   | 4.11M     | v4.6.0.2.06231 | 068780e4979321d10127aede4bc593c1 |
+| toutiao   | 4.11M     | v4.6.0.2.07141 | f9a1845050f057ed05abefe0bd3b7a40 |
 | baidu     | 1.20M     | v9.22.06231 | 8da76ab55e4c978e539d1354e51d0298 |
 | mintegral | 2.80M     | v16.1.57.06231 | 0782d71ce9b7687231941a7ab7f51f26 |
 | ksad      | 2.30M     | v3.3.25.06231 | d345314d16421870f9bf62fde47f6317 |
@@ -208,7 +208,7 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.471.1341.06271'
 
     // 头条AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:4.6.0.2.06231'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:4.6.0.2.07141'
 
     // 百度增强版AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced:9.22.06231'
@@ -742,11 +742,11 @@ ADSuyiSdk.getInstance().init(this, new ADSuyiInitConfig.Builder()
 // 创建开屏广告实例，第一个参数可以是Activity或Fragment，第二个参数是广告容器
 adSuyiSplashAd = new ADSuyiSplashAd(this, flContainer);
 
-// 底部logo容器高度，请根据实际情况进行计算
+// 底部logo容器高度(px)，请根据实际情况进行计算
 int logoHeight = 底部logo布局高度;
-// 屏幕宽度px
+// 屏幕宽度(px)
 int widthPixels = getResources().getDisplayMetrics().widthPixels;
-// 屏幕高度px
+// 屏幕高度(px)
 int heightPixels = getResources().getDisplayMetrics().heightPixels;
 // 创建额外参数实例
 ADSuyiExtraParams extraParams = new ADSuyiExtraParams.Builder()
@@ -852,7 +852,7 @@ new TTSplashAdRequestInfo(String platformAppId, String platformPosId, String adP
 
 ```
 
-> [开屏广告示例详情](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/ad/SplashAdActivity.java)
+> [开屏广告示例详情](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/ad/splash/SplashAdActivity.java)
 
 
 
@@ -1344,7 +1344,7 @@ ADSuyiSdk.getInstance().init(this, new ADSuyiInitConfig.Builder()
     // 可以通过设置该值手动关闭或开启浮窗广告，默认开启（服务端没有配置开启也不会有浮窗广告）                         
     .openFloatingAd(true:开启，false:关闭)
     // 如果开了浮窗广告，可设置不展示浮窗广告的界面，第一个参数为是否开启默认不展示的页面（例如:激励视频播放页面），第二可变参数为自定义不展示的页面
-    .floatingAdBlockList(false, "cn.admobiletop.adsuyidemo.activity.ad.SplashAdActivity")
+    .floatingAdBlockList(false, "cn.admobiletop.adsuyidemo.activity.ad.ADSuyiInitAndLoadSplashAdActivity")
     .build());
 ```
 
@@ -1369,7 +1369,7 @@ ADSuyiSdk.getInstance().init(this, new ADSuyiInitConfig.Builder()
     // 可以通过设置该值手动关闭或开启浮窗广告，默认开启（服务端没有配置开启也不会有浮窗广告）
     .openFloatingAd(false)
     // 如果开了浮窗广告，可设置不展示浮窗广告的界面，第一个参数为是否开启默认不展示的页面（例如:激励视频播放页面），第二可变参数为自定义不展示的页面
-    .floatingAdBlockList(false, "cn.admobiletop.adsuyidemo.activity.ad.SplashAdActivity")
+    .floatingAdBlockList(false, "cn.admobiletop.adsuyidemo.activity.ad.ADSuyiInitAndLoadSplashAdActivity")
     .build());
 ```
 

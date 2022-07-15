@@ -60,7 +60,7 @@
         </provider>
 
         <activity
-            android:name=".activity.ad.SplashAdActivity"
+            android:name=".activity.ad.ADSuyiInitAndLoadSplashAdActivity"
             android:screenOrientation="portrait"
             android:theme="@style/splash">
             <intent-filter>
@@ -164,7 +164,14 @@
             android:screenOrientation="portrait" />
         <activity android:name=".activity.ad.feed.NativeSelfRenderActivity"
             android:label="@string/native_self_render"/>
-        <activity android:name=".activity.ad.InnerNoticeActivity" />
+        <activity android:name=".activity.ad.InnerNoticeActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activity.ad.splash.SplashAdSettingActivity"
+            android:label="@string/splash_ad"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activity.ad.splash.SplashAdActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/splash"/>
     </application>
 
 </manifest>

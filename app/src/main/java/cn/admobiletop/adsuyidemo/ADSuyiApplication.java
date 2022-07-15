@@ -13,7 +13,7 @@ import com.bytedance.sdk.openadsdk.stub.activity.Stub_Standard_Portrait_Activity
 import com.tencent.bugly.crashreport.CrashReport;
 
 import cn.admobiletop.adsuyi.util.SuyiPackageStrategy;
-import cn.admobiletop.adsuyidemo.activity.ad.SplashAdActivity;
+import cn.admobiletop.adsuyidemo.activity.ad.ADSuyiInitAndLoadSplashAdActivity;
 import cn.admobiletop.adsuyidemo.activity.setting.SettingActivity;
 import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
 import cn.admobiletop.adsuyidemo.manager.ADSuyiInterstitialManager;
@@ -107,8 +107,8 @@ public class ADSuyiApplication extends Application {
         long millis = System.currentTimeMillis();
         if (preMillis > 0
                 && millis - preMillis > OPEN_SPLASH_ACTIVITY_INTERVAL_TIME
-                && !(activity instanceof SplashAdActivity)) {
-            activity.startActivity(new Intent(activity, SplashAdActivity.class));
+                && !(activity instanceof ADSuyiInitAndLoadSplashAdActivity)) {
+            activity.startActivity(new Intent(activity, ADSuyiInitAndLoadSplashAdActivity.class));
         }
         preMillis = millis;
     }
