@@ -651,8 +651,6 @@ dependencies {
 ```java
 // 是否同意隐私政策
 .agreePrivacyStrategy(true)
-// 是否同意使用oaid
-.isCanUseOaid(true)
 // 是否可读取wifi状态
 .isCanUseWifiState(true)
 // 是否可获取定位数据
@@ -703,8 +701,6 @@ ADSuyiSdk.getInstance().init(this, new ADSuyiInitConfig.Builder()
          .debug(BuildConfig.DEBUG)
          // 是否同意隐私政策
          .agreePrivacyStrategy(true)
-         // 是否同意使用oaid
-         .isCanUseOaid(true)
          // 是否可读取wifi状态
          .isCanUseWifiState(true)
          // 是否可获取定位数据
