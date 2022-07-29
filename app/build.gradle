@@ -140,9 +140,9 @@ dependencies {
     implementation 'cn.jiguang.sdk:jcore:3.2.2'
 
     // gromoreAdapterSdk，可选的。如果要使用gromore的其他渠道，请联系开发者。
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:gromore:3.4.0.3.05191'
-    implementation "com.gromore.cn:gdt-adapter:4.462.1332.0" //广点通 adapter
-    implementation "com.gromore.cn:pangle-adapter:4.4.0.9.0" //穿山甲 adapter
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:gromore:3.5.1.3.07261'
+    implementation "com.gromore.cn:gdt-adapter:4.472.1342.1" //广点通 adapter
+    implementation "com.gromore.cn:pangle-adapter:4.6.0.7.1" //穿山甲 adapter
     // 有gromore其他渠道需求，请联系开发者。
 
     // 菜谱内容SDK（还需要gson和recyclerview支持）

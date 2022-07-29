@@ -61,7 +61,7 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | hwpps   | 1.01M     | v13.4.55.300.06231 | 2b49b458d8fca197250c0c94eee277a7 |
 | appic   | 3.32M     | v4.5.2.3.01051 | f6c20493a3ac7043f9cf1ee9d97c6e1b |
 | inmobi    | 0.95M   | v7.5.3.10191 | 5ac0ca9e011497eae054f5abd05c3002 |
-| gromore   |—     | v3.4.0.3.05191 | 51208ce7cfee7f1f0fabc47c6f6d1f74 |
+| gromore   |—     | v3.5.1.3.07261 | 18b83750bac9340507c9055b7c86c80e |
 | jiguang   |0.50M     | v5.0.4.06201 | f8ac3d1acdd3b10336503ca1d3977ebc |
 
 ### 1.6 菜谱内容功能
@@ -236,9 +236,9 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:hwpps:13.4.55.300.06231'
 
     // gromoreAdapterSdk，可选的。如果要使用gromore的其他渠道，请联系开发者。
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:gromore:3.4.0.3.05191'
-    implementation "com.gromore.cn:gdt-adapter:4.462.1332.0" //广点通 adapter
-    implementation "com.gromore.cn:pangle-adapter:4.4.0.9.0" //穿山甲 adapter
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:gromore:3.5.1.3.07261'
+    implementation "com.gromore.cn:gdt-adapter:4.472.1342.1" //广点通 adapter
+    implementation "com.gromore.cn:pangle-adapter:4.6.0.7.1" //穿山甲 adapter
     // 有gromore其他渠道需求，请联系开发者。
 
     // AppicAdapterSdk，可选的
