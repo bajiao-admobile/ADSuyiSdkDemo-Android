@@ -119,12 +119,8 @@ public class ADSuyiInitAndLoadSplashAdActivity extends AppCompatActivity {
                         // 是否开启Debug，开启会有详细的日志信息打印，如果用上ADSuyiToastUtil工具还会弹出toast提示。
                         // TODO 注意上线后请置为false
                         .debug(BuildConfig.DEBUG)
-                        // 是否同意隐私政策
+                        //【慎改】是否同意隐私政策，将禁用一切设备信息读起严重影响收益
                         .agreePrivacyStrategy(true)
-                        // 是否同意使用oaid
-                        .isCanUseOaid(true)
-                        // 是否可读取wifi状态
-                        .isCanUseWifiState(true)
                         // 是否可获取定位数据
                         .isCanUseLocation(true)
                         // 是否可获取设备信息

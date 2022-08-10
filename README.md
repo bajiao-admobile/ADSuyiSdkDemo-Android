@@ -646,13 +646,11 @@ dependencies {
 
 **为了保证您的App顺利通过检测，结合当前监管关注重点，我们可以将ADSuyiSdk的初始化放在用户同意隐私政策之后。**
 
-**如果有更高需求，可以使用以下方法进行控制，但会对广告填充造成影响。**
-同时ADSuyiSDK初始化时开放以下接口，确保mac，imei等设备标识不被读取（目前部分三方广告平台支持）：
+**如合规有更高要求，可以使用以下方法进行控制，但会严重降低广告收益，可根据实际需求进行设置，或联系我发运营人员获取建议。**
+同时ADSuyiSDK初始化时开放以下接口，确保imei等设备标识不被读取（目前部分三方广告平台支持）：
 ```java
-// 是否同意隐私政策
+//【慎改】是否同意隐私政策，将禁用一切设备信息读起严重影响收益
 .agreePrivacyStrategy(true)
-// 是否可读取wifi状态
-.isCanUseWifiState(true)
 // 是否可获取定位数据
 .isCanUseLocation(true)
 // 是否可获取设备信息
@@ -699,10 +697,8 @@ ADSuyiSdk.getInstance().init(this, new ADSuyiInitConfig.Builder()
          // 是否开启Debug，开启会有详细的日志信息打印，如果用上ADSuyiToastUtil工具还会弹出toast提示。
          // 注意上线后请置为false
          .debug(BuildConfig.DEBUG)
-         // 是否同意隐私政策
+         //【慎改】是否同意隐私政策，将禁用一切设备信息读起严重影响收益
          .agreePrivacyStrategy(true)
-         // 是否可读取wifi状态
-         .isCanUseWifiState(true)
          // 是否可获取定位数据
          .isCanUseLocation(true)
          // 是否可获取设备信息
