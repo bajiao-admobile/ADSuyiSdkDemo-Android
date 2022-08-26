@@ -13,7 +13,7 @@
     <!-- 如果有视频相关的广告播放请务必添加，屏幕保持唤醒不锁屏（部分渠道未添加该权限时会出现视频类广告黑屏）-->
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
-    <!-- 如果接入了广点通渠道，必须加入以下权限，不然会导致广点通填充失败 -->
+    <!-- 如果接入了优量汇渠道，必须加入以下权限，不然会导致优量汇填充失败 -->
     <!-- 允许应用获取 MAC 地址。广告投放及广告监测归因、反作弊 -->
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <!-- 允许应用检测网络状态，SDK 会根据网络状态选择是否发送数据 -->

@@ -1,4 +1,4 @@
-# ADSuyiSdk Android Sdk——接入文档 V3.6.2.06142
+# ADSuyiSdk Android Sdk——接入文档 V3.6.5.07161
 
  目录 
 
@@ -26,7 +26,7 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | Name      | 平台名称 | 平台别称 |
 | --------- | -------- | -------- |
 | tianmu   | 天目     | 天目   |
-| gdt       | 广点通   | 优量汇   |
+| gdt       | 优量汇   | 广点通   |
 | toutiao   | 头条     | 穿山甲   |
 | baidu     | 百度     | 百青藤   |
 | mintegral | 汇量     | Mobvsita |
@@ -34,7 +34,6 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | admobile  | 艾狄墨搏 | 艾狄墨搏 |
 | mimo   | 米盟     | 米盟   |
 | hwpps   | 华为广告联盟     | 华为广告联盟   |
-| appic   | appic     | appic   |
 | inmobi    | Inmobi   | Inmobi   |
 | gromore   | gromore     | gromore   |
 | jiguang   | 极光联盟     | 极光联盟   |
@@ -43,23 +42,22 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 
 | Name      | 大小 | 版本号 | MD5值 |
 | --------- | -------- | --------- | --------- |
-| ADSuyi基础包  |0.3M  |V3.6.2.06142  |77ea8e9ec0a2fff6dab0fb04d3668791  |
+| ADSuyi基础包  |0.3M  |V3.6.5.07161  |e94da3ca808495c73a17eaafc06f2f80  |
 | OAID  |1.1M  |—  |—  |
 
 ### 1.5 三方广告平台适配器+三方广告sdk总容量
 
 | Name      | 容量 | 版本号 | MD5值 |
 | --------- | -------- | --------- | --------- |
-| tianmu   | 1.67M     | v1.3.1.06231 | 8fc2bac89543978fca371f9c82e48c8e |
-| gdt       | 1.82M   | v4.471.1341.06271 | 119f0e344b8cc1d3bd3f70ff18964c93 |
-| toutiao   | 5.85M     | v4.6.0.2.07141 | f9a1845050f057ed05abefe0bd3b7a40 |
-| baidu     | 1.48M     | v9.22.06231 | 8da76ab55e4c978e539d1354e51d0298 |
-| mintegral | 2.80M     | v16.1.57.06232 | 0597cbac7490860af72dd31c151cbdc7 |
-| ksad      | 3.38M     | v3.3.25.06231 | d345314d16421870f9bf62fde47f6317 |
+| tianmu   | 1.67M     | v1.3.2.07261 | c5ec4393d904ccb43012184d8015b00d |
+| gdt       | 1.82M   | v4.482.1352.07281 | 98d766c2f62aa372e3f141bd8796430b |
+| toutiao   | 5.85M     | v4.6.0.7.07271 | dc05056dccf45c54d9dd904e58605ff6 |
+| baidu     | 1.48M     | v9.225.07271 | 435e7a3dd338e03f246de61c13d11681 |
+| mintegral | 2.80M     | v16.1.87.07271 | 4828cc321e217c632df44742294221b9 |
+| ksad      | 3.38M     | v3.3.28.08121 | 204203267700ed20517e3fc9c7a6aa0f |
 | admobile       | 0.62M   | v5.0.7.04021 | c1da662539c824cba9c85cc842db0e31 |
-| mimo   | 1.00M     | v5.1.7.04131 | 1b4126cd97b75608e4f219f9c3b7c8b4 |
-| hwpps   | 1.01M     | v13.4.55.300.06231 | 2b49b458d8fca197250c0c94eee277a7 |
-| appic   | 3.32M     | v4.5.2.3.01051 | f6c20493a3ac7043f9cf1ee9d97c6e1b |
+| mimo   | 1.00M     | v5.1.9.07271 | e5581716db34763e19f3d1600a9ffd05 |
+| hwpps   | 1.01M     | v13.4.55.302.07271 | fcae0e8b37188f637710a4656e4848dc |
 | inmobi    | 0.95M   | v7.5.3.10191 | 5ac0ca9e011497eae054f5abd05c3002 |
 | gromore   |—     | v3.5.1.3.07261 | 18b83750bac9340507c9055b7c86c80e |
 | jiguang   |0.50M     | v5.0.4.06201 | f8ac3d1acdd3b10336503ca1d3977ebc |
@@ -194,7 +192,7 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
   
     // ADSuyiSdk、common和OAID库是必须导入的
-    implementation 'cn.admobiletop.adsuyi.ad:core:3.6.2.06142'
+    implementation 'cn.admobiletop.adsuyi.ad:core:3.6.5.07161'
 
     // OAID库是必须导入的，请保持和Demo中版本一致，必须的
     implementation(name: 'oaid_sdk_1.0.25', ext: 'aar')
@@ -202,22 +200,22 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad:oaid:1.0.25.08022'
 
     // 天目AdapterSdk，必须的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:tianmu:1.3.1.06231'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:tianmu:1.3.2.07261'
 
-    // 广点通（优量汇）AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.471.1341.06271'
+    // 优量汇（广点通）AdapterSdk，可选的
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.482.1352.07281'
 
     // 头条AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:4.6.0.2.07141'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:4.6.0.7.07271'
 
     // 百度增强版AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced:9.22.06231'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced:9.225.07271'
 
     // 汇量AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:16.1.57.06232'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:16.1.87.07271'
 
     // 快手AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.25.06231'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.28.08121'
 
     // 艾狄墨搏AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile:5.0.7.04021'
@@ -227,26 +225,19 @@ dependencies {
     implementation 'com.squareup.picasso:picasso:2.5.2'
 
     // 米盟AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:mimo:5.1.7.04131'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:mimo:5.1.9.07271'
     implementation 'com.google.code.gson:gson:2.8.5'
     implementation 'com.github.bumptech.glide:glide:4.9.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
 
     // 华为广告联盟AdadapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:hwpps:13.4.55.300.06231'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:hwpps:13.4.55.302.07271'
 
     // gromoreAdapterSdk，可选的。如果要使用gromore的其他渠道，请联系开发者。
     implementation 'cn.admobiletop.adsuyi.ad.adapter:gromore:3.5.1.3.07261'
-    implementation "com.gromore.cn:gdt-adapter:4.472.1342.1" //广点通 adapter
+    implementation "com.gromore.cn:gdt-adapter:4.472.1342.1" //优量汇 adapter
     implementation "com.gromore.cn:pangle-adapter:4.6.0.7.1" //穿山甲 adapter
     // 有gromore其他渠道需求，请联系开发者。
-
-    // AppicAdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:appic:4.5.2.3.01051'
-    // Appic还需要以下两个三方库支持
-    implementation 'com.squareup.okhttp3:okhttp:3.12.0'
-    implementation 'com.android.volley:volley:1.1.0'
-    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.6'
 
     // 极光联盟AdapterSdk，可选的
     极光联盟对接需要手动在app/build.gradle defaultConfig中添加JPUSH_APPKEY
@@ -278,7 +269,7 @@ dependencies {
 2. 使用**AdapterSdk**的**without**集成方式，该方式没有集成三方广告SDK和配置，开发者可自行集成三方广告SDK，但是需要注意，<font color=#ff0000>我们的AdapterSdk是基于三方广告SDK某个版本开发的，如果自行集成三方广告SDK，需要承担三方广告SDK版本不一致可能引起的兼容性和其他不可预知问题；</font>
 
    ```java
-   // 广点通AdapterSdk的without集成示例，其中x.x.x.x为AdapterSdk版本号
+   // 优量汇AdapterSdk的without集成示例，其中x.x.x.x为AdapterSdk版本号
    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt-without:x.x.x.x'
    ```
 
@@ -366,7 +357,7 @@ dependencies {
 <!-- 如果有视频相关的广告播放请务必添加，屏幕保持唤醒不锁屏（部分渠道未添加该权限时会出现视频类广告黑屏）-->
 <uses-permission android:name="android.permission.WAKE_LOCK" />
 
-<!-- 如果接入了广点通渠道，必须加入以下权限，不然会导致广点通填充失败 -->
+<!-- 如果接入了优量汇渠道，必须加入以下权限，不然会导致优量汇填充失败 -->
 <!-- 允许应用获取 MAC 地址。广告投放及广告监测归因、反作弊 -->
 <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 <!-- 允许应用检测网络状态，SDK 会根据网络状态选择是否发送数据 -->
@@ -512,7 +503,7 @@ dependencies {
 # admobile广告平台混淆
 -keep class admsdk.library.**{*;}
 
-# 广点通广告平台混淆
+# 优量汇广告平台混淆
 -keep class com.qq.e.** {public protected *;}
 -keep class MTT.ThirdAppInfoNew {*;}
 -keep class com.tencent.** {*;}
@@ -577,11 +568,6 @@ dependencies {
 -keep class com.ksad.download.** { *;}
 -keep class com.kwai.filedownloader.** { *;}
 -keepclasseswithmembernames class * { native <methods>;}
-
-# AppicAd广告平台混淆
--keep class * extends com.ap.android.trunk.sdk.core.base.ad.Ad
--keep class * extends com.ap.android.trunk.sdk.core.base.ad.AdSDK
--keep class * implements com.ap.android.trunk.sdk.core.base.lifecycle.IApplicationLifecycle
 
 # 快手广告平台混淆
 -keep class org.chromium.** { *; }
@@ -655,6 +641,10 @@ dependencies {
 .isCanUseLocation(true)
 // 是否可获取设备信息
 .isCanUsePhoneState(true)
+// 是否可读取设备安装列表
+.isCanReadInstallList(true)
+// 是否可读取设备外部读写权限
+.isCanUseReadWriteExternal(true)
 ```
 另外还可从根源上解决设备标识被读取等问题，可对配置清单中的权限增加tools:node="remove"配置；
 如下：
@@ -670,7 +660,7 @@ dependencies {
 
 ### 5.6 个性化开关
 
-ADSuyi的个性化开关可统一控制第三方广告SDK的个性化开关接口，目前支持天目、广点通、穿山甲、百度、快手、汇量、米盟、华为；
+ADSuyi的个性化开关可统一控制第三方广告SDK的个性化开关接口，目前支持天目、优量汇、穿山甲、百度、快手、汇量、米盟、华为；
 
 ```java
 // true为开启、false为关闭，请在初始化ADSuyi后进行控制
@@ -703,6 +693,10 @@ ADSuyiSdk.getInstance().init(this, new ADSuyiInitConfig.Builder()
          .isCanUseLocation(true)
          // 是否可获取设备信息
          .isCanUsePhoneState(true)
+         // 是否可读取设备安装列表
+         .isCanReadInstallList(true)
+         // 是否可读取设备外部读写权限
+         .isCanUseReadWriteExternal(true)
          // 是否过滤第三方平台的问题广告（例如: 已知某个广告平台在某些机型的Banner广告可能存在问题，如果开启过滤，则在该机型将不再去获取该平台的Banner广告）
          .filterThirdQuestion(true)
          .build(),
@@ -728,7 +722,7 @@ ADSuyiSdk.getInstance().init(this, new ADSuyiInitConfig.Builder()
 
 ### <a name="ad_splash">6.2 开屏广告示例</a>
 
-开屏广告建议在闪屏页进行展示，开屏广告的宽度和高度取决于容器的宽高，都是会撑满广告容器；**开屏广告的高度必须大于等于屏幕高度（手机屏幕完整高度，包括状态栏之类）的75%**，否则可能会影响收益计费（广点通的开屏甚至会影响跳过按钮的回调）。
+开屏广告建议在闪屏页进行展示，开屏广告的宽度和高度取决于容器的宽高，都是会撑满广告容器；**开屏广告的高度必须大于等于屏幕高度（手机屏幕完整高度，包括状态栏之类）的75%**，否则可能会影响收益计费（优量汇的开屏甚至会影响跳过按钮的回调）。
 
 ```java
 // 创建开屏广告实例，第一个参数可以是Activity或Fragment，第二个参数是广告容器
@@ -820,7 +814,7 @@ adSuyiSplashAd.loadAd(ADSuyiDemoConstant.SPLASH_AD_POS_ID, new BaiduSplashAdRequ
  */
 new BaiduSplashAdRequestInfo(String platformAppId, String platformPosId, String adPosListId, int downloadTip)
 /**
- * 获取广点通开屏保底广告Info
+ * 获取优量汇开屏保底广告Info
  * ...
  */
 new GdtSplashAdRequestInfo(String platformAppId, String platformPosId, String adPosListId, int downloadTip)
@@ -928,7 +922,7 @@ ADSuyiExtraParams extraParams = new ADSuyiExtraParams.Builder()
     .nativeAdMediaViewSize(new ADSuyiAdSize(widthPixels))
     // 设置模版广告文字、内边距特殊样式（目前仅艾狄墨搏平台需要，没有特殊需求可不设置，请查看demo进行设置）
     .nativeStyle(nativeStyle)
-    // 设置信息流广告适配播放是否静音，默认静音，目前广点通、百度、汇量、Admobile支持修改
+    // 设置信息流广告适配播放是否静音，默认静音，目前优量汇、百度、汇量、Admobile支持修改
     .nativeAdPlayWithMute(ADSuyiDemoConstant.NATIVE_AD_PLAY_WITH_MUTE)
    	.build();
 // 设置一些额外参数，有些平台的广告可能需要传入一些额外参数，如果有接入头条、Inmobi平台，该参数必须设置

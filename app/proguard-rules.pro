@@ -50,7 +50,7 @@
 # admobile广告平台混淆
 -keep class admsdk.library.**{*;}
 
-# 广点通广告平台混淆
+# 优量汇广告平台混淆
 -keep class com.qq.e.** {public protected *;}
 -keep class MTT.ThirdAppInfoNew {*;}
 -keep class com.tencent.** {*;}
@@ -114,11 +114,6 @@
 -keep class com.kwad.sdk.** { *;}
 -keep class com.ksad.download.** { *;}
 -keep class com.kwai.filedownloader.** { *;}
-
-# AppicAd广告平台混淆
--keep class * extends com.ap.android.trunk.sdk.core.base.ad.Ad
--keep class * extends com.ap.android.trunk.sdk.core.base.ad.AdSDK
--keep class * implements com.ap.android.trunk.sdk.core.base.lifecycle.IApplicationLifecycle
 
 # 快手广告平台混淆
 -keep class org.chromium.** { *; }

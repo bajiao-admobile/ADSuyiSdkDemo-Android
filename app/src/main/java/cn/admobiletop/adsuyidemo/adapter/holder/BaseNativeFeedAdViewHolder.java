@@ -69,7 +69,7 @@ public abstract class BaseNativeFeedAdViewHolder extends RecyclerView.ViewHolder
             nativeFeedAdInfo.registerCloseView(ivClose);
 
             // 注册广告交互, 必须调用
-            // 注意：广点通只会响应View...actionViews的点击事件，且这些View都应该是com.qq.e.ads.nativ.widget.NativeAdContainer的子View
+            // 注意：优量汇只会响应View...actionViews的点击事件，且这些View都应该是com.qq.e.ads.nativ.widget.NativeAdContainer的子View
             // 务必最后调用
             nativeFeedAdInfo.registerViewForInteraction((ViewGroup) itemView, rlAdContainer);
         }

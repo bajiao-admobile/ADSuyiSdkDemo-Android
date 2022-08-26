@@ -204,7 +204,7 @@ public class SettingAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         private void initPlatformData() {
             platformMap.put("所有(null或空字符串)", "");
             platformMap.put("天目(tianmu)", "tianmu");
-            platformMap.put("广点通/优量汇(gdt)", "gdt");
+            platformMap.put("优量汇/广点通(gdt)", "gdt");
             platformMap.put("头条/穿山甲(toutiao)", "toutiao");
             platformMap.put("百度/百青藤(baidu)", "baidu");
             platformMap.put("汇量/Mobvsita(mintegral)", "mintegral");

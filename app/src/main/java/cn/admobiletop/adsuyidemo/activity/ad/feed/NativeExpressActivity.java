@@ -98,11 +98,11 @@ public class NativeExpressActivity extends AppCompatActivity {
         adSuyiNativeAd = new ADSuyiNativeAd(this);
         // 创建额外参数实例
         ADSuyiExtraParams extraParams = new ADSuyiExtraParams.Builder()
-                // 设置整个广告视图预期宽高(目前仅广点通、头条、艾狄墨搏平台需要，没有接入广点通、头条、艾狄墨搏可不设置)，单位为px，高度如果小于等于0则高度自适应
+                // 设置整个广告视图预期宽高(目前仅优量汇、头条、艾狄墨搏平台需要，没有接入优量汇、头条、艾狄墨搏可不设置)，单位为px，高度如果小于等于0则高度自适应
                 .adSize(new ADSuyiAdSize(widthPixels, 0))
                 // 设置广告视图中MediaView的预期宽高(目前仅Inmobi平台需要,Inmobi的MediaView高度为自适应，没有接入Inmobi平台可不设置)，单位为px
                 .nativeAdMediaViewSize(new ADSuyiAdSize((int) (widthPixels - 24 * getResources().getDisplayMetrics().density)))
-                // 设置信息流广告适配播放是否静音，默认静音，目前广点通、百度、汇量、快手、Admobile支持修改
+                // 设置信息流广告适配播放是否静音，默认静音，目前优量汇、百度、汇量、快手、Admobile支持修改
                 .nativeAdPlayWithMute(ADSuyiDemoConstant.NATIVE_AD_PLAY_WITH_MUTE)
                 .build();
         // 设置一些额外参数，有些平台的广告可能需要传入一些额外参数，如果有接入头条、Inmobi平台，如果包含这些平台该参数必须设置

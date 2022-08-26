@@ -177,7 +177,7 @@ public class SplashAdActivity extends AppCompatActivity {
     }
 
     /**
-     * 设置开屏保底广告 目前支持广点通、头条、百度、快手保底，保底是为了加速用户第一次获取开屏广告时的速度。
+     * 设置开屏保底广告 目前支持优量汇、头条、百度、快手保底，保底是为了加速用户第一次获取开屏广告时的速度。
      * demo中演示百度平台，有其它平台需求的可以查看文档或在对接群中咨询
      *
      * @param platformAppId suyi开屏广告源应用ID

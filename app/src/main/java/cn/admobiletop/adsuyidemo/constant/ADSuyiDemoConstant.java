@@ -58,7 +58,7 @@ public class ADSuyiDemoConstant {
      */
     public static final String NATIVE_AD_POS_ID2 = "9f273c39a30ab43655";
     /**
-     * 信息流广告位ID，只建了广点通模板2.0
+     * 信息流广告位ID，只建了优量汇模板2.0
      */
     public static final String NATIVE_AD_POS_ID3 = "6552acfed554d68c78";
     /**

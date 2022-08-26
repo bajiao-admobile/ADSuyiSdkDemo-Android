@@ -23,7 +23,7 @@ import cn.admobiletop.adsuyidemo.util.ADSuyiViewFindUtils;
 
 /**
  * @Description: 插屏广告添加跳过按钮和自动关闭功能管理类，
- *               目前支持广点通（优量汇）、头条、admobile、快手渠道，渠道陆续新增中。
+ *               目前支持优量汇（优量汇）、头条、admobile、快手渠道，渠道陆续新增中。
  * @Author: maipian
  * @CreateDate: 2/21/22 11:13 AM
  */
@@ -44,7 +44,7 @@ public class ADSuyiInterstitialManager {
     /**
      * 快手插屏弹窗对象，没有接入快手可注释掉
      */
-    private com.kwad.components.ad.interstitial.d kuaishouDialog;
+    private com.kwad.components.ad.interstitial.c kuaishouDialog;
 
     private static ADSuyiInterstitialManager instance;
 
@@ -122,7 +122,7 @@ public class ADSuyiInterstitialManager {
             KsInterstitialAd ksInterstitialAd = (KsInterstitialAd) fieldAdapterAdInfo.get(interstitialAdInfo);
             Field fieldD = ksInterstitialAd.getClass().getDeclaredField("d");
             fieldD.setAccessible(true);
-            kuaishouDialog = (com.kwad.components.ad.interstitial.d) fieldD.get(ksInterstitialAd);
+            kuaishouDialog = (com.kwad.components.ad.interstitial.c) fieldD.get(ksInterstitialAd);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -146,7 +146,7 @@ public class ADSuyiInterstitialManager {
     }
 
     /**
-     * 广点通插屏页面添加跳过按钮，该渠道是通过dialog作为插屏
+     * 优量汇插屏页面添加跳过按钮，该渠道是通过dialog作为插屏
      */
     private void gdtAddJumpButton() {
         setActivityViews();
@@ -164,7 +164,7 @@ public class ADSuyiInterstitialManager {
     }
 
     /**
-     * 广点通插屏页面添加跳过按钮，该渠道是通过activity作为插屏
+     * 优量汇插屏页面添加跳过按钮，该渠道是通过activity作为插屏
      */
 //    public void gdtAddJumpButton() {
 //        ViewGroup content = adInterstitialActivity.findViewById(android.R.id.content);

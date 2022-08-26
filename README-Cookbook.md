@@ -49,7 +49,7 @@ CookbookSDKManger.getInstance().init(this, new ADSuyiAdRecipeConfig.Builder()
 ### 4、一键式接入菜谱内容
 
 ```java
-// 设置菜谱广告位（建议不要接入视频有关的信息流广告，广点通渠道请误配置信息流自渲染广告）
+// 设置菜谱广告位（建议不要接入视频有关的信息流广告，优量汇渠道请误配置信息流自渲染广告）
 CookbookSDKManger.setAdSuyiAdIdConfig(new ADSuyiAdIdConfig.Builder()
                         .setNativeAdId("信息流广告位id")
                         .setBannerAdId("横幅广告位id")
