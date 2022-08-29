@@ -53,7 +53,7 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | gdt       | 1.82M   | v4.482.1352.07281 | 98d766c2f62aa372e3f141bd8796430b |
 | toutiao   | 5.85M     | v4.6.0.7.07271 | dc05056dccf45c54d9dd904e58605ff6 |
 | baidu     | 1.48M     | v9.225.07271 | 435e7a3dd338e03f246de61c13d11681 |
-| mintegral | 2.80M     | v16.1.87.07271 | 4828cc321e217c632df44742294221b9 |
+| mintegral | 2.80M     | v16.1.87.07273 | 4828cc321e217c632df44742294221b9 |
 | ksad      | 3.38M     | v3.3.28.08121 | 204203267700ed20517e3fc9c7a6aa0f |
 | admobile       | 0.62M   | v5.0.7.04021 | c1da662539c824cba9c85cc842db0e31 |
 | mimo   | 1.00M     | v5.1.9.07271 | e5581716db34763e19f3d1600a9ffd05 |
@@ -212,7 +212,7 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced:9.225.07271'
 
     // 汇量AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:16.1.87.07271'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:16.1.87.07273'
 
     // 快手AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.28.08121'
