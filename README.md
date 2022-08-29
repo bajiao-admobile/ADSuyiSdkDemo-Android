@@ -59,7 +59,7 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | mimo   | 1.00M     | v5.1.9.07271 | e5581716db34763e19f3d1600a9ffd05 |
 | hwpps   | 1.01M     | v13.4.55.302.07271 | fcae0e8b37188f637710a4656e4848dc |
 | inmobi    | 0.95M   | v7.5.3.10191 | 5ac0ca9e011497eae054f5abd05c3002 |
-| gromore   |—     | v3.5.1.3.07261 | 18b83750bac9340507c9055b7c86c80e |
+| gromore   |—     | v3.6.0.1.08291 | 29146648279f7a9a601d6c2c168dc0cd |
 | jiguang   |0.50M     | v5.0.4.06201 | f8ac3d1acdd3b10336503ca1d3977ebc |
 
 ### 1.6 菜谱内容功能
@@ -234,8 +234,8 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:hwpps:13.4.55.302.07271'
 
     // gromoreAdapterSdk，可选的。如果要使用gromore的其他渠道，请联系开发者。
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:gromore:3.5.1.3.07261'
-    implementation "com.gromore.cn:gdt-adapter:4.472.1342.1" //优量汇 adapter
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:gromore:3.6.0.1.08291'
+    implementation "com.gromore.cn:gdt-adapter:4.482.1352.0" //广点通 adapter
     implementation "com.gromore.cn:pangle-adapter:4.6.0.7.1" //穿山甲 adapter
     // 有gromore其他渠道需求，请联系开发者。
 
@@ -303,6 +303,14 @@ dependencies {
     }
     ```
     导入极光联盟Adapter后，如果还有其他问题，请及时和我们联系
+
+7. Mintegral（汇量）渠道与微信sdk冲突解决办法
+    由于Mintegral渠道16.1.7版本支持小程序跳转功能，若媒体已导入opensdk，会导致冲突，可通过以下方式移除Mintegral适配器中的opensdk
+    ```java
+    ('cn.admobiletop.adsuyi.ad.adapter:mintegral:16.1.87.07273') {
+            exclude group: "com.tencent.mm.opensdk", module: "wechat-sdk-android"
+        }
+    ```
 
 ### 5.2 OAID支持
 
