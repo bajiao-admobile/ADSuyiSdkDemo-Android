@@ -59,15 +59,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         switchPersonalized = findViewById(R.id.switchPersonalized);
 
-        boolean personalized = SPUtil.getBoolean(this, SettingActivity.KEY_PERSONALIZED, true);
+        boolean personalized = ADSuyiSdk.getInstance().getPersonalizedAdEnabled();
         switchPersonalized.setChecked(personalized);
-        ADSuyiSdk.setPersonalizedAdEnabled(personalized);
 
         switchPersonalized.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 ADSuyiSdk.setPersonalizedAdEnabled(isChecked);
-                SPUtil.putBoolean(MainActivity.this, SettingActivity.KEY_PERSONALIZED, isChecked);
             }
         });
     }

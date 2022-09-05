@@ -671,8 +671,13 @@ dependencies {
 ADSuyi的个性化开关可统一控制第三方广告SDK的个性化开关接口，目前支持天目、优量汇、穿山甲、百度、快手、汇量、米盟、华为；
 
 ```java
-// true为开启、false为关闭，请在初始化ADSuyi后进行控制
+// 设置个性化开关。true为开启、false为关闭，请在初始化ADSuyi后进行控制。
 ADSuyiSdk.setPersonalizedAdEnabled(boolean personalized);
+```
+
+```java
+// 获取当前个性化开关设置状态，true为开启、false为关闭。
+ADSuyiSdk.getInstance().getPersonalizedAdEnabled()
 ```
 
 ## 6. 示例代码

@@ -150,10 +150,6 @@ public class ADSuyiInitAndLoadSplashAdActivity extends AppCompatActivity {
         @Override
         public void onSuccess() {
             // ADSuyi初始化成功
-
-            // 重置个性化状态
-            boolean personalized = SPUtil.getBoolean(ADSuyiInitAndLoadSplashAdActivity.this, SettingActivity.KEY_PERSONALIZED, true);
-            ADSuyiSdk.setPersonalizedAdEnabled(personalized);
         }
 
         @Override
