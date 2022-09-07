@@ -61,7 +61,7 @@ public class ADSuyiInitAndLoadSplashAdActivity extends AppCompatActivity {
         flContainer = findViewById(R.id.flContainer);
 
         // 据悉，工信部将在2020年8月底前上线运行全国APP技术检测平台管理系统，2020年12月10日前完成覆盖40万款主流App的合规检测工作。
-        // 为了保证您的App顺利通过检测，结合当前监管关注重点，我们可以将ADSuyiSdk的初始化放在用户同意隐私政策之后。
+        // 为了保证您的App顺利通过检测，结合当前监管关注重点，请务必将ADSuyiSdk的初始化放在用户同意隐私政策之后。
         checkPrivacyPolicy();
     }
 
