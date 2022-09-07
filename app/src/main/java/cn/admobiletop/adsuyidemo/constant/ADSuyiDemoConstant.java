@@ -6,7 +6,7 @@ package cn.admobiletop.adsuyidemo.constant;
  * @date 2020/4/7
  */
 public class ADSuyiDemoConstant {
-    public static final String APP_ID = "3801556";
+    public static final String APP_ID = "3989289";
     public static final String TAG = "ADSuyiDemoLog";
     /**
      * 开屏广告位ID
@@ -64,7 +64,7 @@ public class ADSuyiDemoConstant {
     /**
      * 信息流广告位ID，模版
      */
-    public static final String NATIVE_AD_POS_ID4 = "fd3b78d0c93e75330a";
+    public static final String NATIVE_AD_POS_ID4 = "fcd45c42907bc51d1e";
     public static String NATIVE_AD_POS_ID = NATIVE_AD_POS_ID1;
     /**
      * 信息流广告一次拉取广告数量

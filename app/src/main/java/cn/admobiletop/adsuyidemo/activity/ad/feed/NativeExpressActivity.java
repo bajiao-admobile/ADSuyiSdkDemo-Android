@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
@@ -186,7 +187,11 @@ public class NativeExpressActivity extends AppCompatActivity {
         // 当前是信息流模板广告，getNativeExpressAdView获取的是整个模板广告视图
         View nativeExpressAdView = nativeExpressAdInfo.getNativeExpressAdView(rlExpressAd);
         // 将广告视图添加到容器中的便捷方法
-        ADSuyiViewUtil.addAdViewToAdContainer(rlExpressAd, nativeExpressAdView);
+        ADSuyiViewUtil.addAdViewToAdContainer(
+                rlExpressAd,
+                nativeExpressAdView,
+                new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+        );
         // 渲染广告视图, 必须调用, 因为是模板广告, 所以传入ViewGroup和响应点击的控件可能并没有用
         // 务必在最后调用
         nativeExpressAdInfo.render(rlExpressAd);
