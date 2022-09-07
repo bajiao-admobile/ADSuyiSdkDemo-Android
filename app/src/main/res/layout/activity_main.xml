@@ -34,6 +34,13 @@
                 android:layout_marginRight="16dp"
                 android:orientation="vertical">
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="开屏广告"
+                    android:gravity="center"
+                    android:layout_marginTop="16dp"/>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -50,16 +57,22 @@
                         android:text="@string/splash_ad" />
 
                     <Button
-                        android:id="@+id/btnSplashVPlusAd"
+                        android:id="@+id/btnSplashAdLoadShowSeparation"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
                         android:background="@drawable/shape_background_button_selector"
                         android:stateListAnimator="@null"
-                        android:text="@string/splash_v_plus_ad"
+                        android:text="@string/splash_ad_load_show"
                         android:layout_marginLeft="16dp"/>
 
                 </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#ccc"
+                    android:layout_marginTop="20dp"/>
 
                 <Button
                     android:id="@+id/btnNativeAd"

@@ -23,6 +23,7 @@ import cn.admobiletop.adsuyidemo.activity.ad.interstitial.InterstitialAdActivity
 import cn.admobiletop.adsuyidemo.activity.ad.RewardVodAdActivity;
 import cn.admobiletop.adsuyidemo.activity.ad.ADSuyiInitAndLoadSplashAdActivity;
 import cn.admobiletop.adsuyidemo.activity.ad.interstitial.InterstitialAdAutoCloseActivity;
+import cn.admobiletop.adsuyidemo.activity.ad.splash.SplashAdLoadShowSeparationActivity;
 import cn.admobiletop.adsuyidemo.activity.ad.splash.SplashAdSettingActivity;
 import cn.admobiletop.adsuyidemo.activity.other.ContentModuleActivity;
 import cn.admobiletop.adsuyidemo.activity.other.DlModuleActivity;
@@ -45,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ((TextView) findViewById(R.id.tvVersion)).setText("V" + ADSuyiSdk.getInstance().getSdkVersion());
 
         findViewById(R.id.btnSplashAd).setOnClickListener(this);
-        findViewById(R.id.btnSplashVPlusAd).setOnClickListener(this);
+        findViewById(R.id.btnSplashAdLoadShowSeparation).setOnClickListener(this);
         findViewById(R.id.btnBannerAd).setOnClickListener(this);
         findViewById(R.id.btnNativeAd).setOnClickListener(this);
         findViewById(R.id.btnRewardVodAd).setOnClickListener(this);
@@ -76,8 +77,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btnSplashAd:
                 startActivity(SplashAdSettingActivity.class);
                 break;
-            case R.id.btnSplashVPlusAd:
-                LoadAdUtil.loadSplashVPlusAd(this, findViewById(R.id.flContainer));
+            case R.id.btnSplashAdLoadShowSeparation:
+                startActivity(SplashAdLoadShowSeparationActivity.class);
                 break;
             case R.id.btnBannerAd:
                 startActivity(BannerAdActivity.class);

@@ -1,4 +1,4 @@
-# ADSuyiSdk Android Sdk——接入文档 V3.6.5.07161
+# ADSuyiSdk Android Sdk——接入文档 V3.6.6.08033
 
  目录 
 
@@ -31,7 +31,6 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | baidu     | 百度     | 百青藤   |
 | mintegral | 汇量     | Mobvsita |
 | ksad      | 快手     | 快手     |
-| admobile  | 艾狄墨搏 | 艾狄墨搏 |
 | mimo   | 米盟     | 米盟   |
 | hwpps   | 华为广告联盟     | 华为广告联盟   |
 | inmobi    | Inmobi   | Inmobi   |
@@ -42,25 +41,24 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 
 | Name      | 大小 | 版本号 | MD5值 |
 | --------- | -------- | --------- | --------- |
-| ADSuyi基础包  |0.3M  |V3.6.5.07161  |e94da3ca808495c73a17eaafc06f2f80  |
+| ADSuyi基础包  |0.3M  |V3.6.6.08033  |fb9e224571ab1c45dcd2cea8e2be4eeb  |
 | OAID  |1.1M  |—  |—  |
 
 ### 1.5 三方广告平台适配器+三方广告sdk总容量
 
 | Name      | 容量 | 版本号 | MD5值 |
 | --------- | -------- | --------- | --------- |
-| tianmu   | 1.67M     | v1.3.2.07263 | 3e4f3f61a15e887920b797296e5d43a4 |
-| gdt       | 1.82M   | v4.482.1352.07282 | 0fbd8709da697cfe20ddbe9c43aab783 |
-| toutiao   | 5.85M     | v4.6.0.7.07271 | dc05056dccf45c54d9dd904e58605ff6 |
-| baidu     | 1.48M     | v9.225.07271 | 435e7a3dd338e03f246de61c13d11681 |
-| mintegral | 2.80M     | v16.1.87.07273 | 4828cc321e217c632df44742294221b9 |
-| ksad      | 3.38M     | v3.3.28.08121 | 204203267700ed20517e3fc9c7a6aa0f |
-| admobile       | 0.62M   | v5.0.7.04021 | c1da662539c824cba9c85cc842db0e31 |
-| mimo   | 1.00M     | v5.1.9.07271 | e5581716db34763e19f3d1600a9ffd05 |
-| hwpps   | 1.01M     | v13.4.55.302.07271 | fcae0e8b37188f637710a4656e4848dc |
-| inmobi    | 0.95M   | v7.5.3.10191 | 5ac0ca9e011497eae054f5abd05c3002 |
-| gromore   |—     | v3.6.0.1.08291 | 29146648279f7a9a601d6c2c168dc0cd |
-| jiguang   |0.50M     | v5.0.4.06201 | f8ac3d1acdd3b10336503ca1d3977ebc |
+| tianmu   | 1.67M     | v1.3.2.08181 | 9acac6f7e94a3f46b2e1d7bf8a60fbc6 |
+| gdt       | 1.82M   | v4.482.1352.08171 | 0ed152643595775d22d3e59594ced1c0 |
+| toutiao   | 5.85M     | v4.7.1.2.08241 | 127635ad49f87ec4af9c05e745a8a0bb |
+| baidu     | 1.48M     | v9.225.08181 | 00c0914f5dbd4aeb9e0a9cc1774b0eae |
+| mintegral | 2.80M     | v16.2.27.08241 | 39cc8a606b1b11f85651f3f609d5b579 |
+| ksad      | 3.38M     | v3.3.28.08181 | b931afba380bb8d0756129957fec0412 |
+| mimo   | 1.00M     | v5.2.0.08241 | e63d17fb6b251cb33e4f39fde83371bf |
+| hwpps   | 1.01M     | v13.4.55.302.08181 | 3f7bc3186ec90df11b18ad3a7e7c347d |
+| inmobi    | 0.95M   | v7.5.3.10191 | da2e11cedea801e19c869e28eb7c2b4e |
+| gromore   |—     | v3.6.0.1.08291 | de1f999b24bcf95a5d10f865ccd7447e |
+| jiguang   |0.50M     | v5.0.4.08181 | ec05bfcf5048a2d697e8f394662c0af7 |
 
 ### 1.6 菜谱内容功能
 
@@ -192,7 +190,7 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
   
     // ADSuyiSdk、common和OAID库是必须导入的
-    implementation 'cn.admobiletop.adsuyi.ad:core:3.6.5.07161'
+    implementation 'cn.admobiletop.adsuyi.ad:core:3.6.6.08033'
 
     // OAID库是必须导入的，请保持和Demo中版本一致，必须的
     implementation(name: 'oaid_sdk_1.0.25', ext: 'aar')
@@ -200,38 +198,35 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad:oaid:1.0.25.08022'
 
     // 天目AdapterSdk，必须的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:tianmu:1.3.2.07263'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:tianmu:1.3.2.08181'
 
     // 优量汇（广点通）AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.482.1352.07282'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.482.1352.08171'
 
     // 头条AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:4.6.0.7.07271'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:4.7.1.2.08241'
 
     // 百度增强版AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced:9.225.07271'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced:9.225.08181'
 
     // 汇量AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:16.1.87.07273'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:16.2.27.08241'
 
     // 快手AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.28.08121'
-
-    // 艾狄墨搏AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:admobile:5.0.7.04021'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.28.08181'
 
     // InmobiAdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:inmobi:7.5.3.10191'
     implementation 'com.squareup.picasso:picasso:2.5.2'
 
     // 米盟AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:mimo:5.1.9.07271'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:mimo:5.2.0.08241'
     implementation 'com.google.code.gson:gson:2.8.5'
     implementation 'com.github.bumptech.glide:glide:4.9.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
 
     // 华为广告联盟AdadapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:hwpps:13.4.55.302.07271'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:hwpps:13.4.55.302.08181'
 
     // gromoreAdapterSdk，可选的。如果要使用gromore的其他渠道，请联系开发者。
     implementation 'cn.admobiletop.adsuyi.ad.adapter:gromore:3.6.0.1.08291'
@@ -242,7 +237,7 @@ dependencies {
     // 极光联盟AdapterSdk，可选的
     极光联盟对接需要手动在app/build.gradle defaultConfig中添加JPUSH_APPKEY
     导入极光联盟Adapter后，如果还有其他问题，请及时和我们联系
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:jiguang:5.0.4.06201'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:jiguang:5.0.4.08181'
     // 极光核心库，如已导入可不导入该依赖
     implementation 'cn.jiguang.sdk:jcore:3.2.2'
 
@@ -307,7 +302,7 @@ dependencies {
 7. Mintegral（汇量）渠道与微信sdk冲突解决办法
     由于Mintegral渠道16.1.7版本支持小程序跳转功能，若媒体已导入opensdk，会导致冲突，可通过以下方式移除Mintegral适配器中的opensdk
     ```java
-    ('cn.admobiletop.adsuyi.ad.adapter:mintegral:16.1.87.07273') {
+    ('cn.admobiletop.adsuyi.ad.adapter:mintegral:16.2.27.08241') {
             exclude group: "com.tencent.mm.opensdk", module: "wechat-sdk-android"
         }
     ```
@@ -507,9 +502,6 @@ dependencies {
 -keep class com.zui.opendeviceidlibrary.**{*;}
 -keep class org.json.**{*;}
 -keep public class com.netease.nis.sdkwrapper.Utils {public <methods>;}
-
-# admobile广告平台混淆
--keep class admsdk.library.**{*;}
 
 # 优量汇广告平台混淆
 -keep class com.qq.e.** {public protected *;}
@@ -737,6 +729,8 @@ ADSuyiSdk.getInstance().init(this, new ADSuyiInitConfig.Builder()
 
 开屏广告建议在闪屏页进行展示，开屏广告的宽度和高度取决于容器的宽高，都是会撑满广告容器；**开屏广告的高度必须大于等于屏幕高度（手机屏幕完整高度，包括状态栏之类）的75%**，否则可能会影响收益计费（优量汇的开屏甚至会影响跳过按钮的回调）。
 
+#### 6.2.1 开屏广告加载并展示
+
 ```java
 // 创建开屏广告实例，第一个参数可以是Activity或Fragment，第二个参数是广告容器
 adSuyiSplashAd = new ADSuyiSplashAd(this, flContainer);
@@ -852,6 +846,30 @@ new TTSplashAdRequestInfo(String platformAppId, String platformPosId, String adP
 ```
 
 > [开屏广告示例详情](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/ad/splash/SplashAdActivity.java)
+
+#### 6.2.2 开屏广告加载与展示分离
+
+##### 仅加载开屏广告
+```java
+// 创建广告对象的逻辑与6.2.1的案例相同，不同点在loadAd
+...
+// 仅加载开屏广告
+adSuyiSplashAd.loadOnly(ADSuyiDemoConstant.SPLASH_AD_POS_ID);
+```
+
+##### 展示开屏广告
+```java
+// 需要开发者在onAdReceive回调之后再展示开屏广告
+...
+public void onAdReceive(ADSuyiAdInfo adSuyiAdInfo) {
+    Log.d(ADSuyiDemoConstant.TAG, "广告获取成功回调... ");
+    // 展示开屏广告
+    adSuyiSplashAd.showSplash();
+}
+...
+```
+
+> [开屏广告加载与展示分离示例详情](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/ad/splash/SplashAdLoadShowSeparationActivity.java)
 
 
 

@@ -88,10 +88,6 @@ public class ADSuyiInterstitialManager {
         } else if (interstitialAdInfo.getPlatform().equals(PLATFORM_TOUTIAO)) {
             isDialog = false;
             toutiaoAddJumpButton();
-        } else if (interstitialAdInfo.getPlatform().equals(PLATFORM_ADMOBILE)) {
-            this.adInterstitialActivity = adInterstitialActivity;
-            isDialog = true;
-            admobileAddJumpButton();
         } else if (interstitialAdInfo.getPlatform().equals(PLATFORM_KUAISHOU)) {
             this.adInterstitialActivity = adInterstitialActivity;
             isDialog = true;
@@ -125,23 +121,6 @@ public class ADSuyiInterstitialManager {
             kuaishouDialog = (com.kwad.components.ad.interstitial.c) fieldD.get(ksInterstitialAd);
         } catch (Exception e) {
             e.printStackTrace();
-        }
-    }
-
-    /**
-     * admobile插屏页面添加跳过按钮，该渠道是通过dialog作为插屏
-     */
-    private void admobileAddJumpButton() {
-        setActivityViews();
-
-        for (int i = 0; i < views.size(); i++) {
-            View view = views.get(i);
-            if (view.getId() == R.id.adsuyi_admobile_interstitial_container) {
-                jumpView = getJumpView((ViewGroup) view);
-                ((ViewGroup) view).addView(jumpView);
-                startCountDown();
-                break;
-            }
         }
     }
 

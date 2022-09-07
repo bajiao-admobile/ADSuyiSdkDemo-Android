@@ -70,6 +70,9 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".activity.ad.splash.SplashAdLoadShowSeparationActivity"
+            android:theme="@style/splash"/>
+        <activity
             android:name=".activity.MainActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"

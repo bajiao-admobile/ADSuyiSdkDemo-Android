@@ -14,9 +14,7 @@ import android.widget.TextView;
 
 import cn.admobiletop.adsuyi.ad.ADSuyiSplashAd;
 import cn.admobiletop.adsuyi.ad.api.ADSuyiNetworkRequestInfo;
-import cn.admobiletop.adsuyi.ad.api.GdtSplashAdRequestInfo;
 import cn.admobiletop.adsuyi.ad.api.KsSplashAdRequestInfo;
-import cn.admobiletop.adsuyi.ad.api.annotation.DownloadTipParam;
 import cn.admobiletop.adsuyi.ad.data.ADSuyiAdInfo;
 import cn.admobiletop.adsuyi.ad.entity.ADSuyiAdSize;
 import cn.admobiletop.adsuyi.ad.entity.ADSuyiExtraParams;
@@ -124,6 +122,12 @@ public class SplashAdActivity extends AppCompatActivity {
             public void onADTick(long millisUntilFinished) {
                 Log.d(ADSuyiDemoConstant.TAG, "广告剩余倒计时时长回调：" + millisUntilFinished);
                 tvSkip.setText(millisUntilFinished + "s自动跳转");
+            }
+
+            @Override
+            public void onReward(ADSuyiAdInfo adSuyiAdInfo) {
+                // 目前仅仅优量汇渠道会被使用
+                Log.d(ADSuyiDemoConstant.TAG, "广告奖励回调... ");
             }
 
             @Override
