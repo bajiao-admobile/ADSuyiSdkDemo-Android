@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 30
     defaultConfig {
-        applicationId "com.ipc360home"
+        applicationId "cn.admobiletop.adsuyidemo"
         minSdkVersion 19
         targetSdkVersion 30
         versionCode 202209051
