@@ -169,6 +169,9 @@
 
 # 天目
 -keep class com.tianmu.**{ *; }
+# 天目加固混淆
+-keep @com.qihoo.SdkProtected.tianmusdk.Keep class **{*;}
+-keep,allowobfuscation @interface com.qihoo.SdkProtected.tianmusdk.Keep
 
 # CookbookAdapter混淆
 -keep class cn.admobiletop.cookbook.**{*;}
