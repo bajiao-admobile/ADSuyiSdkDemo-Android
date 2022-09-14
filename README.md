@@ -1126,9 +1126,9 @@ rewardVodAd.setSceneId(ADSuyiDemoConstant.REWARD_VOD_AD_SCENE_ID);
 rewardVodAd.loadAd(ADSuyiDemoConstant.REWARD_VOD_AD_POS_ID);
 ```
 
-广告展示。<font color=#ff0000>注意广告对象的获取是异步的，请在onAdReceive或onVideoCache回调后展示广告</font>
+广告展示。<font color=#ff0000>注意广告对象的获取是异步的，请在onAdReceive回调后展示广告</font>
 ```java
-// 激励视频的展示，由于激励视频的获取是异步的，请在onAdReceive后调用该方法对激励视频进行展示（部分平台需要在onVideoCache回调后）
+// 激励视频的展示，由于激励视频的获取是异步的，请在onAdReceive后调用该方法对激励视频进行展示
 ADSuyiAdUtil.showRewardVodAdConvenient(this, RewardVodAdActivity.this.rewardVodAdInfo);
 ```
 
@@ -1203,9 +1203,9 @@ fullScreenVodAd.setListener(new ADSuyiFullScreenVodAdListener() {
 fullScreenVodAd.loadAd(ADSuyiDemoConstant.FULL_SCREEN_VOD_AD_POS_ID);
 ```
 
-广告展示。<font color=#ff0000>注意广告对象的获取是异步的，请在onAdReceive或onVideoCache回调后展示广告</font>
+广告展示。<font color=#ff0000>注意广告对象的获取是异步的，请在onAdReceive回调后展示广告</font>
 ```java
-// 全屏视频的展示，由于全屏视频的获取是异步的，请在onAdReceive后调用该方法对全屏视频进行展示（部分平台需要在onVideoCache回调后）
+// 全屏视频的展示，由于全屏视频的获取是异步的，请在onAdReceive后调用该方法对全屏视频进行展示
 ADSuyiAdUtil.showFullScreenAdConvenient(this, FullScreenVodAdActivity.this.fullScreenVodAdInfo);
 ```
 
