@@ -760,38 +760,43 @@ adSuyiSplashAd.setSkipView(skipView, 5000);
 adSuyiSplashAd.setListener(new ADSuyiSplashAdListener() {
   	@Override
     public void onADTick(long countdownSeconds) {
-      // 如果没有设置自定义跳过按钮不会回调该方法（单位为秒）
-      Log.d(ADSuyiDemoConstant.TAG, "倒计时剩余时长（单位秒）" + countdownSeconds);
+        // 如果没有设置自定义跳过按钮不会回调该方法（单位为秒）
+        Log.d(ADSuyiDemoConstant.TAG, "倒计时剩余时长（单位秒）" + countdownSeconds);
     }
-		@Override
+    @Override
+    public void onReward(ADSuyiAdInfo adSuyiAdInfo) {
+        // 目前仅仅优量汇渠道会被使用
+        Log.d(ADSuyiDemoConstant.TAG, "广告奖励回调... ");
+    }
+    @Override
     public void onAdSkip(ADSuyiAdInfo adSuyiAdInfo) {
       	Log.d(ADSuyiDemoConstant.TAG, "广告跳过回调，不一定准确，埋点数据仅供参考... ");
     }
-		@Override
+    @Override
     public void onAdReceive(ADSuyiAdInfo adSuyiAdInfo) {
-    		Log.d(ADSuyiDemoConstant.TAG, "广告获取成功回调... ");
+        Log.d(ADSuyiDemoConstant.TAG, "广告获取成功回调... ");
     }
 
     @Override
     public void onAdExpose(ADSuyiAdInfo adSuyiAdInfo) {
-    		Log.d(ADSuyiDemoConstant.TAG, "广告展示回调，有展示回调不一定是有效曝光，如网络等情况导致上报失败");
+        Log.d(ADSuyiDemoConstant.TAG, "广告展示回调，有展示回调不一定是有效曝光，如网络等情况导致上报失败");
     }
 
     @Override
     public void onAdClick(ADSuyiAdInfo adSuyiAdInfo) {
-    		Log.d(ADSuyiDemoConstant.TAG, "广告点击回调，有点击回调不一定是有效点击，如网络等情况导致上报失败");
+        Log.d(ADSuyiDemoConstant.TAG, "广告点击回调，有点击回调不一定是有效点击，如网络等情况导致上报失败");
     }
 
     @Override
     public void onAdClose(ADSuyiAdInfo adSuyiAdInfo) {
-    		Log.d(ADSuyiDemoConstant.TAG, "广告关闭回调，需要在此进行页面跳转");
+        Log.d(ADSuyiDemoConstant.TAG, "广告关闭回调，需要在此进行页面跳转");
         jumpMain();
     }
 
     @Override
     public void onAdFailed(ADSuyiError adSuyiError) {
-    		if (adSuyiError != null) {
-        		String failedJson = adSuyiError.toString();
+        if (adSuyiError != null) {
+            String failedJson = adSuyiError.toString();
             Log.d(ADSuyiDemoConstant.TAG, "onAdFailed----->" + failedJson);
         }
         jumpMain();
