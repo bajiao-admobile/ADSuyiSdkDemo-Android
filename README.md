@@ -56,7 +56,7 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | ksad      | 3.38M     | v3.3.28.08181 | b931afba380bb8d0756129957fec0412 |
 | mimo   | 1.00M     | v5.2.0.08241 | e63d17fb6b251cb33e4f39fde83371bf |
 | hwpps   | 1.01M     | v13.4.55.302.08181 | 3f7bc3186ec90df11b18ad3a7e7c347d |
-| inmobi    | 0.95M   | v7.5.3.10191 | da2e11cedea801e19c869e28eb7c2b4e |
+| inmobi    | 0.95M   | v7.5.4.09071 | ebba1ad4fa65eff88347d10149fe471d |
 | gromore   |—     | v3.6.0.1.08291 | de1f999b24bcf95a5d10f865ccd7447e |
 | jiguang   |0.50M     | v5.0.4.08181 | ec05bfcf5048a2d697e8f394662c0af7 |
 
@@ -219,7 +219,7 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.28.08181'
 
     // InmobiAdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:inmobi:7.5.3.10191'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:inmobi:7.5.4.09071'
     implementation 'com.squareup.picasso:picasso:2.5.2'
 
     // 米盟AdapterSdk，可选的
