@@ -109,7 +109,7 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced:9.225.08181'
 
     // 汇量AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:16.2.27.08241'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:16.2.27.08242'
 
     // 快手AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.28.08181'
