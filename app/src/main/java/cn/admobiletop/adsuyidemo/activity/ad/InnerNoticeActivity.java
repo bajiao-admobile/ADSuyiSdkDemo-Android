@@ -18,7 +18,7 @@ import cn.admobiletop.adsuyidemo.util.SPUtil;
 
 /**
  * @Description:
- * @Author: maipian
+ * @Author: 草莓
  * @CreateDate: 6/27/22 7:44 PM
  */
 public class InnerNoticeActivity extends BaseAdActivity {

@@ -14,7 +14,7 @@ import cn.admobiletop.adsuyidemo.R;
 
 /**
  * @Description:
- * @Author: maipian
+ * @Author: 草莓
  * @CreateDate: 7/15/22 10:39 AM
  */
 public class SplashAdSettingActivity extends AppCompatActivity {

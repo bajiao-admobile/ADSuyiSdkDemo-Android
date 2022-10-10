@@ -24,7 +24,7 @@ import cn.admobiletop.adsuyidemo.util.ADSuyiViewFindUtils;
 /**
  * @Description: 插屏广告添加跳过按钮和自动关闭功能管理类，
  *               目前支持优量汇（优量汇）、头条、admobile、快手渠道，渠道陆续新增中。
- * @Author: maipian
+ * @Author: 草莓
  * @CreateDate: 2/21/22 11:13 AM
  */
 public class ADSuyiInterstitialManager {

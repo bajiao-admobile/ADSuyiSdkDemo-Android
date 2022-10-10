@@ -16,7 +16,7 @@ import cn.admobiletop.adsuyi.util.ADSuyiViewUtil;
 import cn.admobiletop.adsuyidemo.R;
 
 /**
- * @author maipian
+ * @author 草莓
  * @description admobileDl 模版广告弹出框
  * @date 2020/10/21
  */

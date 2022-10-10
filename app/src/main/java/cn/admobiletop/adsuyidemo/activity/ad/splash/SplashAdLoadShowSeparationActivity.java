@@ -19,7 +19,7 @@ import cn.admobiletop.adsuyidemo.R;
 import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
 
 /**
- * @author : maipian
+ * @author : 草莓
  * @date : 2022/09/07
  * @description : 开屏加载展示分离
  */

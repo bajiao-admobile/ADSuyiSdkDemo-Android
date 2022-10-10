@@ -32,7 +32,7 @@ import cn.admobiletop.adsuyidemo.R;
 import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
 
 /**
- * @author : maipian
+ * @author : 草莓
  * @date : 2022/06/14
  * @description : 将信息流自渲染广告直接进行展示案例
  */

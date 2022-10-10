@@ -26,7 +26,7 @@ import cn.admobiletop.adsuyidemo.activity.ad.feed.dialog.NativeFeedAdapterInters
 import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
 
 /**
- * @author : maipian
+ * @author : 草莓
  * @date : 2021/11/01
  * @description : 将信息流广告作为插屏广告使用
  *                样式需要自行调整，demo只做参考

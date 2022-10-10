@@ -27,7 +27,7 @@ import cn.admobiletop.adsuyidemo.R;
 import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
 
 /**
- * @author : maipian
+ * @author : 草莓
  * @date : 2021/12/06
  * @description : 将信息流模版广告放到轮播控件的案例
  * 第三方轮播控件 : https://github.com/LillteZheng/ViewPagerHelper/blob/master/README_Banner.md

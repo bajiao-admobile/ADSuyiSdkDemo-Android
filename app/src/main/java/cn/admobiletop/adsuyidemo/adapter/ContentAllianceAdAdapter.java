@@ -18,7 +18,7 @@ import cn.admobiletop.adsuyidemo.R;
 import cn.admobiletop.adsuyidemo.entity.ContentAllianceAdSampleData;
 
 /**
- * @author maipian
+ * @author 草莓
  * @description 内容联盟广告Adapter
  * @date 2021/01/06
  */

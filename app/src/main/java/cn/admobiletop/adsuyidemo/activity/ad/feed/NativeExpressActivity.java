@@ -25,7 +25,7 @@ import cn.admobiletop.adsuyidemo.R;
 import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
 
 /**
- * @author : maipian
+ * @author : 草莓
  * @date : 2021/11/01
  * @description : 将信息流模版广告放到RelativeLayout进行展示案例
  */

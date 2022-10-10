@@ -23,7 +23,7 @@ import cn.admobiletop.adsuyidemo.widget.AdMobileDlExpressAdDialog;
 import cn.admobiletop.adsuyidemo.widget.AdMobileDlFeedAdDialog;
 
 /**
- * @author maipian
+ * @author 草莓
  * @description Dl广告示例
  * @date 2020/10/21
  */

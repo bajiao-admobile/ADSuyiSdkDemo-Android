@@ -7,7 +7,7 @@ import android.support.annotation.NonNull;
 import cn.admobiletop.adsuyi.ad.data.ADSuyiNativeAdInfo;
 
 /**
- * @author : maipian
+ * @author : 草莓
  * @date : 2022/02/07
  * @description :
  */

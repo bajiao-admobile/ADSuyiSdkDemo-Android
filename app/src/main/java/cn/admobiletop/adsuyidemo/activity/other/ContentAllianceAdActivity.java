@@ -27,7 +27,7 @@ import cn.admobiletop.adsuyidemo.entity.ContentAllianceAdSampleData;
 import cn.admobiletop.adsuyidemo.widget.MySmartRefreshLayout;
 
 /**
- * @author maipian
+ * @author 草莓
  * @description 内容联盟广告示例
  * @date 2020/01/06
  */

@@ -22,7 +22,7 @@ import cn.admobiletop.adsuyidemo.activity.ad.feed.NativeSplashActivity;
 import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
 
 /**
- * @author : maipian
+ * @author : 草莓
  * @date : 2021/11/01
  * @description : 信息流广告案例
  */
