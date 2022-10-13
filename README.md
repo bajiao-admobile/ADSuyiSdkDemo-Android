@@ -1,10 +1,6 @@
 # ADSuyiSdk Android Sdk——接入文档 V3.6.6.08034
 
- 目录 
 
-[TOC]
-
-<div STYLE="page-break-after:always;"></div>
 
 ## 1. 概述
 ### 1.1 概述
@@ -23,42 +19,42 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 
 ### 1.3 三方广告平台名称概述
 
-| Name      | 平台名称 | 平台别称 |
-| --------- | -------- | -------- |
-| tianmu   | 天目     | 天目   |
-| gdt       | 优量汇   | 广点通   |
-| toutiao   | 头条     | 穿山甲   |
-| baidu     | 百度     | 百青藤   |
-| mintegral | 汇量     | Mobvsita |
-| ksad      | 快手     | 快手     |
-| mimo   | 米盟     | 米盟   |
-| hwpps   | 华为广告联盟     | 华为广告联盟   |
-| inmobi    | Inmobi   | Inmobi   |
-| gromore   | gromore     | gromore   |
-| jiguang   | 极光联盟     | 极光联盟   |
+| Name      | 平台名称     | 平台别称     |
+| --------- | ------------ | ------------ |
+| tianmu    | 天目         | 天目         |
+| gdt       | 优量汇       | 广点通       |
+| toutiao   | 头条         | 穿山甲       |
+| baidu     | 百度         | 百青藤       |
+| mintegral | 汇量         | Mobvsita     |
+| ksad      | 快手         | 快手         |
+| mimo      | 米盟         | 米盟         |
+| hwpps     | 华为广告联盟 | 华为广告联盟 |
+| inmobi    | Inmobi       | Inmobi       |
+| gromore   | gromore      | gromore      |
+| jiguang   | 极光联盟     | 极光联盟     |
 
 ### 1.4 ADSuyi必添包容量
 
-| Name      | 大小 | 版本号 | MD5值 |
-| --------- | -------- | --------- | --------- |
-| ADSuyi基础包  |0.3M  |V3.6.6.08034  |092e910302db80c1c89388cf8e840b74  |
-| OAID  |1.1M  |—  |—  |
+| Name         | 大小 | 版本号       | MD5值                            |
+| ------------ | ---- | ------------ | -------------------------------- |
+| ADSuyi基础包 | 0.3M | V3.6.6.08034 | 092e910302db80c1c89388cf8e840b74 |
+| OAID         | 1.1M | —            | —                                |
 
 ### 1.5 三方广告平台适配器+三方广告sdk总容量
 
-| Name      | 容量 | 版本号 | MD5值 |
-| --------- | -------- | --------- | --------- |
-| tianmu   | 1.67M     | v1.3.2.08181 | 9acac6f7e94a3f46b2e1d7bf8a60fbc6 |
-| gdt       | 1.82M   | v4.482.1352.08173 | ad49fe445c7d4a40d775b2900690b225 |
-| toutiao   | 5.85M     | v4.7.1.2.08241 | 127635ad49f87ec4af9c05e745a8a0bb |
-| baidu     | 1.48M     | v9.225.08181 | 00c0914f5dbd4aeb9e0a9cc1774b0eae |
-| mintegral | 2.80M     | v16.2.27.08242 | e9e4a86fff864b8cdbc427e6b6c5231d |
-| ksad      | 3.38M     | v3.3.28.08181 | b931afba380bb8d0756129957fec0412 |
-| mimo   | 1.00M     | v5.2.0.08241 | e63d17fb6b251cb33e4f39fde83371bf |
-| hwpps   | 1.01M     | v13.4.55.302.08181 | 3f7bc3186ec90df11b18ad3a7e7c347d |
-| inmobi    | 0.95M   | v7.5.4.09071 | ebba1ad4fa65eff88347d10149fe471d |
-| gromore   |—     | v3.6.0.1.08291 | de1f999b24bcf95a5d10f865ccd7447e |
-| jiguang   |0.50M     | v5.0.4.08181 | ec05bfcf5048a2d697e8f394662c0af7 |
+| Name      | 容量  | 版本号             | MD5值                            |
+| --------- | ----- | ------------------ | -------------------------------- |
+| tianmu    | 1.67M | v1.3.2.08181       | 9acac6f7e94a3f46b2e1d7bf8a60fbc6 |
+| gdt       | 1.82M | v4.482.1352.08173  | ad49fe445c7d4a40d775b2900690b225 |
+| toutiao   | 5.85M | v4.7.1.2.08241     | 127635ad49f87ec4af9c05e745a8a0bb |
+| baidu     | 1.48M | v9.225.08181       | 00c0914f5dbd4aeb9e0a9cc1774b0eae |
+| mintegral | 2.80M | v16.2.27.08242     | e9e4a86fff864b8cdbc427e6b6c5231d |
+| ksad      | 3.38M | v3.3.28.08181      | b931afba380bb8d0756129957fec0412 |
+| mimo      | 1.00M | v5.2.0.08241       | e63d17fb6b251cb33e4f39fde83371bf |
+| hwpps     | 1.01M | v13.4.55.302.08181 | 3f7bc3186ec90df11b18ad3a7e7c347d |
+| inmobi    | 0.95M | v7.5.4.09071       | ebba1ad4fa65eff88347d10149fe471d |
+| gromore   | —     | v3.6.0.1.08291     | de1f999b24bcf95a5d10f865ccd7447e |
+| jiguang   | 0.50M | v5.0.4.08181       | ec05bfcf5048a2d697e8f394662c0af7 |
 
 ### 1.6 菜谱内容功能
 
@@ -92,6 +88,7 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
     <td>将短视频融入到APP场景当中，用户观看短视频广告后可以给予一些应用内奖励</td>
     <td>常出现在游戏的复活、任务等位置，或者网服类APP的一些增值服务场景</td>
   </tr>
+  
    <tr>
     <td><a href="#ad_full_screen_vod">全屏视频广告</a></td>
     <td>类似激励视频，与激励视频不同的是，全屏视频广告在观看一定时长后即可跳过广告，无需全部观看完成，有视频跳过回调，但是没有激励回调</td>
@@ -263,17 +260,17 @@ dependencies {
 
 1. 移除己方使用的三方广告SDK和相关配置；
 
-2. 使用**AdapterSdk**的**without**集成方式，该方式没有集成三方广告SDK和配置，开发者可自行集成三方广告SDK，但是需要注意，<font color=#ff0000>我们的AdapterSdk是基于三方广告SDK某个版本开发的，如果自行集成三方广告SDK，需要承担三方广告SDK版本不一致可能引起的兼容性和其他不可预知问题；</font>
+2. 使用**AdapterSdk**的**without**集成方式，该方式没有集成三方广告SDK和配置，开发者可自行集成三方广告SDK，但是需要注意， <p style="color:red;">我们的AdapterSdk是基于三方广告SDK某个版本开发的，如果自行集成三方广告SDK，需要承担三方广告SDK版本不一致可能引起的兼容性和其他不可预知问题； </p>
 
    ```java
    // 优量汇AdapterSdk的without集成示例，其中x.x.x.x为AdapterSdk版本号
    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt-without:x.x.x.x'
    ```
 
-* 如果接入汇量，需要加入第三方依赖库https://dl-maven-android.mintegral.com/repository/mbridge_android_sdk_support/
-* 如果接入华为联盟，需要加入第三方依赖库https://developer.huawei.com/repo/
-* **由于头条(穿山甲)渠道支持了Android R，引入了Android R的 `<queries>` 标签,需要对gradle版本进行限制，限制范围为：3.3.3、 3.4.3、 3.5.4、3.6.4、4.0.1 ，开发者根据自身情况酌情升级**
-* **如对接华为广告联盟，激励视频要提前预加载，并且播放完成后需要预加载下一个激励视频，华为渠道点击事件无法统计；banner广告使用场景是程序页面的顶部或者底部。**
+> 如果接入汇量，需要加入第三方依赖库https://dl-maven-android.mintegral.com/repository/mbridge_android_sdk_support/
+> 如果接入华为联盟，需要加入第三方依赖库https://developer.huawei.com/repo/
+> **由于头条(穿山甲)渠道支持了Android R，引入了Android R的 \<queries\> 标签,需要对gradle版本进行限制，限制范围为：3.3.3、 3.4.3、 3.5.4、3.6.4、4.0.1 ，开发者根据自身情况酌情升级**
+>  **如对接华为广告联盟，激励视频要提前预加载，并且播放完成后需要预加载下一个激励视频，华为渠道点击事件无法统计；banner广告使用场景是程序页面的顶部或者底部。**
 
 3. 激励、全屏视频、插屏等广告对象一次成功拉取的广告数据只允许展示一次，还需展示请再次加载广告。
 
@@ -313,7 +310,7 @@ dependencies {
 
 **Android10之后IMEI等数据无法获取，这对广告投放将产生一定影响，所以移动安全联盟(MSA)提出OAID来代替IMEI参与广告投放决策，OAID的支持会在一定程度上影响广告收益；**
 
-<font color=#ff0000>OAID是必须集成项，没有集成将会抛出异常提醒开发者</font>，OAID集成并不繁琐，SDK中已经进行了OAID的封装，只需以下几步即可完成OAID的支持；
+**OAID是必须集成项，没有集成将会抛出异常提醒开发者**，OAID集成并不繁琐，SDK中已经进行了OAID的封装，只需以下几步即可完成OAID的支持；
 
 1. 导入安全联盟的OAID支持库 **oaid_sdk_1.0.25.aar**，可在Demo的libs目录下找到，**强烈建议使用和Demo中一样版本的OAID库（包括项目中已存在的依赖的oaid版本）；**<br>
     媒体如果想获取ADSuyi中的oaid，可以使用改方法进行获取ADSuyiSdk.getInstance().getOAID()，由于oaid的获取是异步的，可能获取到空字符串的情况。<br>
@@ -428,7 +425,7 @@ dependencies {
   </paths>
   ```
 
- <font color=#ff0000>PS  :  为了适配下载和安装相关功能，在工程中引用的包 com.android.support:support-v4:x.x.x请使用26.0.0及以上版本。</font>
+  <p style="color:red;">PS  :  为了适配下载和安装相关功能，在工程中引用的包 com.android.support:support-v4:x.x.x请使用26.0.0及以上版本。 </p>
 
 
 
@@ -660,6 +657,7 @@ dependencies {
 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" tools:node="remove" />
 <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" tools:node="remove" />
 ```
+
 以上操作会对广告填充造成影响，请斟酌使用。
 
 
@@ -681,7 +679,7 @@ ADSuyiSdk.getInstance().getPersonalizedAdEnabled()
 
 具体的广告SDK接口和接口说明请参考 
 
->[ADSuyiSdk JavaDoc文档](http://doc.admobile.top/ADSuyiSdkAndroidJavaDoc/index.html)
+> [ADSuyiSdk JavaDoc文档](http://doc.admobile.top/ADSuyiSdkAndroidJavaDoc/index.html)
 
 
 
@@ -726,7 +724,7 @@ ADSuyiSdk.getInstance().init(this, new ADSuyiInitConfig.Builder()
          });
   ```
 
-  <font color=#ff0000>PS ：AppId通过后台配置生成，初始化必须在主线程中进行，SDK暂不支持多进程。</font>
+   <p style="color:red;">PS ：AppId通过后台配置生成，初始化必须在主线程中进行，SDK暂不支持多进程。 </p>
 
 
 
@@ -1125,7 +1123,7 @@ rewardVodAd.setSceneId(ADSuyiDemoConstant.REWARD_VOD_AD_SCENE_ID);
 rewardVodAd.loadAd(ADSuyiDemoConstant.REWARD_VOD_AD_POS_ID);
 ```
 
-广告展示。<font color=#ff0000>注意广告对象的获取是异步的，请在onAdReceive回调后展示广告</font>
+广告展示。 <p style="color:red;">注意广告对象的获取是异步的，请在onAdReceive回调后展示广告 </p>
 ```java
 // 激励视频的展示，由于激励视频的获取是异步的，请在onAdReceive后调用该方法对激励视频进行展示
 ADSuyiAdUtil.showRewardVodAdConvenient(this, RewardVodAdActivity.this.rewardVodAdInfo);
@@ -1202,7 +1200,7 @@ fullScreenVodAd.setListener(new ADSuyiFullScreenVodAdListener() {
 fullScreenVodAd.loadAd(ADSuyiDemoConstant.FULL_SCREEN_VOD_AD_POS_ID);
 ```
 
-广告展示。<font color=#ff0000>注意广告对象的获取是异步的，请在onAdReceive回调后展示广告</font>
+广告展示。 <p style="color:red;">注意广告对象的获取是异步的，请在onAdReceive回调后展示广告 </p>
 ```java
 // 全屏视频的展示，由于全屏视频的获取是异步的，请在onAdReceive后调用该方法对全屏视频进行展示
 ADSuyiAdUtil.showFullScreenAdConvenient(this, FullScreenVodAdActivity.this.fullScreenVodAdInfo);
@@ -1277,7 +1275,7 @@ interstitialAd.setSceneId(ADSuyiDemoConstant.INTERSTITIAL_AD_SCENE_ID);
 interstitialAd.loadAd(ADSuyiDemoConstant.INTERSTITIAL_AD_POS_ID);
 ```
 
-广告展示。<font color=#ff0000>注意广告对象的获取是异步的，请在onAdReceive或onAdReady回调后展示广告</font>
+广告展示。 <p style="color:red;">注意广告对象的获取是异步的，请在onAdReceive或onAdReady回调后展示广告 </p>
 ```java
 // 插屏的展示，由于插屏的获取是异步的，请在onAdReceive后调用该方法对插屏进行展示
 ADSuyiAdUtil.showInterstitialAdConvenient(this, InterstitialAdActivity.this.interstitialAdInfo);
