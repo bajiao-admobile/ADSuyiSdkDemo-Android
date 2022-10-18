@@ -14,11 +14,6 @@ android {
             // 设置支持的SO库架构，暂不支持x86
             abiFilters 'armeabi-v7a', 'arm64-v8a'// 'armeabi'
         }
-        manifestPlaceholders = [
-                //值来自极光开发者平台取得的AppKey，请误使用demo中对key在项目中
-                JPUSH_APPKEY  : "3838efae68a665a6d347c4e3",
-                JPUSH_CHANNEL : "default_developer"
-        ]
     }
     buildTypes {
         release {
@@ -90,6 +85,9 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad:core:3.6.6.08034'
 
     // OAID库是必须导入的，请保持和Demo中版本一致，必须的
+    // 注意注意注意
+    // 需要在assets加入supplierconfig.json文件，不然oaid无法生效
+    // 注意注意注意
     implementation(name: 'oaid_sdk_1.0.25', ext: 'aar')
     // oaid1.0.25版本适配器，导入1.0.25版本oaid必须的，必须的
     implementation 'cn.admobiletop.adsuyi.ad:oaid:1.0.25.08022'
@@ -126,10 +124,6 @@ dependencies {
 
     // 华为广告联盟AdadapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:hwpps:13.4.55.302.08181'
-
-    // 极光联盟AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:jiguang:5.0.4.08181'
-    implementation 'cn.jiguang.sdk:jcore:3.2.2'
 
     // gromoreAdapterSdk，可选的。如果要使用gromore的其他渠道，请联系开发者。
     implementation 'cn.admobiletop.adsuyi.ad.adapter:gromore:3.6.0.1.09071'

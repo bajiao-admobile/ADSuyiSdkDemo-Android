@@ -31,7 +31,6 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | hwpps     | 华为广告联盟 | 华为广告联盟 |
 | inmobi    | Inmobi       | Inmobi       |
 | gromore   | gromore      | gromore      |
-| jiguang   | 极光联盟     | 极光联盟     |
 
 ### 1.4 ADSuyi必添包容量
 
@@ -54,7 +53,6 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | hwpps     | 1.01M | v13.4.55.302.08181 | 3f7bc3186ec90df11b18ad3a7e7c347d |
 | inmobi    | 0.95M | v7.5.4.09071       | ebba1ad4fa65eff88347d10149fe471d |
 | gromore   | —     | v3.6.0.1.08291     | de1f999b24bcf95a5d10f865ccd7447e |
-| jiguang   | 0.50M | v5.0.4.08181       | ec05bfcf5048a2d697e8f394662c0af7 |
 
 ### 1.6 菜谱内容功能
 
@@ -189,6 +187,9 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad:core:3.6.6.08034'
 
     // OAID库是必须导入的，请保持和Demo中版本一致，必须的
+    注意注意注意
+    需要在assets加入supplierconfig.json文件，不然oaid无法生效
+    注意注意注意
     implementation(name: 'oaid_sdk_1.0.25', ext: 'aar')
     // oaid1.0.25版本适配器，导入1.0.25版本oaid必须的，必须的
     implementation 'cn.admobiletop.adsuyi.ad:oaid:1.0.25.08022'
@@ -233,13 +234,6 @@ dependencies {
     implementation "com.gromore.cn:pangle-adapter:4.6.0.7.1" //穿山甲 adapter
     // 有gromore其他渠道需求，请联系开发者。
 
-    // 极光联盟AdapterSdk，可选的
-    极光联盟对接需要手动在app/build.gradle defaultConfig中添加JPUSH_APPKEY
-    导入极光联盟Adapter后，如果还有其他问题，请及时和我们联系
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:jiguang:5.0.4.08181'
-    // 极光核心库，如已导入可不导入该依赖
-    implementation 'cn.jiguang.sdk:jcore:3.2.2'
-
 }
 ```
 
@@ -276,29 +270,7 @@ dependencies {
 
 4. 关于项目使用autosize后出现广告样式出现异常问题处理方案，请参考master-screen-adapter分支中的BannerActivity，并将适配单位改为pt。
 
-5. 如果对接极光联盟，请修改AndroidManifest.xml，**极光联盟 SDK minSdkVersion为21，如果应用的minSdkVersion小于21，则添加：**
-    ```java
-    <uses-sdk tools:overrideLibrary="cn.jiguang.ads"/>
-    ```
-
-6. 如果对接极光联盟，请手动在项目app/build.gradle中添加该配置
-    ```java
-    android {
-        ...
-        defaultConfig {
-            ...
-            manifestPlaceholders = [
-                    //值来自极光开发者平台取得的AppKey
-                    JPUSH_APPKEY  : "极光联盟后台有提供，可向运营获取",
-                    JPUSH_CHANNEL : "default_developer"
-            ]
-        }
-        ...
-    }
-    ```
-    导入极光联盟Adapter后，如果还有其他问题，请及时和我们联系
-
-7. Mintegral（汇量）渠道与微信sdk冲突解决办法
+5. Mintegral（汇量）渠道与微信sdk冲突解决办法
     由于Mintegral渠道16.1.7版本支持小程序跳转功能，若媒体已导入opensdk，会导致冲突，可通过以下方式移除Mintegral适配器中的opensdk
     ```java
     ('cn.admobiletop.adsuyi.ad.adapter:mintegral:16.2.27.08242') {
@@ -621,12 +593,6 @@ dependencies {
 # ADSyid混淆
 -keep class adsuyi.com.** { *; }
 -keep interface adsuyi.com.** { *; }
-
-# 极光混淆
--dontwarn cn.jpush.**
--keep class cn.jpush.** { *; }
--dontwarn cn.jiguang.**
--keep class cn.jiguang.** { *; }
 
 ```
 

@@ -179,9 +179,3 @@
 # ADSyid混淆
 -keep class adsuyi.com.** { *; }
 -keep interface adsuyi.com.** { *; }
-
-# 极光混淆
--dontwarn cn.jpush.**
--keep class cn.jpush.** { *; }
--dontwarn cn.jiguang.**
--keep class cn.jiguang.** { *; }
