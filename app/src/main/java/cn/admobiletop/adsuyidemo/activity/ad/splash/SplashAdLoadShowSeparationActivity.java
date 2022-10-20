@@ -147,7 +147,16 @@ public class SplashAdLoadShowSeparationActivity extends AppCompatActivity implem
      * 跳转到主界面
      */
     private void jumpMain() {
-        flSplashContainer.setVisibility(View.GONE);
+        if (flSplashContainer != null) {
+            flSplashContainer.setVisibility(View.GONE);
+        }
+        if (flContainer != null) {
+            // 注意，目前已知头条渠道摇一摇是通过view触发的，需要移除视图中的广告布局，避免触发摇一摇
+            flContainer.removeAllViews();
+        }
+        if (adSuyiSplashAd != null) {
+            adSuyiSplashAd.release();
+        }
     }
 
     @Override
