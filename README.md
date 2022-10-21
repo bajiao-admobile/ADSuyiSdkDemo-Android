@@ -230,8 +230,8 @@ dependencies {
 
     // gromoreAdapterSdk，可选的。如果要使用gromore的其他渠道，请联系开发者。
     implementation 'cn.admobiletop.adsuyi.ad.adapter:gromore:3.7.0.4.10191'
-    implementation "com.gromore.cn:gdt-adapter:4.482.1352.0" //广点通 adapter
-    implementation "com.gromore.cn:pangle-adapter:4.6.0.7.1" //穿山甲 adapter
+    implementation "by.gm_mediation.com:gdt-adapter:4.491.1361.1" //广点通 adapter
+    implementation "by.gm_mediation.com:pangle-adapter:4.8.0.8.3" //穿山甲 adapter
     // 有gromore其他渠道需求，请联系开发者。
 
 }
