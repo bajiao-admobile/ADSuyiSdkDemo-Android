@@ -90,7 +90,7 @@ dependencies {
     // 注意注意注意
     implementation(name: 'oaid_sdk_1.0.25', ext: 'aar')
     // oaid1.0.25版本适配器，导入1.0.25版本oaid必须的，必须的
-    implementation 'cn.admobiletop.adsuyi.ad:oaid:1.0.25.08022'
+    implementation 'cn.admobiletop.adsuyi.ad:oaid:1.0.25.08023'
 
     // 天目AdapterSdk，必选的，support和andriodx 两个版本，按项目需要二选一
     // 注意需要额外添加SDK加固对应的混淆配置，具体内容见（5.4.3 混淆配置），如已配置加固混淆请忽略此提示
