@@ -43,7 +43,7 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 
 | Name      | 容量  | 版本号             | MD5值                            |
 | --------- | ----- | ------------------ | -------------------------------- |
-| tianmu    | 1.67M | v1.3.3.09261       | 789fd95b111072b3c2c643ed642dcdcb |
+| tianmu    | 1.67M | v1.3.3.09262       | cf08d6d7d43feb90f12982d89abe2369 |
 | gdt       | 1.82M | v4.484.1354.09201  | 7cac141aca3e7d7a153933418a43649b |
 | toutiao   | 5.85M | v4.9.0.4.10131     | 133f6a33a2e102dfd401be79f981f76f |
 | baidu     | 1.48M | v9.24.09201        | b815d94570154cf82c84f5c777d683ee |
@@ -197,8 +197,8 @@ dependencies {
 
     // 天目AdapterSdk，必选的，support和andriodx 两个版本，按项目需要二选一
     // 注意需要额外添加SDK加固对应的混淆配置，具体内容见（5.4.3 混淆配置），如已配置加固混淆请忽略此提示
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:support-tianmu_enc:1.3.3.09261'
-    //implementation 'cn.admobiletop.adsuyi.ad.adapter:androidx-tianmu_enc:1.3.3.09261'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:support-tianmu_enc:1.3.3.09262'
+    //implementation 'cn.admobiletop.adsuyi.ad.adapter:androidx-tianmu_enc:1.3.3.09262'
 
     // 优量汇（广点通）AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.484.1354.09201'
