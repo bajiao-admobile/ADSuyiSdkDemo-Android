@@ -44,7 +44,7 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | Name      | 容量  | 版本号             | MD5值                            |
 | --------- | ----- | ------------------ | -------------------------------- |
 | tianmu    | 1.67M | v1.3.4.10281       | 9465c363848a6a54a61ea5521f39bdc4 |
-| gdt       | 1.82M | v4.492.1362.10271  | c3cd532a3f92b67b214e06ba612bdccd |
+| gdt       | 1.82M | v4.492.1362.10272  | c3cd532a3f92b67b214e06ba612bdccd |
 | toutiao   | 5.85M | v4.9.0.8.11032     | 3a5fe4c543f2ca90d0e07bb400a2eec7 |
 | baidu     | 1.48M | v9.241.10281       | 4604253ef1f5f1e1058e5ccdc25b33aa |
 | mintegral | 2.80M | v16.2.67.10281     | f694f899e58eeda21cae7e9ff3cc9ad7 |
@@ -198,7 +198,7 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:tianmu:1.3.4.10281'
 
     // 优量汇（广点通）AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.492.1362.10271'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.492.1362.10272'
 
     // 头条AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:4.9.0.8.11032'

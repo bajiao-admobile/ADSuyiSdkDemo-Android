@@ -96,7 +96,7 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:tianmu:1.3.4.10281'
 
     // 优量汇（广点通）AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.492.1362.10271'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.492.1362.10272'
 
     // 头条AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:4.9.0.8.11032'
