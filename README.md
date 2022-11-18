@@ -1094,7 +1094,7 @@ ADSuyiAdUtil.showRewardVodAdConvenient(this, RewardVodAdActivity.this.rewardVodA
 
 > [激励视频广告示例详情](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/ad/RewardVodAdActivity.java)
 
-> [激励视频服务端验证SDK端接受参数文档](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/Android-SuyiSDK 激励视频服务端验证使用说明.md)
+> [激励视频服务端验证SDK端接受参数文档](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/Android-SuyiSDK激励视频服务端验证使用说明.md)
 
 
 
