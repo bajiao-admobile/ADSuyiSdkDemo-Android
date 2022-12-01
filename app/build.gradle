@@ -21,7 +21,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         debug {
-            minifyEnabled true
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -75,6 +75,8 @@ dependencies {
     implementation 'com.makeramen:roundedimageview:2.3.0'
     implementation 'com.github.LillteZheng.ViewPagerHelper:viewpagerlib:v2.9'
     // 以上都是用于demo演示加入的三方依赖
+
+    implementation 'com.github.whataa:pandora:v2.1.0'
 
     // support支持库，如果是AndroidX请使用对应的支持库
     implementation 'com.android.support:appcompat-v7:28.0.0'

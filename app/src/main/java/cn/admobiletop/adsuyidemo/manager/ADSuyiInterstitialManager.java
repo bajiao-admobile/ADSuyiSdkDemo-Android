@@ -116,7 +116,7 @@ public class ADSuyiInterstitialManager {
             Field fieldAdapterAdInfo = interstitialAdInfo.getClass().getSuperclass().getSuperclass().getDeclaredField("i");
             fieldAdapterAdInfo.setAccessible(true);
             KsInterstitialAd ksInterstitialAd = (KsInterstitialAd) fieldAdapterAdInfo.get(interstitialAdInfo);
-            Field fieldD = ksInterstitialAd.getClass().getDeclaredField("d");
+            Field fieldD = ksInterstitialAd.getClass().getDeclaredField("gW");
             fieldD.setAccessible(true);
             kuaishouDialog = (com.kwad.components.ad.interstitial.c) fieldD.get(ksInterstitialAd);
         } catch (Exception e) {
