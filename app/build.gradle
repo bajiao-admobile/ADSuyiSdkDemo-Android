@@ -82,7 +82,7 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
 
     // ADSuyiSdk、common和OAID库是必须导入的
-    implementation 'cn.admobiletop.adsuyi.ad:core:3.6.8.10282'
+    implementation 'cn.admobiletop.adsuyi.ad:core:3.6.8.10283'
 
     // OAID库是必须导入的，请保持和Demo中版本一致，必须的
     // 注意注意注意
