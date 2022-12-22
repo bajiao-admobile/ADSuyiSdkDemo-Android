@@ -1,4 +1,4 @@
-# ADSuyiSdk Android Sdk——接入文档 V3.6.8.10283
+# ADSuyiSdk Android Sdk——接入文档 V3.6.9.11211
 
 
 
@@ -36,21 +36,21 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 
 | Name         | 大小 | 版本号       | MD5值                            |
 | ------------ | ---- | ------------ | -------------------------------- |
-| ADSuyi基础包 | 0.3M | V3.6.8.10283 | 2cc242e086cca4bf2125d872a7dcbfad |
+| ADSuyi基础包 | 0.3M | V3.6.9.11211 | 7aa84f1b218d8a6ba88e2ac57a57307c |
 | OAID         | 1.1M | —            | —                                |
 
 ### 1.5 三方广告平台适配器+三方广告sdk总容量
 
 | Name      | 容量  | 版本号             | MD5值                            |
 | --------- | ----- | ------------------ | -------------------------------- |
-| tianmu    | 1.67M | v1.3.4.10284       | 3578206398f0f73f5ce758f331b52f8d |
-| gdt       | 1.82M | v4.492.1362.10272  | c3cd532a3f92b67b214e06ba612bdccd |
+| tianmu    | 1.67M | v1.3.5.11231       | c9b6ccea5d087e0939f9c9eeeed65a55 |
+| gdt       | 1.82M | v4.500.1370.11281  | 0d9189faed2947d9fd3819207145282a |
 | toutiao   | 5.85M | v4.9.0.8.11032     | 3a5fe4c543f2ca90d0e07bb400a2eec7 |
-| baidu     | 1.48M | v9.241.10281       | 4604253ef1f5f1e1058e5ccdc25b33aa |
+| baidu     | 1.48M | v9.25.11281       | 5566edc6175566b2f6f0bed554497fbb |
 | mintegral | 2.80M | v16.2.67.10281     | f694f899e58eeda21cae7e9ff3cc9ad7 |
-| ksad      | 3.38M | v3.3.32.10281      | fdc13b9bfef5581d41d53c690c156df6 |
+| ksad      | 3.38M | v3.3.34.11281      | d4ce8e0c0f9aa139901acd3e3eeaf0b7 |
 | mimo      | 1.00M | v5.2.1.10281       | 905ef5969fd449b6ed6e973fe13badce |
-| hwpps     | 1.01M | v13.4.55.302.10281 | d72a1fe6d00614055c0098c04a1d1238 |
+| hwpps     | 1.01M | v13.4.56.302.11211 | 5b3d69b4127bc12899a229b61d842f78 |
 | inmobi    | 0.95M | v7.5.4.11152       | 8ecde00efc7e8af8b1fa2cbc7ebe3f89 |
 | gromore   | —     | v3.8.0.1.11161     | 7c38a1caf0f727ba62117e490cc13a9b |
 
@@ -184,7 +184,7 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
   
     // ADSuyiSdk、common和OAID库是必须导入的
-    implementation 'cn.admobiletop.adsuyi.ad:core:3.6.8.10283'
+    implementation 'cn.admobiletop.adsuyi.ad:core:3.6.9.11211'
 
     // OAID库是必须导入的，请保持和Demo中版本一致，必须的
     注意注意注意
@@ -195,22 +195,22 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad:oaid:1.0.25.08023'
 
     // 天目AdapterSdk，必选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:tianmu:1.3.4.10284'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:tianmu:1.3.5.11231'
 
     // 优量汇（广点通）AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.492.1362.10272'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.500.1370.11281'
 
     // 头条AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:4.9.0.8.11032'
 
     // 百度增强版AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced:9.241.10281'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced:9.25.11281'
 
     // 汇量AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:16.2.67.10281'
 
     // 快手AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.32.10281'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.34.11281'
 
     // InmobiAdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:inmobi:7.5.4.11152'
@@ -223,7 +223,7 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
 
     // 华为广告联盟AdadapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:hwpps:13.4.55.302.10281'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:hwpps:13.4.56.302.11211'
 
     // gromoreAdapterSdk，可选的。如果要使用gromore的其他渠道，请联系开发者。
     implementation 'cn.admobiletop.adsuyi.ad.adapter:gromore:3.8.0.1.11161'
@@ -636,6 +636,83 @@ ADSuyiSdk.setPersonalizedAdEnabled(boolean personalized);
 ```java
 // 获取当前个性化开关设置状态，true为开启、false为关闭。
 ADSuyiSdk.getInstance().getPersonalizedAdEnabled()
+```
+
+### 5.7 向SDK传入设备标识
+
+统一由可选参数 ： CustomDeviceInfoController 进行设置
+
+- 新增可选参数设置
+
+```java
+ADSuyiSdk.getInstance().init(
+        this,
+        new ADSuyiInitConfig.Builder()
+                ...
+                // 是否可读取wifi状态
+                .isCanUseWifiState(false)
+                // 是否可获取定位数据
+                .isCanUseLocation(false)
+                // 是否可获取设备信息
+                .isCanUsePhoneState(false)
+                .setCustomDeviceInfoController(new CustomDeviceInfoController() {
+                    /**
+                     * 当isCanUsePhoneState=false时，可传入imei信息，天目使用您传入的imei信息
+                     * @return imei信息
+                     */
+                    @Override
+                    public String getImei() {
+                        return super.getImei();
+                    }
+
+                    /**
+                     * 当isCanUsePhoneState=false时，可传入AndroidId信息，天目使用您传入的AndroidId信息
+                     * @return androidid信息
+                     */
+                    @Override
+                    public String getAndroidId() {
+                        return super.getAndroidId();
+                    }
+
+                    /**
+                     * 当isCanUseLocation=false时，可传入地理位置信息，天目使用您传入的地理位置信息
+                     * @return 极光地理位置参数JUnionLocationProvider
+                     */
+                    @Override
+                    public Location getLocation() {
+                        return super.getLocation();
+                    }
+
+                    /**
+                     * 当isCanUseWifiState=false时，可传入Mac地址信息，天目使用您传入的Mac地址信息
+                     * @return Mac地址
+                     */
+                    @Override
+                    public String getMacAddress() {
+                        return super.getMacAddress();
+                    }
+
+                    /**
+                     * 开发者可以传入oaid ，若不传或为空值，则不使用oaid信息
+                     * @return oaid
+                     */
+                    @Override
+                    public String getOaid() {
+                        return super.getOaid();
+                    }
+
+                    /**
+                     * 开发者可以传入vaid ，若不传或为空值，则不使用oaid信息
+                     * @return vaid
+                     */
+                    @Override
+                    public String getVaid() {
+                        return super.getVaid();
+                    }
+                })
+                ...
+                .build()
+);
 ```
 
 ## 6. 示例代码
