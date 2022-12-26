@@ -169,6 +169,8 @@
 
 # 天目
 -keep class com.tianmu.**{ *; }
+-keep class tianmu.com.** { *; }
+-keep interface tianmu.com.** { *; }
 # 天目加固混淆
 -keep @com.qihoo.SdkProtected.tianmusdk.Keep class **{*;}
 -keep,allowobfuscation @interface com.qihoo.SdkProtected.tianmusdk.Keep
