@@ -93,7 +93,7 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad:oaid:1.0.25.08023'
 
     // 天目AdapterSdk，必选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:tianmu:1.3.5.11232'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:tianmu:1.3.5.11233'
 
     // 优量汇（广点通）AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.500.1370.11281'
