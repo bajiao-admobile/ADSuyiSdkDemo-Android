@@ -176,7 +176,7 @@ dependencies {
     implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'com.android.support:support-v4:28.0.0'
     implementation 'com.android.support:design:28.0.0'
-  
+
     // ADSuyiSdk、common和OAID库是必须导入的
     implementation 'cn.admobiletop.adsuyi.ad:core:3.7.0.12211'
 
@@ -230,7 +230,7 @@ dependencies {
 
 
 
-#### 5.1.3 注意事项 
+#### 5.1.3 注意事项
 
 * 支持主流架构，x86架构暂不支持
 
@@ -280,7 +280,7 @@ dependencies {
 
 1. 导入安全联盟的OAID支持库 **oaid_sdk_1.0.25.aar**，可在Demo的libs目录下找到，**强烈建议使用和Demo中一样版本的OAID库（包括项目中已存在的依赖的oaid版本）；**<br>
     媒体如果想获取ADSuyi中的oaid，可以使用改方法进行获取ADSuyiSdk.getInstance().getOAID()，由于oaid的获取是异步的，可能获取到空字符串的情况。<br>
-    
+
 2. 将Demo中assets文件夹下的**supplierconfig.json**文件复制到自己的assets目录下并按照**supplierconfig.json**文件中的说明进行OAID的 **AppId** 配置，**supplierconfig.json**文件名不可修改。需要设置 appid 的部分需要去对应厂商的应用商店的应用信息中查看。；
 
 3. 添加以下混淆配置；
@@ -369,7 +369,7 @@ dependencies {
 
   ```java
   <provider
-  	  android:name="androidx.core.content.FileProvider" 
+  	  android:name="androidx.core.content.FileProvider"
       android:authorities="${applicationId}.fileprovider"
       android:exported="false"
       android:grantUriPermissions="true">
@@ -379,15 +379,15 @@ dependencies {
   </provider>
   ```
 
-  
+
 
 2. 在res/xml目录下(如果xml目录不存在需要手动创建)，新建xml文件adsuyi_file_paths，在该文件中加入如下配置，如果存在相同android:authorities的provider，请将paths标签中的路劲配置到自己的xml文件中：
 
   ```java
-  <?xml version="1.0" encoding="utf-8"?>  
-  <paths xmlns:android="http://schemas.android.com/apk/res/android">  
+  <?xml version="1.0" encoding="utf-8"?>
+  <paths xmlns:android="http://schemas.android.com/apk/res/android">
       <external-path name="external_path" path="." />
-      <external-files-path name="external_files_path" path="." />  
+      <external-files-path name="external_files_path" path="." />
   </paths>
   ```
 
@@ -745,9 +745,6 @@ ADSuyiSdk.getInstance().init(this, new ADSuyiInitConfig.Builder()
              @Override
              public void onSuccess() {
                  // ADSuyi初始化成功
-               
-               	 // 可再此处重新设置个性化开关配置参数，如用户在设置页面将个性化关闭后，重新打开app，可以在此回调中对用户修改的状态进行设置
-                 ADSuyiSdk.setPersonalizedAdEnabled(true);
              }
 
              @Override
@@ -912,9 +909,9 @@ public void onAdReceive(ADSuyiAdInfo adSuyiAdInfo) {
 ...
 ```
 
-> [开屏广告加载与展示分离示例详情Gitee](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/ad/splash/SplashAdLoadShowSeparationActivity.java)
+> [开屏广告加载与展示分离示例详情Gitee地址](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/ad/splash/SplashAdLoadShowSeparationActivity.java)
 >
-> [开屏广告加载与展示分离示例详情Github](https://github.com/ADSuyi/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/ad/splash/SplashAdLoadShowSeparationActivity.java)
+> [开屏广告加载与展示分离示例详情Github地址](https://github.com/ADSuyi/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/ad/splash/SplashAdLoadShowSeparationActivity.java)
 
 
 
@@ -966,9 +963,9 @@ suyiBannerAd.setSceneId(ADSuyiDemoConstant.BANNER_AD_SCENE_ID);
 suyiBannerAd.loadAd(ADSuyiDemoConstant.BANNER_AD_POS_ID);
 ```
 
->[Banner广告示例详情Gitee](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/ad/BannerAdActivity.java)
+>[Banner广告示例详情Gitee地址](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/ad/BannerAdActivity.java)
 >
->[Banner广告示例详情Github](https://github.com/ADSuyi/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/ad/BannerAdActivity.java)
+>[Banner广告示例详情Github地址](https://github.com/ADSuyi/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/ad/BannerAdActivity.java)
 
 
 
@@ -1063,9 +1060,9 @@ adSuyiNativeAd.setSceneId(ADSuyiDemoConstant.NATIVE_AD_SCENE_ID);
 adSuyiNativeAd.loadAd(ADSuyiDemoConstant.NATIVE_AD_POS_ID, ADSuyiDemoConstant.NATIVE_AD_COUNT);
 ```
 
-> [信息流广告示例详情Gitee](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/other/NativeAdActivity.java)
+> [信息流广告示例详情Gitee地址](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/other/NativeAdActivity.java)
 >
-> [信息流广告示例详情Github](https://github.com/ADSuyi/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/other/NativeAdActivity.java)
+> [信息流广告示例详情Github地址](https://github.com/ADSuyi/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/other/NativeAdActivity.java)
 
 
 
@@ -1170,13 +1167,13 @@ rewardVodAd.loadAd(ADSuyiDemoConstant.REWARD_VOD_AD_POS_ID);
 ADSuyiAdUtil.showRewardVodAdConvenient(this, RewardVodAdActivity.this.rewardVodAdInfo);
 ```
 
-> [激励视频广告示例详情Gitee](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/ad/RewardVodAdActivity.java)
+> [激励视频广告示例详情Gitee地址](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/ad/RewardVodAdActivity.java)
 >
-> [激励视频广告示例详情Github](https://github.com/ADSuyi/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/ad/RewardVodAdActivity.java)
+> [激励视频广告示例详情Github地址](https://github.com/ADSuyi/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/ad/RewardVodAdActivity.java)
 
-> [激励视频服务端验证SDK端接受参数文档Gitee](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/Android-SuyiSDK激励视频服务端验证使用说明.md)
+> [激励视频服务端验证SDK端接受参数文档Gitee地址](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/Android-SuyiSDK激励视频服务端验证使用说明.md)
 >
-> [激励视频服务端验证SDK端接受参数文档Github](https://github.com/ADSuyi/ADSuyiSdkDemo-Android/blob/master/Android-SuyiSDK激励视频服务端验证使用说明.md)
+> [激励视频服务端验证SDK端接受参数文档Github地址](https://github.com/ADSuyi/ADSuyiSdkDemo-Android/blob/master/Android-SuyiSDK激励视频服务端验证使用说明.md)
 
 
 
@@ -1253,9 +1250,9 @@ fullScreenVodAd.loadAd(ADSuyiDemoConstant.FULL_SCREEN_VOD_AD_POS_ID);
 ADSuyiAdUtil.showFullScreenAdConvenient(this, FullScreenVodAdActivity.this.fullScreenVodAdInfo);
 ```
 
-> [全屏视频广告示例详情Gitee](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/ad/FullScreenVodAdActivity.java)
+> [全屏视频广告示例详情Gitee地址](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/ad/FullScreenVodAdActivity.java)
 >
-> [全屏视频广告示例详情Github](https://github.com/admobile/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/ad/FullScreenVodAdActivity.java)
+> [全屏视频广告示例详情Github地址](https://github.com/ADSuyi/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/ad/FullScreenVodAdActivity.java)
 
 
 
@@ -1330,9 +1327,9 @@ interstitialAd.loadAd(ADSuyiDemoConstant.INTERSTITIAL_AD_POS_ID);
 ADSuyiAdUtil.showInterstitialAdConvenient(this, InterstitialAdActivity.this.interstitialAdInfo);
 ```
 
-> [插屏广告示例详情Gitee](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/ad/interstitial/InterstitialAdActivity.java)
+> [插屏广告示例详情Gitee地址](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/ad/interstitial/InterstitialAdActivity.java)
 >
-> [插屏广告示例详情Github](https://github.com/admobile/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/ad/interstitial/InterstitialAdActivity.java)
+> [插屏广告示例详情Github地址](https://github.com/ADSuyi/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/ad/interstitial/InterstitialAdActivity.java)
 
 
 
@@ -1404,9 +1401,9 @@ drawVodAd.setListener(new ADSuyiDrawVodAdListener() {
 drawVodAd.loadAd(ADSuyiDemoConstant.DRAW_VOD_AD_POS_ID, ADSuyiDemoConstant.DRAW_VOD_AD_COUNT);
 ```
 
-> [DrawVod广告示例详情Gitee](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/ad/DrawVodActivity.java)
+> [DrawVod广告示例详情Gitee地址](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/ad/DrawVodActivity.java)
 >
-> [DrawVod广告示例详情Github](https://github.com/admobile/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/ad/DrawVodActivity.java)
+> [DrawVod广告示例详情Github地址](https://github.com/ADSuyi/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/ad/DrawVodActivity.java)
 
 
 
@@ -1419,7 +1416,7 @@ drawVodAd.loadAd(ADSuyiDemoConstant.DRAW_VOD_AD_POS_ID, ADSuyiDemoConstant.DRAW_
 ADSuyiSdk.getInstance().init(this, new ADSuyiInitConfig.Builder()
 		// 设置APPID
     .appId(ADSuyiDemoConstant.APP_ID)
-    // 可以通过设置该值手动关闭或开启浮窗广告，默认开启（服务端没有配置开启也不会有浮窗广告）                         
+    // 可以通过设置该值手动关闭或开启浮窗广告，默认开启（服务端没有配置开启也不会有浮窗广告）
     .openFloatingAd(true:开启，false:关闭)
     // 如果开了浮窗广告，可设置不展示浮窗广告的界面，第一个参数为是否开启默认不展示的页面（例如:激励视频播放页面），第二可变参数为自定义不展示的页面
     .floatingAdBlockList(false, "cn.admobiletop.adsuyidemo.activity.ad.ADSuyiInitAndLoadSplashAdActivity")
@@ -1476,7 +1473,7 @@ ADSuyiInnerNoticeManager.getInstance().loadInnerNoticeAd(InnerNoticeActivity.thi
 
 具体的接入代码和流程，请参考Demo
 
- 
+
 
 ## 7. 常见问题和错误调试
 
@@ -1489,6 +1486,3 @@ ADSuyiInnerNoticeManager.getInstance().loadInnerNoticeAd(InnerNoticeActivity.thi
 ## 8.商务合作
 
 邮箱 : yangyu@admobile.top
-
-
-
