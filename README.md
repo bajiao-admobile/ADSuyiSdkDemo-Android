@@ -54,9 +54,6 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | inmobi    | 0.95M | v7.5.4.11152       | 8ecde00efc7e8af8b1fa2cbc7ebe3f89 |
 | gromore   | —     | v3.8.0.1.11161     | 7c38a1caf0f727ba62117e490cc13a9b |
 
-### 1.6 菜谱内容功能
-
-> [菜谱内容功能对接文档](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/README-Cookbook.md)
 
 ## 2. 支持的广告类型
 
@@ -86,7 +83,7 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
     <td>将短视频融入到APP场景当中，用户观看短视频广告后可以给予一些应用内奖励</td>
     <td>常出现在游戏的复活、任务等位置，或者网服类APP的一些增值服务场景</td>
   </tr>
-  
+
    <tr>
     <td><a href="#ad_full_screen_vod">全屏视频广告</a></td>
     <td>类似激励视频，与激励视频不同的是，全屏视频广告在观看一定时长后即可跳过广告，无需全部观看完成，有视频跳过回调，但是没有激励回调</td>
@@ -111,8 +108,6 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 
 ## 3. Demo及SDK下载链接
 
-> [ADSuyiSdkDemo-Android项目下载地址](https://codeload.github.com/ADSuyi/ADSuyiSdkDemo-Android/zip/master)
->
 > [ADSuyiSdkDemo-演示APK下载地址](https://doc.admobile.top/file/ADSuyiSdkDemo.apk)
 >
 > [SDK版本更新日志](https://doc.admobile.top/ssp/4changelog/1-androidchangelog.html)
@@ -259,8 +254,11 @@ dependencies {
    ```
 
 > 如果接入汇量，需要加入第三方依赖库https://dl-maven-android.mintegral.com/repository/mbridge_android_sdk_support/
+
 > 如果接入华为联盟，需要加入第三方依赖库https://developer.huawei.com/repo/
+
 > **由于头条(穿山甲)渠道支持了Android R，引入了Android R的 \<queries\> 标签,需要对gradle版本进行限制，限制范围为：3.3.3、 3.4.3、 3.5.4、3.6.4、4.0.1 ，开发者根据自身情况酌情升级**
+
 >  **如对接华为广告联盟，激励视频要提前预加载，并且播放完成后需要预加载下一个激励视频，华为渠道点击事件无法统计；banner广告使用场景是程序页面的顶部或者底部。**
 
 3. 激励、全屏视频、插屏等广告对象一次成功拉取的广告数据只允许展示一次，还需展示请再次加载广告。
@@ -582,9 +580,6 @@ dependencies {
 -keep class com.tianmu.**{ *; }
 -keep class tianmu.com.** { *; }
 -keep interface tianmu.com.** { *; }
-# 天目加固混淆
--keep @com.qihoo.SdkProtected.tianmusdk.Keep class **{*;}
--keep,allowobfuscation @interface com.qihoo.SdkProtected.tianmusdk.Keep
 
 # CookbookAdapter混淆
 -keep class cn.admobiletop.cookbook.**{*;}
@@ -719,10 +714,7 @@ ADSuyiSdk.getInstance().init(
 
 ## 6. 示例代码
 
-具体的广告SDK接口和接口说明请参考 
-
-> [ADSuyiSdk JavaDoc文档](http://doc.admobile.top/ADSuyiSdkAndroidJavaDoc/index.html)
-
+具体的广告SDK接口和接口说明请参考Demo
 
 
 ### 6.1 SDK初始化
@@ -1479,7 +1471,7 @@ ADSuyiInnerNoticeManager.getInstance().loadInnerNoticeAd(InnerNoticeActivity.thi
 
 ## 8.商务合作
 
-邮箱 : tomato@admobile.top
+邮箱 : yangyu@admobile.top
 
 
 
