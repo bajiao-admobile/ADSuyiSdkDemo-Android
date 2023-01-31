@@ -44,7 +44,7 @@ public class ADSuyiInterstitialManager {
     /**
      * 快手插屏弹窗对象，没有接入快手可注释掉
      */
-    private com.kwad.components.core.k.e kuaishouDialog;
+//    private com.kwad.components.core.k.e kuaishouDialog;
 
     private static ADSuyiInterstitialManager instance;
 
@@ -100,28 +100,28 @@ public class ADSuyiInterstitialManager {
      */
     private void kuaishouAddJumpButton() {
 
-        setActivityViews();
-
-        for (int i = 0; i < views.size(); i++) {
-            View view = views.get(i);
-            if (view.getId() == R.id.ksad_container) {
-                jumpView = getJumpView((ViewGroup) view);
-                ((ViewGroup) view).addView(jumpView);
-                startCountDown();
-                break;
-            }
-        }
-
-        try {
-            Field fieldAdapterAdInfo = interstitialAdInfo.getClass().getSuperclass().getSuperclass().getDeclaredField("i");
-            fieldAdapterAdInfo.setAccessible(true);
-            KsInterstitialAd ksInterstitialAd = (KsInterstitialAd) fieldAdapterAdInfo.get(interstitialAdInfo);
-            Field fieldD = ksInterstitialAd.getClass().getDeclaredField("he");
-            fieldD.setAccessible(true);
-            kuaishouDialog = (com.kwad.components.core.k.e) fieldD.get(ksInterstitialAd);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+//        setActivityViews();
+//
+//        for (int i = 0; i < views.size(); i++) {
+//            View view = views.get(i);
+//            if (view.getId() == R.id.ksad_container) {
+//                jumpView = getJumpView((ViewGroup) view);
+//                ((ViewGroup) view).addView(jumpView);
+//                startCountDown();
+//                break;
+//            }
+//        }
+//
+//        try {
+//            Field fieldAdapterAdInfo = interstitialAdInfo.getClass().getSuperclass().getSuperclass().getDeclaredField("i");
+//            fieldAdapterAdInfo.setAccessible(true);
+//            KsInterstitialAd ksInterstitialAd = (KsInterstitialAd) fieldAdapterAdInfo.get(interstitialAdInfo);
+//            Field fieldD = ksInterstitialAd.getClass().getDeclaredField("he");
+//            fieldD.setAccessible(true);
+//            kuaishouDialog = (com.kwad.components.core.k.e) fieldD.get(ksInterstitialAd);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
     }
 
     /**
@@ -225,10 +225,10 @@ public class ADSuyiInterstitialManager {
                 interstitialAdInfo.release();
                 interstitialAdInfo = null;
             }
-            if (kuaishouDialog != null) {
-                kuaishouDialog.dismiss();
-                kuaishouDialog = null;
-            }
+//            if (kuaishouDialog != null) {
+//                kuaishouDialog.dismiss();
+//                kuaishouDialog = null;
+//            }
         }
     }
 
