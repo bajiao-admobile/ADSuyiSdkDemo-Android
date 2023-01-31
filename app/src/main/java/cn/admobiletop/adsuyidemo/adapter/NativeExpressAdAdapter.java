@@ -62,12 +62,16 @@ public class NativeExpressAdAdapter extends BaseNativeAdAdapter {
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int position) {
         Object item = dataList.get(position);
-        if (viewHolder instanceof NormalDataViewHolder) {
-            // 普通数据类型的
-            ((NormalDataViewHolder) viewHolder).setData((String) item);
-        } else if (viewHolder instanceof NativeExpressAdViewHolder) {
+        if (viewHolder instanceof NativeExpressAdViewHolder) {
             // 信息流模板广告类型
             ((NativeExpressAdViewHolder) viewHolder).setData((ADSuyiNativeExpressAdInfo) item);
+        } else {
+            // 普通数据类型的
+            try {
+                ((NormalDataViewHolder) viewHolder).setData((String) item);
+            } catch (Exception e) {
+                ((NormalDataViewHolder) viewHolder).setData("广告类型异常");
+            }
         }
     }
 

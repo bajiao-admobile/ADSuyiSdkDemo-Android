@@ -52,12 +52,16 @@ public class NativeFeedAdAdapter extends BaseNativeAdAdapter {
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int position) {
         Object item = dataList.get(position);
-        if (viewHolder instanceof NormalDataViewHolder) {
-            // 普通数据类型的
-            ((NormalDataViewHolder) viewHolder).setData((String) item);
-        } else if (viewHolder instanceof BaseNativeFeedAdViewHolder) {
+        if (viewHolder instanceof BaseNativeFeedAdViewHolder) {
             // 信息流原生广告类型 NativeAdViewHolder or NativeAdMediaViewHolder
             ((BaseNativeFeedAdViewHolder) viewHolder).setData((ADSuyiNativeFeedAdInfo) item);
+        } else {
+            // 普通数据类型的
+            try {
+                ((NormalDataViewHolder) viewHolder).setData((String) item);
+            } catch (Exception e) {
+                ((NormalDataViewHolder) viewHolder).setData("广告类型异常");
+            }
         }
     }
 
