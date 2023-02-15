@@ -46,7 +46,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/shape_background_button_selector"
             android:stateListAnimator="@null"
-            android:text="模版信息流案例"
+            android:text="模板信息流案例"
             android:layout_marginRight="16dp"
             android:textAllCaps="false"
             android:textColor="@color/textColorBlack" />

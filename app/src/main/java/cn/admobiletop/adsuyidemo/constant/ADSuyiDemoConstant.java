@@ -62,7 +62,7 @@ public class ADSuyiDemoConstant {
      */
     public static final String NATIVE_AD_POS_ID3 = "6552acfed554d68c78";
     /**
-     * 信息流广告位ID，模版
+     * 信息流广告位ID，模板
      */
     public static final String NATIVE_AD_POS_ID4 = "fd3b78d0c93e75330a";
     public static String NATIVE_AD_POS_ID = NATIVE_AD_POS_ID1;

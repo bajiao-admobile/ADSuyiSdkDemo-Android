@@ -33,7 +33,7 @@ import cn.admobiletop.adsuyidemo.entity.NativeAdSampleData;
 
 /**
  * @author ciba
- * @description 信息流模版广告Adapter
+ * @description 信息流模板广告Adapter
  * @date 2020/4/1
  */
 public class NativeExpressAdAdapter extends BaseNativeAdAdapter {
@@ -84,7 +84,7 @@ public class NativeExpressAdAdapter extends BaseNativeAdAdapter {
     public int getItemViewType(int position) {
         Object item = dataList.get(position);
         if  (item instanceof ADSuyiNativeExpressAdInfo) {
-            // item 为信息流模版广告数据
+            // item 为信息流模板广告数据
             return ITEM_VIEW_TYPE_EXPRESS_AD;
         } else {
             // item 为模拟数据

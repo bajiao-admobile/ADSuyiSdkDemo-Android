@@ -73,7 +73,7 @@ public class NativeAdRecyclerViewActivity extends AppCompatActivity implements O
     }
 
     private void initData() {
-        // 模版广告容器宽度
+        // 模板广告容器宽度
         int widthPixels = getResources().getDisplayMetrics().widthPixels;
         // 创建信息流广告实例
         adSuyiNativeAd = new ADSuyiNativeAd(this);
@@ -83,7 +83,7 @@ public class NativeAdRecyclerViewActivity extends AppCompatActivity implements O
                 .adSize(new ADSuyiAdSize(widthPixels, 0))
                 // 设置广告视图中MediaView的预期宽高(目前仅Inmobi平台需要,Inmobi的MediaView高度为自适应，没有接入Inmobi平台可不设置)，单位为px
                 .nativeAdMediaViewSize(new ADSuyiAdSize((int) (widthPixels - 24 * getResources().getDisplayMetrics().density)))
-                // 设置模版广告文字、内边距特殊样式（目前仅艾狄墨搏平台需要，没有特殊需求可不设置）
+                // 设置模板广告文字、内边距特殊样式（目前仅艾狄墨搏平台需要，没有特殊需求可不设置）
                 .nativeStyle(getAdmobileNativeStyle())
                 // 设置信息流广告适配播放是否静音，默认静音，目前优量汇、百度、汇量、快手、Admobile支持修改
                 .nativeAdPlayWithMute(ADSuyiDemoConstant.NATIVE_AD_PLAY_WITH_MUTE)
@@ -151,15 +151,15 @@ public class NativeAdRecyclerViewActivity extends AppCompatActivity implements O
     }
 
     /**
-     * 获取admobile模版广告样式
+     * 获取admobile模板广告样式
      */
     private ADSuyiAdNativeStyle getAdmobileNativeStyle() {
-        // 艾狄墨搏模版广告上下左右内边距
+        // 艾狄墨搏模板广告上下左右内边距
         int paddingLeft = ADSuyiDisplayUtil.dp2px(10);
         int paddingTop = ADSuyiDisplayUtil.dp2px(10);
         int paddingRight = ADSuyiDisplayUtil.dp2px(10);
         int paddingBottom = ADSuyiDisplayUtil.dp2px(10);
-        // 模版广告样式，目前仅艾狄墨搏平台需要，如果有特殊需求可以传入
+        // 模板广告样式，目前仅艾狄墨搏平台需要，如果有特殊需求可以传入
         ADSuyiAdNativeStyle nativeStyle = new ADSuyiAdNativeStyle(paddingLeft, paddingTop, paddingRight, paddingBottom);
         // 设置标题文字大小
         nativeStyle.setTitleSize(12);
@@ -261,7 +261,7 @@ public class NativeAdRecyclerViewActivity extends AppCompatActivity implements O
                 nativeAdAdapter = new NativeAdAdapter();
                 break;
             case ADSuyiDemoConstant.NATIVE_AD_POS_ID4:
-                // 模版
+                // 模板
                 nativeAdAdapter = new NativeExpressAdAdapter();
                 break;
         }

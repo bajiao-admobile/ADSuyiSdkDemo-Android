@@ -79,7 +79,7 @@ public class NativeInterstitialActivity extends AppCompatActivity {
     private void loadAd() {
         releaseAd();
 
-        // 模版广告容器宽度
+        // 模板广告容器宽度
         int widthPixels = getResources().getDisplayMetrics().widthPixels - ADSuyiDisplayUtil.dp2px(20);
         // 创建信息流广告实例
         adSuyiNativeAd = new ADSuyiNativeAd(this);

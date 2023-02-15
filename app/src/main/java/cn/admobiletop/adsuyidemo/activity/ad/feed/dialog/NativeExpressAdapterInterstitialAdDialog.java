@@ -17,7 +17,7 @@ import cn.admobiletop.adsuyidemo.R;
 
 /**
  * @author 草莓
- * @description admobileDl 模版广告弹出框
+ * @description admobileDl 模板广告弹出框
  * @date 2020/10/21
  */
 public class NativeExpressAdapterInterstitialAdDialog extends BaseNativeInterstitialDialog {

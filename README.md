@@ -876,7 +876,7 @@ new KsSplashAdRequestInfo(String platformAppId, String platformPosId, String adP
  * @param platformPosId suyi开屏广告源ID
  * @param adPosListId suyi开屏广告源AdPosList ID
  * @param downloadTip 下载提示 DownloadTipParam.DOWNLOAD_TIP_NOTHING不提示 DownloadTipParam.DOWNLOAD_TIP_MOBILE_TRAFFIC移动网络提示 DownloadTipParam.DOWNLOAD_TIP_ALL 全提示
- * @param renderTip 渲染方式 RenderTypeParam.RENDER_TYPE_NATIVE_EXPRESS模版渲染 RenderTypeParam.RENDER_TYPE_NATIVE原生渲染
+ * @param renderTip 渲染方式 RenderTypeParam.RENDER_TYPE_NATIVE_EXPRESS模板渲染 RenderTypeParam.RENDER_TYPE_NATIVE原生渲染
  * @return
  */
 new TTSplashAdRequestInfo(String platformAppId, String platformPosId, String adPosListId, int downloadTip, int renderTip)
@@ -995,7 +995,7 @@ ADSuyiExtraParams extraParams = new ADSuyiExtraParams.Builder()
 		.adSize(new ADSuyiAdSize(widthPixels, 0))
     // 设置广告视图中MediaView的预期宽高(目前仅Inmobi平台需要,Inmobi的MediaView高度为自适应，没有接入Inmobi平台可不设置)，单位为px
     .nativeAdMediaViewSize(new ADSuyiAdSize(widthPixels))
-    // 设置模版广告文字、内边距特殊样式（目前仅艾狄墨搏平台需要，没有特殊需求可不设置，请查看demo进行设置）
+    // 设置模板广告文字、内边距特殊样式（目前仅艾狄墨搏平台需要，没有特殊需求可不设置，请查看demo进行设置）
     .nativeStyle(nativeStyle)
     // 设置信息流广告适配播放是否静音，默认静音，目前优量汇、百度、汇量、Admobile支持修改
     .nativeAdPlayWithMute(ADSuyiDemoConstant.NATIVE_AD_PLAY_WITH_MUTE)

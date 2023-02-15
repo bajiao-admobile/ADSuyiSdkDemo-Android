@@ -88,7 +88,7 @@ public class NativeSplashActivity extends AppCompatActivity {
     private void loadAd() {
         releaseAd();
 
-        // 模版广告容器宽度
+        // 模板广告容器宽度
         int widthPixels = getResources().getDisplayMetrics().widthPixels;
         // 创建信息流广告实例
         adSuyiNativeAd = new ADSuyiNativeAd(this);
@@ -179,7 +179,7 @@ public class NativeSplashActivity extends AppCompatActivity {
     }
 
     /**
-     * 展示信息流模版广告
+     * 展示信息流模板广告
      */
     private void showNativeExpressAd() {
         flContainer2.setVisibility(View.VISIBLE);

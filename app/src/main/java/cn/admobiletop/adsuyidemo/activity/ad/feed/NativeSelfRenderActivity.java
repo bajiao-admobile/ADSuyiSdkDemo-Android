@@ -119,7 +119,7 @@ public class NativeSelfRenderActivity extends AppCompatActivity {
     private void loadAd(boolean isLoadSuccessShows) {
         releaseAd();
 
-        // 模版广告容器宽度
+        // 模板广告容器宽度
         int widthPixels = getResources().getDisplayMetrics().widthPixels;
         // 创建信息流广告实例
         adSuyiNativeAd = new ADSuyiNativeAd(this);

@@ -16,7 +16,7 @@
     <string name="content_alliance">内容联盟</string>
     <string name="reward_ad_switch">组合广告异常切换示例</string>
     <string name="reward_ad_">Dl激励广告</string>
-    <string name="native_express">信息流模版广告</string>
+    <string name="native_express">信息流模板广告</string>
     <string name="native_self_render">信息流自渲染广告</string>
 
     <string name="content_recipe">菜谱</string>
@@ -103,8 +103,8 @@
 
     <string-array name="native_ad_list">
         <item>自渲染</item>
-        <item>模板渲染</item>
+        <item>模板自渲染混合</item>
 <!--        <item>优量汇模板2.0渲染</item>-->
-        <item>模版</item>
+        <item>模板</item>
     </string-array>
 </resources>

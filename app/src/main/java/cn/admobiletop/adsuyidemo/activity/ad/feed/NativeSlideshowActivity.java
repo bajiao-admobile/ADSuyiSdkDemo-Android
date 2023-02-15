@@ -29,7 +29,7 @@ import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
 /**
  * @author : 草莓
  * @date : 2021/12/06
- * @description : 将信息流模版广告放到轮播控件的案例
+ * @description : 将信息流模板广告放到轮播控件的案例
  * 第三方轮播控件 : https://github.com/LillteZheng/ViewPagerHelper/blob/master/README_Banner.md
  */
 public class NativeSlideshowActivity extends AppCompatActivity {
@@ -60,7 +60,7 @@ public class NativeSlideshowActivity extends AppCompatActivity {
     }
 
     private void initData() {
-        // 模版广告容器宽度
+        // 模板广告容器宽度
         int widthPixels = getResources().getDisplayMetrics().widthPixels;
         // 创建信息流广告实例
         adSuyiNativeAd = new ADSuyiNativeAd(this);

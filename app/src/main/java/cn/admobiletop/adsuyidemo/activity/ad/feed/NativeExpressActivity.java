@@ -27,7 +27,7 @@ import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
 /**
  * @author : 草莓
  * @date : 2021/11/01
- * @description : 将信息流模版广告放到RelativeLayout进行展示案例
+ * @description : 将信息流模板广告放到RelativeLayout进行展示案例
  */
 public class NativeExpressActivity extends AppCompatActivity {
 
@@ -93,7 +93,7 @@ public class NativeExpressActivity extends AppCompatActivity {
     private void loadAd(boolean isLoadSuccessShows) {
         releaseAd();
 
-        // 模版广告容器宽度
+        // 模板广告容器宽度
         int widthPixels = getResources().getDisplayMetrics().widthPixels;
         // 创建信息流广告实例
         adSuyiNativeAd = new ADSuyiNativeAd(this);
@@ -176,11 +176,11 @@ public class NativeExpressActivity extends AppCompatActivity {
 
         ADSuyiNativeExpressAdInfo nativeExpressAdInfo;
         if (!adSuyiNativeAdInfo.isNativeExpress()) {
-            Toast.makeText(this, "当前请求到广告非信息流模版广告，请使用信息流模版广告位", Toast.LENGTH_SHORT).show();
-            Log.d(ADSuyiDemoConstant.TAG, "当前请求到广告非信息流模版广告，请使用信息流模版广告位");
+            Toast.makeText(this, "当前请求到广告非信息流模板广告，请使用信息流模板广告位", Toast.LENGTH_SHORT).show();
+            Log.d(ADSuyiDemoConstant.TAG, "当前请求到广告非信息流模板广告，请使用信息流模板广告位");
             return;
         } else {
-            // 将广告对象转换成模版广告
+            // 将广告对象转换成模板广告
             nativeExpressAdInfo = (ADSuyiNativeExpressAdInfo)adSuyiNativeAdInfo;
         }
 
