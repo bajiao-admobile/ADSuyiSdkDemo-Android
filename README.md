@@ -895,7 +895,7 @@ splashAd.setListener(new ADSuyiSplashAdListener() {
 
     @Override
     public void onAdFailed(ADSuyiError error) {
-        // // 广告失败回调，需要在此进行页面跳转
+        // 广告失败回调，需要在此进行页面跳转
     }
 });
 
@@ -920,7 +920,7 @@ splashAd.loadOnly(String posId);
 ```java
 // 需要开发者在onAdReceive回调之后再展示开屏广告
 ...
-public void onAdReceive(ADSuyiAdInfo error) {
+public void onAdReceive(ADSuyiAdInfo adInfo) {
     // 广告获取成功回调...
     // 展示开屏广告
     splashAd.showSplash();
@@ -976,7 +976,7 @@ ADSuyiBannerAd bannerAd = new ADSuyiBannerAd(Activity activity, ViewGroup contai
 
 // 设置Banner广告监听
 bannerAd.setListener(new ADSuyiBannerAdListener() {
-		@Override
+    @Override
     public void onAdReceive(ADSuyiAdInfo adSuyiAdInfo) {
         // 广告获取成功回调...
     }
@@ -1019,7 +1019,7 @@ bannerAd.loadAd(String posId);
 
 #### 6.4.1 信息流广告主要 API
 
-**ADSuyiBannerAd**
+**ADSuyiNativeAd**
 
 cn.admobiletop.adsuyi.ad.ADSuyiNativeAd
 
@@ -1142,32 +1142,32 @@ nativeAd.setLocalExtraParams(extraParams);
 // 设置广告监听
 nativeAd.setListener(new ADSuyiNativeAdListener() {
     @Override
-    public void onRenderFailed(ADSuyiNativeAdInfo adSuyiNativeAdInfo, ADSuyiError adSuyiError) {
+    public void onRenderFailed(ADSuyiNativeAdInfo adInfo, ADSuyiError error) {
       	// 广告渲染失败，可在此回调中移除视图和释放广告对象
     }
 
     @Override
-    public void onAdReceive(List<ADSuyiNativeAdInfo> adInfoList) {
+    public void onAdReceive(List<ADSuyiNativeAdInfo> adInfos) {
         // 广告获取成功回调...
     }
 
     @Override
-    public void onAdExpose(ADSuyiNativeAdInfo adSuyiNativeAdInfo) {
+    public void onAdExpose(ADSuyiNativeAdInfo adInfo) {
     	// 广告展示回调，有展示回调不一定是有效曝光，如网络等情况导致上报失败
     }
 
     @Override
-    public void onAdClick(ADSuyiNativeAdInfo adSuyiNativeAdInfo) {
+    public void onAdClick(ADSuyiNativeAdInfo adInfo) {
     	// 广告点击回调，有点击回调不一定是有效点击，如网络等情况导致上报失败
     }
 
     @Override
-    public void onAdClose(ADSuyiNativeAdInfo adSuyiNativeAdInfo) {
+    public void onAdClose(ADSuyiNativeAdInfo adInfo) {
         // 广告关闭回调，可在此回调中移除视图和释放广告对象
     }
 
     @Override
-    public void onAdFailed(ADSuyiError adSuyiError) {
+    public void onAdFailed(ADSuyiError error) {
         // 广告获取失败回调...
     }
 });
@@ -1285,7 +1285,7 @@ cn.admobiletop.adsuyi.ad.data.ADSuyiRewardVodAdInfo
 #### 6.5.2 激励视频广告加载并展示
 
 ```java
- // 创建激励视频广告实例
+// 创建激励视频广告实例
 ADSuyiRewardVodAd rewardVodAd = new ADSuyiRewardVodAd(Activity activity);
 
 // 设置激励视频广告监听
@@ -1443,7 +1443,7 @@ fullScreenVodAd.setListener(new ADSuyiFullScreenVodAdListener() {
     }
 
     @Override
-    public void onAdFailed(ADSuyiError adSuyiError) {
+    public void onAdFailed(ADSuyiError error) {
         // 广告获取失败回调...
    	}
 });
@@ -1548,7 +1548,7 @@ interstitialAd.setListener(new ADSuyiInterstitialAdListener() {
     }
 
     @Override
-    public void onAdFailed(ADSuyiError adSuyiError) {
+    public void onAdFailed(ADSuyiError error) {
         // 广告获取失败回调...
     }
 });
