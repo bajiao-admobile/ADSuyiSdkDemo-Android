@@ -6,8 +6,8 @@ android {
         applicationId "cn.admobiletop.adsuyidemo"
         minSdkVersion 19
         targetSdkVersion 30
-        versionCode 202301311
-        versionName "1.202301311"
+        versionCode 202303201
+        versionName "1.202303201"
         multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         ndk {
@@ -82,7 +82,7 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
 
     // ADSuyiSdk、common和OAID库是必须导入的
-    implementation 'cn.admobiletop.adsuyi.ad:core:3.7.1.02061'
+    implementation 'cn.admobiletop.adsuyi.ad:core:3.7.2.02221'
 
     // OAID库是必须导入的，请保持和Demo中版本一致，必须的
     // 注意注意注意
@@ -93,22 +93,22 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad:oaid:1.0.25.08023'
 
     // 天目AdapterSdk，必选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:tianmu:2.0.1.02061'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:tianmu:2.0.2.02221'
 
     // 优量汇（广点通）AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.510.1380.02061'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.512.1382.02221'
 
     // 头条AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:5.1.0.2.02061'
 
     // 百度增强版AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced:9.26.02061'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced:9.27.02221'
 
     // 汇量AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:16.3.57.02061'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:16.3.77.02221'
 
     // 快手AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.38.02061'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.40.02221'
 
     // InmobiAdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:inmobi:7.5.4.11152'

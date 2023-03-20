@@ -1,4 +1,4 @@
-# ADSuyiSdk Android Sdk——接入文档 V3.7.1.02061
+# ADSuyiSdk Android Sdk——接入文档 V3.7.2.02221
 
 
 
@@ -36,20 +36,20 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 
 | Name         | 大小 | 版本号       | MD5值                            |
 | ------------ | ---- | ------------ | -------------------------------- |
-| ADSuyi基础包 | 0.3M | V3.7.1.02061  | 220cfd812b118a00651a1208a490112c |
+| ADSuyi基础包 | 0.3M | V3.7.2.02221  | 0f757b7e2fabba62aae19b6b1af0942b |
 | OAID         | 1.1M | —            | —                                |
 
 ### 1.5 三方广告平台适配器+三方广告sdk总容量
 
 | Name      | 容量  | 版本号             | MD5值                            |
 | --------- | ----- | ------------------ | -------------------------------- |
-| tianmu    | 1.67M | v2.0.1.02061       | cddc920db5d1e6480dcd3339e79cfbd1 |
-| gdt       | 1.82M | v4.510.1380.02061  | a2e59a70b2467ad53260a264d1a11f7b |
-| toutiao   | 5.85M | v5.1.0.2.02061     | c7dc58489e09a9ffcd7859aca00f332d |
-| baidu     | 1.48M | v9.26.02061        | 3501d7fdef3dc6274d012a706f044038 |
-| mintegral | 2.80M | v16.3.57.02061     | 798169c8561953979373dae3edb3ea7b |
-| ksad      | 3.38M | v3.3.38.02061      | a86bc4e716373ca85523a1712d394a58 |
-| mimo      | 1.00M | v5.2.2.12211       | 88358328ae261ee15a742c5562d13c49 |
+| tianmu    | 4.00M | v2.0.2.02221       | de47958c6bd94286b2a3b277772334a6 |
+| gdt       | 1.92M | v4.512.1382.02221  | 02249081f40c8b2a1926209d72f79fe2 |
+| toutiao   | 7.00M | v5.1.0.2.02061     | c7dc58489e09a9ffcd7859aca00f332d |
+| baidu     | 1.80M | v9.27.02221        | 48fe7fa3ebf68299d096b6d2dd3694be |
+| mintegral | 2.80M | v16.3.77.02221     | 1c5bbdc489bafd94d6918fd69b7f9c4e |
+| ksad      | 4.20M | v3.3.40.02221      | 139910a852b8ecd5b8556547b66c6180 |
+| mimo      | 1.60M | v5.2.2.12211       | 88358328ae261ee15a742c5562d13c49 |
 | hwpps     | 1.01M | v13.4.61.300.02061 | 583c0212e2b06144d805fdd80f2f814f |
 | inmobi    | 0.95M | v7.5.4.11152       | 8ecde00efc7e8af8b1fa2cbc7ebe3f89 |
 | gromore   | —     | v4.0.0.1.02061     | 003cc9a78bd457daddaa25abd3c85707 |
@@ -178,7 +178,7 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
 
     // ADSuyiSdk、common和OAID库是必须导入的
-    implementation 'cn.admobiletop.adsuyi.ad:core:3.7.1.02061'
+    implementation 'cn.admobiletop.adsuyi.ad:core:3.7.2.02221'
 
     // OAID库是必须导入的，请保持和Demo中版本一致，必须的
     注意注意注意
@@ -189,22 +189,22 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad:oaid:1.0.25.08023'
 
     // 天目AdapterSdk，必选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:tianmu:2.0.1.02061'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:tianmu:2.0.2.02221'
 
     // 优量汇（广点通）AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.510.1380.02061'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.512.1382.02221'
 
     // 头条AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:5.1.0.2.02061'
 
     // 百度增强版AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced:9.26.02061'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced:9.27.02221'
 
     // 汇量AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:16.3.57.02061'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:16.3.77.02221'
 
     // 快手AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.38.02061'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.40.02221'
 
     // InmobiAdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:inmobi:7.5.4.11152'
@@ -268,7 +268,7 @@ dependencies {
 5. Mintegral（汇量）渠道与微信sdk冲突解决办法
     由于Mintegral渠道16.1.7版本支持小程序跳转功能，若媒体已导入opensdk，会导致冲突，可通过以下方式移除Mintegral适配器中的opensdk
     ```java
-    ('cn.admobiletop.adsuyi.ad.adapter:mintegral:16.3.57.02061') {
+    ('cn.admobiletop.adsuyi.ad.adapter:mintegral:16.3.77.02221') {
             exclude group: "com.tencent.mm.opensdk", module: "wechat-sdk-android"
         }
     ```
@@ -308,6 +308,9 @@ dependencies {
     // 如果导入后有冲突可以不添加，suyi中已经添加过了
     <uses-sdk tools:overrideLibrary="com.bun.miitmdid"/>
     ```
+
+5. **目前华为应用市场会提示oaid1.0.25中存在网易（飞鱼）的sdk，这是由于oaid1.0.25中的包路径和网易（飞鱼）sdk的包路径相同，只能通过升级oaid进行解决。<br>
+oaid从1.0.26版本开始需要到[《移动智能终端补充设备标识体系统一调用SDK》](http://www.msa-alliance.cn/col.jsp?id=122)申请相关密钥，需要开发者自行获取oaid，并参考<a href="#custom_controller"> 5.7 向SDK传入设备标识 </a>**。
 
 **PS：需要更多帮助可参考目录下《移动智能终端补充设备标识体系统一调用SDK开发者说明文档》；**
 
