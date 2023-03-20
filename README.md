@@ -1120,7 +1120,7 @@ cn.admobiletop.adsuyi.ad.data.ADSuyiNativeFeedAdInfo
 | getCtaText() | String | 广告交互按钮文案，可能为空。|
 | getIconUrl() | String | 广告图标地址，可能为空。|
 | getImageUrl() | String | 图片地址，可能为空。。|
-| getImageUrlList() | List<String> | 广告图片集合，可能为空。|
+| getImageUrlList() | List\<String\> | 广告图片集合，可能为空。|
 | hasMediaView() | boolean | 判断是否包含多媒体广告视图。|
 | getMediaView() | View | 获取的是多媒体广告视图。|
 | registerViewForInteraction(ViewGroup container, View... actionViews) | void | 注册广告视图。参数说明：container（广告容器，若对接优量汇自渲染，此处一定要传入com.qq.e.ads.nativ.widget.NativeAdContainer布局，否则优量汇渠道无法曝光）、<br>actionViews（可点击的布局）|
@@ -1613,7 +1613,7 @@ cn.admobiletop.adsuyi.ad.listener.ADSuyiDrawVodAdListener
 
 | 方法名         | 介绍 |
 | ------------ | ---- |
-| onAdReceive(List<ADSuyiDrawVodAdInfo> adInfoList) | 广告加载成功回调。|
+| onAdReceive(List\<ADSuyiDrawVodAdInfo> adInfoList) | 广告加载成功回调。|
 | onAdExpose(ADSuyiDrawVodAdInfo adInfo) | 广告展示回调。|
 | onAdClick(ADSuyiDrawVodAdInfo adInfo) | 广告点击回调。|
 | onAdClose(ADSuyiDrawVodAdInfo adInfo) | 广告关闭回调。|
@@ -1655,7 +1655,7 @@ drawVodAd.setListener(new ADSuyiDrawVodAdListener() {
    	}
 
     @Override
-    public void onAdReceive(List<ADSuyiDrawVodAdInfo> adInfoList) {
+    public void onAdReceive(List\<ADSuyiDrawVodAdInfo\> adInfoList) {
         // 广告加载成功回调
    	}
 
