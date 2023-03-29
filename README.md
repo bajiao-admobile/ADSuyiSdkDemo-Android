@@ -308,11 +308,11 @@ dependencies {
 
     **PS：目前华为应用市场会提示OAID1.0.25中存在网易（飞鱼）的sdk，这是由于OAID1.0.25中的包路径和网易（飞鱼）sdk的包路径相同，只能通过升级OAID进行解决。<br>
     OAID 1.0.25以上版本需要到[《移动智能终端补充设备标识体系统一调用SDK》](http://www.msa-alliance.cn/col.jsp?id=120)申请APP专属密钥才能正常使用，需要开发者自行获取OAID，并参考<a href="#custom_controller"> 5.7 向SDK传入设备标识 </a> ，将获取到的OAID字符串传给广告SDK，保证广告SDK参数成功接收到。**<br><br>
-    **注意：不想调整的开发者打包华为渠道包时请去除以下依赖，对接其它版本OAID也请移除以下依赖：**
+    **注意：使用其它版本oaid请移除以下依赖，避免造成崩溃：**
     ```java
     // OAID库1.0.25
     implementation(name: 'oaid_sdk_1.0.25', ext: 'aar')
-    // oaid1.0.25 版本适配器，ADSuyi获取oaid使用，不支持其它版本，对接其它版本请勿使用
+    // OAID1.0.25版本适配器不支持其它版本，ADSuyi获取oaid使用
     implementation 'cn.admobiletop.adsuyi.ad:oaid:1.0.25.08023'
     ```
 
