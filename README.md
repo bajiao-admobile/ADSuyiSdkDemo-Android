@@ -180,12 +180,9 @@ dependencies {
     // ADSuyiSdk、common和OAID库是必须导入的
     implementation 'cn.admobiletop.adsuyi.ad:core:3.7.2.02221'
 
-    // OAID库是必须导入的，请保持和Demo中版本一致，必须的
-    注意注意注意
-    需要在assets加入supplierconfig.json文件，不然oaid无法生效
-    注意注意注意
+    // OAID库1.0.25华为渠道请参考文档5.2
     implementation(name: 'oaid_sdk_1.0.25', ext: 'aar')
-    // oaid1.0.25版本适配器，导入1.0.25版本oaid必须的，必须的
+    // OAID1.0.25版本适配器不支持其它版本，ADSuyi获取oaid使用
     implementation 'cn.admobiletop.adsuyi.ad:oaid:1.0.25.08023'
 
     // 天目AdapterSdk，必选的
@@ -273,16 +270,15 @@ dependencies {
         }
     ```
 
-### 5.2 OAID支持
+### 5.2 OAID1.0.25版本支持
 
 **Android10之后IMEI等数据无法获取，这对广告投放将产生一定影响，所以移动安全联盟(MSA)提出OAID来代替IMEI参与广告投放决策，OAID的支持会在一定程度上影响广告收益；**
 
-**OAID是必须集成项，没有集成将会抛出异常提醒开发者**，OAID集成并不繁琐，SDK中已经进行了OAID的封装，只需以下几步即可完成OAID的支持；
+**OAID是必须集成项，没有集成将会抛出异常提醒开发者**，OAID集成并不繁琐，SDK中已经进行了OAID1.0.25的封装适配，只需以下几步即可完成OAID的支持；
 
-1. 导入安全联盟的OAID支持库 **oaid_sdk_1.0.25.aar**，可在Demo的libs目录下找到，**强烈建议使用和Demo中一样版本的OAID库（包括项目中已存在的依赖的oaid版本）；**<br>
-    媒体如果想获取ADSuyi中的oaid，可以使用改方法进行获取ADSuyiSdk.getInstance().getOAID()，由于oaid的获取是异步的，可能获取到空字符串的情况。<br>
+1. 导入安全联盟的OAID支持库 **oaid_sdk_1.0.25.aar**，可在Demo的libs目录下找到，**对接其它版本请勿参考该教程；**<br>
 
-2. 将Demo中assets文件夹下的**supplierconfig.json**文件复制到自己的assets目录下并按照**supplierconfig.json**文件中的说明进行OAID的 **AppId** 配置，**supplierconfig.json**文件名不可修改。需要设置 appid 的部分需要去对应厂商的应用商店的应用信息中查看。；
+2. 将Demo中assets文件夹下的**supplierconfig.json**文件复制到自己的assets目录下并按照**supplierconfig.json**文件中的说明进行OAID的 **AppId** 配置，**supplierconfig.json**文件名不可修改。需要设置 appid 的部分需要去对应厂商的应用商店的应用信息中查看；
 
 3. 添加以下混淆配置；
 
@@ -303,16 +299,22 @@ dependencies {
    -keep class org.json.**{*;}
    -keep public class com.netease.nis.sdkwrapper.Utils {public <methods>;}
    ```
+   
 4. 修改AndroidManifest.xml，**OAID SDK minSdkVersion为21，如果应用的minSdkVersion小于21，则添加：**
     ```java
     // 如果导入后有冲突可以不添加，suyi中已经添加过了
     <uses-sdk tools:overrideLibrary="com.bun.miitmdid"/>
     ```
 
-5. **目前华为应用市场会提示oaid1.0.25中存在网易（飞鱼）的sdk，这是由于oaid1.0.25中的包路径和网易（飞鱼）sdk的包路径相同，只能通过升级oaid进行解决。<br>
-oaid从1.0.26版本开始需要到[《移动智能终端补充设备标识体系统一调用SDK》](http://www.msa-alliance.cn/col.jsp?id=122)申请相关密钥，需要开发者自行获取oaid，并参考<a href="#custom_controller"> 5.7 向SDK传入设备标识 </a>**。
-
-**PS：需要更多帮助可参考目录下《移动智能终端补充设备标识体系统一调用SDK开发者说明文档》；**
+    **PS：目前华为应用市场会提示OAID1.0.25中存在网易（飞鱼）的sdk，这是由于OAID1.0.25中的包路径和网易（飞鱼）sdk的包路径相同，只能通过升级OAID进行解决。<br>
+    OAID 1.0.25以上版本需要到[《移动智能终端补充设备标识体系统一调用SDK》](http://www.msa-alliance.cn/col.jsp?id=120)申请APP专属密钥才能正常使用，需要开发者自行获取OAID，并参考<a href="#custom_controller"> 5.7 向SDK传入设备标识 </a> ，将获取到的OAID字符串传给广告SDK，保证广告SDK参数成功接收到。**<br><br>
+    **注意：不想调整的开发者打包华为渠道包时请去除以下依赖，对接其它版本OAID也请移除以下依赖：**
+    ```java
+    // OAID库1.0.25
+    implementation(name: 'oaid_sdk_1.0.25', ext: 'aar')
+    // oaid1.0.25 版本适配器，ADSuyi获取oaid使用，不支持其它版本，对接其它版本请勿使用
+    implementation 'cn.admobiletop.adsuyi.ad:oaid:1.0.25.08023'
+    ```
 
 ### 5.3 权限申请
 
