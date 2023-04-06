@@ -316,6 +316,9 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad:oaid:1.0.25.08023'
     ```
 
+5. 使用其它版本参考案例
+[Oaid高版本参考案例](https://gitee.com/admobile/oaid-docking-case.git)
+
 ### 5.3 权限申请
 
   使用SDK时可能需要以下权限，为了保证使用广告的正确，请在6.0及以上的手机中使用SDK前及时申请。
