@@ -47,7 +47,7 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | gdt       | 1.92M | v4.520.1390.04131  | e92bb614652ccfc8bdfecc13cf327a47 |
 | toutiao   | 7.00M | v5.2.0.5.03281     | fe7449c1659f53156e0e1d88aa674409 |
 | baidu     | 1.80M | v9.28.03281        | 4fc83a5fa15072e330bda3dd86056488 |
-| mintegral | 2.80M | v16.3.77.02221     | 8ef6bdfafa623eddeffebf9ce35b046c |
+| mintegral | 2.80M | v16.3.97.03281     | 8ef6bdfafa623eddeffebf9ce35b046c |
 | ksad      | 4.20M | v3.3.42.03281      | f838b58db1667e1a3d4894f941518191 |
 | mimo      | 1.60M | v5.2.2.12211       | 88358328ae261ee15a742c5562d13c49 |
 | hwpps     | 1.01M | v13.4.61.304.03281 | 52c95241349a42fb48289f3e2fdf3aae |
@@ -198,7 +198,7 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced:9.28.03281'
 
     // 汇量AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:16.3.77.02221'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:16.3.97.03281'
 
     // 快手AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.42.03281'
@@ -265,7 +265,7 @@ dependencies {
 5. Mintegral（汇量）渠道与微信sdk冲突解决办法
     由于Mintegral渠道16.1.7版本支持小程序跳转功能，若媒体已导入opensdk，会导致冲突，可通过以下方式移除Mintegral适配器中的opensdk
     ```java
-    ('cn.admobiletop.adsuyi.ad.adapter:mintegral:16.3.77.02221') {
+    ('cn.admobiletop.adsuyi.ad.adapter:mintegral:16.3.97.03281') {
             exclude group: "com.tencent.mm.opensdk", module: "wechat-sdk-android"
         }
     ```
