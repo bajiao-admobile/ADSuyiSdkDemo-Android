@@ -737,8 +737,8 @@ cn.admobiletop.adsuyi.ADSuyiSdk
 
 | 方法名         | 介绍 |
 | ------------ | ---- |
-| init(Context context, ADSuyiInitConfig config) | 构造方法。参数说明：context（初始化SDK的上下文对象）、config（初始化配置信息）。|
-| init(Context context, ADSuyiInitConfig config, ADSuyiInitListener listener) | 构造方法。参数说明：context（初始化SDK的上下文对象）、config（初始化配置信息）、listener（初始化状态监听）。|
+| init(Context context, ADSuyiInitConfig config) | 构造方法。参数说明：context（初始化SDK请传入Application的上下文对象）、config（初始化配置信息）。|
+| init(Context context, ADSuyiInitConfig config, ADSuyiInitListener listener) | 构造方法。参数说明：context（初始化SDK请传入Application的上下文对象）、config（初始化配置信息）、listener（初始化状态监听）。|
 | setPersonalizedAdEnabled(boolean enablePersonalized) | 设置个性化推荐开关。参数说明：enablePersonalized（true：开启，false：关闭， 默认：true）。|
 | getPersonalizedAdEnabled() | 获取个性化推荐状态，true：开启，false：关闭。 |
 | pauseFloatingAd() | 暂停浮窗广告投放。 |
