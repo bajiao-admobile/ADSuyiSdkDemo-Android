@@ -1,4 +1,4 @@
-# ADSuyiSdk Android Sdk——接入文档 V3.7.3.03281
+# ADSuyiSdk Android Sdk——接入文档 V3.7.4.04271
 
 
 
@@ -36,23 +36,23 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 
 | Name         | 大小 | 版本号       | MD5值                            |
 | ------------ | ---- | ------------ | -------------------------------- |
-| ADSuyi基础包 | 0.3M | V3.7.3.03281  | 9e8e9df8c1cfd1ea149ae2c9265055d0 |
+| ADSuyi基础包 | 0.3M | V3.7.4.04271  | 63adaf87fbded405916103865bb5c2d2 |
 | OAID         | 1.1M | —            | —                                |
 
 ### 1.5 三方广告平台适配器+三方广告sdk总容量
 
 | Name      | 容量  | 版本号             | MD5值                            |
 | --------- | ----- | ------------------ | -------------------------------- |
-| tianmu    | 4.00M | v2.0.3.03291       | d560fe0cf085e3a3110675795316eb64 |
+| tianmu    | 4.00M | v2.0.4.04271       | d62aa2a375e9df39e283611c41c71f59 |
 | gdt       | 1.92M | v4.520.1390.03281  | e92bb614652ccfc8bdfecc13cf327a47 |
-| toutiao   | 7.00M | v5.2.0.5.03281     | fe7449c1659f53156e0e1d88aa674409 |
-| baidu     | 1.80M | v9.28.03281        | 4fc83a5fa15072e330bda3dd86056488 |
-| mintegral | 2.80M | v16.3.97.03281     | 8ef6bdfafa623eddeffebf9ce35b046c |
-| ksad      | 4.20M | v3.3.42.03281      | f838b58db1667e1a3d4894f941518191 |
-| mimo      | 1.60M | v5.2.2.12211       | 88358328ae261ee15a742c5562d13c49 |
+| toutiao   | 7.00M | v5.3.0.3.04271     | 3a0c181155643fb912f314180621e8e2 |
+| baidu     | 1.80M | v9.29.04271        | 8942144b8c475ba3a6cc72dd36fcaa95 |
+| mintegral | 2.80M | v16.4.31.04201     | a0831711fb9164619046a1d13f987a3d |
+| ksad      | 4.20M | v3.3.44.04271      | bf28c8d59ca3b21016eef00efb91247d |
+| mimo      | 1.60M | v5.2.3.04201       | 60d89e3c026855253c262484d85c8e34 |
 | hwpps     | 1.01M | v13.4.61.304.03281 | 52c95241349a42fb48289f3e2fdf3aae |
 | inmobi    | 0.95M | v7.5.4.11152       | 8ecde00efc7e8af8b1fa2cbc7ebe3f89 |
-| gromore   | —     | v4.0.0.1.02061     | 003cc9a78bd457daddaa25abd3c85707 |
+| gromore   | —     | v4.2.0.2.05151     | be9089e3dcd84c218b7fa39ab1184b6e |
 
 
 ## 2. 支持的广告类型
@@ -155,7 +155,7 @@ allprojects {
         // 添加ADSuyi相关仓库依赖
         maven { url "https://maven.admobile.top/repository/maven-releases/" }
         // 如果添加了汇量广告，需要添加汇量的远程仓库依赖
-        maven { url "https://dl-maven-android.mintegral.com/repository/mbridge_android_sdk_support/" }
+        maven { url "https://dl-maven-android.mintegral.com/repository/mbridge_android_sdk_oversea" }
         // 如果添加了华为联盟广告，需要添加华为联盟的远程仓库依赖
         maven { url 'https://developer.huawei.com/repo/' }
         // 如果添加了gromore广告，需要添加gromore的远程仓库依赖
@@ -178,7 +178,7 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
 
     // ADSuyiSdk、common和OAID库是必须导入的
-    implementation 'cn.admobiletop.adsuyi.ad:core:3.7.3.03281'
+    implementation 'cn.admobiletop.adsuyi.ad:core:3.7.4.04271'
 
     // OAID库1.0.25华为渠道请参考文档5.2
     implementation(name: 'oaid_sdk_1.0.25', ext: 'aar')
@@ -186,29 +186,29 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad:oaid:1.0.25.08023'
 
     // 天目AdapterSdk，必选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:tianmu:2.0.3.03291'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:tianmu:2.0.4.04271'
 
     // 优量汇（广点通）AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.520.1390.03281'
 
     // 头条AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:5.2.0.5.03281'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:5.3.0.3.04271'
 
     // 百度增强版AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced:9.28.03281'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced:9.29.04271'
 
     // 汇量AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:16.3.97.03281'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:16.4.31.04201'
 
     // 快手AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.42.03281'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.44.04271'
 
     // InmobiAdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:inmobi:7.5.4.11152'
     implementation 'com.squareup.picasso:picasso:2.5.2'
 
     // 米盟AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:mimo:5.2.2.12211'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:mimo:5.2.3.04201'
     implementation 'com.google.code.gson:gson:2.8.5'
     implementation 'com.github.bumptech.glide:glide:4.9.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
@@ -217,9 +217,9 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:hwpps:13.4.61.304.03281'
 
     // gromoreAdapterSdk，可选的。如果要使用gromore的其他渠道，请联系开发者。
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:gromore:4.0.0.1.02061'
-    implementation "by.gm_mediation.com:gdt-adapter:4.510.1380.0" //广点通 adapter
-    implementation "by.gm_mediation.com:pangle-adapter:5.1.0.2.0" //穿山甲 adapter
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:gromore:4.2.0.2.05151'
+    implementation "by.gm_mediation.com:gdt-adapter:4.520.1390.1" //广点通 adapter
+    implementation "by.gm_mediation.com:pangle-adapter:5.3.0.5.0" //穿山甲 adapter
     // 有gromore其他渠道需求，请联系开发者。
 
 }
@@ -250,7 +250,7 @@ dependencies {
    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt-without:x.x.x.x'
    ```
 
-> 如果接入汇量，需要加入第三方依赖库https://dl-maven-android.mintegral.com/repository/mbridge_android_sdk_support/
+> 如果接入汇量，需要加入第三方依赖库https://dl-maven-android.mintegral.com/repository/mbridge_android_sdk_oversea
 
 > 如果接入华为联盟，需要加入第三方依赖库https://developer.huawei.com/repo/
 
@@ -265,7 +265,7 @@ dependencies {
 5. Mintegral（汇量）渠道与微信sdk冲突解决办法
     由于Mintegral渠道16.1.7版本支持小程序跳转功能，若媒体已导入opensdk，会导致冲突，可通过以下方式移除Mintegral适配器中的opensdk
     ```java
-    ('cn.admobiletop.adsuyi.ad.adapter:mintegral:16.3.97.03281') {
+    ('cn.admobiletop.adsuyi.ad.adapter:mintegral:16.4.31.04201') {
             exclude group: "com.tencent.mm.opensdk", module: "wechat-sdk-android"
         }
     ```
