@@ -976,7 +976,7 @@ cn.admobiletop.adsuyi.ad.listener.ADSuyiBannerAdListener
 
 
 
-#### 6.3.2 开屏广告加载并展示
+#### 6.3.2 横幅广告加载并展示
 
 ```java
 // 创建Banner广告实例，第一个参数可以是Activity或Fragment，第二个参数是广告容器（请保证容器不会拦截点击、触摸等事件）
