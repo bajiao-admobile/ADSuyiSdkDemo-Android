@@ -1,4 +1,4 @@
-# ADSuyiSdk Android Sdk——接入文档 V3.7.4.04271
+# ADSuyiSdk Android Sdk——接入文档 V3.7.5.05231
 
 
 
@@ -36,18 +36,18 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 
 | Name         | 大小 | 版本号       | MD5值                            |
 | ------------ | ---- | ------------ | -------------------------------- |
-| ADSuyi基础包 | 0.3M | V3.7.4.04271  | 63adaf87fbded405916103865bb5c2d2 |
+| ADSuyi基础包 | 0.3M | V3.7.5.05231  | d1979a991792e24b8213f8e227c87c56 |
 | OAID         | 1.1M | —            | —                                |
 
 ### 1.5 三方广告平台适配器+三方广告sdk总容量
 
 | Name      | 容量  | 版本号             | MD5值                            |
 | --------- | ----- | ------------------ | -------------------------------- |
-| tianmu    | 4.00M | v2.0.4.04271       | d62aa2a375e9df39e283611c41c71f59 |
-| gdt       | 1.92M | v4.520.1390.03281  | e92bb614652ccfc8bdfecc13cf327a47 |
-| toutiao   | 7.00M | v5.3.0.3.04271     | 3a0c181155643fb912f314180621e8e2 |
-| baidu     | 1.80M | v9.29.04271        | 8942144b8c475ba3a6cc72dd36fcaa95 |
-| mintegral | 2.80M | v16.4.31.04201     | a0831711fb9164619046a1d13f987a3d |
+| tianmu    | 4.00M | v2.0.5.05231       | 881bcf74293c9f884c4d8a2731ced65e |
+| gdt       | 1.92M | v4.530.1400.05231  | f47fad2d5f220e84617eb29e6e159835 |
+| toutiao   | 7.00M | v5.3.0.5.05231     | 9d1102d26e95e8099bd566abfd1861c4 |
+| baidu     | 1.80M | v9.30.05261        | 4e1e2200e1d9f415e6de486fd1359fe9 |
+| mintegral | 2.80M | v16.4.31.04201     | fdcd409682d3df6e885fd1e37570a5ed |
 | ksad      | 4.20M | v3.3.44.04271      | bf28c8d59ca3b21016eef00efb91247d |
 | mimo      | 1.60M | v5.2.3.04201       | 60d89e3c026855253c262484d85c8e34 |
 | hwpps     | 1.01M | v13.4.61.304.03281 | 52c95241349a42fb48289f3e2fdf3aae |
@@ -178,7 +178,7 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
 
     // ADSuyiSdk、common和OAID库是必须导入的
-    implementation 'cn.admobiletop.adsuyi.ad:core:3.7.4.04271'
+    implementation 'cn.admobiletop.adsuyi.ad:core:3.7.5.05231'
 
     // OAID库1.0.25华为渠道请参考文档5.2
     implementation(name: 'oaid_sdk_1.0.25', ext: 'aar')
@@ -186,16 +186,16 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad:oaid:1.0.25.08023'
 
     // 天目AdapterSdk，必选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:tianmu:2.0.4.04271'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:tianmu:2.0.5.05231'
 
     // 优量汇（广点通）AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.520.1390.03281'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.530.1400.05231'
 
     // 头条AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:5.3.0.3.04271'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:5.3.0.5.05231'
 
     // 百度增强版AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced:9.29.04271'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced:9.30.05261'
 
     // 汇量AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:16.4.31.04201'
