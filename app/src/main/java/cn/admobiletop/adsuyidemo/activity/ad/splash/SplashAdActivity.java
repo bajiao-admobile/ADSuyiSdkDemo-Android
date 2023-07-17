@@ -23,6 +23,7 @@ import cn.admobiletop.adsuyi.ad.listener.ADSuyiSplashAdListener;
 import cn.admobiletop.adsuyi.util.ADSuyiToastUtil;
 import cn.admobiletop.adsuyidemo.R;
 import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
+import cn.admobiletop.adsuyidemo.util.UIUtils;
 
 /**
  * @author ciba
@@ -92,8 +93,8 @@ public class SplashAdActivity extends AppCompatActivity {
             adSuyiSplashAd.setImmersive(true);
             rlLogoContainer.setVisibility(View.GONE);
         } else if (splashType == HALF_SCREEN) {
-            int widthPixels = getResources().getDisplayMetrics().widthPixels;
-            int HeightPixels = getResources().getDisplayMetrics().heightPixels;
+            int widthPixels = UIUtils.getScreenWidthInPx(this);
+            int HeightPixels = UIUtils.getRealHeight(this);
 
             // 创建额外参数实例
             ADSuyiExtraParams extraParams = new ADSuyiExtraParams.Builder()
