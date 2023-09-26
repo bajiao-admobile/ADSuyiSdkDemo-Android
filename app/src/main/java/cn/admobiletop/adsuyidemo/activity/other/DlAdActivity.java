@@ -23,7 +23,7 @@ import cn.admobiletop.adsuyidemo.widget.AdMobileDlExpressAdDialog;
 import cn.admobiletop.adsuyidemo.widget.AdMobileDlFeedAdDialog;
 
 /**
- * @author maipian
+ * @author 草莓
  * @description Dl广告示例
  * @date 2020/10/21
  */
@@ -50,7 +50,7 @@ public class DlAdActivity extends BaseAdActivity implements View.OnClickListener
 
     private void initAd() {
         dialogDismiss();
-        // 模版广告容器宽度
+        // 模板广告容器宽度
         int widthPixels = getResources().getDisplayMetrics().widthPixels;
         // 创建Dl广告实例 (注意dl广告用法与信息流广告相似，但是需要申请dl相应广告位，并非使用信息流的广告位)
         adSuyiNativeAd = new ADSuyiNativeAd(this);

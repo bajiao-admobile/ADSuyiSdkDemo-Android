@@ -20,8 +20,10 @@ import cn.admobiletop.adsuyi.ad.data.ADSuyiAdType;
 import cn.admobiletop.adsuyidemo.R;
 import cn.admobiletop.adsuyidemo.activity.setting.FloatingAdSettingActivity;
 import cn.admobiletop.adsuyidemo.activity.setting.PositionSettingActivity;
+import cn.admobiletop.adsuyidemo.activity.setting.SettingActivity;
 import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
 import cn.admobiletop.adsuyidemo.entity.AdSettingData;
+import cn.admobiletop.adsuyidemo.util.SPUtil;
 
 /**
  * @author songzi
@@ -201,19 +203,17 @@ public class SettingAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
         private void initPlatformData() {
             platformMap.put("所有(null或空字符串)", "");
-            platformMap.put("艾狄墨搏(admobile)", "admobile");
-            platformMap.put("广点通/优量汇(gdt)", "gdt");
+            platformMap.put("天目(tianmu)", "tianmu");
+            platformMap.put("优量汇/广点通(gdt)", "gdt");
             platformMap.put("头条/穿山甲(toutiao)", "toutiao");
             platformMap.put("百度/百青藤(baidu)", "baidu");
-            platformMap.put("inmobi", "inmobi");
             platformMap.put("汇量/Mobvsita(mintegral)", "mintegral");
-            platformMap.put("appic", "appic");
-            platformMap.put("讯飞(ifly)", "ifly");
             platformMap.put("快手(ksad)", "ksad");
+            platformMap.put("inmobi", "inmobi");
             platformMap.put("米盟(mimo)", "mimo");
             platformMap.put("华为广告联盟(hwpps)", "hwpps");
-            platformMap.put("云码(yunma)", "yunma");
-            platformMap.put("爱奇艺(iqy)", "iqy");
+            platformMap.put("gromore", "gromore");
+            platformMap.put("极光联盟(jiguang)", "jiguang");
             String currentFinalPlat = ADSuyiDemoConstant.SPLASH_AD_ONLY_SUPPORT_PLATFORM;
             String displayPlat = getPlatformKey(platformMap, currentFinalPlat);
             tvPlatform.setText(displayPlat);
@@ -240,6 +240,7 @@ public class SettingAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                             String platformKey = context.getResources().getStringArray(R.array.platforms_zh)[which];
                             tvPlatform.setText(platformKey);
                             String onlySupportPlatform = platformMap.get(platformKey);
+                            SPUtil.putString(context, SettingActivity.KEY_ONLY_SUPPORT_PLATFORM, onlySupportPlatform);
                             ADSuyiDemoConstant.SPLASH_AD_ONLY_SUPPORT_PLATFORM = onlySupportPlatform;
                             ADSuyiDemoConstant.BANNER_AD_ONLY_SUPPORT_PLATFORM = onlySupportPlatform;
                             ADSuyiDemoConstant.NATIVE_AD_ONLY_SUPPORT_PLATFORM = onlySupportPlatform;

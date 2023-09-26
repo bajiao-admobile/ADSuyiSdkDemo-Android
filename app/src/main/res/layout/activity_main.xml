@@ -34,6 +34,13 @@
                 android:layout_marginRight="16dp"
                 android:orientation="vertical">
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="开屏广告"
+                    android:gravity="center"
+                    android:layout_marginTop="16dp"/>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -50,16 +57,22 @@
                         android:text="@string/splash_ad" />
 
                     <Button
-                        android:id="@+id/btnSplashVPlusAd"
+                        android:id="@+id/btnSplashAdLoadShowSeparation"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
                         android:background="@drawable/shape_background_button_selector"
                         android:stateListAnimator="@null"
-                        android:text="@string/splash_v_plus_ad"
+                        android:text="@string/splash_ad_load_show"
                         android:layout_marginLeft="16dp"/>
 
                 </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#ccc"
+                    android:layout_marginTop="20dp"/>
 
                 <Button
                     android:id="@+id/btnNativeAd"
@@ -141,6 +154,15 @@
                     android:text="@string/admobile_dl_ad" />
 
                 <Button
+                    android:id="@+id/btnInnerNotice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/shape_background_button_selector"
+                    android:stateListAnimator="@null"
+                    android:text="@string/inner_notice" />
+
+                <Button
                     android:id="@+id/btnInterstitialAutoClose"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -152,16 +174,32 @@
             </LinearLayout>
         </ScrollView>
 
-        <TextView
-            android:id="@+id/tvVersion"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:gravity="center"
-            android:lineSpacingExtra="2dp"
-            android:padding="15dp"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="16sp" />
+            android:layout_height="50dp">
+
+            <TextView
+                android:id="@+id/tvVersion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:lineSpacingExtra="2dp"
+                android:padding="15dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="16sp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"/>
+
+            <Switch
+                android:id="@+id/switchPersonalized"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:text="个性化开关 " />
+
+        </RelativeLayout>
     </LinearLayout>
 
     <FrameLayout

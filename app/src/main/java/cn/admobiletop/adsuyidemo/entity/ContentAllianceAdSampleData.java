@@ -3,7 +3,7 @@ package cn.admobiletop.adsuyidemo.entity;
 import cn.admobiletop.adsuyi.ad.data.ADSuyiContentAllianceAdInfo;
 
 /**
- * @author maipian
+ * @author 草莓
  * @description 信息流广告示例数据
  * @date 2020/4/1
  */

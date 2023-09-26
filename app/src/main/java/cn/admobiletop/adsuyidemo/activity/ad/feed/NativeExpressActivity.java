@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
@@ -24,9 +25,9 @@ import cn.admobiletop.adsuyidemo.R;
 import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
 
 /**
- * @author : maipian
+ * @author : 草莓
  * @date : 2021/11/01
- * @description : 将信息流模版广告放到RelativeLayout进行展示案例
+ * @description : 将信息流模板广告放到RelativeLayout进行展示案例
  */
 public class NativeExpressActivity extends AppCompatActivity {
 
@@ -92,17 +93,17 @@ public class NativeExpressActivity extends AppCompatActivity {
     private void loadAd(boolean isLoadSuccessShows) {
         releaseAd();
 
-        // 模版广告容器宽度
+        // 模板广告容器宽度
         int widthPixels = getResources().getDisplayMetrics().widthPixels;
         // 创建信息流广告实例
         adSuyiNativeAd = new ADSuyiNativeAd(this);
         // 创建额外参数实例
         ADSuyiExtraParams extraParams = new ADSuyiExtraParams.Builder()
-                // 设置整个广告视图预期宽高(目前仅头条、艾狄墨搏平台需要，没有接入头条、艾狄墨搏可不设置)，单位为px，高度如果小于等于0则高度自适应
+                // 设置整个广告视图预期宽高(目前仅优量汇、头条、艾狄墨搏平台需要，没有接入优量汇、头条、艾狄墨搏可不设置)，单位为px，高度如果小于等于0则高度自适应
                 .adSize(new ADSuyiAdSize(widthPixels, 0))
                 // 设置广告视图中MediaView的预期宽高(目前仅Inmobi平台需要,Inmobi的MediaView高度为自适应，没有接入Inmobi平台可不设置)，单位为px
                 .nativeAdMediaViewSize(new ADSuyiAdSize((int) (widthPixels - 24 * getResources().getDisplayMetrics().density)))
-                // 设置信息流广告适配播放是否静音，默认静音，目前广点通、百度、汇量、快手、Admobile支持修改
+                // 设置信息流广告适配播放是否静音，默认静音，目前优量汇、百度、汇量、快手、Admobile支持修改
                 .nativeAdPlayWithMute(ADSuyiDemoConstant.NATIVE_AD_PLAY_WITH_MUTE)
                 .build();
         // 设置一些额外参数，有些平台的广告可能需要传入一些额外参数，如果有接入头条、Inmobi平台，如果包含这些平台该参数必须设置
@@ -175,18 +176,22 @@ public class NativeExpressActivity extends AppCompatActivity {
 
         ADSuyiNativeExpressAdInfo nativeExpressAdInfo;
         if (!adSuyiNativeAdInfo.isNativeExpress()) {
-            Toast.makeText(this, "当前请求到广告非信息流模版广告，请使用信息流模版广告位", Toast.LENGTH_SHORT).show();
-            Log.d(ADSuyiDemoConstant.TAG, "当前请求到广告非信息流模版广告，请使用信息流模版广告位");
+            Toast.makeText(this, "当前请求到广告非信息流模板广告，请使用信息流模板广告位", Toast.LENGTH_SHORT).show();
+            Log.d(ADSuyiDemoConstant.TAG, "当前请求到广告非信息流模板广告，请使用信息流模板广告位");
             return;
         } else {
-            // 将广告对象转换成模版广告
+            // 将广告对象转换成模板广告
             nativeExpressAdInfo = (ADSuyiNativeExpressAdInfo)adSuyiNativeAdInfo;
         }
 
         // 当前是信息流模板广告，getNativeExpressAdView获取的是整个模板广告视图
         View nativeExpressAdView = nativeExpressAdInfo.getNativeExpressAdView(rlExpressAd);
         // 将广告视图添加到容器中的便捷方法
-        ADSuyiViewUtil.addAdViewToAdContainer(rlExpressAd, nativeExpressAdView);
+        ADSuyiViewUtil.addAdViewToAdContainer(
+                rlExpressAd,
+                nativeExpressAdView,
+                new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+        );
         // 渲染广告视图, 必须调用, 因为是模板广告, 所以传入ViewGroup和响应点击的控件可能并没有用
         // 务必在最后调用
         nativeExpressAdInfo.render(rlExpressAd);

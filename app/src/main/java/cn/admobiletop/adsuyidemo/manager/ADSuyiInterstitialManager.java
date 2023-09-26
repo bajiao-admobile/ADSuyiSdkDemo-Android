@@ -7,6 +7,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.kwad.sdk.api.KsInterstitialAd;
@@ -22,8 +23,8 @@ import cn.admobiletop.adsuyidemo.util.ADSuyiViewFindUtils;
 
 /**
  * @Description: 插屏广告添加跳过按钮和自动关闭功能管理类，
- *               目前支持广点通（优量汇）、头条、admobile、快手渠道，渠道陆续新增中。
- * @Author: maipian
+ *               目前支持优量汇（优量汇）、头条、admobile、快手渠道，渠道陆续新增中。
+ * @Author: 草莓
  * @CreateDate: 2/21/22 11:13 AM
  */
 public class ADSuyiInterstitialManager {
@@ -42,8 +43,9 @@ public class ADSuyiInterstitialManager {
 
     /**
      * 快手插屏弹窗对象，没有接入快手可注释掉
+     * 快手的对象会因为迭代经常变更，可以通过showInterstitialAd方法找到快手的dialog对象，然后进行反射关闭
      */
-    private com.kwad.components.ad.b.c kuaishouDialog;
+    private com.kwad.components.ad.interstitial.d kuaishouDialog;
 
     private static ADSuyiInterstitialManager instance;
 
@@ -87,10 +89,6 @@ public class ADSuyiInterstitialManager {
         } else if (interstitialAdInfo.getPlatform().equals(PLATFORM_TOUTIAO)) {
             isDialog = false;
             toutiaoAddJumpButton();
-        } else if (interstitialAdInfo.getPlatform().equals(PLATFORM_ADMOBILE)) {
-            this.adInterstitialActivity = adInterstitialActivity;
-            isDialog = true;
-            admobileAddJumpButton();
         } else if (interstitialAdInfo.getPlatform().equals(PLATFORM_KUAISHOU)) {
             this.adInterstitialActivity = adInterstitialActivity;
             isDialog = true;
@@ -119,33 +117,16 @@ public class ADSuyiInterstitialManager {
             Field fieldAdapterAdInfo = interstitialAdInfo.getClass().getSuperclass().getSuperclass().getDeclaredField("i");
             fieldAdapterAdInfo.setAccessible(true);
             KsInterstitialAd ksInterstitialAd = (KsInterstitialAd) fieldAdapterAdInfo.get(interstitialAdInfo);
-            Field fieldD = ksInterstitialAd.getClass().getDeclaredField("d");
+            Field fieldD = ksInterstitialAd.getClass().getDeclaredField("hJ");
             fieldD.setAccessible(true);
-            kuaishouDialog = (com.kwad.components.ad.b.c) fieldD.get(ksInterstitialAd);
+            kuaishouDialog = (com.kwad.components.ad.interstitial.d) fieldD.get(ksInterstitialAd);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
     /**
-     * admobile插屏页面添加跳过按钮，该渠道是通过dialog作为插屏
-     */
-    private void admobileAddJumpButton() {
-        setActivityViews();
-
-        for (int i = 0; i < views.size(); i++) {
-            View view = views.get(i);
-            if (view.getId() == R.id.adsuyi_admobile_interstitial_container) {
-                jumpView = getJumpView((ViewGroup) view);
-                ((ViewGroup) view).addView(jumpView);
-                startCountDown();
-                break;
-            }
-        }
-    }
-
-    /**
-     * 广点通插屏页面添加跳过按钮，该渠道是通过dialog作为插屏
+     * 优量汇插屏页面添加跳过按钮，该渠道是通过dialog作为插屏
      */
     private void gdtAddJumpButton() {
         setActivityViews();
@@ -161,6 +142,30 @@ public class ADSuyiInterstitialManager {
             }
         }
     }
+
+    /**
+     * 优量汇插屏页面添加跳过按钮，该渠道是通过activity作为插屏
+     */
+//    public void gdtAddJumpButton() {
+//        ViewGroup content = adInterstitialActivity.findViewById(android.R.id.content);
+//        if (content != null && content.getChildCount() > 0) {
+//            for (int i = 0; i < content.getChildCount(); i++) {
+//                View view = content.getChildAt(i);
+//                if (view != null && view instanceof LinearLayout) {
+//                    LinearLayout linearLayout = (LinearLayout) view;
+//                    if (linearLayout.getChildCount() > 0) {
+//                        View viewY = linearLayout.getChildAt(linearLayout.getChildCount() - 1);
+//                        if (viewY != null && viewY instanceof FrameLayout) {
+//                            jumpView = getJumpView((ViewGroup) viewY);
+//                            ((ViewGroup) viewY).addView(jumpView);
+//                            startCountDown();
+//                            break;
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//    }
 
     /**
      * 头条插屏页面添加跳过按钮，该渠道是通过activity作为插屏

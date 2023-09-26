@@ -9,6 +9,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.CompoundButton;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import cn.admobiletop.adsuyi.ADSuyiSdk;
@@ -16,17 +18,23 @@ import cn.admobiletop.adsuyidemo.R;
 import cn.admobiletop.adsuyidemo.activity.ad.BannerAdActivity;
 import cn.admobiletop.adsuyidemo.activity.ad.DrawVodActivity;
 import cn.admobiletop.adsuyidemo.activity.ad.FullScreenVodAdActivity;
+import cn.admobiletop.adsuyidemo.activity.ad.InnerNoticeActivity;
 import cn.admobiletop.adsuyidemo.activity.ad.interstitial.InterstitialAdActivity;
 import cn.admobiletop.adsuyidemo.activity.ad.RewardVodAdActivity;
-import cn.admobiletop.adsuyidemo.activity.ad.SplashAdActivity;
+import cn.admobiletop.adsuyidemo.activity.ad.ADSuyiInitAndLoadSplashAdActivity;
 import cn.admobiletop.adsuyidemo.activity.ad.interstitial.InterstitialAdAutoCloseActivity;
+import cn.admobiletop.adsuyidemo.activity.ad.splash.SplashAdLoadShowSeparationActivity;
+import cn.admobiletop.adsuyidemo.activity.ad.splash.SplashAdSettingActivity;
 import cn.admobiletop.adsuyidemo.activity.other.ContentModuleActivity;
 import cn.admobiletop.adsuyidemo.activity.other.DlModuleActivity;
 import cn.admobiletop.adsuyidemo.activity.other.NativeAdActivity;
 import cn.admobiletop.adsuyidemo.activity.setting.SettingActivity;
 import cn.admobiletop.adsuyidemo.util.LoadAdUtil;
+import cn.admobiletop.adsuyidemo.util.SPUtil;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
+    private Switch switchPersonalized;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -38,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ((TextView) findViewById(R.id.tvVersion)).setText("V" + ADSuyiSdk.getInstance().getSdkVersion());
 
         findViewById(R.id.btnSplashAd).setOnClickListener(this);
-        findViewById(R.id.btnSplashVPlusAd).setOnClickListener(this);
+        findViewById(R.id.btnSplashAdLoadShowSeparation).setOnClickListener(this);
         findViewById(R.id.btnBannerAd).setOnClickListener(this);
         findViewById(R.id.btnNativeAd).setOnClickListener(this);
         findViewById(R.id.btnRewardVodAd).setOnClickListener(this);
@@ -47,17 +55,30 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.btnDrawVodAd).setOnClickListener(this);
         findViewById(R.id.btnContentMoudle).setOnClickListener(this);
         findViewById(R.id.btnAdmobileDlAdModule).setOnClickListener(this);
+        findViewById(R.id.btnInnerNotice).setOnClickListener(this);
         findViewById(R.id.btnInterstitialAutoClose).setOnClickListener(this);
+
+        switchPersonalized = findViewById(R.id.switchPersonalized);
+
+        boolean personalized = ADSuyiSdk.getInstance().getPersonalizedAdEnabled();
+        switchPersonalized.setChecked(personalized);
+
+        switchPersonalized.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                ADSuyiSdk.setPersonalizedAdEnabled(isChecked);
+            }
+        });
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btnSplashAd:
-                startActivity(SplashAdActivity.class);
+                startActivity(SplashAdSettingActivity.class);
                 break;
-            case R.id.btnSplashVPlusAd:
-                LoadAdUtil.loadSplashVPlusAd(this, findViewById(R.id.flContainer));
+            case R.id.btnSplashAdLoadShowSeparation:
+                startActivity(SplashAdLoadShowSeparationActivity.class);
                 break;
             case R.id.btnBannerAd:
                 startActivity(BannerAdActivity.class);
@@ -82,6 +103,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btnAdmobileDlAdModule:
                 startActivity(DlModuleActivity.class);
+                break;
+            case R.id.btnInnerNotice:
+                startActivity(InnerNoticeActivity.class);
                 break;
             case R.id.btnInterstitialAutoClose:
                 startActivity(InterstitialAdAutoCloseActivity.class);

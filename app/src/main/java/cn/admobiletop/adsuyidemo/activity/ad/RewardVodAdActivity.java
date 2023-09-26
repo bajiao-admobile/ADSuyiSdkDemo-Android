@@ -22,8 +22,8 @@ import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
  * @date 2020/3/27
  */
 public class RewardVodAdActivity extends BaseAdActivity implements View.OnClickListener {
-    private ADSuyiRewardVodAdInfo rewardVodAdInfo;
     private ADSuyiRewardVodAd rewardVodAd;
+    private ADSuyiRewardVodAdInfo rewardVodAdInfo;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -65,9 +65,18 @@ public class RewardVodAdActivity extends BaseAdActivity implements View.OnClickL
         rewardVodAd.setOnlySupportPlatform(ADSuyiDemoConstant.REWARD_VOD_AD_ONLY_SUPPORT_PLATFORM);
         // 设置激励视频广告监听
         rewardVodAd.setListener(new ADSuyiRewardVodAdListener() {
+
+            @Override
+            public void onAdReceive(ADSuyiRewardVodAdInfo rewardVodAdInfo) {
+                // TODO 激励视频广告对象一次成功拉取的广告数据只允许展示一次
+                RewardVodAdActivity.this.rewardVodAdInfo = rewardVodAdInfo;
+                ADSuyiToastUtil.show(getApplicationContext(), "激励视频广告获取成功");
+                Log.d(ADSuyiDemoConstant.TAG, "onAdReceive...");
+            }
+
             @Override
             public void onVideoCache(ADSuyiRewardVodAdInfo adSuyiRewardVodAdInfo) {
-                // 目前汇量和Inmobi走了该回调之后才准备好
+                // 部分渠道存在激励展示类广告，不会回调该方法，建议在onAdReceive做广告展示处理
                 Log.d(ADSuyiDemoConstant.TAG, "onVideoCache...");
             }
 
@@ -84,14 +93,6 @@ public class RewardVodAdActivity extends BaseAdActivity implements View.OnClickL
             @Override
             public void onReward(ADSuyiRewardVodAdInfo adSuyiRewardVodAdInfo) {
                 Log.d(ADSuyiDemoConstant.TAG, "onReward...");
-            }
-
-            @Override
-            public void onAdReceive(ADSuyiRewardVodAdInfo rewardVodAdInfo) {
-                // TODO 激励视频广告对象一次成功拉取的广告数据只允许展示一次
-                RewardVodAdActivity.this.rewardVodAdInfo = rewardVodAdInfo;
-                ADSuyiToastUtil.show(getApplicationContext(), "激励视频广告获取成功");
-                Log.d(ADSuyiDemoConstant.TAG, "onAdReceive...");
             }
 
             @Override
@@ -138,6 +139,11 @@ public class RewardVodAdActivity extends BaseAdActivity implements View.OnClickL
      * 加载广告
      */
     private void loadAd() {
+        if (rewardVodAdInfo != null) {
+            rewardVodAdInfo.release();
+            rewardVodAdInfo = null;
+        }
+
         // 激励广告场景id（场景id非必选字段，如果需要可到开发者后台创建）
         rewardVodAd.setSceneId(ADSuyiDemoConstant.REWARD_VOD_AD_SCENE_ID);
         // 加载激励视频广告，参数为广告位ID

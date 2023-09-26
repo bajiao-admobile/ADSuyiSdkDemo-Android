@@ -1,50 +1,66 @@
 package cn.admobiletop.adsuyidemo.activity.ad.feed;
 
-import android.app.Dialog;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import com.bumptech.glide.Glide;
+import com.qq.e.ads.nativ.widget.NativeAdContainer;
 
 import java.util.List;
 
 import cn.admobiletop.adsuyi.ad.ADSuyiNativeAd;
 import cn.admobiletop.adsuyi.ad.data.ADSuyiNativeAdInfo;
+import cn.admobiletop.adsuyi.ad.data.ADSuyiNativeExpressAdInfo;
+import cn.admobiletop.adsuyi.ad.data.ADSuyiNativeFeedAdInfo;
 import cn.admobiletop.adsuyi.ad.entity.ADSuyiAdSize;
 import cn.admobiletop.adsuyi.ad.entity.ADSuyiExtraParams;
 import cn.admobiletop.adsuyi.ad.error.ADSuyiError;
 import cn.admobiletop.adsuyi.ad.listener.ADSuyiNativeAdListener;
 import cn.admobiletop.adsuyi.util.ADSuyiAdUtil;
-import cn.admobiletop.adsuyi.util.ADSuyiDisplayUtil;
+import cn.admobiletop.adsuyi.util.ADSuyiViewUtil;
 import cn.admobiletop.adsuyidemo.R;
-import cn.admobiletop.adsuyidemo.activity.ad.feed.dialog.BaseNativeInterstitialDialog;
-import cn.admobiletop.adsuyidemo.activity.ad.feed.dialog.NativeExpressAdapterInterstitialAdDialog;
-import cn.admobiletop.adsuyidemo.activity.ad.feed.dialog.NativeFeedAdapterInterstitialAdDialog;
 import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
 
 /**
  * @author : 草莓
- * @date : 2021/11/01
- * @description : 将信息流广告作为插屏广告使用
- *                样式需要自行调整，demo只做参考
+ * @date : 2022/06/14
+ * @description : 将信息流自渲染广告直接进行展示案例
  */
-public class NativeInterstitialActivity extends AppCompatActivity {
+public class NativeSelfRenderActivity extends AppCompatActivity {
 
+    private Button btnLoadAndShowAd;
     private Button btnLoadAd;
     private Button btnShowAd;
+
+    /**
+     * 自渲染相关布局
+     */
+    private ImageView ivIcon;
+    private NativeAdContainer nativeAdContainer;
+    private RelativeLayout rlAdContainer;
+    private FrameLayout flContent;
+    private ImageView ivAdTarget;
+    private TextView tvTitle;
+    private TextView tvDesc;
+    private ImageView ivClose;
 
     private ADSuyiNativeAd adSuyiNativeAd;
     private ADSuyiNativeAdInfo adSuyiNativeAdInfo;
 
-    private BaseNativeInterstitialDialog interstitialAdDialog;
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_feed_native_interstitial_ad);
+        setContentView(R.layout.activity_feed_native_self_render_ad);
 
         initView();
         initListener();
@@ -52,15 +68,31 @@ public class NativeInterstitialActivity extends AppCompatActivity {
     }
 
     private void initView() {
+        btnLoadAndShowAd = findViewById(R.id.btnLoadAndShowAd);
         btnLoadAd = findViewById(R.id.btnLoadAd);
         btnShowAd = findViewById(R.id.btnShowAd);
+
+        nativeAdContainer = findViewById(R.id.nativeAdContainer);
+        rlAdContainer = findViewById(R.id.rlAdContainer);
+        flContent = findViewById(R.id.flContent);
+        ivIcon = findViewById(R.id.ivIcon);
+        ivAdTarget = findViewById(R.id.ivAdTarget);
+        tvTitle = findViewById(R.id.tvTitle);
+        tvDesc = findViewById(R.id.tvDesc);
+        ivClose = findViewById(R.id.ivClose);
     }
 
     private void initListener() {
+        btnLoadAndShowAd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadAndShowAd();
+            }
+        });
         btnLoadAd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                loadAd();
+                loadAd(false);
             }
         });
 
@@ -73,14 +105,22 @@ public class NativeInterstitialActivity extends AppCompatActivity {
     }
 
     /**
+     * 加载成功并展示
+     */
+    private void loadAndShowAd() {
+        loadAd(true);
+    }
+
+    /**
      * 加载广告
      *
+     * @param isLoadSuccessShows 是否加载信息流广告成功后立刻展示广告
      */
-    private void loadAd() {
+    private void loadAd(boolean isLoadSuccessShows) {
         releaseAd();
 
         // 模板广告容器宽度
-        int widthPixels = getResources().getDisplayMetrics().widthPixels - ADSuyiDisplayUtil.dp2px(20);
+        int widthPixels = getResources().getDisplayMetrics().widthPixels;
         // 创建信息流广告实例
         adSuyiNativeAd = new ADSuyiNativeAd(this);
         // 创建额外参数实例
@@ -94,7 +134,6 @@ public class NativeInterstitialActivity extends AppCompatActivity {
                 .build();
         // 设置一些额外参数，有些平台的广告可能需要传入一些额外参数，如果有接入头条、Inmobi平台，如果包含这些平台该参数必须设置
         adSuyiNativeAd.setLocalExtraParams(extraParams);
-        adSuyiNativeAd.setTimeout(5000);
 
         // 设置仅支持的广告平台，设置了这个值，获取广告时只会去获取该平台的广告，null或空字符串为不限制，默认为null，方便调试使用，上线时建议不设置
         adSuyiNativeAd.setOnlySupportPlatform(ADSuyiDemoConstant.NATIVE_AD_ONLY_SUPPORT_PLATFORM);
@@ -109,8 +148,13 @@ public class NativeInterstitialActivity extends AppCompatActivity {
             public void onAdReceive(List<ADSuyiNativeAdInfo> adInfoList) {
                 Log.d(ADSuyiDemoConstant.TAG, "onAdReceive: " + adInfoList.size());
                 if (adInfoList != null && adInfoList.size() > 0) {
-                    Toast.makeText(NativeInterstitialActivity.this, "广告获取成功", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(NativeSelfRenderActivity.this, "广告获取成功", Toast.LENGTH_SHORT).show();
                     adSuyiNativeAdInfo = adInfoList.get(0);
+
+                    // 是否立刻展示广告
+                    if (isLoadSuccessShows) {
+                        showAd();
+                    }
                 }
             }
 
@@ -127,10 +171,7 @@ public class NativeInterstitialActivity extends AppCompatActivity {
             @Override
             public void onAdClose(ADSuyiNativeAdInfo adSuyiNativeAdInfo) {
                 Log.d(ADSuyiDemoConstant.TAG, "onAdClose: " + adSuyiNativeAdInfo.hashCode());
-                if (interstitialAdDialog != null) {
-                    interstitialAdDialog.dismiss();
-                    interstitialAdDialog = null;
-                }
+                closeAd();
             }
 
             @Override
@@ -141,7 +182,7 @@ public class NativeInterstitialActivity extends AppCompatActivity {
             }
         });
 
-        adSuyiNativeAd.loadAd(ADSuyiDemoConstant.NATIVE_AD_POS_ID, 1);
+        adSuyiNativeAd.loadAd(ADSuyiDemoConstant.NATIVE_AD_POS_ID1, 1);
     }
 
     /**
@@ -159,13 +200,58 @@ public class NativeInterstitialActivity extends AppCompatActivity {
             return;
         }
 
+        ADSuyiNativeFeedAdInfo nativeFeedAdInfo;
         if (adSuyiNativeAdInfo.isNativeExpress()) {
-            interstitialAdDialog = new NativeExpressAdapterInterstitialAdDialog(this);
-            interstitialAdDialog.render(adSuyiNativeAdInfo);
+            Toast.makeText(this, "当前请求到广告非信息流自渲染广告，请使用信息流自渲染广告位", Toast.LENGTH_SHORT).show();
+            Log.d(ADSuyiDemoConstant.TAG, "当前请求到广告非信息流自渲染广告，请使用信息流自渲染广告位");
+            return;
         } else {
-            interstitialAdDialog = new NativeFeedAdapterInterstitialAdDialog(this);
-            interstitialAdDialog.render(adSuyiNativeAdInfo);
+            // 将广告对象转换成自渲染广告
+            nativeFeedAdInfo = (ADSuyiNativeFeedAdInfo)adSuyiNativeAdInfo;
         }
+
+
+
+        flContent.removeAllViews();
+        if (nativeFeedAdInfo.hasMediaView()) {
+            View mediaView = nativeFeedAdInfo.getMediaView(flContent);
+            flContent.addView(mediaView, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+        } else {
+            ImageView ivImage = new ImageView(flContent.getContext());
+            Glide.with(ivImage).load(nativeFeedAdInfo.getImageUrl()).into(ivImage);
+            flContent.addView(ivImage, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+        }
+
+        if (ivIcon != null) {
+            // 广告icon
+            Glide.with(ivIcon).load(nativeFeedAdInfo.getIconUrl()).into(ivIcon);
+        }
+        if (tvTitle != null) {
+            // 广告标题
+            tvTitle.setText(nativeFeedAdInfo.getTitle());
+        }
+        if (tvDesc != null) {
+            // 广告详情
+            tvDesc.setText(nativeFeedAdInfo.getDesc());
+        }
+        // 广告平台logo图标
+        ivAdTarget.setImageResource(nativeFeedAdInfo.getPlatformIcon());
+        // 注册关闭按钮，将关闭按钮点击事件交于SDK托管，以便于回调onAdClose
+        nativeFeedAdInfo.registerCloseView(ivClose);
+        // 注册广告交互, 必须调用
+        // 注意：优量汇只会响应View...actionViews的点击事件，且这些View都应该是com.qq.e.ads.nativ.widget.NativeAdContainer的子View
+        // 务必最后调用
+        nativeFeedAdInfo.registerViewForInteraction(nativeAdContainer, rlAdContainer);
+
+        nativeAdContainer.setVisibility(View.VISIBLE);
+    }
+
+    /**
+     * 关闭广告
+     */
+    private void closeAd() {
+        nativeAdContainer.setVisibility(View.GONE);
+        releaseAd();
     }
 
     /**

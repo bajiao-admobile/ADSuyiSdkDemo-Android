@@ -16,12 +16,13 @@ import cn.admobiletop.adsuyidemo.R;
 import cn.admobiletop.adsuyidemo.activity.ad.feed.NativeAdRecyclerViewActivity;
 import cn.admobiletop.adsuyidemo.activity.ad.feed.NativeExpressActivity;
 import cn.admobiletop.adsuyidemo.activity.ad.feed.NativeInterstitialActivity;
+import cn.admobiletop.adsuyidemo.activity.ad.feed.NativeSelfRenderActivity;
 import cn.admobiletop.adsuyidemo.activity.ad.feed.NativeSlideshowActivity;
 import cn.admobiletop.adsuyidemo.activity.ad.feed.NativeSplashActivity;
 import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
 
 /**
- * @author : maipian
+ * @author : 草莓
  * @date : 2021/11/01
  * @description : 信息流广告案例
  */
@@ -34,7 +35,8 @@ public class NativeAdActivity extends AppCompatActivity implements View.OnClickL
         setSupportActionBar(toolbar);
 
         findViewById(R.id.btnNativeRecyclerView).setOnClickListener(this);
-        findViewById(R.id.btnNativeRelativeLayout).setOnClickListener(this);
+        findViewById(R.id.btnNativeExpressLayout).setOnClickListener(this);
+        findViewById(R.id.btnNativeSelfRenderLayout).setOnClickListener(this);
         findViewById(R.id.btnNativeSlideshow).setOnClickListener(this);
         findViewById(R.id.btnNativeSplash).setOnClickListener(this);
         findViewById(R.id.btnNativeInterstitial).setOnClickListener(this);
@@ -46,8 +48,11 @@ public class NativeAdActivity extends AppCompatActivity implements View.OnClickL
             case R.id.btnNativeRecyclerView:
                 startActivity(NativeAdRecyclerViewActivity.class);
                 break;
-            case R.id.btnNativeRelativeLayout:
+            case R.id.btnNativeExpressLayout:
                 startActivity(NativeExpressActivity.class);
+                break;
+            case R.id.btnNativeSelfRenderLayout:
+                startActivity(NativeSelfRenderActivity.class);
                 break;
             case R.id.btnNativeSlideshow:
                 startActivity(NativeSlideshowActivity.class);

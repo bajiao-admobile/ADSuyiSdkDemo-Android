@@ -12,9 +12,12 @@ import com.bytedance.sdk.openadsdk.stub.activity.Stub_Standard_Landscape_Activit
 import com.bytedance.sdk.openadsdk.stub.activity.Stub_Standard_Portrait_Activity;
 import com.tencent.bugly.crashreport.CrashReport;
 
-import cn.admobiletop.adsuyidemo.activity.ad.SplashAdActivity;
+import cn.admobiletop.adsuyi.util.SuyiPackageStrategy;
+import cn.admobiletop.adsuyidemo.activity.ad.ADSuyiInitAndLoadSplashAdActivity;
+import cn.admobiletop.adsuyidemo.activity.setting.SettingActivity;
 import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
 import cn.admobiletop.adsuyidemo.manager.ADSuyiInterstitialManager;
+import cn.admobiletop.adsuyidemo.util.SPUtil;
 
 /**
  * @author ciba
@@ -40,12 +43,13 @@ public class ADSuyiApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        setOnlySupportPlatform();
         context = this;
         // 添加bugly初始化（该初始化与广告SDK无关，广告SDK中不包含bugly相关内容，仅供Demo错误信息收集使用）
         CrashReport.initCrashReport(getApplicationContext(), "6d9d9f24ee", true);
 
         // 据悉，工信部将在2020年8月底前上线运行全国APP技术检测平台管理系统，2020年12月10日前完成覆盖40万款主流App的合规检测工作。
-        // 为了保证您的App顺利通过检测，结合当前监管关注重点，我们可以将ADSuyiSdk的初始化放在用户同意隐私政策之后。
+        // 为了保证您的App顺利通过检测，结合当前监管关注重点，请务必将ADSuyiSdk的初始化放在用户同意隐私政策之后。
 
         // 如果有接开屏广告，可以设置应用进入后台一段时间后回到应用再次开启开屏界面，增加开屏广告收益（仅供参考，无需要可不设置）
         openSplashActivityAgain();
@@ -103,9 +107,26 @@ public class ADSuyiApplication extends Application {
         long millis = System.currentTimeMillis();
         if (preMillis > 0
                 && millis - preMillis > OPEN_SPLASH_ACTIVITY_INTERVAL_TIME
-                && !(activity instanceof SplashAdActivity)) {
-            activity.startActivity(new Intent(activity, SplashAdActivity.class));
+                && !(activity instanceof ADSuyiInitAndLoadSplashAdActivity)) {
+            activity.startActivity(new Intent(activity, ADSuyiInitAndLoadSplashAdActivity.class));
         }
         preMillis = millis;
+    }
+
+    /**
+     * 设置仅仅支持平台
+     */
+    private void setOnlySupportPlatform() {
+        String onlySupportPlatform = SPUtil.getString(this, SettingActivity.KEY_ONLY_SUPPORT_PLATFORM, null);
+        ADSuyiDemoConstant.SPLASH_AD_ONLY_SUPPORT_PLATFORM = onlySupportPlatform;
+        ADSuyiDemoConstant.BANNER_AD_ONLY_SUPPORT_PLATFORM = onlySupportPlatform;
+        ADSuyiDemoConstant.NATIVE_AD_ONLY_SUPPORT_PLATFORM = onlySupportPlatform;
+        ADSuyiDemoConstant.REWARD_VOD_AD_ONLY_SUPPORT_PLATFORM = onlySupportPlatform;
+        ADSuyiDemoConstant.INTERSTITIAL_AD_ONLY_SUPPORT_PLATFORM = onlySupportPlatform;
+    }
+
+    @Override
+    public String getPackageName() {
+        return SuyiPackageStrategy.getSuyiPackageName(this);
     }
 }

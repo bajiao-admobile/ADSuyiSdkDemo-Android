@@ -21,8 +21,8 @@ import cn.admobiletop.adsuyi.util.ADSuyiViewUtil;
 import cn.admobiletop.adsuyidemo.R;
 
 /**
- * @author maipian
- * @description admobileDl 模版广告弹出框
+ * @author 草莓
+ * @description admobileDl 模板广告弹出框
  * @date 2020/10/21
  */
 public class AdMobileDlExpressAdDialog extends Dialog {

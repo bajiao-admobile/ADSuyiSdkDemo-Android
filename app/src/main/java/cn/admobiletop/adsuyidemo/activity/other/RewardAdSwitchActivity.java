@@ -23,7 +23,7 @@ import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
 import cn.admobiletop.adsuyidemo.widget.AdMobileDlExpressAdDialog;
 
 /**
- * @author maipian
+ * @author 草莓
  * @description Dl广告加载失败后请求激励视频广告示例
  * @date 2020/10/21
  */

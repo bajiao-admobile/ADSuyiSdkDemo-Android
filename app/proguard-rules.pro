@@ -50,7 +50,7 @@
 # admobile广告平台混淆
 -keep class admsdk.library.**{*;}
 
-# 广点通广告平台混淆
+# 优量汇广告平台混淆
 -keep class com.qq.e.** {public protected *;}
 -keep class MTT.ThirdAppInfoNew {*;}
 -keep class com.tencent.** {*;}
@@ -115,19 +115,6 @@
 -keep class com.ksad.download.** { *;}
 -keep class com.kwai.filedownloader.** { *;}
 
-# AppicAd广告平台混淆
--keep class * extends com.ap.android.trunk.sdk.core.base.ad.Ad
--keep class * extends com.ap.android.trunk.sdk.core.base.ad.AdSDK
--keep class * implements com.ap.android.trunk.sdk.core.base.lifecycle.IApplicationLifecycle
-
-# 讯飞广告平台混淆
--dontwarn com.iflytek.**
--keep class com.iflytek.** {* ;}
--keep class android.support.v4.**{public * ;}
--dontwarn com.shu.priory.**
--keep class com.shu.priory.**{*;}
--keep class android.support.v4.**{public * ;}
-
 # 快手广告平台混淆
 -keep class org.chromium.** { *; }
 -keep class aegon.chrome.** { *; }
@@ -167,13 +154,8 @@
 -keep public enum com.bumptech.glide.load.ImageHeaderParser$** { **[] $VALUES; public *; }
 -dontwarn com.bumptech.glide.load.resource.bitmap.VideoDecoder
 
-# 云码混淆
--keep class com.alibaba.sdk.android.** {*;}
--keep class io.vov.** {*;}
--keep class com.UCMobile.Apollo.** {*;}
-
-# 爱奇艺
--keep class com.mcto.sspsdk.** { *; }
+# gromore
+# 请参考gromore-proguard-rules.pro文件
 
 # NovelAdapter混淆
 -keep class android.**{*;}
@@ -185,5 +167,17 @@
 -keep class android.**{*;}
 -keep class com.ecook.novel_sdk.bookstore.data.bean.* {*;}
 
+# 天目
+-keep class com.tianmu.**{ *; }
+-keep class tianmu.com.** { *; }
+-keep interface tianmu.com.** { *; }
+# 天目加固混淆
+-keep @com.qihoo.SdkProtected.tianmusdk.Keep class **{*;}
+-keep,allowobfuscation @interface com.qihoo.SdkProtected.tianmusdk.Keep
+
 # CookbookAdapter混淆
 -keep class cn.admobiletop.cookbook.**{*;}
+
+# ADSyid混淆
+-keep class adsuyi.com.** { *; }
+-keep interface adsuyi.com.** { *; }

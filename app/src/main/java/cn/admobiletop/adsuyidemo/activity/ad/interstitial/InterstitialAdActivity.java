@@ -62,11 +62,6 @@ public class InterstitialAdActivity extends BaseAdActivity implements View.OnCli
         interstitialAd.setLocalExtraParams(extraParams);
         // 设置插屏广告监听
         interstitialAd.setListener(new ADSuyiInterstitialAdListener() {
-            @Override
-            public void onAdReady(ADSuyiInterstitialAdInfo interstitialAdInfo) {
-                // 目前汇量和Inmobi走了该回调之后才准备好
-                Log.d(ADSuyiDemoConstant.TAG, "onAdReady...");
-            }
 
             @Override
             public void onAdReceive(ADSuyiInterstitialAdInfo interstitialAdInfo) {
@@ -74,6 +69,11 @@ public class InterstitialAdActivity extends BaseAdActivity implements View.OnCli
                 InterstitialAdActivity.this.interstitialAdInfo = interstitialAdInfo;
                 ADSuyiToastUtil.show(getApplicationContext(), "插屏广告获取成功");
                 Log.d(ADSuyiDemoConstant.TAG, "onAdReceive...");
+            }
+
+            @Override
+            public void onAdReady(ADSuyiInterstitialAdInfo interstitialAdInfo) {
+                Log.d(ADSuyiDemoConstant.TAG, "onAdReady...");
             }
 
             @Override
@@ -120,6 +120,10 @@ public class InterstitialAdActivity extends BaseAdActivity implements View.OnCli
      * 加载广告
      */
     private void loadAd() {
+        if (interstitialAdInfo != null) {
+            interstitialAdInfo.release();
+            interstitialAdInfo = null;
+        }
         // 插屏广告场景id（场景id非必选字段，如果需要可到开发者后台创建）
         interstitialAd.setSceneId(ADSuyiDemoConstant.INTERSTITIAL_AD_SCENE_ID);
         // 加载插屏广告，参数为广告位ID
