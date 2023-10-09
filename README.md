@@ -1123,6 +1123,7 @@ cn.admobiletop.adsuyi.ad.data.ADSuyiNativeFeedAdInfo
 | getImageUrlList() | List\<String\> | 广告图片集合，可能为空。|
 | hasMediaView() | boolean | 判断是否包含多媒体广告视图。|
 | getMediaView() | View | 获取的是多媒体广告视图。|
+| getPlatformIcon() | int | 获取广告平台角标，资源文件地址。|
 | registerViewForInteraction(ViewGroup container, View... actionViews) | void | 注册广告视图。参数说明：container（广告容器，若对接优量汇自渲染，此处一定要传入com.qq.e.ads.nativ.widget.NativeAdContainer布局，否则优量汇渠道无法曝光）、<br>actionViews（可点击的布局）|
 | registerCloseView(View close) | void | 注册关闭按钮。参数说明：close（点击关闭的view，不注册将不会回调onAdClose事件）|
 
