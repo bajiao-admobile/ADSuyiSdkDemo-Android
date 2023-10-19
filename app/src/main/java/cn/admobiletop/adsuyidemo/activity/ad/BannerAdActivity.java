@@ -3,6 +3,7 @@ package cn.admobiletop.adsuyidemo.activity.ad;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
+import android.view.View;
 import android.widget.FrameLayout;
 
 import cn.admobiletop.adsuyi.ad.ADSuyiBannerAd;
@@ -58,6 +59,10 @@ public class BannerAdActivity extends BaseAdActivity {
             @Override
             public void onAdClose(ADSuyiAdInfo adSuyiAdInfo) {
                 Log.d(ADSuyiDemoConstant.TAG, "onAdClose...");
+                if (flContainer != null) {
+                    flContainer.removeAllViews();
+                    // flContainer.setVisibility(View.GONE);
+                }
             }
 
             @Override
