@@ -966,7 +966,7 @@ cn.admobiletop.adsuyi.ad.listener.ADSuyiBannerAdListener
 | onAdReceive(ADSuyiAdInfo adInfo) | 广告加载成功回调。|
 | onAdExpose(ADSuyiAdInfo adInfo) | 广告展示回调。|
 | onAdClick(ADSuyiAdInfo adInfo) | 广告点击回调。|
-| onAdClose(ADSuyiAdInfo adInfo) | 广告关闭回调。|
+| onAdClose(ADSuyiAdInfo adInfo) | 广告关闭回调，开发者需要在此回调中对广告父视图进行隐藏或移除子视图。|
 | onAdFailed(ADSuyiError error) | 广告失败回调。参数说明：error（广告错误信息）。|
 
 
@@ -996,7 +996,7 @@ bannerAd.setListener(new ADSuyiBannerAdListener() {
 
     @Override
     public void onAdClose(ADSuyiAdInfo adSuyiAdInfo) {
-        // 广告关闭回调
+        // 广告关闭回调，开发者需要在此回调中对广告父视图进行隐藏或移除子视图
    	}
 
     @Override
@@ -1123,6 +1123,7 @@ cn.admobiletop.adsuyi.ad.data.ADSuyiNativeFeedAdInfo
 | getImageUrlList() | List\<String\> | 广告图片集合，可能为空。|
 | hasMediaView() | boolean | 判断是否包含多媒体广告视图。|
 | getMediaView() | View | 获取的是多媒体广告视图。|
+| getPlatformIcon() | int | 获取广告平台角标，资源文件地址。|
 | registerViewForInteraction(ViewGroup container, View... actionViews) | void | 注册广告视图。参数说明：container（广告容器，若对接优量汇自渲染，此处一定要传入com.qq.e.ads.nativ.widget.NativeAdContainer布局，否则优量汇渠道无法曝光）、<br>actionViews（可点击的布局）|
 | registerCloseView(View close) | void | 注册关闭按钮。参数说明：close（点击关闭的view，不注册将不会回调onAdClose事件）|
 
