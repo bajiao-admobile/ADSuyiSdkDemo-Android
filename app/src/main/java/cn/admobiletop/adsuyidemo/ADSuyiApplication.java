@@ -10,7 +10,6 @@ import android.support.multidex.MultiDex;
 
 import com.bytedance.sdk.openadsdk.stub.activity.Stub_Standard_Landscape_Activity;
 import com.bytedance.sdk.openadsdk.stub.activity.Stub_Standard_Portrait_Activity;
-import com.tencent.bugly.crashreport.CrashReport;
 
 import cn.admobiletop.adsuyi.util.SuyiPackageStrategy;
 import cn.admobiletop.adsuyidemo.activity.ad.ADSuyiInitAndLoadSplashAdActivity;
@@ -45,8 +44,6 @@ public class ADSuyiApplication extends Application {
         super.onCreate();
         setOnlySupportPlatform();
         context = this;
-        // 添加bugly初始化（该初始化与广告SDK无关，广告SDK中不包含bugly相关内容，仅供Demo错误信息收集使用）
-        CrashReport.initCrashReport(getApplicationContext(), "6d9d9f24ee", true);
 
         // 据悉，工信部将在2020年8月底前上线运行全国APP技术检测平台管理系统，2020年12月10日前完成覆盖40万款主流App的合规检测工作。
         // 为了保证您的App顺利通过检测，结合当前监管关注重点，请务必将ADSuyiSdk的初始化放在用户同意隐私政策之后。
