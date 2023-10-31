@@ -1,4 +1,4 @@
-# ADSuyiSdk Android Sdk——接入文档 V3.7.8.08183
+# ADSuyiSdk Android Sdk——接入文档 V3.7.8.08184
 
 
 
@@ -35,7 +35,7 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 
 | Name         | 大小   | 版本号         | MD5值                            |
 | ------------ | ----  | ------------- | -------------------------------- |
-| ADSuyi基础包  | 0.37M | V3.7.8.08183  | b3e2c89fd0a779b9bd725946d3de4450 |
+| ADSuyi基础包  | 0.37M | V3.7.8.08184  | c647d8de086e86352f6caf1a28d02dcf |
 | OAID         | 1.10M | V1.0.25       | —                                |
 | OAID适配器    | 0.02M | V1.0.25.08024 | 01ccdf2d37c480b0732336fb2d916d35 |
 
@@ -177,7 +177,7 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
 
     // ADSuyiSdk核心库必须导入
-    implementation 'cn.admobiletop.adsuyi.ad:core:3.7.8.08183'
+    implementation 'cn.admobiletop.adsuyi.ad:core:3.7.8.08184'
 
     // OAID1.0.25版本，华为渠道请参考文档5.2
     implementation(name: 'oaid_sdk_1.0.25', ext: 'aar')
