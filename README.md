@@ -1097,7 +1097,7 @@ cn.admobiletop.adsuyi.ad.data.ADSuyiNativeAdInfo
 | ------------ | ---- |
 | isNativeExpress() | 广告类型，返回boolean类型，true模板类型，false自渲染类型。|
 
-<p style="color:red;">当isNativeExpress返回true时，可强转为ADSuyiNativeExpressAdInfo类，否则转为ADSuyiNativeExpressAdInfo类</p>
+<p style="color:red;">当isNativeExpress返回true时，可强转为ADSuyiNativeExpressAdInfo类，否则转为ADSuyiNativeFeedAdInfo类</p>
 
 **模板广告对象ADSuyiNativeExpressAdInfo继承自ADSuyiNativeAdInfo**
 
