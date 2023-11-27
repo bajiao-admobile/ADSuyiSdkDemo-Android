@@ -21,16 +21,12 @@ import cn.admobiletop.adsuyidemo.activity.ad.FullScreenVodAdActivity;
 import cn.admobiletop.adsuyidemo.activity.ad.InnerNoticeActivity;
 import cn.admobiletop.adsuyidemo.activity.ad.interstitial.InterstitialAdActivity;
 import cn.admobiletop.adsuyidemo.activity.ad.RewardVodAdActivity;
-import cn.admobiletop.adsuyidemo.activity.ad.ADSuyiInitAndLoadSplashAdActivity;
 import cn.admobiletop.adsuyidemo.activity.ad.interstitial.InterstitialAdAutoCloseActivity;
 import cn.admobiletop.adsuyidemo.activity.ad.splash.SplashAdLoadShowSeparationActivity;
 import cn.admobiletop.adsuyidemo.activity.ad.splash.SplashAdSettingActivity;
-import cn.admobiletop.adsuyidemo.activity.other.ContentModuleActivity;
 import cn.admobiletop.adsuyidemo.activity.other.DlModuleActivity;
 import cn.admobiletop.adsuyidemo.activity.other.NativeAdActivity;
 import cn.admobiletop.adsuyidemo.activity.setting.SettingActivity;
-import cn.admobiletop.adsuyidemo.util.LoadAdUtil;
-import cn.admobiletop.adsuyidemo.util.SPUtil;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -53,7 +49,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.btnFullScreenAd).setOnClickListener(this);
         findViewById(R.id.btnInterstitialAd).setOnClickListener(this);
         findViewById(R.id.btnDrawVodAd).setOnClickListener(this);
-        findViewById(R.id.btnContentMoudle).setOnClickListener(this);
         findViewById(R.id.btnAdmobileDlAdModule).setOnClickListener(this);
         findViewById(R.id.btnInnerNotice).setOnClickListener(this);
         findViewById(R.id.btnInterstitialAutoClose).setOnClickListener(this);
@@ -97,9 +92,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btnDrawVodAd:
                 startActivity(DrawVodActivity.class);
-                break;
-            case R.id.btnContentMoudle:
-                startActivity(ContentModuleActivity.class);
                 break;
             case R.id.btnAdmobileDlAdModule:
                 startActivity(DlModuleActivity.class);
