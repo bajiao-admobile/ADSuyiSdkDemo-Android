@@ -63,6 +63,13 @@ public class BannerAdActivity extends BaseAdActivity {
                     flContainer.removeAllViews();
                     // flContainer.setVisibility(View.GONE);
                 }
+
+                if (suyiBannerAd != null) {
+                    suyiBannerAd.release();
+                }
+                if (adSuyiAdInfo != null) {
+                    adSuyiAdInfo.release();
+                }
             }
 
             @Override

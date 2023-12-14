@@ -966,7 +966,7 @@ cn.admobiletop.adsuyi.ad.listener.ADSuyiBannerAdListener
 | onAdReceive(ADSuyiAdInfo adInfo) | 广告加载成功回调。|
 | onAdExpose(ADSuyiAdInfo adInfo) | 广告展示回调。|
 | onAdClick(ADSuyiAdInfo adInfo) | 广告点击回调。|
-| onAdClose(ADSuyiAdInfo adInfo) | 广告关闭回调，开发者需要在此回调中对广告父视图进行隐藏或移除子视图。|
+| onAdClose(ADSuyiAdInfo adInfo) | 广告关闭回调，开发者需要在此回调中对广告父视图进行隐藏或移除子视图，并对广告对象进行释放，避免自刷新逻辑持续进行|
 | onAdFailed(ADSuyiError error) | 广告失败回调。参数说明：error（广告错误信息）。|
 
 
@@ -996,7 +996,8 @@ bannerAd.setListener(new ADSuyiBannerAdListener() {
 
     @Override
     public void onAdClose(ADSuyiAdInfo adSuyiAdInfo) {
-        // 广告关闭回调，开发者需要在此回调中对广告父视图进行隐藏或移除子视图
+        // 广告关闭回调，开发者需要在此回调中对广告父视图进行隐藏或移除子视图，
+        // 并对广告对象进行释放，避免自刷新逻辑持续进行
    	}
 
     @Override
