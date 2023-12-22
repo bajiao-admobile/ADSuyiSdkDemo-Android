@@ -72,6 +72,7 @@ public class DrawVodActivity extends AppCompatActivity implements OnRefreshLoadM
         drawVodAd.setLocalExtraParams(extraParams);
 
         // 设置仅支持的广告平台，设置了这个值，获取广告时只会去获取该平台的广告，null或空字符串为不限制，默认为null，方便调试使用，上线时建议不设置
+        // 注：仅debug模式为true时生效。
         drawVodAd.setOnlySupportPlatform(ADSuyiDemoConstant.DRAW_VOD_AD_ONLY_SUPPORT_PLATFORM);
         // 设置DrawVod广告监听
         drawVodAd.setListener(new ADSuyiDrawVodAdListener() {

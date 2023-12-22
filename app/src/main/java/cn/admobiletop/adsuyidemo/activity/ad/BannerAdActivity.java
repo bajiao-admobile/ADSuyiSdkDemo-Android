@@ -38,6 +38,7 @@ public class BannerAdActivity extends BaseAdActivity {
         // 设置自刷新时间范围为30～120秒，⚠️注意！！！如果设置了自刷新，初始化ADSuyiSDK时传入的content一定为Application的Content
         suyiBannerAd.setAutoRefreshInterval(ADSuyiDemoConstant.BANNER_AD_AUTO_REFRESH_INTERVAL);
         // 设置仅支持的广告平台，设置了这个值，获取广告时只会去获取该平台的广告，null或空字符串为不限制，默认为null，方便调试使用，上线时建议不设置
+        // 注：仅debug模式为true时生效。
         suyiBannerAd.setOnlySupportPlatform(ADSuyiDemoConstant.BANNER_AD_ONLY_SUPPORT_PLATFORM);
         // 设置Banner广告监听
         suyiBannerAd.setListener(new ADSuyiBannerAdListener() {

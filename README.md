@@ -951,7 +951,7 @@ cn.admobiletop.adsuyi.ad.ADSuyiBannerAd
 | ADSuyiBannerAd(Activity activity, ViewGroup container) | 构造方法。参数说明：activity（当前页面activity对象）、container（展示广告视图的父容器）。|
 | ADSuyiBannerAd(Fragment fragment, ViewGroup container) | 构造方法。参数说明：fragment（当前页面fragment对象）、container（展示广告视图的父容器）。|
 | setAutoRefreshInterval(long seconds) | 设置自刷新时间间隔。参数说明：seconds（0为不自动刷新（部分平台无效，如百度），其他取值范围为[30,120]，单位秒）。|
-| setOnlySupportPlatform(String platform) | 设置广告定向，仅请求某一渠道。参数说明：platform（<a href="#platform_name">渠道名</a>）。|
+| setOnlySupportPlatform(String platform) | 设置广告定向，仅请求某一渠道。参数说明：platform（<a href="#platform_name">渠道名</a>）。注：仅debug模式为true时生效。|
 | setListener(ADSuyiBannerAdListener listener) | 设置广告相关状态。参数说明：listener（广告状态监听器）。|
 | setSceneId(String sceneId) | 设置广告场景id，用于区分同一个广告位在不同场景下使用的数据。参数说明：sceneId（场景ID）。|
 | loadAd(String posId) | 请求广告并展示。参数说明：posId（广告位ID）。|
@@ -1032,7 +1032,7 @@ cn.admobiletop.adsuyi.ad.ADSuyiNativeAd
 | ADSuyiNativeAd(Activity activity) | 构造方法。参数说明：activity（当前页面activity对象）。|
 | ADSuyiNativeAd(Fragment fragment) | 构造方法。参数说明：fragment（当前页面fragment对象）。|
 | setLocalExtraParams(ADSuyiExtraParams extraParams) | 设置额外参数。参数说明：extraParams（广告额外参数）。|
-| setOnlySupportPlatform(String platform) | 设置广告定向，仅请求某一渠道。参数说明：platform（<a href="#platform_name">渠道名</a>）。|
+| setOnlySupportPlatform(String platform) | 设置广告定向，仅请求某一渠道。参数说明：platform（<a href="#platform_name">渠道名</a>）。注：仅debug模式为true时生效。|
 | setListener(ADSuyiNativeAdListener listener) | 设置广告相关状态。参数说明：listener（广告状态监听器）。|
 | setVideoListener(ADSuyiNativeVideoListener listener) | 设置广告相关状态。参数说明：listener（广告状态监听器）。|
 | setSceneId(String sceneId) | 设置广告场景id，用于区分同一个广告位在不同场景下使用的数据。参数说明：sceneId（场景ID）。|
@@ -1247,7 +1247,7 @@ cn.admobiletop.adsuyi.ad.ADSuyiRewardVodAd
 | ADSuyiRewardVodAd(Activity activity) | 构造方法。参数说明：activity（当前页面activity对象）。|
 | ADSuyiRewardVodAd(Fragment fragment) | 构造方法。参数说明：fragment（当前页面fragment对象）。|
 | setLocalExtraParams(ADSuyiExtraParams extraParams) | 设置额外参数。参数说明：extraParams（广告额外参数）。|
-| setOnlySupportPlatform(String platform) | 设置广告定向，仅请求某一渠道。参数说明：platform（<a href="#platform_name">渠道名</a>）。|
+| setOnlySupportPlatform(String platform) | 设置广告定向，仅请求某一渠道。参数说明：platform（<a href="#platform_name">渠道名</a>）。注：仅debug模式为true时生效。|
 | setListener(ADSuyiRewardVodAdListener listener) | 设置广告相关状态。参数说明：listener（广告状态监听器）。|
 | setSceneId(String sceneId) | 设置广告场景id，用于区分同一个广告位在不同场景下使用的数据。参数说明：sceneId（场景ID）。|
 | loadAd(String posId) | 请求广告并展示。参数说明：posId（广告位ID）。|
@@ -1372,7 +1372,7 @@ cn.admobiletop.adsuyi.ad.ADSuyiFullScreenVodAd
 | ------------ | ---- |
 | ADSuyiFullScreenVodAd(Activity activity) | 构造方法。参数说明：activity（当前页面activity对象）。|
 | ADSuyiFullScreenVodAd(Fragment fragment) | 构造方法。参数说明：fragment（当前页面fragment对象）。|
-| setOnlySupportPlatform(String platform) | 设置广告定向，仅请求某一渠道。参数说明：platform（<a href="#platform_name">渠道名</a>）。|
+| setOnlySupportPlatform(String platform) | 设置广告定向，仅请求某一渠道。参数说明：platform（<a href="#platform_name">渠道名</a>）。注：仅debug模式为true时生效。|
 | setListener(ADSuyiFullScreenVodAdListener listener) | 设置广告相关状态。参数说明：listener（广告状态监听器）。|
 | setSceneId(String sceneId) | 设置广告场景id，用于区分同一个广告位在不同场景下使用的数据。参数说明：sceneId（场景ID）。|
 | loadAd(String posId) | 请求广告并展示。参数说明：posId（广告位ID）。|
@@ -1480,7 +1480,7 @@ cn.admobiletop.adsuyi.ad.ADSuyiInterstitialAd
 | ADSuyiInterstitialAd(Activity activity) | 构造方法。参数说明：activity（当前页面activity对象）。|
 | ADSuyiInterstitialAd(Fragment fragment) | 构造方法。参数说明：fragment（当前页面fragment对象）。|
 | setLocalExtraParams(ADSuyiExtraParams extraParams) | 设置额外参数。参数说明：extraParams（广告额外参数）。|
-| setOnlySupportPlatform(String platform) | 设置广告定向，仅请求某一渠道。参数说明：platform（<a href="#platform_name">渠道名</a>）。|
+| setOnlySupportPlatform(String platform) | 设置广告定向，仅请求某一渠道。参数说明：platform（<a href="#platform_name">渠道名</a>）。注：仅debug模式为true时生效。|
 | setListener(ADSuyiInterstitialAdListener listener) | 设置广告相关状态。参数说明：listener（广告状态监听器）。|
 | setSceneId(String sceneId) | 设置广告场景id，用于区分同一个广告位在不同场景下使用的数据。参数说明：sceneId（场景ID）。|
 | loadAd(String posId) | 请求广告并展示。参数说明：posId（广告位ID）。|
@@ -1584,7 +1584,7 @@ cn.admobiletop.adsuyi.ad.ADSuyiDrawVodAd
 | ADSuyiDrawVodAd(Activity activity) | 构造方法。参数说明：activity（当前页面activity对象）。|
 | ADSuyiDrawVodAd(Fragment fragment) | 构造方法。参数说明：fragment（当前页面fragment对象）。|
 | setLocalExtraParams(ADSuyiExtraParams extraParams) | 设置额外参数。参数说明：extraParams（广告额外参数）。|
-| setOnlySupportPlatform(String platform) | 设置广告定向，仅请求某一渠道。参数说明：platform（<a href="#platform_name">渠道名</a>）。|
+| setOnlySupportPlatform(String platform) | 设置广告定向，仅请求某一渠道。参数说明：platform（<a href="#platform_name">渠道名</a>）。注：仅debug模式为true时生效。|
 | setListener(ADSuyiDrawVodAdListener listener) | 设置广告相关状态。参数说明：listener（广告状态监听器）。|
 | setVideoListener(ADSuyiDrawVodVideoListener listener) | 设置广告视频相关状态。参数说明：listener（广告状态监听器）。|
 | loadAd(String posId) | 请求广告并展示。参数说明：posId（广告位ID）。|
