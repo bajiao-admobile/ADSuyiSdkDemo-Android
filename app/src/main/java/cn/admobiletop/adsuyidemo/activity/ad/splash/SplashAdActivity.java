@@ -94,12 +94,12 @@ public class SplashAdActivity extends AppCompatActivity {
             rlLogoContainer.setVisibility(View.GONE);
         } else if (splashType == HALF_SCREEN) {
             int widthPixels = UIUtils.getScreenWidthInPx(this);
-            int HeightPixels = UIUtils.getRealHeight(this);
+            int heightPixels = UIUtils.getScreenHeightInPx(this);
 
             // 创建额外参数实例
             ADSuyiExtraParams extraParams = new ADSuyiExtraParams.Builder()
                     // 设置整个广告视图预期宽高(目前仅头条平台需要，没有接入头条可不设置)，单位为px，如果不设置头条开屏广告视图将会以9 : 16的比例进行填充，小屏幕手机可能会出现素材被压缩的情况
-                    .adSize(new ADSuyiAdSize(widthPixels, HeightPixels - logoHeightPx))
+                    .adSize(new ADSuyiAdSize(widthPixels, heightPixels - logoHeightPx))
                     .build();
             // 如果开屏容器不是全屏可以设置额外参数
             adSuyiSplashAd.setLocalExtraParams(extraParams);
