@@ -1,4 +1,4 @@
-# ADSuyiSdk Android Sdk——接入文档 V3.8.1.12062
+# ADSuyiSdk Android Sdk——接入文档 V3.8.1.12063
 
 
 
@@ -35,7 +35,7 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 
 | Name         | 大小   | 版本号         | MD5值                            |
 | ------------ | ----  | ------------- | -------------------------------- |
-| ADSuyi基础包  | 0.37M | V3.8.1.12062  | 1a8134bc14cfecd6ae948bf034871b7e |
+| ADSuyi基础包  | 0.37M | V3.8.1.12063  | 23338224b7ab3d460e5e5360061b9818 |
 | OAID         | 1.10M | V1.0.25       | —                                |
 | OAID适配器    | 0.02M | V1.0.25.08025 | 14a3186e04ccd6e195f7c75ab6a6c6e2 |
 
@@ -48,7 +48,7 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | toutiao   | 7.24M | v5.9.0.8.01161     | 5f1c3848b13e30a1f1a0e55652b52e81 |
 | baidu     | 1.88M | v9.332.12251       | 9590c5c87e9d1e8190d296315ce7b554 |
 | mintegral | 2.80M | v16.5.41.11011     | 5da2b3849f38656a0cfb348e8d257785 |
-| ksad      | 4.88M | v3.3.57.12191      | 171529d66569c7aff7c779740e6cd8c9 |
+| ksad      | 4.88M | v3.3.57.12192      | ec044549e321eb2807f1d24860121ccd |
 | mimo      | 1.60M | v5.3.0.12291       | 0ce0ab6c455ed96f34b78bc473929e36 |
 | hwpps     | 1.01M | v13.4.68.300.12291 | c48a6fdc9503088c739a9e10bcd53fe6 |
 | gromore   | —     | v5.9.0.8.02011     | 18fe926390f65f74e6c6cc6673ece651 |
@@ -177,7 +177,7 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
 
     // ADSuyiSdk核心库必须导入
-    implementation 'cn.admobiletop.adsuyi.ad:core:3.8.1.12062'
+    implementation 'cn.admobiletop.adsuyi.ad:core:3.8.1.12063'
 
     // OAID1.0.25版本，华为渠道请参考文档5.2
     implementation(name: 'oaid_sdk_1.0.25', ext: 'aar')
@@ -200,7 +200,7 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:16.5.41.11011'
 
     // 快手AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.57.12191'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.57.12192'
 
     // 米盟AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:mimo:5.3.0.12291'
