@@ -84,7 +84,7 @@ dependencies {
     // OAID库1.0.25华为渠道请参考文档5.2
     implementation(name: 'oaid_sdk_1.0.25', ext: 'aar')
     // OAID1.0.25版本适配器，其它版本请参考文档5.2.5
-    implementation 'cn.admobiletop.adsuyi.ad:oaid:1.0.25.08025'
+    implementation 'cn.admobiletop.adsuyi.ad:oaid:1.0.25.12122'
 
     // 天目AdapterSdk，必选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:tianmu:2.2.0.02022'
