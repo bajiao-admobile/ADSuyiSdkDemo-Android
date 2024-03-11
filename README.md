@@ -37,7 +37,7 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | ------------ | ----  | ------------- | -------------------------------- |
 | ADSuyi基础包  | 0.37M | V3.9.0.01171  | 441144e9688a33f7d990a999a48540ba |
 | OAID         | 1.10M | V1.0.25       | —                                |
-| OAID适配器    | 0.02M | V1.0.25.08025 | 14a3186e04ccd6e195f7c75ab6a6c6e2 |
+| OAID适配器    | 0.02M | V1.0.25.12122 | 14a3186e04ccd6e195f7c75ab6a6c6e2 |
 
 ### 1.5 三方广告平台适配器+三方广告sdk总容量
 
@@ -182,7 +182,7 @@ dependencies {
     // OAID1.0.25版本，华为渠道请参考文档5.2
     implementation(name: 'oaid_sdk_1.0.25', ext: 'aar')
     // OAID1.0.25版本适配器，其它版本请参考文档5.2.5
-    implementation 'cn.admobiletop.adsuyi.ad:oaid:1.0.25.08025'
+    implementation 'cn.admobiletop.adsuyi.ad:oaid:1.0.25.12122'
 
     // 天目AdapterSdk，必选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:tianmu:2.2.0.02022'
@@ -308,7 +308,7 @@ dependencies {
     // OAID库1.0.25
     implementation(name: 'oaid_sdk_1.0.25', ext: 'aar')
     // OAID1.0.25版本适配器不支持其它版本，ADSuyi获取oaid使用
-    implementation 'cn.admobiletop.adsuyi.ad:oaid:1.0.25.08025'
+    implementation 'cn.admobiletop.adsuyi.ad:oaid:1.0.25.12122'
     ```
 
 5. 使用其它版本参考案例
