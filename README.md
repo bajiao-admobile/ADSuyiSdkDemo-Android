@@ -68,8 +68,8 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
     <td>APP启动界面常会使用开屏广告</td>
   </tr>
   <tr>
-    <td><a href="#ad_banner">Banner广告</a></td>
-    <td>Banner广告是横向贯穿整个可视页面的模板广告，需要将Banner广告视图添加到承载的广告容器中</td>
+    <td><a href="#ad_banner">横幅广告</a></td>
+    <td>横幅广告是横向贯穿整个可视页面的模板广告，需要将横幅广告视图添加到承载的广告容器中</td>
     <td>任意界面的固定位置，不建议放在RecyclerView、List这种滚动布局中当item</td>
   </tr>
   <tr>
@@ -251,7 +251,7 @@ dependencies {
 
 > **由于头条(穿山甲)渠道支持了Android R，引入了Android R的 \<queries\> 标签,需要对gradle版本进行限制，限制范围为：3.3.3、 3.4.3、 3.5.4、3.6.4、4.0.1 ，开发者根据自身情况酌情升级**
 
->  **如对接华为广告联盟，激励视频要提前预加载，并且播放完成后需要预加载下一个激励视频，华为渠道点击事件无法统计；banner广告使用场景是程序页面的顶部或者底部。**
+>  **如对接华为广告联盟，激励视频要提前预加载，并且播放完成后需要预加载下一个激励视频，华为渠道点击事件无法统计；横幅广告使用场景是程序页面的顶部或者底部。**
 
 3. 激励、全屏视频、插屏等广告对象一次成功拉取的广告数据只允许展示一次，还需展示请再次加载广告。
 
@@ -753,7 +753,7 @@ cn.admobiletop.adsuyi.config.ADSuyiInitConfig
 | agreePrivacyStrategy(boolean agreePrivacyStrategy) | 是否同意隐私政策。参数说明：agreePrivacyStrategy（true：开启，false：关闭， 默认：true）。|
 | openFloatingAd(boolean isOpen) | 是否开启浮窗广告。参数说明：isOpen（true：开启，false：关闭， 默认：true）。|
 | floatingAdBlockList(boolean defaultBlockList, String... blockList) | 设置阻止展示浮窗广告的界面。参数说明：defaultBlockList（是否开启默认阻止的界面（激励视频播放界面等））、blockList（自定义需要阻止的界面，activity路径）。|
-| filterThirdQuestion(boolean filterThirdQuestion) | 设置是否过滤第三方平台的问题广告（例如: 已知某个广告平台在某些机型的Banner广告可能存在问题，如果开启过滤，则在该机型将不再去获取该平台的Banner广告）。参数说明：filterThirdQuestion（true：开启，false：关闭， 默认：true）。|
+| filterThirdQuestion(boolean filterThirdQuestion) | 设置是否过滤第三方平台的问题广告（例如: 已知某个广告平台在某些机型的横幅广告可能存在问题，如果开启过滤，则在该机型将不再去获取该平台的横幅广告）。参数说明：filterThirdQuestion（true：开启，false：关闭， 默认：true）。|
 | setCustomDeviceInfoController(CustomDeviceInfoController controller) | 自定义设备信息。可选参数。<a href="#custom_controller"> 请参考5.7 向SDK传入设备标识 </a>|
 
 **CustomDeviceInfoController**
@@ -937,9 +937,9 @@ public void onAdReceive(ADSuyiAdInfo adInfo) {
 
 
 
-### <a name="ad_banner">6.3 Banner横幅广告示例</a>
+### <a name="ad_banner">6.3 横幅广告示例</a>
 
-Banner横幅广告建议放置在 **固定位置**，而非ListView、RecyclerView、ViewPager等控件中充当Item，Banner广告支持多种尺寸比例，可在后台创建广告位时配置，Banner广告的宽度将会撑满容器，高度自适应，建议Banner广告容器高度也为自适应。
+横幅广告建议放置在 **固定位置**，而非ListView、RecyclerView、ViewPager等控件中充当Item，横幅广告支持多种尺寸比例，可在后台创建广告位时配置，横幅广告的宽度将会撑满容器，高度自适应，建议横幅广告容器高度也为自适应。
 
 #### 6.3.1 横幅广告主要 API
 
@@ -975,7 +975,7 @@ cn.admobiletop.adsuyi.ad.listener.ADSuyiBannerAdListener
 #### 6.3.2 横幅广告加载并展示
 
 ```java
-// 创建Banner广告实例，第一个参数可以是Activity或Fragment，第二个参数是广告容器（请保证容器不会拦截点击、触摸等事件）
+// 创建横幅广告实例，第一个参数可以是Activity或Fragment，第二个参数是广告容器（请保证容器不会拦截点击、触摸等事件）
 ADSuyiBannerAd bannerAd = new ADSuyiBannerAd(Activity activity, ViewGroup container);
 
 // 设置Banner广告监听
@@ -1007,11 +1007,11 @@ bannerAd.setListener(new ADSuyiBannerAdListener() {
     }
 });
 
-// 加载Banner广告，参数为广告位ID，同一个ADSuyiBannerAd只有一次loadAd有效
+// 加载横幅广告，参数为广告位ID，同一个ADSuyiBannerAd只有一次loadAd有效
 bannerAd.loadAd(String posId);
 ```
 
->Banner广告示例 [Gitee地址](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/ad/BannerAdActivity.java)、[Github地址](https://github.com/ADSuyi/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/ad/BannerAdActivity.java)
+>横幅广告示例 [Gitee地址](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/ad/BannerAdActivity.java)、[Github地址](https://github.com/ADSuyi/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/ad/BannerAdActivity.java)
 >
 
 
