@@ -6,8 +6,8 @@ android {
         applicationId "cn.admobiletop.adsuyidemo"
         minSdkVersion 21
         targetSdkVersion 30
-        versionCode 202311271
-        versionName "1.202311271"
+        versionCode 202403251
+        versionName "1.202403251"
         multiDexEnabled true
         ndk {
             // 设置支持的SO库架构，暂不支持x86
@@ -79,7 +79,7 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
 
     // ADSuyiSdk核心库必须导入
-    implementation 'cn.admobiletop.adsuyi.ad:core:3.9.0.01171'
+    implementation 'cn.admobiletop.adsuyi.ad:core:3.9.1.03061'
 
     // OAID库1.0.25华为渠道请参考文档5.2
     implementation(name: 'oaid_sdk_1.0.25', ext: 'aar')
@@ -87,22 +87,19 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad:oaid:1.0.25.12122'
 
     // 天目AdapterSdk，必选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:tianmu:2.2.0.02022'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:tianmu:2.2.1.03081'
 
     // 优量汇（广点通）AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.562.1432.01161'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.570.1440.03081'
 
     // 头条AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:5.9.0.8.01161'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:5.9.2.8.03081'
 
     // 百度增强版AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced:9.332.12251'
-
-    // MintegralAdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:16.5.41.11011'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced:9.34.03081'
 
     // 快手AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.57.12192'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.61.2.03012'
 
     // 米盟AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:mimo:5.3.0.12291'
@@ -112,6 +109,9 @@ dependencies {
 
     // 华为广告联盟AdadapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:hwpps:13.4.68.300.12291'
+
+    // Mintegral AdapterSdk，可选的
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:16.5.41.11011'
 
 //    // gromoreAdapterSdk，可选的。如使用gromore的其他渠道，请联系开发者。
 //    // gromore已与穿山甲合并，此处无需重复导入穿山甲。

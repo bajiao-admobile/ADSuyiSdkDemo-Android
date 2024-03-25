@@ -1,4 +1,4 @@
-# ADSuyiSdk Android Sdk——接入文档 V3.9.0.01171
+# ADSuyiSdk Android Sdk——接入文档 V3.9.1.03061
 
 
 
@@ -25,7 +25,7 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | gdt       | 优量汇       | 广点通       |
 | toutiao   | 头条         | 穿山甲       |
 | baidu     | 百度         | 百青藤       |
-| mintegral | 汇量         | Mobvsita     |
+| mintegral | Mintegral   | Mobvsita     |
 | ksad      | 快手         | 快手         |
 | mimo      | 米盟         | 米盟         |
 | hwpps     | 华为广告联盟 | 华为广告联盟 |
@@ -35,7 +35,7 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 
 | Name         | 大小   | 版本号         | MD5值                            |
 | ------------ | ----  | ------------- | -------------------------------- |
-| ADSuyi基础包  | 0.37M | V3.9.0.01171  | 441144e9688a33f7d990a999a48540ba |
+| ADSuyi基础包  | 0.37M | V3.9.1.03061  | f72f20cab041795ae8a2f94ef4e298cd |
 | OAID         | 1.10M | V1.0.25       | —                                |
 | OAID适配器    | 0.02M | V1.0.25.12122 | 14a3186e04ccd6e195f7c75ab6a6c6e2 |
 
@@ -43,14 +43,14 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 
 | Name      | 容量   | 版本号              | MD5值                            |
 | --------- | ----- | ------------------ | -------------------------------- |
-| tianmu    | 2.06M | v2.2.0.02022       | ca3b7ef6cb00daff7239047d41f58651 |
-| gdt       | 2.03M | v4.562.1432.01161  | 9ac0b1ed6566b058ad6b2252b6cf80e5 |
-| toutiao   | 7.24M | v5.9.0.8.01161     | 5f1c3848b13e30a1f1a0e55652b52e81 |
-| baidu     | 1.88M | v9.332.12251       | 9590c5c87e9d1e8190d296315ce7b554 |
-| mintegral | 2.80M | v16.5.41.11011     | 5da2b3849f38656a0cfb348e8d257785 |
-| ksad      | 4.88M | v3.3.57.12192      | ec044549e321eb2807f1d24860121ccd |
+| tianmu    | 2.06M | v2.2.1.03081       | a1fb3543c06141b23d3ca8f16f12c409 |
+| gdt       | 2.03M | v4.570.1440.03081  | 251c298475f79ab839ff46e88e90ce27 |
+| toutiao   | 7.24M | v5.9.2.8.03081     | a61211afe12738cd039c1836265b487a |
+| baidu     | 1.88M | v9.34.03081        | fd7447a74a79f2a92c5acffa9a328663 |
+| ksad      | 4.88M | v3.3.61.2.03012    | e8ee56b0a96f84da8dd407ee5261a770 |
 | mimo      | 1.60M | v5.3.0.12291       | 0ce0ab6c455ed96f34b78bc473929e36 |
 | hwpps     | 1.01M | v13.4.68.300.12291 | c48a6fdc9503088c739a9e10bcd53fe6 |
+| mintegral | 2.80M | v16.5.41.11011     | 5da2b3849f38656a0cfb348e8d257785 |
 | gromore   | —     | v5.9.0.8.02011     | 18fe926390f65f74e6c6cc6673ece651 |
 
 
@@ -177,7 +177,7 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
 
     // ADSuyiSdk核心库必须导入
-    implementation 'cn.admobiletop.adsuyi.ad:core:3.9.0.01171'
+    implementation 'cn.admobiletop.adsuyi.ad:core:3.9.1.03061'
 
     // OAID1.0.25版本，华为渠道请参考文档5.2
     implementation(name: 'oaid_sdk_1.0.25', ext: 'aar')
@@ -185,22 +185,19 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad:oaid:1.0.25.12122'
 
     // 天目AdapterSdk，必选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:tianmu:2.2.0.02022'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:tianmu:2.2.1.03081'
 
     // 优量汇（广点通）AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.562.1432.01161'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.570.1440.03081'
 
     // 头条AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:5.9.0.8.01161'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:5.9.2.8.03081'
 
     // 百度增强版AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced:9.332.12251'
-
-    // 汇量AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:16.5.41.11011'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced:9.34.03081'
 
     // 快手AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.57.12192'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.61.2.03012'
 
     // 米盟AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:mimo:5.3.0.12291'
@@ -210,6 +207,9 @@ dependencies {
 
     // 华为广告联盟AdadapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:hwpps:13.4.68.300.12291'
+
+    // Mintegral AdapterSdk，可选的
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:16.5.41.11011'
 
     // gromoreAdapterSdk，可选的。如使用gromore的其他渠道，请联系开发者。
     // gromore已与穿山甲合并，此处无需重复导入穿山甲。
