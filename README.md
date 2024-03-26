@@ -25,10 +25,11 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | gdt       | 优量汇       | 广点通       |
 | toutiao   | 头条         | 穿山甲       |
 | baidu     | 百度         | 百青藤       |
-| mintegral | Mintegral   | Mobvsita     |
 | ksad      | 快手         | 快手         |
 | mimo      | 米盟         | 米盟         |
-| hwpps     | 华为广告联盟 | 华为广告联盟 |
+| hwpps     | 华为广告联盟  | 华为广告联盟 |
+| jadyun    | 京媒         | 京东广告联盟 |
+| mintegral | Mintegral   | Mobvsita     |
 | gromore   | gromore      | gromore      |
 
 ### 1.4 ADSuyi必添包容量
@@ -50,6 +51,7 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | ksad      | 4.88M | v3.3.61.2.03012    | e8ee56b0a96f84da8dd407ee5261a770 |
 | mimo      | 1.60M | v5.3.0.12291       | 0ce0ab6c455ed96f34b78bc473929e36 |
 | hwpps     | 1.01M | v13.4.68.300.12291 | c48a6fdc9503088c739a9e10bcd53fe6 |
+| jadyun    | 1.41M | v2.5.6.11102       | 3f4fb7560c5d0984921e35d0de2a4aae |
 | mintegral | 2.80M | v16.5.41.11011     | 5da2b3849f38656a0cfb348e8d257785 |
 | gromore   | —     | v5.9.0.8.02011     | 18fe926390f65f74e6c6cc6673ece651 |
 
@@ -208,6 +210,9 @@ dependencies {
     // 华为广告联盟AdadapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:hwpps:13.4.68.300.12291'
 
+    // 京媒 AdapterSdk，可选的。当前为Support版本，有AndroidX版本需求需要联系开发者
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:jadyun:2.5.6.11102'
+
     // Mintegral AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:16.5.41.11011'
 
@@ -269,7 +274,7 @@ dependencies {
 
 **Android10之后IMEI等数据无法获取，这对广告投放将产生一定影响，所以移动安全联盟(MSA)提出OAID来代替IMEI参与广告投放决策，OAID的支持会在一定程度上影响广告收益；**
 
-**OAID是必须集成项，没有集成将会抛出异常提醒开发者**，OAID集成并不繁琐，SDK中已经进行了OAID1.0.25的封装适配，只需以下几步即可完成OAID的支持；
+**我们提供Oaid1.0.25的Oaid适配器，开发者无需额外集成（如需适配oaid1.0.25之后的版本，请参考文档5.2.5）**，OAID集成并不繁琐，SDK中已经进行了OAID1.0.25的封装适配，只需以下几步即可完成OAID的支持；
 
 1. 导入安全联盟的OAID支持库 **oaid_sdk_1.0.25.aar**，可在Demo的libs目录下找到，**对接其它版本请勿参考该教程；**<br>
 
@@ -301,7 +306,6 @@ dependencies {
     <uses-sdk tools:overrideLibrary="com.bun.miitmdid"/>
     ```
 
-    **PS：目前华为应用市场会提示OAID1.0.25中存在网易（飞鱼）的sdk，这是由于OAID1.0.25中的包路径和网易（飞鱼）sdk的包路径相同，只能通过升级OAID进行解决。<br>
     OAID 1.0.25以上版本需要到[《移动智能终端补充设备标识体系统一调用SDK》](http://www.msa-alliance.cn/col.jsp?id=120)申请APP专属密钥才能正常使用，需要开发者自行获取OAID，并参考<a href="#custom_controller"> 5.7 向SDK传入设备标识 </a> ，将获取到的OAID字符串传给广告SDK，保证广告SDK参数成功接收到。**<br><br>
     **注意：使用其它版本oaid请移除以下依赖，避免造成崩溃：**
     ```java
@@ -444,6 +448,8 @@ dependencies {
 
 # ADSuyiSdk混淆
 -dontwarn cn.admobiletop.adsuyi.**
+-keep class adsuyi.com.** { *; }
+-keep interface adsuyi.com.** { *; }
 -dontwarn org.apache.commons.**
 -keep class cn.admobiletop.adsuyi.**{public *;}
 -keep class cn.admobiletop.materialutil.**{public *;}
@@ -584,8 +590,8 @@ dependencies {
 -keep class tianmu.com.** { *; }
 -keep interface tianmu.com.** { *; }
 
-# CookbookAdapter混淆
--keep class cn.admobiletop.cookbook.**{*;}
+#京媒 混淆
+-keep class com.jd.ad.sdk.** { *; }
 
 # ADSyid混淆
 -keep class adsuyi.com.** { *; }
