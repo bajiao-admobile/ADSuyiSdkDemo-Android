@@ -827,7 +827,7 @@ cn.admobiletop.adsuyi.ad.entity.ADSuyiExtraParams
 | ------------ | ---- |
 | ADSuyiExtraParams.Builder().build() | 构造方法。|
 | adSize(ADSuyiAdSize adSize) | 设置开屏视图宽高。参数说明：adSize（设置整个广告视图预期宽高(目前仅头条平台需要，没有接入头条可不设置)，单位为px，如果不设置头条开屏广告视图将会以9 : 16的比例进行填充，小屏幕手机可能会出现素材被压缩的情况，大屏幕设备可能出现留白）。|
-| setAdShakeDisable(boolean adShakeDisable) | 设置摇一摇禁用，目前优量汇、穿山甲、快手、天目渠道支持，其他渠道需要提交工单或渠道后台控制关闭。参数说明：adShakeDisable（true：禁用、false：可用，默认：false）。|
+| setAdShakeDisable(boolean adShakeDisable) | 设置摇一摇禁用，目前优量汇、快手、天目渠道支持，其他渠道需要提交工单或渠道后台控制关闭。参数说明：adShakeDisable（true：禁用、false：可用，默认：false）。|
 
 
 **ADSuyiAdSize**
