@@ -48,7 +48,7 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | gdt       | 2.03M | v4.570.1440.03081  | 251c298475f79ab839ff46e88e90ce27 |
 | toutiao   | 7.24M | v5.9.2.8.03081     | a61211afe12738cd039c1836265b487a |
 | baidu     | 1.88M | v9.34.03081        | fd7447a74a79f2a92c5acffa9a328663 |
-| ksad      | 4.88M | v3.3.61.2.03012    | e8ee56b0a96f84da8dd407ee5261a770 |
+| ksad      | 4.88M | v3.3.61.2.03013    | 046ff364853a5ed8e4ce1f2609ad863c |
 | mimo      | 1.60M | v5.3.0.12291       | 0ce0ab6c455ed96f34b78bc473929e36 |
 | hwpps     | 1.01M | v13.4.68.300.12291 | c48a6fdc9503088c739a9e10bcd53fe6 |
 | jadyun    | 1.41M | v2.5.6.11102       | 3f4fb7560c5d0984921e35d0de2a4aae |
@@ -199,7 +199,7 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced:9.34.03081'
 
     // 快手AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.61.2.03012'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.61.2.03013'
 
     // 米盟AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:mimo:5.3.0.12291'
