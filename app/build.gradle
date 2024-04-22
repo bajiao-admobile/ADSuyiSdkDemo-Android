@@ -118,7 +118,7 @@ dependencies {
 
 //    // gromoreAdapterSdk，可选的。如使用gromore的其他渠道，请联系开发者。
 //    // gromore已与穿山甲合并，此处无需重复导入穿山甲。
-//    implementation 'cn.admobiletop.adsuyi.ad.adapter:gromore-without:5.9.0.8.02011'
+//    implementation 'cn.admobiletop.adsuyi.ad.adapter:gromore-without:5.9.2.8.04112'
 //    implementation "com.pangle.cn:mediation-gdt-adapter:4.561.1431.0" //广点通 adapter
 //    // 有gromore其他渠道需求，请联系开发者。
 }

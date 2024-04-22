@@ -38,8 +38,13 @@ public class ADSuyiInterstitialManager {
 
     public static String PLATFORM_GDT = "gdt";
     public static String PLATFORM_TOUTIAO = "toutiao";
-    public static String PLATFORM_ADMOBILE = "admobile";
+    public static String PLATFORM_TIANMU = "tianmu";
     public static String PLATFORM_KUAISHOU = "ksad";
+    public static String PLATFORM_BAIDU = "baidu";
+
+    public static  List<String> adInterstitialList = new ArrayList<>(); // 联盟广告插屏标识
+    public static  List<String> adInterstitialExtraList = new ArrayList<>(); // 额外需要关闭页面标识，例如然峰天目下载详情页面 半屏或者全屏
+    private Activity adInterstitialExtraActivity; // 额外需要关闭Activity
 
     /**
      * 快手插屏弹窗对象，没有接入快手可注释掉
@@ -54,10 +59,53 @@ public class ADSuyiInterstitialManager {
             synchronized (ADSuyiInterstitialManager.class) {
                 if (instance == null) {
                     instance = new ADSuyiInterstitialManager();
+                    initInterstitialList();
                 }
             }
         }
         return instance;
+    }
+
+    private static void initInterstitialList() {
+        if (adInterstitialList == null){
+            adInterstitialList = new ArrayList<>(); // 联盟广告插屏标识
+        }
+        adInterstitialList.clear();
+
+        adInterstitialList.add("com.bytedance.sdk.openadsdk.stub.activity.Stub_Standard_Portrait_Activity"); //csj
+        adInterstitialList.add("com.byted.pangle.m.Stub_Standard_Portrait_Activity"); //csj
+        adInterstitialList.add("com.byted.pangle.m.Stub_Standard_Landscape_Activity"); // csj
+        adInterstitialList.add("com.qq.e.ads.PortraitADActivity"); // gdt
+        adInterstitialList.add("com.tianmu.ad.activity.InterstitialActivity"); //  tianmu
+        adInterstitialList.add("com.baidu.mobads.sdk.api.MobRewardVideoActivity"); // baidu
+
+
+
+        if (adInterstitialExtraList == null){
+            adInterstitialExtraList = new ArrayList<>(); // 联盟广告插屏标识
+        }
+
+        adInterstitialExtraList.clear();
+        adInterstitialExtraList.add("com.tianmu.ad.activity.AdDownloadDetailActivity"); //tianmu
+
+    }
+
+    /**
+     * 设置插屏广告activity
+     * @param activity
+     */
+    public void addInterstitialList(Activity activity) {
+        if (activity == null || adInterstitialList == null || adInterstitialList.isEmpty() || adInterstitialExtraList == null || adInterstitialExtraList.isEmpty()){
+            return;
+        }
+
+        if (adInterstitialList.contains(activity.getComponentName().getClassName())){
+            ADSuyiInterstitialManager.getInstance().setAdInterstitialActivity(activity);
+        }
+
+        if (adInterstitialExtraList.contains(activity.getComponentName().getClassName())){
+            ADSuyiInterstitialManager.getInstance().setAdInterstitialExtraActivity(activity);
+        }
     }
 
     /**
@@ -66,6 +114,14 @@ public class ADSuyiInterstitialManager {
      */
     public void setAdInterstitialActivity(Activity adInterstitialActivity) {
         this.adInterstitialActivity = adInterstitialActivity;
+    }
+
+    /**
+     * 设置插屏广告额外的 activity
+     * @param adInterstitialExtraActivity
+     */
+    public void setAdInterstitialExtraActivity(Activity adInterstitialExtraActivity) {
+        this.adInterstitialExtraActivity = adInterstitialExtraActivity;
     }
 
     /**
@@ -93,6 +149,11 @@ public class ADSuyiInterstitialManager {
             this.adInterstitialActivity = adInterstitialActivity;
             isDialog = true;
             kuaishouAddJumpButton();
+        } else if (interstitialAdInfo.getPlatform().equals(PLATFORM_TIANMU)) {
+            isDialog = false;
+            tianmuAddJumpButton();
+        } else if (interstitialAdInfo.getPlatform().equals(PLATFORM_BAIDU)) {
+
         }
     }
 
@@ -117,7 +178,7 @@ public class ADSuyiInterstitialManager {
             Field fieldAdapterAdInfo = interstitialAdInfo.getClass().getSuperclass().getSuperclass().getDeclaredField("i");
             fieldAdapterAdInfo.setAccessible(true);
             KsInterstitialAd ksInterstitialAd = (KsInterstitialAd) fieldAdapterAdInfo.get(interstitialAdInfo);
-            Field fieldD = ksInterstitialAd.getClass().getDeclaredField("hJ");
+            Field fieldD = ksInterstitialAd.getClass().getDeclaredField("hW");
             fieldD.setAccessible(true);
             kuaishouDialog = (com.kwad.components.ad.interstitial.d) fieldD.get(ksInterstitialAd);
         } catch (Exception e) {
@@ -185,6 +246,18 @@ public class ADSuyiInterstitialManager {
         }
     }
 
+    private void tianmuAddJumpButton() {
+        setActivityViews();
+
+        startCountDown();
+    }
+
+    private void baiduAddJumpButton() {
+        setActivityViews();
+
+        startCountDown();
+    }
+
     CountDownTimer countDownTimer = new CountDownTimer(jumpTime * 1000, 1000) {
         public void onTick(long millisUntilFinished) {
             if (jumpView != null) {
@@ -203,34 +276,6 @@ public class ADSuyiInterstitialManager {
     public void startCountDown() {
         countDownTimer.cancel();
         countDownTimer.start();
-    }
-
-    /**
-     * 插屏广告关闭
-     */
-    public void release() {
-        if (countDownTimer != null) {
-            countDownTimer.cancel();
-        }
-        if (!isDialog) {
-            // 如果插屏为activity模式
-
-            if (adInterstitialActivity != null) {
-                adInterstitialActivity.finish();
-                adInterstitialActivity = null;
-            }
-        } else {
-            // 如果插屏为dialog模式模式
-
-            if (interstitialAdInfo != null) {
-                interstitialAdInfo.release();
-                interstitialAdInfo = null;
-            }
-            if (kuaishouDialog != null) {
-                kuaishouDialog.dismiss();
-                kuaishouDialog = null;
-            }
-        }
     }
 
     /**
@@ -284,6 +329,49 @@ public class ADSuyiInterstitialManager {
             for (int i = 0; i < parent.getChildCount(); i++) {
                 traverse(parent.getChildAt(i));
             }
+        }
+    }
+
+    /**
+     * 插屏广告关闭
+     */
+    public void release() {
+        if (countDownTimer != null) {
+            countDownTimer.cancel();
+        }
+
+        if (interstitialAdInfo == null ){
+            return;
+        }
+
+        if (interstitialAdInfo.getPlatform().equals(PLATFORM_GDT)
+                || interstitialAdInfo.getPlatform().equals(PLATFORM_TOUTIAO)
+                || interstitialAdInfo.getPlatform().equals(PLATFORM_TIANMU)
+                || interstitialAdInfo.getPlatform().equals(PLATFORM_BAIDU)
+        ) {
+            // activity 模式
+            if (adInterstitialActivity != null) {
+                if (adInterstitialList.contains(adInterstitialActivity.getComponentName().getClassName())){
+                    adInterstitialActivity.finish();
+                    adInterstitialActivity = null;
+                }
+            }
+        }else if (interstitialAdInfo.getPlatform().equals(PLATFORM_KUAISHOU)){
+            // Dialog 方式
+            if (kuaishouDialog != null) {
+                kuaishouDialog.dismiss();
+                kuaishouDialog = null;
+            }
+        }
+
+        try {
+            // interstitialAdInfo 释放
+            if (interstitialAdInfo != null) {
+                interstitialAdInfo.release();
+                interstitialAdInfo = null;
+            }
+        }catch (Exception e){
+            e.printStackTrace();
         }
     }
 }

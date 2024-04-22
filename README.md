@@ -53,7 +53,7 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | hwpps     | 1.01M | v13.4.68.300.12291 | c48a6fdc9503088c739a9e10bcd53fe6 |
 | jadyun    | 1.41M | v2.5.6.11102       | 3f4fb7560c5d0984921e35d0de2a4aae |
 | mintegral | 2.80M | v16.5.41.11011     | 5da2b3849f38656a0cfb348e8d257785 |
-| gromore   | —     | v5.9.0.8.02011     | 18fe926390f65f74e6c6cc6673ece651 |
+| gromore   | —     | v5.9.2.8.04112     | 18fe926390f65f74e6c6cc6673ece651 |
 
 
 ## 2. 支持的广告类型
@@ -218,7 +218,7 @@ dependencies {
 
     // gromoreAdapterSdk，可选的。如使用gromore的其他渠道，请联系开发者。
     // gromore已与穿山甲合并，此处无需重复导入穿山甲。
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:gromore-without:5.9.0.8.02011'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:gromore-without:5.9.2.8.04112'
     implementation "com.pangle.cn:mediation-gdt-adapter:4.561.1431.0" //广点通 adapter
     // 有gromore其他渠道需求，请联系开发者。
 
