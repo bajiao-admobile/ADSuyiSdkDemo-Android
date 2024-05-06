@@ -96,7 +96,7 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:5.9.2.8.03082'
 
     // 百度增强版AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced:9.34.03081'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced:9.35.05061'
 
     // 快手AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.61.2.03013'
