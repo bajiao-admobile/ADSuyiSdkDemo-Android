@@ -45,10 +45,10 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | Name      | 容量   | 版本号              | MD5值                            |
 | --------- | ----- | ------------------ | -------------------------------- |
 | tianmu    | 2.06M | v2.2.1.03083       | a1fb3543c06141b23d3ca8f16f12c409 |
-| gdt       | 2.03M | v4.570.1440.03081  | 251c298475f79ab839ff46e88e90ce27 |
+| gdt       | 2.03M | v4.575.1445.05131  | fc9252bbe2ebbd7827f395bed40b717d |
 | toutiao   | 7.24M | v5.9.2.8.03082     | a61211afe12738cd039c1836265b487a |
 | baidu     | 1.88M | v9.35.05061        | acd1584e7f98a78ab3adb038929e5054 |
-| ksad      | 4.88M | v3.3.61.2.03013    | 046ff364853a5ed8e4ce1f2609ad863c |
+| ksad      | 4.88M | v3.3.63.05131      | 6b5364eab61aeffe89a703c7068ca8ef |
 | mimo      | 1.60M | v5.3.0.12291       | 0ce0ab6c455ed96f34b78bc473929e36 |
 | hwpps     | 1.01M | v13.4.68.300.12291 | c48a6fdc9503088c739a9e10bcd53fe6 |
 | jadyun    | 1.41M | v2.5.6.11102       | 3f4fb7560c5d0984921e35d0de2a4aae |
@@ -190,7 +190,7 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:tianmu:2.2.1.03083'
 
     // 优量汇（广点通）AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.570.1440.03081'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.575.1445.05131'
 
     // 头条AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:5.9.2.8.03082'
@@ -199,7 +199,7 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced:9.35.05061'
 
     // 快手AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.61.2.03013'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.63.05131'
 
     // 米盟AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:mimo:5.3.0.12291'
