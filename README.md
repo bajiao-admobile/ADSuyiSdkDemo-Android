@@ -752,7 +752,7 @@ cn.admobiletop.adsuyi.config.ADSuyiInitConfig
 | 方法名         | 介绍 |
 | ------------ | ---- |
 | appId(String appId) | 设置AppId，必填参数。|
-| debug(boolean debug) | 设置是否是Debug模式。参数说明：debug（true：开启，false：关闭， 默认：false）开发阶段以及提交测试阶段可设置为true，方便异常排查。|
+| debug(boolean debug) | 设置是否是Debug模式。参数说明：debug（true：开启，false：关闭， 默认：true）开发阶段以及提交测试阶段可设置为true，方便异常排查。|
 | isCanUseLocation(boolean isCanUseLocation) | 设置SDK是否可以使用定位信息。参数说明：isCanUseLocation（true：开启，false：关闭， 默认：true）。|
 | isCanUsePhoneState(boolean isCanUsePhoneState) | 设置SDK是否可以使用IMEI等设备信息。参数说明：isCanUsePhoneState（true：开启，false：关闭， 默认：true）。|
 | isCanUseWifiState(boolean isCanUseWifiState) | 设置SDK是否可以使用WIFI信息。参数说明：isCanUseWifiState（true：开启，false：关闭， 默认：true）。|
