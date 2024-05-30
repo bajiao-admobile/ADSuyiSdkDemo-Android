@@ -12,6 +12,9 @@ import android.util.Log;
 import com.bytedance.sdk.openadsdk.stub.activity.Stub_Standard_Landscape_Activity;
 import com.bytedance.sdk.openadsdk.stub.activity.Stub_Standard_Portrait_Activity;
 
+import cn.admobiletop.adsuyi.ADSuyiSdk;
+import cn.admobiletop.adsuyi.config.ADSuyiInitConfig;
+import cn.admobiletop.adsuyi.listener.ADSuyiInitListener;
 import cn.admobiletop.adsuyi.util.SuyiPackageStrategy;
 import cn.admobiletop.adsuyidemo.activity.ad.ADSuyiInitAndLoadSplashAdActivity;
 import cn.admobiletop.adsuyidemo.activity.setting.SettingActivity;
@@ -25,6 +28,7 @@ import cn.admobiletop.adsuyidemo.util.SPUtil;
  * @date 2020/3/25
  */
 public class ADSuyiApplication extends Application {
+    public static final String AGREE_PRIVACY_POLICY = "AGREE_PRIVACY_POLICY";
     public static Context context;
     /**
      * 检查是否需要再次打开开屏界面的间隔时长。
@@ -124,5 +128,57 @@ public class ADSuyiApplication extends Application {
     @Override
     public String getPackageName() {
         return SuyiPackageStrategy.getSuyiPackageName(this);
+    }
+
+    /**
+     * 初始化广告SDK并且跳转开屏界面
+     */
+    public static void initAd() {
+
+        boolean isOpenFloatingAd = SPUtil.getBoolean(ADSuyiApplication.context, SettingActivity.KEY_OPEN_FLOATING_AD, true);
+
+        // 初始化ADSuyi广告SDK
+        ADSuyiSdk.getInstance().init(ADSuyiApplication.context, new ADSuyiInitConfig.Builder()
+                        // 设置APPID
+                        .appId(ADSuyiDemoConstant.APP_ID)
+                        // 是否开启Debug，开启会有详细的日志信息打印，如果用上ADSuyiToastUtil工具还会弹出toast提示。
+                        // TODO 注意上线后请置为false
+                        .debug(BuildConfig.DEBUG)
+                        //【慎改】是否同意隐私政策，将禁用一切设备信息读起严重影响收益
+                        .agreePrivacyStrategy(true)
+                        // 是否可获取定位数据
+                        .isCanUseLocation(true)
+                        // 是否可获取设备信息
+                        .isCanUsePhoneState(true)
+                        // 是否可读取设备安装列表
+                        .isCanReadInstallList(true)
+                        // 是否可读取设备外部读写权限
+                        .isCanUseReadWriteExternal(true)
+                        // 是否开启浮窗（默认true。true：浮窗广告交由ADSuyiSdk控制，false：媒体自行拉取广告并展示广告）
+                        .openFloatingAd(false)
+                        // 是否过滤第三方平台的问题广告（例如: 已知某个广告平台在某些机型的Banner广告可能存在问题，如果开启过滤，则在该机型将不再去获取该平台的Banner广告）
+                        .filterThirdQuestion(true)
+                        // 如果开了浮窗广告，可设置不展示浮窗广告的界面，第一个参数为是否开启默认不展示的页面（例如:激励视频播放页面），第二可变参数为自定义不展示的页面
+                        .floatingAdBlockList(false,
+                                // 主动设置不展示浮窗广告的Activity路径
+                                "cn.admobiletop.adsuyidemo.activity.ad.ADSuyiInitAndLoadSplashAdActivity",
+                                "cn.admobiletop.adsuyidemo.activity.ad.splash.SplashAdActivity",
+                                "cn.admobiletop.adsuyidemo.activity.ad.splash.SplashAdSettingActivity"
+                        )
+                        .build(),
+                new ADSuyiInitListener() {
+                    @Override
+                    public void onSuccess() {
+                        // 初始化成功
+                    }
+
+                    @Override
+                    public void onFailed(String error) {
+                        // 初始化失败
+                    }
+                });
+
+        // 可通过调用此方法暂停浮窗广告投放
+        ADSuyiSdk.getInstance().pauseFloatingAd();
     }
 }
