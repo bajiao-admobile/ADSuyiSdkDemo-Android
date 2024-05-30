@@ -108,7 +108,7 @@ public class ADSuyiApplication extends Application {
         if (preMillis > 0
                 && millis - preMillis > OPEN_SPLASH_ACTIVITY_INTERVAL_TIME
                 && !(activity instanceof ADSuyiInitAndLoadSplashAdActivity)) {
-            activity.startActivity(new Intent(activity, ADSuyiInitAndLoadSplashAdActivity.class));
+//            activity.startActivity(new Intent(activity, ADSuyiInitAndLoadSplashAdActivity.class));
         }
         preMillis = millis;
     }
