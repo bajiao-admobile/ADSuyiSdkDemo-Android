@@ -65,19 +65,6 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/btnNativeSlideshow"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginRight="16dp"
-        android:background="@drawable/shape_background_button_selector"
-        android:stateListAnimator="@null"
-        android:text="轮播控件渲染信息流案例"
-        android:textAllCaps="false"
-        android:textColor="@color/textColorBlack" />
-
-    <Button
         android:id="@+id/btnNativeSplash"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

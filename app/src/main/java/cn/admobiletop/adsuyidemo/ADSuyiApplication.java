@@ -9,9 +9,6 @@ import android.support.annotation.NonNull;
 import android.support.multidex.MultiDex;
 import android.util.Log;
 
-import com.bytedance.sdk.openadsdk.stub.activity.Stub_Standard_Landscape_Activity;
-import com.bytedance.sdk.openadsdk.stub.activity.Stub_Standard_Portrait_Activity;
-
 import cn.admobiletop.adsuyi.ADSuyiSdk;
 import cn.admobiletop.adsuyi.config.ADSuyiInitConfig;
 import cn.admobiletop.adsuyi.listener.ADSuyiInitListener;
@@ -19,7 +16,6 @@ import cn.admobiletop.adsuyi.util.SuyiPackageStrategy;
 import cn.admobiletop.adsuyidemo.activity.ad.ADSuyiInitAndLoadSplashAdActivity;
 import cn.admobiletop.adsuyidemo.activity.setting.SettingActivity;
 import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
-import cn.admobiletop.adsuyidemo.manager.ADSuyiInterstitialManager;
 import cn.admobiletop.adsuyidemo.util.SPUtil;
 
 /**
@@ -61,11 +57,7 @@ public class ADSuyiApplication extends Application {
         registerActivityLifecycleCallbacks(new ActivityLifecycleCallbacks() {
             @Override
             public void onActivityCreated(@NonNull Activity activity, Bundle savedInstanceState) {
-                if (ADSuyiDemoConstant.INTERSTITIAL_AD_AUTO_CLOSE) {
-                    Log.d(ADSuyiDemoConstant.TAG, "ActivityLifecycleCallbacks:"+activity.getComponentName().getClassName());
 
-                    ADSuyiInterstitialManager.getInstance().addInterstitialList(activity);
-                }
             }
 
             @Override
@@ -145,19 +137,23 @@ public class ADSuyiApplication extends Application {
                         // TODO 注意上线后请置为false
                         .debug(BuildConfig.DEBUG)
                         //【慎改】是否同意隐私政策，将禁用一切设备信息读起严重影响收益
-                        .agreePrivacyStrategy(true)
+                        .agreePrivacyStrategy(false)
                         // 是否可获取定位数据
-                        .isCanUseLocation(true)
+                        .isCanUseLocation(false)
                         // 是否可获取设备信息
-                        .isCanUsePhoneState(true)
+                        .isCanUsePhoneState(false)
                         // 是否可读取设备安装列表
-                        .isCanReadInstallList(true)
+                        .isCanReadInstallList(false)
                         // 是否可读取设备外部读写权限
-                        .isCanUseReadWriteExternal(true)
+                        .isCanUseReadWriteExternal(false)
+                        // 是否可读取WIFI信息
+                        .isCanUseWifiState(false)
                         // 是否开启浮窗（默认true。true：浮窗广告交由ADSuyiSdk控制，false：媒体自行拉取广告并展示广告）
                         .openFloatingAd(false)
                         // 是否过滤第三方平台的问题广告（例如: 已知某个广告平台在某些机型的Banner广告可能存在问题，如果开启过滤，则在该机型将不再去获取该平台的Banner广告）
                         .filterThirdQuestion(true)
+                        // 是否允许多进程
+                        .setMultiprocess(true)
                         // 如果开了浮窗广告，可设置不展示浮窗广告的界面，第一个参数为是否开启默认不展示的页面（例如:激励视频播放页面），第二可变参数为自定义不展示的页面
                         .floatingAdBlockList(false,
                                 // 主动设置不展示浮窗广告的Activity路径

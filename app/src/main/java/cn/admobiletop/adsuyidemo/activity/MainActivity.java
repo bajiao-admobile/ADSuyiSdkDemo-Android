@@ -21,7 +21,6 @@ import cn.admobiletop.adsuyidemo.activity.ad.FullScreenVodAdActivity;
 import cn.admobiletop.adsuyidemo.activity.ad.InnerNoticeActivity;
 import cn.admobiletop.adsuyidemo.activity.ad.interstitial.InterstitialAdActivity;
 import cn.admobiletop.adsuyidemo.activity.ad.RewardVodAdActivity;
-import cn.admobiletop.adsuyidemo.activity.ad.interstitial.InterstitialAdAutoCloseActivity;
 import cn.admobiletop.adsuyidemo.activity.ad.splash.SplashAdLoadShowSeparationActivity;
 import cn.admobiletop.adsuyidemo.activity.ad.splash.SplashAdSettingActivity;
 import cn.admobiletop.adsuyidemo.activity.other.DlModuleActivity;
@@ -98,9 +97,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btnInnerNotice:
                 startActivity(InnerNoticeActivity.class);
-                break;
-            case R.id.btnInterstitialAutoClose:
-                startActivity(InterstitialAdAutoCloseActivity.class);
                 break;
             default:
                 break;

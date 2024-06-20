@@ -101,10 +101,6 @@
             android:label="@string/interstitial_ad"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.ad.interstitial.InterstitialAdAutoCloseActivity"
-            android:label="@string/interstitial_ad"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".activity.ad.feed.NativeAdRecyclerViewActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:label="@string/native_ad"
@@ -157,7 +153,6 @@
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeNoActionBar"/>
-        <activity android:name=".activity.ad.feed.NativeSlideshowActivity" />
         <activity android:name=".activity.ad.feed.NativeSplashActivity"
             android:screenOrientation="portrait"
             android:theme="@style/splash"/>

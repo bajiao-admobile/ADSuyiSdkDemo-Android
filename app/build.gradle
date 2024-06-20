@@ -69,8 +69,7 @@ dependencies {
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
     implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.2'
     implementation 'com.github.bumptech.glide:glide:4.9.0'
-    implementation 'com.makeramen:roundedimageview:2.3.0'
-    implementation 'com.github.LillteZheng.ViewPagerHelper:viewpagerlib:v2.9'
+    implementation(name: 'gdt-4.575.1445', ext: 'aar')
     // 以上都是用于demo演示加入的三方依赖
 
     // support支持库，如果是AndroidX请使用对应的支持库
@@ -79,7 +78,7 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
 
     // ADSuyiSdk核心库必须导入
-    implementation 'cn.admobiletop.adsuyi.ad:core:3.9.1.03062'
+    implementation 'cn.admobiletop.adsuyi.ad:core:3.9.1.03063'
 
     // OAID库1.0.25华为渠道请参考文档5.2
     implementation(name: 'oaid_sdk_1.0.25', ext: 'aar')
@@ -89,32 +88,32 @@ dependencies {
     // 天目AdapterSdk，必选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:tianmu:2.2.1.03084'
 
-    // 优量汇（广点通）AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.575.1445.05131'
+//    // 优量汇（广点通）AdapterSdk，可选的
+//    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.575.1445.05131'
 
-    // 头条AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:6.1.0.4.05151'
+//    // 头条AdapterSdk，可选的
+//    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:6.1.0.4.05151'
 
-    // 百度增强版AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced:9.35.05062'
+//    // 百度增强版AdapterSdk，可选的
+//    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced:9.35.05062'
 
-    // 快手AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.63.05131'
+//    // 快手AdapterSdk，可选的
+//    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.63.05131'
 
-    // 米盟AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:mimo:5.3.0.12291'
-    implementation 'com.google.code.gson:gson:2.8.5'
-    implementation 'com.github.bumptech.glide:glide:4.9.0'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
+//    // 米盟AdapterSdk，可选的
+//    implementation 'cn.admobiletop.adsuyi.ad.adapter:mimo:5.3.0.12291'
+//    implementation 'com.google.code.gson:gson:2.8.5'
+//    implementation 'com.github.bumptech.glide:glide:4.9.0'
+//    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
 
-    // 华为广告联盟AdadapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:hwpps:13.4.68.300.12291'
+//    // 华为广告联盟AdadapterSdk，可选的
+//    implementation 'cn.admobiletop.adsuyi.ad.adapter:hwpps:13.4.68.300.12291'
 
-    // Mintegral AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:16.5.41.11011'
+//    // Mintegral AdapterSdk，可选的
+//    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:16.5.41.11011'
 
-    // 京媒 AdapterSdk，可选的。当前为Support版本，有AndroidX版本需求需要联系开发者
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:jadyun:2.5.6.11102'
+//    // 京媒 AdapterSdk，可选的。当前为Support版本，有AndroidX版本需求需要联系开发者
+//    implementation 'cn.admobiletop.adsuyi.ad.adapter:jadyun:2.5.6.11102'
 
 //    // gromoreAdapterSdk，可选的。如使用gromore的其他渠道，请联系开发者。
 //    // gromore已与穿山甲合并，此处无需重复导入穿山甲。
