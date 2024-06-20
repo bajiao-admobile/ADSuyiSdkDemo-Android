@@ -11,6 +11,8 @@ SDK名称: ADSuyi广告聚合SDK
 ```
 
 
+[SDK 下载地址](https://doc.admobile.top/AndroidSDK/SuyiSDK.zip)
+
 [查看更新日志](https://doc.admobile.top/ssp/4changelog/1-androidchangelog.html)
 
 [查看接入文档](https://doc.admobile.top/ssp/pages/suyisdkand/)
@@ -635,6 +637,10 @@ dependencies {
 .isCanReadInstallList(true)
 // 是否可读取设备外部读写权限
 .isCanUseReadWriteExternal(true)
+// 是否可读取WIFI信息
+.isCanUseWifiState(true)
+// 是否可使用OAID
+.isCanUseOaid(true)
 ```
 另外还可从根源上解决设备标识被读取等问题，可对配置清单中的权限增加tools:node="remove"配置；
 如下：
