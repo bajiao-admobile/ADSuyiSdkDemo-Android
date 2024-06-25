@@ -1279,6 +1279,23 @@ cn.admobiletop.adsuyi.ad.data.ADSuyiNativeFeedAdInfo
 | getPlatformIcon() | int | 获取广告平台角标，资源文件地址。|
 | registerViewForInteraction(ViewGroup container, View... actionViews) | void | 注册广告视图。参数说明：container（广告容器，若对接优量汇自渲染，此处一定要传入com.qq.e.ads.nativ.widget.NativeAdContainer布局，否则优量汇渠道无法曝光）、<br>actionViews（可点击的布局）|
 | registerCloseView(View close) | void | 注册关闭按钮。参数说明：close（点击关闭的view，不注册将不会回调onAdClose事件）|
+| getAppInfo() | ADSuyiAdAppInfo | 下载类应用六要素信息，可能为空。 |
+
+**自渲染广告ADSuyiAdAppInfo六要素，需要先通过（nativeFeedAdInfo instanceof ADSuyiAdAppInfo）方法判断广告对象是否支持六要素返回，
+然后通过强转获取六要素对象((ADSuyiAdAppInfo) nativeFeedAdInfo).getAppInfo()**
+
+cn.admobiletop.adsuyi.ad.data.ADSuyiAdAppInfo
+
+| 方法名         | 类型 | 介绍 |
+| ------------ | ---- | ---- |
+| getName() | String | 应用名，可能为空。|
+| getDeveloper() | String | 开发者，可能为空。|
+| getVersion() | String |版本号，可能为空。|
+| getPrivacyUrl() | String | 隐私地址，可能为空。|
+| getPermissionsUrl() | String | 权限地址，可能为空。|
+| getDescriptionUrl() | String | 功能介绍，可能为空。|
+| getSize() | long | 应用大小，可能为空。|
+| getIcp() | String | icp备案号，可能为空。|
 
 #### 6.4.2 信息流广告加载并展示
 
