@@ -163,4 +163,27 @@ public class ADSuyiDemoConstant {
      * 浮窗广告是否暂停展示
      */
     public static boolean FLOATING_AD_IS_PAUSED = false;
+
+
+    /**
+     * 开屏广告全屏并去除状态了
+     */
+    public static int IMMERSIVE_AND_FULLSCREEN = 0;
+    /**
+     * 开屏广告全屏不去除状态栏
+     */
+    public static int FULL_SCREEN = 1;
+    /**
+     * 开屏广告半屏
+     */
+    public static int HALF_SCREEN = 2;
+    /**
+     * 加载并展示
+     */
+    public static int LOAD_AND_SHOW = 0;
+    /**
+     * 仅加载
+     */
+    public static int LOAD_ONLY = 1;
+
 }

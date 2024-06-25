@@ -2,20 +2,19 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:orientation="vertical">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="展示方式："
+        android:text="展示样式："
         android:textSize="18sp"
         android:textColor="#000"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"/>
 
     <RadioGroup
-        android:id="@+id/rgLoadSplashAdType"
+        android:id="@+id/rgDisplayStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp">
@@ -61,7 +60,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:inputType="number"
-            android:text="200"/>
+            android:text="300"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -71,10 +70,46 @@
             android:textColor="#000000"/>
     </LinearLayout>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="加载方式："
+        android:textSize="18sp"
+        android:textColor="#000"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"/>
+
+    <RadioGroup
+        android:id="@+id/rgLoadType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <RadioButton
+            android:id="@+id/loadAndShow"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="加载并展示"
+            android:checked="true"/>
+
+        <RadioButton
+            android:id="@+id/loadOnly"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="仅加载"/>
+
+    </RadioGroup>
+
     <Button
         android:id="@+id/btnLoadSplashAd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="展示开屏"/>
+        android:text="开屏广告"/>
+
+    <Button
+        android:id="@+id/btnLoadSplashAd2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="开屏广告2.0"/>
 
 </LinearLayout>

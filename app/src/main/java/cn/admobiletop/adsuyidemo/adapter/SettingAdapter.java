@@ -213,7 +213,7 @@ public class SettingAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             platformMap.put("米盟(mimo)", "mimo");
             platformMap.put("华为广告联盟(hwpps)", "hwpps");
             platformMap.put("gromore", "gromore");
-            platformMap.put("极光联盟(jiguang)", "jiguang");
+            platformMap.put("京媒(jadyun)", "jadyun");
             String currentFinalPlat = ADSuyiDemoConstant.SPLASH_AD_ONLY_SUPPORT_PLATFORM;
             String displayPlat = getPlatformKey(platformMap, currentFinalPlat);
             tvPlatform.setText(displayPlat);

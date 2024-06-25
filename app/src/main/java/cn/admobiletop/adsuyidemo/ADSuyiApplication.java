@@ -11,6 +11,7 @@ import android.util.Log;
 
 import cn.admobiletop.adsuyi.ADSuyiSdk;
 import cn.admobiletop.adsuyi.config.ADSuyiInitConfig;
+import cn.admobiletop.adsuyi.config.CustomDeviceInfoController;
 import cn.admobiletop.adsuyi.listener.ADSuyiInitListener;
 import cn.admobiletop.adsuyi.util.SuyiPackageStrategy;
 import cn.admobiletop.adsuyidemo.activity.ad.ADSuyiInitAndLoadSplashAdActivity;
@@ -163,6 +164,8 @@ public class ADSuyiApplication extends Application {
                                 "cn.admobiletop.adsuyidemo.activity.ad.splash.SplashAdActivity",
                                 "cn.admobiletop.adsuyidemo.activity.ad.splash.SplashAdSettingActivity"
                         )
+                        .setCustomDeviceInfoController(new CustomDeviceInfoController() {
+                        })
                         .build(),
                 new ADSuyiInitListener() {
                     @Override

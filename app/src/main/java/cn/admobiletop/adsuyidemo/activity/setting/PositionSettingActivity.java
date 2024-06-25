@@ -75,7 +75,7 @@ public class PositionSettingActivity extends AppCompatActivity {
         platformMap.put("米盟(mimo)", "mimo");
         platformMap.put("华为广告联盟(hwpps)", "hwpps");
         platformMap.put("gromore", "gromore");
-        platformMap.put("极光联盟(jiguang)", "jiguang");
+        platformMap.put("京媒(jadyun)", "jadyun");
     }
 
     private String getPlatformKey(Map<String, String> map, String value) {

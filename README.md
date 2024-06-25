@@ -1,4 +1,4 @@
-# ADSuyiSdk Android Sdk——接入文档 V3.9.1.03063
+# ADSuyiSdk Android Sdk——接入文档 V3.9.3.04071
 
 # ADSuyi广告聚合SDK 介绍
 
@@ -57,7 +57,7 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 
 | Name         | 大小   | 版本号         | MD5值                            |
 | ------------ | ----  | ------------- | -------------------------------- |
-| ADSuyi基础包  | 0.37M | V3.9.1.03063  | c12b335f25cadab149754ead31cdc21e |
+| ADSuyi基础包  | 0.37M | V3.9.3.04071  | f222218cdaefdef3303746beb0e51363 |
 | OAID         | 1.10M | V1.0.25       | —                                |
 | OAID适配器    | 0.02M | V1.0.25.12122 | 14a3186e04ccd6e195f7c75ab6a6c6e2 |
 
@@ -65,16 +65,16 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 
 | Name      | 容量   | 版本号              | MD5值                            |
 | --------- | ----- | ------------------ | -------------------------------- |
-| tianmu    | 2.06M | v2.2.1.03084       | a1fb3543c06141b23d3ca8f16f12c409 |
-| gdt       | 2.03M | v4.575.1445.05131  | fc9252bbe2ebbd7827f395bed40b717d |
+| tianmu    | 2.06M | v2.2.3.05231       | 5de0356bf809f2c0a19c0f0e3d3c117e |
+| gdt       | 2.03M | v4.575.1445.05231  | d1c698221c70a3255b128c457675edbe |
 | toutiao   | 7.24M | v6.1.0.4.05151     | a61211afe12738cd039c1836265b487a |
-| baidu     | 1.88M | v9.35.05062        | acd1584e7f98a78ab3adb038929e5054 |
-| ksad      | 4.88M | v3.3.63.05131      | 6b5364eab61aeffe89a703c7068ca8ef |
+| baidu     | 1.88M | v9.35.05231        | 8bb68f5af5bcff7341a7f46c6552cca5 |
+| ksad      | 4.88M | v3.3.63.05231      | 992942f4d87c2b6fe25eb01a3387022b |
 | mimo      | 1.60M | v5.3.0.12291       | 0ce0ab6c455ed96f34b78bc473929e36 |
-| hwpps     | 1.01M | v13.4.68.300.12291 | c48a6fdc9503088c739a9e10bcd53fe6 |
+| hwpps     | 1.01M | v13.4.71.300.05231 | a880c2a86450628601710e0d0d7560e3 |
 | jadyun    | 1.41M | v2.5.6.11102       | 3f4fb7560c5d0984921e35d0de2a4aae |
-| mintegral | 2.80M | v16.5.41.11011     | 5da2b3849f38656a0cfb348e8d257785 |
-| gromore   | —     | v5.9.2.8.04112     | 18fe926390f65f74e6c6cc6673ece651 |
+| mintegral | 2.80M | v16.5.41.11012     | 78fbb474367e14d4395557b607eead62 |
+| gromore   | —     | v6.1.0.4.06251     | 18fe926390f65f74e6c6cc6673ece651 |
 
 
 ## 2. 支持的广告类型
@@ -200,7 +200,7 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
 
     // ADSuyiSdk核心库必须导入
-    implementation 'cn.admobiletop.adsuyi.ad:core:3.9.1.03063'
+    implementation 'cn.admobiletop.adsuyi.ad:core:3.9.3.04071'
 
     // OAID1.0.25版本，华为渠道请参考文档5.2
     implementation(name: 'oaid_sdk_1.0.25', ext: 'aar')
@@ -208,19 +208,19 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad:oaid:1.0.25.12122'
 
     // 天目AdapterSdk，必选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:tianmu:2.2.1.03084'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:tianmu:2.2.3.05231'
 
     // 优量汇（广点通）AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.575.1445.05131'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.575.1445.05231'
 
     // 头条AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:6.1.0.4.05151'
 
     // 百度增强版AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced:9.35.05062'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced:9.35.05231'
 
     // 快手AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.63.05131'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.63.05231'
 
     // 米盟AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:mimo:5.3.0.12291'
@@ -229,18 +229,18 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
 
     // 华为广告联盟AdadapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:hwpps:13.4.68.300.12291'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:hwpps:13.4.71.300.05231'
 
     // 京媒 AdapterSdk，可选的。当前为Support版本，有AndroidX版本需求需要联系开发者
     implementation 'cn.admobiletop.adsuyi.ad.adapter:jadyun:2.5.6.11102'
 
     // Mintegral AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:16.5.41.11011'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:16.5.41.11012'
 
     // gromoreAdapterSdk，可选的。如使用gromore的其他渠道，请联系开发者。
     // gromore已与穿山甲合并，此处无需重复导入穿山甲。
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:gromore-without:5.9.2.8.04112'
-    implementation "com.pangle.cn:mediation-gdt-adapter:4.561.1431.0" //广点通 adapter
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:gromore-without:6.1.0.4.06251'
+    implementation "com.pangle.cn:mediation-gdt-adapter:4.575.1445.1" //广点通 adapter
     // 有gromore其他渠道需求，请联系开发者。
 
 }
@@ -286,7 +286,7 @@ dependencies {
 5. Mintegral（汇量）渠道与微信sdk冲突解决办法
     由于Mintegral渠道16.1.7版本支持小程序跳转功能，若媒体已导入opensdk，会导致冲突，可通过以下方式移除Mintegral适配器中的opensdk
     ```java
-    ('cn.admobiletop.adsuyi.ad.adapter:mintegral:16.5.41.11011') {
+    ('cn.admobiletop.adsuyi.ad.adapter:mintegral:16.5.41.11012') {
             exclude group: "com.tencent.mm.opensdk", module: "wechat-sdk-android"
         }
     ```
@@ -707,7 +707,7 @@ ADSuyiSdk.getInstance().init(
 
                     /**
                      * 当isCanUseLocation=false时，可传入地理位置信息，使用您传入的地理位置信息
-                     * @return 极光地理位置参数JUnionLocationProvider
+                     * @return 地理位置
                      */
                     @Override
                     public Location getLocation() {
@@ -830,6 +830,8 @@ cn.admobiletop.adsuyi.ad.ADSuyiSplashAd
 
 | 方法名         | 介绍 |
 | ------------ | ---- |
+| ADSuyiSplashAd(Activity activity) | 构造方法。参数说明：activity（当前页面activity对象）。|
+| ADSuyiSplashAd(Fragment fragment) | 构造方法。参数说明：fragment（当前页面fragment对象）。|
 | ADSuyiSplashAd(Activity activity, ViewGroup container) | 构造方法。参数说明：activity（当前页面activity对象）、container（展示广告视图的父容器）。|
 | ADSuyiSplashAd(Fragment fragment, ViewGroup container) | 构造方法。参数说明：fragment（当前页面fragment对象）、container（展示广告视图的父容器）。|
 | setLocalExtraParams(ADSuyiExtraParams extraParams) | 设置额外参数。参数说明：extraParams（广告额外参数）。|
@@ -842,6 +844,7 @@ cn.admobiletop.adsuyi.ad.ADSuyiSplashAd
 | loadOnly(String posId) | 仅请求广告不展示。参数说明：posId（广告位ID）。|
 | loadAd(String posId, ADSuyiNetworkRequestInfo requestInfo) | 请求打底广告并展示，目前支持优量汇、头条、百度、快手。参数说明：posId（广告位ID）、requestInfo（打底广告对象，接口地址[Gitee地址](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/README-ADSuyiNetworkRequestInfo.md)、[Github地址](https://github.com/ADSuyi/ADSuyiSdkDemo-Android/blob/master/README-ADSuyiNetworkRequestInfo.md)）。|
 | showSplash() | 展示广告。使用loadOnly方法去加载广告时，可在onAdReceive回调后去展示广告。|
+| showSplash(ViewGroup container) | 展示广告。参数说明：container（广告展示父容器）。通过ADSuyiSplashAd(Activity activity)、ADSuyiSplashAd(Fragment fragment)构造广告对象，并使用loadOnly方法加载广告时，可在onAdReceive回调后调用该方法去展示广告。|
 | release() | 释放广告。|
 
 **ADSuyiExtraParams**
@@ -966,6 +969,123 @@ public void onAdReceive(ADSuyiAdInfo adInfo) {
 > 开屏广告加载与展示分离示例 [Gitee地址](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/ad/splash/SplashAdLoadShowSeparationActivity.java)、[Github地址](https://github.com/ADSuyi/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/ad/splash/SplashAdLoadShowSeparationActivity.java)
 >
 
+#### 6.2.4 开屏广告2.0主要 API
+**ADSuyiSplashAd2**
+
+cn.admobiletop.adsuyi.ad.ADSuyiSplashAd2
+
+| 方法名         | 介绍 |
+| ------------ | ---- |
+| ADSuyiSplashAd2(Activity activity) | 构造方法。参数说明：activity（当前页面activity对象）。|
+| ADSuyiSplashAd2(Fragment fragment) | 构造方法。参数说明：fragment（当前页面fragment对象）。|
+| setLocalExtraParams(ADSuyiExtraParams extraParams) | 设置额外参数。参数说明：extraParams（广告额外参数）。|
+| setImmersive(boolean isImmersive) | 设置沉浸效果。参数说明：isImmersive（true：沉浸，false：不沉浸， 目前仅影响默认跳过按钮位置）。|
+| setOnlySupportPlatform(String platform) | 设置广告定向，仅请求某一渠道。参数说明：platform（<a href="#platform_name">渠道名</a>）。|
+| setListener(ADSuyiSplashAdListener listener) | 设置广告相关状态。参数说明：listener（广告状态监听器）。|
+| loadOnly(String posId) | 仅请求广告不展示。参数说明：posId（广告位ID）。|
+| showSplash(ViewGroup container) | 展示广告。参数说明：container（广告展示父容器）。通过ADSuyiSplashAd2(Activity activity)、ADSuyiSplashAd2(Fragment fragment)构造广告对象，并使用loadOnly方法加载广告时，可在onAdReceive回调后调用该方法去展示广告。|
+| release() | 释放广告。|
+
+cn.admobiletop.adsuyi.ad.entity.ADSuyiExtraParams
+
+| 方法名         | 介绍 |
+| ------------ | ---- |
+| ADSuyiExtraParams.Builder().build() | 构造方法。|
+| adSize(ADSuyiAdSize adSize) | 设置开屏视图宽高。参数说明：adSize（设置整个广告视图预期宽高(目前仅头条平台需要，没有接入头条可不设置)，单位为px，如果不设置头条开屏广告视图将会以9 : 16的比例进行填充，小屏幕手机可能会出现素材被压缩的情况，大屏幕设备可能出现留白）。|
+| setAdShakeDisable(boolean adShakeDisable) | 设置摇一摇禁用，目前优量汇、快手、天目渠道支持，其他渠道需要提交工单或渠道后台控制关闭。参数说明：adShakeDisable（true：禁用、false：可用，默认：false）。|
+
+**ADSuyiAdSize**
+
+cn.admobiletop.adsuyi.ad.entity.ADSuyiAdSize
+
+| 方法名         | 介绍 |
+| ------------ | ---- |
+| ADSuyiAdSize(int width, int height) | 构造方法。参数说明：<br>width（容器宽度，单位：px）请传入实际宽度、<br>height（容器高度，单位：px）请传入实际高度。|
+
+
+**ADSuyiSplashAdListener**
+
+cn.admobiletop.adsuyi.ad.listener.ADSuyiSplashAdListener
+
+| 方法名         | 介绍 |
+| ------------ | ---- |
+| onADTick(long millisUntilFinished) | 广告倒计时剩余时长回调。参数说明：millisUntilFinished（剩余时间，单位：秒））。|
+| onAdReceive(ADSuyiAdInfo adInfo) | 广告加载成功回调。|
+| onAdExpose(ADSuyiAdInfo adInfo) | 广告展示回调。|
+| onAdClick(ADSuyiAdInfo adInfo) | 广告点击回调。|
+| onAdSkip(ADSuyiAdInfo adInfo) | 广告跳过回调，用户点击跳过按钮时触发。|
+| onAdClose(ADSuyiAdInfo adInfo) | 广告关闭回调，用户点击跳过按钮、触发落地页后返回开屏页、倒计时结束，则触发。|
+| onReward(ADSuyiAdInfo adInfo) | 广告奖励回调，目前仅优量汇渠道有效。|
+| onAdFailed(ADSuyiError error) | 广告失败回调。参数说明：error（广告错误信息）。|
+
+#### 6.2.5 开屏广告2.0加载并展示
+
+```java
+// 创建开屏广告2.0实例，第一个参数可以是Activity或Fragment
+ADSuyiSplashAd2 splashAd = new ADSuyiSplashAd2(Activity activity);
+
+// 创建额外参数实例
+ADSuyiExtraParams extraParams = new ADSuyiExtraParams.Builder()
+        .adSize(new ADSuyiAdSize(int width, int height))
+        .build();
+// 如果开屏容器不是全屏可以设置额外参数
+splashAd.setLocalExtraParams(extraParams);
+
+// 设置开屏广告监听
+splashAd.setListener(new ADSuyiSplashAdListener() {
+  	@Override
+    public void onADTick(long countdownSeconds) {
+        // 如果没有设置自定义跳过按钮不会回调该方法（单位为秒）
+    }
+    @Override
+    public void onReward(ADSuyiAdInfo adInfo) {
+        // 广告奖励回调，目前仅仅优量汇渠道会被使用
+    }
+    @Override
+    public void onAdSkip(ADSuyiAdInfo adInfo) {
+        // 广告跳过回调，不一定准确，埋点数据仅供参考...
+    }
+    @Override
+    public void onAdReceive(ADSuyiAdInfo adInfo) {
+        // 广告获取成功回调...
+    }
+
+    @Override
+    public void onAdExpose(ADSuyiAdInfo adInfo) {
+        // 广告展示回调，有展示回调不一定是有效曝光，如网络等情况导致上报失败
+    }
+
+    @Override
+    public void onAdClick(ADSuyiAdInfo adInfo) {
+        // 广告点击回调，有点击回调不一定是有效点击，如网络等情况导致上报失败
+    }
+
+    @Override
+    public void onAdClose(ADSuyiAdInfo adInfo) {
+        // 广告关闭回调，需要在此进行页面跳转
+    }
+
+    @Override
+    public void onAdFailed(ADSuyiError error) {
+        // 广告失败回调，需要在此进行页面跳转
+    }
+});
+
+// 加载开屏广告2.0
+splashAd.loadOnly(String posId);
+
+// 展示开屏广告2.0
+// 需要开发者在onAdReceive回调之后再展示开屏广告
+public void onAdReceive(ADSuyiAdInfo adInfo) {
+    // 广告获取成功回调...
+    // 展示开屏广告
+    splashAd.showSplash(ViewGroup container);
+}
+...
+```
+
+> 开屏广告示例 [Gitee地址](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/ad/splash/SplashAdActivity.java)、[Github地址](https://github.com/ADSuyi/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/ad/splash/SplashAdActivity.java)
+>
 
 
 ### <a name="ad_banner">6.3 横幅广告示例</a>

@@ -14,6 +14,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import cn.admobiletop.adsuyi.ad.ADSuyiSplashAd;
+import cn.admobiletop.adsuyi.ad.ADSuyiSplashAd2;
 import cn.admobiletop.adsuyi.ad.data.ADSuyiAdInfo;
 import cn.admobiletop.adsuyi.ad.entity.ADSuyiAdSize;
 import cn.admobiletop.adsuyi.ad.entity.ADSuyiExtraParams;
@@ -26,12 +27,12 @@ import cn.admobiletop.adsuyidemo.util.UIUtils;
 
 /**
  * @author ciba
- * @description 开屏广告示例，开屏广告容器请保证有屏幕高度的75%，建议开屏界面设置为全屏模式并禁止返回按钮
- * @date 2020/3/25
+ * @description 开屏广告2.0示例，开屏广告容器请保证有屏幕高度的75%，建议开屏界面设置为全屏模式并禁止返回按钮
+ * @date 2024/6/25
  */
-public class SplashAdActivity extends AppCompatActivity {
+public class SplashAdActivity2 extends AppCompatActivity {
 
-    private ADSuyiSplashAd adSuyiSplashAd;
+    private ADSuyiSplashAd2 adSuyiSplashAd;
 
     private TextView tvSkip;
     private FrameLayout flContainer;
@@ -143,7 +144,7 @@ public class SplashAdActivity extends AppCompatActivity {
      */
     private void initAd() {
         // 创建开屏广告实例，第一个参数可以是Activity或Fragment
-        adSuyiSplashAd = new ADSuyiSplashAd(this);
+        adSuyiSplashAd = new ADSuyiSplashAd2(this);
 
         int widthPixels = UIUtils.getScreenWidthInPx(this);
         int heightPixels = UIUtils.getScreenHeightInPx(this);
@@ -158,10 +159,6 @@ public class SplashAdActivity extends AppCompatActivity {
         // 设置是否是沉浸式，如果为true，跳过按钮距离顶部的高度会加上状态栏高度
         adSuyiSplashAd.setImmersive(isImmersive);
 
-        if (ADSuyiDemoConstant.SPLASH_AD_CUSTOM_SKIP_VIEW) {
-            // 设置自定义跳过按钮，自定义跳过按钮倒计时时长，默认是5秒，范围3000~5000，建议不修改
-            adSuyiSplashAd.setSkipView(tvSkip, 5000);
-        }
         // 设置仅支持的广告平台，设置了这个值，获取广告时只会去获取该平台的广告，null或空字符串为不限制，默认为null，方便调试使用，上线时建议不设置
         // 注：仅debug模式为true时生效。
         adSuyiSplashAd.setOnlySupportPlatform(ADSuyiDemoConstant.SPLASH_AD_ONLY_SUPPORT_PLATFORM);

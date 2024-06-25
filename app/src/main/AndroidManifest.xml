@@ -125,14 +125,6 @@
             android:label="@string/web"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.other.DlAdActivity"
-            android:label="@string/admobile_dl_ad"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".activity.other.RewardAdSwitchActivity"
-            android:label="@string/admobile_dl_ad"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".activity.other.ContentAllianceAdActivity"
             android:label="@string/content_alliance"
             android:screenOrientation="portrait" />
@@ -140,11 +132,6 @@
         <activity
             android:name=".activity.setting.SettingActivity"
             android:label="@string/setting"
-            android:screenOrientation="portrait" />
-
-        <activity
-            android:name=".activity.other.DlModuleActivity"
-            android:label="@string/admobile_dl_ad"
             android:screenOrientation="portrait" />
 
         <activity android:name=".activity.ad.feed.NativeExpressActivity"
@@ -166,6 +153,9 @@
             android:label="@string/splash_ad"
             android:screenOrientation="portrait"/>
         <activity android:name=".activity.ad.splash.SplashAdActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/splash"/>
+        <activity android:name=".activity.ad.splash.SplashAdActivity2"
             android:screenOrientation="portrait"
             android:theme="@style/splash"/>
     </application>

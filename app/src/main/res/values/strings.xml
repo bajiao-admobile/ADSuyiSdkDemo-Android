@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">ADmobile 广告聚合SDK Demo</string>
-    <string name="splash_ad">普通开屏</string>
+    <string name="splash_ad">开屏广告</string>
     <string name="splash_v_plus_ad">V+开屏广告</string>
     <string name="splash_ad_load_show">加载展示分离</string>
     <string name="banner_ad">横幅广告</string>
@@ -11,7 +11,6 @@
     <string name="draw_vod_ad">沉浸视频广告</string>
     <string name="fragment_examples">Fragment示例</string>
     <string name="inner_notice">浮窗广告</string>
-    <string name="admobile_dl_ad">组合广告</string>
     <string name="interstitial_auto_close_ad">插屏自动关闭</string>
     <string name="content_alliance">内容联盟</string>
     <string name="reward_ad_switch">组合广告异常切换示例</string>
@@ -76,8 +75,8 @@
         <item>hwpps</item>
         <!--gromore-->
         <item>gromore</item>
-        <!--jiguang-->
-        <item>jiguang</item>
+        <!--jadyun-->
+        <item>jadyun</item>
     </string-array>
 
     <string-array name="platforms_zh">
@@ -92,7 +91,7 @@
         <item>米盟(mimo)</item>
         <item>华为广告联盟(hwpps)</item>
         <item>gromore</item>
-        <item>极光联盟(jiguang)</item>
+        <item>京媒(jadyun)</item>
     </string-array>
 
     <string-array name="ad_count">

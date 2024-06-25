@@ -23,7 +23,6 @@ import cn.admobiletop.adsuyidemo.activity.ad.interstitial.InterstitialAdActivity
 import cn.admobiletop.adsuyidemo.activity.ad.RewardVodAdActivity;
 import cn.admobiletop.adsuyidemo.activity.ad.splash.SplashAdLoadShowSeparationActivity;
 import cn.admobiletop.adsuyidemo.activity.ad.splash.SplashAdSettingActivity;
-import cn.admobiletop.adsuyidemo.activity.other.DlModuleActivity;
 import cn.admobiletop.adsuyidemo.activity.other.NativeAdActivity;
 import cn.admobiletop.adsuyidemo.activity.setting.SettingActivity;
 
@@ -41,16 +40,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ((TextView) findViewById(R.id.tvVersion)).setText("V" + ADSuyiSdk.getInstance().getSdkVersion());
 
         findViewById(R.id.btnSplashAd).setOnClickListener(this);
-        findViewById(R.id.btnSplashAdLoadShowSeparation).setOnClickListener(this);
         findViewById(R.id.btnBannerAd).setOnClickListener(this);
         findViewById(R.id.btnNativeAd).setOnClickListener(this);
         findViewById(R.id.btnRewardVodAd).setOnClickListener(this);
         findViewById(R.id.btnFullScreenAd).setOnClickListener(this);
         findViewById(R.id.btnInterstitialAd).setOnClickListener(this);
         findViewById(R.id.btnDrawVodAd).setOnClickListener(this);
-        findViewById(R.id.btnAdmobileDlAdModule).setOnClickListener(this);
         findViewById(R.id.btnInnerNotice).setOnClickListener(this);
-        findViewById(R.id.btnInterstitialAutoClose).setOnClickListener(this);
 
         switchPersonalized = findViewById(R.id.switchPersonalized);
 
@@ -71,9 +67,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btnSplashAd:
                 startActivity(SplashAdSettingActivity.class);
                 break;
-            case R.id.btnSplashAdLoadShowSeparation:
-                startActivity(SplashAdLoadShowSeparationActivity.class);
-                break;
             case R.id.btnBannerAd:
                 startActivity(BannerAdActivity.class);
                 break;
@@ -91,9 +84,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btnDrawVodAd:
                 startActivity(DrawVodActivity.class);
-                break;
-            case R.id.btnAdmobileDlAdModule:
-                startActivity(DlModuleActivity.class);
                 break;
             case R.id.btnInnerNotice:
                 startActivity(InnerNoticeActivity.class);
