@@ -46,9 +46,9 @@ public class RewardVodAdActivity extends BaseAdActivity implements View.OnClickL
 //        ADSuyiRewardExtra adSuyiRewardExtra = new ADSuyiRewardExtra("用户id");
 //        // 设置激励视频服务端验证的自定义信息
 //        adSuyiRewardExtra.setCustomData("设置激励视频服务端验证的自定义信息");
-//        // 设置激励视频服务端激励名称(mintegral渠道不支持)
+//        // 设置激励视频服务端激励名称
 //        adSuyiRewardExtra.setRewardName("激励名称");
-//        // 设置激励视频服务端激励数量(mintegral渠道不支持)
+//        // 设置激励视频服务端激励数量
 //        adSuyiRewardExtra.setRewardAmount(1);
 //        rewardVodAd.setLocalExtraParams(new ADSuyiExtraParams.Builder().rewardExtra(adSuyiRewardExtra).build());
 

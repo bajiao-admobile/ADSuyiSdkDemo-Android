@@ -1,4 +1,4 @@
-# ADSuyiSdk Android Sdk——接入文档 V3.9.4.05081
+# ADSuyiSdk Android Sdk——接入文档 V3.9.5.06141
 
 # ADSuyi广告聚合SDK 介绍
 
@@ -6,7 +6,7 @@
 ```
 SDK名称: ADSuyi广告聚合SDK
 开发者: 杭州艾狄墨搏信息服务有限公司
-更新日期: 2024-06-20
+更新日期: 2024-08-22
 功能介绍: ADSuyi广告聚合SDK集成了多种广告类型和主流广告平台，提供广告数据统计功能，帮助开发者轻松实现应用内广告的接入和管理，提升应用盈利和用户体验。
 ```
 
@@ -50,14 +50,13 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | mimo      | 米盟         | 米盟         |
 | hwpps     | 华为广告联盟  | 华为广告联盟 |
 | jadyun    | 京媒         | 京东广告联盟 |
-| mintegral | Mintegral   | Mobvsita     |
 | gromore   | gromore      | gromore      |
 
 ### 1.4 ADSuyi必添包容量
 
 | Name         | 大小   | 版本号         | MD5值                            |
 | ------------ | ----  | ------------- | -------------------------------- |
-| ADSuyi基础包  | 0.43M | V3.9.4.05081  | 00789a71ba5ca0c95737951f76725eb6 |
+| ADSuyi基础包  | 0.43M | V3.9.5.06141  | 89191ce578c8dd47c946a31bc10ff26f |
 | OAID         | 1.10M | V1.0.25       | —                                |
 | OAID适配器    | 0.01M | V1.0.25.12122 | 14a3186e04ccd6e195f7c75ab6a6c6e2 |
 
@@ -65,16 +64,15 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 
 | Name      | 容量   | 版本号              | MD5值                            |
 | --------- | ----- | ------------------ | -------------------------------- |
-| tianmu    | 2.14M | v2.2.4.06281       | ac98611903894558ca832ca793960fb9 |
-| gdt       | 2.01M | v4.580.1450.06282  | 156c5720e7408b317bcab6af0639470a |
-| toutiao   | 8.22M | v6.2.1.1.06281     | 2f96d7a34154d2059c4ee38a2cab76d8 |
-| baidu     | 1.98M | v9.352.06281       | 0ad0bd7c7657e4a50503a4d130afe54c |
-| ksad      | 5.08M | v3.3.66.06281      | f6f8e84ceec5bcf4f8b2e505ddc0a568 |
+| tianmu    | 2.14M | v2.2.5.07301       | 3df34618e86a20cf771795812a7720f7 |
+| gdt       | 2.01M | v4.591.1461.07301  | 510a9249f3acefc1292fc745cedcf618 |
+| toutiao   | 8.22M | v6.2.1.7.07301     | a6173f2da0d974fa8ae94d7298a5d8e6 |
+| baidu     | 1.98M | v9.36.07301        | a314e2910cbc038258d27ee17ccdd68c |
+| ksad      | 5.08M | v3.3.66.07301      | e0a68f1a0470f067f32ebeacfe456ca3 |
 | mimo      | 3.48M | v5.3.2.06281       | 03d1de02951a1266a7bf386bf909a8b5 |
-| hwpps     | 1.01M | v13.4.71.300.05231 | a880c2a86450628601710e0d0d7560e3 |
+| hwpps     | 1.01M | v13.4.73.301.07301 | 10c7c1d46f2e0daa379bbac729774aa4 |
 | jadyun    | 1.41M | v2.5.6.11102       | 3f4fb7560c5d0984921e35d0de2a4aae |
-| mintegral | 2.80M | v16.5.41.11013     | 5d5ea89054576d6fa4e59525efebeac1 |
-| gromore   | —     | v6.2.1.1.07161     | 4cc2a01af49d54eefc0733b5b0bddcdb |
+| gromore   | —     | v6.2.1.7.08071     | 4cc2a01af49d54eefc0733b5b0bddcdb |
 
 
 ## 2. 支持的广告类型
@@ -176,8 +174,6 @@ allprojects {
         mavenCentral()
         // 添加ADSuyi相关仓库依赖
         maven { url "https://maven.admobile.top/repository/maven-releases/" }
-        // 如果添加了汇量广告，需要添加汇量的远程仓库依赖
-        maven { url "https://dl-maven-android.mintegral.com/repository/mbridge_android_sdk_oversea" }
         // 如果添加了华为联盟广告，需要添加华为联盟的远程仓库依赖
         maven { url 'https://developer.huawei.com/repo/' }
         // 如果添加了gromore广告，需要添加gromore的远程仓库依赖
@@ -200,7 +196,7 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
 
     // ADSuyiSdk核心库必须导入
-    implementation 'cn.admobiletop.adsuyi.ad:core:3.9.4.05081'
+    implementation 'cn.admobiletop.adsuyi.ad:core:3.9.5.06141'
 
     // OAID1.0.25版本，华为渠道请参考文档5.2
     implementation(name: 'oaid_sdk_1.0.25', ext: 'aar')
@@ -208,19 +204,19 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad:oaid:1.0.25.12122'
 
     // 天目AdapterSdk，必选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:tianmu:2.2.4.06281'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:tianmu:2.2.5.07301'
 
     // 优量汇（广点通）AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.580.1450.06282'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.591.1461.07301'
 
     // 头条AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:6.2.1.1.06281'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:6.2.1.7.07301'
 
     // 百度增强版AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced:9.352.06281'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced:9.36.07301'
 
     // 快手AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.66.06281'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.66.07301'
 
     // 米盟AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:mimo:5.3.2.06281'
@@ -229,18 +225,15 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
 
     // 华为广告联盟AdadapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:hwpps:13.4.71.300.05231'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:hwpps:13.4.73.301.07301'
 
     // 京媒 AdapterSdk，可选的。当前为Support版本，有AndroidX版本需求需要联系开发者
     implementation 'cn.admobiletop.adsuyi.ad.adapter:jadyun:2.5.6.11102'
 
-    // Mintegral AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:mintegral:16.5.41.11013'
-
     // gromoreAdapterSdk，可选的。如使用gromore的其他渠道，请联系开发者。
     // gromore已与穿山甲合并，此处无需重复导入穿山甲。
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:gromore-without:6.2.1.1.07161'
-    implementation "com.pangle.cn:mediation-gdt-adapter:4.575.1445.1" //广点通 adapter
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:gromore-without:6.2.1.7.08071'
+    implementation "com.pangle.cn:mediation-gdt-adapter:4.580.1450.0" //广点通 adapter
     // 有gromore其他渠道需求，请联系开发者。
 
 }
@@ -271,8 +264,6 @@ dependencies {
    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt-without:x.x.x.x'
    ```
 
-> 如果接入汇量，需要加入第三方依赖库https://dl-maven-android.mintegral.com/repository/mbridge_android_sdk_oversea
-
 > 如果接入华为联盟，需要加入第三方依赖库https://developer.huawei.com/repo/
 
 > **由于头条(穿山甲)渠道支持了Android R，引入了Android R的 \<queries\> 标签,需要对gradle版本进行限制，限制范围为：3.3.3、 3.4.3、 3.5.4、3.6.4、4.0.1 ，开发者根据自身情况酌情升级**
@@ -282,14 +273,6 @@ dependencies {
 3. 激励、全屏视频、插屏等广告对象一次成功拉取的广告数据只允许展示一次，还需展示请再次加载广告。
 
 4. 关于项目使用autosize后出现广告样式出现异常问题处理方案，请参考master-screen-adapter分支中的BannerActivity，并将适配单位改为pt。
-
-5. Mintegral（汇量）渠道与微信sdk冲突解决办法
-    由于Mintegral渠道16.1.7版本支持小程序跳转功能，若媒体已导入opensdk，会导致冲突，可通过以下方式移除Mintegral适配器中的opensdk
-    ```java
-    ('cn.admobiletop.adsuyi.ad.adapter:mintegral:16.5.41.11013') {
-            exclude group: "com.tencent.mm.opensdk", module: "wechat-sdk-android"
-        }
-    ```
 
 ### 5.2 OAID1.0.25版本支持
 
@@ -541,15 +524,6 @@ dependencies {
 -keep class com.squareup.picasso.** {*;}
 -keep class com.integralads.avid.library.** {*;}
 -keep class com.iab.** {*;}
-
-# mintegral广告平台混淆
--keepattributes Signature
--keepattributes *Annotation*
--keep class com.mbridge.** {*; }
--keep interface com.mbridge.** {*; }
--keep class android.support.v4.** { *; }
--dontwarn com.mbridge.**
--keep class **.R$* { public static final int mbridge*; }
 
 # 快手广告平台混淆
 -keep class org.chromium.** { *; }
@@ -882,6 +856,15 @@ cn.admobiletop.adsuyi.ad.listener.ADSuyiSplashAdListener
 | onReward(ADSuyiAdInfo adInfo) | 广告奖励回调，目前仅优量汇渠道有效。|
 | onAdFailed(ADSuyiError error) | 广告失败回调。参数说明：error（广告错误信息）。|
 
+**ADSuyiAdInfo**
+
+cn.admobiletop.adsuyi.ad.data.ADSuyiAdInfo
+
+| 方法名         | 介绍 |
+| ------------ | ---- |
+| getPlatform() | 获取三方广告平台名称，返回String类型。|
+| getECPM() | 获取ECPM，返回Double类型（单位：元）。|
+| getEcpmPrecision() | ECPM类型，返回String类型（accurate：精准、platform_assignment：平台指定、estimate：估算）。|
 
 
 #### 6.2.2 开屏广告加载并展示
@@ -1018,6 +1001,16 @@ cn.admobiletop.adsuyi.ad.listener.ADSuyiSplashAdListener
 | onReward(ADSuyiAdInfo adInfo) | 广告奖励回调，目前仅优量汇渠道有效。|
 | onAdFailed(ADSuyiError error) | 广告失败回调。参数说明：error（广告错误信息）。|
 
+**ADSuyiAdInfo**
+
+cn.admobiletop.adsuyi.ad.data.ADSuyiAdInfo
+
+| 方法名         | 介绍 |
+| ------------ | ---- |
+| getPlatform() | 获取三方广告平台名称，返回String类型。|
+| getECPM() | 获取ECPM，返回Double类型（单位：元）。|
+| getEcpmPrecision() | ECPM类型，返回String类型（accurate：精准、platform_assignment：平台指定、estimate：估算）。|
+
 #### 6.2.5 开屏广告2.0加载并展示
 
 ```java
@@ -1102,7 +1095,7 @@ cn.admobiletop.adsuyi.ad.ADSuyiBannerAd
 | ------------ | ---- |
 | ADSuyiBannerAd(Activity activity, ViewGroup container) | 构造方法。参数说明：activity（当前页面activity对象）、container（展示广告视图的父容器）。|
 | ADSuyiBannerAd(Fragment fragment, ViewGroup container) | 构造方法。参数说明：fragment（当前页面fragment对象）、container（展示广告视图的父容器）。|
-| ~~setAutoRefreshInterval(long seconds)~~ | 设置自刷新时间间隔。参数说明：seconds（0为不自动刷新（部分平台无效，如百度），其他取值范围为[30,120]，单位秒）。**3.9.4.05081版本废弃，可在SSP后台控制**。|
+| ~~setAutoRefreshInterval(long seconds)~~ | 设置自刷新时间间隔。参数说明：seconds（0为不自动刷新（部分平台无效，如百度），其他取值范围为[30,120]，单位秒）。**3.9.5.06141版本废弃，可在SSP后台控制**。|
 | setOnlySupportPlatform(String platform) | 设置广告定向，仅请求某一渠道。参数说明：platform（<a href="#platform_name">渠道名</a>）。注：仅debug模式为true时生效。|
 | setListener(ADSuyiBannerAdListener listener) | 设置广告相关状态。参数说明：listener（广告状态监听器）。|
 | setSceneId(String sceneId) | 设置广告场景id，用于区分同一个广告位在不同场景下使用的数据。参数说明：sceneId（场景ID）。|
@@ -1121,7 +1114,15 @@ cn.admobiletop.adsuyi.ad.listener.ADSuyiBannerAdListener
 | onAdClose(ADSuyiAdInfo adInfo) | 广告关闭回调，开发者需要在此回调中对广告父视图进行隐藏或移除子视图，并对广告对象进行释放，避免自刷新逻辑持续进行|
 | onAdFailed(ADSuyiError error) | 广告失败回调。参数说明：error（广告错误信息）。|
 
+**ADSuyiAdInfo**
 
+cn.admobiletop.adsuyi.ad.data.ADSuyiAdInfo
+
+| 方法名         | 介绍 |
+| ------------ | ---- |
+| getPlatform() | 获取三方广告平台名称，返回String类型。|
+| getECPM() | 获取ECPM，返回Double类型（单位：元）。|
+| getEcpmPrecision() | ECPM类型，返回String类型（accurate：精准、platform_assignment：平台指定、estimate：估算）。|
 
 #### 6.3.2 横幅广告加载并展示
 
@@ -1249,6 +1250,9 @@ cn.admobiletop.adsuyi.ad.data.ADSuyiNativeAdInfo
 | 方法名         | 介绍 |
 | ------------ | ---- |
 | isNativeExpress() | 广告类型，返回boolean类型，true模板类型，false自渲染类型。|
+| getPlatform() | 获取三方广告平台名称，返回String类型。|
+| getECPM() | 获取ECPM，返回Double类型（单位：元）。|
+| getEcpmPrecision() | ECPM类型，返回String类型（accurate：精准、platform_assignment：平台指定、estimate：估算）。|
 
 <p style="color:red;">当isNativeExpress返回true时，可强转为ADSuyiNativeExpressAdInfo类，否则转为ADSuyiNativeFeedAdInfo类</p>
 
@@ -1455,6 +1459,9 @@ cn.admobiletop.adsuyi.ad.data.ADSuyiRewardVodAdInfo
 | 方法名         | 介绍 |
 | ------------ | ---- |
 | showRewardVod(Activity activity) | 展示广告。参数说明：activity（当前页面activity对象）。|
+| getPlatform() | 获取三方广告平台名称，返回String类型。|
+| getECPM() | 获取ECPM，返回Double类型（单位：元）。|
+| getEcpmPrecision() | ECPM类型，返回String类型（accurate：精准、platform_assignment：平台指定、estimate：估算）。|
 
 #### 6.5.2 激励视频广告加载并展示
 
@@ -1569,6 +1576,9 @@ cn.admobiletop.adsuyi.ad.data.ADSuyiFullScreenVodAdInfo
 | 方法名         | 介绍 |
 | ------------ | ---- |
 | showFullScreenVod(Activity activity) | 展示广告。参数说明：activity（当前页面activity对象）。|
+| getPlatform() | 获取三方广告平台名称，返回String类型。|
+| getECPM() | 获取ECPM，返回Double类型（单位：元）。|
+| getEcpmPrecision() | ECPM类型，返回String类型（accurate：精准、platform_assignment：平台指定、estimate：估算）。|
 
 #### 6.6.2 全屏视频广告加载并展示
 
@@ -1684,6 +1694,9 @@ cn.admobiletop.adsuyi.ad.data.ADSuyiInterstitialAdInfo
 | 方法名         | 介绍 |
 | ------------ | ---- |
 | showInterstitial(Activity activity) | 展示广告。参数说明：activity（当前页面activity对象）。|
+| getPlatform() | 获取三方广告平台名称，返回String类型。|
+| getECPM() | 获取ECPM，返回Double类型（单位：元）。|
+| getEcpmPrecision() | ECPM类型，返回String类型（accurate：精准、platform_assignment：平台指定、estimate：估算）。|
 
 #### 6.7.2 插屏广告加载并展示
 
