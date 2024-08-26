@@ -101,7 +101,7 @@ dependencies {
 //    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.66.07301'
 //
 //    // 米盟AdapterSdk，可选的
-//    implementation 'cn.admobiletop.adsuyi.ad.adapter:mimo:5.3.2.06281'
+//    implementation 'cn.admobiletop.adsuyi.ad.adapter:mimo:5.3.2.06282'
 //    implementation 'com.google.code.gson:gson:2.8.5'
 //    implementation 'com.github.bumptech.glide:glide:4.9.0'
 //    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'

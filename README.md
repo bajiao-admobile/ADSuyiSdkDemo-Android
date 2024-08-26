@@ -69,7 +69,7 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | toutiao   | 8.22M | v6.2.1.7.07301     | a6173f2da0d974fa8ae94d7298a5d8e6 |
 | baidu     | 1.98M | v9.36.07301        | a314e2910cbc038258d27ee17ccdd68c |
 | ksad      | 5.08M | v3.3.66.07301      | e0a68f1a0470f067f32ebeacfe456ca3 |
-| mimo      | 3.48M | v5.3.2.06281       | 03d1de02951a1266a7bf386bf909a8b5 |
+| mimo      | 3.48M | v5.3.2.06282       | 03d1de02951a1266a7bf386bf909a8b5 |
 | hwpps     | 1.01M | v13.4.73.301.07301 | 10c7c1d46f2e0daa379bbac729774aa4 |
 | jadyun    | 1.41M | v2.5.6.11102       | 3f4fb7560c5d0984921e35d0de2a4aae |
 | gromore   | —     | v6.2.1.7.08071     | 4cc2a01af49d54eefc0733b5b0bddcdb |
@@ -219,7 +219,7 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.66.07301'
 
     // 米盟AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:mimo:5.3.2.06281'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:mimo:5.3.2.06282'
     implementation 'com.google.code.gson:gson:2.8.5'
     implementation 'com.github.bumptech.glide:glide:4.9.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
