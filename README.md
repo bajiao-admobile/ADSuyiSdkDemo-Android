@@ -71,7 +71,7 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | ksad      | 5.08M | v3.3.66.07301      | e0a68f1a0470f067f32ebeacfe456ca3 |
 | mimo      | 3.48M | v5.3.2.06282       | 03d1de02951a1266a7bf386bf909a8b5 |
 | hwpps     | 1.01M | v13.4.73.301.07301 | 10c7c1d46f2e0daa379bbac729774aa4 |
-| jadyun    | 1.41M | v2.5.6.11102       | 3f4fb7560c5d0984921e35d0de2a4aae |
+| jadyun    | 1.41M | v2.5.6.11103       | 3f4fb7560c5d0984921e35d0de2a4aae |
 | gromore   | —     | v6.2.1.7.08071     | 4cc2a01af49d54eefc0733b5b0bddcdb |
 
 
@@ -228,12 +228,12 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:hwpps:13.4.73.301.07301'
 
     // 京媒 AdapterSdk，可选的。当前为Support版本，有AndroidX版本需求需要联系开发者
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:jadyun:2.5.6.11102'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:jadyun:2.5.6.11103'
 
     // gromoreAdapterSdk，可选的。如使用gromore的其他渠道，请联系开发者。
     // gromore已与穿山甲合并，此处无需重复导入穿山甲。
     implementation 'cn.admobiletop.adsuyi.ad.adapter:gromore-without:6.2.1.7.08071'
-    implementation "com.pangle.cn:mediation-gdt-adapter:4.580.1450.0" //广点通 adapter
+    implementation "com.pangle.cn:mediation-gdt-adapter:4.575.1445.1" //广点通 adapter
     // 有gromore其他渠道需求，请联系开发者。
 
 }
