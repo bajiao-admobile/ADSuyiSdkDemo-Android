@@ -78,7 +78,7 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
 
     // ADSuyiSdk核心库必须导入
-    implementation 'cn.admobiletop.adsuyi.ad:core:3.9.5.06141'
+    implementation 'cn.admobiletop.adsuyi.ad:core:3.9.6.07121'
 
 //    // OAID库1.0.25华为渠道请参考文档5.2
 //    implementation(name: 'oaid_sdk_1.0.25', ext: 'aar')
@@ -86,19 +86,19 @@ dependencies {
 //    implementation 'cn.admobiletop.adsuyi.ad:oaid:1.0.25.12122'
 
     // 天目AdapterSdk，必选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:tianmu:2.2.5.07303'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:tianmu:2.2.6.08191'
 
 //    // 优量汇（广点通）AdapterSdk，可选的
-//    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.591.1461.07302'
+//    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.602.1472.09032'
 //
-    // 头条AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:6.2.1.7.07302'
+//    // 头条AdapterSdk，可选的
+//    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:6.4.1.6.08192'
 //
 //    // 百度增强版AdapterSdk，可选的
-//    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced:9.36.07301'
+//    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced:9.371.07302'
 //
 //    // 快手AdapterSdk，可选的
-//    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.66.07301'
+//    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.69.08192'
 //
 //    // 米盟AdapterSdk，可选的
 //    implementation 'cn.admobiletop.adsuyi.ad.adapter:mimo:5.3.2.06282'
@@ -114,7 +114,7 @@ dependencies {
 //
 //    // gromoreAdapterSdk，可选的。如使用gromore的其他渠道，请联系开发者。
 //    // gromore已与穿山甲合并，此处无需重复导入穿山甲。
-//    implementation 'cn.admobiletop.adsuyi.ad.adapter:gromore-without:6.2.1.7.08071'
+//    implementation 'cn.admobiletop.adsuyi.ad.adapter:gromore-without:6.4.1.6.10081'
 //    implementation "com.pangle.cn:mediation-gdt-adapter:4.575.1445.1" //广点通 adapter
 //    // 有gromore其他渠道需求，请联系开发者。
 }
