@@ -1,4 +1,4 @@
-# ADSuyiSdk Android Sdk——接入文档 V3.9.6.07122
+# ADSuyiSdk Android Sdk——接入文档 V3.9.7.09121
 
 # ADSuyi广告聚合SDK 介绍
 
@@ -56,7 +56,7 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 
 | Name         | 大小   | 版本号         | MD5值                            |
 | ------------ | ----  | ------------- | -------------------------------- |
-| ADSuyi基础包  | 0.43M | V3.9.6.07122  | 4254c974020867fa8b593ebb702009d4 |
+| ADSuyi基础包  | 0.43M | V3.9.7.09121  | 2222646662ff56afcf0d6726e2aa1b4d |
 | OAID         | 1.10M | V1.0.25       | —                                |
 | OAID适配器    | 0.01M | V1.0.25.12122 | 14a3186e04ccd6e195f7c75ab6a6c6e2 |
 
@@ -64,11 +64,11 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 
 | Name      | 容量   | 版本号              | MD5值                            |
 | --------- | ----- | ------------------ | -------------------------------- |
-| tianmu    | 2.14M | v2.2.6.08191       | 7e93663ba99109a9df76a2515ec7e834 |
-| gdt       | 2.01M | v4.603.1473.10141  | 4dd4e63b17da7c65cd63bad5fa9dcab2 |
-| toutiao   | 8.22M | v6.5.0.2.11251     | 05a0dbca8c86226fc1b9328a65d747fc |
-| baidu     | 1.98M | v9.371.07302       | 892b9ef08aba3d6cf86918caa165c90e |
-| ksad      | 5.08M | v3.3.69.08192      | abdf10e4b2725820442d0bd6035c8f9b |
+| tianmu    | 2.14M | v2.2.7.09121       | b64276881e7ab6394a89001ea022f8d4 |
+| gdt       | 2.01M | v4.610.1480.12021  | c66aa77ccae776c63cc0d7adfa8f53a3 |
+| toutiao   | 8.22M | v6.5.0.2.12021     | c4a334a70a8e683d7d68bb111ad19c76 |
+| baidu     | 1.98M | v9.371.10091       | 111b28890e83ae0807ab082b29acafb4 |
+| ksad      | 5.08M | v3.3.69.10091      | 37b65360f2f441d28b7252bada79482a |
 | mimo      | 3.48M | v5.3.2.06282       | 03d1de02951a1266a7bf386bf909a8b5 |
 | hwpps     | 1.01M | v13.4.73.301.07301 | 10c7c1d46f2e0daa379bbac729774aa4 |
 | jadyun    | 1.41M | v2.5.6.11103       | 3f4fb7560c5d0984921e35d0de2a4aae |
@@ -196,7 +196,7 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
 
     // ADSuyiSdk核心库必须导入
-    implementation 'cn.admobiletop.adsuyi.ad:core:3.9.6.07122'
+    implementation 'cn.admobiletop.adsuyi.ad:core:3.9.7.09121'
 
     // OAID1.0.25版本，华为渠道请参考文档5.2
     implementation(name: 'oaid_sdk_1.0.25', ext: 'aar')
@@ -204,19 +204,19 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad:oaid:1.0.25.12122'
 
     // 天目AdapterSdk，必选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:tianmu:2.2.6.08191'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:tianmu:2.2.7.09121'
 
     // 优量汇（广点通）AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.603.1473.10141'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.610.1480.12021'
 
     // 头条AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:6.5.0.2.11251'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:6.5.0.2.12021'
 
     // 百度增强版AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced:9.371.07302'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced:9.371.10091'
 
     // 快手AdapterSdk，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.69.08192'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.69.10091'
 
     // 米盟AdapterSdk，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:mimo:5.3.2.06282'
@@ -760,6 +760,7 @@ cn.admobiletop.adsuyi.config.ADSuyiInitConfig
 | floatingAdBlockList(boolean defaultBlockList, String... blockList) | 设置阻止展示浮窗广告的界面。参数说明：defaultBlockList（是否开启默认阻止的界面（激励视频播放界面等））、blockList（自定义需要阻止的界面，activity路径）。|
 | filterThirdQuestion(boolean filterThirdQuestion) | 设置是否过滤第三方平台的问题广告（例如: 已知某个广告平台在某些机型的横幅广告可能存在问题，如果开启过滤，则在该机型将不再去获取该平台的横幅广告）。参数说明：filterThirdQuestion（true：开启，false：关闭， 默认：true）。|
 | setCustomDeviceInfoController(CustomDeviceInfoController controller) | 自定义设备信息。可选参数。<a href="#custom_controller"> 请参考5.7 向SDK传入设备标识 </a>|
+| setWXAppId(String wxAppId) | 设置微信AppId。可选参数。参数说明：wxAppId（微信AppId） </a>|
 
 **CustomDeviceInfoController**
 
