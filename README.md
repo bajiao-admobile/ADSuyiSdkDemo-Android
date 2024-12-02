@@ -760,7 +760,7 @@ cn.admobiletop.adsuyi.config.ADSuyiInitConfig
 | floatingAdBlockList(boolean defaultBlockList, String... blockList) | 设置阻止展示浮窗广告的界面。参数说明：defaultBlockList（是否开启默认阻止的界面（激励视频播放界面等））、blockList（自定义需要阻止的界面，activity路径）。|
 | filterThirdQuestion(boolean filterThirdQuestion) | 设置是否过滤第三方平台的问题广告（例如: 已知某个广告平台在某些机型的横幅广告可能存在问题，如果开启过滤，则在该机型将不再去获取该平台的横幅广告）。参数说明：filterThirdQuestion（true：开启，false：关闭， 默认：true）。|
 | setCustomDeviceInfoController(CustomDeviceInfoController controller) | 自定义设备信息。可选参数。<a href="#custom_controller"> 请参考5.7 向SDK传入设备标识 </a>|
-| setWXAppId(String wxAppId) | 设置微信AppId。可选参数。参数说明：wxAppId（微信AppId） </a>|
+| setWXAppId(String wxAppId) | 设置微信AppId。可选参数。参数说明：wxAppId（微信AppId）|
 
 **CustomDeviceInfoController**
 
