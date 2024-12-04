@@ -1,4 +1,4 @@
-# ADSuyiSdk Android Sdk——接入文档 V3.9.7.09121
+# ADSuyiSdk Android Sdk——接入文档 V3.9.7.09122
 
 # ADSuyi广告聚合SDK 介绍
 
@@ -50,13 +50,14 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | mimo      | 米盟         | 米盟         |
 | hwpps     | 华为广告联盟  | 华为广告联盟 |
 | jadyun    | 京媒         | 京东广告联盟 |
-| gromore   | gromore      | gromore      |
+| octopus   | 章鱼         | 章鱼      |
+| gromore   | gromore     | gromore      |
 
 ### 1.4 ADSuyi必添包容量
 
 | Name         | 大小   | 版本号         | MD5值                            |
 | ------------ | ----  | ------------- | -------------------------------- |
-| ADSuyi基础包  | 0.43M | V3.9.7.09121  | 2222646662ff56afcf0d6726e2aa1b4d |
+| ADSuyi基础包  | 0.43M | V3.9.7.09122  | 2222646662ff56afcf0d6726e2aa1b4d |
 | OAID         | 1.10M | V1.0.25       | —                                |
 | OAID适配器    | 0.01M | V1.0.25.12122 | 14a3186e04ccd6e195f7c75ab6a6c6e2 |
 
@@ -72,6 +73,7 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | mimo      | 3.48M | v5.3.2.06282       | 03d1de02951a1266a7bf386bf909a8b5 |
 | hwpps     | 1.01M | v13.4.73.301.07301 | 10c7c1d46f2e0daa379bbac729774aa4 |
 | jadyun    | 1.41M | v2.5.6.11103       | 3f4fb7560c5d0984921e35d0de2a4aae |
+| octopus   | 1.00M | v1.6.1.8.12031     | 1c40d050a131575846b9138a00bc034f |
 | gromore   | —     | v6.4.1.6.10081     | 4a7bcf9791da85444d8dd7f266bfcf99 |
 
 
@@ -196,39 +198,42 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
 
     // ADSuyiSdk核心库必须导入
-    implementation 'cn.admobiletop.adsuyi.ad:core:3.9.7.09121'
+    implementation 'cn.admobiletop.adsuyi.ad:core:3.9.7.09122'
 
     // OAID1.0.25版本，华为渠道请参考文档5.2
     implementation(name: 'oaid_sdk_1.0.25', ext: 'aar')
     // OAID1.0.25版本适配器，其它版本请参考文档5.2.5
     implementation 'cn.admobiletop.adsuyi.ad:oaid:1.0.25.12122'
 
-    // 天目AdapterSdk，必选的
+    // 天目适配器，必选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:tianmu:2.2.7.09121'
 
-    // 优量汇（广点通）AdapterSdk，可选的
+    // 优量汇（广点通）适配器，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.610.1480.12021'
 
-    // 头条AdapterSdk，可选的
+    // 头条适配器，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:6.5.0.2.12021'
 
-    // 百度增强版AdapterSdk，可选的
+    // 百度适配器，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced:9.371.10091'
 
-    // 快手AdapterSdk，可选的
+    // 快手适配器，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.69.10091'
 
-    // 米盟AdapterSdk，可选的
+    // 米盟适配器，可选的。当前为AndroidX版本
     implementation 'cn.admobiletop.adsuyi.ad.adapter:mimo:5.3.2.06282'
     implementation 'com.google.code.gson:gson:2.8.5'
     implementation 'com.github.bumptech.glide:glide:4.9.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
 
-    // 华为广告联盟AdadapterSdk，可选的
+    // 华为适配器，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:hwpps:13.4.73.301.07301'
 
-    // 京媒 AdapterSdk，可选的。当前为Support版本，有AndroidX版本需求需要联系开发者
+    // 京媒适配器，可选的。当前为Support版本，有AndroidX版本需求需要联系开发者
     implementation 'cn.admobiletop.adsuyi.ad.adapter:jadyun:2.5.6.11103'
+
+    // 章鱼适配器，可选的
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:octopus:1.6.1.8.12031'
 
     // gromoreAdapterSdk，可选的。如使用gromore的其他渠道，请联系开发者。
     // gromore已与穿山甲合并，此处无需重复导入穿山甲。
@@ -591,6 +596,10 @@ dependencies {
 # ADSyid混淆
 -keep class adsuyi.com.** { *; }
 -keep interface adsuyi.com.** { *; }
+
+# 章鱼混淆
+-dontwarn com.octopus.**
+-keep class com.octopus.** {*;}
 
 ```
 

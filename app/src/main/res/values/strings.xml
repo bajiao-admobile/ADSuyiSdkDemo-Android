@@ -75,6 +75,8 @@
         <item>gromore</item>
         <!--jadyun-->
         <item>jadyun</item>
+        <!--octopus-->
+        <item>octopus</item>
     </string-array>
 
     <string-array name="platforms_zh">
@@ -89,6 +91,7 @@
         <item>华为广告联盟(hwpps)</item>
         <item>gromore</item>
         <item>京媒(jadyun)</item>
+        <item>章鱼(octopus)</item>
     </string-array>
 
     <string-array name="ad_count">

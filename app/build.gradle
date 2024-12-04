@@ -78,41 +78,44 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
 
     // ADSuyiSdk核心库必须导入
-    implementation 'cn.admobiletop.adsuyi.ad:core:3.9.7.09121'
+    implementation 'cn.admobiletop.adsuyi.ad:core:3.9.7.09122'
 
 //    // OAID库1.0.25华为渠道请参考文档5.2
 //    implementation(name: 'oaid_sdk_1.0.25', ext: 'aar')
 //    // OAID1.0.25版本适配器，其它版本请参考文档5.2.5
 //    implementation 'cn.admobiletop.adsuyi.ad:oaid:1.0.25.12122'
 
-    // 天目AdapterSdk，必选的
+    // 天目适配器，必选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:tianmu:2.2.7.09121'
 
-//    // 优量汇（广点通）AdapterSdk，可选的
+//    // 优量汇（广点通）适配器，可选的
 //    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.610.1480.12021'
 //
-//    // 头条AdapterSdk，可选的
+//    // 头条适配器，可选的
 //    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:6.5.0.2.12021'
 //
-//    // 百度增强版AdapterSdk，可选的
+//    // 百度适配器，可选的
 //    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced:9.371.10091'
 //
-//    // 快手AdapterSdk，可选的
+//    // 快手适配器，可选的
 //    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.69.10091'
 //
-//    // 米盟AdapterSdk，可选的
+//    // 米盟适配器，可选的
 //    implementation 'cn.admobiletop.adsuyi.ad.adapter:mimo:5.3.2.06282'
 //    implementation 'com.google.code.gson:gson:2.8.5'
 //    implementation 'com.github.bumptech.glide:glide:4.9.0'
 //    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
 //
-//    // 华为广告联盟AdadapterSdk，可选的
+//    // 华为适配器，可选的
 //    implementation 'cn.admobiletop.adsuyi.ad.adapter:hwpps:13.4.73.301.07301'
 //
-//    // 京媒 AdapterSdk，可选的。当前为Support版本，有AndroidX版本需求需要联系开发者
+//    // 京媒适配器，可选的。当前为Support版本，有AndroidX版本需求需要联系开发者
 //    implementation 'cn.admobiletop.adsuyi.ad.adapter:jadyun:2.5.6.11103'
 //
-//    // gromoreAdapterSdk，可选的。如使用gromore的其他渠道，请联系开发者。
+//    // 章鱼适配器，可选的
+//    implementation 'cn.admobiletop.adsuyi.ad.adapter:octopus:1.6.1.8.12031'
+//
+//    // gromore适配器，可选的。如使用gromore的其他渠道，请联系开发者。
 //    // gromore已与穿山甲合并，此处无需重复导入穿山甲。
 //    implementation 'cn.admobiletop.adsuyi.ad.adapter:gromore-without:6.4.1.6.10081'
 //    implementation "com.pangle.cn:mediation-gdt-adapter:4.575.1445.1" //广点通 adapter
