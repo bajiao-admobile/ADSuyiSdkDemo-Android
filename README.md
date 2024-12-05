@@ -1,6 +1,6 @@
-# ADSuyiSdk Android Sdk——接入文档 V3.9.7.09122
+# ADmobile 苏伊广告聚合SDK ——接入文档 V3.9.7.09122
 
-# ADSuyi广告聚合SDK 介绍
+# ADmobile 苏伊广告聚合SDK  介绍
 
 
 ```
