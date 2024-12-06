@@ -47,19 +47,12 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | toutiao   | 头条         | 穿山甲       |
 | baidu     | 百度         | 百青藤       |
 | ksad      | 快手         | 快手         |
-| mimo      | 米盟         | 米盟         |
-| hwpps     | 华为广告联盟  | 华为广告联盟 |
-| jadyun    | 京媒         | 京东广告联盟 |
-| octopus   | 章鱼         | 章鱼      |
-| gromore   | gromore     | gromore      |
 
 ### 1.4 ADSuyi必添包容量
 
 | Name         | 大小   | 版本号         | MD5值                            |
 | ------------ | ----  | ------------- | -------------------------------- |
 | ADSuyi基础包  | 0.43M | V3.9.7.09122  | 2222646662ff56afcf0d6726e2aa1b4d |
-| OAID         | 1.10M | V1.0.25       | —                                |
-| OAID适配器    | 0.01M | V1.0.25.12122 | 14a3186e04ccd6e195f7c75ab6a6c6e2 |
 
 ### 1.5 三方广告平台适配器+三方广告sdk总容量
 
@@ -70,11 +63,6 @@ ADSuyi广告聚合SDK主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | toutiao   | 8.22M | v6.5.0.2.12021     | c4a334a70a8e683d7d68bb111ad19c76 |
 | baidu     | 1.98M | v9.371.10091       | 111b28890e83ae0807ab082b29acafb4 |
 | ksad      | 5.08M | v3.3.69.10091      | 37b65360f2f441d28b7252bada79482a |
-| mimo      | 3.48M | v5.3.2.06282       | 03d1de02951a1266a7bf386bf909a8b5 |
-| hwpps     | 1.01M | v13.4.73.301.07301 | 10c7c1d46f2e0daa379bbac729774aa4 |
-| jadyun    | 1.41M | v2.5.6.11103       | 3f4fb7560c5d0984921e35d0de2a4aae |
-| octopus   | 1.00M | v1.6.1.8.12031     | 1c40d050a131575846b9138a00bc034f |
-| gromore   | —     | v6.4.1.6.10081     | 4a7bcf9791da85444d8dd7f266bfcf99 |
 
 
 ## 2. 支持的广告类型
@@ -200,11 +188,6 @@ dependencies {
     // ADSuyiSdk核心库必须导入
     implementation 'cn.admobiletop.adsuyi.ad:core:3.9.7.09122'
 
-    // OAID1.0.25版本，华为渠道请参考文档5.2
-    implementation(name: 'oaid_sdk_1.0.25', ext: 'aar')
-    // OAID1.0.25版本适配器，其它版本请参考文档5.2.5
-    implementation 'cn.admobiletop.adsuyi.ad:oaid:1.0.25.12122'
-
     // 天目适配器，必选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:tianmu:2.2.7.09121'
 
@@ -219,27 +202,6 @@ dependencies {
 
     // 快手适配器，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.69.10091'
-
-    // 米盟适配器，可选的。当前为AndroidX版本
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:mimo:5.3.2.06282'
-    implementation 'com.google.code.gson:gson:2.8.5'
-    implementation 'com.github.bumptech.glide:glide:4.9.0'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
-
-    // 华为适配器，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:hwpps:13.4.73.301.07301'
-
-    // 京媒适配器，可选的。当前为Support版本，有AndroidX版本需求需要联系开发者
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:jadyun:2.5.6.11103'
-
-    // 章鱼适配器，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:octopus:1.6.1.8.12031'
-
-    // gromoreAdapterSdk，可选的。如使用gromore的其他渠道，请联系开发者。
-    // gromore已与穿山甲合并，此处无需重复导入穿山甲。
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:gromore-without:6.4.1.6.10081'
-    implementation "com.pangle.cn:mediation-gdt-adapter:4.575.1445.1" //广点通 adapter
-    // 有gromore其他渠道需求，请联系开发者。
 
 }
 ```
@@ -279,53 +241,10 @@ dependencies {
 
 4. 关于项目使用autosize后出现广告样式出现异常问题处理方案，请参考master-screen-adapter分支中的BannerActivity，并将适配单位改为pt。
 
-### 5.2 OAID1.0.25版本支持
+### 5.2 OAID版本支持
 
-**Android10之后IMEI等数据无法获取，这对广告投放将产生一定影响，所以移动安全联盟(MSA)提出OAID来代替IMEI参与广告投放决策，OAID的支持会在一定程度上影响广告收益；**
-
-**我们提供Oaid1.0.25的Oaid适配器，开发者无需额外集成（如需适配oaid1.0.25之后的版本，请参考文档5.2.5）**，OAID集成并不繁琐，SDK中已经进行了OAID1.0.25的封装适配，只需以下几步即可完成OAID的支持；
-
-1. 导入安全联盟的OAID支持库 **oaid_sdk_1.0.25.aar**，可在Demo的libs目录下找到，**对接其它版本请勿参考该教程；**<br>
-
-2. 将Demo中assets文件夹下的**supplierconfig.json**文件复制到自己的assets目录下并按照**supplierconfig.json**文件中的说明进行OAID的 **AppId** 配置，**supplierconfig.json**文件名不可修改。需要设置 appid 的部分需要去对应厂商的应用商店的应用信息中查看；
-
-3. 添加以下混淆配置；
-
-   ```java
-   -keep class com.bun.miitmdid.core.** {*;}
-   -keep class XI.CA.XI.**{*;}
-   -keep class XI.K0.XI.**{*;}
-   -keep class XI.XI.K0.**{*;}
-   -keep class XI.vs.K0.**{*;}
-   -keep class XI.xo.XI.XI.**{*;}
-   -keep class com.asus.msa.SupplementaryDID.**{*;}
-   -keep class com.asus.msa.sdid.**{*;}
-   -keep class com.bun.lib.**{*;}
-   -keep class com.bun.miitmdid.**{*;}
-   -keep class com.huawei.hms.ads.identifier.**{*;}
-   -keep class com.samsung.android.deviceidservice.**{*;}
-   -keep class com.zui.opendeviceidlibrary.**{*;}
-   -keep class org.json.**{*;}
-   -keep public class com.netease.nis.sdkwrapper.Utils {public <methods>;}
-   ```
-   
-4. 修改AndroidManifest.xml，**OAID SDK minSdkVersion为21，如果应用的minSdkVersion小于21，则添加：**
-    ```java
-    // 如果导入后有冲突可以不添加，suyi中已经添加过了
-    <uses-sdk tools:overrideLibrary="com.bun.miitmdid"/>
-    ```
-
-    OAID 1.0.25以上版本需要到[《移动智能终端补充设备标识体系统一调用SDK》](http://www.msa-alliance.cn/col.jsp?id=120)申请APP专属密钥才能正常使用，需要开发者自行获取OAID，并参考<a href="#custom_controller"> 5.7 向SDK传入设备标识 </a> ，将获取到的OAID字符串传给广告SDK，保证广告SDK参数成功接收到。**<br><br>
-    **注意：使用其它版本oaid请移除以下依赖，避免造成崩溃：**
-    ```java
-    // OAID库1.0.25
-    implementation(name: 'oaid_sdk_1.0.25', ext: 'aar')
-    // OAID1.0.25版本适配器不支持其它版本，ADSuyi获取oaid使用
-    implementation 'cn.admobiletop.adsuyi.ad:oaid:1.0.25.12122'
-    ```
-
-5. 使用其它版本参考案例
-[Oaid高版本参考案例](https://gitee.com/admobile/oaid-docking-case.git)
+1. 向ADSuyi传入OAID
+[OAID传入参考案例](https://gitee.com/admobile/oaid-docking-case.git)
 
 ### 5.3 权限申请
 
@@ -782,7 +701,7 @@ cn.admobiletop.adsuyi.config.CustomDeviceInfoController
 | getLocation() | 当isCanUseLocation=false时，可传入地理位置信息，使用您传入的地理位置信息。|
 | getMacAddress() | 当isCanUseWifiState=false时，可传入Mac地址信息，使用您传入的Mac地址信息。|
 | getOaid() | 开发者可以传入oaid ，若不传或为空值，则不使用oaid信息。|
-| getVaid() | 开发者可以传入vaid ，若不传或为空值，则不使用oaid信息。|
+| getVaid() | 开发者可以传入vaid ，若不传或为空值，则不使用vaid信息。|
 
 #### 6.1.2 初始化接入示例
 

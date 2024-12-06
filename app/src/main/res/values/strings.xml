@@ -86,12 +86,6 @@
         <item>头条/穿山甲(toutiao)</item>
         <item>百度/百青藤(baidu)</item>
         <item>快手(ksad)</item>
-        <item>inmobi</item>
-        <item>米盟(mimo)</item>
-        <item>华为广告联盟(hwpps)</item>
-        <item>gromore</item>
-        <item>京媒(jadyun)</item>
-        <item>章鱼(octopus)</item>
     </string-array>
 
     <string-array name="ad_count">
