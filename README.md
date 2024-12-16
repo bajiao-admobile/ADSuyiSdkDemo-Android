@@ -253,6 +253,7 @@ dependencies {
 ```java
 <!-- 广告必须的权限，允许网络访问 -->
 <uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 ```
 
 
