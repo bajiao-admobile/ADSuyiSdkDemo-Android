@@ -118,11 +118,6 @@ public class ADSuyiApplication extends Application {
         ADSuyiDemoConstant.INTERSTITIAL_AD_ONLY_SUPPORT_PLATFORM = onlySupportPlatform;
     }
 
-    @Override
-    public String getPackageName() {
-        return SuyiPackageStrategy.getSuyiPackageName(this);
-    }
-
     /**
      * 初始化广告SDK并且跳转开屏界面
      */
