@@ -81,5 +81,5 @@ dependencies {
 
     // 天目适配器，必选的
     implementation (name: 'TianmuSDK-2.2.7.4', ext: 'aar')
-    implementation (name: 'TianmuAdapter-2.2.7.12161', ext: 'aar')
+    implementation (name: 'TianmuAdapter-2.2.7.12162', ext: 'aar')
 }

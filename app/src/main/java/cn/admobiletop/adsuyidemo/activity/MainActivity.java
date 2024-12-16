@@ -16,7 +16,6 @@ import android.widget.TextView;
 import cn.admobiletop.adsuyi.ADSuyiSdk;
 import cn.admobiletop.adsuyidemo.R;
 import cn.admobiletop.adsuyidemo.activity.ad.BannerAdActivity;
-import cn.admobiletop.adsuyidemo.activity.ad.feed.NativeAdRecyclerViewActivity;
 import cn.admobiletop.adsuyidemo.activity.ad.feed.NativeExpressActivity;
 import cn.admobiletop.adsuyidemo.activity.ad.feed.NativeSelfRenderActivity;
 import cn.admobiletop.adsuyidemo.activity.ad.interstitial.InterstitialAdActivity;

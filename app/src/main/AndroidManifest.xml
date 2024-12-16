@@ -97,12 +97,6 @@
             android:label="@string/interstitial_ad"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.ad.feed.NativeAdRecyclerViewActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
-            android:label="@string/native_ad"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeNoActionBar" />
-        <activity
             android:name=".activity.setting.PositionSettingActivity"
             android:label="@string/setting"
             android:screenOrientation="portrait" />
