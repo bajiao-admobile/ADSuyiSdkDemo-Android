@@ -117,7 +117,7 @@ Suyi聚合广告SDK 主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 
 ## 3. Demo及SDK下载链接
 
-> [ADSuyiSdkDemo-演示APK下载地址](https://doc.admobile.top/file/ADSuyiSdkDemo-V1.202406201.apk)
+> [ADSuyiSdkDemo-演示APK下载地址](https://doc.admobile.top/file/ADSuyiSdkDemo-V202412161.apk)
 >
 > [SDK版本更新日志](https://doc.admobile.top/ssp/4changelog/1-androidchangelog.html)
 
