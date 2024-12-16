@@ -77,27 +77,10 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
 
 //    // ADSuyiSdk核心库必须导入
-//     implementation (name: 'ADSuyiCore-3.9.7.12161', ext: 'aar')
+     implementation (name: 'ADSuyiCore-3.9.7.12161', ext: 'aar')
 //
 //    // 天目适配器，必选的
-//    implementation (name: 'TianmuSDK-2.2.7.4', ext: 'aar')
-//    implementation (name: 'TianmuAdapter-2.2.7.12162', ext: 'aar')
+    implementation (name: 'TianmuSDK-2.2.7.4', ext: 'aar')
+    implementation (name: 'TianmuAdapter-2.2.7.12162', ext: 'aar')
 
-    // ADSuyiSdk核心库必须导入
-    implementation 'cn.admobiletop.adsuyi.ad:core:3.9.7.12161'
-
-    // 天目适配器，必选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:tianmu:2.2.7.12162'
-
-    // 优量汇（广点通）适配器，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.610.1480.12021'
-
-    // 头条适配器，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:6.5.0.2.12021'
-
-    // 百度适配器，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced:9.371.10091'
-
-    // 快手适配器，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.69.10091'
 }
