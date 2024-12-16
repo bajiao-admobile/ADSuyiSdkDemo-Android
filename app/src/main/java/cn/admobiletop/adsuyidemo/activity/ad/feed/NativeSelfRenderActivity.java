@@ -14,7 +14,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.qq.e.ads.nativ.widget.NativeAdContainer;
 
 import java.util.List;
 
@@ -46,7 +45,7 @@ public class NativeSelfRenderActivity extends AppCompatActivity {
      * 自渲染相关布局
      */
     private ImageView ivIcon;
-    private NativeAdContainer nativeAdContainer;
+    private FrameLayout nativeAdContainer;
     private RelativeLayout rlAdContainer;
     private FrameLayout flContent;
     private ImageView ivAdTarget;

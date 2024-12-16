@@ -15,6 +15,7 @@ import cn.admobiletop.adsuyi.util.ADSuyiToastUtil;
 import cn.admobiletop.adsuyidemo.R;
 import cn.admobiletop.adsuyidemo.activity.base.BaseAdActivity;
 import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
+import cn.admobiletop.adsuyidemo.util.SPUtil;
 
 /**
  * @author ciba
@@ -40,6 +41,7 @@ public class RewardVodAdActivity extends BaseAdActivity implements View.OnClickL
     }
 
     private void initAd() {
+        boolean iscgq = SPUtil.getBoolean(this, "cgq");
         // 创建激励视频广告实例
         rewardVodAd = new ADSuyiRewardVodAd(this);
 
@@ -57,6 +59,7 @@ public class RewardVodAdActivity extends BaseAdActivity implements View.OnClickL
 //                .rewardExtra(adSuyiRewardExtra)
                 // 设置视频类广告是否静音
                 .setVideoWithMute(ADSuyiDemoConstant.REWARD_AD_PLAY_WITH_MUTE)
+                .setAdShakeDisable(iscgq)
                 .build();
 
         rewardVodAd.setLocalExtraParams(extraParams);

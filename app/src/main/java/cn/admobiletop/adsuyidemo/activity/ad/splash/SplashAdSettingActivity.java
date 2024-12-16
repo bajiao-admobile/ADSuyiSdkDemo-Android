@@ -78,17 +78,6 @@ public class SplashAdSettingActivity extends AppCompatActivity {
             }
         });
 
-        findViewById(R.id.btnLoadSplashAd2).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(SplashAdSettingActivity.this, SplashAdActivity2.class);
-                String etLogoHeightString = etLogoHeight.getText().toString().trim();
-                intent.putExtra("splashType", splashType);
-                intent.putExtra("logoHeightPx", TextUtils.isEmpty(etLogoHeightString) ? 0 : Integer.valueOf(etLogoHeightString));
-                intent.putExtra("loadType", loadType);
-                startActivity(intent);
-            }
-        });
     }
 
 }

@@ -46,10 +46,7 @@
         <item>Banner广告</item>
         <item>信息流广告</item>
         <item>激励视频广告</item>
-        <item>全屏视频广告</item>
         <item>插屏广告</item>
-        <item>Draw视频广告</item>
-        <item>浮窗广告</item>
     </string-array>
     <string-array name="platforms">
         <item>所有(null或空字符串)</item>
@@ -63,20 +60,6 @@
         <item>baidu</item>
         <!--快手-->
         <item>ksad</item>
-        <!--艾狄墨搏-->
-        <item>admobile</item>
-        <!--inmobi-->
-        <item>inmobi</item>
-        <!--米盟-->
-        <item>mimo</item>
-        <!--华为广告联盟-->
-        <item>hwpps</item>
-        <!--gromore-->
-        <item>gromore</item>
-        <!--jadyun-->
-        <item>jadyun</item>
-        <!--octopus-->
-        <item>octopus</item>
     </string-array>
 
     <string-array name="platforms_zh">

@@ -16,19 +16,19 @@ import android.widget.TextView;
 import cn.admobiletop.adsuyi.ADSuyiSdk;
 import cn.admobiletop.adsuyidemo.R;
 import cn.admobiletop.adsuyidemo.activity.ad.BannerAdActivity;
-import cn.admobiletop.adsuyidemo.activity.ad.DrawVodActivity;
-import cn.admobiletop.adsuyidemo.activity.ad.FullScreenVodAdActivity;
-import cn.admobiletop.adsuyidemo.activity.ad.InnerNoticeActivity;
+import cn.admobiletop.adsuyidemo.activity.ad.feed.NativeAdRecyclerViewActivity;
+import cn.admobiletop.adsuyidemo.activity.ad.feed.NativeExpressActivity;
+import cn.admobiletop.adsuyidemo.activity.ad.feed.NativeSelfRenderActivity;
 import cn.admobiletop.adsuyidemo.activity.ad.interstitial.InterstitialAdActivity;
 import cn.admobiletop.adsuyidemo.activity.ad.RewardVodAdActivity;
-import cn.admobiletop.adsuyidemo.activity.ad.splash.SplashAdLoadShowSeparationActivity;
 import cn.admobiletop.adsuyidemo.activity.ad.splash.SplashAdSettingActivity;
-import cn.admobiletop.adsuyidemo.activity.other.NativeAdActivity;
 import cn.admobiletop.adsuyidemo.activity.setting.SettingActivity;
+import cn.admobiletop.adsuyidemo.util.SPUtil;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Switch switchPersonalized;
+    private Switch switchCgq;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -41,13 +41,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         findViewById(R.id.btnSplashAd).setOnClickListener(this);
         findViewById(R.id.btnBannerAd).setOnClickListener(this);
-        findViewById(R.id.btnNativeAd).setOnClickListener(this);
+        findViewById(R.id.btnNativeExpressLayout).setOnClickListener(this);
+        findViewById(R.id.btnNativeSelfRenderLayout).setOnClickListener(this);
         findViewById(R.id.btnRewardVodAd).setOnClickListener(this);
         findViewById(R.id.btnFullScreenAd).setOnClickListener(this);
         findViewById(R.id.btnInterstitialAd).setOnClickListener(this);
         findViewById(R.id.btnDrawVodAd).setOnClickListener(this);
         findViewById(R.id.btnInnerNotice).setOnClickListener(this);
 
+
+        boolean iscgq = SPUtil.getBoolean(MainActivity.this, "cgq");
+        switchCgq = findViewById(R.id.switchCgq);
+        switchCgq.setChecked(iscgq);
+
+        ADSuyiSdk.setPersonalizedAdEnabled(false);
         switchPersonalized = findViewById(R.id.switchPersonalized);
 
         boolean personalized = ADSuyiSdk.getInstance().getPersonalizedAdEnabled();
@@ -57,6 +64,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 ADSuyiSdk.setPersonalizedAdEnabled(isChecked);
+            }
+        });
+
+        switchCgq.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                SPUtil.putBoolean(MainActivity.this, "cgq", isChecked);
             }
         });
     }
@@ -70,23 +84,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btnBannerAd:
                 startActivity(BannerAdActivity.class);
                 break;
-            case R.id.btnNativeAd:
-                startActivity(NativeAdActivity.class);
+            case R.id.btnNativeExpressLayout:
+                startActivity(NativeExpressActivity.class);
+                break;
+            case R.id.btnNativeSelfRenderLayout:
+                startActivity(NativeSelfRenderActivity.class);
                 break;
             case R.id.btnRewardVodAd:
                 startActivity(RewardVodAdActivity.class);
                 break;
-            case R.id.btnFullScreenAd:
-                startActivity(FullScreenVodAdActivity.class);
-                break;
             case R.id.btnInterstitialAd:
                 startActivity(InterstitialAdActivity.class);
-                break;
-            case R.id.btnDrawVodAd:
-                startActivity(DrawVodActivity.class);
-                break;
-            case R.id.btnInnerNotice:
-                startActivity(InnerNoticeActivity.class);
                 break;
             default:
                 break;

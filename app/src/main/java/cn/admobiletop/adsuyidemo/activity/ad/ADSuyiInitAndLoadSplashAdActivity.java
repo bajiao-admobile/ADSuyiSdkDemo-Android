@@ -21,6 +21,8 @@ import java.util.List;
 import cn.admobiletop.adsuyi.ADSuyiSdk;
 import cn.admobiletop.adsuyi.ad.ADSuyiSplashAd;
 import cn.admobiletop.adsuyi.ad.data.ADSuyiAdInfo;
+import cn.admobiletop.adsuyi.ad.entity.ADSuyiAdSize;
+import cn.admobiletop.adsuyi.ad.entity.ADSuyiExtraParams;
 import cn.admobiletop.adsuyi.ad.error.ADSuyiError;
 import cn.admobiletop.adsuyi.ad.listener.ADSuyiSplashAdListener;
 import cn.admobiletop.adsuyi.config.ADSuyiInitConfig;
@@ -32,6 +34,7 @@ import cn.admobiletop.adsuyidemo.activity.MainActivity;
 import cn.admobiletop.adsuyidemo.activity.setting.SettingActivity;
 import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
 import cn.admobiletop.adsuyidemo.util.SPUtil;
+import cn.admobiletop.adsuyidemo.util.UIUtils;
 import cn.admobiletop.adsuyidemo.widget.PrivacyPolicyDialog;
 
 /**
@@ -120,17 +123,17 @@ public class ADSuyiInitAndLoadSplashAdActivity extends AppCompatActivity {
                         // TODO 注意上线后请置为false
                         .debug(BuildConfig.DEBUG)
                         //【慎改】是否同意隐私政策，将禁用一切设备信息读起严重影响收益
-                        .agreePrivacyStrategy(true)
+                        .agreePrivacyStrategy(false)
                         // 是否可获取定位数据
-                        .isCanUseLocation(true)
+                        .isCanUseLocation(false)
                         // 是否可获取设备信息
-                        .isCanUsePhoneState(true)
+                        .isCanUsePhoneState(false)
                         // 是否可读取设备安装列表
-                        .isCanReadInstallList(true)
+                        .isCanReadInstallList(false)
                         // 是否可读取设备外部读写权限
-                        .isCanUseReadWriteExternal(true)
+                        .isCanUseReadWriteExternal(false)
                         // 是否开启浮窗（默认true。true：浮窗广告交由ADSuyiSdk控制，false：媒体自行拉取广告并展示广告）
-                        .openFloatingAd(isOpenFloatingAd)
+                        .openFloatingAd(false)
                         // 是否过滤第三方平台的问题广告（例如: 已知某个广告平台在某些机型的Banner广告可能存在问题，如果开启过滤，则在该机型将不再去获取该平台的Banner广告）
                         .filterThirdQuestion(true)
                         // 如果开了浮窗广告，可设置不展示浮窗广告的界面，第一个参数为是否开启默认不展示的页面（例如:激励视频播放页面），第二可变参数为自定义不展示的页面
@@ -170,8 +173,21 @@ public class ADSuyiInitAndLoadSplashAdActivity extends AppCompatActivity {
             }
         }
 
+        int widthPixels = UIUtils.getScreenWidthInPx(this);
+        int heightPixels = UIUtils.getScreenHeightInPx(this);
+
+        boolean iscgq = SPUtil.getBoolean(this, "cgq");
+
+        ADSuyiExtraParams extraParams = new ADSuyiExtraParams.Builder()
+                // 设置整个广告视图预期宽高(目前仅头条平台需要，没有接入头条可不设置)，单位为px，如果不设置头条开屏广告视图将会以9 : 16的比例进行填充，小屏幕手机可能会出现素材被压缩的情况
+                .adSize(new ADSuyiAdSize(widthPixels, heightPixels))
+                .setAdShakeDisable(iscgq)
+                .build();
+
         // 创建开屏广告实例，第一个参数可以是Activity或Fragment，第二个参数是广告容器（请保证容器不会拦截点击、触摸等事件，高度不小于真实屏幕高度的75%，并且处于可见状态）
         adSuyiSplashAd = new ADSuyiSplashAd(this, flContainer);
+        // 如果开屏容器不是全屏可以设置额外参数
+        adSuyiSplashAd.setLocalExtraParams(extraParams);
         // 设置仅支持的广告平台，设置了这个值，获取广告时只会去获取该平台的广告，null或空字符串为不限制，默认为null，方便调试使用，上线时建议不设置
         // 注：仅debug模式为true时生效。
         adSuyiSplashAd.setOnlySupportPlatform(ADSuyiDemoConstant.SPLASH_AD_ONLY_SUPPORT_PLATFORM);

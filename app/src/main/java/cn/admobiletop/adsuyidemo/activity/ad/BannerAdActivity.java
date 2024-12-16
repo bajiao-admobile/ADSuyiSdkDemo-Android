@@ -8,11 +8,14 @@ import android.widget.FrameLayout;
 
 import cn.admobiletop.adsuyi.ad.ADSuyiBannerAd;
 import cn.admobiletop.adsuyi.ad.data.ADSuyiAdInfo;
+import cn.admobiletop.adsuyi.ad.entity.ADSuyiAdSize;
+import cn.admobiletop.adsuyi.ad.entity.ADSuyiExtraParams;
 import cn.admobiletop.adsuyi.ad.error.ADSuyiError;
 import cn.admobiletop.adsuyi.ad.listener.ADSuyiBannerAdListener;
 import cn.admobiletop.adsuyidemo.R;
 import cn.admobiletop.adsuyidemo.activity.base.BaseAdActivity;
 import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
+import cn.admobiletop.adsuyidemo.util.SPUtil;
 
 /**
  * @author ciba
@@ -33,6 +36,11 @@ public class BannerAdActivity extends BaseAdActivity {
     }
 
     private void loadBannerAd() {
+        boolean iscgq = SPUtil.getBoolean(this, "cgq");
+        ADSuyiExtraParams extraParams = new ADSuyiExtraParams.Builder()
+                .setAdShakeDisable(iscgq)
+                .build();
+
         // 创建Banner广告实例，第一个参数可以是Activity或Fragment，第二个参数是广告容器（请保证容器不会拦截点击、触摸等事件）
         suyiBannerAd = new ADSuyiBannerAd(this, flContainer);
         // 设置自刷新时间范围为30～120秒，⚠️注意！！！如果设置了自刷新，初始化ADSuyiSDK时传入的content一定为Application的Content
@@ -40,6 +48,8 @@ public class BannerAdActivity extends BaseAdActivity {
         // 设置仅支持的广告平台，设置了这个值，获取广告时只会去获取该平台的广告，null或空字符串为不限制，默认为null，方便调试使用，上线时建议不设置
         // 注：仅debug模式为true时生效。
         suyiBannerAd.setOnlySupportPlatform(ADSuyiDemoConstant.BANNER_AD_ONLY_SUPPORT_PLATFORM);
+        // 如果横幅容器不是全屏可以设置额外参数
+        suyiBannerAd.setLocalExtraParams(extraParams);
         // 设置Banner广告监听
         suyiBannerAd.setListener(new ADSuyiBannerAdListener() {
             @Override

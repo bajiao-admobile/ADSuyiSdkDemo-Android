@@ -1,4 +1,4 @@
-# Suyi聚合广告SDK ——接入文档 V3.9.7.09122
+# Suyi聚合广告SDK ——接入文档 V3.9.7.12161
 
 # Suyi聚合广告SDK  介绍
 
@@ -6,7 +6,7 @@
 ```
 SDK名称: Suyi聚合广告SDK
 开发者: 杭州艾狄墨搏信息服务有限公司
-更新日期: 2024-12-05
+更新日期: 2024-12-16
 功能介绍: Suyi聚合广告SDK 集成了多种广告类型和主流广告平台，提供广告数据统计功能，帮助开发者轻松实现应用内广告的接入和管理，提升应用盈利和用户体验。
 ```
 
@@ -50,19 +50,19 @@ Suyi聚合广告SDK 主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 
 ### 1.4 ADSuyi必添包容量
 
-| Name         | 大小   | 版本号         | MD5值                            |
-| ------------ | ----  | ------------- | -------------------------------- |
-| ADSuyi基础包  | 0.43M | V3.9.7.09122  | 2222646662ff56afcf0d6726e2aa1b4d |
+| Name         | 大小   | 版本号         |
+| ------------ | ----  | ------------- |
+| ADSuyi基础包  | 0.43M | V3.9.7.12161  |
 
 ### 1.5 三方广告平台适配器+三方广告sdk总容量
 
-| Name      | 容量   | 版本号              | MD5值                            |
-| --------- | ----- | ------------------ | -------------------------------- |
-| tianmu    | 2.14M | v2.2.7.09122       | b64276881e7ab6394a89001ea022f8d4 |
-| gdt       | 2.01M | v4.610.1480.12021  | c66aa77ccae776c63cc0d7adfa8f53a3 |
-| toutiao   | 8.22M | v6.5.0.2.12021     | c4a334a70a8e683d7d68bb111ad19c76 |
-| baidu     | 1.98M | v9.371.10091       | 111b28890e83ae0807ab082b29acafb4 |
-| ksad      | 5.08M | v3.3.69.10091      | 37b65360f2f441d28b7252bada79482a |
+| Name      | 容量   | 版本号              |
+| --------- | ----- | ------------------ |
+| tianmu    | 2.14M | v2.2.7.12161       |
+| gdt       | 2.01M | v4.610.1480.12021  |
+| toutiao   | 8.22M | v6.5.0.2.12021     |
+| baidu     | 1.98M | v9.371.10091       |
+| ksad      | 5.08M | v3.3.69.10091      |
 
 
 ## 2. 支持的广告类型
@@ -186,10 +186,10 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
 
     // ADSuyiSdk核心库必须导入
-    implementation 'cn.admobiletop.adsuyi.ad:core:3.9.7.09122'
+    implementation 'cn.admobiletop.adsuyi.ad:core:3.9.7.12161'
 
     // 天目适配器，必选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:tianmu:2.2.7.09122'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:tianmu:2.2.7.12161'
 
     // 优量汇（广点通）适配器，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.610.1480.12021'
@@ -758,7 +758,7 @@ cn.admobiletop.adsuyi.ad.entity.ADSuyiExtraParams
 | ------------ | ---- |
 | ADSuyiExtraParams.Builder().build() | 构造方法。|
 | adSize(ADSuyiAdSize adSize) | 设置开屏视图宽高。参数说明：adSize（设置整个广告视图预期宽高(目前仅头条平台需要，没有接入头条可不设置)，单位为px，如果不设置头条开屏广告视图将会以9 : 16的比例进行填充，小屏幕手机可能会出现素材被压缩的情况，大屏幕设备可能出现留白）。|
-| setAdShakeDisable(boolean adShakeDisable) | 设置摇一摇禁用，目前优量汇、快手、天目渠道支持，其他渠道需要提交工单或渠道后台控制关闭。参数说明：adShakeDisable（true：禁用、false：可用，默认：false）。|
+| setAdShakeDisable(boolean adShakeDisable) | 设置传感器禁用。参数说明：adShakeDisable（true：禁用、false：可用，默认：false）。|
 
 
 **ADSuyiAdSize**
@@ -881,134 +881,6 @@ public void onAdReceive(ADSuyiAdInfo adInfo) {
 > 开屏广告加载与展示分离示例 [Gitee地址](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/ad/splash/SplashAdLoadShowSeparationActivity.java)、[Github地址](https://github.com/ADSuyi/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/ad/splash/SplashAdLoadShowSeparationActivity.java)
 >
 
-#### 6.2.4 开屏广告2.0主要 API
-**ADSuyiSplashAd2**
-
-cn.admobiletop.adsuyi.ad.ADSuyiSplashAd2
-
-| 方法名         | 介绍 |
-| ------------ | ---- |
-| ADSuyiSplashAd2(Activity activity) | 构造方法。参数说明：activity（当前页面activity对象）。|
-| ADSuyiSplashAd2(Fragment fragment) | 构造方法。参数说明：fragment（当前页面fragment对象）。|
-| setLocalExtraParams(ADSuyiExtraParams extraParams) | 设置额外参数。参数说明：extraParams（广告额外参数）。|
-| setImmersive(boolean isImmersive) | 设置沉浸效果。参数说明：isImmersive（true：沉浸，false：不沉浸， 目前仅影响默认跳过按钮位置）。|
-| setOnlySupportPlatform(String platform) | 设置广告定向，仅请求某一渠道。参数说明：platform（<a href="#platform_name">渠道名</a>）。|
-| setListener(ADSuyiSplashAdListener listener) | 设置广告相关状态。参数说明：listener（广告状态监听器）。|
-| loadOnly(String posId) | 仅请求广告不展示。参数说明：posId（广告位ID）。|
-| showSplash(ViewGroup container) | 展示广告。参数说明：container（广告展示父容器）。通过ADSuyiSplashAd2(Activity activity)、ADSuyiSplashAd2(Fragment fragment)构造广告对象，并使用loadOnly方法加载广告时，可在onAdReceive回调后调用该方法去展示广告。|
-| release() | 释放广告。|
-
-cn.admobiletop.adsuyi.ad.entity.ADSuyiExtraParams
-
-| 方法名         | 介绍 |
-| ------------ | ---- |
-| ADSuyiExtraParams.Builder().build() | 构造方法。|
-| adSize(ADSuyiAdSize adSize) | 设置开屏视图宽高。参数说明：adSize（设置整个广告视图预期宽高(目前仅头条平台需要，没有接入头条可不设置)，单位为px，如果不设置头条开屏广告视图将会以9 : 16的比例进行填充，小屏幕手机可能会出现素材被压缩的情况，大屏幕设备可能出现留白）。|
-| setAdShakeDisable(boolean adShakeDisable) | 设置摇一摇禁用，目前优量汇、快手、天目渠道支持，其他渠道需要提交工单或渠道后台控制关闭。参数说明：adShakeDisable（true：禁用、false：可用，默认：false）。|
-
-**ADSuyiAdSize**
-
-cn.admobiletop.adsuyi.ad.entity.ADSuyiAdSize
-
-| 方法名         | 介绍 |
-| ------------ | ---- |
-| ADSuyiAdSize(int width, int height) | 构造方法。参数说明：<br>width（容器宽度，单位：px）请传入实际宽度、<br>height（容器高度，单位：px）请传入实际高度。|
-
-
-**ADSuyiSplashAdListener**
-
-cn.admobiletop.adsuyi.ad.listener.ADSuyiSplashAdListener
-
-| 方法名         | 介绍 |
-| ------------ | ---- |
-| onADTick(long millisUntilFinished) | 广告倒计时剩余时长回调。参数说明：millisUntilFinished（剩余时间，单位：秒））。|
-| onAdReceive(ADSuyiAdInfo adInfo) | 广告加载成功回调。|
-| onAdExpose(ADSuyiAdInfo adInfo) | 广告展示回调。|
-| onAdClick(ADSuyiAdInfo adInfo) | 广告点击回调。|
-| onAdSkip(ADSuyiAdInfo adInfo) | 广告跳过回调，用户点击跳过按钮时触发。|
-| onAdClose(ADSuyiAdInfo adInfo) | 广告关闭回调，用户点击跳过按钮、触发落地页后返回开屏页、倒计时结束，则触发。|
-| onReward(ADSuyiAdInfo adInfo) | 广告奖励回调，目前仅优量汇渠道有效。|
-| onAdFailed(ADSuyiError error) | 广告失败回调。参数说明：error（广告错误信息）。|
-
-**ADSuyiAdInfo**
-
-cn.admobiletop.adsuyi.ad.data.ADSuyiAdInfo
-
-| 方法名         | 介绍 |
-| ------------ | ---- |
-| getPlatform() | 获取三方广告平台名称，返回String类型。|
-| getECPM() | 获取ECPM，返回Double类型（单位：元）。|
-| getEcpmPrecision() | ECPM类型，返回String类型（accurate：精准、platform_assignment：平台指定、estimate：估算）。|
-
-#### 6.2.5 开屏广告2.0加载并展示
-
-```java
-// 创建开屏广告2.0实例，第一个参数可以是Activity或Fragment
-ADSuyiSplashAd2 splashAd = new ADSuyiSplashAd2(Activity activity);
-
-// 创建额外参数实例
-ADSuyiExtraParams extraParams = new ADSuyiExtraParams.Builder()
-        .adSize(new ADSuyiAdSize(int width, int height))
-        .build();
-// 如果开屏容器不是全屏可以设置额外参数
-splashAd.setLocalExtraParams(extraParams);
-
-// 设置开屏广告监听
-splashAd.setListener(new ADSuyiSplashAdListener() {
-  	@Override
-    public void onADTick(long countdownSeconds) {
-        // 如果没有设置自定义跳过按钮不会回调该方法（单位为秒）
-    }
-    @Override
-    public void onReward(ADSuyiAdInfo adInfo) {
-        // 广告奖励回调，目前仅仅优量汇渠道会被使用
-    }
-    @Override
-    public void onAdSkip(ADSuyiAdInfo adInfo) {
-        // 广告跳过回调，不一定准确，埋点数据仅供参考...
-    }
-    @Override
-    public void onAdReceive(ADSuyiAdInfo adInfo) {
-        // 广告获取成功回调...
-    }
-
-    @Override
-    public void onAdExpose(ADSuyiAdInfo adInfo) {
-        // 广告展示回调，有展示回调不一定是有效曝光，如网络等情况导致上报失败
-    }
-
-    @Override
-    public void onAdClick(ADSuyiAdInfo adInfo) {
-        // 广告点击回调，有点击回调不一定是有效点击，如网络等情况导致上报失败
-    }
-
-    @Override
-    public void onAdClose(ADSuyiAdInfo adInfo) {
-        // 广告关闭回调，需要在此进行页面跳转
-    }
-
-    @Override
-    public void onAdFailed(ADSuyiError error) {
-        // 广告失败回调，需要在此进行页面跳转
-    }
-});
-
-// 加载开屏广告2.0
-splashAd.loadOnly(String posId);
-
-// 展示开屏广告2.0
-// 需要开发者在onAdReceive回调之后再展示开屏广告
-public void onAdReceive(ADSuyiAdInfo adInfo) {
-    // 广告获取成功回调...
-    // 展示开屏广告
-    splashAd.showSplash(ViewGroup container);
-}
-...
-```
-
-> 开屏广告示例 [Gitee地址](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/ad/splash/SplashAdActivity2.java)、[Github地址](https://github.com/ADSuyi/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/ad/splash/SplashAdActivity2.java)
->
-
 
 ### <a name="ad_banner">6.3 横幅广告示例</a>
 
@@ -1027,9 +899,20 @@ cn.admobiletop.adsuyi.ad.ADSuyiBannerAd
 | ~~setAutoRefreshInterval(long seconds)~~ | 设置自刷新时间间隔。参数说明：seconds（0为不自动刷新（部分平台无效，如百度），其他取值范围为[30,120]，单位秒）。**3.9.6.07121版本废弃，可在SSP后台控制**。|
 | setOnlySupportPlatform(String platform) | 设置广告定向，仅请求某一渠道。参数说明：platform（<a href="#platform_name">渠道名</a>）。注：仅debug模式为true时生效。|
 | setListener(ADSuyiBannerAdListener listener) | 设置广告相关状态。参数说明：listener（广告状态监听器）。|
+| setLocalExtraParams(ADSuyiExtraParams extraParams) | 设置额外参数。参数说明：extraParams（广告额外参数）。|
 | setSceneId(String sceneId) | 设置广告场景id，用于区分同一个广告位在不同场景下使用的数据。参数说明：sceneId（场景ID）。|
 | loadAd(String posId) | 请求广告并展示。参数说明：posId（广告位ID）。|
 | release() | 释放广告。|
+
+**ADSuyiExtraParams**
+
+cn.admobiletop.adsuyi.ad.entity.ADSuyiExtraParams
+
+| 方法名         | 介绍 |
+| ------------ | ---- |
+| ADSuyiExtraParams.Builder().build() | 构造方法。|
+| adSize(ADSuyiAdSize adSize) | 设置开屏视图宽高。参数说明：adSize（设置整个广告视图预期宽高，单位为px）。|
+| setAdShakeDisable(boolean adShakeDisable) | 设置传感器禁用。参数说明：adShakeDisable（true：禁用、false：可用，默认：false）。|
 
 **ADSuyiBannerAdListener**
 
@@ -1133,6 +1016,7 @@ cn.admobiletop.adsuyi.ad.entity.ADSuyiExtraParams
 | nativeAdMediaViewSize(ADSuyiAdSize adSize) | 设置广告视图中MediaView的预期宽高。参数说明：adSize（广告视频宽高，目前仅Inmobi平台需要，Inmobi的MediaView高度为自适应，没有接入Inmobi平台可不设置）。|
 | nativeStyle(ADSuyiAdNativeStyle adNativeStyle) | 设置模板广告内外边距参数。参数说明：adNativeStyle（模板广告样式，目前仅天目平台需要）。|
 | nativeAdPlayWithMute(boolean isMute) | 视频静音设置。参数说明：isMute（true：静音、false：不静音，默认：true）。|
+| setAdShakeDisable(boolean adShakeDisable) | 设置传感器禁用。参数说明：adShakeDisable（true：禁用、false：可用，默认：false）。|
 
 **ADSuyiAdNativeStyle**
 
@@ -1364,6 +1248,7 @@ cn.admobiletop.adsuyi.ad.entity.ADSuyiExtraParams
 | ADSuyiExtraParams.Builder().build() | 构造方法。|
 | rewardExtra(ADSuyiRewardExtra extra) | 设置服务端奖励验证额外参数。参数说明：extra（服务端奖励验证额外参数请参考：[Gitee地址](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/Android-SuyiSDK激励视频服务端验证使用说明.md)、[Github地址](https://github.com/ADSuyi/ADSuyiSdkDemo-Android/blob/master/Android-SuyiSDK激励视频服务端验证使用说明.md)）。|
 | setVideoWithMute(boolean isMute) | 视频静音设置。参数说明：isMute（true：静音、false：不静音，默认：true）。|
+| setAdShakeDisable(boolean adShakeDisable) | 设置传感器禁用。参数说明：adShakeDisable（true：禁用、false：可用，默认：false）。|
 
 **ADSuyiRewardVodAdListener**
 
@@ -1482,6 +1367,16 @@ cn.admobiletop.adsuyi.ad.ADSuyiFullScreenVodAd
 | setSceneId(String sceneId) | 设置广告场景id，用于区分同一个广告位在不同场景下使用的数据。参数说明：sceneId（场景ID）。|
 | loadAd(String posId) | 请求广告并展示。参数说明：posId（广告位ID）。|
 | release() | 释放广告。|
+
+**ADSuyiExtraParams**
+
+cn.admobiletop.adsuyi.ad.entity.ADSuyiExtraParams
+
+| 方法名         | 介绍 |
+| ------------ | ---- |
+| ADSuyiExtraParams.Builder().build() | 构造方法。|
+| setVideoWithMute(boolean isMute) | 视频静音设置。参数说明：isMute（true：静音、false：不静音，默认：true）。|
+| setAdShakeDisable(boolean adShakeDisable) | 设置传感器禁用。参数说明：adShakeDisable（true：禁用、false：可用，默认：false）。|
 
 **ADSuyiFullScreenVodAdListener**
 
@@ -1602,6 +1497,7 @@ cn.admobiletop.adsuyi.ad.entity.ADSuyiExtraParams
 | ------------ | ---- |
 | ADSuyiExtraParams.Builder().build() | 构造方法。|
 | setVideoWithMute(boolean isMute) | 视频静音设置。参数说明：isMute（true：静音、false：不静音，默认：true）。|
+| setAdShakeDisable(boolean adShakeDisable) | 设置传感器禁用。参数说明：adShakeDisable（true：禁用、false：可用，默认：false）。|
 
 **ADSuyiInterstitialAdListener**
 
@@ -1709,6 +1605,7 @@ cn.admobiletop.adsuyi.ad.entity.ADSuyiExtraParams
 | ------------ | ---- |
 | ADSuyiExtraParams.Builder().build() | 构造方法。|
 | adSize(ADSuyiAdSize adSize) | 设置开屏视图宽高。参数说明：adSize（设置整个广告视图预期宽高）。|
+| setAdShakeDisable(boolean adShakeDisable) | 设置传感器禁用。参数说明：adShakeDisable（true：禁用、false：可用，默认：false）。|
 
 
 **ADSuyiAdSize**
