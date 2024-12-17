@@ -46,7 +46,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.btnFullScreenAd).setOnClickListener(this);
         findViewById(R.id.btnInterstitialAd).setOnClickListener(this);
         findViewById(R.id.btnDrawVodAd).setOnClickListener(this);
-        findViewById(R.id.btnInnerNotice).setOnClickListener(this);
 
 
         boolean iscgq = SPUtil.getBoolean(MainActivity.this, "cgq");

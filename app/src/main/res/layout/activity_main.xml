@@ -125,17 +125,6 @@
                     android:stateListAnimator="@null"
                     android:text="@string/draw_vod_ad"
                     android:textColor="@color/textColorBlack" />
-
-                <Button
-                    android:visibility="gone"
-                    android:id="@+id/btnInnerNotice"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:background="@drawable/shape_background_button_selector"
-                    android:stateListAnimator="@null"
-                    android:text="@string/inner_notice" />
-
             </LinearLayout>
         </ScrollView>
 
@@ -168,14 +157,14 @@
                     android:id="@+id/switchPersonalized"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="个性化开关 " />
+                    android:text="个性化开关" />
 
                 <Switch
                     android:id="@+id/switchCgq"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="禁用传感器 " />
+                    android:text="传感器开关" />
 
             </LinearLayout>
 

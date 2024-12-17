@@ -146,19 +146,10 @@ public class ADSuyiApplication extends Application {
                         .isCanUseWifiState(false)
                         // 是否可使用OAID
                         .isCanUseOaid(false)
-                        // 是否开启浮窗（默认true。true：浮窗广告交由ADSuyiSdk控制，false：媒体自行拉取广告并展示广告）
-                        .openFloatingAd(false)
                         // 是否过滤第三方平台的问题广告（例如: 已知某个广告平台在某些机型的Banner广告可能存在问题，如果开启过滤，则在该机型将不再去获取该平台的Banner广告）
                         .filterThirdQuestion(true)
                         // 是否允许多进程
                         .setMultiprocess(true)
-                        // 如果开了浮窗广告，可设置不展示浮窗广告的界面，第一个参数为是否开启默认不展示的页面（例如:激励视频播放页面），第二可变参数为自定义不展示的页面
-                        .floatingAdBlockList(false,
-                                // 主动设置不展示浮窗广告的Activity路径
-                                "cn.admobiletop.adsuyidemo.activity.ad.ADSuyiInitAndLoadSplashAdActivity",
-                                "cn.admobiletop.adsuyidemo.activity.ad.splash.SplashAdActivity",
-                                "cn.admobiletop.adsuyidemo.activity.ad.splash.SplashAdSettingActivity"
-                        )
                         .setCustomDeviceInfoController(new CustomDeviceInfoController() {
                         })
                         .build(),
@@ -173,8 +164,5 @@ public class ADSuyiApplication extends Application {
                         // 初始化失败
                     }
                 });
-
-        // 可通过调用此方法暂停浮窗广告投放
-        ADSuyiSdk.getInstance().pauseFloatingAd();
     }
 }

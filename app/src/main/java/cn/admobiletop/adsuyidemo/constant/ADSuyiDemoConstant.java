@@ -155,15 +155,6 @@ public class ADSuyiDemoConstant {
     public static final String CONTENT_ALLIANCE_AD_POS_ID1 = "724469db49ff19761e";
     public static String CONTENT_ALLIANCE_AD_POS_ID = CONTENT_ALLIANCE_AD_POS_ID1;
 
-    /**
-     * 浮窗广告是否是暗黑模式
-     */
-    public static boolean FLOATING_AD_DARK_MODE = false;
-    /**
-     * 浮窗广告是否暂停展示
-     */
-    public static boolean FLOATING_AD_IS_PAUSED = false;
-
 
     /**
      * 开屏广告全屏并去除状态了

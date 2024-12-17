@@ -18,7 +18,6 @@ import java.util.Map;
 
 import cn.admobiletop.adsuyi.ad.data.ADSuyiAdType;
 import cn.admobiletop.adsuyidemo.R;
-import cn.admobiletop.adsuyidemo.activity.setting.FloatingAdSettingActivity;
 import cn.admobiletop.adsuyidemo.activity.setting.PositionSettingActivity;
 import cn.admobiletop.adsuyidemo.activity.setting.SettingActivity;
 import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
@@ -162,9 +161,6 @@ public class SettingAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                         case "Draw视频广告":
                             adType = ADSuyiAdType.TYPE_DRAW_VOD;
                             posIdList.add(ADSuyiDemoConstant.DRAW_VOD_AD_POS_ID1);
-                            break;
-                        case "浮窗广告":
-                            FloatingAdSettingActivity.start(context);
                             break;
                         default:
                             break;
