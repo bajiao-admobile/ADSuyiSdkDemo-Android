@@ -15,6 +15,7 @@ import cn.admobiletop.adsuyi.util.ADSuyiToastUtil;
 import cn.admobiletop.adsuyidemo.R;
 import cn.admobiletop.adsuyidemo.activity.base.BaseAdActivity;
 import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
+import cn.admobiletop.adsuyidemo.util.SPUtil;
 
 /**
  * @author ciba
@@ -40,15 +41,16 @@ public class RewardVodAdActivity extends BaseAdActivity implements View.OnClickL
     }
 
     private void initAd() {
+        boolean iscgq = SPUtil.getBoolean(this, "cgq");
         // 创建激励视频广告实例
         rewardVodAd = new ADSuyiRewardVodAd(this);
 
 //        ADSuyiRewardExtra adSuyiRewardExtra = new ADSuyiRewardExtra("用户id");
 //        // 设置激励视频服务端验证的自定义信息
 //        adSuyiRewardExtra.setCustomData("设置激励视频服务端验证的自定义信息");
-//        // 设置激励视频服务端激励名称(mintegral渠道不支持)
+//        // 设置激励视频服务端激励名称
 //        adSuyiRewardExtra.setRewardName("激励名称");
-//        // 设置激励视频服务端激励数量(mintegral渠道不支持)
+//        // 设置激励视频服务端激励数量
 //        adSuyiRewardExtra.setRewardAmount(1);
 //        rewardVodAd.setLocalExtraParams(new ADSuyiExtraParams.Builder().rewardExtra(adSuyiRewardExtra).build());
 
@@ -57,11 +59,13 @@ public class RewardVodAdActivity extends BaseAdActivity implements View.OnClickL
 //                .rewardExtra(adSuyiRewardExtra)
                 // 设置视频类广告是否静音
                 .setVideoWithMute(ADSuyiDemoConstant.REWARD_AD_PLAY_WITH_MUTE)
+                .setAdShakeDisable(iscgq)
                 .build();
 
         rewardVodAd.setLocalExtraParams(extraParams);
 
         // 设置仅支持的广告平台，设置了这个值，获取广告时只会去获取该平台的广告，null或空字符串为不限制，默认为null，方便调试使用，上线时建议不设置
+        // 注：仅debug模式为true时生效。
         rewardVodAd.setOnlySupportPlatform(ADSuyiDemoConstant.REWARD_VOD_AD_ONLY_SUPPORT_PLATFORM);
         // 设置激励视频广告监听
         rewardVodAd.setListener(new ADSuyiRewardVodAdListener() {

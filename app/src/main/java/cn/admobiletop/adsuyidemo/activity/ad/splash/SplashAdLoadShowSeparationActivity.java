@@ -12,11 +12,15 @@ import android.widget.RelativeLayout;
 
 import cn.admobiletop.adsuyi.ad.ADSuyiSplashAd;
 import cn.admobiletop.adsuyi.ad.data.ADSuyiAdInfo;
+import cn.admobiletop.adsuyi.ad.entity.ADSuyiAdSize;
+import cn.admobiletop.adsuyi.ad.entity.ADSuyiExtraParams;
 import cn.admobiletop.adsuyi.ad.error.ADSuyiError;
 import cn.admobiletop.adsuyi.ad.listener.ADSuyiSplashAdListener;
 import cn.admobiletop.adsuyi.util.ADSuyiToastUtil;
 import cn.admobiletop.adsuyidemo.R;
 import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
+import cn.admobiletop.adsuyidemo.util.SPUtil;
+import cn.admobiletop.adsuyidemo.util.UIUtils;
 
 /**
  * @author : 草莓
@@ -51,9 +55,25 @@ public class SplashAdLoadShowSeparationActivity extends AppCompatActivity implem
         // 创建开屏广告实例，第一个参数可以是Activity或Fragment，第二个参数是广告容器（请保证容器不会拦截点击、触摸等事件，高度不小于真实屏幕高度的75%，并且处于可见状态）
         adSuyiSplashAd = new ADSuyiSplashAd(this, flContainer);
 
+        int widthPixels = UIUtils.getScreenWidthInPx(this);
+        int heightPixels = UIUtils.getScreenHeightInPx(this);
+
+        boolean iscgq = SPUtil.getBoolean(this, "cgq");
+
+        // 创建额外参数实例
+        ADSuyiExtraParams extraParams = new ADSuyiExtraParams.Builder()
+                // 设置整个广告视图预期宽高(目前仅头条平台需要，没有接入头条可不设置)，单位为px，如果不设置头条开屏广告视图将会以9 : 16的比例进行填充，小屏幕手机可能会出现素材被压缩的情况
+                .adSize(new ADSuyiAdSize(widthPixels, heightPixels))
+                .setAdShakeDisable(iscgq)
+                .build();
+
+
         adSuyiSplashAd.setImmersive(true);
 
+        adSuyiSplashAd.setLocalExtraParams(extraParams);
+
         // 设置仅支持的广告平台，设置了这个值，获取广告时只会去获取该平台的广告，null或空字符串为不限制，默认为null，方便调试使用，上线时建议不设置
+        // 注：仅debug模式为true时生效。
         adSuyiSplashAd.setOnlySupportPlatform(ADSuyiDemoConstant.SPLASH_AD_ONLY_SUPPORT_PLATFORM);
         // 设置开屏广告监听
         adSuyiSplashAd.setListener(new ADSuyiSplashAdListener() {

@@ -11,6 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 
 import cn.admobiletop.adsuyidemo.R;
+import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
 
 /**
  * @Description:
@@ -19,33 +20,48 @@ import cn.admobiletop.adsuyidemo.R;
  */
 public class SplashAdSettingActivity extends AppCompatActivity {
 
-    private RadioGroup rgLoadSplashAdType;
+    private RadioGroup rgDisplayStyle;
+    private RadioGroup rgLoadType;
     private LinearLayout llHalfEnterLogoHeightSize;
     private EditText etLogoHeight;
 
-    private int splashType = SplashAdActivity.HALF_SCREEN;
+    private int splashType = ADSuyiDemoConstant.HALF_SCREEN;
+
+    private int loadType = ADSuyiDemoConstant.LOAD_AND_SHOW;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_setting);
 
-        rgLoadSplashAdType = findViewById(R.id.rgLoadSplashAdType);
+        rgDisplayStyle = findViewById(R.id.rgDisplayStyle);
+        rgLoadType = findViewById(R.id.rgLoadType);
         llHalfEnterLogoHeightSize = findViewById(R.id.llHalfEnterLogoHeightSize);
         etLogoHeight = findViewById(R.id.etLogoHeight);
 
-        rgLoadSplashAdType.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        rgDisplayStyle.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 if (checkedId == R.id.rbHalf) {
-                    splashType = SplashAdActivity.HALF_SCREEN;
+                    splashType = ADSuyiDemoConstant.HALF_SCREEN;
                     llHalfEnterLogoHeightSize.setVisibility(View.VISIBLE);
                 } else if (checkedId == R.id.rbFullScreen) {
-                    splashType = SplashAdActivity.FULL_SCREEN;
+                    splashType = ADSuyiDemoConstant.FULL_SCREEN;
                     llHalfEnterLogoHeightSize.setVisibility(View.GONE);
                 } else if (checkedId == R.id.rbImmersiveAndFullScreen) {
-                    splashType = SplashAdActivity.IMMERSIVE_AND_FULLSCREEN;
+                    splashType = ADSuyiDemoConstant.IMMERSIVE_AND_FULLSCREEN;
                     llHalfEnterLogoHeightSize.setVisibility(View.GONE);
+                }
+            }
+        });
+
+        rgLoadType.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if (checkedId == R.id.loadAndShow) {
+                    loadType = ADSuyiDemoConstant.LOAD_AND_SHOW;
+                } else if (checkedId == R.id.loadOnly) {
+                    loadType = ADSuyiDemoConstant.LOAD_ONLY;
                 }
             }
         });
@@ -57,9 +73,11 @@ public class SplashAdSettingActivity extends AppCompatActivity {
                 String etLogoHeightString = etLogoHeight.getText().toString().trim();
                 intent.putExtra("splashType", splashType);
                 intent.putExtra("logoHeightPx", TextUtils.isEmpty(etLogoHeightString) ? 0 : Integer.valueOf(etLogoHeightString));
+                intent.putExtra("loadType", loadType);
                 startActivity(intent);
             }
         });
+
     }
 
 }

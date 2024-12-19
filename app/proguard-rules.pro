@@ -19,6 +19,8 @@
 
 # ADSuyiSdk混淆
 -dontwarn cn.admobiletop.adsuyi.**
+-keep class adsuyi.com.** { *; }
+-keep interface adsuyi.com.** { *; }
 -dontwarn org.apache.commons.**
 -keep class cn.admobiletop.adsuyi.**{public *;}
 -keep class cn.admobiletop.materialutil.**{public *;}
@@ -93,15 +95,6 @@
 -keep class com.integralads.avid.library.** {*;}
 -keep class com.iab.** {*;}
 
-# mintegral广告平台混淆
--keepattributes Signature
--keepattributes *Annotation*
--keep class com.mbridge.** {*; }
--keep interface com.mbridge.** {*; }
--keep class android.support.v4.** { *; }
--dontwarn com.mbridge.**
--keep class **.R$* { public static final int mbridge*; }
-
 # 快手广告平台混淆
 -keep class org.chromium.** { *; }
 -keep class aegon.chrome.** { *; }
@@ -154,30 +147,16 @@
 -keep public enum com.bumptech.glide.load.ImageHeaderParser$** { **[] $VALUES; public *; }
 -dontwarn com.bumptech.glide.load.resource.bitmap.VideoDecoder
 
+#京媒 混淆
+-keep class com.jd.ad.sdk.** { *; }
+
 # gromore
 # 请参考gromore-proguard-rules.pro文件
-
-# NovelAdapter混淆
--keep class android.**{*;}
--keep class com.ecook.** {* ;}
--keep class com.parting_soul.http.** {* ;}
--keep class com.ttx.reader.support.** {* ;}
--ignorewarnings
--keepattributes Signature
--keep class android.**{*;}
--keep class com.ecook.novel_sdk.bookstore.data.bean.* {*;}
 
 # 天目
 -keep class com.tianmu.**{ *; }
 -keep class tianmu.com.** { *; }
 -keep interface tianmu.com.** { *; }
-# 天目加固混淆
--keep @com.qihoo.SdkProtected.tianmusdk.Keep class **{*;}
--keep,allowobfuscation @interface com.qihoo.SdkProtected.tianmusdk.Keep
 
-# CookbookAdapter混淆
--keep class cn.admobiletop.cookbook.**{*;}
-
-# ADSyid混淆
--keep class adsuyi.com.** { *; }
--keep interface adsuyi.com.** { *; }
+#京媒 混淆
+-keep class com.jd.ad.sdk.** { *; }

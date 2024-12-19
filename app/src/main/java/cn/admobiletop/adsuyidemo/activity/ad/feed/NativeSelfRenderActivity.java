@@ -14,7 +14,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.qq.e.ads.nativ.widget.NativeAdContainer;
 
 import java.util.List;
 
@@ -46,7 +45,7 @@ public class NativeSelfRenderActivity extends AppCompatActivity {
      * 自渲染相关布局
      */
     private ImageView ivIcon;
-    private NativeAdContainer nativeAdContainer;
+    private FrameLayout nativeAdContainer;
     private RelativeLayout rlAdContainer;
     private FrameLayout flContent;
     private ImageView ivAdTarget;
@@ -136,6 +135,7 @@ public class NativeSelfRenderActivity extends AppCompatActivity {
         adSuyiNativeAd.setLocalExtraParams(extraParams);
 
         // 设置仅支持的广告平台，设置了这个值，获取广告时只会去获取该平台的广告，null或空字符串为不限制，默认为null，方便调试使用，上线时建议不设置
+        // 注：仅debug模式为true时生效。
         adSuyiNativeAd.setOnlySupportPlatform(ADSuyiDemoConstant.NATIVE_AD_ONLY_SUPPORT_PLATFORM);
         // 设置广告监听
         adSuyiNativeAd.setListener(new ADSuyiNativeAdListener() {

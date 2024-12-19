@@ -7,16 +7,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.multidex.MultiDex;
+import android.util.Log;
 
-import com.bytedance.sdk.openadsdk.stub.activity.Stub_Standard_Landscape_Activity;
-import com.bytedance.sdk.openadsdk.stub.activity.Stub_Standard_Portrait_Activity;
-import com.tencent.bugly.crashreport.CrashReport;
-
+import cn.admobiletop.adsuyi.ADSuyiSdk;
+import cn.admobiletop.adsuyi.config.ADSuyiInitConfig;
+import cn.admobiletop.adsuyi.config.CustomDeviceInfoController;
+import cn.admobiletop.adsuyi.listener.ADSuyiInitListener;
 import cn.admobiletop.adsuyi.util.SuyiPackageStrategy;
 import cn.admobiletop.adsuyidemo.activity.ad.ADSuyiInitAndLoadSplashAdActivity;
 import cn.admobiletop.adsuyidemo.activity.setting.SettingActivity;
 import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
-import cn.admobiletop.adsuyidemo.manager.ADSuyiInterstitialManager;
 import cn.admobiletop.adsuyidemo.util.SPUtil;
 
 /**
@@ -25,6 +25,7 @@ import cn.admobiletop.adsuyidemo.util.SPUtil;
  * @date 2020/3/25
  */
 public class ADSuyiApplication extends Application {
+    public static final String AGREE_PRIVACY_POLICY = "AGREE_PRIVACY_POLICY";
     public static Context context;
     /**
      * 检查是否需要再次打开开屏界面的间隔时长。
@@ -45,8 +46,6 @@ public class ADSuyiApplication extends Application {
         super.onCreate();
         setOnlySupportPlatform();
         context = this;
-        // 添加bugly初始化（该初始化与广告SDK无关，广告SDK中不包含bugly相关内容，仅供Demo错误信息收集使用）
-        CrashReport.initCrashReport(getApplicationContext(), "6d9d9f24ee", true);
 
         // 据悉，工信部将在2020年8月底前上线运行全国APP技术检测平台管理系统，2020年12月10日前完成覆盖40万款主流App的合规检测工作。
         // 为了保证您的App顺利通过检测，结合当前监管关注重点，请务必将ADSuyiSdk的初始化放在用户同意隐私政策之后。
@@ -59,13 +58,7 @@ public class ADSuyiApplication extends Application {
         registerActivityLifecycleCallbacks(new ActivityLifecycleCallbacks() {
             @Override
             public void onActivityCreated(@NonNull Activity activity, Bundle savedInstanceState) {
-                if (ADSuyiDemoConstant.INTERSTITIAL_AD_AUTO_CLOSE) {
-                    if (activity instanceof Stub_Standard_Portrait_Activity
-                            || activity instanceof Stub_Standard_Landscape_Activity) {
-                        // 将头条activity放置到插屏管理类中，用于倒计时
-                        ADSuyiInterstitialManager.getInstance().setAdInterstitialActivity(activity);
-                    }
-                }
+
             }
 
             @Override
@@ -108,7 +101,7 @@ public class ADSuyiApplication extends Application {
         if (preMillis > 0
                 && millis - preMillis > OPEN_SPLASH_ACTIVITY_INTERVAL_TIME
                 && !(activity instanceof ADSuyiInitAndLoadSplashAdActivity)) {
-            activity.startActivity(new Intent(activity, ADSuyiInitAndLoadSplashAdActivity.class));
+//            activity.startActivity(new Intent(activity, ADSuyiInitAndLoadSplashAdActivity.class));
         }
         preMillis = millis;
     }
@@ -125,8 +118,51 @@ public class ADSuyiApplication extends Application {
         ADSuyiDemoConstant.INTERSTITIAL_AD_ONLY_SUPPORT_PLATFORM = onlySupportPlatform;
     }
 
-    @Override
-    public String getPackageName() {
-        return SuyiPackageStrategy.getSuyiPackageName(this);
+    /**
+     * 初始化广告SDK并且跳转开屏界面
+     */
+    public static void initAd() {
+
+        boolean isOpenFloatingAd = SPUtil.getBoolean(ADSuyiApplication.context, SettingActivity.KEY_OPEN_FLOATING_AD, true);
+
+        // 初始化ADSuyi广告SDK
+        ADSuyiSdk.getInstance().init(ADSuyiApplication.context, new ADSuyiInitConfig.Builder()
+                        // 设置APPID
+                        .appId(ADSuyiDemoConstant.APP_ID)
+                        // 是否开启Debug，开启会有详细的日志信息打印，如果用上ADSuyiToastUtil工具还会弹出toast提示。
+                        // TODO 注意上线后请置为false
+                        .debug(BuildConfig.DEBUG)
+                        //【慎改】是否同意隐私政策，将禁用一切设备信息读起严重影响收益
+                        .agreePrivacyStrategy(false)
+                        // 是否可获取定位数据
+                        .isCanUseLocation(false)
+                        // 是否可获取设备信息
+                        .isCanUsePhoneState(false)
+                        // 是否可读取设备安装列表
+                        .isCanReadInstallList(false)
+                        // 是否可读取设备外部读写权限
+                        .isCanUseReadWriteExternal(false)
+                        // 是否可读取WIFI信息
+                        .isCanUseWifiState(false)
+                        // 是否可使用OAID
+                        .isCanUseOaid(false)
+                        // 是否过滤第三方平台的问题广告（例如: 已知某个广告平台在某些机型的Banner广告可能存在问题，如果开启过滤，则在该机型将不再去获取该平台的Banner广告）
+                        .filterThirdQuestion(true)
+                        // 是否允许多进程
+                        .setMultiprocess(true)
+                        .setCustomDeviceInfoController(new CustomDeviceInfoController() {
+                        })
+                        .build(),
+                new ADSuyiInitListener() {
+                    @Override
+                    public void onSuccess() {
+                        // 初始化成功
+                    }
+
+                    @Override
+                    public void onFailed(String error) {
+                        // 初始化失败
+                    }
+                });
     }
 }

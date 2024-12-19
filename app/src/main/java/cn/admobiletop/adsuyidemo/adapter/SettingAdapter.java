@@ -18,7 +18,6 @@ import java.util.Map;
 
 import cn.admobiletop.adsuyi.ad.data.ADSuyiAdType;
 import cn.admobiletop.adsuyidemo.R;
-import cn.admobiletop.adsuyidemo.activity.setting.FloatingAdSettingActivity;
 import cn.admobiletop.adsuyidemo.activity.setting.PositionSettingActivity;
 import cn.admobiletop.adsuyidemo.activity.setting.SettingActivity;
 import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
@@ -163,9 +162,6 @@ public class SettingAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                             adType = ADSuyiAdType.TYPE_DRAW_VOD;
                             posIdList.add(ADSuyiDemoConstant.DRAW_VOD_AD_POS_ID1);
                             break;
-                        case "浮窗广告":
-                            FloatingAdSettingActivity.start(context);
-                            break;
                         default:
                             break;
                     }
@@ -207,13 +203,7 @@ public class SettingAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             platformMap.put("优量汇/广点通(gdt)", "gdt");
             platformMap.put("头条/穿山甲(toutiao)", "toutiao");
             platformMap.put("百度/百青藤(baidu)", "baidu");
-            platformMap.put("汇量/Mobvsita(mintegral)", "mintegral");
             platformMap.put("快手(ksad)", "ksad");
-            platformMap.put("inmobi", "inmobi");
-            platformMap.put("米盟(mimo)", "mimo");
-            platformMap.put("华为广告联盟(hwpps)", "hwpps");
-            platformMap.put("gromore", "gromore");
-            platformMap.put("极光联盟(jiguang)", "jiguang");
             String currentFinalPlat = ADSuyiDemoConstant.SPLASH_AD_ONLY_SUPPORT_PLATFORM;
             String displayPlat = getPlatformKey(platformMap, currentFinalPlat);
             tvPlatform.setText(displayPlat);

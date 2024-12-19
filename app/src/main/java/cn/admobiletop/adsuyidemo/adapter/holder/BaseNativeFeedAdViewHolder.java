@@ -13,8 +13,10 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
+import cn.admobiletop.adsuyi.ad.data.ADSuyiAdAppInfo;
 import cn.admobiletop.adsuyi.ad.data.ADSuyiNativeAdInfo;
 import cn.admobiletop.adsuyi.ad.data.ADSuyiNativeFeedAdInfo;
+import cn.admobiletop.adsuyi.ad.entity.ADSuyiAppInfo;
 import cn.admobiletop.adsuyi.ad.error.ADSuyiError;
 import cn.admobiletop.adsuyi.ad.listener.ADSuyiNativeVideoListener;
 import cn.admobiletop.adsuyi.util.ADSuyiAdUtil;
@@ -67,6 +69,28 @@ public abstract class BaseNativeFeedAdViewHolder extends RecyclerView.ViewHolder
             ivAdTarget.setImageResource(nativeFeedAdInfo.getPlatformIcon());
             // 注册关闭按钮，将关闭按钮点击事件交于SDK托管，以便于回调onAdClose
             nativeFeedAdInfo.registerCloseView(ivClose);
+
+            if (nativeFeedAdInfo instanceof ADSuyiAdAppInfo) {
+                ADSuyiAppInfo adSuyiAppInfo = ((ADSuyiAdAppInfo) nativeFeedAdInfo).getAppInfo();
+                if (adSuyiAppInfo != null) {
+                    // 应用名
+                    String name = adSuyiAppInfo.getName();
+                    // 开发者
+                    String developer = adSuyiAppInfo.getDeveloper();
+                    // 版本号
+                    String version = adSuyiAppInfo.getVersion();
+                    // 隐私地址
+                    String privacyUrl = adSuyiAppInfo.getPrivacyUrl();
+                    // 权限地址
+                    String permissionsUrl = adSuyiAppInfo.getPermissionsUrl();
+                    // 功能介绍
+                    String descriptionUrl = adSuyiAppInfo.getDescriptionUrl();
+                    // 应用大小
+                    long size = adSuyiAppInfo.getSize();
+                    // icp备案号
+                    String icp = adSuyiAppInfo.getIcp();
+                }
+            }
 
             // 注册广告交互, 必须调用
             // 注意：优量汇只会响应View...actionViews的点击事件，且这些View都应该是com.qq.e.ads.nativ.widget.NativeAdContainer的子View

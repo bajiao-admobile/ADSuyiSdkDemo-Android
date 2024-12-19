@@ -7,6 +7,28 @@
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerInParent="true">
+
+        <Button
+            android:id="@+id/btnLoadAd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="加载广告"
+            android:visibility="gone"/>
+
+        <Button
+            android:id="@+id/btnShowAd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="展示广告"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 

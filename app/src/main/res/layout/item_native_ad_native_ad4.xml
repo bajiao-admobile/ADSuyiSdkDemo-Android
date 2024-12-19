@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- 如果信息流广告中接入了优量汇自渲染2.0，那么自渲染信息流广告registerOrRenderView传入的容器必须为com.qq.e.ads.nativ.widget.NativeAdContainer -->
 <!-- 否则优量汇自渲染2.0广告将没有展示，不可点击，也没有收益 -->
-<com.qq.e.ads.nativ.widget.NativeAdContainer xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="91.5dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
@@ -59,4 +59,4 @@
             android:layout_width="16dp"
             android:layout_height="16dp" />
     </RelativeLayout>
-</com.qq.e.ads.nativ.widget.NativeAdContainer>
+</FrameLayout>

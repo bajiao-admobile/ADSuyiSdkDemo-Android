@@ -69,13 +69,7 @@ public class PositionSettingActivity extends AppCompatActivity {
         platformMap.put("优量汇/广点通(gdt)", "gdt");
         platformMap.put("头条/穿山甲(toutiao)", "toutiao");
         platformMap.put("百度/百青藤(baidu)", "baidu");
-        platformMap.put("汇量/Mobvsita(mintegral)", "mintegral");
         platformMap.put("快手(ksad)", "ksad");
-        platformMap.put("inmobi", "inmobi");
-        platformMap.put("米盟(mimo)", "mimo");
-        platformMap.put("华为广告联盟(hwpps)", "hwpps");
-        platformMap.put("gromore", "gromore");
-        platformMap.put("极光联盟(jiguang)", "jiguang");
     }
 
     private String getPlatformKey(Map<String, String> map, String value) {

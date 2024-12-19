@@ -18,7 +18,6 @@ import cn.admobiletop.adsuyi.util.ADSuyiToastUtil;
 import cn.admobiletop.adsuyidemo.R;
 import cn.admobiletop.adsuyidemo.activity.base.BaseAdActivity;
 import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
-import cn.admobiletop.adsuyidemo.manager.ADSuyiInterstitialManager;
 
 /**
  * @author ciba
@@ -53,6 +52,7 @@ public class InterstitialAdActivity extends BaseAdActivity implements View.OnCli
     private void initAd() {
         interstitialAd = new ADSuyiInterstitialAd(this);
         // 设置仅支持的广告平台，设置了这个值，获取广告时只会去获取该平台的广告，null或空字符串为不限制，默认为null，方便调试使用，上线时建议不设置
+        // 注：仅debug模式为true时生效。
         interstitialAd.setOnlySupportPlatform(ADSuyiDemoConstant.INTERSTITIAL_AD_ONLY_SUPPORT_PLATFORM);
         // 创建额外参数实例
         ADSuyiExtraParams extraParams = new ADSuyiExtraParams.Builder()
