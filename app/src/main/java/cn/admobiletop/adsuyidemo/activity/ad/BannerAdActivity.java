@@ -36,9 +36,9 @@ public class BannerAdActivity extends BaseAdActivity {
     }
 
     private void loadBannerAd() {
-        boolean iscgq = SPUtil.getBoolean(this, "cgq");
+        boolean issensor = SPUtil.getBoolean(this, "sensor");
         ADSuyiExtraParams extraParams = new ADSuyiExtraParams.Builder()
-                .setAdShakeDisable(iscgq)
+                .setAdShakeDisable(issensor)
                 .build();
 
         // 创建Banner广告实例，第一个参数可以是Activity或Fragment，第二个参数是广告容器（请保证容器不会拦截点击、触摸等事件）

@@ -150,13 +150,13 @@ public class SplashAdActivity extends AppCompatActivity {
         int widthPixels = UIUtils.getScreenWidthInPx(this);
         int heightPixels = UIUtils.getScreenHeightInPx(this);
 
-        boolean iscgq = SPUtil.getBoolean(this, "cgq");
+        boolean issensor = SPUtil.getBoolean(this, "sensor");
 
         // 创建额外参数实例
         ADSuyiExtraParams extraParams = new ADSuyiExtraParams.Builder()
-                // 设置整个广告视图预期宽高(目前仅头条平台需要，没有接入头条可不设置)，单位为px，如果不设置头条开屏广告视图将会以9 : 16的比例进行填充，小屏幕手机可能会出现素材被压缩的情况
+                // 设置整个广告视图预期宽高(目前仅穿山甲（头条）平台需要，没有接入头条可不设置)，单位为px，如果不设置穿山甲（头条）开屏广告视图将会以满屏进行填充
                 .adSize(new ADSuyiAdSize(widthPixels, heightPixels - logoHeightPx))
-                .setAdShakeDisable(iscgq)
+                .setAdShakeDisable(issensor)
                 .build();
         // 如果开屏容器不是全屏可以设置额外参数
         adSuyiSplashAd.setLocalExtraParams(extraParams);

@@ -150,6 +150,8 @@ public class ADSuyiApplication extends Application {
                         .filterThirdQuestion(true)
                         // 是否允许多进程
                         .setMultiprocess(true)
+                        // 是否允许使用传感器
+                        .isCanUseSensor(false)
                         .setCustomDeviceInfoController(new CustomDeviceInfoController() {
                         })
                         .build(),

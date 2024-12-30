@@ -1,4 +1,4 @@
-# Suyi聚合广告SDK ——接入文档 V3.9.7.12162
+# Suyi聚合广告SDK ——接入文档 V3.9.9.12091
 
 # Suyi聚合广告SDK  介绍
 
@@ -6,7 +6,7 @@
 ```
 SDK名称: Suyi聚合广告SDK
 开发者: 杭州艾狄墨搏信息服务有限公司
-更新日期: 2024-12-17
+更新日期: 2024-12-19
 功能介绍: Suyi聚合广告SDK 集成了多种广告类型和主流广告平台，提供广告数据统计功能，帮助开发者轻松实现应用内广告的接入和管理，提升应用盈利和用户体验。
 ```
 
@@ -40,29 +40,41 @@ Suyi聚合广告SDK 主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 
 ### <a name="platform_name"> 1.3 三方广告平台名称概述 </a>
 
-| Name      | 平台名称     | 平台别称     |
-| --------- | ------------ | ------------ |
-| tianmu    | 天目         | 天目         |
-| gdt       | 优量汇       | 广点通       |
-| toutiao   | 头条         | 穿山甲       |
-| baidu     | 百度         | 百青藤       |
-| ksad      | 快手         | 快手         |
+| Name    | 平台名称     | 平台别称   |
+| ------- | ------------ | ---------- |
+| tianmu  | 天目         | 天目       |
+| gdt     | 优量汇       | 广点通     |
+| toutiao | 穿山甲        | 头条     |
+| baidu   | 百度         | 百青藤     |
+| ksad    | 快手         | 快手       |
+| mimo    | 米盟         | 米盟       |
+| hwpps   | 华为广告联盟 | 华为广告联 |
+| jadyun  | 京媒         | 京媒       |
+| inmobi  | Inmobi       | Inmobi     |
+| gromore | gromore      | gromore    |
 
 ### 1.4 ADSuyi必添包容量
 
 | Name         | 大小   | 版本号         |
 | ------------ | ----  | ------------- |
-| ADSuyi基础包  | 0.43M | V3.9.7.12162  |
+| ADSuyi基础包  | 0.43M | V3.9.9.12091  |
+| OAID         | 1.10M | V1.0.25       |
+| OAID适配器    | 0.01M | V1.0.25.12122 |
 
 ### 1.5 三方广告平台适配器+三方广告sdk总容量
 
 | Name      | 容量   | 版本号              |
 | --------- | ----- | ------------------ |
-| tianmu    | 2.14M | v2.2.7.12162       |
-| gdt       | 2.01M | v4.610.1480.12171  |
+| tianmu    | 2.14M | v2.2.9.12101       |
+| gdt       | 2.01M | v4.610.1480.12191  |
 | toutiao   | 8.22M | v6.5.0.2.12021     |
 | baidu     | 1.98M | v9.371.10091       |
-| ksad      | 5.08M | v3.3.69.10091      |
+| ksad      | 5.08M | v3.3.71.12091      |
+| mimo      | 3.48M | v5.3.3.12101       |
+| hwpps     | 1.01M | v13.4.75.300.12091 |
+| jadyun    | 1.41M | v2.5.6.11103       |
+| octopus   | 1.00M | v1.6.1.8.12031     |
+| gromore   | —     | v6.4.1.6.10081     |
 
 
 ## 2. 支持的广告类型
@@ -93,9 +105,20 @@ Suyi聚合广告SDK 主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
     <td>将短视频融入到APP场景当中，用户观看短视频广告后可以给予一些应用内奖励</td>
     <td>常出现在游戏的复活、任务等位置，或者网服类APP的一些增值服务场景</td>
   </tr>
+  <tr>
+    <td><a href="#ad_full_screen_vod">全屏视频广告</a></td>
+    <td>类似激励视频，与激励视频不同的是，全屏视频广告在观看一定时长后即可跳过广告，无需全部观看完成，有视频跳过回调，但是没有激励回调</td>
+    <td>常出现在游戏的复活、任务等位置，或者网服类APP的一些增值服务场景</td>
+  </tr>
+  <tr>
     <td><a href="#ad_interstitial">插屏广告</a></td>
     <td>插屏广告是移动广告的一种常见形式，在应用流程中弹出，当应用展示插屏广告时，用户可以选择点击广告，访问其目标网址，也可以将其关闭并返回应用</td>
     <td>在应用执行流程的自然停顿点，适合投放这类广告</td>
+  </tr>
+  <tr>
+    <td><a href="#ad_draw_vod">Draw视频广告</a></td>
+    <td>类似小视频一样的视频广告</td>
+    <td>类似小视频列表的场景</td>
   </tr>
 </table>
 
@@ -167,22 +190,48 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
 
     // ADSuyiSdk核心库必须导入
-    implementation 'cn.admobiletop.adsuyi.ad:core:3.9.7.12162'
+    implementation 'cn.admobiletop.adsuyi.ad:core:3.9.9.12091'
+
+    // OAID1.0.25版本
+    implementation(name: 'oaid_sdk_1.0.25', ext: 'aar')
+    // OAID1.0.25版本适配器，对接高版本请参考文档5.2
+    implementation 'cn.admobiletop.adsuyi.ad:oaid:1.0.25.12122'
 
     // 天目适配器，必选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:tianmu:2.2.7.12162'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:tianmu:2.2.9.12101'
 
     // 优量汇（广点通）适配器，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.610.1480.12171'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.610.1480.12191'
 
-    // 头条适配器，可选的
+    // 穿山甲（头条）适配器，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:6.5.0.2.12021'
 
     // 百度适配器，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced:9.371.10091'
 
     // 快手适配器，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.69.10091'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.71.12091'
+
+    // 米盟适配器，可选的。当前为AndroidX版本
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:mimo:5.3.3.12101'
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
+
+    // 华为适配器，可选的
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:hwpps:13.4.75.300.12091'
+
+    // 京媒适配器，可选的。当前为Support版本，有AndroidX版本需求需要联系开发者
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:jadyun:2.5.6.11103'
+
+    // 章鱼适配器，可选的
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:octopus:1.6.1.8.12031'
+
+    // gromoreAdapterSdk，可选的。如使用gromore的其他渠道，请联系开发者。
+    // gromore已与穿山甲合并，此处无需重复导入穿山甲。
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:gromore-without:6.4.1.6.10081'
+    implementation "com.pangle.cn:mediation-gdt-adapter:4.575.1445.1" //广点通 adapter
+    // 有gromore其他渠道需求，请联系开发者。
 
 }
 ```
@@ -204,7 +253,7 @@ dependencies {
 
 1. 移除己方使用的三方广告SDK和相关配置；
 
-> **由于头条(穿山甲)渠道支持了Android R，引入了Android R的 \<queries\> 标签,需要对gradle版本进行限制，限制范围为：3.3.3、 3.4.3、 3.5.4、3.6.4、4.0.1 ，开发者根据自身情况酌情升级**
+> **由于穿山甲(头条)渠道支持了Android R，引入了Android R的 \<queries\> 标签,需要对gradle版本进行限制，限制范围为：3.3.3、 3.4.3、 3.5.4、3.6.4、4.0.1 ，开发者根据自身情况酌情升级**
 
 >  **如对接华为广告联盟，激励视频要提前预加载，并且播放完成后需要预加载下一个激励视频，华为渠道点击事件无法统计；横幅广告使用场景是程序页面的顶部或者底部。**
 
@@ -212,10 +261,24 @@ dependencies {
 
 3. 关于项目使用autosize后出现广告样式出现异常问题处理方案，请参考master-screen-adapter分支中的BannerActivity，并将适配单位改为pt。
 
-### 5.2 OAID版本支持
+### 5.2 OAID支持
 
-1. 向ADSuyi传入OAID
-[OAID传入参考案例](https://gitee.com/admobile/oaid-docking-case.git)
+####5.2.1 适配OAID1.0.25
+
+低版本OAID对接参考案例，低版本无需向[MSA](https://www.msa-alliance.cn/col.jsp?id=120)申请密钥，由于版本较低，新机型可能无法获取。
+
+```java
+// OAID1.0.25版本
+implementation(name: 'oaid_sdk_1.0.25', ext: 'aar')
+// OAID1.0.25版本适配器，对接高版本请参考文档5.2
+implementation 'cn.admobiletop.adsuyi.ad:oaid:1.0.25.12122'
+```
+
+####5.2.2 使用高版本OAID
+
+[MSA](https://www.msa-alliance.cn/col.jsp?id=120)官方地址
+
+[高版本OAID对接参考案例](https://gitee.com/admobile/oaid-docking-case.git)
 
 ### 5.3 权限申请
 
@@ -231,55 +294,7 @@ dependencies {
 
 ### 5.4 兼容配置
 
-#### 5.4.1 FileProvider配置
-
-1. 适配Anroid7.0以及以上，请在AndroidManifest中添加如下代码：
-
-* 如果支持库是support
-
-  ```java
-  <provider
-  	  android:name="android.support.v4.content.FileProvider"
-      android:authorities="${applicationId}.fileprovider"
-      android:exported="false"
-      android:grantUriPermissions="true">
-      <meta-data
-      		android:name="android.support.FILE_PROVIDER_PATHS"
-          android:resource="@xml/adsuyi_file_paths" />
-  </provider>
-  ```
-
-* 如果支持库为androidx
-
-  ```java
-  <provider
-  	  android:name="androidx.core.content.FileProvider"
-      android:authorities="${applicationId}.fileprovider"
-      android:exported="false"
-      android:grantUriPermissions="true">
-      <meta-data
-      		android:name="android.support.FILE_PROVIDER_PATHS"
-          android:resource="@xml/adsuyi_file_paths" />
-  </provider>
-  ```
-
-
-
-2. 在res/xml目录下(如果xml目录不存在需要手动创建)，新建xml文件adsuyi_file_paths，在该文件中加入如下配置，如果存在相同android:authorities的provider，请将paths标签中的路劲配置到自己的xml文件中：
-
-  ```java
-  <?xml version="1.0" encoding="utf-8"?>
-  <paths xmlns:android="http://schemas.android.com/apk/res/android">
-      <external-path name="external_path" path="." />
-      <external-files-path name="external_files_path" path="." />
-  </paths>
-  ```
-
-  <p style="color:red;">PS  :  为了适配下载和安装相关功能，在工程中引用的包 com.android.support:support-v4:x.x.x请使用26.0.0及以上版本。 </p>
-
-
-
-#### 5.4.2 网络配置
+#### 5.4.1 网络配置
 
 需要在 AndroidManifest.xml 添加依赖声明**uses-library android:name="org.apache.http.legacy" android:required="false"**， 且 application标签中添加 **android:usesCleartextTraffic="true"**，适配网络http请求，否则 SDK可能无法正常工作，接入代码示例如下：
 
@@ -298,7 +313,7 @@ dependencies {
 
 
 
-#### 5.4.3 混淆配置
+#### 5.4.2 混淆配置
 
 如果打包时开启了混淆配置，请按需添加以下混淆内容，并保证广告资源文件不被混淆
 
@@ -337,12 +352,27 @@ dependencies {
 -dontwarn okhttp3.**
 -keep class okhttp3.**{*;}
 
-# 优量汇广告平台混淆
+# OAID混淆
+-keep class com.bun.miitmdid.core.** {*;}
+-keep class XI.CA.XI.**{*;}
+-keep class XI.K0.XI.**{*;}
+-keep class XI.XI.K0.**{*;}
+-keep class XI.vs.K0.**{*;}
+-keep class XI.xo.XI.XI.**{*;}
+-keep class com.asus.msa.SupplementaryDID.**{*;}
+-keep class com.asus.msa.sdid.**{*;}
+-keep class com.bun.lib.**{*;}
+-keep class com.bun.miitmdid.**{*;}
+-keep class com.huawei.hms.ads.identifier.**{*;}
+-keep class com.samsung.android.deviceidservice.**{*;}
+-keep class com.zui.opendeviceidlibrary.**{*;}
+-keep class org.json.**{*;}
+-keep public class com.netease.nis.sdkwrapper.Utils {public <methods>;}
+
+# 广点通（优量汇）广告平台混淆
 -keep class com.qq.e.** {public protected *;}
 -keep class MTT.ThirdAppInfoNew {*;}
 -keep class com.tencent.** {*;}
-
-# 如果使用了tbs版本的sdk需要进行以下配置
 -keep class com.tencent.smtt.** { *; }
 -dontwarn dalvik.**
 -dontwarn com.tencent.smtt.**
@@ -356,7 +386,7 @@ dependencies {
 -keep class com.baidu.mobads.** { *; }
 -keep class com.baidu.mobad.** { *; }
 
-# 头条广告平台混淆
+# 穿山甲（头条）广告平台混淆
 -keep class com.bytedance.sdk.openadsdk.** { *; }
 -keep public interface com.bytedance.sdk.openadsdk.downloadnew.** {*;}
 -keep class com.pgl.sys.ces.* {*;}
@@ -392,12 +422,52 @@ dependencies {
 -dontwarn com.ksad.**
 -dontwarn aegon.chrome.**
 
+# 米盟混淆
+-keep class com.miui.zeus.mimo.sdk.* { *; }
+-keep class com.miui.analytics.** { *; }
+-keep class com.xiaomi.analytics.* { public protected *; }
+-keep class * extends android.os.IInterface{*; }
+# gson
+-keepattributes Signature
+-keepattributes *Annotation*
+-dontwarn sun.misc.**
+-keep class com.google.gson.examples.android.model.** { <fields>; }
+-keep class * implements com.google.gson.TypeAdapterFactory
+-keep class * implements com.google.gson.JsonSerializer
+-keep class * implements com.google.gson.JsonDeserializer
+-keepclassmembers,allowobfuscation class * { @com.google.gson.annotations.SerializedName <fields>; }
+# glide
+-keep public class * implements com.bumptech.glide.module.GlideModule
+-keep class * extends com.bumptech.glide.module.AppGlideModule { <init>(...);}
+-keep public enum com.bumptech.glide.load.ImageHeaderParser$** {**[] $VALUES;public *;}
+-keep class com.bumptech.glide.load.data.ParcelFileDescriptorRewinder$InternalRewinder {*** rewind();}
 
+# 华为联盟
+-keep class com.huawei.openalliance.ad.** { *; }
+-dontwarn com.huawei.openalliance.ad.activity.PPSActivity
+-keep public class * implements com.bumptech.glide.module.GlideModule
+-keep public class * extends com.bumptech.glide.module.AppGlideModule
+-keep public enum com.bumptech.glide.load.ImageHeaderParser$** { **[] $VALUES; public *; }
+-dontwarn com.bumptech.glide.load.resource.bitmap.VideoDecoder
+
+# gromore
+# 请参考gromore-proguard-rules.pro文件
 
 # 天目
 -keep class com.tianmu.**{ *; }
 -keep class tianmu.com.** { *; }
 -keep interface tianmu.com.** { *; }
+
+# 京媒混淆
+-keep class com.jd.ad.sdk.** { *; }
+
+# ADSyid混淆
+-keep class adsuyi.com.** { *; }
+-keep interface adsuyi.com.** { *; }
+
+# 章鱼混淆
+-dontwarn com.octopus.**
+-keep class com.octopus.** {*;}
 
 
 
@@ -424,6 +494,8 @@ dependencies {
 .isCanUseWifiState(false)
 // 是否可使用OAID
 .isCanUseOaid(false)
+// 是否允许使用传感器
+.isCanUseSensor(false)
 ```
 另外还可从根源上解决设备标识被读取等问题，可对配置清单中的权限增加tools:node="remove"配置；
 如下：
@@ -516,7 +588,7 @@ ADSuyiSdk.getInstance().init(
                     }
 
                     /**
-                     * 开发者可以传入vaid ，若不传或为空值，则不使用oaid信息
+                     * 开发者可以传入vaid ，若不传或为空值，则不使用vaid信息
                      * @return vaid
                      */
                     @Override
@@ -622,7 +694,7 @@ cn.admobiletop.adsuyi.ad.ADSuyiSplashAd
 | setListener(ADSuyiSplashAdListener listener) | 设置广告相关状态。参数说明：listener（广告状态监听器）。|
 | loadAd(String posId) | 请求广告并展示。参数说明：posId（广告位ID）。|
 | loadOnly(String posId) | 仅请求广告不展示。参数说明：posId（广告位ID）。|
-| loadAd(String posId, ADSuyiNetworkRequestInfo requestInfo) | 请求打底广告并展示，目前支持优量汇、头条、百度、快手。参数说明：posId（广告位ID）、requestInfo（打底广告对象，接口地址[Gitee地址](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/README-ADSuyiNetworkRequestInfo.md)、[Github地址](https://github.com/ADSuyi/ADSuyiSdkDemo-Android/blob/master/README-ADSuyiNetworkRequestInfo.md)）。|
+| loadAd(String posId, ADSuyiNetworkRequestInfo requestInfo) | 请求打底广告并展示，目前支持优量汇、穿山甲、百度、快手。参数说明：posId（广告位ID）、requestInfo（打底广告对象，接口地址[Gitee地址](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/README-ADSuyiNetworkRequestInfo.md)、[Github地址](https://github.com/ADSuyi/ADSuyiSdkDemo-Android/blob/master/README-ADSuyiNetworkRequestInfo.md)）。|
 | showSplash() | 展示广告。使用loadOnly方法去加载广告时，可在onAdReceive回调后去展示广告。|
 | showSplash(ViewGroup container) | 展示广告。参数说明：container（广告展示父容器）。通过ADSuyiSplashAd(Activity activity)、ADSuyiSplashAd(Fragment fragment)构造广告对象，并使用loadOnly方法加载广告时，可在onAdReceive回调后调用该方法去展示广告。|
 | release() | 释放广告。|
@@ -634,7 +706,7 @@ cn.admobiletop.adsuyi.ad.entity.ADSuyiExtraParams
 | 方法名         | 介绍 |
 | ------------ | ---- |
 | ADSuyiExtraParams.Builder().build() | 构造方法。|
-| adSize(ADSuyiAdSize adSize) | 设置开屏视图宽高。参数说明：adSize（设置整个广告视图预期宽高(目前仅头条平台需要，没有接入头条可不设置)，单位为px，如果不设置头条开屏广告视图将会以9 : 16的比例进行填充，小屏幕手机可能会出现素材被压缩的情况，大屏幕设备可能出现留白）。|
+| adSize(ADSuyiAdSize adSize) | 设置开屏视图宽高。参数说明：adSize（设置整个广告视图预期宽高(目前仅穿山甲（头条）平台需要，没有接入穿山甲（头条）可不设置)，单位为px，如果不设置穿山甲（头条）开屏广告视图将会以满屏幕进行填充）。|
 | setAdShakeDisable(boolean adShakeDisable) | 设置传感器禁用。参数说明：adShakeDisable（true：禁用、false：可用，默认：false）。|
 
 
@@ -861,7 +933,7 @@ bannerAd.loadAd(String posId);
 
 信息流广告，具备自渲染和模板两种广告样式：自渲染是SDK将返回广告标题、描述、Icon、图片、多媒体视图等信息，开发者可通过自行拼装渲染成喜欢的样式；模板样式则是返回拼装好的广告视图，开发者只需将视图添加到相应容器即可，模板样式的容器高度建议是自适应。
 **请务必确保自渲染类型广告渲染时包含广告创意素材（至少包含一张图片）、平台logo、广告标识、关闭按钮；模板广告不得被遮挡。**
-**注意，信息流广告点击关闭时，开发者需要在onAdClose回调中将广告容器隐藏或移除，避免如头条渠道点击关闭后视图依旧存在问题**
+**注意，信息流广告点击关闭时，开发者需要在onAdClose回调中将广告容器隐藏或移除，避免如穿山甲（头条）渠道点击关闭后视图依旧存在问题**
 
 #### 6.4.1 信息流广告主要 API
 
@@ -1001,10 +1073,10 @@ ADSuyiNativeAd nativeAd = new ADSuyiNativeAd(Activity activity);
 int widthPixels = getResources().getDisplayMetrics().widthPixels;
 // 创建额外参数实例
 ADSuyiExtraParams extraParams = new ADSuyiExtraParams.Builder()
-    // 设置整个广告视图预期宽高(目前仅头条，艾狄墨搏平台需要，没有接入头条、艾狄墨搏可不设置)，单位为px，高度如果小于等于0则高度自适应
+    // 设置整个广告视图预期宽高，单位为px，高度如果小于等于0则高度自适应
     .adSize(new ADSuyiAdSize(widthPixels, 0))
    	.build();
-// 设置一些额外参数，有些平台的广告可能需要传入一些额外参数，如果有接入头条、Inmobi平台，该参数必须设置
+// 设置额外参数
 nativeAd.setLocalExtraParams(extraParams);
 
 // 设置广告监听
@@ -1224,11 +1296,130 @@ rewardVodAd.loadAd(String posId);
 >
 
 
-### <a name="ad_interstitial">6.6 插屏广告示例</a>
+### <a name="ad_full_screen_vod">6.6 全屏视频广告示例</a>
+
+全屏视频广告是类似激励视频样式的广告形式，与激励视频不同之处在于全屏视频广告播放一定时间时间后即可跳过，同时全屏视频广告拥有跳过回调不具备奖励回调。
+
+#### 6.6.1 全屏视频广告主要 API
+
+**ADSuyiFullScreenVodAd**
+
+cn.admobiletop.adsuyi.ad.ADSuyiFullScreenVodAd
+
+| 方法名         | 介绍 |
+| ------------ | ---- |
+| ADSuyiFullScreenVodAd(Activity activity) | 构造方法。参数说明：activity（当前页面activity对象）。|
+| ADSuyiFullScreenVodAd(Fragment fragment) | 构造方法。参数说明：fragment（当前页面fragment对象）。|
+| setOnlySupportPlatform(String platform) | 设置广告定向，仅请求某一渠道。参数说明：platform（<a href="#platform_name">渠道名</a>）。注：仅debug模式为true时生效。|
+| setListener(ADSuyiFullScreenVodAdListener listener) | 设置广告相关状态。参数说明：listener（广告状态监听器）。|
+| setSceneId(String sceneId) | 设置广告场景id，用于区分同一个广告位在不同场景下使用的数据。参数说明：sceneId（场景ID）。|
+| loadAd(String posId) | 请求广告并展示。参数说明：posId（广告位ID）。|
+| release() | 释放广告。|
+
+**ADSuyiExtraParams**
+
+cn.admobiletop.adsuyi.ad.entity.ADSuyiExtraParams
+
+| 方法名         | 介绍 |
+| ------------ | ---- |
+| ADSuyiExtraParams.Builder().build() | 构造方法。|
+| setVideoWithMute(boolean isMute) | 视频静音设置。参数说明：isMute（true：静音、false：不静音，默认：true）。|
+| setAdShakeDisable(boolean adShakeDisable) | 设置传感器禁用。参数说明：adShakeDisable（true：禁用、false：可用，默认：false）。|
+
+**ADSuyiFullScreenVodAdListener**
+
+cn.admobiletop.adsuyi.ad.listener.ADSuyiFullScreenVodAdListener
+
+| 方法名         | 介绍 |
+| ------------ | ---- |
+| onAdReceive(ADSuyiFullScreenVodAdInfo adInfo) | 广告加载成功回调。|
+| onAdExpose(ADSuyiFullScreenVodAdInfo adInfo) | 广告曝光回调。|
+| onAdClick(ADSuyiFullScreenVodAdInfo adInfo) | 广告点击回调。|
+| onAdClose(ADSuyiFullScreenVodAdInfo adInfo) | 广告关闭回调。|
+| onVideoCache(ADSuyiFullScreenVodAdInfo adInfo) | 广告缓存成功回调。|
+| onVideoComplete(ADSuyiFullScreenVodAdInfo adInfo) | 广告播放完毕回调。|
+| onVideoError(ADSuyiFullScreenVodAdInfo adInfo, ADSuyiError error) | 视频播放错误回调。|
+| onAdFailed(ADSuyiError error) | 广告获取失败回调。|
+
+**ADSuyiFullScreenVodAdInfo**
+
+cn.admobiletop.adsuyi.ad.data.ADSuyiFullScreenVodAdInfo
+
+| 方法名         | 介绍 |
+| ------------ | ---- |
+| showFullScreenVod(Activity activity) | 展示广告。参数说明：activity（当前页面activity对象）。|
+| getPlatform() | 获取三方广告平台名称，返回String类型。|
+| getECPM() | 获取ECPM，返回Double类型（单位：元）。|
+| getEcpmPrecision() | ECPM类型，返回String类型（accurate：精准、platform_assignment：平台指定、estimate：估算）。|
+
+#### 6.6.2 全屏视频广告加载并展示
+
+```java
+ADSuyiFullScreenVodAd fullScreenVodAd = new ADSuyiFullScreenVodAd(this);
+
+// 设置全屏视频监听
+fullScreenVodAd.setListener(new ADSuyiFullScreenVodAdListener() {
+
+    @Override
+    public void onAdReceive(ADSuyiFullScreenVodAdInfo adInfo) {
+        // 广告获取成功回调...
+        // 全屏视频广告对象一次成功拉取的广告数据只允许展示一次
+        // 广告展示
+        adInfo.showFullScreenVod(Activity activity);
+    }
+
+    @Override
+    public void onVideoCache(ADSuyiFullScreenVodAdInfo adInfo) {
+        // 广告视频缓存成功回调...
+    }
+
+    @Override
+    public void onVideoComplete(ADSuyiFullScreenVodAdInfo adInfo) {
+        // 广告观看完成回调...
+   	}
+
+    @Override
+    public void onVideoError(ADSuyiFullScreenVodAdInfo adInfo, ADSuyiError adSuyiError) {
+        // 广告播放错误回调...
+    }
+
+    @Override
+    public void onAdExpose(ADSuyiFullScreenVodAdInfo adInfo) {
+        // 广告展示回调，有展示回调不一定是有效曝光，如网络等情况导致上报失败
+    }
+
+    @Override
+    public void onAdClick(ADSuyiFullScreenVodAdInfo adInfo) {
+        // 广告点击回调，有点击回调不一定是有效点击，如网络等情况导致上报失败
+    }
+
+    @Override
+    public void onAdClose(ADSuyiFullScreenVodAdInfo adInfo) {
+        // 广告点击关闭回调
+    }
+
+    @Override
+    public void onAdFailed(ADSuyiError error) {
+        // 广告获取失败回调...
+   	}
+});
+
+// 加载全屏视频广告
+fullScreenVodAd.loadAd(String posId);
+```
+
+<p style="color:red;">注意广告对象的获取是异步的，请在onAdReceive回调后展示广告 </p>
+
+
+> 全屏视频广告示例详情 [Gitee地址](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/ad/FullScreenVodAdActivity.java)、[Github地址](https://github.com/ADSuyi/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/ad/FullScreenVodAdActivity.java)
+>
+
+
+### <a name="ad_interstitial">6.7 插屏广告示例</a>
 
 插屏广告是移动广告的一种常见形式，在应用流程中弹出，当应用展示插屏广告时，用户可以选择点击广告，也可以将其关闭并返回应用。
 
-#### 6.6.1 插屏广告主要 API
+#### 6.7.1 插屏广告主要 API
 
 **ADSuyiInterstitialAd**
 
@@ -1279,7 +1470,7 @@ cn.admobiletop.adsuyi.ad.data.ADSuyiInterstitialAdInfo
 | getECPM() | 获取ECPM，返回Double类型（单位：元）。|
 | getEcpmPrecision() | ECPM类型，返回String类型（accurate：精准、platform_assignment：平台指定、estimate：估算）。|
 
-#### 6.6.2 插屏广告加载并展示
+#### 6.7.2 插屏广告加载并展示
 
 ```java
 ADSuyiInterstitialAd interstitialAd = new ADSuyiInterstitialAd(Activity activity);
@@ -1331,8 +1522,142 @@ interstitialAd.loadAd(String posId);
 >
 
 
+### <a name="ad_draw_vod">6.8 DrawVod广告示例</a>
 
-### 6.7 备注
+类似抖音、快手小视频一样的沉浸式视频广告类型
+
+#### 6.8.1 DrawVod广告主要 API
+
+**ADSuyiDrawVodAd**
+
+cn.admobiletop.adsuyi.ad.ADSuyiDrawVodAd
+
+| 方法名         | 介绍 |
+| ------------ | ---- |
+| ADSuyiDrawVodAd(Activity activity) | 构造方法。参数说明：activity（当前页面activity对象）。|
+| ADSuyiDrawVodAd(Fragment fragment) | 构造方法。参数说明：fragment（当前页面fragment对象）。|
+| setLocalExtraParams(ADSuyiExtraParams extraParams) | 设置额外参数。参数说明：extraParams（广告额外参数）。|
+| setOnlySupportPlatform(String platform) | 设置广告定向，仅请求某一渠道。参数说明：platform（<a href="#platform_name">渠道名</a>）。注：仅debug模式为true时生效。|
+| setListener(ADSuyiDrawVodAdListener listener) | 设置广告相关状态。参数说明：listener（广告状态监听器）。|
+| setVideoListener(ADSuyiDrawVodVideoListener listener) | 设置广告视频相关状态。参数说明：listener（广告状态监听器）。|
+| loadAd(String posId) | 请求广告并展示。参数说明：posId（广告位ID）。|
+| release() | 释放广告。|
+
+**ADSuyiExtraParams**
+
+cn.admobiletop.adsuyi.ad.entity.ADSuyiExtraParams
+
+| 方法名         | 介绍 |
+| ------------ | ---- |
+| ADSuyiExtraParams.Builder().build() | 构造方法。|
+| adSize(ADSuyiAdSize adSize) | 设置开屏视图宽高。参数说明：adSize（设置整个广告视图预期宽高）。|
+| setAdShakeDisable(boolean adShakeDisable) | 设置传感器禁用。参数说明：adShakeDisable（true：禁用、false：可用，默认：false）。|
+
+
+**ADSuyiAdSize**
+
+cn.admobiletop.adsuyi.ad.entity.ADSuyiAdSize
+
+| 方法名         | 介绍 |
+| ------------ | ---- |
+| ADSuyiAdSize(int width, int height) | 构造方法。参数说明：<br>width（容器宽度，单位：px）请传入实际宽度、<br>height（容器高度，单位：px）请传入实际高度。|
+
+
+**ADSuyiDrawVodAdListener**
+
+cn.admobiletop.adsuyi.ad.listener.ADSuyiDrawVodAdListener
+
+| 方法名         | 介绍 |
+| ------------ | ---- |
+| onAdReceive(List\<ADSuyiDrawVodAdInfo> adInfoList) | 广告加载成功回调。|
+| onAdExpose(ADSuyiDrawVodAdInfo adInfo) | 广告展示回调。|
+| onAdClick(ADSuyiDrawVodAdInfo adInfo) | 广告点击回调。|
+| onAdClose(ADSuyiDrawVodAdInfo adInfo) | 广告关闭回调。|
+| onRenderFailed(ADSuyiDrawVodAdInfo adInfo, ADSuyiError error) | 广告渲染失败回调。|
+| onAdFailed(ADSuyiError error) | 广告失败回调。参数说明：error（广告错误信息）。|
+
+**ADSuyiDrawVodVideoListener**
+
+cn.admobiletop.adsuyi.ad.listener.ADSuyiDrawVodVideoListener
+
+| 方法名         | 介绍 |
+| ------------ | ---- |
+| onVideoLoad(ADSuyiNativeAdInfo nativeAdInfo) | 视频加载中回调。|
+| onVideoStart(ADSuyiNativeAdInfo nativeAdInfo) | 视频播放回调。|
+| onVideoPause(ADSuyiNativeAdInfo nativeAdInfo) | 视频暂停回调。|
+| onVideoComplete(ADSuyiNativeAdInfo nativeAdInfo) | 视频播放完毕回调。|
+| onVideoError(ADSuyiNativeAdInfo nativeAdInfo) | 视频异常回调。|
+
+#### 6.8.2 DrawVod广告加载并展示
+
+```java
+ADSuyiDrawVodAd drawVodAd = new ADSuyiDrawVodAd(Activity activity);
+int width = getResources().getDisplayMetrics().widthPixels;
+int height = width * 16 / 9;
+
+// 创建额外参数实例
+ADSuyiExtraParams extraParams = new ADSuyiExtraParams.Builder()
+		// 设置广告预期宽高，单位为px，宽高均不能小于等于0
+    .adSize(new ADSuyiAdSize(width, height))
+    .build();
+// 设置一些额外参数
+drawVodAd.setLocalExtraParams(extraParams);
+
+// 设置DrawVod广告监听
+drawVodAd.setListener(new ADSuyiDrawVodAdListener() {
+		@Override
+    public void onRenderFailed(ADSuyiDrawVodAdInfo adInfo, ADSuyiError error) {
+        // 广告渲染失败，可在此处移除广告视图
+   	}
+
+    @Override
+    public void onAdReceive(List\<ADSuyiDrawVodAdInfo\> adInfoList) {
+        // 广告加载成功回调
+   	}
+
+    @Override
+    public void onAdExpose(ADSuyiDrawVodAdInfo adInfo) {
+        // 广告展示回调
+    }
+
+    @Override
+    public void onAdClick(ADSuyiDrawVodAdInfo adInfo) {
+    	// 广告点击回调
+    }
+
+    @Override
+    public void onAdClose(ADSuyiDrawVodAdInfo adInfo) {
+    	// 广告关闭回调
+   	}
+
+   	@Override
+    public void onAdFailed(ADSuyiError error) {
+    	// 广告失败回调
+    }
+);
+
+// 请求广告数据，参数一广告位ID，参数二请求数量[1,3]
+drawVodAd.loadAd(String posId, int count);
+```
+
+```java
+// 判断广告Info对象是否被释放（调用过ADSuyiDrawVodAd的release()或ADSuyiDrawVodAdInfo的release()会释放广告Info对象）
+// 释放后的广告Info对象不能再次使用
+if (!ADSuyiAdUtil.adInfoIsRelease(drawVodAdInfo)) {
+    // 当前是Draw视频信息流模板广告，getMediaView获取的是模板广告视图
+    View mediaView = drawVodAdInfo.getMediaView(rlAdContainer);
+    // 将广告视图添加到容器中的便捷方法
+    ADSuyiViewUtil.addAdViewToAdContainer(rlAdContainer, mediaView);
+    // 注册或者渲染广告视图, 必须调用
+    drawVodAdInfo.render(rlAdContainer);
+}
+```
+
+> DrawVod广告示例详情[Gitee地址](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/ad/DrawVodActivity.java)、[Github地址](https://github.com/ADSuyi/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/ad/DrawVodActivity.java)
+>
+
+
+### 6.9 备注
 
 具体的接入代码和流程，请参考Demo
 

@@ -12,10 +12,13 @@ import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import cn.admobiletop.adsuyi.ADSuyiSdk;
 import cn.admobiletop.adsuyidemo.R;
 import cn.admobiletop.adsuyidemo.activity.ad.BannerAdActivity;
+import cn.admobiletop.adsuyidemo.activity.ad.DrawVodActivity;
+import cn.admobiletop.adsuyidemo.activity.ad.FullScreenVodAdActivity;
 import cn.admobiletop.adsuyidemo.activity.ad.feed.NativeExpressActivity;
 import cn.admobiletop.adsuyidemo.activity.ad.feed.NativeSelfRenderActivity;
 import cn.admobiletop.adsuyidemo.activity.ad.interstitial.InterstitialAdActivity;
@@ -48,9 +51,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.btnDrawVodAd).setOnClickListener(this);
 
 
-        boolean iscgq = SPUtil.getBoolean(MainActivity.this, "cgq");
+        boolean issensor = SPUtil.getBoolean(MainActivity.this, "sensor");
         switchCgq = findViewById(R.id.switchCgq);
-        switchCgq.setChecked(iscgq);
+        switchCgq.setChecked(issensor);
 
         ADSuyiSdk.setPersonalizedAdEnabled(false);
         switchPersonalized = findViewById(R.id.switchPersonalized);
@@ -68,7 +71,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switchCgq.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                SPUtil.putBoolean(MainActivity.this, "cgq", isChecked);
+                SPUtil.putBoolean(MainActivity.this, "sensor", isChecked);
+                Toast.makeText(MainActivity.this, "重启后生效", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -93,6 +97,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btnInterstitialAd:
                 startActivity(InterstitialAdActivity.class);
+                break;
+            case R.id.btnDrawVodAd:
+                startActivity(DrawVodActivity.class);
+                break;
+            case R.id.btnFullScreenAd:
+                startActivity(FullScreenVodAdActivity.class);
                 break;
             default:
                 break;

@@ -67,7 +67,7 @@ public class PositionSettingActivity extends AppCompatActivity {
         platformMap.put("所有(null或空字符串)", "");
         platformMap.put("天目(tianmu)", "tianmu");
         platformMap.put("优量汇/广点通(gdt)", "gdt");
-        platformMap.put("头条/穿山甲(toutiao)", "toutiao");
+        platformMap.put("穿山甲/头条(toutiao)", "toutiao");
         platformMap.put("百度/百青藤(baidu)", "baidu");
         platformMap.put("快手(ksad)", "ksad");
     }

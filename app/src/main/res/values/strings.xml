@@ -37,7 +37,7 @@
 \t\t\t\t你可以通过阅读完整版的ADmobile 《用户协议》、《隐私政策》和《第三方SDK使用列表》了解ADmobile详细隐私策略。
     </string>
 
-    <string name="interstitial_auto_close_attention">注意:\n1.本操作非正常广告展示流程，如遇渠道数据核减、冻结、判作弊等需自行承担后果;\n2.该功能非sdk功能，仅demo演示，如果有需要可参考demo中的代码按需求开发；\n3.自动关闭倒计时最好大于5秒，避免曝光异常影响收益；\n4.目前支持优量汇、头条、快手、admobile渠道，渠道陆续增加中;\n5.目前仅支持插屏半屏（头条渠道支持半屏和全屏）;\n6.本代码所使用的第三方sdk为suyi文档上的最新版本，如果用非文档上的版本可能导致自动关闭功能失效；</string>
+    <string name="interstitial_auto_close_attention">注意:\n1.本操作非正常广告展示流程，如遇渠道数据核减、冻结、判作弊等需自行承担后果;\n2.该功能非sdk功能，仅demo演示，如果有需要可参考demo中的代码按需求开发；\n3.自动关闭倒计时最好大于5秒，避免曝光异常影响收益；\n4.目前支持优量汇、穿山甲、快手、天目渠道，渠道陆续增加中;\n5.目前仅支持插屏半屏（头条渠道支持半屏和全屏）;\n6.本代码所使用的第三方sdk为suyi文档上的最新版本，如果用非文档上的版本可能导致自动关闭功能失效；</string>
 
 
     <string-array name="ad_type_items">
@@ -53,7 +53,7 @@
         <item>tianmu</item>
         <!--优量汇/广点通-->
         <item>gdt</item>
-        <!--头条/穿山甲-->
+        <!--穿山甲/头条-->
         <item>toutiao</item>
         <!--百度/百青藤-->
         <item>baidu</item>
@@ -65,7 +65,7 @@
         <item>所有(null或空字符串)</item>
         <item>天目(tianmu)</item>
         <item>优量汇/广点通(gdt)</item>
-        <item>头条/穿山甲(toutiao)</item>
+        <item>穿山甲/头条(toutiao)</item>
         <item>百度/百青藤(baidu)</item>
         <item>快手(ksad)</item>
     </string-array>

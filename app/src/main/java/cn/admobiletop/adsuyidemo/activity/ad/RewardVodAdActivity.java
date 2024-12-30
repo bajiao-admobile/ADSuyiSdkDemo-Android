@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import cn.admobiletop.adsuyi.ad.ADSuyiRewardVodAd;
 import cn.admobiletop.adsuyi.ad.data.ADSuyiRewardVodAdInfo;
@@ -41,7 +42,7 @@ public class RewardVodAdActivity extends BaseAdActivity implements View.OnClickL
     }
 
     private void initAd() {
-        boolean iscgq = SPUtil.getBoolean(this, "cgq");
+        boolean issensor = SPUtil.getBoolean(this, "sensor");
         // 创建激励视频广告实例
         rewardVodAd = new ADSuyiRewardVodAd(this);
 
@@ -59,7 +60,7 @@ public class RewardVodAdActivity extends BaseAdActivity implements View.OnClickL
 //                .rewardExtra(adSuyiRewardExtra)
                 // 设置视频类广告是否静音
                 .setVideoWithMute(ADSuyiDemoConstant.REWARD_AD_PLAY_WITH_MUTE)
-                .setAdShakeDisable(iscgq)
+                .setAdShakeDisable(issensor)
                 .build();
 
         rewardVodAd.setLocalExtraParams(extraParams);
@@ -132,7 +133,19 @@ public class RewardVodAdActivity extends BaseAdActivity implements View.OnClickL
                 loadAd();
                 break;
             case R.id.btnShowAd:
-                ADSuyiAdUtil.showRewardVodAdConvenient(this, rewardVodAdInfo);
+                if (rewardVodAdInfo == null) {
+                    Toast.makeText(this, "无可用广告", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (!rewardVodAdInfo.isReady()) {
+                    Toast.makeText(this, "广告未准备好", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (rewardVodAdInfo.hasExpired()) {
+                    Toast.makeText(this, "广告已失效", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                rewardVodAdInfo.showRewardVod(this);
                 break;
             default:
                 break;

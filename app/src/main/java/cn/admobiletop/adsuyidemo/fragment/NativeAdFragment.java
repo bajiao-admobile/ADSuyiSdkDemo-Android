@@ -76,12 +76,12 @@ public class NativeAdFragment extends BaseFragment implements OnRefreshLoadMoreL
         int widthPixels = getResources().getDisplayMetrics().widthPixels;
         // 创建额外参数实例
         ADSuyiExtraParams extraParams = new ADSuyiExtraParams.Builder()
-                // 设置整个广告视图预期宽高(目前仅头条平台需要，没有接入头条可不设置)，单位为px，高度如果小于等于0则高度自适应
+                // 设置整个广告视图预期宽高，单位为px，高度如果小于等于0则高度自适应
                 .adSize(new ADSuyiAdSize(widthPixels, 0))
                 // 设置广告视图中的MediaView的预期宽高(目前仅Inmobi平台需要,Inmobi的MediaView高度为自适应，没有接入Inmobi平台可不设置)，单位为px
                 .nativeAdMediaViewSize(new ADSuyiAdSize(widthPixels))
                 .build();
-        // 设置一些额外参数，有些平台的广告可能需要传入一些额外参数，如果有接入头条、Inmobi平台，该参数必须设置
+        // 设置一些额外参数，有些平台的广告可能需要传入一些额外参数
         adSuyiNativeAd.setLocalExtraParams(extraParams);
 
         // 设置仅支持的广告平台，设置了这个值，获取广告时只会去获取该平台的广告，null或空字符串为不限制，默认为null，方便调试使用，上线时建议不设置

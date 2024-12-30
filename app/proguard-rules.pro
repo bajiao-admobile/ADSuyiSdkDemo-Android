@@ -71,7 +71,7 @@
 -keep class com.baidu.mobads.** { *; }
 -keep class com.baidu.mobad.** { *; }
 
-# 头条广告平台混淆
+# 穿山甲（头条）广告平台混淆
 -keep class com.bytedance.sdk.openadsdk.** { *; }
 -keep public interface com.bytedance.sdk.openadsdk.downloadnew.** {*;}
 -keep class com.pgl.sys.ces.* {*;}
