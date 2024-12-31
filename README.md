@@ -6,7 +6,7 @@
 ```
 SDK名称: Suyi聚合广告SDK
 开发者: 杭州艾狄墨搏信息服务有限公司
-更新日期: 2024-12-19
+更新日期: 2024-12-31
 功能介绍: Suyi聚合广告SDK 集成了多种广告类型和主流广告平台，提供广告数据统计功能，帮助开发者轻松实现应用内广告的接入和管理，提升应用盈利和用户体验。
 ```
 
@@ -631,7 +631,7 @@ cn.admobiletop.adsuyi.config.ADSuyiInitConfig
 | ------------ | ---- |
 | appId(String appId) | 设置AppId，必填参数。|
 | debug(boolean debug) | 设置是否是Debug模式。参数说明：debug（true：开启，false：关闭， 默认：true）开发阶段以及提交测试阶段可设置为true，方便异常排查。|
-| isCanUseSensor(boolean isCanUseSensor) | 设置SDK是否可以使用传感器信息。参数说明：isCanUseSensor（true：开启，false：关闭， 默认：false。目前仅支持控制优量汇、快手、天目，其中优量汇和天目可控制所有广告类型，快手仅支持控制开屏，其他渠道需要到对应后台控制或提交工单关闭，关闭后将影响广告点击率）。|
+| isCanUseSensor(boolean isCanUseSensor) | 设置SDK是否可以使用传感器信息。参数说明：isCanUseSensor（true：开启，false：关闭， 默认：false，建议媒体升级后调用该方法开启。目前仅支持控制优量汇、快手、天目，其中优量汇和天目可控制所有广告类型，快手仅支持控制开屏，其他渠道需要到对应后台控制或提交工单关闭，关闭后将影响广告点击率）。|
 | isCanUseLocation(boolean isCanUseLocation) | 设置SDK是否可以使用定位信息。参数说明：isCanUseLocation（true：开启，false：关闭， 默认：true）。|
 | isCanUsePhoneState(boolean isCanUsePhoneState) | 设置SDK是否可以使用IMEI等设备信息。参数说明：isCanUsePhoneState（true：开启，false：关闭， 默认：true）。|
 | isCanUseWifiState(boolean isCanUseWifiState) | 设置SDK是否可以使用WIFI信息。参数说明：isCanUseWifiState（true：开启，false：关闭， 默认：true）。|
