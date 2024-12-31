@@ -65,7 +65,7 @@ Suyi聚合广告SDK 主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 
 | Name      | 容量   | 版本号              |
 | --------- | ----- | ------------------ |
-| tianmu    | 2.14M | v2.2.9.12101       |
+| tianmu    | 2.14M | v2.2.9.12102       |
 | gdt       | 2.01M | v4.610.1480.12191  |
 | toutiao   | 8.22M | v6.5.0.2.12021     |
 | baidu     | 1.98M | v9.371.10091       |
@@ -198,7 +198,7 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad:oaid:1.0.25.12122'
 
     // 天目适配器，必选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:tianmu:2.2.9.12101'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:tianmu:2.2.9.12102'
 
     // 优量汇（广点通）适配器，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.610.1480.12191'
@@ -631,6 +631,7 @@ cn.admobiletop.adsuyi.config.ADSuyiInitConfig
 | ------------ | ---- |
 | appId(String appId) | 设置AppId，必填参数。|
 | debug(boolean debug) | 设置是否是Debug模式。参数说明：debug（true：开启，false：关闭， 默认：true）开发阶段以及提交测试阶段可设置为true，方便异常排查。|
+| isCanUseSensor(boolean isCanUseSensor) | 设置SDK是否可以使用传感器信息。参数说明：isCanUseSensor（true：开启，false：关闭， 默认：false。目前仅支持控制优量汇、快手、天目，其中优量汇和天目可控制所有广告类型，快手仅支持控制开屏，其他渠道需要到对应后台控制或提交工单关闭，关闭后将影响广告点击率）。|
 | isCanUseLocation(boolean isCanUseLocation) | 设置SDK是否可以使用定位信息。参数说明：isCanUseLocation（true：开启，false：关闭， 默认：true）。|
 | isCanUsePhoneState(boolean isCanUsePhoneState) | 设置SDK是否可以使用IMEI等设备信息。参数说明：isCanUsePhoneState（true：开启，false：关闭， 默认：true）。|
 | isCanUseWifiState(boolean isCanUseWifiState) | 设置SDK是否可以使用WIFI信息。参数说明：isCanUseWifiState（true：开启，false：关闭， 默认：true）。|
