@@ -1,35 +1,16 @@
 package cn.admobiletop.adsuyidemo.adapter;
 
-import android.content.Context;
-import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
-
-import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import cn.admobiletop.adsuyi.ad.data.ADSuyiNativeAdInfo;
 import cn.admobiletop.adsuyi.ad.data.ADSuyiNativeExpressAdInfo;
-import cn.admobiletop.adsuyi.ad.data.ADSuyiNativeFeedAdInfo;
-import cn.admobiletop.adsuyi.ad.error.ADSuyiError;
-import cn.admobiletop.adsuyi.ad.listener.ADSuyiNativeVideoListener;
-import cn.admobiletop.adsuyi.util.ADSuyiAdUtil;
-import cn.admobiletop.adsuyi.util.ADSuyiViewUtil;
-import cn.admobiletop.adsuyidemo.R;
 import cn.admobiletop.adsuyidemo.adapter.holder.NativeExpressAdViewHolder;
 import cn.admobiletop.adsuyidemo.adapter.holder.NormalDataViewHolder;
-import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
-import cn.admobiletop.adsuyidemo.entity.NativeAdSampleData;
 
 /**
  * @author ciba

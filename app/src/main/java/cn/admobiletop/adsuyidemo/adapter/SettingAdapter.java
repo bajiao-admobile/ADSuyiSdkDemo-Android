@@ -60,21 +60,21 @@ public class SettingAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             case ITEM_VIEW_TYPE_TITLE_DATA:
                 return new TitleViewHolder(viewGroup);
             case ITEM_VIEW_TYPE_AD_DATA:
-                return new SettingAdapter.AdViewHolder(viewGroup);
+                return new AdViewHolder(viewGroup);
             default:
-                return new SettingAdapter.PlatformViewHolder(viewGroup);
+                return new PlatformViewHolder(viewGroup);
         }
     }
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int position) {
         AdSettingData settingData = dataList.get(position);
-        if (viewHolder instanceof SettingAdapter.AdViewHolder) {
-            ((SettingAdapter.AdViewHolder) viewHolder).setData(settingData, mContext);
-        } else if (viewHolder instanceof SettingAdapter.PlatformViewHolder) {
-            ((SettingAdapter.PlatformViewHolder) viewHolder).setData(settingData, mContext);
-        } else if (viewHolder instanceof SettingAdapter.TitleViewHolder) {
-            ((SettingAdapter.TitleViewHolder) viewHolder).setData(settingData);
+        if (viewHolder instanceof AdViewHolder) {
+            ((AdViewHolder) viewHolder).setData(settingData, mContext);
+        } else if (viewHolder instanceof PlatformViewHolder) {
+            ((PlatformViewHolder) viewHolder).setData(settingData, mContext);
+        } else if (viewHolder instanceof TitleViewHolder) {
+            ((TitleViewHolder) viewHolder).setData(settingData);
         }
     }
 

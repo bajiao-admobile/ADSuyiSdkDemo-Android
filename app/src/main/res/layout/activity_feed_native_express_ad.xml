@@ -37,7 +37,8 @@
         android:stateListAnimator="@null"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"/>
+        android:layout_marginRight="20dp"
+        android:layout_margin="20dp"/>
 
     <RelativeLayout
         android:id="@+id/rlExpressAd"

@@ -1,6 +1,5 @@
 package cn.admobiletop.adsuyidemo.adapter;
 
-import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.ViewGroup;
@@ -10,8 +9,6 @@ import java.util.List;
 
 import cn.admobiletop.adsuyi.ad.data.ADSuyiNativeAdInfo;
 import cn.admobiletop.adsuyi.ad.data.ADSuyiNativeFeedAdInfo;
-import cn.admobiletop.adsuyidemo.adapter.holder.BaseNativeFeedAdViewHolder;
-import cn.admobiletop.adsuyidemo.adapter.holder.NativeFeedAdMediaViewHolder;
 import cn.admobiletop.adsuyidemo.adapter.holder.NativeFeedAdViewHolder;
 import cn.admobiletop.adsuyidemo.adapter.holder.NormalDataViewHolder;
 
@@ -29,10 +26,6 @@ public class NativeFeedAdAdapter extends BaseNativeAdAdapter {
      * 信息流原生广告类型
      */
     private static final int ITEM_VIEW_TYPE_NATIVE_AD = 1;
-    /**
-     * 信息流原生广告类型（包含MediaView）
-     */
-    private static final int ITEM_VIEW_TYPE_NATIVE_AD_HAS_MEDIA_VIEW = 2;
 
     private List<Object> dataList = new ArrayList<>();
 
@@ -42,8 +35,6 @@ public class NativeFeedAdAdapter extends BaseNativeAdAdapter {
         switch (itemViewType) {
             case ITEM_VIEW_TYPE_NATIVE_AD:
                 return new NativeFeedAdViewHolder(viewGroup);
-            case ITEM_VIEW_TYPE_NATIVE_AD_HAS_MEDIA_VIEW:
-                return new NativeFeedAdMediaViewHolder(viewGroup);
             default:
                 return new NormalDataViewHolder(viewGroup);
         }
@@ -52,9 +43,9 @@ public class NativeFeedAdAdapter extends BaseNativeAdAdapter {
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int position) {
         Object item = dataList.get(position);
-        if (viewHolder instanceof BaseNativeFeedAdViewHolder) {
+        if (viewHolder instanceof NativeFeedAdViewHolder) {
             // 信息流原生广告类型 NativeAdViewHolder or NativeAdMediaViewHolder
-            ((BaseNativeFeedAdViewHolder) viewHolder).setData((ADSuyiNativeFeedAdInfo) item);
+            ((NativeFeedAdViewHolder) viewHolder).setData((ADSuyiNativeFeedAdInfo) item);
         } else {
             // 普通数据类型的
             try {
@@ -74,15 +65,7 @@ public class NativeFeedAdAdapter extends BaseNativeAdAdapter {
     public int getItemViewType(int position) {
         Object item = dataList.get(position);
         if (item instanceof ADSuyiNativeFeedAdInfo) {
-            ADSuyiNativeFeedAdInfo nativeFeedAdInfo = (ADSuyiNativeFeedAdInfo) item;
-            if (nativeFeedAdInfo.hasMediaView()) {
-                // hasMediaView() true 包含MediaView的原生信息流广告
-                return ITEM_VIEW_TYPE_NATIVE_AD_HAS_MEDIA_VIEW;
-            }else {
-                // hasMediaView() false 没有MediaView的原生信息流广告
-                return ITEM_VIEW_TYPE_NATIVE_AD;
-            }
-
+            return ITEM_VIEW_TYPE_NATIVE_AD;
         } else {
             return ITEM_VIEW_TYPE_NORMAL_DATA;
         }

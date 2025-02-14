@@ -20,7 +20,9 @@ import cn.admobiletop.adsuyidemo.activity.ad.BannerAdActivity;
 import cn.admobiletop.adsuyidemo.activity.ad.DrawVodActivity;
 import cn.admobiletop.adsuyidemo.activity.ad.FullScreenVodAdActivity;
 import cn.admobiletop.adsuyidemo.activity.ad.feed.NativeExpressActivity;
+import cn.admobiletop.adsuyidemo.activity.ad.feed.NativeExpressListActivity;
 import cn.admobiletop.adsuyidemo.activity.ad.feed.NativeSelfRenderActivity;
+import cn.admobiletop.adsuyidemo.activity.ad.feed.NativeSelfRenderListActivity;
 import cn.admobiletop.adsuyidemo.activity.ad.interstitial.InterstitialAdActivity;
 import cn.admobiletop.adsuyidemo.activity.ad.RewardVodAdActivity;
 import cn.admobiletop.adsuyidemo.activity.ad.splash.SplashAdSettingActivity;
@@ -45,6 +47,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.btnBannerAd).setOnClickListener(this);
         findViewById(R.id.btnNativeExpressLayout).setOnClickListener(this);
         findViewById(R.id.btnNativeSelfRenderLayout).setOnClickListener(this);
+        findViewById(R.id.btnNativeExpressList).setOnClickListener(this);
+        findViewById(R.id.btnNativeSelfRenderList).setOnClickListener(this);
         findViewById(R.id.btnRewardVodAd).setOnClickListener(this);
         findViewById(R.id.btnFullScreenAd).setOnClickListener(this);
         findViewById(R.id.btnInterstitialAd).setOnClickListener(this);
@@ -91,6 +95,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btnNativeSelfRenderLayout:
                 startActivity(NativeSelfRenderActivity.class);
+                break;
+            case R.id.btnNativeExpressList:
+                startActivity(NativeExpressListActivity.class);
+                break;
+            case R.id.btnNativeSelfRenderList:
+                startActivity(NativeSelfRenderListActivity.class);
                 break;
             case R.id.btnRewardVodAd:
                 startActivity(RewardVodAdActivity.class);

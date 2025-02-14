@@ -14,7 +14,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.qq.e.ads.nativ.widget.NativeAdContainer;
 
 import java.util.List;
 
@@ -46,7 +45,7 @@ public class NativeSelfRenderActivity extends AppCompatActivity {
      * 自渲染相关布局
      */
     private ImageView ivIcon;
-    private NativeAdContainer nativeAdContainer;
+    private FrameLayout nativeAdContainer;
     private RelativeLayout rlAdContainer;
     private FrameLayout flContent;
     private ImageView ivAdTarget;
@@ -209,18 +208,6 @@ public class NativeSelfRenderActivity extends AppCompatActivity {
             nativeFeedAdInfo = (ADSuyiNativeFeedAdInfo)adSuyiNativeAdInfo;
         }
 
-
-
-        flContent.removeAllViews();
-        if (nativeFeedAdInfo.hasMediaView()) {
-            View mediaView = nativeFeedAdInfo.getMediaView(flContent);
-            flContent.addView(mediaView, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
-        } else {
-            ImageView ivImage = new ImageView(flContent.getContext());
-            Glide.with(ivImage).load(nativeFeedAdInfo.getImageUrl()).into(ivImage);
-            flContent.addView(ivImage, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
-        }
-
         if (ivIcon != null) {
             // 广告icon
             Glide.with(ivIcon).load(nativeFeedAdInfo.getIconUrl()).into(ivIcon);
@@ -235,14 +222,26 @@ public class NativeSelfRenderActivity extends AppCompatActivity {
         }
         // 广告平台logo图标
         ivAdTarget.setImageResource(nativeFeedAdInfo.getPlatformIcon());
+
         // 注册关闭按钮，将关闭按钮点击事件交于SDK托管，以便于回调onAdClose
         nativeFeedAdInfo.registerCloseView(ivClose);
-        // 注册广告交互, 必须调用
-        // 注意：优量汇只会响应View...actionViews的点击事件，且这些View都应该是com.qq.e.ads.nativ.widget.NativeAdContainer的子View
-        // 务必最后调用
-        nativeFeedAdInfo.registerViewForInteraction(nativeAdContainer, rlAdContainer);
 
+        flContent.removeAllViews();
         nativeAdContainer.setVisibility(View.VISIBLE);
+        if (nativeFeedAdInfo.hasMediaView()) {
+            View mediaView = nativeFeedAdInfo.getMediaView(flContent);
+            flContent.addView(mediaView, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+        } else {
+            ImageView ivImage = new ImageView(flContent.getContext());
+            Glide.with(ivImage).load(nativeFeedAdInfo.getImageUrl()).into(ivImage);
+            flContent.addView(ivImage, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+        }
+        // 注册广告交互, 必须调用
+        // 务必最后调用
+        nativeFeedAdInfo.registerViewForInteraction(
+                nativeAdContainer,
+                rlAdContainer
+        );
     }
 
     /**
