@@ -91,7 +91,7 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.611.1481.01032'
 
     // 穿山甲（头条）适配器，可选
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:6.6.0.7.01032'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:6.6.0.7.01033'
 
     // 百度适配器，可选
     implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced:9.371.12311'
