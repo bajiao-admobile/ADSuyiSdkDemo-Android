@@ -263,7 +263,7 @@ dependencies {
 
 ### 5.2 OAID支持
 
-####5.2.1 适配OAID1.0.25
+#### 5.2.1 适配OAID1.0.25
 
 低版本OAID对接参考案例，低版本无需向[MSA](https://www.msa-alliance.cn/col.jsp?id=120)申请密钥，由于版本较低，新机型可能无法获取。
 
@@ -274,7 +274,7 @@ implementation(name: 'oaid_sdk_1.0.25', ext: 'aar')
 implementation 'cn.admobiletop.adsuyi.ad:oaid:1.0.25.12122'
 ```
 
-####5.2.2 使用高版本OAID
+#### 5.2.2 使用高版本OAID
 
 [MSA](https://www.msa-alliance.cn/col.jsp?id=120)官方地址
 
