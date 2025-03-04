@@ -121,7 +121,7 @@ public class NativeFeedAdViewHolder extends RecyclerView.ViewHolder {
             // 注册广告交互, 必须调用
             // 务必最后调用
             nativeFeedAdInfo.registerViewForInteraction(
-                    (ViewGroup) itemView,
+                    rlAdContainer,
                     rlAdContainer
             );
         }

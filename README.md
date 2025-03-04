@@ -213,16 +213,16 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.72.01032'
 
     // 米盟适配器，可选。仅支持AndroidX版本
-    //    implementation 'cn.admobiletop.adsuyi.ad.adapter:mimo-androidx:5.3.3.12102'
-    //    implementation 'com.google.code.gson:gson:2.8.5'
-    //    implementation 'com.github.bumptech.glide:glide:4.9.0'
-    //    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:mimo-androidx:5.3.3.12102'
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
 
     // 华为适配器，可选
     implementation 'cn.admobiletop.adsuyi.ad.adapter:hwpps:13.4.76.300.01031'
 
     // 京媒适配器，可选。仅支持AndroidX版本
-    //    implementation 'cn.admobiletop.adsuyi.ad.adapter:jadyun-androidx:2.6.20.03041'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:jadyun-androidx:2.6.20.03041'
 
     // 章鱼适配器，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:octopus:1.6.1.8.12031'
