@@ -50,7 +50,6 @@ Suyi聚合广告SDK 主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | mimo    | 小米广告         | 米盟       | 仅支持AndroidX |
 | hwpps   | 华为广告 | 华为广告联盟 | |
 | jadyun  | 京东广告         | 京媒       | 仅支持AndroidX |
-| inmobi  | Inmobi       | Inmobi     | |
 | gromore | gromore      | gromore    | |
 
 ### 1.4 ADSuyi必添包容量
