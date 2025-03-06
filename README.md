@@ -47,9 +47,9 @@ Suyi聚合广告SDK 主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | toutiao | 穿山甲        | 头条     | |
 | baidu   | 百度         | 百青藤     | |
 | ksad    | 快手         | 快手       | |
-| mimo    | 米盟         | 米盟       | 仅支持AndroidX |
-| hwpps   | 华为广告联盟 | 华为广告联 | |
-| jadyun  | 京媒         | 京媒       | 仅支持AndroidX |
+| mimo    | 小米广告         | 米盟       | 仅支持AndroidX |
+| hwpps   | 华为广告 | 华为广告联盟 | |
+| jadyun  | 京东广告         | 京媒       | 仅支持AndroidX |
 | inmobi  | Inmobi       | Inmobi     | |
 | gromore | gromore      | gromore    | |
 
@@ -70,7 +70,7 @@ Suyi聚合广告SDK 主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | toutiao   | 8.22M | v6.6.0.7.01033     |
 | baidu     | 1.98M | v9.371.12311       |
 | ksad      | 5.08M | v3.3.72.01032      |
-| mimo      | 3.48M | v5.3.3.12102       |
+| mimo      | 3.48M | v5.3.3.12103       |
 | hwpps     | 1.01M | v13.4.76.300.01031 |
 | jadyun    | 1.41M | v2.6.20.03041       |
 | octopus   | 1.00M | v1.6.1.8.12031     |
@@ -213,7 +213,7 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.72.01032'
 
     // 米盟适配器，可选。仅支持AndroidX版本
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:mimo-androidx:5.3.3.12102'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:mimo-androidx:5.3.3.12103'
     implementation 'com.google.code.gson:gson:2.8.5'
     implementation 'com.github.bumptech.glide:glide:4.9.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
