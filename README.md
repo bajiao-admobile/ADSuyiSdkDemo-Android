@@ -184,10 +184,10 @@ allprojects {
 
 ```java
 dependencies {
-    // support支持库，如果是AndroidX请使用对应的支持库
-    implementation 'com.android.support:appcompat-v7:28.0.0'
-    implementation 'com.android.support:support-v4:28.0.0'
-    implementation 'com.android.support:design:28.0.0'
+    // androidx支持库，如果是support请使用对应的支持库
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.android.material:material:1.0.0'
 
     // ADSuyiSdk核心库必须导入
     implementation 'cn.admobiletop.adsuyi.ad:core:3.9.11.12261'
