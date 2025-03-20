@@ -1,4 +1,4 @@
-# Suyi聚合广告SDK ——接入文档 V3.9.10.12184
+# Suyi聚合广告SDK ——接入文档 V3.9.11.12261
 
 # Suyi聚合广告SDK  介绍
 
@@ -40,41 +40,41 @@ Suyi聚合广告SDK 主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 
 ### <a name="platform_name"> 1.3 三方广告平台名称概述 </a>
 
-| Name    | 平台名称     | 平台别称   | 备注 |
-| ------- | ------------ | ---------- | ---------- |
-| tianmu  | 天目         | 天目       | |
-| gdt     | 优量汇       | 广点通     | |
-| toutiao | 穿山甲        | 头条     | |
-| baidu   | 百度         | 百青藤     | |
-| ksad    | 快手         | 快手       | |
-| mimo    | 小米广告         | 米盟       | 仅支持AndroidX |
-| hwpps   | 华为广告 | 华为广告联盟 | |
-| jadyun  | 京东广告         | 京媒       | 仅支持AndroidX |
-| octopus | 章鱼      | 章鱼    | |
-| gromore | gromore      | gromore    | |
+| Name    | 平台名称     | 平台别称   | 
+| ------- | ------------ | ---------- |
+| tianmu  | 天目         | 天目       |
+| gdt     | 优量汇       | 广点通     |
+| toutiao | 穿山甲        | 头条     |
+| baidu   | 百度         | 百青藤     |
+| ksad    | 快手         | 快手       |
+| mimo    | 小米广告         | 米盟       |
+| hwpps   | 华为广告 | 华为广告联盟 |
+| jadyun  | 京东广告         | 京媒       | 
+| octopus | 章鱼      | 章鱼    |
+| gromore | gromore      | gromore    |
 
 ### 1.4 ADSuyi必添包容量
 
 | Name         | 大小   | 版本号         |
 | ------------ | ----  | ------------- |
-| ADSuyi基础包  | 0.43M | V3.9.10.12184  |
+| ADSuyi基础包  | 0.43M | V3.9.11.12261  |
 | OAID         | 1.10M | V1.0.25       |
 | OAID适配器    | 0.01M | V1.0.25.12122 |
 
 ### 1.5 三方广告平台适配器+三方广告sdk总容量
 
-| Name      | 容量   | 版本号              |
-| --------- | ----- | ------------------ |
-| tianmu    | 2.14M | v2.3.0.01031       |
-| gdt       | 2.01M | v4.611.1481.01032  |
-| toutiao   | 8.22M | v6.6.0.7.01033     |
-| baidu     | 1.98M | v9.371.12311       |
-| ksad      | 5.08M | v3.3.72.01032      |
-| mimo      | 3.48M | v5.3.3.12103       |
-| hwpps     | 1.01M | v13.4.76.300.01031 |
-| jadyun    | 1.41M | v2.6.20.03041       |
-| octopus   | 1.00M | v1.6.1.8.12031     |
-| gromore   | —     | v6.6.0.7.01082     |
+| Name      | 容量   | 版本号              | 备注 |
+| --------- | ----- | ------------------ |------ |
+| tianmu    | 2.14M | v2.3.1.03051       | |
+| gdt       | 2.01M | v4.620.1490.03061  | |
+| toutiao   | 8.22M | v6.7.0.6.03061     | |
+| baidu     | 1.98M | v9.373.03061       | 仅支持AndroidX |
+| ksad      | 5.08M | v3.3.74.03061      | |
+| mimo      | 3.48M | v5.3.3.12103       | 仅支持AndroidX |
+| hwpps     | 1.01M | v13.4.76.300.01031 | |
+| jadyun    | 1.41M | v2.6.20.03041       | 仅支持AndroidX |
+| octopus   | 1.00M | v1.6.1.8.12031     | |
+| gromore   | —     | v6.6.0.7.01082     | |
 
 
 ## 2. 支持的广告类型
@@ -190,7 +190,7 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
 
     // ADSuyiSdk核心库必须导入
-    implementation 'cn.admobiletop.adsuyi.ad:core:3.9.10.12184'
+    implementation 'cn.admobiletop.adsuyi.ad:core:3.9.11.12261'
 
     // OAID1.0.25版本
     implementation(name: 'oaid_sdk_1.0.25', ext: 'aar')
@@ -198,19 +198,19 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad:oaid:1.0.25.12122'
 
     // 天目适配器，必选
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:tianmu:2.3.0.01031'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:tianmu:2.3.1.03051'
 
     // 优量汇（广点通）适配器，可选
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.611.1481.01032'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.620.1490.03061'
 
     // 穿山甲（头条）适配器，可选
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:6.6.0.7.01033'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:6.7.0.6.03061'
 
-    // 百度适配器，可选
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-enhanced:9.371.12311'
+    // 百度适配器，可选。仅支持AndroidX版本
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-androidx:9.373.03061'
 
     // 快手适配器，可选
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.72.01032'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.74.03061'
 
     // 米盟适配器，可选。仅支持AndroidX版本
     implementation 'cn.admobiletop.adsuyi.ad.adapter:mimo-androidx:5.3.3.12103'

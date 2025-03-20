@@ -115,7 +115,15 @@
             android:label="@string/native_express"
             android:exported="false"/>
 
+        <activity android:name=".activity.ad.feed.NativeExpressListActivity"
+            android:label="@string/native_express"
+            android:exported="false"/>
+
         <activity android:name=".activity.ad.feed.NativeSelfRenderActivity"
+            android:label="@string/native_self_render"
+            android:exported="false"/>
+
+        <activity android:name=".activity.ad.feed.NativeSelfRenderListActivity"
             android:label="@string/native_self_render"
             android:exported="false"/>
 
