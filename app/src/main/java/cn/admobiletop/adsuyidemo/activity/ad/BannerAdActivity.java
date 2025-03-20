@@ -1,14 +1,12 @@
 package cn.admobiletop.adsuyidemo.activity.ad;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.util.Log;
-import android.view.View;
 import android.widget.FrameLayout;
 
 import cn.admobiletop.adsuyi.ad.ADSuyiBannerAd;
 import cn.admobiletop.adsuyi.ad.data.ADSuyiAdInfo;
-import cn.admobiletop.adsuyi.ad.entity.ADSuyiAdSize;
 import cn.admobiletop.adsuyi.ad.entity.ADSuyiExtraParams;
 import cn.admobiletop.adsuyi.ad.error.ADSuyiError;
 import cn.admobiletop.adsuyi.ad.listener.ADSuyiBannerAdListener;

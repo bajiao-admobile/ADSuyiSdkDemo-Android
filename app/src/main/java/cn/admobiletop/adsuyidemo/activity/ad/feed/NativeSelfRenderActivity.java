@@ -1,8 +1,8 @@
 package cn.admobiletop.adsuyidemo.activity.ad.feed;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,14 +19,12 @@ import java.util.List;
 
 import cn.admobiletop.adsuyi.ad.ADSuyiNativeAd;
 import cn.admobiletop.adsuyi.ad.data.ADSuyiNativeAdInfo;
-import cn.admobiletop.adsuyi.ad.data.ADSuyiNativeExpressAdInfo;
 import cn.admobiletop.adsuyi.ad.data.ADSuyiNativeFeedAdInfo;
 import cn.admobiletop.adsuyi.ad.entity.ADSuyiAdSize;
 import cn.admobiletop.adsuyi.ad.entity.ADSuyiExtraParams;
 import cn.admobiletop.adsuyi.ad.error.ADSuyiError;
 import cn.admobiletop.adsuyi.ad.listener.ADSuyiNativeAdListener;
 import cn.admobiletop.adsuyi.util.ADSuyiAdUtil;
-import cn.admobiletop.adsuyi.util.ADSuyiViewUtil;
 import cn.admobiletop.adsuyidemo.R;
 import cn.admobiletop.adsuyidemo.constant.ADSuyiDemoConstant;
 

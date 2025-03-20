@@ -1,6 +1,6 @@
 package cn.admobiletop.adsuyidemo.fragment;
 
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 
 /**
  * @author ciba

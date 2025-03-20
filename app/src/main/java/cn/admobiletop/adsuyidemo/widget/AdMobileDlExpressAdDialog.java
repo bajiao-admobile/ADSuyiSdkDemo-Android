@@ -2,20 +2,15 @@ package cn.admobiletop.adsuyidemo.widget;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
-
-import com.bumptech.glide.Glide;
 
 import cn.admobiletop.adsuyi.ad.data.ADSuyiNativeAdInfo;
 import cn.admobiletop.adsuyi.ad.data.ADSuyiNativeExpressAdInfo;
-import cn.admobiletop.adsuyi.ad.data.ADSuyiNativeFeedAdInfo;
 import cn.admobiletop.adsuyi.util.ADSuyiAdUtil;
 import cn.admobiletop.adsuyi.util.ADSuyiViewUtil;
 import cn.admobiletop.adsuyidemo.R;

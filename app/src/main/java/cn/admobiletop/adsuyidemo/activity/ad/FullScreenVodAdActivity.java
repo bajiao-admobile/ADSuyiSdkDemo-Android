@@ -1,7 +1,7 @@
 package cn.admobiletop.adsuyidemo.activity.ad;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -11,7 +11,6 @@ import cn.admobiletop.adsuyi.ad.ADSuyiFullScreenVodAd;
 import cn.admobiletop.adsuyi.ad.data.ADSuyiFullScreenVodAdInfo;
 import cn.admobiletop.adsuyi.ad.error.ADSuyiError;
 import cn.admobiletop.adsuyi.ad.listener.ADSuyiFullScreenVodAdListener;
-import cn.admobiletop.adsuyi.util.ADSuyiAdUtil;
 import cn.admobiletop.adsuyi.util.ADSuyiToastUtil;
 import cn.admobiletop.adsuyidemo.R;
 import cn.admobiletop.adsuyidemo.activity.base.BaseAdActivity;

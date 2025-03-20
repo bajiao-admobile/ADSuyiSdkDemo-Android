@@ -1,12 +1,10 @@
 package cn.admobiletop.adsuyidemo.activity.ad.interstitial;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.Toast;
 
 import cn.admobiletop.adsuyi.ad.ADSuyiInterstitialAd;
@@ -14,7 +12,6 @@ import cn.admobiletop.adsuyi.ad.data.ADSuyiInterstitialAdInfo;
 import cn.admobiletop.adsuyi.ad.entity.ADSuyiExtraParams;
 import cn.admobiletop.adsuyi.ad.error.ADSuyiError;
 import cn.admobiletop.adsuyi.ad.listener.ADSuyiInterstitialAdListener;
-import cn.admobiletop.adsuyi.util.ADSuyiAdUtil;
 import cn.admobiletop.adsuyi.util.ADSuyiToastUtil;
 import cn.admobiletop.adsuyidemo.R;
 import cn.admobiletop.adsuyidemo.activity.base.BaseAdActivity;
