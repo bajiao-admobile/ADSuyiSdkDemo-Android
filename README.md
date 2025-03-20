@@ -631,14 +631,16 @@ cn.admobiletop.adsuyi.config.ADSuyiInitConfig
 | ------------ | ---- |
 | appId(String appId) | 设置AppId，必填参数。|
 | debug(boolean debug) | 设置是否是Debug模式。参数说明：debug（true：开启，false：关闭， 默认：true）开发阶段以及提交测试阶段可设置为true，方便异常排查。|
+| agreePrivacyStrategy(boolean agreePrivacyStrategy) | 是否同意隐私政策。参数说明：agreePrivacyStrategy（true：开启，false：关闭， 默认：true）。|
 | isCanUseSensor(boolean isCanUseSensor) | 设置SDK是否可以使用传感器信息。参数说明：isCanUseSensor（true：开启，false：关闭， 默认：false，建议媒体升级后调用该方法开启。目前仅支持控制优量汇、快手、天目，其中优量汇和天目可控制所有广告类型，快手仅支持控制开屏，其他渠道需要到对应后台控制或提交工单关闭，关闭后将影响广告点击率）。|
 | isCanUseLocation(boolean isCanUseLocation) | 设置SDK是否可以使用定位信息。参数说明：isCanUseLocation（true：开启，false：关闭， 默认：true）。|
 | isCanUsePhoneState(boolean isCanUsePhoneState) | 设置SDK是否可以使用IMEI等设备信息。参数说明：isCanUsePhoneState（true：开启，false：关闭， 默认：true）。|
 | isCanUseWifiState(boolean isCanUseWifiState) | 设置SDK是否可以使用WIFI信息。参数说明：isCanUseWifiState（true：开启，false：关闭， 默认：true）。|
-| agreePrivacyStrategy(boolean agreePrivacyStrategy) | 是否同意隐私政策。参数说明：agreePrivacyStrategy（true：开启，false：关闭， 默认：true）。|
+| isCanUseReadWriteExternal(boolean isCanUseReadWriteExternal) | 是否允许读写权限。参数说明：isCanUseReadWriteExternal（true：开启，false：关闭， 默认：true）。|
 | filterThirdQuestion(boolean filterThirdQuestion) | 设置是否过滤第三方平台的问题广告（例如: 已知某个广告平台在某些机型的横幅广告可能存在问题，如果开启过滤，则在该机型将不再去获取该平台的横幅广告）。参数说明：filterThirdQuestion（true：开启，false：关闭， 默认：true）。|
 | setCustomDeviceInfoController(CustomDeviceInfoController controller) | 自定义设备信息。可选参数。<a href="#custom_controller"> 请参考5.7 向SDK传入设备标识 </a>|
 | setWXAppId(String wxAppId) | 设置微信AppId。可选参数。参数说明：wxAppId（微信AppId）|
+| lazyInitThirdAd(boolean lazyInitThirdAd) | 延迟初始化三方广告，开启后将在请求广告时进行三方广告初始化。参数说明：lazyInitThirdAd（true：开启，false：关闭， 默认：false）。|
 
 **CustomDeviceInfoController**
 
