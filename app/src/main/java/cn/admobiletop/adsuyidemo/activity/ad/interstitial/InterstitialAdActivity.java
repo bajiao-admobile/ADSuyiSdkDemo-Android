@@ -71,6 +71,7 @@ public class InterstitialAdActivity extends BaseAdActivity implements View.OnCli
 
             @Override
             public void onAdReady(ADSuyiInterstitialAdInfo interstitialAdInfo) {
+                // 部分渠道不会回调该方法，请在onAdReceive做广告展示处理
                 Log.d(ADSuyiDemoConstant.TAG, "onAdReady...");
             }
 

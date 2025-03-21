@@ -55,7 +55,6 @@ public class FullScreenVodAdActivity extends BaseAdActivity implements View.OnCl
 
             @Override
             public void onAdReceive(ADSuyiFullScreenVodAdInfo fullScreenVodAdInfo) {
-                // 建议在该回调中展示广告
                 // TODO 全屏视频广告对象一次成功拉取的广告数据只允许展示一次
                 FullScreenVodAdActivity.this.fullScreenVodAdInfo = fullScreenVodAdInfo;
                 ADSuyiToastUtil.show(getApplicationContext(), "全屏视频广告获取成功");
@@ -64,6 +63,7 @@ public class FullScreenVodAdActivity extends BaseAdActivity implements View.OnCl
 
             @Override
             public void onVideoCache(ADSuyiFullScreenVodAdInfo adSuyiFullScreenVodAdInfo) {
+                // 部分渠道不会回调该方法，请在onAdReceive做广告展示处理
                 Log.d(ADSuyiDemoConstant.TAG, "onVideoCache...");
             }
 

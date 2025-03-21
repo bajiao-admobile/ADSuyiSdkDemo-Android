@@ -1213,7 +1213,7 @@ cn.admobiletop.adsuyi.ad.listener.ADSuyiRewardVodAdListener
 | onAdClick(ADSuyiRewardVodAdInfo adInfo) | 广告点击回调。|
 | onAdClose(ADSuyiRewardVodAdInfo adInfo) | 广告关闭回调。|
 | onReward(ADSuyiRewardVodAdInfo adInfo) | 广告奖励回调。|
-| onVideoCache(ADSuyiRewardVodAdInfo adInfo) | 广告缓存成功回调。|
+| onVideoCache(ADSuyiRewardVodAdInfo adInfo) | 广告缓存成功回调。部分渠道不会回调该方法，请在onAdReceive做广告展示处理|
 | onVideoComplete(ADSuyiRewardVodAdInfo adInfo) | 广告播放完毕回调。|
 | onVideoError(ADSuyiRewardVodAdInfo adInfo, ADSuyiError error) | 视频播放错误回调。|
 | onAdFailed(ADSuyiError error) | 广告获取失败回调。|
@@ -1241,7 +1241,7 @@ ADSuyiRewardVodAd rewardVodAd = new ADSuyiRewardVodAd(Activity activity);
 @Override
 public void onAdReceive(ADSuyiRewardVodAdInfo adInfo) {
         // 广告获取成功回调...
-        // 全屏视频广告对象一次成功拉取的广告数据只允许展示一次
+        // 激励视频广告对象一次成功拉取的广告数据只允许展示一次
         // 广告展示
         adInfo.showRewardVod(Activity activity)
         }
@@ -1339,7 +1339,7 @@ cn.admobiletop.adsuyi.ad.listener.ADSuyiFullScreenVodAdListener
 | onAdExpose(ADSuyiFullScreenVodAdInfo adInfo) | 广告曝光回调。|
 | onAdClick(ADSuyiFullScreenVodAdInfo adInfo) | 广告点击回调。|
 | onAdClose(ADSuyiFullScreenVodAdInfo adInfo) | 广告关闭回调。|
-| onVideoCache(ADSuyiFullScreenVodAdInfo adInfo) | 广告缓存成功回调。|
+| onVideoCache(ADSuyiFullScreenVodAdInfo adInfo) | 广告缓存成功回调。部分渠道不会回调该方法，请在onAdReceive做广告展示处理|
 | onVideoComplete(ADSuyiFullScreenVodAdInfo adInfo) | 广告播放完毕回调。|
 | onVideoError(ADSuyiFullScreenVodAdInfo adInfo, ADSuyiError error) | 视频播放错误回调。|
 | onAdFailed(ADSuyiError error) | 广告获取失败回调。|
@@ -1373,6 +1373,7 @@ public void onAdReceive(ADSuyiFullScreenVodAdInfo adInfo) {
 
 @Override
 public void onVideoCache(ADSuyiFullScreenVodAdInfo adInfo) {
+        // 部分渠道不会回调该方法，请在onAdReceive做广告展示处理
         // 广告视频缓存成功回调...
         }
 
@@ -1459,7 +1460,7 @@ cn.admobiletop.adsuyi.ad.listener.ADSuyiInterstitialAdListener
 | onAdExpose(ADSuyiInterstitialAdInfo adInfo) | 广告曝光回调。|
 | onAdClick(ADSuyiInterstitialAdInfo adInfo) | 广告点击回调。|
 | onAdClose(ADSuyiInterstitialAdInfo adInfo) | 广告关闭回调。|
-| onAdReady(ADSuyiInterstitialAdInfo adInfo) | 广告准备完毕回调。|
+| onAdReady(ADSuyiInterstitialAdInfo adInfo) | 广告准备完毕回调。部分渠道不会回调该方法，请在onAdReceive做广告展示处理|
 | onAdFailed(ADSuyiError error) | 广告获取失败回调。|
 
 **ADSuyiInterstitialAdInfo**
@@ -1491,6 +1492,7 @@ public void onAdReceive(ADSuyiInterstitialAdInfo adInfo) {
 
 @Override
 public void onAdReady(ADSuyiInterstitialAdInfo adInfo) {
+        // 部分渠道不会回调该方法，请在onAdReceive做广告展示处理
         // 广告准备完毕回调...
         }
 
@@ -1519,7 +1521,7 @@ public void onAdFailed(ADSuyiError error) {
         interstitialAd.loadAd(String posId);
 ```
 
-<p style="color:red;">注意广告对象的获取是异步的，请在onAdReceive或onAdReady回调后展示广告 </p>
+<p style="color:red;">注意广告对象的获取是异步的，请在onAdReceive回调后展示广告 </p>
 
 > 插屏广告示例详情[Gitee地址](https://gitee.com/admobile/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/ad/interstitial/InterstitialAdActivity.java)、[Github地址](https://github.com/ADSuyi/ADSuyiSdkDemo-Android/blob/master/app/src/main/java/cn/admobiletop/adsuyidemo/activity/ad/interstitial/InterstitialAdActivity.java)
 >

@@ -80,7 +80,7 @@ public class RewardVodAdActivity extends BaseAdActivity implements View.OnClickL
 
             @Override
             public void onVideoCache(ADSuyiRewardVodAdInfo adSuyiRewardVodAdInfo) {
-                // 部分渠道存在激励展示类广告，不会回调该方法，建议在onAdReceive做广告展示处理
+                // 部分渠道不会回调该方法，请在onAdReceive做广告展示处理
                 Log.d(ADSuyiDemoConstant.TAG, "onVideoCache...");
             }
 
