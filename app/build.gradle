@@ -94,7 +94,7 @@ dependencies {
 //    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:6.7.0.6.03061'
 //
 //    // 百度适配器，可选
-//    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-androidx:9.373.03061'
+//    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-androidx:9.373.03062'
 //
 //    // 快手适配器，可选
 //    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.74.03061'
