@@ -77,7 +77,7 @@ dependencies {
     implementation 'com.google.android.material:material:1.0.0'
 
     // ADSuyiSdk核心库必须导入
-    implementation 'cn.admobiletop.adsuyi.ad:core:3.9.11.12263'
+    implementation 'cn.admobiletop.adsuyi.ad:core:3.9.11.12261'
 
     // OAID1.0.25版本，华为渠道请参考文档5.2
     implementation(name: 'oaid_sdk_1.0.25', ext: 'aar')
@@ -109,7 +109,7 @@ dependencies {
 //    implementation 'cn.admobiletop.adsuyi.ad.adapter:hwpps:13.4.76.300.01031'
 //
 //    // 京媒适配器，可选。仅支持AndroidX版本
-//    implementation 'cn.admobiletop.adsuyi.ad.adapter:jadyun-androidx:2.6.20.04021'
+//    implementation 'cn.admobiletop.adsuyi.ad.adapter:jadyun-androidx:2.6.20.03041'
 //
 //    // 章鱼适配器，可选的
 //    implementation 'cn.admobiletop.adsuyi.ad.adapter:octopus:1.6.1.8.12031'

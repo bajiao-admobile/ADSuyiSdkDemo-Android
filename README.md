@@ -1,4 +1,4 @@
-# Suyi聚合广告SDK ——接入文档 V3.9.11.12263
+# Suyi聚合广告SDK ——接入文档 V3.9.11.12261
 
 # Suyi聚合广告SDK  介绍
 
@@ -57,7 +57,7 @@ Suyi聚合广告SDK 主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 
 | Name         | 大小   | 版本号         |
 | ------------ | ----  | ------------- |
-| ADSuyi基础包  | 0.43M | V3.9.11.12263  |
+| ADSuyi基础包  | 0.43M | V3.9.11.12261  |
 | OAID         | 1.10M | V1.0.25       |
 | OAID适配器    | 0.01M | V1.0.25.12122 |
 
@@ -72,7 +72,7 @@ Suyi聚合广告SDK 主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | ksad      | 5.08M | v3.3.74.03061      | |
 | mimo      | 3.48M | v5.3.3.12103       | 仅支持AndroidX |
 | hwpps     | 1.01M | v13.4.76.300.01031 | |
-| jadyun    | 1.41M | v2.6.20.04021       | 仅支持AndroidX |
+| jadyun    | 1.41M | v2.6.20.03041       | 仅支持AndroidX |
 | octopus   | 1.00M | v1.6.1.8.12031     | |
 | gromore   | —     | v6.6.0.7.01084     | |
 
@@ -190,7 +190,7 @@ dependencies {
     implementation 'com.google.android.material:material:1.0.0'
 
     // ADSuyiSdk核心库必须导入
-    implementation 'cn.admobiletop.adsuyi.ad:core:3.9.11.12263'
+    implementation 'cn.admobiletop.adsuyi.ad:core:3.9.11.12261'
 
     // OAID1.0.25版本
     implementation(name: 'oaid_sdk_1.0.25', ext: 'aar')
@@ -222,7 +222,7 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:hwpps:13.4.76.300.01031'
 
     // 京媒适配器，可选。仅支持AndroidX版本
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:jadyun-androidx:2.6.20.04021'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:jadyun-androidx:2.6.20.03041'
 
     // 章鱼适配器，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:octopus:1.6.1.8.12031'
