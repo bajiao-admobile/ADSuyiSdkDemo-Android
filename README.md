@@ -67,9 +67,9 @@ Suyi聚合广告SDK 主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | --------- | ----- | ------------------ |------ |
 | tianmu    | 2.14M | v2.3.1.03051       | |
 | gdt       | 2.01M | v4.620.1490.03061  | |
-| toutiao   | 8.22M | v6.7.0.6.03061     | |
+| toutiao   | 8.22M | v6.7.0.6.03062     | |
 | baidu     | 1.98M | v9.373.03062       | 仅支持AndroidX |
-| ksad      | 5.08M | v3.3.74.03061      | |
+| ksad      | 5.08M | v3.3.74.03062      | |
 | mimo      | 3.48M | v5.3.3.12103       | 仅支持AndroidX |
 | hwpps     | 1.01M | v13.4.76.300.01031 | |
 | jadyun    | 1.41M | v2.6.20.04021       | 仅支持AndroidX |
@@ -204,13 +204,13 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.620.1490.03061'
 
     // 穿山甲（头条）适配器，可选
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:6.7.0.6.03061'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:6.7.0.6.03062'
 
     // 百度适配器，可选。仅支持AndroidX版本
     implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-androidx:9.373.03062'
 
     // 快手适配器，可选
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.74.03061'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.74.03062'
 
     // 米盟适配器，可选。仅支持AndroidX版本
     implementation 'cn.admobiletop.adsuyi.ad.adapter:mimo-androidx:5.3.3.12103'
