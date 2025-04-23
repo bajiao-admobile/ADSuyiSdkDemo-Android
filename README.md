@@ -51,6 +51,7 @@ Suyi聚合广告SDK 主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | hwpps   | 华为广告 | 华为广告联盟 |
 | jadyun  | 京东广告         | 京媒       | 
 | octopus | 章鱼      | 章鱼    |
+| iqy     | 爱奇艺      | 爱奇艺    |
 | gromore | gromore      | gromore    |
 
 ### 1.4 ADSuyi必添包容量
@@ -74,6 +75,7 @@ Suyi聚合广告SDK 主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 | hwpps     | 1.01M | v13.4.76.300.01031 | |
 | jadyun    | 1.41M | v2.6.20.04021       | 仅支持AndroidX |
 | octopus   | 1.00M | v1.6.1.8.12031     | |
+| iqy       | 1.00M | v1.12.1.03063      | |
 | gromore   | —     | v6.6.0.7.01084     | |
 
 
@@ -226,6 +228,9 @@ dependencies {
 
     // 章鱼适配器，可选的
     implementation 'cn.admobiletop.adsuyi.ad.adapter:octopus:1.6.1.8.12031'
+
+    // 爱奇艺适配器，可选
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:iqy:1.12.1.03063'
 
     // gromoreAdapterSdk，可选的。如使用gromore的其他渠道，请联系开发者。
     // gromore已与穿山甲合并，此处无需重复导入穿山甲。
@@ -469,6 +474,8 @@ implementation 'cn.admobiletop.adsuyi.ad:oaid:1.0.25.12122'
 -dontwarn com.octopus.**
 -keep class com.octopus.** {*;}
 
+# 爱奇艺混淆
+-keep class com.mcto.sspsdk.** { *; }
 
 
 ```

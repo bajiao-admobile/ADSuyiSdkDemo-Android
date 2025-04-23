@@ -113,7 +113,10 @@ dependencies {
 //
 //    // 章鱼适配器，可选的
 //    implementation 'cn.admobiletop.adsuyi.ad.adapter:octopus:1.6.1.8.12031'
-
+//
+//    // 爱奇艺适配器，可选
+//    implementation 'cn.admobiletop.adsuyi.ad.adapter:iqy:1.12.1.03063'
+//
 //    // gromoreAdapterSdk，可选的。如使用gromore的其他渠道，请联系开发者。
 //    // gromore已与穿山甲合并，此处无需重复导入穿山甲。
 //    implementation 'cn.admobiletop.adsuyi.ad.adapter:gromore-without:6.6.0.7.01084'
