@@ -87,6 +87,12 @@ public class NativeExpressListActivity extends BaseAdActivity implements OnRefre
             }
 
             @Override
+            public void onRenderSuccess(ADSuyiNativeAdInfo adSuyiNativeAdInfo) {
+                // 广告渲染成功，仅部分渠道支持
+                Log.d(ADSuyiDemoConstant.TAG, "onRenderSuccess: " + adSuyiNativeAdInfo.hashCode());
+            }
+
+            @Override
             public void onAdReceive(List<ADSuyiNativeAdInfo> adInfoList) {
                 Log.d(ADSuyiDemoConstant.TAG, "onAdReceive: " + adInfoList.size());
                 for (int i = 0; i < adInfoList.size(); i++) {

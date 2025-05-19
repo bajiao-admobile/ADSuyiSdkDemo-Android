@@ -77,40 +77,40 @@ dependencies {
     implementation 'com.google.android.material:material:1.0.0'
 
     // ADSuyiSdk核心库必须导入
-    implementation 'cn.admobiletop.adsuyi.ad:core:3.9.11.12268'
+    implementation 'cn.admobiletop.adsuyi.ad:core:4.0.0.05061'
 
     // 天目适配器，必选
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:tianmu:2.3.1.03051'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:tianmu:3.0.0.05151'
 
     // 优量汇（广点通）适配器，可选
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.620.1490.03061'
-//
-//    // 穿山甲（头条）适配器，可选
-//    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:6.7.0.6.03062'
-//
-//    // 百度适配器，可选
-//    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-androidx:9.373.03062'
-//
-//    // 快手适配器，可选
-//    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.74.03062'
-//
-//    // 米盟适配器，可选。仅支持AndroidX版本
-//    implementation 'cn.admobiletop.adsuyi.ad.adapter:mimo-androidx:5.3.3.12103'
-//    implementation 'com.google.code.gson:gson:2.8.5'
-//    implementation 'com.github.bumptech.glide:glide:4.9.0'
-//    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
-//
-//    // 华为适配器，可选
-//    implementation 'cn.admobiletop.adsuyi.ad.adapter:hwpps:13.4.76.300.01031'
-//
-//    // 京媒适配器，可选。仅支持AndroidX版本
-//    implementation 'cn.admobiletop.adsuyi.ad.adapter:jadyun-androidx:2.6.20.04021'
-//
-//    // 章鱼适配器，可选的
-//    implementation 'cn.admobiletop.adsuyi.ad.adapter:octopus:1.6.1.8.12031'
-//
-//    // 爱奇艺适配器，可选
-//    implementation 'cn.admobiletop.adsuyi.ad.adapter:iqy:1.12.1.03063'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.640.1510.05132'
+
+    // 穿山甲（头条）适配器，可选
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:6.8.1.7.05132'
+
+    // 百度适配器，可选。仅支持AndroidX版本
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-androidx:9.391.05141'
+
+    // 快手适配器，可选
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.76.5.05141'
+
+    // 米盟适配器，可选。仅支持AndroidX版本
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:mimo-androidx:5.3.3.12103'
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
+
+    // 华为适配器，可选
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:hwpps:13.4.76.300.01031'
+
+    // 京媒适配器，可选。仅支持AndroidX版本
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:jadyun-androidx:2.6.28.05141'
+
+    // 章鱼适配器，可选的
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:octopus:1.6.3.6.05141'
+
+    // 爱奇艺适配器，可选
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:iqy:1.15.100.53.05141'
 //
 //    // gromoreAdapterSdk，可选的。如使用gromore的其他渠道，请联系开发者。
 //    // gromore已与穿山甲合并，此处无需重复导入穿山甲。

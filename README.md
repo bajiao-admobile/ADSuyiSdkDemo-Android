@@ -1,4 +1,4 @@
-# Suyi聚合广告SDK ——接入文档 V3.9.11.12268
+# Suyi聚合广告SDK ——接入文档 V4.0.0.05061
 
 # Suyi聚合广告SDK  介绍
 
@@ -6,7 +6,7 @@
 ```
 SDK名称: Suyi聚合广告SDK
 开发者: 杭州艾狄墨搏信息服务有限公司
-更新日期: 2024-12-31
+更新日期: 2025-05-19
 功能介绍: Suyi聚合广告SDK 集成了多种广告类型和主流广告平台，提供广告数据统计功能，帮助开发者轻松实现应用内广告的接入和管理，提升应用盈利和用户体验。
 ```
 
@@ -58,7 +58,7 @@ Suyi聚合广告SDK 主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 
 | Name         | 大小   | 版本号         |
 | ------------ | ----  | ------------- |
-| ADSuyi基础包  | 0.43M | V3.9.11.12268  |
+| ADSuyi基础包  | 0.43M | V4.0.0.05061  |
 | OAID         | 1.10M | V1.0.25       |
 | OAID适配器    | 0.01M | V1.0.25.12122 |
 
@@ -66,15 +66,15 @@ Suyi聚合广告SDK 主要由**ADSuyi核心SDK（简称ADSuyiSdk）**和一个�
 
 | Name      | 容量   | 版本号              | 备注 |
 | --------- | ----- | ------------------ |------ |
-| tianmu    | 2.14M | v2.3.1.03051       | |
-| gdt       | 2.01M | v4.620.1490.03061  | |
-| toutiao   | 8.22M | v6.7.0.6.03062     | |
-| baidu     | 1.98M | v9.373.03062       | 仅支持AndroidX |
-| ksad      | 5.08M | v3.3.74.03062      | |
+| tianmu    | 2.14M | v3.0.0.05151       | |
+| gdt       | 2.01M | v4.640.1510.05132  | |
+| toutiao   | 8.22M | v6.8.1.7.05132     | |
+| baidu     | 1.98M | v9.391.05141       | 仅支持AndroidX |
+| ksad      | 5.08M | v3.3.76.5.05141      | |
 | mimo      | 3.48M | v5.3.3.12103       | 仅支持AndroidX |
 | hwpps     | 1.01M | v13.4.76.300.01031 | |
 | jadyun    | 1.41M | v2.6.20.04021       | 仅支持AndroidX |
-| octopus   | 1.00M | v1.6.1.8.12031     | |
+| octopus   | 1.00M | v1.6.3.6.05141     | |
 | iqy       | 1.00M | v1.12.1.03063      | |
 | gromore   | —     | v6.6.0.7.01084     | |
 
@@ -192,7 +192,7 @@ dependencies {
     implementation 'com.google.android.material:material:1.0.0'
 
     // ADSuyiSdk核心库必须导入
-    implementation 'cn.admobiletop.adsuyi.ad:core:3.9.11.12268'
+    implementation 'cn.admobiletop.adsuyi.ad:core:4.0.0.05061'
 
     // OAID1.0.25版本
     implementation(name: 'oaid_sdk_1.0.25', ext: 'aar')
@@ -200,19 +200,19 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad:oaid:1.0.25.12122'
 
     // 天目适配器，必选
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:tianmu:2.3.1.03051'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:tianmu:3.0.0.05151'
 
     // 优量汇（广点通）适配器，可选
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.620.1490.03061'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:gdt:4.640.1510.05132'
 
     // 穿山甲（头条）适配器，可选
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:6.7.0.6.03062'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:toutiao:6.8.1.7.05132'
 
     // 百度适配器，可选。仅支持AndroidX版本
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-androidx:9.373.03062'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:baidu-androidx:9.391.05141'
 
     // 快手适配器，可选
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.74.03062'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:ksadbase:3.3.76.5.05141'
 
     // 米盟适配器，可选。仅支持AndroidX版本
     implementation 'cn.admobiletop.adsuyi.ad.adapter:mimo-androidx:5.3.3.12103'
@@ -224,13 +224,13 @@ dependencies {
     implementation 'cn.admobiletop.adsuyi.ad.adapter:hwpps:13.4.76.300.01031'
 
     // 京媒适配器，可选。仅支持AndroidX版本
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:jadyun-androidx:2.6.20.04021'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:jadyun-androidx:2.6.28.05141'
 
     // 章鱼适配器，可选的
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:octopus:1.6.1.8.12031'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:octopus:1.6.3.6.05141'
 
     // 爱奇艺适配器，可选
-    implementation 'cn.admobiletop.adsuyi.ad.adapter:iqy:1.12.1.03063'
+    implementation 'cn.admobiletop.adsuyi.ad.adapter:iqy:1.15.100.53.05141'
 
     // gromoreAdapterSdk，可选的。如使用gromore的其他渠道，请联系开发者。
     // gromore已与穿山甲合并，此处无需重复导入穿山甲。
@@ -999,7 +999,8 @@ cn.admobiletop.adsuyi.ad.listener.ADSuyiNativeAdListener
 | onAdClick(ADSuyiNativeAdInfo adInfo) | 广告点击回调。|
 | onAdClose(ADSuyiNativeAdInfo adInfo) | 广告关闭回调，在此回调中移除页面中的视图。|
 | onAdFailed(ADSuyiError error) | 广告失败回调。参数说明：error（广告错误信息）。|
-| onRenderFailed(ADSuyiNativeAdInfo adInfo, ADSuyiError error) | 广告失败回调。参数说明：error（广告错误信息）。|
+| onRenderFailed(ADSuyiNativeAdInfo adInfo, ADSuyiError error) | 广告渲染失败回调。参数说明：error（广告错误信息）。|
+| onRenderSuccess(ADSuyiNativeAdInfo adInfo) | 广告渲染成功回调。|
 
 **ADSuyiNativeVideoListener**
 
@@ -1080,50 +1081,50 @@ cn.admobiletop.adsuyi.ad.data.ADSuyiAdAppInfo
 ```java
 // 创建信息流广告实例
 ADSuyiNativeAd nativeAd = new ADSuyiNativeAd(Activity activity);
-int widthPixels = getResources().getDisplayMetrics().widthPixels;
+        int widthPixels = getResources().getDisplayMetrics().widthPixels;
 // 创建额外参数实例
-ADSuyiExtraParams extraParams = new ADSuyiExtraParams.Builder()
-    // 设置整个广告视图预期宽高，单位为px，高度如果小于等于0则高度自适应
-    .adSize(new ADSuyiAdSize(widthPixels, 0))
-   	.build();
+        ADSuyiExtraParams extraParams = new ADSuyiExtraParams.Builder()
+        // 设置整个广告视图预期宽高，单位为px，高度如果小于等于0则高度自适应
+        .adSize(new ADSuyiAdSize(widthPixels, 0))
+        .build();
 // 设置额外参数
-nativeAd.setLocalExtraParams(extraParams);
+        nativeAd.setLocalExtraParams(extraParams);
 
 // 设置广告监听
-nativeAd.setListener(new ADSuyiNativeAdListener() {
-    @Override
-    public void onRenderFailed(ADSuyiNativeAdInfo adInfo, ADSuyiError error) {
-      	// 广告渲染失败，可在此回调中移除视图和释放广告对象
-    }
+        nativeAd.setListener(new ADSuyiNativeAdListener() {
+@Override
+public void onRenderFailed(ADSuyiNativeAdInfo adInfo, ADSuyiError error) {
+        // 广告渲染失败，可在此回调中移除视图和释放广告对象
+        }
 
-    @Override
-    public void onAdReceive(List<ADSuyiNativeAdInfo> adInfos) {
+@Override
+public void onAdReceive(List<ADSuyiNativeAdInfo> adInfos) {
         // 广告获取成功回调...
-    }
+        }
 
-    @Override
-    public void onAdExpose(ADSuyiNativeAdInfo adInfo) {
-    	// 广告展示回调，有展示回调不一定是有效曝光，如网络等情况导致上报失败
-    }
+@Override
+public void onAdExpose(ADSuyiNativeAdInfo adInfo) {
+        // 广告展示回调，有展示回调不一定是有效曝光，如网络等情况导致上报失败
+        }
 
-    @Override
-    public void onAdClick(ADSuyiNativeAdInfo adInfo) {
-    	// 广告点击回调，有点击回调不一定是有效点击，如网络等情况导致上报失败
-    }
+@Override
+public void onAdClick(ADSuyiNativeAdInfo adInfo) {
+        // 广告点击回调，有点击回调不一定是有效点击，如网络等情况导致上报失败
+        }
 
-    @Override
-    public void onAdClose(ADSuyiNativeAdInfo adInfo) {
+@Override
+public void onAdClose(ADSuyiNativeAdInfo adInfo) {
         // 广告关闭回调，可在此回调中移除视图和释放广告对象
-    }
+        }
 
-    @Override
-    public void onAdFailed(ADSuyiError error) {
+@Override
+public void onAdFailed(ADSuyiError error) {
         // 广告获取失败回调...
-    }
-});
+        }
+        });
 
 // 请求广告数据，参数一广告位ID，参数二请求数量[1,3]
-nativeAd.loadAd(String posId, int count);
+        nativeAd.loadAd(String posId, int count);
 ```
 
 #### 6.4.2.2 信息流广告展示-模板
@@ -1132,15 +1133,15 @@ nativeAd.loadAd(String posId, int count);
 // 判断广告Info对象是否被释放（调用过ADSuyiNativeAd的release()或ADSuyiNativeAdInfo的release()会释放广告Info对象）
 // 释放后的广告Info对象不能再次使用
 if (!ADSuyiAdUtil.adInfoIsRelease(nativeExpressAdInfo)) {
-    // 当前是信息流模板广告，getNativeExpressAdView获取的是整个模板广告视图
-    View nativeExpressAdView = nativeExpressAdInfo.getNativeExpressAdView((ViewGroup) itemView);
-    // 将广告视图添加到容器中的便捷方法
-    ADSuyiViewUtil.addAdViewToAdContainer((ViewGroup) itemView, nativeExpressAdView, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+        // 当前是信息流模板广告，getNativeExpressAdView获取的是整个模板广告视图
+        View nativeExpressAdView = nativeExpressAdInfo.getNativeExpressAdView((ViewGroup) itemView);
+        // 将广告视图添加到容器中的便捷方法
+        ADSuyiViewUtil.addAdViewToAdContainer((ViewGroup) itemView, nativeExpressAdView, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 
-    // 渲染广告视图, 必须调用, 因为是模板广告, 所以传入ViewGroup和响应点击的控件可能并没有用
-    // 务必在最后调用
-    nativeExpressAdInfo.render((ViewGroup) itemView);
-}
+        // 渲染广告视图, 必须调用, 因为是模板广告, 所以传入ViewGroup和响应点击的控件可能并没有用
+        // 务必在最后调用
+        nativeExpressAdInfo.render((ViewGroup) itemView);
+        }
 ```
 
 #### 6.4.2.3 信息流广告展示-自渲染
